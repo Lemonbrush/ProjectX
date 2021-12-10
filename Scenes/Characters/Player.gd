@@ -14,11 +14,12 @@ var jumpSpeed = 200
 var jumpTerminationMultiplier = 3
 
 var currentState = State.NORMAL
+var isPassingThrough = false
 var isStateNew = true
 
 var isDying = false
 
-# Lifecycle Functions
+############################## Lifecycle Functions ##############################
 
 func _ready():
 	pass
@@ -28,11 +29,17 @@ func _process(delta):
 		State.NORMAL:
 			process_normal(delta)
 	
-# State Machine Functions 
+############################## State Machine Functions ##############################
 
 func process_normal(delta):
+	apply_movement(delta)
 	check_pass_trough_collision()
+	check_for_deadly_height()
+	update_animation()
 	
+############################## Functions ##############################
+
+func apply_movement(delta):
 	var moveVector = get_movement_vector()
 	velocity.x += moveVector.x * horizontalAcceleration * delta
 	
@@ -51,13 +58,10 @@ func process_normal(delta):
 		velocity.y += gravity * delta
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
-	
+
+func check_for_deadly_height():
 	if (global_position.y > 1000):
-		emit_signal("died")
-	
-	update_animation()
-	
-# Functions
+			emit_signal("died")
 
 func update_animation():
 	var moveVector = get_movement_vector()
@@ -73,14 +77,18 @@ func update_animation():
 		$AnimatedSprite.flip_h = true if moveVector.x < 0 else false
 
 func check_pass_trough_collision():
-	if (has_node("PassTroughArea") && Input.is_action_pressed("down")):
-		set_collision_mask_bit(1, false)
+	#var collider = $GroundRay.get_collider()
+	if (Input.is_action_just_pressed("down") && $GroundRay.is_colliding()):
+		position = Vector2(position.x, position.y + 1)
+			
+	#if (Input.is_action_just_pressed("down") && collider != null):
+	#	if (collider.is_in_group("passThroughObject")):
+	#		position = Vector2(position.x, position.y + 1)
+
+############################## Helper Functions ##############################
 
 func get_movement_vector():
 	var moveVector = Vector2.ZERO
 	moveVector.x = Input.get_action_raw_strength("right") - Input.get_action_raw_strength("left")
 	moveVector.y = -1 if Input.is_action_just_pressed("jump") else 0
-	
 	return moveVector
-
-# Helper Functions
