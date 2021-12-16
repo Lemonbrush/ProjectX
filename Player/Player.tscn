@@ -1,0 +1,134 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Assets/Sofa/SofaSpriteSheet.png" type="Texture" id=1]
+[ext_resource path="res://Player/Jump.gd" type="Script" id=2]
+[ext_resource path="res://Player/Player.gd" type="Script" id=3]
+[ext_resource path="res://Utils/StateMachine/StateMachine.gd" type="Script" id=4]
+[ext_resource path="res://Player/States/Idle.gd" type="Script" id=5]
+[ext_resource path="res://Player/Run.gd" type="Script" id=6]
+[ext_resource path="res://Player/Jump_grup.gd" type="Script" id=7]
+[ext_resource path="res://Player/Jump_top.gd" type="Script" id=8]
+[ext_resource path="res://Player/Jump_fall.gd" type="Script" id=9]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Idle"
+length = 1.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18 ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Run"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 60, 61, 62, 63, 64, 65 ]
+}
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 4, 0.5 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4, 8 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 0.5, 0.5 )
+
+[node name="Player" type="KinematicBody2D"]
+collision_mask = 3
+script = ExtResource( 3 )
+
+[node name="CoyoteTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Idle = SubResource( 2 )
+anims/RESET = SubResource( 3 )
+anims/Run = SubResource( 4 )
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource( 4 )
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource( 5 )
+
+[node name="Run" type="Node" parent="StateMachine"]
+script = ExtResource( 6 )
+
+[node name="Jump_grup" type="Node" parent="StateMachine"]
+script = ExtResource( 7 )
+
+[node name="Jump_top" type="Node" parent="StateMachine/Jump_grup"]
+script = ExtResource( 8 )
+
+[node name="Jump" type="Node" parent="StateMachine/Jump_grup"]
+script = ExtResource( 2 )
+
+[node name="Jump_fall" type="Node" parent="StateMachine/Jump_grup"]
+script = ExtResource( 9 )
+
+[node name="CornerGrab" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -18 )
+shape = SubResource( 5 )
+disabled = true
+
+[node name="BodyCollisionShape" type="CollisionShape2D" parent="." groups=["player"]]
+position = Vector2( 0, -8 )
+shape = SubResource( 1 )
+
+[node name="Body" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Body"]
+position = Vector2( 8, -16 )
+texture = ExtResource( 1 )
+hframes = 19
+vframes = 4
+
+[node name="GroundRay" type="RayCast2D" parent="Body"]
+position = Vector2( 0, 1 )
+enabled = true
+cast_to = Vector2( 0, 1 )
+collision_mask = 3
+
+[node name="SolidCheck" type="Area2D" parent="Body"]
+collision_layer = 0
+collision_mask = 3
+
+[node name="CornerGrabCheck" type="CollisionShape2D" parent="Body/SolidCheck"]
+position = Vector2( 4.5, -19 )
+shape = SubResource( 6 )
