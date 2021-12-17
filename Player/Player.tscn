@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/Sofa/SofaSpriteSheet.png" type="Texture" id=1]
 [ext_resource path="res://Player/Jump.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Player/Jump_grup.gd" type="Script" id=7]
 [ext_resource path="res://Player/Jump_top.gd" type="Script" id=8]
 [ext_resource path="res://Player/Jump_fall.gd" type="Script" id=9]
+[ext_resource path="res://Player/Jump_glide.gd" type="Script" id=10]
 
 [sub_resource type="Animation" id=2]
 resource_name = "Idle"
@@ -27,6 +28,39 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18 ]
 }
 
+[sub_resource type="Animation" id=7]
+resource_name = "Jump_glide"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 76, 77, 78, 79 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Jump_simple"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 19, 20 ]
+}
+
 [sub_resource type="Animation" id=3]
 length = 0.001
 tracks/0/type = "value"
@@ -40,6 +74,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body/Sprite:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 4 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -77,6 +123,8 @@ one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Idle = SubResource( 2 )
+anims/Jump_glide = SubResource( 7 )
+anims/Jump_simple = SubResource( 8 )
 anims/RESET = SubResource( 3 )
 anims/Run = SubResource( 4 )
 
@@ -102,6 +150,9 @@ script = ExtResource( 2 )
 [node name="Jump_fall" type="Node" parent="StateMachine/Jump_grup"]
 script = ExtResource( 9 )
 
+[node name="Jump_glide" type="Node" parent="StateMachine/Jump_grup"]
+script = ExtResource( 10 )
+
 [node name="CornerGrab" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -18 )
 shape = SubResource( 5 )
@@ -117,7 +168,8 @@ shape = SubResource( 1 )
 position = Vector2( 8, -16 )
 texture = ExtResource( 1 )
 hframes = 19
-vframes = 4
+vframes = 5
+frame = 76
 
 [node name="GroundRay" type="RayCast2D" parent="Body"]
 position = Vector2( 0, 1 )

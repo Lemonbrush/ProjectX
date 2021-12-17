@@ -3,11 +3,8 @@ extends PlayerState
 onready var cornerGrab = owner.get_node("CornerGrab")
 
 var jump_top_trashold = 100.0
-var is_jump_pressed = false
 
 func unhandled_input(event: InputEvent):
-	is_jump_pressed = event.is_action_pressed("jump")
-	
 	if event.is_action_pressed("Attack"):
 		_state_machine.transition_to("Attack", {})
 	else:

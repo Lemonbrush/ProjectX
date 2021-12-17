@@ -14,7 +14,10 @@ func process(_delta):
 	state_check()
 
 func state_check():
-	if abs(player.direction) < 0.01:
+	
+	if player.glide:
+		_state_machine.transition_to("Jump_glide")
+	elif abs(player.direction) < 0.01:
 		_state_machine.transition_to("Idle", {})
 
 func enter(_msg: Dictionary = {}):

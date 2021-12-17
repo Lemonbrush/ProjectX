@@ -29,6 +29,8 @@ var jump_speed 					= -210
 var jump_release				= jump_speed * 0.2
 var jumpTerminationMultiplier	= 3
 var jump_top_speed				= 500
+var jump_glide_speed			= 10
+var is_gliding					= false
 
 var normal_fall 				= 700
 var attack_fall 				= normal_fall * 1.2
@@ -40,6 +42,8 @@ var right						= 0.0
 var up							= 0.0
 var down						= 0.0
 var jump						= false
+var glide						= false
+var is_able_to_glide			= false
 
 var is_grounded					= false
 var is_jumping 					= false
@@ -70,17 +74,24 @@ func velocity_logic(delta):
 
 func gravity_logic(delta):
 	if is_grounded:
+		glide = false
+		is_able_to_glide = false
+		
 		if is_jumping:
 			jump = false
+			is_able_to_glide = false
 			is_jumping = false
 			snap.y = SNAP
 		elif jump && down < 0.01:
 			velocity.y = jump_speed
 			is_jumping = true
+			is_able_to_glide = false
 			is_grounded = false
 			snap.y = SNAP
 	else:
-		if is_jumping:
+		if glide:
+			velocity.y += jump_glide_speed * delta
+		elif is_jumping:
 			if !jump:
 				is_jumping = false
 				if velocity.y < jump_release:
@@ -128,14 +139,24 @@ func unhandled_input(event: InputEvent):
 	elif event.is_action_released("down"):
 		down = 0.0
 		position.y += 1
-	elif event.is_action_pressed("jump") && !jump:
-		jump = true
+	elif event.is_action_pressed("jump"):
+		if is_able_to_glide:
+			 glide = true
+		if !jump && !is_able_to_glide:
+			jump = true
+		else:
+			glide = true
 	elif event.is_action_released("jump"):
 		jump = false
+		
+		if is_jumping && !glide:
+			is_able_to_glide = true
+		else:
+			glide = false
 
 func check_for_deadly_height():
 	if (global_position.y > 1000):
-			emit_signal("died")
+		emit_signal("died")
 
 func check_pass_trough_collision():
 	if (Input.is_action_just_pressed("down") && $GroundRay.is_colliding()):
