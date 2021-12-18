@@ -94,8 +94,6 @@ func gravity_logic(delta):
 			snap.y = SNAP
 	else:
 		if glide:
-			#if velocity.y > jump_glide_speed:
-			#	velocity.y = jump_glide_speed
 			velocity.y += jump_glide_speed * delta
 		elif is_jumping:
 			if !jump:

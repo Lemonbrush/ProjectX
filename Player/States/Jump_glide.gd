@@ -13,9 +13,16 @@ func process(delta):
 func state_check():
 	if !parent.state_check():
 		return
+		
+	var y = player.velocity.y
 	
 	if !player.glide:
-		_state_machine.transition_to("Jump", {})
+		if abs(y) < parent.jump_top_trashold:
+			_state_machine.transition_to("Jump_top", {})
+		elif y > 0.0:
+			_state_machine.transition_to("Jump_fall", {})
+		else:
+			_state_machine.transition_to("Jump", {})
 
 func enter(_msg: Dictionary = {}):
 	player.speed = player.max_run_speed

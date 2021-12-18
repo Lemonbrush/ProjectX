@@ -17,7 +17,7 @@ _global_script_classes=[ {
 "base": "State",
 "class": "PlayerState",
 "language": "GDScript",
-"path": "res://Player/PlayerState.gd"
+"path": "res://Utils/StateMachine/PlayerState.gd"
 }, {
 "base": "Node",
 "class": "State",
