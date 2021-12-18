@@ -1,7 +1,10 @@
 extends KinematicBody2D
 class_name Player
 
-onready var ground_ray 			= $Body/GroundRay
+onready var ground_ray1 		= $Body/GroundRay1
+onready var ground_ray2 		= $Body/GroundRay2
+onready var ground_ray3 		= $Body/GroundRay3
+onready var ray_array			= [ground_ray1, ground_ray2, ground_ray3]
 onready var body 				= $Body
 onready var solidCheck_area 	= $Body/SolidCheck
 onready var coyoteTimer 		= $CoyoteTimer
@@ -25,6 +28,7 @@ var run_acceleration 			= 500
 
 var solid_check        			= 0
 
+var jump_buffer					= 0.5
 var jump_speed 					= -210
 var jump_release				= jump_speed * 0.2
 var jumpTerminationMultiplier	= 3
@@ -90,6 +94,8 @@ func gravity_logic(delta):
 			snap.y = SNAP
 	else:
 		if glide:
+			#if velocity.y > jump_glide_speed:
+			#	velocity.y = jump_glide_speed
 			velocity.y += jump_glide_speed * delta
 		elif is_jumping:
 			if !jump:
@@ -173,8 +179,14 @@ func on_corner_grab_body_exited(_body):
 ############################## Helper Functions ##############################
 
 func ray_ground_update():
-	ground_ray.force_raycast_update()
-	is_ray_ground_detected = ground_ray.is_colliding()
+	var is_colliding = false
+	
+	for ray in ray_array:
+		ray.force_raycast_update()
+		if ray.is_colliding():
+			is_colliding = true
+	
+	is_ray_ground_detected = is_colliding
 
 func facing_direction():
 	if abs(direction) > 0.0:
