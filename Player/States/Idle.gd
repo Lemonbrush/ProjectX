@@ -31,6 +31,11 @@ func state_check():
 			elif y < 0.0:
 				_state_machine.transition_to("Jump", {})
 
-func enter(_msg: Dictionary = {}):
+func enter(msg: Dictionary = {}):
 	player.current_speed = player.max_run_speed
-	animation.play("Idle")
+	
+	if msg.has("do_stop_fall_animation"):
+		animation.play("Land")
+		animation.queue("Idle") 
+	else:
+		animation.play("Idle")

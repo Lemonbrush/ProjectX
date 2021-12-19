@@ -23,9 +23,9 @@ func process(_delta):
 func state_check():
 	if player.is_grounded:
 		if abs(player.direction) < 0.01:
-			_state_machine.transition_to("Idle")
+			_state_machine.transition_to("Idle", { do_stop_fall_animation = true })
 		else:
-			_state_machine.transition_to("Run")
+			_state_machine.transition_to("Run", { do_stop_fall_animation = true })
 	elif player.is_on_floor() && player.down < 0.01:
 		if player.is_on_wall():
 			_state_machine.transition_to("Hang")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Assets/Sofa/SofaSpriteSheet.png" type="Texture" id=1]
 [ext_resource path="res://Player/States/Jump.gd" type="Script" id=2]
@@ -26,6 +26,23 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "Jump_fall"
+length = 0.35
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 114, 115 ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -60,6 +77,38 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 19, 20, 21, 22 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "Jump_top"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 133 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "Land"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 95, 96 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -124,8 +173,11 @@ one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Idle = SubResource( 2 )
+anims/Jump_fall = SubResource( 10 )
 anims/Jump_glide = SubResource( 7 )
 anims/Jump_simple = SubResource( 8 )
+anims/Jump_top = SubResource( 11 )
+anims/Land = SubResource( 9 )
 anims/RESET = SubResource( 3 )
 anims/Run = SubResource( 4 )
 
@@ -169,7 +221,7 @@ shape = SubResource( 1 )
 position = Vector2( 8, -16 )
 texture = ExtResource( 1 )
 hframes = 19
-vframes = 5
+vframes = 8
 frame = 76
 
 [node name="GroundRay1" type="RayCast2D" parent="Body"]
