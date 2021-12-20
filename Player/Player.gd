@@ -1,12 +1,12 @@
 extends KinematicBody2D
 class_name Player
 
-onready var ground_ray1 		= $Body/GroundRay1
-onready var ground_ray2 		= $Body/GroundRay2
-onready var ground_ray3 		= $Body/GroundRay3
+onready var ground_ray1 			= $Body/GroundRay1
+onready var ground_ray2 			= $Body/GroundRay2
+onready var ground_ray3 			= $Body/GroundRay3
 onready var ray_array			= [ground_ray1, ground_ray2, ground_ray3]
 onready var body 				= $Body
-onready var coyoteTimer 		= $CoyoteTimer
+onready var coyoteTimer 			= $CoyoteTimer
 
 signal died
 
@@ -15,9 +15,9 @@ const NO_SNAP 					= 0
 
 var is_ray_ground_detected 		= false
 
-var snap						= Vector2.ZERO
+var snap							= Vector2.ZERO
 
-var gravity 					= 700
+var gravity 						= 700
 var velocity 					= Vector2.ZERO
 var speed						= 0.0
 
@@ -29,31 +29,31 @@ var solid_check        			= 0
 
 var jump_buffer					= 0.5
 var jump_speed 					= -210
-var jump_release				= jump_speed * 0.2
+var jump_release					= jump_speed * 0.2
 var jumpTerminationMultiplier	= 3
 var jump_top_speed				= 100
-var jump_glide_speed			= 50
+var jump_glide_speed				= 50
 var is_gliding					= false
 
-var normal_fall 				= 300
-var attack_fall 				= normal_fall * 1.2
+var normal_fall 					= 300
+var attack_fall 					= normal_fall * 1.2
 var fall_limit 					= normal_fall
 
 var direction					= 0.0
-var left						= 0.0
+var left							= 0.0
 var right						= 0.0
 var up							= 0.0
-var down						= 0.0
-var jump						= false
+var down							= 0.0
+var jump							= false
 var glide						= false
-var is_able_to_glide			= false
+var is_able_to_glide				= false
 
 var is_grounded					= false
 var is_jumping 					= false
 var isPassingThrough 			= false
 var isStateNew 					= true
 
-var isDying 					= false
+var isDying 						= false
 
 ############################## Lifecycle Functions ##############################
 
@@ -105,7 +105,8 @@ func gravity_logic(delta):
 		else:
 			velocity.y += gravity * delta
 	
-	velocity.y = min(velocity.y, fall_limit)
+	var non_zero_gravity = velocity.y if velocity.y != 0 else 1
+	velocity.y = min(non_zero_gravity, fall_limit)
 		
 func collision_logic():
 	velocity = move_and_slide(velocity, Vector2.UP)
