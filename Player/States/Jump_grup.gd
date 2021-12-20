@@ -1,7 +1,5 @@
 extends PlayerState
 
-onready var cornerGrab = owner.get_node("CornerGrab")
-
 var jump_top_trashold = 100.0
 
 func unhandled_input(event: InputEvent):
@@ -11,11 +9,7 @@ func unhandled_input(event: InputEvent):
 		player.unhandled_input(event)
 
 func physics_process(delta: float):
-	if player.solid_check == 0 && player.down <= 0.01:
-		#cornerGrab.disabled = false
-		cornerGrab.position.x = player.direction
 	player.physics_process(delta)
-	#cornerGrab.disabled = true
 
 func process(_delta):
 	player.facing_direction()

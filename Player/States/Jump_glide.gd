@@ -15,7 +15,7 @@ func state_check():
 		return
 		
 	var y = player.velocity.y
-	
+
 	if !player.glide:
 		if abs(y) < parent.jump_top_trashold:
 			_state_machine.transition_to("Jump_top", {})

@@ -6,7 +6,6 @@ onready var ground_ray2 		= $Body/GroundRay2
 onready var ground_ray3 		= $Body/GroundRay3
 onready var ray_array			= [ground_ray1, ground_ray2, ground_ray3]
 onready var body 				= $Body
-onready var solidCheck_area 	= $Body/SolidCheck
 onready var coyoteTimer 		= $CoyoteTimer
 
 signal died
@@ -32,11 +31,11 @@ var jump_buffer					= 0.5
 var jump_speed 					= -210
 var jump_release				= jump_speed * 0.2
 var jumpTerminationMultiplier	= 3
-var jump_top_speed				= 500
-var jump_glide_speed			= 10
+var jump_top_speed				= 100
+var jump_glide_speed			= 50
 var is_gliding					= false
 
-var normal_fall 				= 700
+var normal_fall 				= 300
 var attack_fall 				= normal_fall * 1.2
 var fall_limit 					= normal_fall
 
@@ -59,8 +58,7 @@ var isDying 					= false
 ############################## Lifecycle Functions ##############################
 
 func _ready():
-	solidCheck_area.connect("area_entered", self, "on_corner_grab_body_entered")
-	solidCheck_area.connect("area_exited", self, "on_corner_grab_body_exited")
+	pass
 	
 ############################## State Machine Functions ##############################
 
@@ -91,9 +89,11 @@ func gravity_logic(delta):
 			is_jumping = true
 			is_able_to_glide = false
 			is_grounded = false
-			snap.y = SNAP
+			snap.y = NO_SNAP
 	else:
 		if glide:
+			if velocity.y < 0:
+				velocity.y = 0
 			velocity.y += jump_glide_speed * delta
 		elif is_jumping:
 			if !jump:
@@ -140,9 +140,9 @@ func unhandled_input(event: InputEvent):
 		up = 0.0
 	elif event.is_action_pressed("down") && down <= 0.01:
 		down = event.get_action_strength("down")
+		position.y += 1
 	elif event.is_action_released("down"):
 		down = 0.0
-		position.y += 1
 	elif event.is_action_pressed("jump"):
 		if is_able_to_glide:
 			 glide = true
@@ -165,14 +165,6 @@ func check_for_deadly_height():
 func check_pass_trough_collision():
 	if (Input.is_action_just_pressed("down") && $GroundRay.is_colliding()):
 		position = Vector2(position.x, position.y + 1)
-		
-############################## Actions ##############################
-
-func on_corner_grab_body_entered(_body):
-	solid_check += 1
-
-func on_corner_grab_body_exited(_body):
-	solid_check -= 1
 	
 ############################## Helper Functions ##############################
 

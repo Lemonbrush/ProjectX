@@ -14,7 +14,7 @@ func process(_delta):
 	state_check()
 
 func state_check():
-	if player.is_grounded:
+	if player.is_grounded || player.is_on_wall():
 		if abs(player.direction) > 0.01:
 			_state_machine.transition_to('Run', {})
 	else:
@@ -22,6 +22,9 @@ func state_check():
 			if player.jump:
 				_state_machine.transition_to("Jump", {})
 		else:
+			player.coyoteTimer.wait_time = player.jump_buffer
+			player.coyoteTimer.start()
+			
 			var y = player.velocity.y
 			
 			if abs(y) < player.jump_top_speed:

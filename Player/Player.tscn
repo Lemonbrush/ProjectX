@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Assets/Sofa/SofaSpriteSheet.png" type="Texture" id=1]
 [ext_resource path="res://Player/States/Jump.gd" type="Script" id=2]
@@ -155,14 +155,8 @@ tracks/0/keys = {
 "values": [ 57, 58, 59, 60, 61, 62 ]
 }
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 4, 0.5 )
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4, 8 )
-
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 0.5, 0.5 )
 
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 3
@@ -206,11 +200,6 @@ script = ExtResource( 9 )
 [node name="Jump_glide" type="Node" parent="StateMachine/Jump_grup"]
 script = ExtResource( 10 )
 
-[node name="CornerGrab" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -18 )
-shape = SubResource( 5 )
-disabled = true
-
 [node name="BodyCollisionShape" type="CollisionShape2D" parent="." groups=["player"]]
 position = Vector2( 0, -8 )
 shape = SubResource( 1 )
@@ -241,11 +230,3 @@ position = Vector2( 4, 1 )
 enabled = true
 cast_to = Vector2( 0, 1 )
 collision_mask = 3
-
-[node name="SolidCheck" type="Area2D" parent="Body"]
-collision_layer = 0
-collision_mask = 3
-
-[node name="CornerGrabCheck" type="CollisionShape2D" parent="Body/SolidCheck"]
-position = Vector2( 4.5, -19 )
-shape = SubResource( 6 )
