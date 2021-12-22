@@ -5,6 +5,9 @@ onready var ground_ray1 			= $Body/GroundRay1
 onready var ground_ray2 			= $Body/GroundRay2
 onready var ground_ray3 			= $Body/GroundRay3
 onready var ray_array			= [ground_ray1, ground_ray2, ground_ray3]
+
+onready var climb_area			= $Body/ClimbArea
+
 onready var body 				= $Body
 onready var coyoteTimer 			= $CoyoteTimer
 
@@ -24,8 +27,12 @@ var speed						= 0.0
 var current_speed 				= 0.0
 var max_run_speed 				= 130
 var run_acceleration 			= 500
+var climb_speed					= 50
 
 var solid_check        			= 0
+
+var is_able_to_climb				= false
+var climbing_area_position_x		= 0.0
 
 var jump_buffer					= 0.5
 var jump_speed 					= -210
@@ -48,17 +55,16 @@ var jump							= false
 var glide						= false
 var is_able_to_glide				= false
 
+var is_climbing					= false
 var is_grounded					= false
 var is_jumping 					= false
-var isPassingThrough 			= false
-var isStateNew 					= true
-
-var isDying 						= false
+var is_dying 					= false
 
 ############################## Lifecycle Functions ##############################
 
 func _ready():
-	pass
+	climb_area.connect("area_entered", self, "on_climb_area_entered")
+	climb_area.connect("area_exited", self, "on_climb_area_exited")
 	
 ############################## State Machine Functions ##############################
 
@@ -75,7 +81,13 @@ func velocity_logic(delta):
 	velocity = velocity.move_toward(moveVector, run_acceleration * delta)
 
 func gravity_logic(delta):
-	if is_grounded:
+	if is_climbing && jump:
+		velocity.y = jump_speed
+		is_jumping = true
+		is_able_to_glide = false
+		is_grounded = false
+		snap.y = NO_SNAP
+	elif is_grounded:
 		glide = false
 		is_able_to_glide = false
 		
@@ -105,6 +117,8 @@ func gravity_logic(delta):
 		else:
 			velocity.y += gravity * delta
 	
+	is_climbing = false
+		
 	var non_zero_gravity = velocity.y if velocity.y != 0 else 1
 	velocity.y = min(non_zero_gravity, fall_limit)
 		
@@ -137,11 +151,16 @@ func unhandled_input(event: InputEvent):
 		left = 0.0
 	elif event.is_action_pressed("up") && up <= 0.01:
 		up = event.get_action_strength("up")
+		
+		if is_able_to_climb:
+			is_climbing = true
+		
 	elif event.is_action_released("up"):
 		up = 0.0
 	elif event.is_action_pressed("down") && down <= 0.01:
 		down = event.get_action_strength("down")
 		position.y += 1
+		
 	elif event.is_action_released("down"):
 		down = 0.0
 	elif event.is_action_pressed("jump"):
@@ -149,6 +168,7 @@ func unhandled_input(event: InputEvent):
 			 glide = true
 		if !jump && !is_able_to_glide:
 			jump = true
+			print("is_able_to_glide")
 		else:
 			glide = true
 	elif event.is_action_released("jump"):
@@ -160,12 +180,21 @@ func unhandled_input(event: InputEvent):
 			glide = false
 
 func check_for_deadly_height():
-	if (global_position.y > 1000):
+	if global_position.y > 1000:
 		emit_signal("died")
 
 func check_pass_trough_collision():
-	if (Input.is_action_just_pressed("down") && $GroundRay.is_colliding()):
+	if Input.is_action_just_pressed("down") && $GroundRay.is_colliding():
 		position = Vector2(position.x, position.y + 1)
+		
+############################## Actions #######################################
+
+func on_climb_area_entered(area):
+	is_able_to_climb = true
+	climbing_area_position_x = area.global_position.x
+	
+func on_climb_area_exited(_area):
+	is_able_to_climb = false
 	
 ############################## Helper Functions ##############################
 

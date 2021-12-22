@@ -15,14 +15,13 @@ func process(_delta):
 	player.facing_direction()
 
 func state_check():
-	if player.is_grounded:
+	if player.is_able_to_climb && (player.up || player.down):
+		_state_machine.transition_to('Climb', {})
+	elif player.is_grounded:
 		if abs(player.direction) < 0.01:
 			_state_machine.transition_to("Idle", { do_stop_fall_animation = true })
 		else:
 			_state_machine.transition_to("Run", { do_stop_fall_animation = true })
-	elif player.is_on_floor() && player.down < 0.01:
-		if player.is_on_wall():
-			_state_machine.transition_to("Hang")
 	else:												# Not grounded
 		if player.jump && !player.is_jumping && player.coyoteTimer.time_left > 0.0:
 			player.velocity.y = player.jump_speed

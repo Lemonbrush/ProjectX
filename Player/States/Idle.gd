@@ -14,7 +14,9 @@ func process(_delta):
 	state_check()
 
 func state_check():
-	if player.is_grounded || player.is_on_wall():
+	if player.is_able_to_climb && (player.up || player.down):
+		_state_machine.transition_to('Climb', {})
+	elif player.is_grounded || player.is_on_wall():
 		if abs(player.direction) > 0.01:
 			_state_machine.transition_to('Run', {})
 	else:

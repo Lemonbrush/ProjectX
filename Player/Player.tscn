@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Assets/Sofa/SofaSpriteSheet.png" type="Texture" id=1]
 [ext_resource path="res://Player/States/Jump.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Player/States/Jump_top.gd" type="Script" id=8]
 [ext_resource path="res://Player/States/Jump_fall.gd" type="Script" id=9]
 [ext_resource path="res://Player/States/Jump_glide.gd" type="Script" id=10]
+[ext_resource path="res://Player/Climb.gd" type="Script" id=11]
 
 [sub_resource type="Animation" id=2]
 resource_name = "Idle"
@@ -158,6 +159,9 @@ tracks/0/keys = {
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4, 8 )
 
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 4, 3 )
+
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 3
 script = ExtResource( 3 )
@@ -200,6 +204,9 @@ script = ExtResource( 9 )
 [node name="Jump_glide" type="Node" parent="StateMachine/Jump_grup"]
 script = ExtResource( 10 )
 
+[node name="Climb" type="Node" parent="StateMachine"]
+script = ExtResource( 11 )
+
 [node name="BodyCollisionShape" type="CollisionShape2D" parent="." groups=["player"]]
 position = Vector2( 0, -8 )
 shape = SubResource( 1 )
@@ -230,3 +237,12 @@ position = Vector2( 4, 1 )
 enabled = true
 cast_to = Vector2( 0, 1 )
 collision_mask = 3
+
+[node name="ClimbArea" type="Area2D" parent="Body"]
+visible = false
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/ClimbArea"]
+position = Vector2( 0, -5 )
+shape = SubResource( 12 )
