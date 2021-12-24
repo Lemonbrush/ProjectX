@@ -39,7 +39,7 @@ func enter(_msg: Dictionary = {}):
 	player.is_able_to_glide = false
 	player.global_position.x = player.climbing_area_position_x
 	vertical_move_direction = Vector2.ZERO
-	animation.play("Jump_simple")
+	animation.play("Ladder_climb")
 
 func exit():
 	player.up = 0.0
@@ -48,9 +48,13 @@ func exit():
 func get_move_direction():
 	if Input.is_action_pressed("up"):
 		vertical_move_direction.y -= Input.get_action_strength("up")
+		animation.play()
 	elif Input.is_action_just_released("up"):
 		vertical_move_direction.y = 0.0
+		animation.stop()
 	elif Input.is_action_pressed("down"):
+		animation.play()
 		vertical_move_direction.y += Input.get_action_strength("down")
 	elif Input.is_action_just_released("down"):
+		animation.stop()
 		vertical_move_direction.y = 0.0
