@@ -26,4 +26,6 @@ func state_check():
 
 func enter(_msg: Dictionary = {}):
 	player.speed = player.max_run_speed
-	animation.play("Jump_glide")
+	
+	animation.play("Glide_start") 
+	animation.queue("Jump_glide")

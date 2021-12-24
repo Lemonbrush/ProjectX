@@ -7,6 +7,7 @@ onready var ground_ray3 			= $Body/GroundRay3
 onready var ray_array			= [ground_ray1, ground_ray2, ground_ray3]
 
 onready var climb_area			= $Body/ClimbArea
+onready var glider_area			= $Body/Glider
 
 onready var body 				= $Body
 onready var coyoteTimer 			= $CoyoteTimer
@@ -28,6 +29,7 @@ var current_speed 				= 0.0
 var max_run_speed 				= 130
 var run_acceleration 			= 500
 var climb_speed					= 50
+var y_velocity_boost				= 0.0
 
 var solid_check        			= 0
 
@@ -65,6 +67,9 @@ var is_dying 					= false
 func _ready():
 	climb_area.connect("area_entered", self, "on_climb_area_entered")
 	climb_area.connect("area_exited", self, "on_climb_area_exited")
+	
+	glider_area.connect("area_entered", self, "on_glide_area_entered")
+	glider_area.connect("area_exited", self, "on_glide_area_exited")
 	
 ############################## State Machine Functions ##############################
 
@@ -106,7 +111,7 @@ func gravity_logic(delta):
 		if glide:
 			if velocity.y < 0:
 				velocity.y = 0
-			velocity.y += jump_glide_speed * delta
+			velocity.y += (jump_glide_speed - y_velocity_boost) * delta
 		elif is_jumping:
 			if !jump:
 				is_jumping = false
@@ -195,6 +200,12 @@ func on_climb_area_entered(area):
 	
 func on_climb_area_exited(_area):
 	is_able_to_climb = false
+	
+func on_glide_area_entered(area):
+	y_velocity_boost = 6000
+	
+func on_glide_area_exited(area):
+	y_velocity_boost = 0.0
 	
 ############################## Helper Functions ##############################
 
