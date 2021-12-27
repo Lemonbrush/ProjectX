@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Assets/Sofa/SofaSpriteSheet.png" type="Texture" id=1]
 [ext_resource path="res://Player/States/Jump.gd" type="Script" id=2]
@@ -15,7 +15,8 @@
 
 [sub_resource type="Animation" id=16]
 resource_name = "Attack"
-length = 0.6
+length = 0.35
+step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body/Sprite:frame")
 tracks/0/interp = 1
@@ -23,10 +24,27 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"times": PoolRealArray( 0, 0.1, 0.15, 0.2, 0.25, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 39, 40, 41, 42, 43, 44 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "activate_attack_area"
+}, {
+"args": [  ],
+"method": "disable_attack_area"
+} ]
 }
 
 [sub_resource type="Animation" id=14]
@@ -211,11 +229,17 @@ tracks/0/keys = {
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4, 8 )
 
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 4, 8 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 8.5, 5 )
+
 [sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 8, 3 )
 
-[sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 4, 3 )
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 2.5, 8 )
 
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 3
@@ -269,6 +293,7 @@ script = ExtResource( 11 )
 script = ExtResource( 12 )
 
 [node name="BodyCollisionShape" type="CollisionShape2D" parent="." groups=["player"]]
+visible = false
 position = Vector2( 0, -8 )
 shape = SubResource( 1 )
 
@@ -282,24 +307,46 @@ vframes = 10
 frame = 76
 
 [node name="GroundRay1" type="RayCast2D" parent="Body"]
+visible = false
 position = Vector2( -4, 1 )
 enabled = true
 cast_to = Vector2( 0, 1 )
 collision_mask = 3
 
 [node name="GroundRay2" type="RayCast2D" parent="Body"]
+visible = false
 position = Vector2( 0, 1 )
 enabled = true
 cast_to = Vector2( 0, 1 )
 collision_mask = 3
 
 [node name="GroundRay3" type="RayCast2D" parent="Body"]
+visible = false
 position = Vector2( 4, 1 )
 enabled = true
 cast_to = Vector2( 0, 1 )
 collision_mask = 3
 
+[node name="HazardArea" type="Area2D" parent="Body"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/HazardArea"]
+position = Vector2( 0, -8 )
+shape = SubResource( 12 )
+
+[node name="AttackArea" type="Area2D" parent="Body"]
+visible = false
+position = Vector2( 16, -10 )
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/AttackArea"]
+position = Vector2( -0.5, 1 )
+shape = SubResource( 17 )
+disabled = true
+
 [node name="Glider" type="Area2D" parent="Body"]
+visible = false
 collision_layer = 8
 collision_mask = 8
 
@@ -313,5 +360,5 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body/ClimbArea"]
-position = Vector2( 0, -5 )
-shape = SubResource( 12 )
+position = Vector2( 0.5, -5 )
+shape = SubResource( 18 )

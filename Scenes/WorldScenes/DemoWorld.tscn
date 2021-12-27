@@ -1,9 +1,11 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/DemoWorld1.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/WorldScenes/Camera2D.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/PassThroughBody.tscn" type="PackedScene" id=4]
+[ext_resource path="res://WorldObjects/Barrel/Barrel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://BaseLevel.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 12, 7 )
@@ -48,29 +50,38 @@ extents = Vector2( 512, 8 )
 extents = Vector2( 7, 7 )
 
 [sub_resource type="RectangleShape2D" id=15]
-extents = Vector2( 7.5, 43 )
+extents = Vector2( 7.5, 41 )
 
 [sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 10, 58.5 )
 
 [node name="DemoWorld" type="Node2D"]
 position = Vector2( -3, -62 )
+script = ExtResource( 6 )
 
 [node name="DemoWorld1" type="Sprite" parent="."]
 position = Vector2( -20, -191 )
 texture = ExtResource( 2 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -413, -1 )
+[node name="Barrels" type="Node" parent="."]
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2( 1, -7 )
-current = true
-smoothing_enabled = true
-smoothing_speed = 3.0
-editor_draw_drag_margin = true
-script = ExtResource( 3 )
-backgroundColor = Color( 0.694118, 0.886275, 1, 1 )
+[node name="Barrel" parent="Barrels" instance=ExtResource( 5 )]
+position = Vector2( -45, -384 )
+
+[node name="Barrel2" parent="Barrels" instance=ExtResource( 5 )]
+position = Vector2( 132, -308 )
+
+[node name="Barrel4" parent="Barrels" instance=ExtResource( 5 )]
+position = Vector2( 267, -67 )
+
+[node name="Barrel5" parent="Barrels" instance=ExtResource( 5 )]
+position = Vector2( -136, -130 )
+
+[node name="Barrel6" parent="Barrels" instance=ExtResource( 5 )]
+position = Vector2( -154, -130 )
+
+[node name="Barrel3" parent="Barrels" instance=ExtResource( 5 )]
+position = Vector2( 262, -385 )
 
 [node name="Collisions" type="Node" parent="."]
 
@@ -184,8 +195,8 @@ one_way_collision = true
 
 [node name="PassThroughBody" parent="Collisions/Solid" instance=ExtResource( 4 )]
 position = Vector2( -515, -41 )
-collision_layer = 1
-collision_mask = 1
+collision_layer = 17
+collision_mask = 17
 
 [node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody" index="0"]
 position = Vector2( 496, -8 )
@@ -211,7 +222,7 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder2/Area2D"]
-position = Vector2( -0.5, -11.5 )
+position = Vector2( -0.5, -10.5 )
 shape = SubResource( 15 )
 one_way_collision = true
 
@@ -243,6 +254,18 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
 position = Vector2( -278, -73 )
 shape = SubResource( 18 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -413, -1 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( 1, -7 )
+current = true
+smoothing_enabled = true
+smoothing_speed = 3.0
+editor_draw_drag_margin = true
+script = ExtResource( 3 )
+backgroundColor = Color( 0.694118, 0.886275, 1, 1 )
 
 [editable path="Collisions/PassTrough/PassThroughBody4"]
 [editable path="Collisions/PassTrough/PassThroughBody5"]

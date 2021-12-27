@@ -8,6 +8,7 @@ onready var ray_array			= [ground_ray1, ground_ray2, ground_ray3]
 
 onready var climb_area			= $Body/ClimbArea
 onready var glider_area			= $Body/Glider
+onready var attack_area			= $Body/AttackArea/CollisionShape2D
 
 onready var body 				= $Body
 onready var coyoteTimer 			= $CoyoteTimer
@@ -201,12 +202,18 @@ func on_climb_area_entered(area):
 func on_climb_area_exited(_area):
 	is_able_to_climb = false
 	
-func on_glide_area_entered(area):
+func on_glide_area_entered(_area):
 	y_velocity_boost = 6000
 	
-func on_glide_area_exited(area):
+func on_glide_area_exited(_area):
 	y_velocity_boost = 0.0
 	
+func activate_attack_area():
+	attack_area.disabled = false
+
+func disable_attack_area():
+	attack_area.disabled = true
+
 ############################## Helper Functions ##############################
 
 func ray_ground_update():

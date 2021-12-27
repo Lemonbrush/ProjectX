@@ -25,7 +25,7 @@ func gravity_logic(delta):
 		player.velocity.y += player.gravity * delta
 	player.velocity.y = min(player.velocity.y, player.fall_limit)
 
-func state_check(anim: String = ''):
+func state_check(_anim: String = ''):
 	if player.is_grounded:
 		_state_machine.transition_to("Idle", {})
 	else:
@@ -43,7 +43,7 @@ func state_check(anim: String = ''):
 		elif y < 0.0:
 			_state_machine.transition_to("Jump")
 
-func enter(msg: Dictionary = {}):
+func enter(_msg: Dictionary = {}):
 	animation.play("Attack")
 	set_impulse(120, 5 * 60)
 	animation.connect("animation_finished", self, "state_check")
