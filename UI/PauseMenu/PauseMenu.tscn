@@ -1,7 +1,12 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://UI/PauseMenu/PauseMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Book.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Pages/page_icon.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Pages/2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Pages/3.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Pages/1.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Pages/locked_page.png" type="Texture" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "appear"
@@ -35,6 +40,8 @@ tracks/1/keys = {
 [node name="PauseMenu" type="CanvasLayer"]
 pause_mode = 2
 script = ExtResource( 1 )
+all_pages = [ ExtResource( 6 ), ExtResource( 4 ), ExtResource( 5 ) ]
+lockerd_page = ExtResource( 7 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "appear"
@@ -50,7 +57,36 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="MarginContainer"]
 margin_right = 480.0
 margin_bottom = 270.0
-color = Color( 0.0823529, 0.0823529, 0.0823529, 0.309804 )
+color = Color( 0.0823529, 0.0823529, 0.0823529, 0 )
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer"]
+margin_right = 480.0
+margin_bottom = 270.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/MarginContainer2"]
+visible = false
+margin_right = 480.0
+margin_bottom = 270.0
+texture_normal = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/MarginContainer2"]
+margin_right = 480.0
+margin_bottom = 14.0
+size_flags_vertical = 2
+
+[node name="ItemList" type="ItemList" parent="MarginContainer/MarginContainer2/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 473.0
+margin_bottom = 7.0
+rect_clip_content = false
+items = [ "Item 0", ExtResource( 3 ), false, "Item 1", ExtResource( 3 ), false ]
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
 margin_right = 480.0
@@ -81,7 +117,7 @@ margin_bottom = 106.0
 size_flags_vertical = 4
 text = "<-"
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/BookContainer/HBoxContainer"]
+[node name="Pages" type="TextureRect" parent="MarginContainer/MarginContainer/BookContainer/HBoxContainer"]
 margin_left = 29.0
 margin_right = 318.0
 margin_bottom = 192.0
@@ -98,7 +134,6 @@ margin_top = 86.0
 margin_right = 347.0
 margin_bottom = 106.0
 size_flags_vertical = 4
-button_mask = 0
 text = "->"
 
 [node name="Cancel" type="Button" parent="MarginContainer/MarginContainer"]

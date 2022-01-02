@@ -40,7 +40,12 @@ _global_script_class_icons={
 
 config/name="Kissies"
 run/main_scene="res://Scenes/WorldScenes/DemoWorld.tscn"
+config/use_custom_user_dir=true
 config/icon="res://icon.png"
+
+[autoload]
+
+FileManager="*res://File_manager.gd"
 
 [display]
 
@@ -127,6 +132,7 @@ pause_menu={
 2d_physics/layer_2="PASS_THROUGH"
 2d_physics/layer_3="LADDERS"
 2d_physics/layer_5="DISTRACTABLES"
+2d_physics/layer_6="COLLECTABLES"
 
 [physics]
 
