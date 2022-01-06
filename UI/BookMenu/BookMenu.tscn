@@ -1,0 +1,147 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/Book.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Pages/page_icon.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Pages/2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Pages/3.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Pages/locked_page.png" type="Texture" id=5]
+[ext_resource path="res://UI/BookMenu/BookMenu.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Pages/1.png" type="Texture" id=7]
+
+[sub_resource type="Animation" id=1]
+resource_name = "appear"
+length = 0.2
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("MarginContainer/ColorRect:color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.0823529, 0.0823529, 0.0823529, 0 ), Color( 0.0823529, 0.0823529, 0.0823529, 0.309804 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MarginContainer/MarginContainer:rect_position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.08, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -200 ), Vector2( 0, -10 ), Vector2( 0, 0 ) ]
+}
+
+[node name="BookMenu" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 6 )
+all_pages = [ ExtResource( 7 ), ExtResource( 3 ), ExtResource( 4 ) ]
+lockerd_page = ExtResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "appear"
+anims/appear = SubResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+margin_right = 480.0
+margin_bottom = 270.0
+color = Color( 0.0823529, 0.0823529, 0.0823529, 0.294314 )
+
+[node name="ProgressBar" type="MarginContainer" parent="MarginContainer"]
+visible = false
+margin_right = 480.0
+margin_bottom = 270.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ProgressBar"]
+visible = false
+margin_right = 480.0
+margin_bottom = 270.0
+texture_normal = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/ProgressBar"]
+margin_right = 480.0
+margin_bottom = 14.0
+size_flags_vertical = 2
+
+[node name="ItemList" type="ItemList" parent="MarginContainer/ProgressBar/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 473.0
+margin_bottom = 7.0
+rect_clip_content = false
+items = [ "Item 0", ExtResource( 2 ), false, "Item 1", ExtResource( 2 ), false ]
+
+[node name="GeneralContainer" type="MarginContainer" parent="MarginContainer"]
+margin_right = 480.0
+margin_bottom = 270.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 10
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 10
+
+[node name="BookContainer" type="PanelContainer" parent="MarginContainer/GeneralContainer"]
+margin_left = 59.0
+margin_top = 32.0
+margin_right = 420.0
+margin_bottom = 238.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/GeneralContainer/BookContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 354.0
+margin_bottom = 199.0
+
+[node name="LeftArrow" type="Button" parent="MarginContainer/GeneralContainer/BookContainer/HBoxContainer"]
+margin_top = 86.0
+margin_right = 25.0
+margin_bottom = 106.0
+size_flags_vertical = 4
+text = "<-"
+
+[node name="Pages" type="TextureRect" parent="MarginContainer/GeneralContainer/BookContainer/HBoxContainer"]
+margin_left = 29.0
+margin_right = 318.0
+margin_bottom = 192.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightArrow" type="Button" parent="MarginContainer/GeneralContainer/BookContainer/HBoxContainer"]
+margin_left = 322.0
+margin_top = 86.0
+margin_right = 347.0
+margin_bottom = 106.0
+size_flags_vertical = 4
+text = "->"
+
+[node name="Cancel" type="Button" parent="MarginContainer/GeneralContainer"]
+margin_left = 406.0
+margin_top = 240.0
+margin_right = 460.0
+margin_bottom = 260.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Cancel"

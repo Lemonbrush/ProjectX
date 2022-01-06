@@ -25,8 +25,6 @@ func save_page(page_num):
 		file.store_var(saved_pages)
 		file.close()
 	
-	print("File saved")
-	
 func get_pages():
 	var file = File.new()
 	if file.file_exists(save_path):
@@ -35,7 +33,6 @@ func get_pages():
 			var player_data = file.get_var()
 			file.close()
 			return player_data
-			print("File read - ", player_data.value)
 	
 	var empty_data = {
 		"unlocked_pages" : []
