@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/DemoWorld1.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=9]
 [ext_resource path="res://Shaders/StarsShader.tres" type="Shader" id=10]
+[ext_resource path="res://Scenes/WorldScenes/EventManager.gd" type="Script" id=11]
 
 [sub_resource type="Environment" id=30]
 background_mode = 4
@@ -128,6 +129,9 @@ environment = SubResource( 30 )
 [node name="DemoWorld1" type="Sprite" parent="."]
 position = Vector2( -20, -191 )
 texture = ExtResource( 2 )
+
+[node name="EventManager" type="Node" parent="."]
+script = ExtResource( 11 )
 
 [node name="Destructables" type="Node" parent="."]
 
@@ -485,13 +489,9 @@ anims/open_transition = SubResource( 34 )
 [node name="Collectables" type="Node" parent="."]
 
 [node name="Page" parent="Collectables" instance=ExtResource( 7 )]
-position = Vector2( 61, -652 )
+position = Vector2( 61, -653 )
+eventManagerNodePath = NodePath("../../EventManager")
 page_number = 1
-
-[node name="Page2" parent="Collectables" instance=ExtResource( 7 )]
-visible = false
-position = Vector2( -230, -169 )
-page_number = 2
 
 [node name="Lighting" type="Node" parent="."]
 
@@ -518,8 +518,6 @@ texture = ExtResource( 8 )
 color = Color( 1, 1, 1, 0.431373 )
 energy = 0.7
 mode = 2
-
-[node name="EventListener" type="Node2D" parent="."]
 
 [editable path="Collisions/PassTrough/PassThroughBody4"]
 [editable path="Collisions/PassTrough/PassThroughBody5"]
@@ -551,3 +549,4 @@ mode = 2
 [editable path="Collisions/Solid/PassThroughBody3"]
 [editable path="Collisions/Solid/PassThroughBody4"]
 [editable path="Collisions/Solid/PassThroughBody2"]
+[editable path="Collectables/Page"]

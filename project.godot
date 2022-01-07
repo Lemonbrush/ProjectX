@@ -9,6 +9,16 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "EventManager",
+"language": "GDScript",
+"path": "res://Scenes/WorldScenes/EventManager.gd"
+}, {
+"base": "Node2D",
+"class": "EventManagerProtocol",
+"language": "GDScript",
+"path": "res://Utils/EventManagerProtocol.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
@@ -30,6 +40,8 @@ _global_script_classes=[ {
 "path": "res://Utils/StateMachine/StateMachine.gd"
 } ]
 _global_script_class_icons={
+"EventManager": "",
+"EventManagerProtocol": "",
 "Player": "",
 "PlayerState": "",
 "State": "",
