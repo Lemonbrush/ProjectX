@@ -9,7 +9,7 @@ func _ready():
 	exit_button.connect("pressed", self, "on_exit_pressed")
 	
 func on_play_pressed():
-	get_tree().change_scene("res://Scenes/WorldScenes/DemoWorld.tscn")
+	get_tree().change_scene("res://Levels/Demo_world/DemoWorld.tscn")
 	
 func on_exit_pressed():
 	get_tree().quit()
