@@ -1,7 +1,7 @@
 extends Node
 
-var SAVE_DIR = "res://saves/"
-var save_path = SAVE_DIR + "save.tres"
+var SAVE_DIR = "res://Saves/"
+var save_path = SAVE_DIR + "Save.tres"
 
 func save_page(page_num):
 	var saved_pages = get_pages()

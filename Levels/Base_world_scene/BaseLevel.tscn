@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://BaseLevel.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/WorldScenes/Camera2D.gd" type="Script" id=3]
+[ext_resource path="res://Levels/Base_world_scene/BaseLevel.gd" type="Script" id=1]
+[ext_resource path="res://WorldObjects/Camera/Camera2D.gd" type="Script" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
 
 [node name="BaseLevel" type="Node"]

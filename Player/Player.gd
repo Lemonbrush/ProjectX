@@ -229,3 +229,9 @@ func ray_ground_update():
 func facing_direction():
 	if abs(direction) > 0.0:
 		body.scale.x = sign(direction)
+
+func pause_level():
+	get_tree().paused = true 
+	
+func unpouse_level():
+	get_tree().paused = false

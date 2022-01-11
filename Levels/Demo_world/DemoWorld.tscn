@@ -1,16 +1,66 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=42 format=2]
 
-[ext_resource path="res://Utils/EventManager/EventManager.gd" type="Script" id=1]
+[ext_resource path="res://Shaders/RoundTransitionShader.tres" type="Shader" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=3]
 [ext_resource path="res://WorldObjects/Page/Page.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/PassThroughBody.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Shaders/StarsShader.tres" type="Shader" id=7]
+[ext_resource path="res://WorldObjects/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=6]
+[ext_resource path="res://WorldObjects/Camera/Camera2D.gd" type="Script" id=7]
 [ext_resource path="res://WorldObjects/Barrel/Barrel.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/DemoWorld1.png" type="Texture" id=9]
-[ext_resource path="res://BaseLevel.gd" type="Script" id=10]
-[ext_resource path="res://Scenes/WorldScenes/Camera2D.gd" type="Script" id=11]
+[ext_resource path="res://Levels/Base_world_scene/BaseLevel.gd" type="Script" id=10]
+[ext_resource path="res://Levels/Demo_world/LoveGate/Gates.tscn" type="PackedScene" id=12]
+
+[sub_resource type="Animation" id=35]
+resource_name = "Gate_opening_cut_scene"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1, 3.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -120 ), Vector2( 0, -120 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Gates")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "on_open_gates_call"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Player")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "pause_level"
+}, {
+"args": [  ],
+"method": "unpouse_level"
+} ]
+}
+
+[sub_resource type="Animation" id=34]
+resource_name = "open_transition"
 
 [sub_resource type="Environment" id=30]
 background_mode = 4
@@ -96,42 +146,32 @@ extents = Vector2( 7.5, 41 )
 extents = Vector2( 10, 58.5 )
 
 [sub_resource type="ShaderMaterial" id=33]
-shader = ExtResource( 7 )
+shader = ExtResource( 1 )
 shader_param/target = Vector2( 0.5, 0.5 )
 shader_param/intensity = null
 shader_param/color = null
 
-[sub_resource type="Animation" id=34]
-resource_name = "open_transition"
-tracks/0/type = "method"
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [ false ],
-"method": "visual_transition_open"
-} ]
-}
-
 [node name="DemoWorld" type="Node2D"]
 position = Vector2( -3, -62 )
 script = ExtResource( 10 )
-shader_colorRect_path = NodePath("CanvasLayer/CircleTransition")
+shader_colorRect_path = NodePath("IntroAnimationShader/CircleTransition")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+pause_mode = 2
+autoplay = "open_transition"
+anims/Gate_opening_cut_scene = SubResource( 35 )
+anims/open_transition = SubResource( 34 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 30 )
 
+[node name="Gates" parent="." groups=["gates"] instance=ExtResource( 12 )]
+pause_mode = 2
+position = Vector2( -1, -27 )
+
 [node name="DemoWorld1" type="Sprite" parent="."]
 position = Vector2( -20, -191 )
 texture = ExtResource( 9 )
-
-[node name="EventManager" type="Node" parent="."]
-script = ExtResource( 1 )
 
 [node name="Destructables" type="Node" parent="."]
 
@@ -451,9 +491,9 @@ collision_mask = 8
 position = Vector2( -278, -73 )
 shape = SubResource( 18 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="IntroAnimationShader" type="CanvasLayer" parent="."]
 
-[node name="CircleTransition" type="ColorRect" parent="CanvasLayer"]
+[node name="CircleTransition" type="ColorRect" parent="IntroAnimationShader"]
 material = SubResource( 33 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -461,9 +501,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Tween" type="Tween" parent="CanvasLayer"]
+[node name="Tween" type="Tween" parent="IntroAnimationShader"]
 
-[node name="Player" parent="." instance=ExtResource( 5 )]
+[node name="Player" parent="." groups=["player"] instance=ExtResource( 5 )]
 position = Vector2( -413, -1 )
 
 [node name="Light2D2" type="Light2D" parent="Player"]
@@ -473,24 +513,10 @@ scale = Vector2( 0.143938, 0.197316 )
 texture = ExtResource( 2 )
 energy = 0.7
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2( 1, -7 )
-current = true
-smoothing_enabled = true
-smoothing_speed = 3.0
-editor_draw_drag_margin = true
-script = ExtResource( 11 )
-backgroundColor = Color( 0.65098, 0.85098, 1, 1 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "open_transition"
-anims/open_transition = SubResource( 34 )
-
 [node name="Collectables" type="Node" parent="."]
 
 [node name="Page" parent="Collectables" instance=ExtResource( 4 )]
-position = Vector2( 61, -653 )
-eventManagerNodePath = NodePath("../../EventManager")
+position = Vector2( -320, -88 )
 page_number = 1
 
 [node name="Lighting" type="Node" parent="."]
@@ -519,6 +545,17 @@ color = Color( 1, 1, 1, 0.431373 )
 energy = 0.7
 mode = 2
 
+[node name="Camera2D" type="Camera2D" parent="."]
+pause_mode = 2
+position = Vector2( -413, -12 )
+current = true
+smoothing_enabled = true
+smoothing_speed = 3.0
+editor_draw_drag_margin = true
+script = ExtResource( 7 )
+backgroundColor = Color( 0.65098, 0.85098, 1, 1 )
+
+[editable path="Gates"]
 [editable path="Collisions/PassTrough/PassThroughBody4"]
 [editable path="Collisions/PassTrough/PassThroughBody5"]
 [editable path="Collisions/PassTrough/PassThroughBody7"]

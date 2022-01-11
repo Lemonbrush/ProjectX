@@ -1,9 +1,11 @@
-extends EventManagerProtocol
+extends Node2D
+
+signal page_collected
 
 export(int) var page_number
 
 onready var file_manager		= $"/root/FileManager"
-onready var area2d				= $Area2D
+onready var area2d			= $Area2D
 
 func _ready():
 	for page in file_manager.get_pages().unlocked_pages:
@@ -15,5 +17,5 @@ func _ready():
 
 func on_area_entered(_body):
 	file_manager.save_page(page_number)
-	registerEvent("on_page_collected")
+	emit_signal("page_collected")
 	queue_free()
