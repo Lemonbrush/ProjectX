@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Shaders/RoundTransitionShader.tres" type="Shader" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.gd" type="Script" id=10]
 [ext_resource path="res://Assets/Decorations/GrassDecorationsSheet.png" type="Texture" id=11]
 [ext_resource path="res://Levels/Demo_world/LoveGate/Gates.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/Decorations/Resources/dancing_flowers.tres" type="Texture" id=13]
+[ext_resource path="res://Assets/BackgroundGradients/BackgroundGradient1.png" type="Texture" id=14]
 
 [sub_resource type="Animation" id=35]
 resource_name = "Gate_opening_cut_scene"
@@ -559,6 +561,20 @@ shader_param/color = null
 28/shape_one_way_margin = 0.0
 28/shapes = [  ]
 28/z_index = 0
+29/name = "dancing_flowers.tres 29"
+29/texture = ExtResource( 13 )
+29/tex_offset = Vector2( 0, 0 )
+29/modulate = Color( 1, 1, 1, 1 )
+29/region = Rect2( 0, 0, 16, 16 )
+29/tile_mode = 0
+29/occluder_offset = Vector2( 0, 0 )
+29/navigation_offset = Vector2( 0, 0 )
+29/shape_offset = Vector2( 0, 0 )
+29/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+29/shape_one_way = false
+29/shape_one_way_margin = 0.0
+29/shapes = [  ]
+29/z_index = 0
 
 [node name="DemoWorld" type="Node2D"]
 position = Vector2( -3, -62 )
@@ -574,6 +590,18 @@ anims/open_transition = SubResource( 34 )
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 30 )
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_limit_end = Vector2( 0, 270 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 480, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 0, -1 )
+scale = Vector2( 0.5, 0.483 )
+texture = ExtResource( 14 )
+centered = false
+
 [node name="Camera2D" type="Camera2D" parent="."]
 pause_mode = 2
 position = Vector2( -413, -12 )
@@ -582,7 +610,7 @@ smoothing_enabled = true
 smoothing_speed = 3.0
 editor_draw_drag_margin = true
 script = ExtResource( 7 )
-backgroundColor = Color( 0.65098, 0.85098, 1, 1 )
+backgroundColor = Color( 0.6, 0.776471, 0.909804, 1 )
 
 [node name="Gates" parent="." groups=["gates"] instance=ExtResource( 12 )]
 pause_mode = 2
@@ -959,7 +987,7 @@ position = Vector2( 0, 5 )
 tile_set = SubResource( 36 )
 cell_size = Vector2( 1, 1 )
 format = 1
-tile_data = PoolIntArray( -38273048, 20, 0, -38338556, 22, 0, -38338505, 27, 0, -38338484, 4, 0, -38272986, 2, 0, -37093434, 23, 0, -35717131, 5, 0, -34144359, 23, 0, -34144340, 26, 0, -34144315, 20, 0, -32571432, 23, 0, -30474251, 13, 0, -28442611, 20, 0, -26279973, 23, 0, -26279954, 25, 0, -25231500, 28, 0, -25231454, 20, 0, -25231436, 13, 0, -24838141, 18, 0, -23986125, 28, 0, -23986102, 20, 0, -23986067, 19, 0, -21823766, 21, 0, -21823737, 5, 0, -21823682, 2, 0, -21823662, 4, 0, -21823605, 4, 0, -21823588, 16, 0, -21823503, 5, 0, -21888917, 2, 0, -21888871, 13, 0, -21888848, 20, 0, -21888821, 2, 0, -21888792, 26, 0, -21888740, 4, 0, -16908181, 22, 0, -16908138, 20, 0, -15073091, 4, 0, -11206485, 25, 0, -5177521, 20, 0, -3145711, 24, 0, -2031751, 18, 0, -1900818, 24, 0, -983555, 24, 0, -983531, 14, 0, -983505, 22, 0, -983489, 20, 0, -983444, 27, 0, -983427, 23, 0, -983392, 24, 0, -983299, 16, 0, -983210, 2, 0, -983157, 12, 0, -983140, 22, 0, -983118, 3, 0, -983101, 4, 0, -983069, 13, 0, -1048554, 1, 0, -1048520, 21, 0, -1048502, 22, 0, -1048468, 16, 0, -1048376, 13, 0, -1048298, 5, 0, -1048280, 20, 0, -1048239, 1, 0, -1048221, 2, 0, -1048196, 12, 0, -1048180, 22, 0, -1048163, 4, 0, -1048145, 27, 0, -1048129, 22, 0, -1048105, 9, 0 )
+tile_data = PoolIntArray( -38273048, 20, 0, -38338556, 22, 0, -38338505, 27, 0, -38338484, 4, 0, -38272986, 2, 0, -37093434, 23, 0, -35717130, 29, 0, -34144359, 23, 0, -34144340, 26, 0, -34144315, 20, 0, -32571432, 23, 0, -30474251, 13, 0, -28442611, 20, 0, -26279973, 23, 0, -26279954, 25, 0, -25231500, 28, 0, -25231454, 20, 0, -25231436, 13, 0, -24838141, 18, 0, -23986125, 28, 0, -23986102, 20, 0, -23986067, 19, 0, -21823766, 21, 0, -21823737, 29, 0, -21823682, 2, 0, -21823662, 4, 0, -21823605, 4, 0, -21823588, 16, 0, -21823503, 5, 0, -21888917, 2, 0, -21888871, 13, 0, -21888848, 20, 0, -21888821, 2, 0, -21888792, 26, 0, -21888740, 4, 0, -16908181, 22, 0, -16908138, 29, 0, -15073091, 4, 0, -11206485, 25, 0, -5177521, 20, 0, -3145711, 24, 0, -2031751, 18, 0, -1900818, 24, 0, -983555, 24, 0, -983531, 14, 0, -983505, 22, 0, -983489, 20, 0, -983444, 27, 0, -983428, 29, 0, -983392, 24, 0, -983299, 16, 0, -983210, 2, 0, -983179, 29, 0, -983157, 12, 0, -983140, 22, 0, -983118, 3, 0, -983101, 4, 0, -983069, 13, 0, -1048554, 1, 0, -1048520, 21, 0, -1048502, 22, 0, -1048468, 16, 0, -1048376, 13, 0, -1048298, 29, 0, -1048280, 20, 0, -1048239, 1, 0, -1048221, 2, 0, -1048196, 12, 0, -1048180, 22, 0, -1048163, 4, 0, -1048145, 27, 0, -1048129, 22, 0, -1048105, 9, 0 )
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource( 5 )]
 position = Vector2( -413, -1 )
