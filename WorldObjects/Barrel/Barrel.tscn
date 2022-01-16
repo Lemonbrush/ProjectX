@@ -19,7 +19,6 @@ vframes = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource( 1 )
-one_way_collision = true
 
 [node name="HazardArea" type="Area2D" parent="."]
 visible = false

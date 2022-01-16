@@ -225,6 +225,23 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 57, 58, 59, 60, 61, 62 ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "spawnFootstepParticles"
+}, {
+"args": [  ],
+"method": "spawnFootstepParticles"
+} ]
+}
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4, 8 )

@@ -1,6 +1,8 @@
 extends KinematicBody2D
 class_name Player
 
+var footstepParticles = preload("res://Scenes/FootstepsParticles/FootstepParticles.tscn")
+
 onready var ground_ray1 			= $Body/GroundRay1
 onready var ground_ray2 			= $Body/GroundRay2
 onready var ground_ray3 			= $Body/GroundRay3
@@ -229,6 +231,12 @@ func ray_ground_update():
 func facing_direction():
 	if abs(direction) > 0.0:
 		body.scale.x = sign(direction)
+		
+func spawnFootstepParticles():
+	var footstep = footstepParticles.instance()
+	get_parent().add_child(footstep)
+	footstep.scale = Vector2.ONE * scale
+	footstep.global_position = global_position
 
 func pause_level():
 	get_tree().paused = true 

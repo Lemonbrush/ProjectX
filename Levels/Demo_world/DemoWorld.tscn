@@ -626,10 +626,16 @@ texture = ExtResource( 9 )
 [node name="Destructables" type="Node" parent="."]
 
 [node name="Barrel" parent="Destructables" instance=ExtResource( 8 )]
-position = Vector2( -116, -435 )
+position = Vector2( -107, -435 )
 
 [node name="Barrel2" parent="Destructables" instance=ExtResource( 8 )]
-position = Vector2( 132, -308 )
+position = Vector2( 134, -308 )
+
+[node name="Barrel8" parent="Destructables" instance=ExtResource( 8 )]
+position = Vector2( 139, -325 )
+
+[node name="Barrel9" parent="Destructables" instance=ExtResource( 8 )]
+position = Vector2( 139, -342 )
 
 [node name="Barrel4" parent="Destructables" instance=ExtResource( 8 )]
 position = Vector2( 267, -67 )
