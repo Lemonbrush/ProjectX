@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/WorldObjects.png-56575f1fe85423975778e968899be26a.stex"
+path="res://.import/Book.png-91cccf1e20a2903656003695e3274e48.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/WorldObjects.png"
-dest_files=[ "res://.import/WorldObjects.png-56575f1fe85423975778e968899be26a.stex" ]
+source_file="res://Assets/Book/Book.png"
+dest_files=[ "res://.import/Book.png-91cccf1e20a2903656003695e3274e48.stex" ]
 
 [params]
 

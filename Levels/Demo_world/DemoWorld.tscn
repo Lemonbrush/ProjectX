@@ -8,13 +8,13 @@
 [ext_resource path="res://WorldObjects/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=6]
 [ext_resource path="res://WorldObjects/Camera/Camera2D.gd" type="Script" id=7]
 [ext_resource path="res://WorldObjects/Barrel/Barrel.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Assets/DemoWorld1.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Levels/DemoWorld1.png" type="Texture" id=9]
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.gd" type="Script" id=10]
 [ext_resource path="res://Assets/Decorations/GrassDecorationsSheet.png" type="Texture" id=11]
 [ext_resource path="res://Levels/Demo_world/LoveGate/Gates.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/Decorations/Resources/dancing_flowers.tres" type="Texture" id=13]
 [ext_resource path="res://Assets/BackgroundGradients/BackgroundGradient1.png" type="Texture" id=14]
-[ext_resource path="res://Scenes/Clouds.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Clouds/Clouds.tscn" type="PackedScene" id=15]
 
 [sub_resource type="Animation" id=35]
 resource_name = "Gate_opening_cut_scene"

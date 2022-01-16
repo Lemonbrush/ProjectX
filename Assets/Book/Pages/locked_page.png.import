@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Book.png-c3b1d86d1956905a4faa815f1fb8a54e.stex"
+path="res://.import/locked_page.png-d2ce7bb32837622203423c48a458956f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Book.png"
-dest_files=[ "res://.import/Book.png-c3b1d86d1956905a4faa815f1fb8a54e.stex" ]
+source_file="res://Assets/Book/Pages/locked_page.png"
+dest_files=[ "res://.import/locked_page.png-d2ce7bb32837622203423c48a458956f.stex" ]
 
 [params]
 

@@ -5,11 +5,11 @@ export(Texture) var lockerd_page
 
 onready var file_manager		= $"/root/FileManager"
 onready var animation_player 	= $AnimationPlayer
-onready var cancel_button		= $MarginContainer/GeneralContainer/Cancel
-onready var pages_image			= $MarginContainer/GeneralContainer/BookContainer/HBoxContainer/Pages
+onready var cancel_button		= $MainMarginContainer/GeneralMarginContainer/Cancel
+onready var pages_image			= $MainMarginContainer/BookMarginContainer/BookContainer/HBoxContainer/Pages
 
-onready var left_arrow_button 	= $MarginContainer/GeneralContainer/BookContainer/HBoxContainer/LeftArrow
-onready var right_arrow_button  = $MarginContainer/GeneralContainer/BookContainer/HBoxContainer/RightArrow
+onready var left_arrow_button 	= $MainMarginContainer/BookMarginContainer/BookContainer/HBoxContainer/LeftArrow
+onready var right_arrow_button	= $MainMarginContainer/BookMarginContainer/BookContainer/HBoxContainer/RightArrow
 
 onready var loaded_page_numbers = file_manager.get_pages().unlocked_pages
 
