@@ -49,8 +49,8 @@ FileManager="*res://Utils/DataSave/File_manager.gd"
 
 [display]
 
-window/size/width=480
-window/size/height=270
+window/size/width=530
+window/size/height=320
 window/size/test_width=1920
 window/size/test_height=1080
 window/stretch/mode="viewport"

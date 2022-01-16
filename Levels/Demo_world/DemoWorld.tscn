@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Shaders/RoundTransitionShader.tres" type="Shader" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Levels/Demo_world/LoveGate/Gates.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/Decorations/Resources/dancing_flowers.tres" type="Texture" id=13]
 [ext_resource path="res://Assets/BackgroundGradients/BackgroundGradient1.png" type="Texture" id=14]
+[ext_resource path="res://Scenes/Clouds.tscn" type="PackedScene" id=15]
 
 [sub_resource type="Animation" id=35]
 resource_name = "Gate_opening_cut_scene"
@@ -143,7 +144,7 @@ extents = Vector2( 8, 7 )
 extents = Vector2( 7, 7 )
 
 [sub_resource type="RectangleShape2D" id=15]
-extents = Vector2( 7.5, 41 )
+extents = Vector2( 7.5, 39 )
 
 [sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 10, 58.5 )
@@ -590,18 +591,6 @@ anims/open_transition = SubResource( 34 )
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 30 )
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-scroll_limit_end = Vector2( 0, 270 )
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2( 480, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 0, -1 )
-scale = Vector2( 0.5, 0.483 )
-texture = ExtResource( 14 )
-centered = false
-
 [node name="Camera2D" type="Camera2D" parent="."]
 pause_mode = 2
 position = Vector2( -413, -12 )
@@ -611,6 +600,20 @@ smoothing_speed = 3.0
 editor_draw_drag_margin = true
 script = ExtResource( 7 )
 backgroundColor = Color( 0.6, 0.776471, 0.909804, 1 )
+
+[node name="Clouds" parent="Camera2D" instance=ExtResource( 15 )]
+position = Vector2( -2, -19 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_limit_end = Vector2( 0, 320 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 530, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2( 0.573, 0.568384 )
+texture = ExtResource( 14 )
+centered = false
 
 [node name="Gates" parent="." groups=["gates"] instance=ExtResource( 12 )]
 pause_mode = 2
@@ -903,7 +906,7 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder2/Area2D"]
-position = Vector2( -0.5, -10.5 )
+position = Vector2( -0.5, -8.5 )
 shape = SubResource( 15 )
 one_way_collision = true
 
@@ -959,16 +962,16 @@ page_number = 1
 [node name="Lighting" type="Node" parent="."]
 
 [node name="Light2D" type="Light2D" parent="Lighting"]
-position = Vector2( -8.50002, -621.995 )
-scale = Vector2( 0.449742, 0.319631 )
+position = Vector2( -26.5, -621.995 )
+scale = Vector2( 0.40335, 0.319631 )
 texture = ExtResource( 3 )
 color = Color( 1, 1, 1, 0.431373 )
 energy = 0.7
 mode = 2
 
 [node name="Light2D2" type="Light2D" parent="Lighting"]
-position = Vector2( -19.1251, 37.8756 )
-scale = Vector2( 1.52287, 0.518896 )
+position = Vector2( -21.1258, 0.375595 )
+scale = Vector2( 1.52803, 0.356909 )
 texture = ExtResource( 3 )
 color = Color( 1, 1, 1, 0.431373 )
 energy = 0.57
