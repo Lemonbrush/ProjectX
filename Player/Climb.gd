@@ -17,6 +17,7 @@ func velocity_logic(_delta):
 	vertical_move_direction = vertical_move_direction.normalized() * player.climb_speed
 	var new_velocity = Vector2(0, vertical_move_direction.y)
 	vertical_move_direction = player.move_and_slide(new_velocity)
+	checkStop()
 	
 func gravity_logic(_delta):
 	player.velocity.x = 0.0
@@ -27,6 +28,7 @@ func process(_delta):
 
 func state_check():
 	if !player.is_able_to_climb || player.is_grounded && player.down > 0.01:
+		
 		_state_machine.transition_to("Idle", {})
 	elif player.jump && (vertical_move_direction.y == 0):
 		_state_machine.transition_to("Jump")
@@ -49,12 +51,11 @@ func get_move_direction():
 	if Input.is_action_pressed("up"):
 		vertical_move_direction.y -= Input.get_action_strength("up")
 		animation.play()
-	elif Input.is_action_just_released("up"):
-		vertical_move_direction.y = 0.0
-		animation.stop()
 	elif Input.is_action_pressed("down"):
 		animation.play()
 		vertical_move_direction.y += Input.get_action_strength("down")
-	elif Input.is_action_just_released("down"):
-		animation.stop()
+		
+func checkStop():
+	if !Input.is_action_pressed("up") && !Input.is_action_pressed("down"):
 		vertical_move_direction.y = 0.0
+		animation.stop()

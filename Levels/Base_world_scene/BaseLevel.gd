@@ -3,7 +3,7 @@ extends Node
 var pauseMenu 					= preload("res://UI/PauseMenu/PauseMenu.tscn")
 var bookMenu						= preload("res://UI/BookMenu/BookMenu.tscn")
 
-onready var target 				= get_node("Player")
+onready var player 				= get_node("Player")
 export var shader_colorRect_path: NodePath
 onready var shader_colorRect 	= get_node(shader_colorRect_path)
 
@@ -28,9 +28,9 @@ func _unhandled_input(event):
 ######## Intro Animation Logic ########
 
 func visual_transition_open(is_opening):
-	var t = target.get_global_transform_with_canvas().origin
+	var t = player.get_global_transform_with_canvas().origin
 	if shader_colorRect != null:
-		shader_colorRect.get_material().set_shader_param("target", target.get_global_transform_with_canvas().origin)
+		shader_colorRect.get_material().set_shader_param("target", player.get_global_transform_with_canvas().origin)
 		
 		$IntroAnimationShader/Tween.interpolate_property(
 				shader_colorRect.get_material(),

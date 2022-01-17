@@ -42,5 +42,6 @@ func enter(msg: Dictionary = {}):
 	if msg.has("do_stop_fall_animation"):
 		animation.play("Land")
 		animation.queue("Idle") 
+		player.spawnFootstepParticles(1.5)
 	else:
 		animation.play("Idle")

@@ -81,11 +81,13 @@ func physics_process(delta):
 	gravity_logic(delta)
 	collision_logic()
 	ground_update_logic()
-
+	checkForActionRelease()
+	
 ############################## Functions ##############################
 
 func velocity_logic(delta):
 	var moveVector = Vector2(direction * speed, velocity.y)
+	print(velocity)
 	velocity = velocity.move_toward(moveVector, run_acceleration * delta)
 
 func gravity_logic(delta):
@@ -148,44 +150,25 @@ func unhandled_input(event: InputEvent):
 	if event.is_action_pressed("right") && right <= 0.01:
 		right = event.get_action_strength("right")
 		direction += right
-	elif event.is_action_released("right"):
-		direction -= right
-		right = 0.0
 	elif event.is_action_pressed("left") && left <= 0.01:
 		left = event.get_action_strength("left")
 		direction -= left
-	elif event.is_action_released("left"):
-		direction += left
-		left = 0.0
 	elif event.is_action_pressed("up") && up <= 0.01:
 		up = event.get_action_strength("up")
 		
 		if is_able_to_climb:
 			is_climbing = true
-		
-	elif event.is_action_released("up"):
-		up = 0.0
 	elif event.is_action_pressed("down") && down <= 0.01:
 		down = event.get_action_strength("down")
 		position.y += 1
-		
-	elif event.is_action_released("down"):
-		down = 0.0
 	elif event.is_action_pressed("jump"):
 		if is_able_to_glide:
 			 glide = true
 		if !jump && !is_able_to_glide:
 			jump = true
-			print("is_able_to_glide")
+			#print("is_able_to_glide")
 		else:
 			glide = true
-	elif event.is_action_released("jump"):
-		jump = false
-		
-		if is_jumping && !glide:
-			is_able_to_glide = true
-		else:
-			glide = false
 
 func check_for_deadly_height():
 	if global_position.y > 1000:
@@ -195,6 +178,28 @@ func check_pass_trough_collision():
 	if Input.is_action_just_pressed("down") && $GroundRay.is_colliding():
 		position = Vector2(position.x, position.y + 1)
 		
+func checkForActionRelease():
+	if !Input.is_action_pressed("right"):
+		direction -= right
+		right = 0.0
+	
+	if !Input.is_action_pressed("left"):
+		direction += left
+		left = 0.0
+	
+	if !Input.is_action_pressed("up"):
+		up = 0.0
+	
+	if !Input.is_action_pressed("down"):
+		down = 0.0
+	
+	if !Input.is_action_pressed("jump"):
+		jump = false
+		
+		if is_jumping && !glide:
+			is_able_to_glide = true
+		else:
+			glide = false
 ############################## Actions #######################################
 
 func on_climb_area_entered(area):
@@ -232,7 +237,7 @@ func facing_direction():
 	if abs(direction) > 0.0:
 		body.scale.x = sign(direction)
 		
-func spawnFootstepParticles():
+func spawnFootstepParticles(scale = 1):
 	var footstep = footstepParticles.instance()
 	get_parent().add_child(footstep)
 	footstep.scale = Vector2.ONE * scale
