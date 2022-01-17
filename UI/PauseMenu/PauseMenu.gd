@@ -20,7 +20,7 @@ func on_continue_button_pressed():
 
 func on_exit_button_pressed():
 	unpause()
-	get_tree().change_scene("res://UI/GameMenu/GameMenu.tscn")
+	var _scene = get_tree().change_scene("res://UI/GameMenu/GameMenu.tscn")
 
 func unpause():
 	queue_free()

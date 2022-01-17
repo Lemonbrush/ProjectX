@@ -28,7 +28,7 @@ func _unhandled_input(event):
 ######## Intro Animation Logic ########
 
 func visual_transition_open(is_opening):
-	var t = player.get_global_transform_with_canvas().origin
+	var _t = player.get_global_transform_with_canvas().origin
 	if shader_colorRect != null:
 		shader_colorRect.get_material().set_shader_param("target", player.get_global_transform_with_canvas().origin)
 		

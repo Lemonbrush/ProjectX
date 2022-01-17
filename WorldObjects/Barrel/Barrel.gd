@@ -3,7 +3,6 @@ extends KinematicBody2D
 var barrel_crush_scene			= preload("res://WorldObjects/Barrel/Barrel_crush.tscn")
 
 onready var hazard_area 			= $HazardArea
-onready var animation_player 	= $AnimationPlayer
 
 var velocity = Vector2.ZERO
 

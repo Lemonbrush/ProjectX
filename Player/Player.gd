@@ -46,6 +46,7 @@ var jumpTerminationMultiplier	= 3
 var jump_top_speed				= 100
 var jump_glide_speed				= 50
 var is_gliding					= false
+var glide_max_speed				= 100
 
 var normal_fall 					= 300
 var attack_fall 					= normal_fall * 1.2
@@ -81,13 +82,12 @@ func physics_process(delta):
 	gravity_logic(delta)
 	collision_logic()
 	ground_update_logic()
-	checkForActionRelease()
+	check_for_action_release()
 	
 ############################## Functions ##############################
 
 func velocity_logic(delta):
 	var moveVector = Vector2(direction * speed, velocity.y)
-	print(velocity)
 	velocity = velocity.move_toward(moveVector, run_acceleration * delta)
 
 func gravity_logic(delta):
@@ -113,9 +113,13 @@ func gravity_logic(delta):
 			is_grounded = false
 			snap.y = NO_SNAP
 	else:
+		is_able_to_glide = true
 		if glide:
 			if velocity.y < 0:
 				velocity.y = 0
+			
+			if velocity.y > glide_max_speed:
+				velocity.y = glide_max_speed
 			velocity.y += (jump_glide_speed - y_velocity_boost) * delta
 		elif is_jumping:
 			if !jump:
@@ -166,7 +170,6 @@ func unhandled_input(event: InputEvent):
 			 glide = true
 		if !jump && !is_able_to_glide:
 			jump = true
-			#print("is_able_to_glide")
 		else:
 			glide = true
 
@@ -178,7 +181,7 @@ func check_pass_trough_collision():
 	if Input.is_action_just_pressed("down") && $GroundRay.is_colliding():
 		position = Vector2(position.x, position.y + 1)
 		
-func checkForActionRelease():
+func check_for_action_release():
 	if !Input.is_action_pressed("right"):
 		direction -= right
 		right = 0.0

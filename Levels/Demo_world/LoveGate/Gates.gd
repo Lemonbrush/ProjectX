@@ -10,7 +10,7 @@ func _ready():
 		
 func _input(event):
 	if event.is_action_pressed("jump") && isAbleToTransition:
-		get_tree().change_scene("res://Levels/Demo_world/DemoWorld.tscn")
+		var _scene = get_tree().change_scene("res://Levels/Demo_world/DemoWorld.tscn")
 
 func on_open_gates_call():
 	$AnimationPlayer.play("Open")

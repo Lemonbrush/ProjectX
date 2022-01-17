@@ -46,7 +46,7 @@ func state_check(_anim: String = ''):
 func enter(_msg: Dictionary = {}):
 	animation.play("Attack")
 	set_impulse(120, 5 * 60)
-	animation.connect("animation_finished", self, "state_check")
+	var _connection = animation.connect("animation_finished", self, "state_check")
 	
 func exit():
 	animation.disconnect("animation_finished", self, "state_check")
