@@ -13,6 +13,9 @@ onready var page_collectable 	= $Collectables/Page
 ######## LifeCycle ########
 
 func _ready():
+	FileManager.current_level = get_tree().get_current_scene().get_name()
+	FileManager.load_game()
+	correct_player_position_by_door()
 	visual_transition_open(false)
 	
 	page_collectable.connect("page_collected", self, "on_page_collected")
@@ -52,3 +55,14 @@ func on_page_collected():
 	animationPlayer.play("Gate_opening_cut_scene")
 	
 ###### Helpers #########
+
+func save_game():
+	FileManager.save_game()
+	
+func correct_player_position_by_door():
+	print("Going fing ", Global.door_name)
+	if Global.door_name:
+		var door_node = find_node(Global.door_name)
+		if door_node:
+			print("Position corrected")
+			player.global_position = door_node.global_position

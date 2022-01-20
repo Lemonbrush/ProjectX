@@ -3,6 +3,7 @@ extends Node2D
 onready var area2d = $Area2D
 
 var isAbleToTransition = false
+var isOpen = false
 
 func _ready():
 	area2d.connect("body_entered", self, "on_player_entered")
@@ -10,9 +11,12 @@ func _ready():
 		
 func _input(event):
 	if event.is_action_pressed("jump") && isAbleToTransition:
-		var _scene = get_tree().change_scene("res://Levels/Demo_world/DemoWorld.tscn")
+		Global.door_name = name
+		print("This door is named ", name)
+		var _scene = get_tree().change_scene("res://Levels/Demo_world_2/DemoWorld_2.tscn")
 
 func on_open_gates_call():
+	isOpen = true
 	$AnimationPlayer.play("Open")
 
 func on_player_entered(_body):
@@ -20,3 +24,21 @@ func on_player_entered(_body):
 	
 func on_player_exited(_body):
 	isAbleToTransition = false 
+	
+###### Saving #######
+
+func load_state(state):
+	print("preopen with state ", state)
+	if state == true:
+		$AnimationPlayer.play("Opened")
+
+func save():
+	var save_dict = {
+		"filename" : get_filename(),
+		"parent" : get_parent().get_path(),
+		"pos_x" : position.x, 
+		"pos_y" : position.y,
+		"z_index" : z_index,
+		"state" : isOpen
+	}
+	return save_dict

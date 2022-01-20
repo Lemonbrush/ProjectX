@@ -20,4 +20,14 @@ func destruct(_area):
 	velocity = Vector2.ZERO
 	queue_free()
 	
+func save():
+	var save_dict = {
+		"filename" : get_filename(),
+		"parent" : get_parent().get_path(),
+		"pos_x" : position.x, 
+		"pos_y" : position.y,
+		"z_index" : z_index,
+		"state" : 0
+	}
+	return save_dict
 	
