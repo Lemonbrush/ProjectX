@@ -1,5 +1,8 @@
 extends Node2D
 
+export(String, FILE, "*.tscn, *scn") var nextScenePath
+export(String) var nextDoorName = "-"
+
 onready var area2d = $Area2D
 
 var isAbleToTransition = false
@@ -11,8 +14,9 @@ func _ready():
 		
 func _input(event):
 	if event.is_action_pressed("jump") && isAbleToTransition:
-		Global.door_name = name
-		print("This door is named ", name)
+		FileManager.save_game()
+		Global.door_name = nextDoorName
+		print("This door is connected to ", nextDoorName)
 		var _scene = get_tree().change_scene("res://Levels/Demo_world_2/DemoWorld_2.tscn")
 
 func on_open_gates_call():
@@ -39,6 +43,7 @@ func save():
 		"pos_x" : position.x, 
 		"pos_y" : position.y,
 		"z_index" : z_index,
-		"state" : isOpen
+		"state" : isOpen,
+		"nextDoorName" : nextDoorName
 	}
 	return save_dict

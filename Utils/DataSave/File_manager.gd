@@ -54,6 +54,9 @@ func load_game():
 		if new_object.has_method("load_state"):
 			new_object.load_state(node_data["state"])
 		
+		if "nextDoorName" in node_data:
+			new_object.nextDoorName = node_data["nextDoorName"]
+		
 		for i in node_data.keys():
 			if i == "filename" or i == "parent" or i == "pos_x" or i == "pos_y":
 				continue

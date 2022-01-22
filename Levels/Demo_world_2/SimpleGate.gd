@@ -1,6 +1,7 @@
 extends Node2D
 
 export(String, FILE, "*.tscn, *scn") var nextScenePath
+export(String) var nextDoorName
 
 onready var area2d = $Area2D
 
@@ -12,8 +13,8 @@ func _ready():
 		
 func _input(event):
 	if event.is_action_pressed("jump") && isAbleToTransition:
-		Global.door_name = name
-		print("This door is named ", name)
+		Global.door_name = nextDoorName
+		print("This door is connected to ", nextDoorName)
 		
 		var _scene = get_tree().change_scene(nextScenePath)
 

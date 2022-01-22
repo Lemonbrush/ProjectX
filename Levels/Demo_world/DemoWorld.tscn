@@ -32,26 +32,12 @@ tracks/0/keys = {
 "values": [ Vector2( 0, -120 ), Vector2( 0, -120 ) ]
 }
 tracks/1/type = "method"
-tracks/1/path = NodePath("Gates")
+tracks/1/path = NodePath("Player")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1.2 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "on_open_gates_call"
-} ]
-}
-tracks/2/type = "method"
-tracks/2/path = NodePath("Player")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
 "times": PoolRealArray( 0, 3.9 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
@@ -62,18 +48,32 @@ tracks/2/keys = {
 "method": "unpouse_level"
 } ]
 }
-tracks/3/type = "method"
-tracks/3/path = NodePath(".")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
 "times": PoolRealArray( 3.9 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
 "method": "save_game"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Gates")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 3.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "on_open_gates_call"
 } ]
 }
 
@@ -630,14 +630,15 @@ scale = Vector2( 0.573, 0.568384 )
 texture = ExtResource( 14 )
 centered = false
 
-[node name="Gates" parent="." groups=["gates"] instance=ExtResource( 12 )]
-pause_mode = 2
-position = Vector2( -1, -27 )
-z_index = -1
-
 [node name="DemoWorld1" type="Sprite" parent="."]
 position = Vector2( -20, -191 )
 texture = ExtResource( 9 )
+
+[node name="Gates" parent="." groups=["Persist"] instance=ExtResource( 12 )]
+position = Vector2( -1, -27 )
+z_index = -1
+nextScenePath = "res://Levels/Demo_world_2/DemoWorld_2.tscn"
+nextDoorName = "Gates_2"
 
 [node name="Destructables" type="Node" parent="."]
 
@@ -1024,7 +1025,6 @@ scale = Vector2( 0.143938, 0.197316 )
 texture = ExtResource( 2 )
 energy = 0.7
 
-[editable path="Gates"]
 [editable path="Collisions/PassTrough/PassThroughBody4"]
 [editable path="Collisions/PassTrough/PassThroughBody5"]
 [editable path="Collisions/PassTrough/PassThroughBody7"]
