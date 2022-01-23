@@ -16,7 +16,7 @@ func _input(event):
 		Global.door_name = nextDoorName
 		print("This door is connected to ", nextDoorName)
 		
-		var _scene = get_tree().change_scene(nextScenePath)
+		LevelManager.transition_to_level(nextScenePath)
 
 func on_player_entered(_body):
 	isAbleToTransition = true

@@ -11,7 +11,6 @@ func _ready():
 	
 func _process(delta):
 	acquire_target_position()
-	print(targetPosition)
 	global_position = lerp(targetPosition, global_position, pow(2, -15 * delta))
 
 func acquire_target_position():
@@ -27,7 +26,3 @@ func get_target_position_from_node_group(groupName):
 		targetPosition.y -= 25
 		return true
 	return false
-
-func instant_focuse():
-	acquire_target_position()
-	global_position = targetPosition

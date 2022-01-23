@@ -1,6 +1,5 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://Shaders/RoundTransitionShader.tres" type="Shader" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=3]
 [ext_resource path="res://WorldObjects/Page/Page.tscn" type="PackedScene" id=4]
@@ -28,12 +27,6 @@ extents = Vector2( 112, 7 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 512, 8 )
-
-[sub_resource type="ShaderMaterial" id=33]
-shader = ExtResource( 1 )
-shader_param/target = Vector2( 0.5, 0.5 )
-shader_param/intensity = null
-shader_param/color = null
 
 [sub_resource type="TileSet" id=36]
 0/name = "GrassDecorationsSheet.png 0"
@@ -460,7 +453,6 @@ shader_param/color = null
 [node name="DemoWorld_2" type="Node2D"]
 position = Vector2( -3, -62 )
 script = ExtResource( 10 )
-shader_colorRect_path = NodePath("IntroAnimationShader/CircleTransition")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 30 )
@@ -535,18 +527,6 @@ shape = SubResource( 1 )
 [node name="Ladders" type="Node" parent="."]
 
 [node name="AirBlowers" type="Node" parent="."]
-
-[node name="IntroAnimationShader" type="CanvasLayer" parent="."]
-
-[node name="CircleTransition" type="ColorRect" parent="IntroAnimationShader"]
-material = SubResource( 33 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Tween" type="Tween" parent="IntroAnimationShader"]
 
 [node name="Collectables" type="Node" parent="."]
 

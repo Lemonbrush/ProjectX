@@ -1,6 +1,5 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=45 format=2]
 
-[ext_resource path="res://Shaders/RoundTransitionShader.tres" type="Shader" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=3]
 [ext_resource path="res://WorldObjects/Page/Page.tscn" type="PackedScene" id=4]
@@ -162,12 +161,6 @@ extents = Vector2( 7.5, 39 )
 
 [sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 10, 58.5 )
-
-[sub_resource type="ShaderMaterial" id=33]
-shader = ExtResource( 1 )
-shader_param/target = Vector2( 0.5, 0.5 )
-shader_param/intensity = null
-shader_param/color = null
 
 [sub_resource type="TileSet" id=36]
 0/name = "GrassDecorationsSheet.png 0"
@@ -594,7 +587,6 @@ shader_param/color = null
 [node name="DemoWorld" type="Node2D"]
 position = Vector2( -3, -62 )
 script = ExtResource( 10 )
-shader_colorRect_path = NodePath("IntroAnimationShader/CircleTransition")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 pause_mode = 2
@@ -607,7 +599,7 @@ environment = SubResource( 30 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 pause_mode = 2
-position = Vector2( 78, 197 )
+position = Vector2( -415, -207 )
 current = true
 smoothing_enabled = true
 smoothing_speed = 3.0
@@ -963,18 +955,6 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AirBlowers/StaticBody2D/Area2D"]
 position = Vector2( -278, -73 )
 shape = SubResource( 18 )
-
-[node name="IntroAnimationShader" type="CanvasLayer" parent="."]
-
-[node name="CircleTransition" type="ColorRect" parent="IntroAnimationShader"]
-material = SubResource( 33 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Tween" type="Tween" parent="IntroAnimationShader"]
 
 [node name="Collectables" type="Node" parent="."]
 

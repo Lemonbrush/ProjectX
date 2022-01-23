@@ -47,6 +47,7 @@ config/icon="res://icon.png"
 
 FileManager="*res://Utils/DataSave/File_manager.gd"
 Global="*res://Utils/Global.gd"
+LevelManager="*res://Utils/LevelManager.gd"
 
 [display]
 

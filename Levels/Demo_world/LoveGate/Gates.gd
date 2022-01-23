@@ -16,7 +16,8 @@ func _input(event):
 	if event.is_action_pressed("jump") && isAbleToTransition:
 		Global.door_name = nextDoorName
 		print("This door is connected to ", nextDoorName)
-		var _scene = get_tree().change_scene("res://Levels/Demo_world_2/DemoWorld_2.tscn")
+		#var _scene = get_tree().change_scene("res://Levels/Demo_world_2/DemoWorld_2.tscn")
+		LevelManager.transition_to_level("res://Levels/Demo_world_2/DemoWorld_2.tscn")
 
 func on_open_gates_call():
 	isOpen = true
