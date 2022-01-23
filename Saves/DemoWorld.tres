@@ -1,7 +1,0 @@
-{"filename":"res://Levels/Demo_world/LoveGate/Gates.tscn","parent":"/root/DemoWorld","pos_x":-1,"pos_y":-27,"state":true,"z_index":-1}
-{"filename":"res://WorldObjects/Barrel/Barrel.tscn","parent":"/root/DemoWorld/Destructables","pos_x":-107,"pos_y":-435.000519,"state":0,"z_index":0}
-{"filename":"res://WorldObjects/Barrel/Barrel.tscn","parent":"/root/DemoWorld/Destructables","pos_x":137.484344,"pos_y":-307.000519,"state":0,"z_index":0}
-{"filename":"res://WorldObjects/Barrel/Barrel.tscn","parent":"/root/DemoWorld/Destructables","pos_x":-172,"pos_y":-129.000519,"state":0,"z_index":0}
-{"filename":"res://WorldObjects/Barrel/Barrel.tscn","parent":"/root/DemoWorld/Destructables","pos_x":265,"pos_y":-65.000519,"state":0,"z_index":0}
-{"filename":"res://WorldObjects/Barrel/Barrel.tscn","parent":"/root/DemoWorld/Destructables","pos_x":-153,"pos_y":-129.000519,"state":0,"z_index":0}
-{"filename":"res://Player/Player.tscn","parent":"/root/DemoWorld","pos_x":52.416763,"pos_y":-594.409058,"z_index":0}

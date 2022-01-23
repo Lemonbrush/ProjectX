@@ -57,6 +57,10 @@ func load_game():
 		if "nextDoorName" in node_data:
 			new_object.nextDoorName = node_data["nextDoorName"]
 		
+		if "objectType" in node_data:
+			if new_object.objectType == "Player":
+				new_object.add_to_group("player")
+		
 		for i in node_data.keys():
 			if i == "filename" or i == "parent" or i == "pos_x" or i == "pos_y":
 				continue

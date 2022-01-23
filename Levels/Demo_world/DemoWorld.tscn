@@ -607,7 +607,7 @@ environment = SubResource( 30 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 pause_mode = 2
-position = Vector2( -416, -27 )
+position = Vector2( 78, 197 )
 current = true
 smoothing_enabled = true
 smoothing_speed = 3.0

@@ -254,6 +254,7 @@ func unpouse_level():
 
 func save():
 	var save_dict = {
+		"objectType" : "Player",
 		"filename" : get_filename(),
 		"parent" : get_parent().get_path(),
 		"pos_x" : position.x, 
