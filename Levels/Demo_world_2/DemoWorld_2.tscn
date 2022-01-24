@@ -7,12 +7,12 @@
 [ext_resource path="res://WorldObjects/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=6]
 [ext_resource path="res://WorldObjects/Camera/Camera2D.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Levels/DemoWorld_2.png" type="Texture" id=8]
-[ext_resource path="res://Levels/Demo_world_2/SimpleGate.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Levels/Demo_world_2/Simple_gate/SimpleGate.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.gd" type="Script" id=10]
 [ext_resource path="res://Assets/Decorations/GrassDecorationsSheet.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Decorations/Resources/dancing_flowers.tres" type="Texture" id=13]
 [ext_resource path="res://Assets/BackgroundGradients/BackgroundGradient1.png" type="Texture" id=14]
-[ext_resource path="res://Scenes/Clouds/Clouds.tscn" type="PackedScene" id=15]
+[ext_resource path="res://WorldObjects/Clouds/Clouds.tscn" type="PackedScene" id=15]
 
 [sub_resource type="Environment" id=30]
 background_mode = 4

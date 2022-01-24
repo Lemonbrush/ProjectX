@@ -19,6 +19,7 @@ func _ready():
 	
 func _unhandled_input(event):
 	if event.is_action_pressed("pause_menu"):
+		#save_game()
 		var pauseInstance = pauseMenu.instance()
 		add_child(pauseInstance)
 	elif event.is_action_pressed("book_menu"):

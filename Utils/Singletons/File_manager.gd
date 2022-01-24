@@ -32,7 +32,7 @@ func save_game():
 
 func load_game():
 	var save_game = File.new()
-	print("trying to load ", save_path + current_level + ".tres")
+	#print("trying to load ", save_path + current_level + ".tres")
 	if not save_game.file_exists(save_path + current_level + ".tres"):
 		return
 	
@@ -44,28 +44,36 @@ func load_game():
 	save_game.open(save_path + current_level + ".tres", File.READ)
 	while save_game.get_position() < save_game.get_len():
 		var node_data = parse_json(save_game.get_line())
-		
 		var new_object = load(node_data["filename"]).instance()
 		get_node(node_data["parent"]).add_child(new_object)
-		new_object.position = Vector2(node_data["pos_x"], node_data["pos_y"])
-		new_object.z_index = node_data["z_index"]
-		new_object.add_to_group("Persist")
 		
-		if new_object.has_method("load_state"):
-			new_object.load_state(node_data["state"])
-		
-		if "nextDoorName" in node_data:
-			new_object.nextDoorName = node_data["nextDoorName"]
-		
-		if "objectType" in node_data:
-			if new_object.objectType == "Player":
-				new_object.add_to_group("player")
-		
-		for i in node_data.keys():
-			if i == "filename" or i == "parent" or i == "pos_x" or i == "pos_y":
-				continue
-			new_object.set(i, node_data[i])
+		configure_new_object(new_object, node_data)
+
 	save_game.close()
+	
+func configure_new_object(new_object, node_data):
+	new_object.position = Vector2(node_data["pos_x"], node_data["pos_y"])
+	new_object.z_index = node_data["z_index"]
+	
+	if "objectType" in node_data:
+		
+		match node_data.objectType:
+			"Destructable":
+				new_object.add_to_group("Persist")
+			"Player":
+				new_object.add_to_group("player")
+			"Door":
+				new_object.add_to_group("Door")
+				new_object.nextDoorName = node_data["nextDoorName"]
+				new_object.nextScenePath = node_data["nextScenePath"]
+				new_object.load_state(node_data["state"])
+				new_object.add_to_group("Persist")
+	
+	for i in node_data.keys():
+		if i == "filename" or i == "parent" or i == "pos_x" or i == "pos_y":
+			continue
+		new_object.set(i, node_data[i])
+######### Page Persistence ############
 
 func save_page(page_num):
 	var saved_pages = get_pages()

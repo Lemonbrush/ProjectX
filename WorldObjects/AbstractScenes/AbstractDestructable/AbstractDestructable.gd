@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var barrel_crush_scene			= preload("res://WorldObjects/Barrel/Barrel_crush.tscn")
+export(String, FILE, "*.tscn, *scn") var crush_animation_scene
 
 onready var hazard_area 			= $HazardArea
 
@@ -14,7 +14,7 @@ func _process(delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 
 func destruct(_area):
-	var barrel_crush_instance = barrel_crush_scene.instance()
+	var barrel_crush_instance = crush_animation_scene.instance()
 	get_parent().add_child_below_node(self, barrel_crush_instance)
 	barrel_crush_instance.global_position = global_position
 	velocity = Vector2.ZERO

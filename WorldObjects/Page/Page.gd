@@ -19,11 +19,11 @@ func on_area_entered(_body):
 	
 func save():
 	var save_dict = {
+		"objectType" : "Destructable",
 		"filename" : get_filename(),
 		"parent" : get_parent().get_path(),
 		"pos_x" : position.x, 
 		"pos_y" : position.y,
-		"z_index" : z_index,
-		"level" : 0
+		"z_index" : z_index
 	}
 	return save_dict

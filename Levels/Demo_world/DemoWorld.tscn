@@ -13,7 +13,7 @@
 [ext_resource path="res://Levels/Demo_world/LoveGate/Gates.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/Decorations/Resources/dancing_flowers.tres" type="Texture" id=13]
 [ext_resource path="res://Assets/BackgroundGradients/BackgroundGradient1.png" type="Texture" id=14]
-[ext_resource path="res://Scenes/Clouds/Clouds.tscn" type="PackedScene" id=15]
+[ext_resource path="res://WorldObjects/Clouds/Clouds.tscn" type="PackedScene" id=15]
 
 [sub_resource type="Animation" id=35]
 resource_name = "Gate_opening_cut_scene"
@@ -68,7 +68,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 3.6 ),
+"times": PoolRealArray( 3.4 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -83,84 +83,6 @@ resource_name = "open_transition"
 background_mode = 4
 glow_enabled = true
 glow_hdr_threshold = 1.5
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 12, 7 )
-
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 143.5, 8 )
-
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 72, 1 )
-
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 16, 8.5 )
-
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 9, 8.5 )
-
-[sub_resource type="RectangleShape2D" id=16]
-extents = Vector2( 8, 17 )
-
-[sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 9, 4.5 )
-
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 31, 7.5 )
-
-[sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 48, 7.375 )
-
-[sub_resource type="RectangleShape2D" id=27]
-extents = Vector2( 16, 7.375 )
-
-[sub_resource type="RectangleShape2D" id=20]
-extents = Vector2( 52.5, 2.5 )
-
-[sub_resource type="RectangleShape2D" id=21]
-extents = Vector2( 12.5, 3.5 )
-
-[sub_resource type="RectangleShape2D" id=22]
-extents = Vector2( 34, 3.5 )
-
-[sub_resource type="RectangleShape2D" id=23]
-extents = Vector2( 65, 3.5 )
-
-[sub_resource type="RectangleShape2D" id=24]
-extents = Vector2( 48, 7.75 )
-
-[sub_resource type="RectangleShape2D" id=28]
-extents = Vector2( 16, 7 )
-
-[sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 304, 8 )
-
-[sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 112, 7 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 13.5, 12 )
-
-[sub_resource type="RectangleShape2D" id=17]
-extents = Vector2( 9, 2 )
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 512, 8 )
-
-[sub_resource type="RectangleShape2D" id=25]
-extents = Vector2( 56, 10 )
-
-[sub_resource type="RectangleShape2D" id=29]
-extents = Vector2( 8, 7 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 7, 7 )
-
-[sub_resource type="RectangleShape2D" id=15]
-extents = Vector2( 7.5, 39 )
-
-[sub_resource type="RectangleShape2D" id=18]
-extents = Vector2( 10, 58.5 )
 
 [sub_resource type="TileSet" id=36]
 0/name = "GrassDecorationsSheet.png 0"
@@ -584,6 +506,84 @@ extents = Vector2( 10, 58.5 )
 29/shapes = [  ]
 29/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 12, 7 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 143.5, 8 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 72, 1 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 16, 8.5 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 9, 8.5 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 8, 17 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 9, 4.5 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 31, 7.5 )
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 48, 7.375 )
+
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 16, 7.375 )
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 52.5, 2.5 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 12.5, 3.5 )
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 34, 3.5 )
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 65, 3.5 )
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 48, 7.75 )
+
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 16, 7 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 304, 8 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 112, 7 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 13.5, 12 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 9, 2 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 512, 8 )
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 56, 10 )
+
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 8, 7 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 7, 7 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 7.5, 39 )
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 10, 58.5 )
+
 [node name="DemoWorld" type="Node2D"]
 position = Vector2( -3, -62 )
 script = ExtResource( 10 )
@@ -599,7 +599,7 @@ environment = SubResource( 30 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 pause_mode = 2
-position = Vector2( -415, -207 )
+position = Vector2( 0, -120 )
 current = true
 smoothing_enabled = true
 smoothing_speed = 3.0
@@ -625,6 +625,13 @@ centered = false
 [node name="DemoWorld1" type="Sprite" parent="."]
 position = Vector2( -20, -191 )
 texture = ExtResource( 9 )
+
+[node name="Decorations" type="TileMap" parent="."]
+position = Vector2( 0, 5 )
+tile_set = SubResource( 36 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -38273048, 20, 0, -38338556, 22, 0, -38338505, 27, 0, -38338484, 4, 0, -38272986, 2, 0, -37093434, 23, 0, -35717130, 29, 0, -34144359, 23, 0, -34144340, 26, 0, -34144315, 20, 0, -32571432, 23, 0, -30474251, 13, 0, -28442611, 20, 0, -26279973, 23, 0, -26279954, 25, 0, -25231500, 28, 0, -25231454, 20, 0, -25231436, 13, 0, -24838141, 18, 0, -23986125, 28, 0, -23986102, 20, 0, -23986067, 19, 0, -21823766, 21, 0, -21823737, 29, 0, -21823682, 2, 0, -21823662, 4, 0, -21823605, 4, 0, -21823588, 16, 0, -21823503, 5, 0, -21888917, 2, 0, -21888871, 13, 0, -21888848, 20, 0, -21888821, 2, 0, -21888792, 26, 0, -21888740, 4, 0, -16908181, 22, 0, -16908138, 29, 0, -15073091, 4, 0, -11206485, 25, 0, -5177521, 20, 0, -3145711, 24, 0, -2031751, 18, 0, -1900818, 24, 0, -983555, 24, 0, -983531, 14, 0, -983505, 22, 0, -983489, 20, 0, -983444, 27, 0, -983428, 29, 0, -983392, 24, 0, -983299, 16, 0, -983210, 2, 0, -983179, 29, 0, -983157, 12, 0, -983140, 22, 0, -983118, 3, 0, -983101, 4, 0, -983069, 13, 0, -1048554, 1, 0, -1048520, 21, 0, -1048502, 22, 0, -1048468, 16, 0, -1048376, 13, 0, -1048298, 29, 0, -1048280, 20, 0, -1048239, 1, 0, -1048221, 2, 0, -1048196, 12, 0, -1048180, 22, 0, -1048163, 4, 0, -1048145, 27, 0, -1048129, 22, 0, -1048105, 9, 0 )
 
 [node name="Gates" parent="." groups=["Persist"] instance=ExtResource( 12 )]
 position = Vector2( -1, -27 )
@@ -987,13 +994,6 @@ texture = ExtResource( 3 )
 color = Color( 1, 1, 1, 0.431373 )
 energy = 0.7
 mode = 2
-
-[node name="Decorations" type="TileMap" parent="."]
-position = Vector2( 0, 5 )
-tile_set = SubResource( 36 )
-cell_size = Vector2( 1, 1 )
-format = 1
-tile_data = PoolIntArray( -38273048, 20, 0, -38338556, 22, 0, -38338505, 27, 0, -38338484, 4, 0, -38272986, 2, 0, -37093434, 23, 0, -35717130, 29, 0, -34144359, 23, 0, -34144340, 26, 0, -34144315, 20, 0, -32571432, 23, 0, -30474251, 13, 0, -28442611, 20, 0, -26279973, 23, 0, -26279954, 25, 0, -25231500, 28, 0, -25231454, 20, 0, -25231436, 13, 0, -24838141, 18, 0, -23986125, 28, 0, -23986102, 20, 0, -23986067, 19, 0, -21823766, 21, 0, -21823737, 29, 0, -21823682, 2, 0, -21823662, 4, 0, -21823605, 4, 0, -21823588, 16, 0, -21823503, 5, 0, -21888917, 2, 0, -21888871, 13, 0, -21888848, 20, 0, -21888821, 2, 0, -21888792, 26, 0, -21888740, 4, 0, -16908181, 22, 0, -16908138, 29, 0, -15073091, 4, 0, -11206485, 25, 0, -5177521, 20, 0, -3145711, 24, 0, -2031751, 18, 0, -1900818, 24, 0, -983555, 24, 0, -983531, 14, 0, -983505, 22, 0, -983489, 20, 0, -983444, 27, 0, -983428, 29, 0, -983392, 24, 0, -983299, 16, 0, -983210, 2, 0, -983179, 29, 0, -983157, 12, 0, -983140, 22, 0, -983118, 3, 0, -983101, 4, 0, -983069, 13, 0, -1048554, 1, 0, -1048520, 21, 0, -1048502, 22, 0, -1048468, 16, 0, -1048376, 13, 0, -1048298, 29, 0, -1048280, 20, 0, -1048239, 1, 0, -1048221, 2, 0, -1048196, 12, 0, -1048180, 22, 0, -1048163, 4, 0, -1048145, 27, 0, -1048129, 22, 0, -1048105, 9, 0 )
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource( 5 )]
 position = Vector2( -418, -10 )

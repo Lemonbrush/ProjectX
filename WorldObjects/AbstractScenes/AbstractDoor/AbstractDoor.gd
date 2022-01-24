@@ -5,8 +5,9 @@ export(String) var nextDoorName = "-"
 
 onready var area2d = $Area2D
 
-var isAbleToTransition = false
 var isOpen = false
+
+var isAbleToTransition = false
 
 func _ready():
 	area2d.connect("body_entered", self, "on_player_entered")
@@ -15,7 +16,7 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("jump") && isAbleToTransition:
 		Global.door_name = nextDoorName
-		LevelManager.transition_to_level(nextScenePath)
+		LevelManager.transition_to_level(nextDoorName)
 
 func on_open_gates_call():
 	isOpen = true
@@ -46,3 +47,4 @@ func save():
 		"nextScenePath" : nextScenePath
 	}
 	return save_dict
+

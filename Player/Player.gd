@@ -1,7 +1,7 @@
 extends KinematicBody2D
 class_name Player
 
-var footstepParticles = preload("res://Scenes/FootstepsParticles/FootstepParticles.tscn")
+var footstepParticles = preload("res://WorldObjects/FootstepsParticles/FootstepParticles.tscn")
 
 onready var ground_ray1 			= $Body/GroundRay1
 onready var ground_ray2 			= $Body/GroundRay2
