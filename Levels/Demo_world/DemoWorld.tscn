@@ -68,7 +68,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 3.4 ),
+"times": PoolRealArray( 1 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -995,7 +995,7 @@ color = Color( 1, 1, 1, 0.431373 )
 energy = 0.7
 mode = 2
 
-[node name="Player" parent="." groups=["player"] instance=ExtResource( 5 )]
+[node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 5 )]
 position = Vector2( -418, -10 )
 
 [node name="Light2D2" type="Light2D" parent="Player"]

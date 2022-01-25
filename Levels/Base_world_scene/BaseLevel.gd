@@ -7,22 +7,23 @@ onready var player 				= get_node("Player")
 
 onready var animationPlayer 		= $AnimationPlayer
 onready var page_collectable 	= $Collectables/Page
+onready var camera				= $Camera2D
 
 ######## LifeCycle ########
 
 func _ready():
 	FileManager.current_level = get_tree().get_current_scene().get_name()
-	FileManager.load_game()
-	correct_player_position_by_door()
+	FileManager.load_game(correct_player_position_by_door())
 	
 	page_collectable.connect("page_collected", self, "on_page_collected")
 	
 func _unhandled_input(event):
 	if event.is_action_pressed("pause_menu"):
-		#save_game()
+		save_game()
 		var pauseInstance = pauseMenu.instance()
 		add_child(pauseInstance)
 	elif event.is_action_pressed("book_menu"):
+		save_game()
 		var bookInstance = bookMenu.instance()
 		add_child(bookInstance)
 
@@ -41,4 +42,5 @@ func correct_player_position_by_door():
 		var door_node = find_node(Global.door_name)
 		if door_node:
 			player.global_position = door_node.global_position
-			$Camera2D.global_position = door_node.global_position
+			camera.global_position = door_node.global_position
+			return door_node.global_position

@@ -1,8 +1,8 @@
-{"filename":"res://Levels/Demo_world/LoveGate/Gates.tscn","nextDoorName":"Gates_2","nextScenePath":"res://Levels/Demo_world_2/DemoWorld_2.tscn","objectType":"Door","parent":"/root/DemoWorld","pos_x":-1,"pos_y":-27,"state":true,"z_index":-1}
 {"filename":"res://WorldObjects/Barrel/Barrel.tscn","objectType":"Destructable","parent":"/root/DemoWorld/Destructables","pos_x":-107,"pos_y":-435.000519,"z_index":0}
-{"filename":"res://WorldObjects/Barrel/Barrel.tscn","objectType":"Destructable","parent":"/root/DemoWorld/Destructables","pos_x":135.001648,"pos_y":-322.866821,"z_index":0}
+{"filename":"res://WorldObjects/Barrel/Barrel.tscn","objectType":"Destructable","parent":"/root/DemoWorld/Destructables","pos_x":135,"pos_y":-322.866608,"z_index":0}
 {"filename":"res://WorldObjects/Barrel/Barrel.tscn","objectType":"Destructable","parent":"/root/DemoWorld/Destructables","pos_x":265,"pos_y":-65.000519,"z_index":0}
 {"filename":"res://WorldObjects/Barrel/Barrel.tscn","objectType":"Destructable","parent":"/root/DemoWorld/Destructables","pos_x":-153,"pos_y":-129.000519,"z_index":0}
-{"filename":"res://WorldObjects/Barrel/Barrel.tscn","objectType":"Destructable","parent":"/root/DemoWorld/Destructables","pos_x":117.921722,"pos_y":-307.000519,"z_index":0}
-{"filename":"res://WorldObjects/Barrel/Barrel.tscn","objectType":"Destructable","parent":"/root/DemoWorld/Destructables","pos_x":134.001648,"pos_y":-306.866302,"z_index":0}
-{"filename":"res://Player/Player.tscn","objectType":"Player","parent":"/root/DemoWorld","pos_x":51.638939,"pos_y":-597.714661,"z_index":0}
+{"filename":"res://WorldObjects/Barrel/Barrel.tscn","objectType":"Destructable","parent":"/root/DemoWorld/Destructables","pos_x":117.920517,"pos_y":-307.000519,"z_index":0}
+{"filename":"res://WorldObjects/Barrel/Barrel.tscn","objectType":"Destructable","parent":"/root/DemoWorld/Destructables","pos_x":134.000504,"pos_y":-306.86972,"z_index":0}
+{"filename":"res://Levels/Demo_world/LoveGate/Gates.tscn","nextDoorName":"Gates_2","nextScenePath":"res://Levels/Demo_world_2/DemoWorld_2.tscn","objectType":"Door","parent":"/root/DemoWorld","pos_x":-1,"pos_y":-27,"state":true,"z_index":-1}
+{"filename":"res://Player/Player.tscn","objectType":"Player","parent":"/root/DemoWorld","pos_x":-68.166679,"pos_y":-11.059052,"z_index":0}

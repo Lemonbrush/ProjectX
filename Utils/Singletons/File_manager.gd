@@ -5,6 +5,8 @@ var save_path = SAVE_DIR
 
 var current_level = ""
 
+var player_position_by_door = null
+
 func save_game():
 	var dir = Directory.new()
 	if !dir.dir_exists(SAVE_DIR):
@@ -30,11 +32,13 @@ func save_game():
 			file.store_line(to_json(node_data))
 	file.close()
 
-func load_game():
+func load_game(playerPosition):
 	var save_game = File.new()
 	#print("trying to load ", save_path + current_level + ".tres")
 	if not save_game.file_exists(save_path + current_level + ".tres"):
 		return
+	
+	player_position_by_door = playerPosition
 	
 	var save_nodes = get_tree().get_nodes_in_group("Persist")
 	
@@ -52,20 +56,25 @@ func load_game():
 	save_game.close()
 	
 func configure_new_object(new_object, node_data):
-	new_object.position = Vector2(node_data["pos_x"], node_data["pos_y"])
-	new_object.z_index = node_data["z_index"]
-	
 	if "objectType" in node_data:
+		new_object.position = Vector2(node_data["pos_x"], node_data["pos_y"])
+		new_object.z_index = node_data["z_index"]
 		
 		match node_data.objectType:
 			"Destructable":
 				new_object.add_to_group("Persist")
 			"Player":
+				new_object.add_to_group("Persist")
 				new_object.add_to_group("player")
+				
+				if player_position_by_door:
+					new_object.global_position = player_position_by_door
+					player_position_by_door = null
 			"Door":
 				new_object.add_to_group("Door")
 				new_object.nextDoorName = node_data["nextDoorName"]
 				new_object.nextScenePath = node_data["nextScenePath"]
+				new_object.state = node_data["state"]
 				new_object.load_state(node_data["state"])
 				new_object.add_to_group("Persist")
 	
@@ -73,6 +82,7 @@ func configure_new_object(new_object, node_data):
 		if i == "filename" or i == "parent" or i == "pos_x" or i == "pos_y":
 			continue
 		new_object.set(i, node_data[i])
+
 ######### Page Persistence ############
 
 func save_page(page_num):

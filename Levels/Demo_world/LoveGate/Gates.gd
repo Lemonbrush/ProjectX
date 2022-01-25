@@ -6,7 +6,7 @@ export(String) var nextDoorName = "-"
 onready var area2d = $Area2D
 
 var isAbleToTransition = false
-var isOpen = false
+var state = false
 
 func _ready():
 	area2d.connect("body_entered", self, "on_player_entered")
@@ -18,7 +18,7 @@ func _input(event):
 		LevelManager.transition_to_level(nextScenePath)
 
 func on_open_gates_call():
-	isOpen = true
+	state = true
 	$AnimationPlayer.play("Open")
 
 func on_player_entered(_body):
@@ -41,7 +41,7 @@ func save():
 		"pos_x" : position.x, 
 		"pos_y" : position.y,
 		"z_index" : z_index,
-		"state" : isOpen,
+		"state" : state,
 		"nextDoorName" : nextDoorName,
 		"nextScenePath" : nextScenePath
 	}
