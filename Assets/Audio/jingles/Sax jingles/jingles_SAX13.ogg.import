@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/jingles_SAX13.ogg-a32262d0c1faa0b17f154cbae6cd0196.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/jingles/Sax jingles/jingles_SAX13.ogg"
+dest_files=[ "res://.import/jingles_SAX13.ogg-a32262d0c1faa0b17f154cbae6cd0196.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

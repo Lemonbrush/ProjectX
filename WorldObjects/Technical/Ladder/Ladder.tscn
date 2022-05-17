@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 7.5, 39 )
+
+[node name="Ladder" type="Area2D"]
+position = Vector2( 128, -279 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.5, -59 )
+shape = SubResource( 15 )
+one_way_collision = true

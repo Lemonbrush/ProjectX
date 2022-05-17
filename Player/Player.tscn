@@ -353,10 +353,9 @@ position = Vector2( 0, -8 )
 shape = SubResource( 12 )
 
 [node name="AttackArea" type="Area2D" parent="Body"]
-visible = false
 position = Vector2( 16, -10 )
 collision_layer = 0
-collision_mask = 16
+collision_mask = 144
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body/AttackArea"]
 position = Vector2( -0.5, 1 )
@@ -364,9 +363,8 @@ shape = SubResource( 17 )
 disabled = true
 
 [node name="Glider" type="Area2D" parent="Body"]
-visible = false
-collision_layer = 8
-collision_mask = 8
+collision_layer = 72
+collision_mask = 72
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body/Glider"]
 position = Vector2( 0, -21 )

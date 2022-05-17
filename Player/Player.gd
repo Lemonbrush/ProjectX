@@ -1,7 +1,7 @@
 extends KinematicBody2D
 class_name Player
 
-var footstepParticles = preload("res://WorldObjects/FootstepsParticles/FootstepParticles.tscn")
+var footstepParticles = preload("res://WorldObjects/Technical/FootstepsParticles/FootstepParticles.tscn")
 
 onready var ground_ray1 			= $Body/GroundRay1
 onready var ground_ray2 			= $Body/GroundRay2
@@ -10,7 +10,8 @@ onready var ray_array			= [ground_ray1, ground_ray2, ground_ray3]
 
 onready var climb_area			= $Body/ClimbArea
 onready var glider_area			= $Body/Glider
-onready var attack_area			= $Body/AttackArea/CollisionShape2D
+onready var attack_area			= $Body/AttackArea
+onready var attack_area_collision_shape = $Body/AttackArea/CollisionShape2D
 
 onready var body 				= $Body
 onready var coyoteTimer 			= $CoyoteTimer
@@ -36,6 +37,7 @@ var y_velocity_boost				= 0.0
 
 var solid_check        			= 0
 
+var is_in_water					= true
 var is_able_to_climb				= false
 var climbing_area_position_x		= 0.0
 
@@ -74,6 +76,8 @@ func _ready():
 	
 	glider_area.connect("area_entered", self, "on_glide_area_entered")
 	glider_area.connect("area_exited", self, "on_glide_area_exited")
+	
+	attack_area.connect("area_entered", self, "on_attack_area_entered")
 	
 ############################## State Machine Functions ##############################
 
@@ -205,6 +209,7 @@ func check_for_action_release():
 			glide = false
 ############################## Actions #######################################
 
+# Climb
 func on_climb_area_entered(area):
 	is_able_to_climb = true
 	climbing_area_position_x = area.global_position.x
@@ -212,17 +217,30 @@ func on_climb_area_entered(area):
 func on_climb_area_exited(_area):
 	is_able_to_climb = false
 	
-func on_glide_area_entered(_area):
-	y_velocity_boost = 6000
+# Glide
+func on_glide_area_entered(area):
+	if area.get_name() == "water":
+		is_in_water = true
+	else:
+		y_velocity_boost = 6000
 	
-func on_glide_area_exited(_area):
-	y_velocity_boost = 0.0
 	
+func on_glide_area_exited(area):
+	if area.get_name() == "water":
+		is_in_water = false
+		
+	y_velocity_boost = 0
+	
+# Attack
+func on_attack_area_entered(attacked_object):
+	if attacked_object.has_method("change_state"):
+		attacked_object.change_state()
+
 func activate_attack_area():
-	attack_area.disabled = false
+	attack_area_collision_shape.disabled = false
 
 func disable_attack_area():
-	attack_area.disabled = true
+	attack_area_collision_shape.disabled = true
 
 ############################## Helper Functions ##############################
 
