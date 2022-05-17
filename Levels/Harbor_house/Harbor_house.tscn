@@ -1,16 +1,16 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=2]
 [ext_resource path="res://WorldObjects/Technical/Camera/Camera2D.gd" type="Script" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=5]
-[ext_resource path="res://Resources/Tilemaps/Decorations/Decorations.tres" type="TileSet" id=6]
+[ext_resource path="res://Assets/Levels/Harbor_house.png" type="Texture" id=6]
+[ext_resource path="res://Resources/Tilemaps/Decorations/Decorations.tres" type="TileSet" id=7]
 [ext_resource path="res://Assets/WaterSurface/WaterAnim.tres" type="Texture" id=8]
-[ext_resource path="res://Assets/Levels/DemoWorld1.png" type="Texture" id=9]
+[ext_resource path="res://WorldObjects/Interactables/Simple_door.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/BackgroundGradients/BackgroundGradient1.png" type="Texture" id=10]
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Levels/Start_gate_location/LoveGate/Gates.tscn" type="PackedScene" id=12]
 [ext_resource path="res://WorldObjects/Destructables/Barrel/Still_barrel/Barrel.tscn" type="PackedScene" id=13]
 [ext_resource path="res://WorldObjects/Pick_ups/Page/Page.tscn" type="PackedScene" id=14]
 [ext_resource path="res://WorldObjects/Technical/Clouds/Clouds.tscn" type="PackedScene" id=15]
@@ -29,16 +29,40 @@ glow_enabled = true
 glow_hdr_threshold = 1.5
 
 [sub_resource type="RectangleShape2D" id=42]
-extents = Vector2( 12, 7 )
+extents = Vector2( 160, 8.5 )
 
-[sub_resource type="RectangleShape2D" id=43]
-extents = Vector2( 512, 8 )
+[sub_resource type="RectangleShape2D" id=48]
+extents = Vector2( 440.5, 8 )
 
-[sub_resource type="RectangleShape2D" id=44]
-extents = Vector2( 7.5, 39 )
+[sub_resource type="RectangleShape2D" id=49]
+extents = Vector2( 184, 8 )
+
+[sub_resource type="RectangleShape2D" id=50]
+extents = Vector2( 280, 8 )
+
+[sub_resource type="RectangleShape2D" id=51]
+extents = Vector2( 56, 8 )
+
+[sub_resource type="RectangleShape2D" id=53]
+extents = Vector2( 72.5, 8 )
+
+[sub_resource type="RectangleShape2D" id=58]
+extents = Vector2( 7.5, 8 )
+
+[sub_resource type="RectangleShape2D" id=54]
+extents = Vector2( 2.5, 253.25 )
+
+[sub_resource type="RectangleShape2D" id=55]
+extents = Vector2( 2.5, 159.125 )
+
+[sub_resource type="RectangleShape2D" id=56]
+extents = Vector2( 2.5, 158.5 )
+
+[sub_resource type="RectangleShape2D" id=57]
+extents = Vector2( 2.5, 249 )
 
 [sub_resource type="RectangleShape2D" id=18]
-extents = Vector2( 10, 58.5 )
+extents = Vector2( 10, 88.5 )
 
 [sub_resource type="CanvasItemMaterial" id=45]
 light_mode = 1
@@ -86,7 +110,7 @@ points = PoolVector2Array( 0, 0, 0, 16, 16, 16, 16, 0 )
 [sub_resource type="RectangleShape2D" id=47]
 extents = Vector2( 864, 150 )
 
-[node name="BaseLevel" type="Node"]
+[node name="Harbor_house" type="Node"]
 script = ExtResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -124,78 +148,139 @@ texture = ExtResource( 10 )
 centered = false
 
 [node name="World_skin" type="Sprite" parent="."]
-position = Vector2( -20, -191 )
-texture = ExtResource( 9 )
+position = Vector2( -20, -192 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Decorations" type="TileMap" parent="."]
 position = Vector2( 0, 5 )
-tile_set = ExtResource( 6 )
+tile_set = ExtResource( 7 )
 cell_size = Vector2( 1, 1 )
 format = 1
-tile_data = PoolIntArray( -38273048, 20, 0, -38338556, 22, 0, -38338505, 27, 0, -38338484, 4, 0, -38272986, 2, 0, -37093434, 23, 0, -35717130, 29, 0, -34144359, 23, 0, -34144340, 26, 0, -34144315, 20, 0, -32571432, 23, 0, -30474251, 13, 0, -28442611, 20, 0, -26279973, 23, 0, -26279954, 25, 0, -25231500, 28, 0, -25231454, 20, 0, -25231436, 13, 0, -24838141, 18, 0, -23986125, 28, 0, -23986102, 20, 0, -23986067, 19, 0, -21823766, 21, 0, -21823737, 29, 0, -21823682, 2, 0, -21823662, 4, 0, -21823605, 4, 0, -21823588, 16, 0, -21823503, 5, 0, -21888917, 2, 0, -21888871, 13, 0, -21888848, 20, 0, -21888821, 2, 0, -21888792, 26, 0, -21888740, 4, 0, -16908181, 22, 0, -16908138, 29, 0, -15073091, 4, 0, -11206485, 25, 0, -5177521, 20, 0, -3145711, 24, 0, -2031751, 18, 0, -1900818, 24, 0, -983555, 24, 0, -983531, 14, 0, -983505, 22, 0, -983489, 20, 0, -983444, 27, 0, -983428, 29, 0, -983392, 24, 0, -983299, 16, 0, -983210, 2, 0, -983179, 29, 0, -983157, 12, 0, -983140, 22, 0, -983118, 3, 0, -983101, 4, 0, -983069, 13, 0, -1048554, 1, 0, -1048520, 21, 0, -1048502, 22, 0, -1048468, 16, 0, -1048376, 13, 0, -1048298, 29, 0, -1048280, 20, 0, -1048239, 1, 0, -1048221, 2, 0, -1048196, 12, 0, -1048180, 22, 0, -1048163, 4, 0, -1048145, 27, 0, -1048129, 22, 0, -1048105, 9, 0 )
-
-[node name="Gates_ex" parent="." groups=["Persist"] instance=ExtResource( 12 )]
-visible = false
-position = Vector2( -1, -27 )
-z_index = -1
-nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
-nextDoorName = "Gates_2"
 
 [node name="Destructables" type="Node" parent="."]
 
 [node name="Barrels" type="Node" parent="Destructables"]
 
 [node name="Barrel_ex" parent="Destructables/Barrels" groups=["Persist"] instance=ExtResource( 13 )]
-visible = false
-position = Vector2( -107, -435 )
+position = Vector2( 96, -124 )
 
 [node name="Collisions" type="Node" parent="."]
 
 [node name="PassTrough" type="Node" parent="Collisions"]
 
 [node name="PassThroughBody_ex" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 11 )]
-visible = false
-position = Vector2( -262, -73 )
+position = Vector2( 650, -672 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody_ex" index="0"]
-position = Vector2( -4, 9 )
+position = Vector2( 144, 10.5 )
 shape = SubResource( 42 )
 one_way_collision = true
 
 [node name="Solid" type="Node" parent="Collisions"]
 
 [node name="PassThroughBody_ex" parent="Collisions/Solid" instance=ExtResource( 11 )]
-visible = false
-position = Vector2( -515, -41 )
+position = Vector2( -678, -94 )
 collision_layer = 17
 collision_mask = 17
 
 [node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody_ex" index="0"]
-position = Vector2( 496, -8 )
-shape = SubResource( 43 )
+position = Vector2( 424.5, -8 )
+shape = SubResource( 48 )
+
+[node name="PassThroughBody_ex2" parent="Collisions/Solid" instance=ExtResource( 11 )]
+position = Vector2( 138, -654 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody_ex2" index="0"]
+position = Vector2( 168, -8 )
+shape = SubResource( 49 )
+
+[node name="PassThroughBody_ex5" parent="Collisions/Solid" instance=ExtResource( 11 )]
+position = Vector2( 330, -798 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody_ex5" index="0"]
+position = Vector2( 264, -8 )
+shape = SubResource( 50 )
+
+[node name="PassThroughBody_ex6" parent="Collisions/Solid" instance=ExtResource( 11 )]
+position = Vector2( -102, -798 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody_ex6" index="0"]
+position = Vector2( 296, -8 )
+shape = SubResource( 51 )
+
+[node name="PassThroughBody_ex4" parent="Collisions/Solid" instance=ExtResource( 11 )]
+position = Vector2( 506, -638 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody_ex4" index="0"]
+position = Vector2( 56.5, -8 )
+shape = SubResource( 53 )
+
+[node name="PassThroughBody_ex7" parent="Collisions/Solid" instance=ExtResource( 11 )]
+position = Vector2( 520, -654 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody_ex7" index="0"]
+position = Vector2( 121.5, -8 )
+shape = SubResource( 58 )
 
 [node name="Ladders" type="Node" parent="."]
 
-[node name="Ladder_ex" type="StaticBody2D" parent="Ladders"]
-visible = false
-position = Vector2( 194, -213 )
-collision_layer = 0
-collision_mask = 0
-
-[node name="Area2D" type="Area2D" parent="Ladders/Ladder_ex"]
-position = Vector2( 0, -50.5 )
+[node name="Ladder" type="Area2D" parent="Ladders"]
+position = Vector2( 152, -184 )
 collision_layer = 7
 collision_mask = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder_ex/Area2D"]
-position = Vector2( 0, 34.5 )
-shape = SubResource( 44 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder"]
+position = Vector2( 0.5, -179.75 )
+shape = SubResource( 54 )
+one_way_collision = true
+
+[node name="Ladder2" type="Area2D" parent="Ladders"]
+position = Vector2( 376, -139 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder2"]
+position = Vector2( 1, -274.125 )
+shape = SubResource( 55 )
+one_way_collision = true
+
+[node name="Ladder3" type="Area2D" parent="Ladders"]
+position = Vector2( 602, -138 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder3"]
+position = Vector2( 0.5, -274.5 )
+shape = SubResource( 56 )
+one_way_collision = true
+
+[node name="Ladder4" type="Area2D" parent="Ladders"]
+position = Vector2( 921, -235 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladders/Ladder4"]
+position = Vector2( 0.5, -189 )
+shape = SubResource( 57 )
 one_way_collision = true
 
 [node name="AirBlowers" type="Node" parent="."]
 
 [node name="airBlower_ex" type="StaticBody2D" parent="AirBlowers"]
-position = Vector2( 70, -481 )
+position = Vector2( 292, -770 )
 collision_layer = 8
 collision_mask = 8
 
@@ -205,29 +290,28 @@ collision_layer = 8
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AirBlowers/airBlower_ex/Area2D"]
-position = Vector2( -275, -70 )
+position = Vector2( -275, -63.5 )
 shape = SubResource( 18 )
 
 [node name="Collectables" type="Node" parent="."]
 
-[node name="Page_ex" parent="Collectables" groups=["Persist"] instance=ExtResource( 14 )]
-visible = false
+[node name="Page" parent="Collectables" groups=["Persist"] instance=ExtResource( 14 )]
 position = Vector2( 60, -653 )
 page_number = 1
 
 [node name="Lighting" type="Node" parent="."]
 
 [node name="Light2D_ex" type="Light2D" parent="Lighting"]
-visible = false
-position = Vector2( -26.5, -621.995 )
-scale = Vector2( 0.40335, 0.319631 )
+position = Vector2( 558, -714 )
+scale = Vector2( 1.47165, 0.319631 )
 texture = ExtResource( 2 )
 color = Color( 1, 1, 1, 0.431373 )
 energy = 0.7
 mode = 2
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 4 )]
-position = Vector2( -410, -9 )
+position = Vector2( -537, -118 )
+z_index = 2
 
 [node name="Light2D2" type="Light2D" parent="Player"]
 visible = false
@@ -235,6 +319,11 @@ position = Vector2( 1, 3 )
 scale = Vector2( 0.143938, 0.197316 )
 texture = ExtResource( 5 )
 energy = 0.7
+
+[node name="Harbor_house_door" parent="." instance=ExtResource( 9 )]
+position = Vector2( -524, -111 )
+nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
+nextDoorName = "Shed_door"
 
 [node name="WaterSurface" type="Node" parent="."]
 
@@ -266,4 +355,9 @@ shape = SubResource( 47 )
 
 [editable path="Collisions/PassTrough/PassThroughBody_ex"]
 [editable path="Collisions/Solid/PassThroughBody_ex"]
-[editable path="Collectables/Page_ex"]
+[editable path="Collisions/Solid/PassThroughBody_ex2"]
+[editable path="Collisions/Solid/PassThroughBody_ex5"]
+[editable path="Collisions/Solid/PassThroughBody_ex6"]
+[editable path="Collisions/Solid/PassThroughBody_ex4"]
+[editable path="Collisions/Solid/PassThroughBody_ex7"]
+[editable path="Collectables/Page"]

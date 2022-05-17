@@ -85,8 +85,23 @@ resource_name = "open_transition"
 
 [sub_resource type="Environment" id=30]
 background_mode = 4
+fog_sun_amount = 0.32
+fog_depth_begin = 15.4
+fog_transmit_enabled = true
+fog_height_enabled = true
+fog_height_max = 7.6
+auto_exposure_min_luma = 0.35
+auto_exposure_max_luma = 6.75
+auto_exposure_speed = 4.86
+ssao_radius = 2.16
+ssao_intensity = 2.7
+dof_blur_far_distance = 0.12
+dof_blur_far_transition = 4.56
+dof_blur_far_amount = 0.76
+dof_blur_near_distance = 1.24
 glow_enabled = true
 glow_hdr_threshold = 1.5
+glow_high_quality = true
 
 [sub_resource type="TileSet" id=36]
 0/name = "GrassDecorationsSheet.png 0"
@@ -673,6 +688,7 @@ texture = ExtResource( 14 )
 centered = false
 
 [node name="DemoWorld1" type="Sprite" parent="."]
+modulate = Color( 1.2, 1.2, 1.2, 1 )
 position = Vector2( -20, -191 )
 texture = ExtResource( 9 )
 

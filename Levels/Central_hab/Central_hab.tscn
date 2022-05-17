@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://Assets/Levels/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Assets/Decorations/Resources/dancing_flowers.tres" type="Texture" id=13]
 [ext_resource path="res://Assets/BackgroundGradients/BackgroundGradient1.png" type="Texture" id=14]
 [ext_resource path="res://WorldObjects/Technical/Clouds/Clouds.tscn" type="PackedScene" id=15]
+[ext_resource path="res://WorldObjects/Interactables/Simple_door.tscn" type="PackedScene" id=16]
 
 [sub_resource type="Environment" id=30]
 background_mode = 4
@@ -1133,6 +1134,11 @@ cell_size = Vector2( 1, 1 )
 format = 1
 tile_data = PoolIntArray( -3145711, 24, 0, -983555, 24, 0, -983531, 14, 0, -983505, 22, 0, -983489, 20, 0, -983444, 27, 0, -983428, 29, 0, -983392, 24, 0, -983344, 6, 0, -983299, 16, 0, -983267, 1, 0, -983249, 2, 0, -983232, 3, 0, -983210, 2, 0, -983179, 29, 0, -983157, 12, 0, -983140, 22, 0, -983118, 3, 0, -983101, 4, 0, -983069, 13, 0, -1048554, 1, 0, -1048520, 21, 0, -1048502, 22, 0, -1048468, 16, 0, -1048444, 20, 0, -1048420, 14, 0, -1048402, 22, 0, -1048376, 13, 0, -1048342, 22, 0, -1048324, 23, 0, -1048298, 29, 0, -1048280, 20, 0, -1048239, 1, 0, -1048221, 2, 0, -1048196, 12, 0, -1048180, 22, 0, -1048163, 4, 0, -1048145, 27, 0, -1048129, 22, 0, -1048105, 9, 0 )
 
+[node name="Shed_door" parent="." instance=ExtResource( 16 )]
+position = Vector2( -202, 412 )
+nextScenePath = "res://Levels/Harbor_house/Harbor_house.tscn"
+nextDoorName = "Harbor_house_door"
+
 [node name="Gates_2" parent="." instance=ExtResource( 9 )]
 position = Vector2( 51, -37 )
 nextScenePath = "res://Levels/Start_gate_location/Start_gate_location.tscn"
@@ -1211,4 +1217,5 @@ energy = 0.7
 [editable path="AirBlowers/AirBeam"]
 [editable path="AirBlowers/AirBeam2"]
 [editable path="Collectables/Page"]
+[editable path="Shed_door"]
 [editable path="Gates_2"]

@@ -1,2 +1,2 @@
 {"filename":"res://WorldObjects/Pick_ups/Page/Page.tscn","objectType":"Destructable","parent":"/root/Central_hab/Collectables","pos_x":469,"pos_y":-105,"z_index":0}
-{"filename":"res://Player/Player.tscn","objectType":"Player","parent":"/root/Central_hab","pos_x":51,"pos_y":-36.059052,"z_index":0}
+{"filename":"res://Player/Player.tscn","objectType":"Player","parent":"/root/Central_hab","pos_x":-386.166199,"pos_y":411.940948,"z_index":0}
