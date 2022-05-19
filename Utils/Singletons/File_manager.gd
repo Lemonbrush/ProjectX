@@ -3,7 +3,7 @@ extends Node
 var SAVE_DIR = "res://Saves/"
 var save_path = SAVE_DIR
 
-var current_level = ""
+var current_level = "SaveFile_1"
 
 var player_position_by_door = null
 

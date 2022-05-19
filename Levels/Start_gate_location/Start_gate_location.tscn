@@ -9,7 +9,7 @@
 [ext_resource path="res://WorldObjects/Technical/Camera/Camera2D.gd" type="Script" id=7]
 [ext_resource path="res://WorldObjects/Destructables/Barrel/Still_barrel/Barrel.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Levels/DemoWorld1.png" type="Texture" id=9]
-[ext_resource path="res://Levels/Base_world_scene/BaseLevel.gd" type="Script" id=10]
+[ext_resource path="res://Levels/Start_gate_location/Start_gate_location.gd" type="Script" id=10]
 [ext_resource path="res://Assets/Decorations/GrassDecorationsSheet.png" type="Texture" id=11]
 [ext_resource path="res://Levels/Start_gate_location/LoveGate/Gates.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/Decorations/Resources/dancing_flowers.tres" type="Texture" id=13]
@@ -83,25 +83,7 @@ tracks/3/keys = {
 [sub_resource type="Animation" id=34]
 resource_name = "open_transition"
 
-[sub_resource type="Environment" id=30]
-background_mode = 4
-fog_sun_amount = 0.32
-fog_depth_begin = 15.4
-fog_transmit_enabled = true
-fog_height_enabled = true
-fog_height_max = 7.6
-auto_exposure_min_luma = 0.35
-auto_exposure_max_luma = 6.75
-auto_exposure_speed = 4.86
-ssao_radius = 2.16
-ssao_intensity = 2.7
-dof_blur_far_distance = 0.12
-dof_blur_far_transition = 4.56
-dof_blur_far_amount = 0.76
-dof_blur_near_distance = 1.24
-glow_enabled = true
-glow_hdr_threshold = 1.5
-glow_high_quality = true
+[sub_resource type="Environment" id=45]
 
 [sub_resource type="TileSet" id=36]
 0/name = "GrassDecorationsSheet.png 0"
@@ -660,7 +642,7 @@ anims/Gate_opening_cut_scene = SubResource( 35 )
 anims/open_transition = SubResource( 34 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 30 )
+environment = SubResource( 45 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 pause_mode = 2

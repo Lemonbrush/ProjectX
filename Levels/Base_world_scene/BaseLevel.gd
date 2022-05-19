@@ -1,12 +1,10 @@
 extends Node
+class_name BaseLevel
 
 var pauseMenu 					= preload("res://UI/PauseMenu/PauseMenu.tscn")
 var bookMenu						= preload("res://UI/BookMenu/BookMenu.tscn")
 
 onready var player 				= get_node("Player")
-
-onready var animationPlayer 		= $AnimationPlayer
-onready var page_collectable 	= $Collectables/Page
 onready var camera				= $Camera2D
 
 ######## LifeCycle ########
@@ -14,8 +12,6 @@ onready var camera				= $Camera2D
 func _ready():
 	FileManager.current_level = get_tree().get_current_scene().get_name()
 	FileManager.load_game(correct_player_position_by_door())
-	
-	page_collectable.connect("page_collected", self, "on_page_collected")
 	
 func _unhandled_input(event):
 	if event.is_action_pressed("pause_menu"):
@@ -26,11 +22,6 @@ func _unhandled_input(event):
 		save_game()
 		var bookInstance = bookMenu.instance()
 		add_child(bookInstance)
-
-###### Level Events Logic #########
-
-func on_page_collected():
-	animationPlayer.play("Gate_opening_cut_scene")
 	
 ###### Helpers #########
 
