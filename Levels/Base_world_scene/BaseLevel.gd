@@ -11,7 +11,7 @@ onready var camera				= $Camera2D
 
 func _ready():
 	FileManager.current_level = get_tree().get_current_scene().get_name()
-	FileManager.load_game(correct_player_position_by_door())
+	#FileManager.load_game(correct_player_position_by_door())
 	
 func _unhandled_input(event):
 	if event.is_action_pressed("pause_menu"):

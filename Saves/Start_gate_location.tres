@@ -1,8 +1,0 @@
-{"filename":"res://WorldObjects/Destructables/Barrel/Still_barrel/Barrel.tscn","objectType":"Destructable","parent":"/root/Start_gate_location/Destructables","pos_x":-107,"pos_y":-435.000519,"z_index":0}
-{"filename":"res://WorldObjects/Destructables/Barrel/Still_barrel/Barrel.tscn","objectType":"Destructable","parent":"/root/Start_gate_location/Destructables","pos_x":135,"pos_y":-307.000519,"z_index":0}
-{"filename":"res://WorldObjects/Destructables/Barrel/Still_barrel/Barrel.tscn","objectType":"Destructable","parent":"/root/Start_gate_location/Destructables","pos_x":-172,"pos_y":-129.000519,"z_index":0}
-{"filename":"res://WorldObjects/Destructables/Barrel/Still_barrel/Barrel.tscn","objectType":"Destructable","parent":"/root/Start_gate_location/Destructables","pos_x":265,"pos_y":-65.000519,"z_index":0}
-{"filename":"res://WorldObjects/Destructables/Barrel/Still_barrel/Barrel.tscn","objectType":"Destructable","parent":"/root/Start_gate_location/Destructables","pos_x":-153,"pos_y":-129.000519,"z_index":0}
-{"filename":"res://WorldObjects/Destructables/Barrel/Still_barrel/Barrel.tscn","objectType":"Destructable","parent":"/root/Start_gate_location/Destructables","pos_x":117.920273,"pos_y":-307.000519,"z_index":0}
-{"filename":"res://Levels/Start_gate_location/LoveGate/Gates.tscn","nextDoorName":"Gates_2","nextScenePath":"res://Levels/Central_hab/Central_hab.tscn","objectType":"Door","parent":"/root/Start_gate_location","pos_x":-1,"pos_y":-27,"state":true,"z_index":-1}
-{"filename":"res://Player/Player.tscn","objectType":"Player","parent":"/root/Start_gate_location","pos_x":-1,"pos_y":-27.059052,"z_index":0}

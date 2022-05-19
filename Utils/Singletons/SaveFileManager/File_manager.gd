@@ -1,9 +1,12 @@
 extends Node
 
+var save_file_resource
+
 var SAVE_DIR = "res://Saves/"
+var game_save_name = "Game_save.tres"
 var save_path = SAVE_DIR
 
-var current_level = "SaveFile_1"
+var current_level = ""
 
 var player_position_by_door = null
 
@@ -12,48 +15,30 @@ func save_game():
 	if !dir.dir_exists(SAVE_DIR):
 		dir.make_dir_recursive(SAVE_DIR)
 	
+	# saving logic
+	var packedScene = PackedScene.new()
+	packedScene.pack(get_tree().get_current_scene())
+	var lastVisitedSceneName = get_tree().get_current_scene().get_name() 
+	save_file_resource.lastVisitedSceneName = lastVisitedSceneName
+	save_file_resource.savedLevelScenes[lastVisitedSceneName] = packedScene
+	save_file_resource.playerPosition = get_tree().get_current_scene().find_node("Player").get_global_position()
+
+	var error = ResourceSaver.save(save_path + game_save_name, save_file_resource)
+	if error != OK:
+		print("Save Error")
+	else:
+		print("Game saved")
+
+func load_game():
 	var file = File.new()
-	var error = file.open(save_path + current_level + ".tres", File.WRITE)
-	
-	if error == OK:
-		var save_nodes = get_tree().get_nodes_in_group("Persist")
-		
-		for node in save_nodes:
-			if node.filename.empty():
-				print("Persistent node '%s' is not an instanced scene, skipped" % node.name)
-				continue
-			
-			if !node.has_method("save"):
-				print("Persistent node '%s' is missing a save() function, skipped" % node.name)
-				continue
-			
-			var node_data = node.call("save")
-		
-			file.store_line(to_json(node_data))
-	file.close()
-
-func load_game(playerPosition):
-	var save_game = File.new()
-	#print("trying to load ", save_path + current_level + ".tres")
-	if not save_game.file_exists(save_path + current_level + ".tres"):
-		return
-	
-	player_position_by_door = playerPosition
-	
-	var save_nodes = get_tree().get_nodes_in_group("Persist")
-	
-	for i in save_nodes:
-		i.queue_free()
-	
-	save_game.open(save_path + current_level + ".tres", File.READ)
-	while save_game.get_position() < save_game.get_len():
-		var node_data = parse_json(save_game.get_line())
-		var new_object = load(node_data["filename"]).instance()
-		get_node(node_data["parent"]).add_child(new_object)
-		
-		configure_new_object(new_object, node_data)
-
-	save_game.close()
+	if file.file_exists(save_path + game_save_name):
+		save_file_resource = load(save_path + game_save_name)
+		var lastVisitedSceneName = save_file_resource.lastVisitedSceneName
+		var lastVisitedScene = save_file_resource.savedLevelScenes[lastVisitedSceneName]
+		var _changedScene = get_tree().change_scene_to(lastVisitedScene)
+	else:
+		save_file_resource = Save_file_resource.new()
+		var _scene = get_tree().change_scene("res://Levels/Start_gate_location/Start_gate_location.tscn")
 	
 func configure_new_object(new_object, node_data):
 	if "objectType" in node_data:

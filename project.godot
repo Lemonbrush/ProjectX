@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Utils/StateMachine/PlayerState.gd"
 }, {
+"base": "Resource",
+"class": "Save_file_resource",
+"language": "GDScript",
+"path": "res://Utils/Singletons/SaveFileManager/Save_file_resource.gd"
+}, {
 "base": "Node",
 "class": "State",
 "language": "GDScript",
@@ -38,6 +43,7 @@ _global_script_class_icons={
 "BaseLevel": "",
 "Player": "",
 "PlayerState": "",
+"Save_file_resource": "",
 "State": "",
 "StateMachine": ""
 }
@@ -51,7 +57,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-FileManager="*res://Utils/Singletons/File_manager.gd"
+FileManager="*res://Utils/Singletons/SaveFileManager/File_manager.gd"
 Global="*res://Utils/Singletons/Global.gd"
 LevelManager="*res://Utils/Singletons/LevelManager.gd"
 
