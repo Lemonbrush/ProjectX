@@ -38,3 +38,8 @@ func load_game():
 		var _changedScene = get_tree().change_scene_to(lastVisitedScene)
 	else:
 		var _scene = get_tree().change_scene("res://Levels/Start_gate_location/Start_gate_location.tscn")
+
+func delete_save():
+	var dir = Directory.new()
+	dir.remove(save_path + game_save_name)
+		
