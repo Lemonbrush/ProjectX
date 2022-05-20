@@ -11,7 +11,7 @@
 [ext_resource path="res://Assets/Levels/DemoWorld1.png" type="Texture" id=9]
 [ext_resource path="res://Levels/Start_gate_location/Start_gate_location.gd" type="Script" id=10]
 [ext_resource path="res://Assets/Decorations/GrassDecorationsSheet.png" type="Texture" id=11]
-[ext_resource path="res://Levels/Start_gate_location/LoveGate/Gates.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Levels/Start_gate_location/LoveGate/Gates/Gates.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/Decorations/Resources/dancing_flowers.tres" type="Texture" id=13]
 [ext_resource path="res://Assets/BackgroundGradients/BackgroundGradient1.png" type="Texture" id=14]
 [ext_resource path="res://WorldObjects/Technical/Clouds/Clouds.tscn" type="PackedScene" id=15]
@@ -21,7 +21,7 @@
 
 [sub_resource type="Animation" id=35]
 resource_name = "Gate_opening_cut_scene"
-length = 4.0
+length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera2D:position")
 tracks/0/interp = 2
@@ -29,7 +29,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 1, 3.5 ),
+"times": PoolRealArray( 1, 2.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, -120 ), Vector2( 0, -120 ) ]
@@ -41,7 +41,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 3.9 ),
+"times": PoolRealArray( 0, 2.8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -58,7 +58,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 3.9 ),
+"times": PoolRealArray( 2.8 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -72,7 +72,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.4 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -984,7 +984,7 @@ shape = SubResource( 43 )
 [node name="Collectables" type="Node" parent="."]
 
 [node name="Page" parent="Collectables" groups=["Persist"] instance=ExtResource( 4 )]
-position = Vector2( 60, -653 )
+position = Vector2( -267, -121 )
 page_number = 1
 
 [node name="Lighting" type="Node" parent="."]

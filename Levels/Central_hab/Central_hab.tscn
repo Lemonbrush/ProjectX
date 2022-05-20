@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://Assets/Levels/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Assets/BackgroundGradients/BackgroundGradient1.png" type="Texture" id=14]
 [ext_resource path="res://WorldObjects/Technical/Clouds/Clouds.tscn" type="PackedScene" id=15]
 [ext_resource path="res://WorldObjects/Interactables/Simple_door.tscn" type="PackedScene" id=16]
+[ext_resource path="res://WorldObjects/Destructables/Barrel/Still_barrel/Barrel.tscn" type="PackedScene" id=17]
 
 [sub_resource type="Environment" id=30]
 background_mode = 4
@@ -1146,6 +1147,18 @@ nextDoorName = "Gates"
 
 [node name="GatesBackground" parent="Gates_2" index="0"]
 margin_top = -80.0
+
+[node name="Barrel" parent="Gates_2" instance=ExtResource( 17 )]
+position = Vector2( 156, -15 )
+
+[node name="Barrel2" parent="Gates_2" instance=ExtResource( 17 )]
+position = Vector2( -172, -14 )
+
+[node name="Barrel3" parent="Gates_2" instance=ExtResource( 17 )]
+position = Vector2( -151, -14 )
+
+[node name="Barrel4" parent="Gates_2" instance=ExtResource( 17 )]
+position = Vector2( -161, -36 )
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 5 )]
 position = Vector2( -333, -13 )

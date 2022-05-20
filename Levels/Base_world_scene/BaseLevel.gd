@@ -11,7 +11,7 @@ onready var camera				= $Camera2D
 
 func _ready():
 	FileManager.current_level = get_tree().get_current_scene().get_name()
-	#FileManager.load_game(correct_player_position_by_door())
+	correct_player_position_by_door()
 	
 func _unhandled_input(event):
 	if event.is_action_pressed("pause_menu"):
@@ -32,7 +32,6 @@ func correct_player_position_by_door():
 	if Global.door_name:
 		var door_node = find_node(Global.door_name)
 		if door_node:
-			print("searching for door named - ", Global.door_name)
 			player.global_position = door_node.global_position
 			camera.global_position = door_node.global_position
 			return door_node.global_position
