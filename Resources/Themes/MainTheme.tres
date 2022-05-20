@@ -1,0 +1,22 @@
+[gd_resource type="Theme" load_steps=7 format=2]
+
+[ext_resource path="res://Resources/Fonts/Custom Font ttf 12h 3.0 for Paint/Resource/CFont12H30PBold.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Resources/Fonts/Custom Font ttf 12h 3.0 for Paint/Resource/CFont12H30P.tres" type="DynamicFont" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[resource]
+default_font = ExtResource( 2 )
+Button/colors/font_color_hover = Color( 0.537255, 0.537255, 0.537255, 1 )
+Button/colors/font_color_pressed = Color( 0.203922, 0.203922, 0.203922, 0.658824 )
+Button/fonts/font = ExtResource( 1 )
+Button/styles/focus = SubResource( 4 )
+Button/styles/hover = SubResource( 2 )
+Button/styles/normal = SubResource( 1 )
+Button/styles/pressed = SubResource( 3 )
