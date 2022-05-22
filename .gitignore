@@ -5,6 +5,7 @@
 .DS_Store
 /.import/
 /build/
+/Saves/
 
 ## User settings
 xcuserdata/
