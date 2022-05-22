@@ -1,0 +1,66 @@
+name: Deploy Game
+
+on:
+  push:
+    branches:
+      - main
+env:
+  BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+  EXPORT_NAME: "ProjectX"
+  ITCH_PROJECT_NAME: "project-x"
+  ITCH_USERNAME: "lemonbrush"
+
+jobs:
+  BuildAndPublish:
+    name: Checkout Source Code
+    runs-on: ubuntu-20.04
+    container:
+      image: barichello/godot-ci:3.3
+    steps:
+      - name: Download + Authorize Godot
+        uses: actions/checkout@v2.3.4
+      - name: Setup templates
+        run: |
+          mkdir -p ~/.local/share/godot/templates/
+          mv /root/.local/share/godot/templates/$GODOT_VERSION.stable ~/.local/share/godot/templates/$GODOT_VERSION.stable
+      - name: Export (Windows)
+        run: |
+          mkdir -p dist/windows/
+          godot -v --export "Windows Desktop" "dist/windows/$EXPORT_NAME.exe"
+      - name: Export (macOS)
+        run: |
+          mkdir -p dist/mac/
+          godot -v --export "Mac OSX" "dist/mac/$EXPORT_NAME.zip"
+      - name: Export (Linux)
+        run: |
+          mkdir -p dist/linux/
+          godot -v --export "Linux/X11" "dist/linux/$EXPORT_NAME.x86_64"
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2.2.3
+        with:
+          name: exports
+          path: dist
+  PushExportsToItch:
+    needs: BuildAndPublish
+    if: ${{ contains(github.ref, 'main') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Exports
+        uses: actions/download-artifact@v2
+        with:
+          name: exports
+          path: dist
+      - name: Download + Authorize Butler
+        run: |
+          curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
+          unzip butler.zip
+          chmod +x butler
+          ./butler -V
+      - name: Login To Butler
+        run: ./butler login
+      - name: Push Windows Export To Itch
+        run: ./butler push ./dist/windows/$EXPORT_NAME.exe $ITCH_USERNAME/$ITCH_PROJECT_NAME:win
+      - name: Push Mac Export To Itch
+        run: ./butler push ./dist/mac/$EXPORT_NAME.zip $ITCH_USERNAME/$ITCH_PROJECT_NAME:mac
+      - name: Push Linux Export To Itch
+        run: ./butler push ./dist/linux/$EXPORT_NAME.x86_64 $ITCH_USERNAME/$ITCH_PROJECT_NAME:linux
