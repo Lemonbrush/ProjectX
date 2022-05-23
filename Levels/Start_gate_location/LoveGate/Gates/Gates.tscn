@@ -129,4 +129,5 @@ disabled = true
 [node name="InteractionController" parent="." instance=ExtResource( 5 )]
 
 [node name="InteractionPopup" parent="." instance=ExtResource( 6 )]
-labelText = "Войти"
+position = Vector2( 0, -22 )
+labelText = "войти"
