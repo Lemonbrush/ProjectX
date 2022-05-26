@@ -976,7 +976,7 @@ shape = SubResource( 43 )
 [node name="Collectables" type="Node" parent="."]
 
 [node name="Page" parent="Collectables" groups=["Persist"] instance=ExtResource( 4 )]
-position = Vector2( -277, -165 )
+position = Vector2( -344, -92 )
 page_number = 1
 
 [node name="Lighting" type="Node" parent="."]

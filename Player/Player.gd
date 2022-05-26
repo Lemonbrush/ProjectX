@@ -268,22 +268,25 @@ func spawnFootstepParticles(scale = 1):
 
 func start_item_pickup_animation():
 	var sceneAnimationPlayerInstance = get_node(sceneAnimationPlayer)
-	sceneAnimationPlayerInstance.pause_mode = PAUSE_MODE_INHERIT
+	if sceneAnimationPlayerInstance:
+		sceneAnimationPlayerInstance.pause_mode = PAUSE_MODE_INHERIT
 	
 	var itemPickupScene = itemPickupScenePath.instance()
-	get_parent().add_child_below_node(self, itemPickupScene)
+	get_parent().add_child(itemPickupScene)
 	itemPickupScene.global_position = global_position
 	itemPickupScene.scale = Vector2.ONE * body.scale
 	itemPickupScene.connect("animationFinished", self, "on_animation_finished")
 	body.visible = false
 	
 	var playerCamera = get_node(cameraNodePath)
-	playerCamera.scale_with_animation(Vector2(0.5, 0.5), 1)
+	if playerCamera:
+		playerCamera.scale_with_animation(Vector2(0.5, 0.5), 1)
 	pause_level()
 	
 func on_animation_finished():
 	var sceneAnimationPlayerInstance = get_node(sceneAnimationPlayer)
-	sceneAnimationPlayerInstance.pause_mode = PAUSE_MODE_PROCESS
+	if sceneAnimationPlayerInstance:
+		sceneAnimationPlayerInstance.pause_mode = PAUSE_MODE_PROCESS
 	
 	body.visible = true
 	var playerCamera = get_node(cameraNodePath)
