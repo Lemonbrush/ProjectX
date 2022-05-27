@@ -5,11 +5,14 @@ var pauseMenu 					= preload("res://UI/PauseMenu/PauseMenu.tscn")
 var bookMenu						= preload("res://UI/BookMenu/BookMenu.tscn")
 
 onready var player 				= get_node("Player")
+onready var animationPlayer 		= $AnimationPlayer
 onready var camera				= $Camera2D
 
 ######## LifeCycle ########
 
 func _ready():
+	var _connect = EventBus.connect("playerAnimationModeChange", self, "player_animation_mode_change")
+	
 	FileManager.current_level = get_tree().get_current_scene().get_name()
 	correct_player_position_by_door()
 	
@@ -35,3 +38,11 @@ func correct_player_position_by_door():
 			player.global_position = door_node.global_position
 			camera.global_position = door_node.global_position
 			return door_node.global_position
+			
+func player_animation_mode_change(isPlayerAnimating):
+	get_tree().paused = isPlayerAnimating
+	if isPlayerAnimating && animationPlayer:
+		animationPlayer.pause_mode = Node.PAUSE_MODE_INHERIT 
+	else:
+		 animationPlayer.pause_mode = Node.PAUSE_MODE_PROCESS
+	

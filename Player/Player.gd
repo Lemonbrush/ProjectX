@@ -1,7 +1,9 @@
 extends KinematicBody2D
 class_name Player
 
+export(NodePath) var sceneAnimationPlayer 
 var footstepParticles = preload("res://WorldObjects/Technical/FootstepsParticles/FootstepParticles.tscn")
+var itemPickupScenePath = preload("res://Player/Animation_scenes/Item_picking_player.tscn")
 
 onready var ground_ray1 			= $Body/GroundRay1
 onready var ground_ray2 			= $Body/GroundRay2
@@ -224,7 +226,6 @@ func on_glide_area_entered(area):
 	else:
 		y_velocity_boost = 6000
 	
-	
 func on_glide_area_exited(area):
 	if area.get_name() == "water":
 		is_in_water = false
@@ -263,6 +264,24 @@ func spawnFootstepParticles(scale = 1):
 	get_parent().add_child(footstep)
 	footstep.scale = Vector2.ONE * scale
 	footstep.global_position = global_position
+
+func start_item_pickup_animation():
+	EventBus.player_animation_mode_change(true)
+	
+	var itemPickupScene = itemPickupScenePath.instance()
+	get_parent().add_child(itemPickupScene)
+	itemPickupScene.global_position = global_position
+	itemPickupScene.scale = Vector2.ONE * body.scale
+	itemPickupScene.connect("animationFinished", self, "on_animation_finished")
+	
+	body.visible = false
+	EventBus.camera_focuse_animation(Vector2(0.5, 0.5), 1)
+	
+func on_animation_finished():
+	EventBus.player_animation_mode_change(false)
+	
+	body.visible = true
+	EventBus.camera_focuse_animation(Vector2(1, 1), 0.5)
 
 func pause_level():
 	get_tree().paused = true 

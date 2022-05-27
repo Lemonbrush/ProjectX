@@ -6,7 +6,7 @@
 [ext_resource path="res://WorldObjects/Pick_ups/Page/Page.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=6]
-[ext_resource path="res://WorldObjects/Technical/Camera/Camera2D.gd" type="Script" id=7]
+[ext_resource path="res://WorldObjects/Technical/Camera2D/Camera2D.tscn" type="PackedScene" id=7]
 [ext_resource path="res://WorldObjects/Destructables/Barrel/Still_barrel/Barrel.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Levels/DemoWorld1.png" type="Texture" id=9]
 [ext_resource path="res://Levels/Start_gate_location/Start_gate_location.gd" type="Script" id=10]
@@ -644,15 +644,7 @@ anims/open_transition = SubResource( 34 )
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 45 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-pause_mode = 2
-position = Vector2( 0, -120 )
-current = true
-smoothing_enabled = true
-smoothing_speed = 3.0
-editor_draw_drag_margin = true
-script = ExtResource( 7 )
-backgroundColor = Color( 0.6, 0.776471, 0.909804, 1 )
+[node name="Camera2D" parent="." instance=ExtResource( 7 )]
 
 [node name="Clouds" parent="Camera2D" instance=ExtResource( 15 )]
 position = Vector2( -2, -19 )
@@ -984,7 +976,7 @@ shape = SubResource( 43 )
 [node name="Collectables" type="Node" parent="."]
 
 [node name="Page" parent="Collectables" groups=["Persist"] instance=ExtResource( 4 )]
-position = Vector2( -267, -121 )
+position = Vector2( -344, -92 )
 page_number = 1
 
 [node name="Lighting" type="Node" parent="."]
@@ -1015,6 +1007,8 @@ mode = 2
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 5 )]
 position = Vector2( -405, -17 )
+sceneAnimationPlayer = NodePath("../AnimationPlayer")
+cameraNodePath = NodePath("../Camera2D")
 
 [node name="Light2D2" type="Light2D" parent="Player"]
 visible = false
@@ -1049,6 +1043,7 @@ collision_mask = 64
 position = Vector2( 622, 319 )
 shape = SubResource( 41 )
 
+[editable path="Camera2D"]
 [editable path="Collisions/PassTrough/PassThroughBody4"]
 [editable path="Collisions/PassTrough/PassThroughBody5"]
 [editable path="Collisions/PassTrough/PassThroughBody7"]

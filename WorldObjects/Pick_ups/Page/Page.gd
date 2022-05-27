@@ -10,20 +10,10 @@ onready var area2d			= $Area2D
 func _ready():
 	area2d.connect("body_entered", self, "on_area_entered")
 
-func on_area_entered(_body):
-	#file_manager.save_page(page_number)
+func on_area_entered(body):
+	if body.has_method("start_item_pickup_animation"):
+		body.start_item_pickup_animation()
 	emit_signal("page_collected")
 	queue_free()
 	
 	FileManager.save_game()
-	
-func save():
-	var save_dict = {
-		"objectType" : "Destructable",
-		"filename" : get_filename(),
-		"parent" : get_parent().get_path(),
-		"pos_x" : position.x, 
-		"pos_y" : position.y,
-		"z_index" : z_index
-	}
-	return save_dict
