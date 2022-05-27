@@ -2,5 +2,6 @@ extends Node2D
 
 signal animationFinished
 
-func _ready():
-	$Particles2D.emitting = true
+func finish_animation():
+	emit_signal("animationFinished")
+	queue_free()

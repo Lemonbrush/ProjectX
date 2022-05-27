@@ -2,7 +2,6 @@ extends KinematicBody2D
 class_name Player
 
 export(NodePath) var sceneAnimationPlayer 
-export(NodePath) var cameraNodePath 
 var footstepParticles = preload("res://WorldObjects/Technical/FootstepsParticles/FootstepParticles.tscn")
 var itemPickupScenePath = preload("res://Player/Animation_scenes/Item_picking_player.tscn")
 
@@ -267,31 +266,22 @@ func spawnFootstepParticles(scale = 1):
 	footstep.global_position = global_position
 
 func start_item_pickup_animation():
-	var sceneAnimationPlayerInstance = get_node(sceneAnimationPlayer)
-	if sceneAnimationPlayerInstance:
-		sceneAnimationPlayerInstance.pause_mode = PAUSE_MODE_INHERIT
+	EventBus.player_animation_mode_change(true)
 	
 	var itemPickupScene = itemPickupScenePath.instance()
 	get_parent().add_child(itemPickupScene)
 	itemPickupScene.global_position = global_position
 	itemPickupScene.scale = Vector2.ONE * body.scale
 	itemPickupScene.connect("animationFinished", self, "on_animation_finished")
-	body.visible = false
 	
-	var playerCamera = get_node(cameraNodePath)
-	if playerCamera:
-		playerCamera.scale_with_animation(Vector2(0.5, 0.5), 1)
-	pause_level()
+	body.visible = false
+	EventBus.camera_focuse_animation(Vector2(0.5, 0.5), 1)
 	
 func on_animation_finished():
-	var sceneAnimationPlayerInstance = get_node(sceneAnimationPlayer)
-	if sceneAnimationPlayerInstance:
-		sceneAnimationPlayerInstance.pause_mode = PAUSE_MODE_PROCESS
+	EventBus.player_animation_mode_change(false)
 	
 	body.visible = true
-	var playerCamera = get_node(cameraNodePath)
-	playerCamera.scale_with_animation(Vector2(1, 1), 0.5)
-	unpouse_level()
+	EventBus.camera_focuse_animation(Vector2(1, 1), 0.5)
 
 func pause_level():
 	get_tree().paused = true 

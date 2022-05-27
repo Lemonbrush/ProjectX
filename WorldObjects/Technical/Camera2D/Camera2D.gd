@@ -9,6 +9,7 @@ export(Color, RGB) var backgroundColor
 # Lifecycle Functions
 
 func _ready():
+	var _connect = EventBus.connect("cameraFocuseAnimation", self, "scale_with_animation")
 	VisualServer.set_default_clear_color(backgroundColor)
 
 func _process(delta):

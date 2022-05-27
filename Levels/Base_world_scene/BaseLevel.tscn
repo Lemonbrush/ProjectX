@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=2]
-[ext_resource path="res://WorldObjects/Technical/Camera/Camera2D.gd" type="Script" id=3]
+[ext_resource path="res://WorldObjects/Technical/Camera2D/Camera2D.gd" type="Script" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=5]
 [ext_resource path="res://Resources/Tilemaps/Decorations/Decorations.tres" type="TileSet" id=6]

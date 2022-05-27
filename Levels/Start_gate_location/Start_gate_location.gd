@@ -1,6 +1,5 @@
 extends BaseLevel
 
-onready var animationPlayer		= $AnimationPlayer
 onready var gates 	= $Gates
 
 func _ready():
