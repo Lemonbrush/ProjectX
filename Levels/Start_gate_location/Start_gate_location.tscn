@@ -25,6 +25,7 @@
 [ext_resource path="res://Assets/WorldObjects/Signs/Tumbstone.png" type="Texture" id=23]
 [ext_resource path="res://MovingPlatform.gd" type="Script" id=24]
 [ext_resource path="res://Assets/WorldObjects/Floating_block.png" type="Texture" id=25]
+[ext_resource path="res://WorldObjects/Moving_platforms/Paths/VerticalPath.tres" type="Curve2D" id=26]
 
 [sub_resource type="Animation" id=35]
 resource_name = "Gate_opening_cut_scene"
@@ -659,11 +660,6 @@ extents = Vector2( 864, 150 )
 [sub_resource type="RectangleShape2D" id=48]
 extents = Vector2( 8, 8 )
 
-[sub_resource type="Curve2D" id=49]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 97, 0, 0, 0, 0, 0, 97, -86 )
-}
-
 [sub_resource type="Animation" id=50]
 resource_name = "Loop"
 length = 4.0
@@ -1155,36 +1151,39 @@ collision_mask = 64
 position = Vector2( 622, 319 )
 shape = SubResource( 41 )
 
-[node name="MovingPlatform" type="Node2D" parent="."]
-position = Vector2( -237, -51 )
+[node name="MovingPlatforms" type="Node2D" parent="."]
+
+[node name="MovingPlatform" type="Node2D" parent="MovingPlatforms"]
+position = Vector2( 340, -277 )
 script = ExtResource( 24 )
 
-[node name="Platform" type="KinematicBody2D" parent="MovingPlatform"]
-position = Vector2( 0, -6.75758 )
+[node name="Platform" type="KinematicBody2D" parent="MovingPlatforms/MovingPlatform"]
+position = Vector2( 0, -6.75931 )
 motion/sync_to_physics = true
 
-[node name="Sprite" type="Sprite" parent="MovingPlatform/Platform"]
+[node name="Sprite" type="Sprite" parent="MovingPlatforms/MovingPlatform/Platform"]
 texture = ExtResource( 25 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatform/Platform"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatforms/MovingPlatform/Platform"]
 shape = SubResource( 48 )
 one_way_collision = true
 
-[node name="Path2D" type="Path2D" parent="MovingPlatform"]
+[node name="Path2D" type="Path2D" parent="MovingPlatforms/MovingPlatform"]
 position = Vector2( -97, 0 )
-curve = SubResource( 49 )
+curve = ExtResource( 26 )
 
-[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatform/Path2D"]
-position = Vector2( 97, 0 )
+[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatforms/MovingPlatform/Path2D"]
+position = Vector2( 97, -6.7593 )
 rotation = 3.14159
+offset = 6.75742
 rotate = false
 loop = false
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MovingPlatform/Path2D/PathFollow2D"]
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MovingPlatforms/MovingPlatform/Path2D/PathFollow2D"]
 rotation = -3.14159
 remote_path = NodePath("../../../Platform")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatform"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatforms/MovingPlatform"]
 autoplay = "Loop"
 playback_process_mode = 0
 playback_speed = 0.5
