@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/HearthKey-Sheet.png-99100af1db7628606b894510d66ae99c.stex"
+path="res://.import/HearthKey.png-ac49a9ae84fc09b18267e857c7447fee.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pickups/HearthKey-Sheet.png"
-dest_files=[ "res://.import/HearthKey-Sheet.png-99100af1db7628606b894510d66ae99c.stex" ]
+source_file="res://Assets/Pickups/HeartKey/HearthKey.png"
+dest_files=[ "res://.import/HearthKey.png-ac49a9ae84fc09b18267e857c7447fee.stex" ]
 
 [params]
 
