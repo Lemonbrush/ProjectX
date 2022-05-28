@@ -1,9 +1,9 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://Assets/Levels/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=3]
-[ext_resource path="res://WorldObjects/Pick_ups/Page/Page.tscn" type="PackedScene" id=4]
+[ext_resource path="res://WorldObjects/Pick_ups/Items/HeartKeyItem/HeartKeyItem.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=6]
 [ext_resource path="res://WorldObjects/Technical/Camera2D/Camera2D.tscn" type="PackedScene" id=7]
@@ -17,6 +17,7 @@
 [ext_resource path="res://WorldObjects/Technical/Clouds/Clouds.tscn" type="PackedScene" id=15]
 [ext_resource path="res://WorldObjects/Interactables/Simple_door.tscn" type="PackedScene" id=16]
 [ext_resource path="res://WorldObjects/Destructables/Barrel/Still_barrel/Barrel.tscn" type="PackedScene" id=17]
+[ext_resource path="res://WorldObjects/Pick_ups/Pickup_container/Pickup_container.tscn" type="PackedScene" id=18]
 
 [sub_resource type="Environment" id=30]
 background_mode = 4
@@ -1094,9 +1095,9 @@ lifetime = 5.0
 
 [node name="Collectables" type="Node" parent="."]
 
-[node name="Page" parent="Collectables" groups=["Persist"] instance=ExtResource( 4 )]
-position = Vector2( 469, -105 )
-page_number = 1
+[node name="PickupContainer" parent="Collectables" instance=ExtResource( 18 )]
+position = Vector2( 474, -86 )
+itemScene = ExtResource( 4 )
 
 [node name="Lighting" type="Node" parent="."]
 
@@ -1227,7 +1228,6 @@ position = Vector2( -161, -36 )
 [editable path="Ladders/Ladder2"]
 [editable path="AirBlowers/AirBeam"]
 [editable path="AirBlowers/AirBeam2"]
-[editable path="Collectables/Page"]
 [editable path="Shed_door"]
 [editable path="Shed_door/InteractionController"]
 [editable path="Gates_2"]

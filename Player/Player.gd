@@ -1,7 +1,6 @@
 extends KinematicBody2D
 class_name Player
 
-export(NodePath) var sceneAnimationPlayer 
 var footstepParticles = preload("res://WorldObjects/Technical/FootstepsParticles/FootstepParticles.tscn")
 var itemPickupScenePath = preload("res://Player/Animation_scenes/Item_picking_player.tscn")
 
@@ -265,10 +264,11 @@ func spawnFootstepParticles(scale = 1):
 	footstep.scale = Vector2.ONE * scale
 	footstep.global_position = global_position
 
-func start_item_pickup_animation():
+func start_item_pickup_animation(itemScene):
 	EventBus.player_animation_mode_change(true)
 	
 	var itemPickupScene = itemPickupScenePath.instance()
+	itemPickupScene.itemScene = itemScene
 	get_parent().add_child(itemPickupScene)
 	itemPickupScene.global_position = global_position
 	itemPickupScene.scale = Vector2.ONE * body.scale
