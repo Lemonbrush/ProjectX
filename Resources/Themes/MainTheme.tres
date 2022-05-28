@@ -1,8 +1,10 @@
-[gd_resource type="Theme" load_steps=9 format=2]
+[gd_resource type="Theme" load_steps=10 format=2]
 
 [ext_resource path="res://Resources/Fonts/Custom Font ttf 12h 3.0 for Paint/Resource/CFont12H30PBold.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Resources/Fonts/Custom Font ttf 12h 3.0 for Paint/Resource/CFont12H30P.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Assets/UI/Panrl_container_texture.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=6]
 
 [sub_resource type="StyleBoxEmpty" id=4]
 
@@ -22,9 +24,11 @@ margin_bottom = 3.87913
 
 [resource]
 default_font = ExtResource( 2 )
+Button/colors/font_color_disabled = Color( 0.364706, 0.364706, 0.364706, 1 )
 Button/colors/font_color_hover = Color( 0.537255, 0.537255, 0.537255, 1 )
-Button/colors/font_color_pressed = Color( 0.203922, 0.203922, 0.203922, 0.658824 )
+Button/colors/font_color_pressed = Color( 0.203922, 0.203922, 0.203922, 0.611765 )
 Button/fonts/font = ExtResource( 1 )
+Button/styles/disabled = SubResource( 6 )
 Button/styles/focus = SubResource( 4 )
 Button/styles/hover = SubResource( 2 )
 Button/styles/normal = SubResource( 1 )
