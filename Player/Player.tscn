@@ -274,8 +274,8 @@ extents = Vector2( 8, 3 )
 extents = Vector2( 2.5, 8 )
 
 [node name="Player" type="KinematicBody2D"]
-collision_layer = 33
-collision_mask = 3
+collision_layer = 161
+collision_mask = 131
 script = ExtResource( 3 )
 
 [node name="CoyoteTimer" type="Timer" parent="."]
@@ -327,7 +327,6 @@ script = ExtResource( 11 )
 script = ExtResource( 12 )
 
 [node name="BodyCollisionShape" type="CollisionShape2D" parent="." groups=["player"]]
-visible = false
 position = Vector2( 0, -8 )
 shape = SubResource( 1 )
 

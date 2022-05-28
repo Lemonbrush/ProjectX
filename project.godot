@@ -164,7 +164,7 @@ Interaction={
 2d_physics/layer_5="DISTRACTABLES"
 2d_physics/layer_6="COLLECTABLES"
 2d_physics/layer_7="WATERSURFACE"
-2d_physics/layer_8="LEVER_INTERACTABLES"
+2d_physics/layer_8="PLAYER_BODY"
 
 [physics]
 

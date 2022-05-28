@@ -49,6 +49,7 @@ align = 0
 margin_top = 19.0
 margin_right = 108.0
 margin_bottom = 33.0
+disabled = true
 text = "Настройки"
 align = 0
 
