@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://Assets/WaterSurface/water_surface3.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -23,6 +23,9 @@
 [ext_resource path="res://WorldObjects/Technical/InteractionController/InteractionController.tscn" type="PackedScene" id=21]
 [ext_resource path="res://WorldObjects/Technical/InteractionPopup/InteractionPopup.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Assets/WorldObjects/Signs/Tumbstone.png" type="Texture" id=23]
+[ext_resource path="res://MovingPlatform.gd" type="Script" id=24]
+[ext_resource path="res://Assets/WorldObjects/Floating_block.png" type="Texture" id=25]
+[ext_resource path="res://WorldObjects/Moving_platforms/Paths/VerticalPath.tres" type="Curve2D" id=26]
 
 [sub_resource type="Animation" id=35]
 resource_name = "Gate_opening_cut_scene"
@@ -654,6 +657,41 @@ points = PoolVector2Array( 0, 0, 0, 16, 16, 16, 16, 0 )
 [sub_resource type="RectangleShape2D" id=41]
 extents = Vector2( 864, 150 )
 
+[sub_resource type="RectangleShape2D" id=48]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="Animation" id=50]
+resource_name = "Loop"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=51]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
 [node name="Start_gate_location" type="Node2D"]
 position = Vector2( -3, -62 )
 script = ExtResource( 10 )
@@ -1112,6 +1150,45 @@ collision_mask = 64
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaterSurface2/StaticBody2D/water"]
 position = Vector2( 622, 319 )
 shape = SubResource( 41 )
+
+[node name="MovingPlatforms" type="Node2D" parent="."]
+
+[node name="MovingPlatform" type="Node2D" parent="MovingPlatforms"]
+position = Vector2( 340, -277 )
+script = ExtResource( 24 )
+
+[node name="Platform" type="KinematicBody2D" parent="MovingPlatforms/MovingPlatform"]
+position = Vector2( 0, -6.75931 )
+motion/sync_to_physics = true
+
+[node name="Sprite" type="Sprite" parent="MovingPlatforms/MovingPlatform/Platform"]
+texture = ExtResource( 25 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatforms/MovingPlatform/Platform"]
+shape = SubResource( 48 )
+one_way_collision = true
+
+[node name="Path2D" type="Path2D" parent="MovingPlatforms/MovingPlatform"]
+position = Vector2( -97, 0 )
+curve = ExtResource( 26 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatforms/MovingPlatform/Path2D"]
+position = Vector2( 97, -6.7593 )
+rotation = 3.14159
+offset = 6.75742
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MovingPlatforms/MovingPlatform/Path2D/PathFollow2D"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatforms/MovingPlatform"]
+autoplay = "Loop"
+playback_process_mode = 0
+playback_speed = 0.5
+anims/Loop = SubResource( 50 )
+anims/RESET = SubResource( 51 )
 
 [editable path="Camera2D"]
 [editable path="Signs/TumbSign/InteractionController"]
