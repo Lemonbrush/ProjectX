@@ -1,7 +1,8 @@
-[gd_resource type="Theme" load_steps=7 format=2]
+[gd_resource type="Theme" load_steps=9 format=2]
 
 [ext_resource path="res://Resources/Fonts/Custom Font ttf 12h 3.0 for Paint/Resource/CFont12H30PBold.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Resources/Fonts/Custom Font ttf 12h 3.0 for Paint/Resource/CFont12H30P.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/UI/Panrl_container_texture.png" type="Texture" id=3]
 
 [sub_resource type="StyleBoxEmpty" id=4]
 
@@ -10,6 +11,14 @@
 [sub_resource type="StyleBoxEmpty" id=1]
 
 [sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 3 )
+region_rect = Rect2( -0.301102, 0, 16.3011, 16 )
+margin_left = 4.5048
+margin_right = 4.00427
+margin_top = 4.37967
+margin_bottom = 3.87913
 
 [resource]
 default_font = ExtResource( 2 )
@@ -20,3 +29,4 @@ Button/styles/focus = SubResource( 4 )
 Button/styles/hover = SubResource( 2 )
 Button/styles/normal = SubResource( 1 )
 Button/styles/pressed = SubResource( 3 )
+PanelContainer/styles/panel = SubResource( 5 )
