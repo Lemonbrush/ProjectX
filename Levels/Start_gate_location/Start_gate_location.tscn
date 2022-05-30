@@ -745,6 +745,8 @@ labelText = "смотреть"
 position = Vector2( 0, -52 )
 z_index = 99
 interaction_controller_path = NodePath("../InteractionController")
+texts_array = [ "Здесь хранится память 
+о былых временах", "и парочка конфеток..." ]
 
 [node name="InteractionController" parent="Signs/TumbSign" instance=ExtResource( 21 )]
 
@@ -767,8 +769,8 @@ labelText = "осмотреть"
 position = Vector2( 0, -32 )
 z_index = 99
 interaction_controller_path = NodePath("../InteractionController")
-text = "Войдет лишь тот, кто ключ 
-от сердца подберет"
+texts_array = [ "Лишь тот войдет, кто ключ от 
+сердца подберет" ]
 
 [node name="InteractionController" parent="Signs/GatesText" instance=ExtResource( 21 )]
 
@@ -1158,7 +1160,6 @@ position = Vector2( 340, -277 )
 script = ExtResource( 24 )
 
 [node name="Platform" type="KinematicBody2D" parent="MovingPlatforms/MovingPlatform"]
-position = Vector2( 0, -6.75931 )
 motion/sync_to_physics = true
 
 [node name="Sprite" type="Sprite" parent="MovingPlatforms/MovingPlatform/Platform"]
@@ -1173,9 +1174,8 @@ position = Vector2( -97, 0 )
 curve = ExtResource( 26 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatforms/MovingPlatform/Path2D"]
-position = Vector2( 97, -6.7593 )
+position = Vector2( 97, 0 )
 rotation = 3.14159
-offset = 6.75742
 rotate = false
 loop = false
 
