@@ -3,9 +3,8 @@ extends BaseLevel
 onready var gates 	= $Gates
 
 func _ready():
-	var page_collectable = find_node("Page")
-	if page_collectable:
-		page_collectable.connect("item_collected", self, "on_page_collected") 
+	var _success = EventBus.connect("player_picked_up_item", self, "_on_key_item_collected") 
 	
-func on_page_collected():
-	animationPlayer.queue("Gate_opening_cut_scene")
+func _on_key_item_collected(item_name):
+	if item_name == "HeartKeyItem":
+		animationPlayer.queue("Gate_opening_cut_scene")
