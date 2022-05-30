@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://Assets/WaterSurface/water_surface3.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -18,7 +18,6 @@
 [ext_resource path="res://Assets/WaterSurface/WaterAnim.tres" type="Texture" id=16]
 [ext_resource path="res://WorldObjects/AbstractScenes/AbstractAirBlower.tscn" type="PackedScene" id=17]
 [ext_resource path="res://WorldObjects/Technical/Ladder/Ladder.tscn" type="PackedScene" id=18]
-[ext_resource path="res://WorldObjects/Pick_ups/Pickup_container/Pickup_container.tscn" type="PackedScene" id=19]
 [ext_resource path="res://WorldObjects/Technical/InteractionTextBox/TextBoxPopup.tscn" type="PackedScene" id=20]
 [ext_resource path="res://WorldObjects/Technical/InteractionController/InteractionController.tscn" type="PackedScene" id=21]
 [ext_resource path="res://WorldObjects/Technical/InteractionPopup/InteractionPopup.tscn" type="PackedScene" id=22]
@@ -793,29 +792,9 @@ nextDoorName = "Gates_2"
 
 [node name="Destructables" type="Node" parent="."]
 
-[node name="Barrel" parent="Destructables" groups=["Persist"] instance=ExtResource( 8 )]
-position = Vector2( -107, -435 )
-
-[node name="Barrel2" parent="Destructables" groups=["Persist"] instance=ExtResource( 8 )]
-position = Vector2( 134, -308 )
-
-[node name="Barrel8" parent="Destructables" groups=["Persist"] instance=ExtResource( 8 )]
-position = Vector2( 135, -343 )
-
-[node name="Barrel9" parent="Destructables" groups=["Persist"] instance=ExtResource( 8 )]
-position = Vector2( -172, -133 )
-
-[node name="Barrel4" parent="Destructables" groups=["Persist"] instance=ExtResource( 8 )]
-position = Vector2( 265, -69 )
-
-[node name="Barrel5" parent="Destructables" groups=["Persist"] instance=ExtResource( 8 )]
-position = Vector2( -153, -132 )
-
-[node name="Barrel6" parent="Destructables" groups=["Persist"] instance=ExtResource( 8 )]
-position = Vector2( 118, -309 )
-
-[node name="Barrel3" parent="Destructables" groups=["Persist"] instance=ExtResource( 8 )]
-position = Vector2( 134, -326 )
+[node name="Barrel" parent="Destructables" instance=ExtResource( 8 )]
+position = Vector2( -312, -77 )
+innerItemScene = ExtResource( 4 )
 
 [node name="Collisions" type="Node" parent="."]
 
@@ -1086,10 +1065,6 @@ position = Vector2( 0, -68 )
 shape = SubResource( 43 )
 
 [node name="Collectables" type="Node" parent="."]
-
-[node name="Page" parent="Collectables" instance=ExtResource( 19 )]
-position = Vector2( -351, -86 )
-itemScene = ExtResource( 4 )
 
 [node name="Lighting" type="Node" parent="."]
 

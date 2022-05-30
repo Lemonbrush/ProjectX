@@ -1,7 +1,5 @@
 extends Node2D
 
-signal item_collected
-
 export(PackedScene) var itemScene
 onready var area2d			= $Area2D
 
@@ -15,7 +13,7 @@ func _ready():
 func on_area_entered(body):
 	if body.has_method("start_item_pickup_animation"):
 		body.start_item_pickup_animation(itemScene)
-	emit_signal("item_collected")
+	EventBus.player_picked_up_item(get_name())
 	queue_free()
 	
 	FileManager.save_game()

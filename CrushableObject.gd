@@ -1,6 +1,8 @@
 extends KinematicBody2D
 
-var barrel_crush_scene			= preload("res://WorldObjects/Destructables/Barrel/Barrel_crush/Barrel_crush.tscn")
+export (PackedScene) var crashAnimationScene
+export (int) var weight = 600
+export (PackedScene) var innerItemScene
 
 onready var hazard_area 			= $HazardArea
 
@@ -16,7 +18,7 @@ func _ready():
 	hazard_area.connect("area_entered", self, "destruct")
 	
 func _process(delta):
-	velocity.y += 600 * delta
+	velocity.y += weight * delta
 	velocity = move_and_slide(velocity, Vector2.UP)
 	check_ground()
 	
@@ -27,8 +29,17 @@ func check_ground():
 			destruct()
 
 func destruct(_area = null):
-	var barrel_crush_instance = barrel_crush_scene.instance()
-	get_parent().add_child_below_node(self, barrel_crush_instance)
-	barrel_crush_instance.global_position = global_position
+	var crashAnimationSceneInstance = crashAnimationScene.instance()
+	get_parent().add_child_below_node(self, crashAnimationSceneInstance)
+	crashAnimationSceneInstance.global_position = global_position
+	
+	drop_item()
+	
 	velocity = Vector2.ZERO
 	queue_free()
+	
+func drop_item():
+	if innerItemScene:
+		var innerItemSceneInstance = innerItemScene.instance()
+		get_parent().call_deferred("add_child_below_node", self, innerItemSceneInstance)
+		innerItemSceneInstance.global_position = global_position

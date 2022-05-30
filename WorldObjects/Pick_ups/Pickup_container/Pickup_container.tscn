@@ -14,5 +14,4 @@ collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 rotation = 7.45058e-09
-scale = Vector2( 1, 1 )
 shape = SubResource( 1 )

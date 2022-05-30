@@ -12,7 +12,7 @@
 [ext_resource path="res://Assets/BackgroundGradients/BackgroundGradient1.png" type="Texture" id=10]
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=11]
 [ext_resource path="res://WorldObjects/Destructables/Barrel/Still_barrel/Barrel.tscn" type="PackedScene" id=13]
-[ext_resource path="res://WorldObjects/Pick_ups/Items/HeartKeyItem/HeartKeyItem.tscn" type="PackedScene" id=14]
+[ext_resource path="res://WorldObjects/Pick_ups/Items/HeartKeyItem/View/HeartKeyItemView.tscn" type="PackedScene" id=14]
 [ext_resource path="res://WorldObjects/Technical/Clouds/Clouds.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Assets/WaterSurface/water_surface3.png" type="Texture" id=16]
 
