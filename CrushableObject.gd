@@ -43,3 +43,5 @@ func drop_item():
 		var innerItemSceneInstance = innerItemScene.instance()
 		get_parent().call_deferred("add_child_below_node", self, innerItemSceneInstance)
 		innerItemSceneInstance.global_position = global_position
+		if innerItemSceneInstance.has_method("drop"):
+			innerItemSceneInstance.drop()

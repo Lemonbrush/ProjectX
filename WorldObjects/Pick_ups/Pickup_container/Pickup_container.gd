@@ -1,6 +1,8 @@
-extends Node2D
+extends RigidBody2D
 
+export(Resource) var dropResource
 export(PackedScene) var itemScene
+
 onready var area2d			= $Area2D
 
 func _ready():
@@ -17,3 +19,6 @@ func on_area_entered(body):
 	queue_free()
 	
 	FileManager.save_game()
+
+func drop():
+	apply_impulse(Vector2(0, 0), Vector2(0, -100))

@@ -4,4 +4,6 @@
 [ext_resource path="res://WorldObjects/Destructables/CrushableObject/CrushableObject.tscn" type="PackedScene" id=3]
 
 [node name="Barrel" instance=ExtResource( 3 )]
+collision_layer = 3
+collision_mask = 3
 crashAnimationScene = ExtResource( 1 )
