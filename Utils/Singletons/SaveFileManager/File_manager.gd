@@ -50,4 +50,3 @@ func load_game():
 func delete_save():
 	var dir = Directory.new()
 	dir.remove(save_path + game_save_name)
-		
