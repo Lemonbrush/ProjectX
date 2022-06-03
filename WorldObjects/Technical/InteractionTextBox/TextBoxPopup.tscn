@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Resources/Fonts/Epilepsy Sans/Resource/EpilepsySans.tres" type="DynamicFont" id=1]
-[ext_resource path="res://TextBoxPopup.gd" type="Script" id=2]
+[ext_resource path="res://WorldObjects/Technical/InteractionTextBox/TextBoxPopup.gd" type="Script" id=2]
 [ext_resource path="res://Resources/Themes/MainTheme.tres" type="Theme" id=3]
 [ext_resource path="res://Assets/UI/use_popup_button_image.png" type="Texture" id=4]
 

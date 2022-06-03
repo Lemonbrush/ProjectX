@@ -1,22 +1,23 @@
 extends Node2D
+class_name OpenableContainerOpenSceneObject
 
-export (PackedScene) var openAnimationScene
 export (PackedScene) var innerItemScene
 
-onready var interactionController = $InteractionController
+onready var animationPlayer = $AnimationPlayer
+
+export var isAnimationFinished = false
 
 func _ready():
-	interactionController.connect("on_interact", self, "_on_open_pressed") 
-
-func _on_open_pressed():
-	var openAnimationSceneInstance = openAnimationScene.instance()
-	get_tree().get_current_scene().add_child(openAnimationSceneInstance)
-	openAnimationSceneInstance.global_position = global_position
-	drop_item()
-	queue_free()
+	if !isAnimationFinished:
+		animationPlayer.connect("animation_finished", self, "_on_animation_finished")
+		animationPlayer.play("Open")
+	else:
+		animationPlayer.play("Opened")
 	
 func drop_item():
 	if innerItemScene:
+		isAnimationFinished = true
+		
 		var innerItemSceneInstance = innerItemScene.instance()
 		innerItemSceneInstance.set_position(position)
 
@@ -25,3 +26,6 @@ func drop_item():
 		
 		if innerItemSceneInstance.has_method("drop"):
 			innerItemSceneInstance.call_deferred("drop")
+
+func _on_animation_finished(_anim):
+	isAnimationFinished = true

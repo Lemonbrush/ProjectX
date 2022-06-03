@@ -15,7 +15,7 @@
 [ext_resource path="res://Assets/Decorations/Resources/dancing_flowers.tres" type="Texture" id=13]
 [ext_resource path="res://Assets/BackgroundGradients/BackgroundGradient1.png" type="Texture" id=14]
 [ext_resource path="res://WorldObjects/Technical/Clouds/Clouds.tscn" type="PackedScene" id=15]
-[ext_resource path="res://WorldObjects/Interactables/Simple_door.tscn" type="PackedScene" id=16]
+[ext_resource path="res://WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=16]
 [ext_resource path="res://WorldObjects/Destructables/Barrel/Still_barrel/Barrel.tscn" type="PackedScene" id=17]
 [ext_resource path="res://WorldObjects/Pick_ups/Pickup_container/Pickup_container.tscn" type="PackedScene" id=18]
 

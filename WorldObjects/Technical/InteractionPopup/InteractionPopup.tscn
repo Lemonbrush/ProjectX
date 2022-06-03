@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Levels/Start_gate_location/LoveGate/Gates/InteractionPopup.gd" type="Script" id=1]
+[ext_resource path="res://WorldObjects/Technical/InteractionPopup/InteractionPopup.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Themes/MainTheme.tres" type="Theme" id=2]
 [ext_resource path="res://Resources/Fonts/Epilepsy Sans/Resource/EpilepsySansOutlined.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Assets/UI/use_popup_button_image.png" type="Texture" id=4]

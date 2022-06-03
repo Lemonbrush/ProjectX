@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://MovingPlatform.gd" type="Script" id=1]
+[ext_resource path="res://WorldObjects/Moving_platforms/MovingPlatform.gd" type="Script" id=1]
 [ext_resource path="res://Assets/WorldObjects/Floating_block.png" type="Texture" id=2]
 [ext_resource path="res://WorldObjects/Moving_platforms/Paths/HorizontalPath.tres" type="Curve2D" id=3]
 

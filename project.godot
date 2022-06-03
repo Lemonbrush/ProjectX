@@ -17,7 +17,12 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "InteractionController",
 "language": "GDScript",
-"path": "res://Levels/Start_gate_location/LoveGate/Gates/InteractionController.gd"
+"path": "res://WorldObjects/Technical/InteractionController/InteractionController.gd"
+}, {
+"base": "Node2D",
+"class": "OpenableContainerOpenSceneObject",
+"language": "GDScript",
+"path": "res://WorldObjects/Interactables/OpenableContainers/OpenableContainerOpenSceneObject/OpenableContainerOpenSceneObject.gd"
 }, {
 "base": "RigidBody2D",
 "class": "PickupContainer",
@@ -52,6 +57,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "BaseLevel": "",
 "InteractionController": "",
+"OpenableContainerOpenSceneObject": "",
 "PickupContainer": "",
 "Player": "",
 "PlayerState": "",

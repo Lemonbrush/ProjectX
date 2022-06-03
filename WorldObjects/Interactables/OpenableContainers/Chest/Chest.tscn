@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://WorldObjects/Interactables/OpenableContainers/Chest/Opening_chest_animation/OpeningChestAnimation.tscn" type="PackedScene" id=1]
+[ext_resource path="res://WorldObjects/Interactables/OpenableContainers/Chest/Opening_chest/OpeningChest.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/WorldObjects/Chest/Chest_sprite_sheet-Sheet.png" type="Texture" id=3]
 [ext_resource path="res://WorldObjects/Interactables/OpenableContainers/OpenableContainerObject/OpenableContainerObject.tscn" type="PackedScene" id=4]
 

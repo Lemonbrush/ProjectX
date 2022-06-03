@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Levels/Central_hab/Simple_gate/SimpleGate.gd" type="Script" id=1]
+[ext_resource path="res://WorldObjects/Technical/InteractionPopup/InteractionPopup.tscn" type="PackedScene" id=1]
 [ext_resource path="res://WorldObjects/Technical/InteractionController/InteractionController.tscn" type="PackedScene" id=2]
-[ext_resource path="res://WorldObjects/Technical/InteractionPopup/InteractionPopup.tscn" type="PackedScene" id=3]
+[ext_resource path="res://WorldObjects/Interactables/Door/SimpleGate.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 16 )
@@ -13,7 +13,7 @@ extents = Vector2( 3, 16 )
 [node name="Door" type="Node2D" groups=["Persist"]]
 position = Vector2( -456, -115 )
 z_index = 1
-script = ExtResource( 1 )
+script = ExtResource( 3 )
 
 [node name="GatesBackground" type="ColorRect" parent="."]
 margin_left = -8.0
@@ -39,7 +39,7 @@ action_type = 1
 position = Vector2( 0, -4 )
 shape = SubResource( 2 )
 
-[node name="InteractionPopup" parent="." instance=ExtResource( 3 )]
+[node name="InteractionPopup" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0, -22 )
 labelText = "Войти"
 

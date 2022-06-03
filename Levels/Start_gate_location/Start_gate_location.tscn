@@ -23,7 +23,7 @@
 [ext_resource path="res://WorldObjects/Technical/InteractionController/InteractionController.tscn" type="PackedScene" id=21]
 [ext_resource path="res://WorldObjects/Technical/InteractionPopup/InteractionPopup.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Assets/WorldObjects/Signs/Tumbstone.png" type="Texture" id=23]
-[ext_resource path="res://MovingPlatform.gd" type="Script" id=24]
+[ext_resource path="res://WorldObjects/Moving_platforms/MovingPlatform.gd" type="Script" id=24]
 [ext_resource path="res://Assets/WorldObjects/Floating_block.png" type="Texture" id=25]
 [ext_resource path="res://WorldObjects/Moving_platforms/Paths/VerticalPath.tres" type="Curve2D" id=26]
 
@@ -741,9 +741,6 @@ nextDoorName = "Gates_2"
 
 [node name="WorldObjects" type="Node2D" parent="."]
 
-[node name="Barrel2" parent="WorldObjects" instance=ExtResource( 8 )]
-position = Vector2( -446, -13 )
-
 [node name="Signs" type="Node2D" parent="WorldObjects"]
 position = Vector2( 1, 62 )
 
@@ -796,13 +793,45 @@ texts_array = [ "Лишь тот войдет, кто ключ от
 position = Vector2( 0.5, 0.5 )
 shape = SubResource( 46 )
 
-[node name="Barrel" parent="WorldObjects" instance=ExtResource( 8 )]
-position = Vector2( -470, -5 )
+[node name="Chest" parent="WorldObjects" instance=ExtResource( 19 )]
+position = Vector2( 61, -564 )
 innerItemScene = ExtResource( 4 )
 
-[node name="Chest" parent="WorldObjects" instance=ExtResource( 19 )]
-position = Vector2( -356, 5 )
-innerItemScene = ExtResource( 4 )
+[node name="Barrel" parent="WorldObjects" instance=ExtResource( 8 )]
+position = Vector2( -188, -69 )
+
+[node name="Barrel2" parent="WorldObjects" instance=ExtResource( 8 )]
+position = Vector2( -169, -69 )
+
+[node name="Barrel3" parent="WorldObjects" instance=ExtResource( 8 )]
+position = Vector2( 158, -69 )
+
+[node name="Barrel4" parent="WorldObjects" instance=ExtResource( 8 )]
+position = Vector2( 249, -8 )
+
+[node name="Barrel5" parent="WorldObjects" instance=ExtResource( 8 )]
+position = Vector2( 141, -247 )
+
+[node name="Barrel6" parent="WorldObjects" instance=ExtResource( 8 )]
+position = Vector2( 141, -267 )
+
+[node name="Barrel7" parent="WorldObjects" instance=ExtResource( 8 )]
+position = Vector2( 141, -285 )
+
+[node name="Barrel8" parent="WorldObjects" instance=ExtResource( 8 )]
+position = Vector2( 123, -247 )
+
+[node name="Barrel9" parent="WorldObjects" instance=ExtResource( 8 )]
+position = Vector2( 125, -267 )
+
+[node name="Barrel10" parent="WorldObjects" instance=ExtResource( 8 )]
+position = Vector2( 259, -326 )
+
+[node name="Barrel11" parent="WorldObjects" instance=ExtResource( 8 )]
+position = Vector2( -118, -376 )
+
+[node name="Barrel12" parent="WorldObjects" instance=ExtResource( 8 )]
+position = Vector2( -10, -457 )
 
 [node name="Collisions" type="Node" parent="."]
 
