@@ -10,7 +10,7 @@ func _ready():
 
 func _on_open_pressed():
 	var openAnimationSceneInstance = openAnimationScene.instance()
-	get_parent().add_child_below_node(self, openAnimationSceneInstance)
+	get_tree().get_current_scene().add_child(openAnimationSceneInstance)
 	openAnimationSceneInstance.global_position = global_position
 	drop_item()
 	queue_free()
@@ -19,6 +19,9 @@ func drop_item():
 	if innerItemScene:
 		var innerItemSceneInstance = innerItemScene.instance()
 		innerItemSceneInstance.set_position(position)
-		get_parent().call_deferred("add_child", innerItemSceneInstance)
+
+		# we have to add children to the root node in order to let them be packed in save scene
+		get_tree().get_current_scene().call_deferred("add_child", innerItemSceneInstance)
+		
 		if innerItemSceneInstance.has_method("drop"):
 			innerItemSceneInstance.call_deferred("drop")

@@ -29,7 +29,7 @@ func check_ground():
 
 func destruct(_area = null):
 	var crashAnimationSceneInstance = crashAnimationScene.instance()
-	get_parent().add_child_below_node(self, crashAnimationSceneInstance)
+	get_tree().get_current_scene().add_child_below_node(self, crashAnimationSceneInstance)
 	crashAnimationSceneInstance.global_position = global_position
 	
 	drop_item()
@@ -40,7 +40,7 @@ func destruct(_area = null):
 func drop_item():
 	if innerItemScene:
 		var innerItemSceneInstance = innerItemScene.instance()
-		get_parent().call_deferred("add_child_below_node", self, innerItemSceneInstance)
 		innerItemSceneInstance.set_position(position)
+		get_tree().get_current_scene().call_deferred("add_child", innerItemSceneInstance)
 		if innerItemSceneInstance.has_method("drop"):
 			innerItemSceneInstance.drop()

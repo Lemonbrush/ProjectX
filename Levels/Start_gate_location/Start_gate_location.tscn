@@ -739,11 +739,10 @@ z_index = -1
 nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "Gates_2"
 
-[node name="Chest" parent="." instance=ExtResource( 19 )]
-position = Vector2( -356, 5 )
-innerItemScene = ExtResource( 4 )
-
 [node name="WorldObjects" type="Node2D" parent="."]
+
+[node name="Barrel2" parent="WorldObjects" instance=ExtResource( 8 )]
+position = Vector2( -446, -13 )
 
 [node name="Signs" type="Node2D" parent="WorldObjects"]
 position = Vector2( 1, 62 )
@@ -799,6 +798,10 @@ shape = SubResource( 46 )
 
 [node name="Barrel" parent="WorldObjects" instance=ExtResource( 8 )]
 position = Vector2( -470, -5 )
+innerItemScene = ExtResource( 4 )
+
+[node name="Chest" parent="WorldObjects" instance=ExtResource( 19 )]
+position = Vector2( -356, 5 )
 innerItemScene = ExtResource( 4 )
 
 [node name="Collisions" type="Node" parent="."]
@@ -1173,10 +1176,10 @@ position = Vector2( 622, 319 )
 shape = SubResource( 41 )
 
 [editable path="Camera2D"]
-[editable path="Chest"]
-[editable path="Chest/InteractionController"]
 [editable path="WorldObjects/Signs/TumbSign/InteractionController"]
 [editable path="WorldObjects/Signs/GatesText/InteractionController"]
+[editable path="WorldObjects/Chest"]
+[editable path="WorldObjects/Chest/InteractionController"]
 [editable path="Collisions/PassTrough/PassThroughBody4"]
 [editable path="Collisions/PassTrough/PassThroughBody5"]
 [editable path="Collisions/PassTrough/PassThroughBody7"]
