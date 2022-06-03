@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://WorldObjects/Pick_ups/Items/HeartKeyItem/View/HeartKeyItemView.tscn" type="PackedScene" id=1]
+[ext_resource path="res://WorldObjects/Pick_ups/Items/HeartKeyItem/HeartKeyItem.gd" type="Script" id=1]
 [ext_resource path="res://WorldObjects/Pick_ups/Pickup_container/Pickup_container.tscn" type="PackedScene" id=2]
+[ext_resource path="res://WorldObjects/Pick_ups/Items/HeartKeyItem/View/HeartKeyItemView.tscn" type="PackedScene" id=3]
 
 [node name="HeartKeyItem" instance=ExtResource( 2 )]
-itemScene = ExtResource( 1 )
+script = ExtResource( 1 )
+itemScene = ExtResource( 3 )
+
+[node name="Area2D" parent="." index="0"]
+visible = false
+
+[node name="UnpickableTimer" type="Timer" parent="." index="2"]

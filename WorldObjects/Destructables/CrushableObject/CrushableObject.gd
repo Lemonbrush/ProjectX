@@ -14,7 +14,6 @@ onready var ground_ray3 			= $GroundRay3
 onready var ray_array			= [ground_ray1, ground_ray2, ground_ray3]
 
 func _ready():
-	
 	hazard_area.connect("area_entered", self, "destruct")
 	
 func _process(delta):
@@ -30,7 +29,7 @@ func check_ground():
 
 func destruct(_area = null):
 	var crashAnimationSceneInstance = crashAnimationScene.instance()
-	get_parent().add_child_below_node(self, crashAnimationSceneInstance)
+	get_tree().get_current_scene().add_child(crashAnimationSceneInstance)
 	crashAnimationSceneInstance.global_position = global_position
 	
 	drop_item()
@@ -41,7 +40,7 @@ func destruct(_area = null):
 func drop_item():
 	if innerItemScene:
 		var innerItemSceneInstance = innerItemScene.instance()
-		get_parent().call_deferred("add_child_below_node", self, innerItemSceneInstance)
-		innerItemSceneInstance.global_position = global_position
+		innerItemSceneInstance.set_position(position)
+		get_tree().get_current_scene().call_deferred("add_child", innerItemSceneInstance)
 		if innerItemSceneInstance.has_method("drop"):
 			innerItemSceneInstance.drop()

@@ -16,19 +16,27 @@ func save_game():
 		dir.make_dir_recursive(SAVE_DIR)
 	
 	# saving logic
+	
+	var currentScene = get_tree().get_current_scene()
+	
+	# we have to make all subNodes to be in the root node in order to let them be packed
+	for child in currentScene.get_children():
+		if child.has_method("set_owner"):
+			child.set_owner(currentScene)
+	
 	var packedScene = PackedScene.new()
-	packedScene.pack(get_tree().get_current_scene())
+	packedScene.pack(currentScene)
 	var lastVisitedSceneName = get_tree().get_current_scene().get_name() 
 	save_file_resource.lastVisitedSceneName = lastVisitedSceneName
 	save_file_resource.savedLevelScenes[lastVisitedSceneName] = packedScene
 	save_file_resource.playerPosition = get_tree().get_current_scene().find_node("Player").get_global_position()
-
+	
 	var error = ResourceSaver.save(save_path + game_save_name, save_file_resource)
 	if error != OK:
 		print("Save Error")
 	else:
 		print("Game saved")
-
+		
 func load_game():
 	var file = File.new()
 	if file.file_exists(save_path + game_save_name):
