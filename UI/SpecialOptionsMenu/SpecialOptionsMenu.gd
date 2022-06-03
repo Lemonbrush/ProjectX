@@ -2,7 +2,7 @@ extends CanvasLayer
 signal back_pressed
 
 onready var quitButton = $MarginContainer2/CenterContainer/VBoxContainer/ExitButton
-onready var deleteAllSavesButton = $MarginContainer2/CenterContainer/VBoxContainer/DeleteAllSavesButton
+onready var deleteAllSavesButton = $MarginContainer2/CenterContainer/VBoxContainer/ButtonsVBoxContainer/DeleteAllSavesButton
 
 func _ready():
 	quitButton.connect("pressed", self, "on_quit_pressed") 

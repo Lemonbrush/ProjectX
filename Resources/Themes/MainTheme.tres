@@ -1,8 +1,10 @@
-[gd_resource type="Theme" load_steps=10 format=2]
+[gd_resource type="Theme" load_steps=12 format=2]
 
 [ext_resource path="res://Resources/Fonts/Custom Font ttf 12h 3.0 for Paint/Resource/CFont12H30PBold.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Resources/Fonts/Custom Font ttf 12h 3.0 for Paint/Resource/CFont12H30P.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Assets/UI/Panrl_container_texture.png" type="Texture" id=3]
+[ext_resource path="res://Assets/UI/RadioButton/radioButton2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/UI/RadioButton/radioButton1.png" type="Texture" id=5]
 
 [sub_resource type="StyleBoxEmpty" id=6]
 
@@ -33,4 +35,8 @@ Button/styles/focus = SubResource( 4 )
 Button/styles/hover = SubResource( 2 )
 Button/styles/normal = SubResource( 1 )
 Button/styles/pressed = SubResource( 3 )
+CheckBox/icons/checked = ExtResource( 4 )
+CheckBox/icons/radio_checked = ExtResource( 4 )
+CheckBox/icons/radio_unchecked = ExtResource( 5 )
+CheckBox/icons/unchecked = ExtResource( 5 )
 PanelContainer/styles/panel = SubResource( 5 )
