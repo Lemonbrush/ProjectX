@@ -63,7 +63,7 @@ text = "Удалить все сохранения"
 margin_top = 18.0
 margin_right = 158.0
 margin_bottom = 32.0
-text = "Удалить системные данные"
+text = "Сбросить настройки"
 
 [node name="RadioButtonsVBoxContainer" type="VBoxContainer" parent="MarginContainer2/CenterContainer/VBoxContainer"]
 margin_top = 47.0
