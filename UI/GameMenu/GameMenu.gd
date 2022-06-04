@@ -4,6 +4,8 @@ onready var play_button = $MainMenuMarginContainer/VBoxContainer/PlayButton
 onready var options_button = $MainMenuMarginContainer/VBoxContainer/OptionsButton
 onready var exit_button = $MainMenuMarginContainer/VBoxContainer/ExitButton
 
+onready var mainMenuMarginContainer = $MainMenuMarginContainer
+
 var optionsMenuScene = preload("res://UI/OptionsMenu/OptionsMenu.tscn")
 
 func _ready():
@@ -21,7 +23,7 @@ func on_options_pressed():
 	var optionsMenuInstance = optionsMenuScene.instance()
 	get_tree().root.add_child(optionsMenuInstance)
 	optionsMenuInstance.connect("back_pressed", self, "on_options_back_pressed")
-	$MainMenuMarginContainer.visible = false
+	mainMenuMarginContainer.visible = false
 
 func on_options_back_pressed():
-	$MainMenuMarginContainer.visible = true
+	mainMenuMarginContainer.visible = true

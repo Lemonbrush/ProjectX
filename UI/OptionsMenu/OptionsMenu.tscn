@@ -5,6 +5,7 @@
 [ext_resource path="res://Resources/Themes/MainTheme.tres" type="Theme" id=3]
 
 [node name="OptionsMenu" type="CanvasLayer"]
+pause_mode = 2
 script = ExtResource( 2 )
 
 [node name="MainMarginContainer" type="MarginContainer" parent="."]
