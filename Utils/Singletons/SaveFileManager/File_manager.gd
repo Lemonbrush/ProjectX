@@ -38,8 +38,7 @@ func save_game():
 		print("Game saved")
 		
 func load_game():
-	var file = File.new()
-	if file.file_exists(save_path) && !SettingsManager.settings.should_delete_all_saves_on_start_session:
+	if has_any_save_file() && !SettingsManager.settings.should_delete_all_saves_on_start_session:
 		save_file_resource = load(save_path)
 		var lastVisitedSceneName = save_file_resource.lastVisitedSceneName
 		var lastVisitedScene = save_file_resource.savedLevelScenes[lastVisitedSceneName]
@@ -51,3 +50,7 @@ func load_game():
 func delete_save():
 	var dir = Directory.new()
 	dir.remove(save_path)
+	
+func has_any_save_file():
+	var file = File.new()
+	return file.file_exists(save_path)

@@ -10,6 +10,10 @@ func _ready():
 	load_settings()
 
 func save_settings():
+	var dir = Directory.new()
+	if !dir.dir_exists(SAVE_DIR):
+		dir.make_dir_recursive(SAVE_DIR)
+		
 	var error = ResourceSaver.save(save_path, settings)
 	if error != OK:
 		print("Setting save Error")
@@ -17,9 +21,12 @@ func save_settings():
 		print("Game settings saved")
 		
 func load_settings():
-	var file = File.new()
-	if file.file_exists(save_path):
+	if has_settings_file():
 		settings = load(save_path)
+
+func has_settings_file():
+	var file = File.new()
+	return file.file_exists(save_path)
 	
 ################### Update properties functions ##################
 

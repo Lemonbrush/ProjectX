@@ -15,6 +15,8 @@ func _ready():
 	setup_ui()
 
 func setup_ui():
+	deleteSettingsDataButton.disabled = !SettingsManager.has_settings_file()
+	deleteAllSavesButton.disabled = !FileManager.has_any_save_file()
 	deleteAllSavesByDefaultRadiobutton.pressed = SettingsManager.settings.should_delete_all_saves_on_start_session
 
 func on_quit_pressed():
@@ -22,13 +24,13 @@ func on_quit_pressed():
 	emit_signal("back_pressed")
 
 func on_save_delete_pressed():
-	deleteAllSavesButton.disabled = true
 	FileManager.delete_save()
+	setup_ui()
 
 func on_delete_all_saves_by_default_radiobutton_checked():
 	SettingsManager.update_should_delete_all_saves_on_start_session_option()
+	setup_ui()
 	
 func on_delete_settings_data_pressed():
-	deleteSettingsDataButton.disabled = true
 	SettingsManager.delete_settings_save()
 	setup_ui()
