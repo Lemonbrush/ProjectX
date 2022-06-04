@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=2]
-[ext_resource path="res://WorldObjects/Technical/Camera2D/Camera2D.gd" type="Script" id=3]
+[ext_resource path="res://WorldObjects/Technical/Camera2D/Camera2D.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Levels/Harbor_house.png" type="Texture" id=6]
@@ -122,15 +122,7 @@ anims/open_transition = SubResource( 39 )
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 40 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-pause_mode = 2
-position = Vector2( 0, -120 )
-current = true
-smoothing_enabled = true
-smoothing_speed = 3.0
-editor_draw_drag_margin = true
-script = ExtResource( 3 )
-backgroundColor = Color( 0.6, 0.776471, 0.909804, 1 )
+[node name="Camera2D" parent="." instance=ExtResource( 3 )]
 
 [node name="Clouds" parent="Camera2D" instance=ExtResource( 15 )]
 position = Vector2( -2, -19 )
@@ -297,7 +289,6 @@ shape = SubResource( 18 )
 
 [node name="Page" parent="Collectables" groups=["Persist"] instance=ExtResource( 14 )]
 position = Vector2( 60, -653 )
-page_number = 1
 
 [node name="Lighting" type="Node" parent="."]
 

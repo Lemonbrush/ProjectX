@@ -1,0 +1,81 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Resources/Fonts/Epilepsy Sans/Resource/EpilepsySansBold.tres" type="DynamicFont" id=1]
+[ext_resource path="res://UI/OptionsMenu/OptionsMenu.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Themes/MainTheme.tres" type="Theme" id=3]
+
+[node name="OptionsMenu" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 2 )
+
+[node name="MainMarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="MainMarginContainer"]
+margin_right = 530.0
+margin_bottom = 320.0
+color = Color( 0.0941176, 0.0784314, 0.168627, 0.368627 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MainMarginContainer"]
+margin_right = 530.0
+margin_bottom = 320.0
+custom_constants/margin_top = 60
+
+[node name="ContentVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer"]
+margin_top = 60.0
+margin_right = 530.0
+margin_bottom = 320.0
+custom_constants/separation = 30
+
+[node name="HeaderLabel" type="Label" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer"]
+margin_left = 201.0
+margin_right = 329.0
+margin_bottom = 26.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 1 )
+text = "Настройки"
+align = 1
+
+[node name="MenuVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer"]
+margin_left = 235.0
+margin_top = 56.0
+margin_right = 295.0
+margin_bottom = 135.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource( 3 )
+custom_constants/separation = 15
+
+[node name="OptionButtonsVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer"]
+margin_right = 60.0
+margin_bottom = 50.0
+
+[node name="SoundButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionButtonsVBoxContainer"]
+margin_right = 60.0
+margin_bottom = 14.0
+disabled = true
+text = "Звук"
+
+[node name="ControlsButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionButtonsVBoxContainer"]
+margin_top = 18.0
+margin_right = 60.0
+margin_bottom = 32.0
+disabled = true
+text = "Управление"
+
+[node name="SpecialOptionButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionButtonsVBoxContainer"]
+margin_top = 36.0
+margin_right = 60.0
+margin_bottom = 50.0
+text = "Особые"
+
+[node name="ExitButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer"]
+margin_top = 65.0
+margin_right = 60.0
+margin_bottom = 79.0
+text = "Выход"

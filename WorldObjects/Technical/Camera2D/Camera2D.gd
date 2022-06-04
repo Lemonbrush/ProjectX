@@ -1,6 +1,6 @@
 extends Camera2D
 
-onready var tween = $Tween
+var tween = Tween.new()
 
 var targetPosition = Vector2.ZERO
 

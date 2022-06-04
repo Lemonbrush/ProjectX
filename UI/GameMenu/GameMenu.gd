@@ -1,14 +1,17 @@
 extends CanvasLayer
 
-onready var play_button = $MarginContainer/VBoxContainer/PlayButton
-onready var options_button = $MarginContainer/VBoxContainer/OptionsButton
-onready var exit_button = $MarginContainer/VBoxContainer/ExitButton
-onready var delete_save_button = $MarginContainer/VBoxContainer/DeleteSaveButton
+onready var play_button = $MainMenuMarginContainer/VBoxContainer/PlayButton
+onready var options_button = $MainMenuMarginContainer/VBoxContainer/OptionsButton
+onready var exit_button = $MainMenuMarginContainer/VBoxContainer/ExitButton
+
+onready var mainMenuMarginContainer = $MainMenuMarginContainer
+
+var optionsMenuScene = preload("res://UI/OptionsMenu/OptionsMenu.tscn")
 
 func _ready():
 	play_button.connect("pressed", self, "on_play_pressed")
 	exit_button.connect("pressed", self, "on_exit_pressed")
-	delete_save_button.connect("pressed", self, "on_save_delete_pressed")
+	options_button.connect("pressed", self, "on_options_pressed")
 	
 func on_play_pressed():
 	FileManager.load_game()
@@ -16,6 +19,11 @@ func on_play_pressed():
 func on_exit_pressed():
 	get_tree().quit()
 
-func on_save_delete_pressed():
-	delete_save_button.disabled = true
-	FileManager.delete_save()
+func on_options_pressed():
+	var optionsMenuInstance = optionsMenuScene.instance()
+	get_tree().root.add_child(optionsMenuInstance)
+	optionsMenuInstance.connect("back_pressed", self, "on_options_back_pressed")
+	mainMenuMarginContainer.visible = false
+
+func on_options_back_pressed():
+	mainMenuMarginContainer.visible = true
