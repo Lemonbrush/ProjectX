@@ -1,7 +1,45 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://UI/GameMenu/GameMenu.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Themes/MainTheme.tres" type="Theme" id=2]
+[ext_resource path="res://Assets/Clouds/CloudsTransparentBottom.png" type="Texture" id=3]
+
+[sub_resource type="CanvasItemMaterial" id=8]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="CurveTexture" id=2]
+
+[sub_resource type="Gradient" id=9]
+offsets = PoolRealArray( 0, 0.00285307, 0.248217, 0.774608, 0.997147, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.239024, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 9 )
+
+[sub_resource type="Curve" id=10]
+_data = [ Vector2( 0, 0.840033 ), 0.0, 0.0, 0, 0, Vector2( 0.103806, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.571868 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=7]
+curve = SubResource( 10 )
+
+[sub_resource type="ParticlesMaterial" id=11]
+emission_shape = 2
+emission_box_extents = Vector3( 500, 500, 1 )
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 7 )
+color_ramp = SubResource( 4 )
+anim_offset = 1.0
+anim_offset_random = 1.0
+anim_offset_curve = SubResource( 2 )
 
 [node name="GameMenu" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -17,6 +55,26 @@ __meta__ = {
 margin_right = 530.0
 margin_bottom = 320.0
 color = Color( 0.533333, 0.815686, 1, 1 )
+
+[node name="CloudsDecoration" type="Control" parent="BackImageMarginContainer"]
+margin_right = 530.0
+margin_bottom = 320.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Particles2D" type="Particles2D" parent="BackImageMarginContainer/CloudsDecoration"]
+self_modulate = Color( 1, 1, 1, 0.784314 )
+show_behind_parent = true
+material = SubResource( 8 )
+position = Vector2( 261, 175 )
+amount = 50
+lifetime = 60.0
+preprocess = 20.0
+randomness = 1.0
+local_coords = false
+process_material = SubResource( 11 )
+texture = ExtResource( 3 )
 
 [node name="MainMenuMarginContainer" type="MarginContainer" parent="."]
 anchor_right = 0.5
