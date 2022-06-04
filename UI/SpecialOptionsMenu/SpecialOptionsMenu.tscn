@@ -8,7 +8,7 @@
 pause_mode = 2
 script = ExtResource( 3 )
 
-[node name="MarginContainer2" type="MarginContainer" parent="."]
+[node name="MainMarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 2 )
@@ -16,80 +16,85 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer2"]
+[node name="ColorRect" type="ColorRect" parent="MainMarginContainer"]
 margin_right = 530.0
 margin_bottom = 320.0
 color = Color( 0.0941176, 0.0784314, 0.168627, 0.368627 )
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2"]
+[node name="MarginContainer" type="MarginContainer" parent="MainMarginContainer"]
 margin_right = 530.0
-margin_bottom = 86.0
+margin_bottom = 217.0
 size_flags_vertical = 0
 custom_constants/margin_top = 60
 
-[node name="Header" type="Label" parent="MarginContainer2/MarginContainer"]
-margin_left = 220.0
+[node name="ContentVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer"]
 margin_top = 60.0
+margin_right = 530.0
+margin_bottom = 217.0
+custom_constants/separation = 30
+
+[node name="Header" type="Label" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer"]
+margin_left = 220.0
 margin_right = 310.0
-margin_bottom = 86.0
+margin_bottom = 26.0
 size_flags_horizontal = 4
 custom_fonts/font = ExtResource( 1 )
 text = "Особые"
 align = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer2"]
-margin_right = 530.0
-margin_bottom = 320.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2/CenterContainer"]
+[node name="MenuVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer"]
 margin_left = 186.0
-margin_top = 106.0
+margin_top = 56.0
 margin_right = 344.0
-margin_bottom = 213.0
+margin_bottom = 157.0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme = ExtResource( 2 )
 custom_constants/separation = 15
 
-[node name="ButtonsVBoxContainer" type="VBoxContainer" parent="MarginContainer2/CenterContainer/VBoxContainer"]
+[node name="OptionsVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer"]
+margin_right = 158.0
+margin_bottom = 67.0
+
+[node name="ButtonsVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsVBoxContainer"]
 margin_right = 158.0
 margin_bottom = 32.0
 
-[node name="DeleteAllSavesButton" type="Button" parent="MarginContainer2/CenterContainer/VBoxContainer/ButtonsVBoxContainer"]
+[node name="DeleteAllSavesButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsVBoxContainer/ButtonsVBoxContainer"]
 margin_right = 158.0
 margin_bottom = 14.0
 text = "Удалить все сохранения"
 
-[node name="DeleteSystemDataButton" type="Button" parent="MarginContainer2/CenterContainer/VBoxContainer/ButtonsVBoxContainer"]
+[node name="DeleteSystemDataButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsVBoxContainer/ButtonsVBoxContainer"]
 margin_top = 18.0
 margin_right = 158.0
 margin_bottom = 32.0
 text = "Сбросить настройки"
 
-[node name="RadioButtonsVBoxContainer" type="VBoxContainer" parent="MarginContainer2/CenterContainer/VBoxContainer"]
-margin_top = 47.0
+[node name="RadioButtonsVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsVBoxContainer"]
+margin_top = 36.0
 margin_right = 158.0
-margin_bottom = 78.0
+margin_bottom = 67.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/CenterContainer/VBoxContainer/RadioButtonsVBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsVBoxContainer/RadioButtonsVBoxContainer"]
 margin_right = 158.0
 margin_bottom = 31.0
 custom_constants/separation = 15
 
-[node name="DeleteAllSavesAlwaysButton" type="Label" parent="MarginContainer2/CenterContainer/VBoxContainer/RadioButtonsVBoxContainer/HBoxContainer"]
+[node name="DeleteAllSavesAlwaysButton" type="Label" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsVBoxContainer/RadioButtonsVBoxContainer/HBoxContainer"]
 margin_right = 132.0
 margin_bottom = 31.0
 text = "Удалять все сохранения
 при входе"
 align = 1
 
-[node name="CheckBox" type="CheckBox" parent="MarginContainer2/CenterContainer/VBoxContainer/RadioButtonsVBoxContainer/HBoxContainer"]
+[node name="CheckBox" type="CheckBox" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsVBoxContainer/RadioButtonsVBoxContainer/HBoxContainer"]
 margin_left = 147.0
 margin_right = 158.0
 margin_bottom = 31.0
 
-[node name="ExitButton" type="Button" parent="MarginContainer2/CenterContainer/VBoxContainer"]
-margin_top = 93.0
+[node name="ExitButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer"]
+margin_top = 82.0
 margin_right = 158.0
-margin_bottom = 107.0
+margin_bottom = 96.0
 text = "Выход"
