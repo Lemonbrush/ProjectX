@@ -35,4 +35,5 @@ func on_player_exited(_body):
 
 func _on_interact():
 	Global.door_name = nextDoorName
-	LevelManager.transition_to_level(nextScenePath)
+	
+	EventBus.player_entered_door(nextScenePath)

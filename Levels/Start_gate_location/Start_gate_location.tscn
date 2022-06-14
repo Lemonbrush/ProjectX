@@ -1103,6 +1103,9 @@ shape = SubResource( 43 )
 
 [node name="Collectables" type="Node" parent="."]
 
+[node name="HeartKeyItem" parent="Collectables" instance=ExtResource( 4 )]
+position = Vector2( -62, -106 )
+
 [node name="Lighting" type="Node" parent="."]
 
 [node name="Light2D" type="Light2D" parent="Lighting"]
