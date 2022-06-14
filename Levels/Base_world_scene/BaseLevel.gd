@@ -37,7 +37,7 @@ func correct_player_position_by_door():
 		if door_node:
 			player.global_position = door_node.global_position
 			camera.global_position = door_node.global_position
-			return door_node.global_position
+			player.is_entering_out = true
 			
 func player_animation_mode_change(isPlayerAnimating):
 	get_tree().paused = isPlayerAnimating

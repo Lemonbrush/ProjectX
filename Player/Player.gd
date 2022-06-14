@@ -2,7 +2,7 @@ extends KinematicBody2D
 class_name Player
 
 var footstepParticles = preload("res://WorldObjects/Technical/FootstepsParticles/FootstepParticles.tscn")
-var itemPickupScenePath = preload("res://Player/Animation_scenes/Item_picking_player.tscn")
+var itemPickupScenePath = preload("res://Player/Animation_scenes/Item_picking_player/Item_picking_player.tscn")
 
 onready var ground_ray1 			= $Body/GroundRay1
 onready var ground_ray2 			= $Body/GroundRay2
@@ -69,6 +69,9 @@ var is_grounded					= false
 var is_jumping 					= false
 var is_dying 					= false
 
+var entering_scene_path			= null
+var is_entering_out 				= false	
+
 ############################## Lifecycle Functions ##############################
 
 func _ready():
@@ -79,6 +82,8 @@ func _ready():
 	glider_area.connect("area_exited", self, "on_glide_area_exited")
 	
 	attack_area.connect("area_entered", self, "on_attack_area_entered")
+	
+	var _connection = EventBus.connect("player_entered_door", self, "start_door_entering_animation")
 	
 ############################## State Machine Functions ##############################
 
@@ -272,12 +277,15 @@ func start_item_pickup_animation(itemScene):
 	get_parent().add_child(itemPickupScene)
 	itemPickupScene.global_position = global_position
 	itemPickupScene.scale = Vector2.ONE * body.scale
-	itemPickupScene.connect("animationFinished", self, "on_animation_finished")
+	itemPickupScene.connect("animationFinished", self, "on_pickup_animation_finished")
 	
 	body.visible = false
 	EventBus.camera_focuse_animation(Vector2(0.5, 0.5), 1)
+
+func start_door_entering_animation(nextScenePath):
+	entering_scene_path = nextScenePath
 	
-func on_animation_finished():
+func on_pickup_animation_finished():
 	EventBus.player_animation_mode_change(false)
 	
 	body.visible = true
