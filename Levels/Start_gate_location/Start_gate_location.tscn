@@ -37,6 +37,19 @@
 [ext_resource path="res://Shaders/GodLightsShader.tres" type="Shader" id=35]
 [ext_resource path="res://Assets/BackgroundGradients/purple_clouds.png" type="Texture" id=36]
 
+[sub_resource type="Environment" id=67]
+background_mode = 4
+tonemap_mode = 2
+tonemap_exposure = 0.56
+tonemap_white = 1.37
+dof_blur_far_distance = 4.0
+dof_blur_far_transition = 3.2
+dof_blur_far_quality = 0
+glow_enabled = true
+glow_bloom = 0.1
+glow_high_quality = true
+adjustment_saturation = 1.32
+
 [sub_resource type="Animation" id=35]
 resource_name = "Gate_opening_cut_scene"
 length = 3.0
@@ -112,9 +125,6 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id=34]
 resource_name = "open_transition"
-
-[sub_resource type="Environment" id=57]
-glow_enabled = true
 
 [sub_resource type="RectangleShape2D" id=60]
 extents = Vector2( 32, 4 )
@@ -788,13 +798,13 @@ shader_param/seed = 10.0
 position = Vector2( -3, -62 )
 script = ExtResource( 10 )
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 67 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 pause_mode = 2
 anims/Gate_opening_cut_scene = SubResource( 35 )
 anims/open_transition = SubResource( 34 )
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 57 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 7 )]
 position = Vector2( -676, -178 )
@@ -871,7 +881,7 @@ position = Vector2( 381.613, 240.75 )
 scale = Vector2( 0.771226, 0.771226 )
 texture = ExtResource( 36 )
 
-[node name="DemoWorld1" type="Sprite" parent="."]
+[node name="WorldSprite" type="Sprite" parent="."]
 modulate = Color( 0.8, 0.803922, 0.831373, 1 )
 position = Vector2( -19, -274 )
 texture = ExtResource( 9 )
@@ -984,6 +994,7 @@ nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "Gates_2"
 
 [node name="WorldObjects" type="Node2D" parent="."]
+modulate = Color( 0.8, 0.803922, 0.831373, 1 )
 
 [node name="Signs" type="Node2D" parent="WorldObjects"]
 position = Vector2( 1, 62 )
@@ -1527,10 +1538,10 @@ shape = SubResource( 41 )
 
 [node name="GodLights" type="ColorRect" parent="."]
 material = SubResource( 66 )
-margin_left = -853.0
-margin_top = -674.0
-margin_right = -563.0
-margin_bottom = -15.0
+margin_left = -865.0
+margin_top = -697.0
+margin_right = -575.0
+margin_bottom = -38.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
