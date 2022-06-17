@@ -1059,13 +1059,13 @@ innerItemScene = ExtResource( 4 )
 position = Vector2( -233, -342 )
 
 [node name="Barrel2" parent="WorldObjects/Barrels" instance=ExtResource( 8 )]
-position = Vector2( -214, -342 )
+position = Vector2( -135, -380 )
 
 [node name="Barrel3" parent="WorldObjects/Barrels" instance=ExtResource( 8 )]
 position = Vector2( 456, -5 )
 
 [node name="Barrel4" parent="WorldObjects/Barrels" instance=ExtResource( 8 )]
-position = Vector2( 249, -8 )
+position = Vector2( 261, -7 )
 
 [node name="Barrel5" parent="WorldObjects/Barrels" instance=ExtResource( 8 )]
 position = Vector2( 141, -249 )
@@ -1094,16 +1094,16 @@ position = Vector2( -10, -459 )
 [node name="Vases" type="Node2D" parent="WorldObjects"]
 
 [node name="Vase" parent="WorldObjects/Vases" instance=ExtResource( 37 )]
-position = Vector2( -182, -69 )
+position = Vector2( -179, -69 )
 
 [node name="Vase3" parent="WorldObjects/Vases" instance=ExtResource( 37 )]
-position = Vector2( 158, -69 )
+position = Vector2( 159, -69 )
 
 [node name="Vase4" parent="WorldObjects/Vases" instance=ExtResource( 37 )]
 position = Vector2( -780, -21 )
 
 [node name="Vase2" parent="WorldObjects/Vases" instance=ExtResource( 37 )]
-position = Vector2( -163, -69 )
+position = Vector2( -160, -69 )
 
 [node name="Collisions" type="Node" parent="."]
 
