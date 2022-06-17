@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=2]
+[gd_scene load_steps=91 format=2]
 
 [ext_resource path="res://Assets/WaterSurface/water_surface3.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -36,6 +36,7 @@
 [ext_resource path="res://Assets/WorldObjects/Trees/back_tree2.png" type="Texture" id=34]
 [ext_resource path="res://Shaders/GodLightsShader.tres" type="Shader" id=35]
 [ext_resource path="res://Assets/BackgroundGradients/purple_clouds.png" type="Texture" id=36]
+[ext_resource path="res://WorldObjects/Destructables/Vase/Vase.tscn" type="PackedScene" id=37]
 
 [sub_resource type="Environment" id=67]
 background_mode = 4
@@ -1048,45 +1049,61 @@ texts_array = [ "Лишь тот войдет, кто ключ от
 position = Vector2( 0.5, 0.5 )
 shape = SubResource( 46 )
 
-[node name="Chest" parent="WorldObjects" instance=ExtResource( 19 )]
+[node name="Chests" parent="WorldObjects" instance=ExtResource( 19 )]
 position = Vector2( 61, -566 )
 innerItemScene = ExtResource( 4 )
 
-[node name="Barrel" parent="WorldObjects" instance=ExtResource( 8 )]
-position = Vector2( -188, -69 )
+[node name="Barrels" type="Node2D" parent="WorldObjects"]
 
-[node name="Barrel2" parent="WorldObjects" instance=ExtResource( 8 )]
-position = Vector2( -169, -69 )
+[node name="Barrel" parent="WorldObjects/Barrels" instance=ExtResource( 8 )]
+position = Vector2( -233, -342 )
 
-[node name="Barrel3" parent="WorldObjects" instance=ExtResource( 8 )]
-position = Vector2( 158, -69 )
+[node name="Barrel2" parent="WorldObjects/Barrels" instance=ExtResource( 8 )]
+position = Vector2( -214, -342 )
 
-[node name="Barrel4" parent="WorldObjects" instance=ExtResource( 8 )]
+[node name="Barrel3" parent="WorldObjects/Barrels" instance=ExtResource( 8 )]
+position = Vector2( 456, -5 )
+
+[node name="Barrel4" parent="WorldObjects/Barrels" instance=ExtResource( 8 )]
 position = Vector2( 249, -8 )
 
-[node name="Barrel5" parent="WorldObjects" instance=ExtResource( 8 )]
+[node name="Barrel5" parent="WorldObjects/Barrels" instance=ExtResource( 8 )]
 position = Vector2( 141, -249 )
 
-[node name="Barrel6" parent="WorldObjects" instance=ExtResource( 8 )]
+[node name="Barrel6" parent="WorldObjects/Barrels" instance=ExtResource( 8 )]
 position = Vector2( 141, -269 )
 
-[node name="Barrel7" parent="WorldObjects" instance=ExtResource( 8 )]
+[node name="Barrel7" parent="WorldObjects/Barrels" instance=ExtResource( 8 )]
 position = Vector2( 141, -287 )
 
-[node name="Barrel8" parent="WorldObjects" instance=ExtResource( 8 )]
+[node name="Barrel8" parent="WorldObjects/Barrels" instance=ExtResource( 8 )]
 position = Vector2( 123, -249 )
 
-[node name="Barrel9" parent="WorldObjects" instance=ExtResource( 8 )]
+[node name="Barrel9" parent="WorldObjects/Barrels" instance=ExtResource( 8 )]
 position = Vector2( 125, -269 )
 
-[node name="Barrel10" parent="WorldObjects" instance=ExtResource( 8 )]
+[node name="Barrel10" parent="WorldObjects/Barrels" instance=ExtResource( 8 )]
 position = Vector2( 259, -328 )
 
-[node name="Barrel11" parent="WorldObjects" instance=ExtResource( 8 )]
+[node name="Barrel11" parent="WorldObjects/Barrels" instance=ExtResource( 8 )]
 position = Vector2( -118, -378 )
 
-[node name="Barrel12" parent="WorldObjects" instance=ExtResource( 8 )]
+[node name="Barrel12" parent="WorldObjects/Barrels" instance=ExtResource( 8 )]
 position = Vector2( -10, -459 )
+
+[node name="Vases" type="Node2D" parent="WorldObjects"]
+
+[node name="Vase" parent="WorldObjects/Vases" instance=ExtResource( 37 )]
+position = Vector2( -182, -69 )
+
+[node name="Vase3" parent="WorldObjects/Vases" instance=ExtResource( 37 )]
+position = Vector2( 158, -69 )
+
+[node name="Vase4" parent="WorldObjects/Vases" instance=ExtResource( 37 )]
+position = Vector2( -780, -21 )
+
+[node name="Vase2" parent="WorldObjects/Vases" instance=ExtResource( 37 )]
+position = Vector2( -163, -69 )
 
 [node name="Collisions" type="Node" parent="."]
 
@@ -1569,8 +1586,8 @@ __meta__ = {
 [editable path="TreesFront/AbstractTree7/PassThroughBody"]
 [editable path="WorldObjects/Signs/TumbSign/InteractionController"]
 [editable path="WorldObjects/Signs/GatesText/InteractionController"]
-[editable path="WorldObjects/Chest"]
-[editable path="WorldObjects/Chest/InteractionController"]
+[editable path="WorldObjects/Chests"]
+[editable path="WorldObjects/Chests/InteractionController"]
 [editable path="Collisions/PassTrough/PassThroughBody4"]
 [editable path="Collisions/PassTrough/PassThroughBody13"]
 [editable path="Collisions/PassTrough/PassThroughBody32"]
