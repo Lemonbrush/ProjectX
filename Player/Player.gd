@@ -1,7 +1,8 @@
 extends KinematicBody2D
 class_name Player
 
-var footstepParticles = preload("res://WorldObjects/Technical/FootstepsParticles/FootstepParticles.tscn")
+var footstepParticles   = preload("res://WorldObjects/Technical/FootstepsParticles/FootstepParticles.tscn")
+var appearParticles     = preload("res://WorldObjects/Technical/PlayerAppearParticles/PlayerAppearParticles.tscn")
 var itemPickupScenePath = preload("res://Player/Animation_scenes/Item_picking_player/Item_picking_player.tscn")
 
 onready var ground_ray1 			= $Body/GroundRay1
@@ -12,6 +13,7 @@ onready var ray_array			= [ground_ray1, ground_ray2, ground_ray3]
 onready var climb_area			= $Body/ClimbArea
 onready var glider_area			= $Body/Glider
 onready var attack_area			= $Body/AttackArea
+onready var hazard_area			= $Body/HazardArea
 onready var attack_area_collision_shape = $Body/AttackArea/CollisionShape2D
 
 onready var body 				= $Body
@@ -22,6 +24,7 @@ signal died
 const SNAP 						= 4.0
 const NO_SNAP 					= 0
 
+var respawn_position				
 var is_ray_ground_detected 		= false
 
 var snap							= Vector2.ZERO
@@ -82,6 +85,7 @@ func _ready():
 	glider_area.connect("area_exited", self, "on_glide_area_exited")
 	
 	attack_area.connect("area_entered", self, "on_attack_area_entered")
+	hazard_area.connect("area_entered", self, "on_hazard_entered")
 	
 	var _connection = EventBus.connect("player_entered_door", self, "start_door_entering_animation")
 	
@@ -157,6 +161,7 @@ func ground_update_logic():
 			snap.y = NO_SNAP
 	else:
 		if is_on_floor() && is_ray_ground_detected:
+			respawn_position = global_position
 			is_grounded = true
 			snap.y = SNAP
 	
@@ -247,6 +252,13 @@ func activate_attack_area():
 func disable_attack_area():
 	attack_area_collision_shape.disabled = true
 
+# Hazard entered
+
+func on_hazard_entered(_area):
+	spawnAppearParticles()
+	global_position = respawn_position
+	spawnAppearParticles()
+
 ############################## Helper Functions ##############################
 
 func ray_ground_update():
@@ -268,6 +280,12 @@ func spawnFootstepParticles(scale = 1):
 	get_parent().add_child(footstep)
 	footstep.scale = Vector2.ONE * scale
 	footstep.global_position = global_position
+
+func spawnAppearParticles():
+	var particles = appearParticles.instance()
+	get_parent().add_child(particles)
+	particles.scale = Vector2.ONE * scale
+	particles.global_position = global_position
 
 func start_item_pickup_animation(itemScene):
 	EventBus.player_animation_mode_change(true)
