@@ -75,7 +75,6 @@ anims/emit = SubResource( 1 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
 material = SubResource( 2 )
-emitting = false
 amount = 1
 lifetime = 0.9
 one_shot = true
