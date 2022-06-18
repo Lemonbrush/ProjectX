@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource( 1 )
-should_delete_all_saves_on_start_session = true
+should_delete_all_saves_on_start_session = false
