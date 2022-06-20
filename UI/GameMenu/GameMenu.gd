@@ -1,15 +1,29 @@
 extends CanvasLayer
 
-onready var play_button = $MarginContainer/VBoxContainer/PlayButton
-onready var options_button = $MarginContainer/VBoxContainer/OptionsButton
-onready var exit_button = $MarginContainer/VBoxContainer/ExitButton
+onready var play_button = $MainMenuMarginContainer/VBoxContainer/PlayButton
+onready var options_button = $MainMenuMarginContainer/VBoxContainer/OptionsButton
+onready var exit_button = $MainMenuMarginContainer/VBoxContainer/ExitButton
+
+onready var mainMenuMarginContainer = $MainMenuMarginContainer
+
+var optionsMenuScene = preload("res://UI/OptionsMenu/OptionsMenu.tscn")
 
 func _ready():
 	play_button.connect("pressed", self, "on_play_pressed")
 	exit_button.connect("pressed", self, "on_exit_pressed")
+	options_button.connect("pressed", self, "on_options_pressed")
 	
 func on_play_pressed():
-	var _scene = get_tree().change_scene("res://Levels/Start_gate_location/Start_gate_location.tscn")
+	FileManager.load_game()
 	
 func on_exit_pressed():
 	get_tree().quit()
+
+func on_options_pressed():
+	var optionsMenuInstance = optionsMenuScene.instance()
+	get_tree().root.add_child(optionsMenuInstance)
+	optionsMenuInstance.connect("back_pressed", self, "on_options_back_pressed")
+	mainMenuMarginContainer.visible = false
+
+func on_options_back_pressed():
+	mainMenuMarginContainer.visible = true

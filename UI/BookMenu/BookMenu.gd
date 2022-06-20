@@ -3,7 +3,7 @@ extends CanvasLayer
 export(Array, Texture) var all_pages 
 export(Texture) var lockerd_page
 
-onready var file_manager		= $"/root/FileManager"
+onready var file_manager		    = $"/root/FileManager"
 onready var animation_player 	= $AnimationPlayer
 onready var cancel_button		= $MainMarginContainer/GeneralMarginContainer/Cancel
 onready var pages_image			= $MainMarginContainer/BookMarginContainer/BookContainer/HBoxContainer/Pages

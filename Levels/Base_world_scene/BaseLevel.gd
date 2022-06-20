@@ -1,21 +1,20 @@
 extends Node
+class_name BaseLevel
 
 var pauseMenu 					= preload("res://UI/PauseMenu/PauseMenu.tscn")
 var bookMenu						= preload("res://UI/BookMenu/BookMenu.tscn")
 
 onready var player 				= get_node("Player")
-
 onready var animationPlayer 		= $AnimationPlayer
-onready var page_collectable 	= $Collectables/Page
 onready var camera				= $Camera2D
 
 ######## LifeCycle ########
 
 func _ready():
-	FileManager.current_level = get_tree().get_current_scene().get_name()
-	FileManager.load_game(correct_player_position_by_door())
+	var _connect = EventBus.connect("playerAnimationModeChange", self, "player_animation_mode_change")
 	
-	page_collectable.connect("page_collected", self, "on_page_collected")
+	FileManager.current_level = get_tree().get_current_scene().get_name()
+	correct_player_position_by_door()
 	
 func _unhandled_input(event):
 	if event.is_action_pressed("pause_menu"):
@@ -26,11 +25,6 @@ func _unhandled_input(event):
 		save_game()
 		var bookInstance = bookMenu.instance()
 		add_child(bookInstance)
-
-###### Level Events Logic #########
-
-func on_page_collected():
-	animationPlayer.play("Gate_opening_cut_scene")
 	
 ###### Helpers #########
 
@@ -41,7 +35,14 @@ func correct_player_position_by_door():
 	if Global.door_name:
 		var door_node = find_node(Global.door_name)
 		if door_node:
-			print("searching for door named - ", Global.door_name)
 			player.global_position = door_node.global_position
 			camera.global_position = door_node.global_position
-			return door_node.global_position
+			player.is_entering_out = true
+			
+func player_animation_mode_change(isPlayerAnimating):
+	get_tree().paused = isPlayerAnimating
+	if isPlayerAnimating && animationPlayer:
+		animationPlayer.pause_mode = Node.PAUSE_MODE_INHERIT 
+	else:
+		 animationPlayer.pause_mode = Node.PAUSE_MODE_PROCESS
+	
