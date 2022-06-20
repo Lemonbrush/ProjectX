@@ -1,0 +1,42 @@
+name: Version increment
+
+on:
+  push:
+    tags:
+      - '*'
+jobs:
+
+  UpdateVersionFile:
+    name: Update version file
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+        
+    - name: Fetch version variables
+      id: version
+      shell: bash
+      run:
+        echo "::set-output name=ver::${GITHUB_REF/refs\/tags\//}"
+    
+    - name: Check new version
+      run: echo "${{steps.version.outputs.ver}}"
+        
+    - name: Update version file
+      run: echo ${GITHUB_REF/refs\/tags\//} > VERSION
+      
+    - name: Commit version file
+      uses: test-room-7/action-update-file@v1
+      with:
+        file-path: VERSION
+        branch: "development"
+        commit-msg: "[set version ${{steps.version.outputs.ver}}]"
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Create poll request
+      uses: devops-infra/action-pull-request@v0.4.2
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        source_branch: development
+        target_branch: main
