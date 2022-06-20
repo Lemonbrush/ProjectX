@@ -18,7 +18,6 @@ env:
 
 jobs:
   BuildAndPublish:
-    needs: MergeIntoMain
     name: Export project
     runs-on: ubuntu-20.04
     container:
