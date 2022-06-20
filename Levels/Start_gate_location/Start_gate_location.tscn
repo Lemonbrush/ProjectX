@@ -53,7 +53,7 @@ adjustment_saturation = 1.32
 
 [sub_resource type="Animation" id=35]
 resource_name = "Gate_opening_cut_scene"
-length = 3.0
+length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera2D:position")
 tracks/0/interp = 2
@@ -61,7 +61,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.9, 2.8 ),
+"times": PoolRealArray( 1, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, -120 ), Vector2( 0, -120 ) ]
@@ -73,7 +73,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 2.8 ),
+"times": PoolRealArray( 0, 5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -90,7 +90,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 2.8 ),
+"times": PoolRealArray( 5 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -104,7 +104,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0.2 ),
+"times": PoolRealArray( 2 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -118,10 +118,27 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 2.8 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ true, false ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("Camera2D")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 1.9, 4.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "_screen_shake"
+}, {
+"args": [  ],
+"method": "_stop_screen_shake"
+} ]
 }
 
 [sub_resource type="Animation" id=34]
@@ -808,7 +825,7 @@ anims/Gate_opening_cut_scene = SubResource( 35 )
 anims/open_transition = SubResource( 34 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 7 )]
-position = Vector2( -676, -178 )
+position = Vector2( -675, -116 )
 backgroundColor = Color( 0.403922, 0.596078, 0.741176, 1 )
 
 [node name="Stars" parent="Camera2D" instance=ExtResource( 15 )]
@@ -1049,10 +1066,6 @@ texts_array = [ "Лишь тот войдет, кто ключ от
 position = Vector2( 0.5, 0.5 )
 shape = SubResource( 46 )
 
-[node name="Chests" parent="WorldObjects" instance=ExtResource( 19 )]
-position = Vector2( 61, -566 )
-innerItemScene = ExtResource( 4 )
-
 [node name="Barrels" type="Node2D" parent="WorldObjects"]
 
 [node name="Barrel" parent="WorldObjects/Barrels" instance=ExtResource( 8 )]
@@ -1104,6 +1117,12 @@ position = Vector2( -780, -21 )
 
 [node name="Vase2" parent="WorldObjects/Vases" instance=ExtResource( 37 )]
 position = Vector2( -160, -69 )
+
+[node name="Chests" type="Node2D" parent="WorldObjects"]
+
+[node name="Chest" parent="WorldObjects/Chests" instance=ExtResource( 19 )]
+position = Vector2( 61, -566 )
+innerItemScene = ExtResource( 4 )
 
 [node name="Collisions" type="Node" parent="."]
 
@@ -1584,8 +1603,8 @@ __meta__ = {
 [editable path="TreesFront/AbstractTree7/PassThroughBody"]
 [editable path="WorldObjects/Signs/TumbSign/InteractionController"]
 [editable path="WorldObjects/Signs/GatesText/InteractionController"]
-[editable path="WorldObjects/Chests"]
-[editable path="WorldObjects/Chests/InteractionController"]
+[editable path="WorldObjects/Chests/Chest"]
+[editable path="WorldObjects/Chests/Chest/InteractionController"]
 [editable path="Collisions/PassTrough/PassThroughBody4"]
 [editable path="Collisions/PassTrough/PassThroughBody13"]
 [editable path="Collisions/PassTrough/PassThroughBody32"]

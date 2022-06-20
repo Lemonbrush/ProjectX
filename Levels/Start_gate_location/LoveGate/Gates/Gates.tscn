@@ -97,6 +97,7 @@ extents = Vector2( 32, 19.5 )
 script = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+pause_mode = 2
 anims/Open = SubResource( 1 )
 anims/Opened = SubResource( 4 )
 
