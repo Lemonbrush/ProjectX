@@ -1,6 +1,7 @@
 extends Camera2D
 
 onready var tween = $Tween
+onready var screenShaker = $ScreenShaker
 
 var targetPosition = Vector2.ZERO
 
@@ -34,3 +35,9 @@ func scale_with_animation(newZoom, time):
 	tween.stop(self)
 	tween.interpolate_property(self, 'zoom', zoom, newZoom, time, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0)
 	tween.start()
+	
+func _screen_shake(duration = 0.2, frequency = 16, amplitude = 2, infinity = true):
+	screenShaker.start(duration, frequency, amplitude, infinity)
+	
+func _stop_screen_shake():
+	screenShaker.stop()
