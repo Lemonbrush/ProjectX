@@ -1,0 +1,173 @@
+name: Deploy Game
+
+on:
+  push:
+    branches:
+      - main
+env:
+  # Itch variables
+  BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+  ITCH_PROJECT_NAME: "Kissies"
+  ITCH_USERNAME: "lemonbrush"
+  # Other
+  EXPORT_NAME: "Kissies"
+  IS_MAIN: ${{contains(github.ref, 'main')}}
+  # Discord variables
+  DISCORD_WEBHOOK: ${{secrets.DISCORD_WEBHOOK}}
+  ITCH_PROJECT_LINK: "https://lemonbrush.itch.io/kissies"
+
+jobs:
+  BuildAndPublish:
+    name: Export project
+    runs-on: ubuntu-20.04
+    container:
+      image: barichello/godot-ci:3.3
+    steps:
+      - name: Download + Authorize Godot
+        uses: actions/checkout@v2.3.4
+        
+      - name: Setup templates
+        run: |
+          mkdir -p ~/.local/share/godot/templates/
+          mv /root/.local/share/godot/templates/$GODOT_VERSION.stable ~/.local/share/godot/templates/$GODOT_VERSION.stable
+          
+      - name: Export (Windows)
+        run: |
+          mkdir -p dist/windows/
+          godot -v --export "Windows Desktop" "dist/windows/$EXPORT_NAME.exe"
+          
+      - name: Export (macOS)
+        run: |
+          mkdir -p dist/mac/
+          godot -v --export "Mac OSX" "dist/mac/$EXPORT_NAME.zip"
+          
+      - name: Export (Linux)
+        run: |
+          mkdir -p dist/linux/
+          godot -v --export "Linux/X11" "dist/linux/$EXPORT_NAME.x86_64"
+          
+      - name: Add Version Number to Exports # This action requires the VERSION file to be in the directory
+        run: |
+          cp ./VERSION ./dist/VERSION
+          
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2.2.3
+        with:
+          name: exports
+          path: dist
+          
+          
+  CreateNewGithubRelease:
+    name: Create GitHub Release
+    needs: BuildAndPublish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+        
+      - name: Download Exports
+        uses: actions/download-artifact@v2
+        with:
+          name: exports
+          path: exports
+        
+      - name: Zip Exports
+        run: zip -r exports.zip exports
+      
+      - name: Read Version Number
+        id: version_number
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: ./VERSION
+        
+      - name: Test Release Variables
+        run: |
+          echo "Version Number $VERSION_NUMBER"
+          echo "Commit Message $COMMIT_MESSAGE"
+          echo "Project Name $PROJECT_NAME"
+        env:
+          VERSION_NUMBER: ${{ steps.version_number.outputs.content }}
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+        
+      - name: Create New Release
+        uses: actions/create-release@v1
+        id: create_release
+        env:
+          GITHUB_TOKEN: ${{ secrets.INFINITY_GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.version_number.outputs.content }}
+          release_name: Release ${{ steps.version_number.outputs.content }}
+          body: ${{ github.event.head_commit.message }}
+          draft: false
+          prerelease: false
+        
+      - name: Upload Exports
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.INFINITY_GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./exports.zip
+          asset_name: exports.zip
+          asset_content_type: application/zip
+            
+            
+  PushExportsToItch:
+    name: Publish to Itch
+    needs: BuildAndPublish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Exports
+        uses: actions/download-artifact@v2
+        with:
+          name: exports
+          path: dist
+          
+      - name: Download + Authorize Butler
+        run: |
+          curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
+          unzip butler.zip
+          chmod +x butler
+          ./butler -V
+          
+      - name: Login To Butler
+        run: ./butler login
+        
+      - name: Push Windows Export To Itch
+        run: ./butler push ./dist/windows/$EXPORT_NAME.exe $ITCH_USERNAME/$ITCH_PROJECT_NAME:win --userversion-file ./dist/VERSION
+        
+      - name: Push Mac Export To Itch
+        run: ./butler push ./dist/mac/$EXPORT_NAME.zip $ITCH_USERNAME/$ITCH_PROJECT_NAME:mac --userversion-file ./dist/VERSION
+        
+      - name: Push Linux Export To Itch
+        run: ./butler push ./dist/linux/$EXPORT_NAME.x86_64 $ITCH_USERNAME/$ITCH_PROJECT_NAME:linux --userversion-file ./dist/VERSION
+        
+        
+  AlertPipelineResult:
+    name: Send notification
+    needs: [BuildAndPublish, CreateNewGithubRelease, PushExportsToItch]
+    if: ${{ always() }}
+    env:
+      DID_PREV_JOBS_SUCCEED: ${{ contains(needs.BuildAndPublish.result, 'success' ) && contains(needs.CreateNewGithubRelease.result, 'success' ) && contains(needs.PushExportsToItch.result, 'success' ) }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read VERSION file
+        id: getversion
+        run: echo "::set-output name=version::$(cat dist/VERSION)"
+      
+      - name: Send Discord Success Message
+        if: ${{ env.IS_MAIN && env.DID_PREV_JOBS_SUCCEED == 'true' }}
+        run: |
+          curl --location --request POST $DISCORD_WEBHOOK \
+            --header 'Content-Type: application/json' \
+            --data-raw "{\"content\": \"$ITCH_PROJECT_NAME ${{ steps.getversion.outputs.version }} has successfully released and deployed! Check out here - $ITCH_PROJECT_LINK\"}"
+          
+      - name: Send Discord Failure Message
+        if: ${{ env.IS_MAIN && env.DID_PREV_JOBS_SUCCEED != 'true' }}
+        run: |
+          curl --location --request POST $DISCORD_WEBHOOK \
+            --header 'Content-Type: application/json' \
+            --data-raw "{\"content\": \"$ITCH_PROJECT_NAME ${{ steps.getversion.outputs.version }} release and/or deployment has failed!\"}"
