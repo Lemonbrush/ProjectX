@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=2]
-[ext_resource path="res://WorldObjects/Technical/Camera/Camera2D.gd" type="Script" id=3]
+[ext_resource path="res://WorldObjects/Technical/Camera2D/Camera2D.gd" type="Script" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=5]
 [ext_resource path="res://Resources/Tilemaps/Decorations/Decorations.tres" type="TileSet" id=6]
@@ -10,9 +10,9 @@
 [ext_resource path="res://Assets/Levels/DemoWorld1.png" type="Texture" id=9]
 [ext_resource path="res://Assets/BackgroundGradients/BackgroundGradient1.png" type="Texture" id=10]
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Levels/Start_gate_location/LoveGate/Gates.tscn" type="PackedScene" id=12]
-[ext_resource path="res://WorldObjects/Destructables/Barrel/Still_barrel/Barrel.tscn" type="PackedScene" id=13]
-[ext_resource path="res://WorldObjects/Pick_ups/Page/Page.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Levels/Start_gate_location/LoveGate/Gates/Gates.tscn" type="PackedScene" id=12]
+[ext_resource path="res://WorldObjects/Destructables/Barrel/Barrel.tscn" type="PackedScene" id=13]
+[ext_resource path="res://WorldObjects/Pick_ups/Items/HeartKeyItem/View/HeartKeyItemView.tscn" type="PackedScene" id=14]
 [ext_resource path="res://WorldObjects/Technical/Clouds/Clouds.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Assets/WaterSurface/water_surface3.png" type="Texture" id=16]
 

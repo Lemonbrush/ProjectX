@@ -28,7 +28,6 @@ func process(_delta):
 
 func state_check():
 	if !player.is_able_to_climb || player.is_grounded && player.down > 0.01:
-		
 		_state_machine.transition_to("Idle", {})
 	elif player.jump && (vertical_move_direction.y == 0):
 		_state_machine.transition_to("Jump")
@@ -38,6 +37,7 @@ func enter(_msg: Dictionary = {}):
 	player.velocity = Vector2.ZERO
 	player.is_jumping = false
 	player.is_climbing = true
+	player.glide = false
 	player.is_able_to_glide = false
 	player.global_position.x = player.climbing_area_position_x
 	vertical_move_direction = Vector2.ZERO

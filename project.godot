@@ -9,6 +9,26 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "BaseLevel",
+"language": "GDScript",
+"path": "res://Levels/Base_world_scene/BaseLevel.gd"
+}, {
+"base": "Node2D",
+"class": "InteractionController",
+"language": "GDScript",
+"path": "res://WorldObjects/Technical/InteractionController/InteractionController.gd"
+}, {
+"base": "Node2D",
+"class": "OpenableContainerOpenSceneObject",
+"language": "GDScript",
+"path": "res://WorldObjects/Interactables/OpenableContainers/OpenableContainerOpenSceneObject/OpenableContainerOpenSceneObject.gd"
+}, {
+"base": "RigidBody2D",
+"class": "PickupContainer",
+"language": "GDScript",
+"path": "res://WorldObjects/Pick_ups/Pickup_container/Pickup_container.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
@@ -18,6 +38,16 @@ _global_script_classes=[ {
 "class": "PlayerState",
 "language": "GDScript",
 "path": "res://Utils/StateMachine/PlayerState.gd"
+}, {
+"base": "Resource",
+"class": "Save_file_resource",
+"language": "GDScript",
+"path": "res://Utils/Singletons/SaveFileManager/Save_file_resource.gd"
+}, {
+"base": "Resource",
+"class": "SettingsResource",
+"language": "GDScript",
+"path": "res://Utils/Singletons/SettingsManager/SettingsResource.gd"
 }, {
 "base": "Node",
 "class": "State",
@@ -30,8 +60,14 @@ _global_script_classes=[ {
 "path": "res://Utils/StateMachine/StateMachine.gd"
 } ]
 _global_script_class_icons={
+"BaseLevel": "",
+"InteractionController": "",
+"OpenableContainerOpenSceneObject": "",
+"PickupContainer": "",
 "Player": "",
 "PlayerState": "",
+"Save_file_resource": "",
+"SettingsResource": "",
 "State": "",
 "StateMachine": ""
 }
@@ -45,9 +81,11 @@ config/icon="res://icon.png"
 
 [autoload]
 
-FileManager="*res://Utils/Singletons/File_manager.gd"
+FileManager="*res://Utils/Singletons/SaveFileManager/File_manager.gd"
 Global="*res://Utils/Singletons/Global.gd"
 LevelManager="*res://Utils/Singletons/LevelManager.gd"
+EventBus="*res://Utils/Singletons/EventBus.gd"
+SettingsManager="*res://Utils/Singletons/SettingsManager/SettingsManager.gd"
 
 [display]
 
@@ -55,7 +93,7 @@ window/size/width=530
 window/size/height=320
 window/size/test_width=1920
 window/size/test_height=1080
-window/stretch/mode="viewport"
+window/stretch/mode="2d"
 window/stretch/aspect="keep_height"
 
 [importer_defaults]
@@ -127,7 +165,12 @@ pause_menu={
 }
 book_menu={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":69,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":81,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+Interaction={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 
@@ -140,7 +183,7 @@ book_menu={
 2d_physics/layer_5="DISTRACTABLES"
 2d_physics/layer_6="COLLECTABLES"
 2d_physics/layer_7="WATERSURFACE"
-2d_physics/layer_8="LEVER_INTERACTABLES"
+2d_physics/layer_8="PLAYER_BODY"
 
 [physics]
 

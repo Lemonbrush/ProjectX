@@ -1,7 +1,9 @@
 extends KinematicBody2D
 class_name Player
 
-var footstepParticles = preload("res://WorldObjects/Technical/FootstepsParticles/FootstepParticles.tscn")
+var footstepParticles   = preload("res://WorldObjects/Technical/FootstepsParticles/FootstepParticles.tscn")
+var appearParticles     = preload("res://WorldObjects/Technical/PlayerAppearParticles/PlayerAppearParticles.tscn")
+var itemPickupScenePath = preload("res://Player/Animation_scenes/Item_picking_player/Item_picking_player.tscn")
 
 onready var ground_ray1 			= $Body/GroundRay1
 onready var ground_ray2 			= $Body/GroundRay2
@@ -11,6 +13,7 @@ onready var ray_array			= [ground_ray1, ground_ray2, ground_ray3]
 onready var climb_area			= $Body/ClimbArea
 onready var glider_area			= $Body/Glider
 onready var attack_area			= $Body/AttackArea
+onready var hazard_area			= $Body/HazardArea
 onready var attack_area_collision_shape = $Body/AttackArea/CollisionShape2D
 
 onready var body 				= $Body
@@ -21,6 +24,7 @@ signal died
 const SNAP 						= 4.0
 const NO_SNAP 					= 0
 
+var respawn_position				
 var is_ray_ground_detected 		= false
 
 var snap							= Vector2.ZERO
@@ -68,6 +72,9 @@ var is_grounded					= false
 var is_jumping 					= false
 var is_dying 					= false
 
+var entering_scene_path			= null
+var is_entering_out 				= false	
+
 ############################## Lifecycle Functions ##############################
 
 func _ready():
@@ -78,6 +85,9 @@ func _ready():
 	glider_area.connect("area_exited", self, "on_glide_area_exited")
 	
 	attack_area.connect("area_entered", self, "on_attack_area_entered")
+	hazard_area.connect("area_entered", self, "on_hazard_entered")
+	
+	var _connection = EventBus.connect("player_entered_door", self, "start_door_entering_animation")
 	
 ############################## State Machine Functions ##############################
 
@@ -151,6 +161,7 @@ func ground_update_logic():
 			snap.y = NO_SNAP
 	else:
 		if is_on_floor() && is_ray_ground_detected:
+			respawn_position = global_position
 			is_grounded = true
 			snap.y = SNAP
 	
@@ -224,7 +235,6 @@ func on_glide_area_entered(area):
 	else:
 		y_velocity_boost = 6000
 	
-	
 func on_glide_area_exited(area):
 	if area.get_name() == "water":
 		is_in_water = false
@@ -241,6 +251,13 @@ func activate_attack_area():
 
 func disable_attack_area():
 	attack_area_collision_shape.disabled = true
+
+# Hazard entered
+
+func on_hazard_entered(_area):
+	spawnAppearParticles()
+	global_position = respawn_position
+	spawnAppearParticles()
 
 ############################## Helper Functions ##############################
 
@@ -264,19 +281,36 @@ func spawnFootstepParticles(scale = 1):
 	footstep.scale = Vector2.ONE * scale
 	footstep.global_position = global_position
 
+func spawnAppearParticles():
+	var particles = appearParticles.instance()
+	get_parent().add_child(particles)
+	particles.scale = Vector2.ONE * scale
+	particles.global_position = global_position
+
+func start_item_pickup_animation(itemScene):
+	EventBus.player_animation_mode_change(true)
+	
+	var itemPickupScene = itemPickupScenePath.instance()
+	itemPickupScene.itemScene = itemScene
+	get_parent().add_child(itemPickupScene)
+	itemPickupScene.global_position = global_position
+	itemPickupScene.scale = Vector2.ONE * body.scale
+	itemPickupScene.connect("animationFinished", self, "on_pickup_animation_finished")
+	
+	body.visible = false
+	EventBus.camera_focuse_animation(Vector2(0.5, 0.5), 1)
+
+func start_door_entering_animation(nextScenePath):
+	entering_scene_path = nextScenePath
+	
+func on_pickup_animation_finished():
+	EventBus.player_animation_mode_change(false)
+	
+	body.visible = true
+	EventBus.camera_focuse_animation(Vector2(1, 1), 0.5)
+
 func pause_level():
 	get_tree().paused = true 
 	
 func unpouse_level():
 	get_tree().paused = false
-
-func save():
-	var save_dict = {
-		"objectType" : "Player",
-		"filename" : get_filename(),
-		"parent" : get_parent().get_path(),
-		"pos_x" : position.x, 
-		"pos_y" : position.y,
-		"z_index" : z_index
-	}
-	return save_dict

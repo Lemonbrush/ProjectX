@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Assets/Sofa/SofaSpriteSheet.png" type="Texture" id=1]
 [ext_resource path="res://Player/States/Jump.gd" type="Script" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://Player/States/Jump_glide.gd" type="Script" id=10]
 [ext_resource path="res://Player/Climb.gd" type="Script" id=11]
 [ext_resource path="res://Player/Attack.gd" type="Script" id=12]
+[ext_resource path="res://Player/Door_enter_in.gd" type="Script" id=13]
+[ext_resource path="res://Player/Door_enter_out.gd" type="Script" id=14]
 
 [sub_resource type="Animation" id=16]
 resource_name = "Attack"
@@ -47,6 +49,38 @@ tracks/1/keys = {
 } ]
 }
 
+[sub_resource type="Animation" id=20]
+resource_name = "Door_entering"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 210, 211, 212, 213, 214, 215, 216, 217, 218 ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "Door_entering_out"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 228, 229, 230, 231, 232, 233, 234, 235, 236 ]
+}
+
 [sub_resource type="Animation" id=14]
 resource_name = "Glide_start"
 length = 0.3
@@ -79,6 +113,21 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18 ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "Item_pickup"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 190, 191, 192 ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -259,17 +308,21 @@ extents = Vector2( 8, 3 )
 extents = Vector2( 2.5, 8 )
 
 [node name="Player" type="KinematicBody2D"]
-collision_layer = 33
-collision_mask = 3
+collision_layer = 161
+collision_mask = 131
 script = ExtResource( 3 )
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Door_entering"
 anims/Attack = SubResource( 16 )
+anims/Door_entering = SubResource( 20 )
+anims/Door_entering_out = SubResource( 21 )
 anims/Glide_start = SubResource( 14 )
 anims/Idle = SubResource( 2 )
+anims/Item_pickup = SubResource( 19 )
 anims/Jump_fall = SubResource( 10 )
 anims/Jump_glide = SubResource( 7 )
 anims/Jump_simple = SubResource( 8 )
@@ -310,8 +363,13 @@ script = ExtResource( 11 )
 [node name="Attack" type="Node" parent="StateMachine"]
 script = ExtResource( 12 )
 
+[node name="Door_enter_in" type="Node" parent="StateMachine"]
+script = ExtResource( 13 )
+
+[node name="Door_enter_out" type="Node" parent="StateMachine"]
+script = ExtResource( 14 )
+
 [node name="BodyCollisionShape" type="CollisionShape2D" parent="." groups=["player"]]
-visible = false
 position = Vector2( 0, -8 )
 shape = SubResource( 1 )
 
@@ -321,7 +379,7 @@ shape = SubResource( 1 )
 position = Vector2( 8, -16 )
 texture = ExtResource( 1 )
 hframes = 19
-vframes = 10
+vframes = 13
 frame = 76
 
 [node name="GroundRay1" type="RayCast2D" parent="Body"]
@@ -346,13 +404,15 @@ cast_to = Vector2( 0, 1 )
 collision_mask = 3
 
 [node name="HazardArea" type="Area2D" parent="Body"]
-visible = false
+collision_layer = 64
+collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body/HazardArea"]
 position = Vector2( 0, -8 )
 shape = SubResource( 12 )
 
 [node name="AttackArea" type="Area2D" parent="Body"]
+visible = false
 position = Vector2( 16, -10 )
 collision_layer = 0
 collision_mask = 144
@@ -363,6 +423,7 @@ shape = SubResource( 17 )
 disabled = true
 
 [node name="Glider" type="Area2D" parent="Body"]
+visible = false
 collision_layer = 72
 collision_mask = 72
 

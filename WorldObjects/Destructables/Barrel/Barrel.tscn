@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://WorldObjects/Destructables/Barrel/Barrel_crush/Barrel_crush.tscn" type="PackedScene" id=1]
+[ext_resource path="res://WorldObjects/Destructables/CrushableObject/CrushableObject.tscn" type="PackedScene" id=3]
+
+[node name="Barrel" instance=ExtResource( 3 )]
+collision_layer = 3
+collision_mask = 3
+crashAnimationScene = ExtResource( 1 )
