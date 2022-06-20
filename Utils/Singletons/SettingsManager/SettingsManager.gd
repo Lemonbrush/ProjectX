@@ -1,6 +1,6 @@
 extends Node
 
-var SAVE_DIR = "res://Saves/"
+var SAVE_DIR = "user://Saves"
 var game_settings_save_name = "Game_settings.tres"
 var save_path = SAVE_DIR + game_settings_save_name
 
