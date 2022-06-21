@@ -2,37 +2,30 @@ name: Version increment
 
 on:
   push:
-    tags:
-      - '*'
+    branches:
+      - development
 jobs:
 
   UpdateVersionFile:
-    name: Bump version and create pull request
+    name: Create pull request
     runs-on: ubuntu-latest
+    if: "contains(github.event.head_commit.message, '[Set version]')"
     steps:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
         
-    - name: Fetch version variables
-      id: version
-      shell: bash
-      run:
-        echo "::set-output name=ver::${GITHUB_REF/refs\/tags\//}"
-    
-    - name: Check new version
-      run: echo "${{steps.version.outputs.ver}}"
-        
-    - name: Update version file
-      run: echo ${GITHUB_REF/refs\/tags\//} > VERSION
-      
-    - name: Commit version file
-      uses: test-room-7/action-update-file@v1
+    - name: Read Version Number
+      id: version_number
+      uses: juliangruber/read-file-action@v1
       with:
-        file-path: VERSION
-        branch: "development"
-        commit-msg: "[set version ${{steps.version.outputs.ver}}]"
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+        path: ./VERSION
+    
+    - name: Check if the commit message contains semantic version
+      run: echo ${{ steps.version_number.outputs.content }}
+      if: ${{ steps.version_number.outputs.content == '' }}
+        echo "Failed to read version"
+        exit 1
 
     - name: Create poll request
       uses: devops-infra/action-pull-request@v0.4.2
@@ -40,5 +33,5 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         source_branch: development
         target_branch: main
-        title: "Release ${{steps.version.outputs.ver}}"
+        title: "[Release] ${{steps.version_number.outputs.content}}"
         body: "**Automated pull request**"
