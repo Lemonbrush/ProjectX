@@ -2,7 +2,7 @@ extends Node
 
 var save_file_resource = Save_file_resource.new()
 
-var SAVE_DIR = "res://Saves/"
+var SAVE_DIR = "user://Saves"
 var game_save_name = "Game_save.tres"
 var save_path = SAVE_DIR + game_save_name
 
