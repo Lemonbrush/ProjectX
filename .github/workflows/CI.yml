@@ -20,8 +20,9 @@ jobs:
   BuildAndPublish:
     name: Export project
     runs-on: ubuntu-20.04
+    if: "contains(github.event.head_commit.message, '[Release]')"
     container:
-      image: barichello/godot-ci:3.3
+      image: barichello/godot-ci:3.4
     steps:
       - name: Download + Authorize Godot
         uses: actions/checkout@v2.3.4
@@ -113,7 +114,6 @@ jobs:
           asset_path: ./exports.zip
           asset_name: exports.zip
           asset_content_type: application/zip
-            
             
   PushExportsToItch:
     name: Publish to Itch
