@@ -3,6 +3,7 @@ extends CanvasLayer
 onready var play_button = $MainMenuMarginContainer/VBoxContainer/PlayButton
 onready var options_button = $MainMenuMarginContainer/VBoxContainer/OptionsButton
 onready var exit_button = $MainMenuMarginContainer/VBoxContainer/ExitButton
+onready var version_label = $RightMarginContainer/VersionLabel
 
 onready var mainMenuMarginContainer = $MainMenuMarginContainer
 
@@ -12,6 +13,7 @@ func _ready():
 	play_button.connect("pressed", self, "on_play_pressed")
 	exit_button.connect("pressed", self, "on_exit_pressed")
 	options_button.connect("pressed", self, "on_options_pressed")
+	version_label.text = FileManager.get_project_version()
 	
 func on_play_pressed():
 	FileManager.load_game()
