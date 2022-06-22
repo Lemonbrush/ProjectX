@@ -54,3 +54,20 @@ func delete_save():
 func has_any_save_file():
 	var file = File.new()
 	return file.file_exists(save_path)
+
+###############
+
+func get_project_version():
+	var version_file_path = 'res://VERSION'
+	var version_file = File.new()
+	var project_version
+	
+	var directory = Directory.new()
+	if directory.file_exists(version_file_path):
+		version_file.open(version_file_path, File.READ)
+		project_version = version_file.get_line()
+		version_file.close()
+	else:
+		project_version = "version file not found"
+	
+	return project_version
