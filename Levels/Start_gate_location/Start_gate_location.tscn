@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=2]
+[gd_scene load_steps=92 format=2]
 
 [ext_resource path="res://Assets/WaterSurface/water_surface3.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -37,6 +37,7 @@
 [ext_resource path="res://Shaders/GodLightsShader.tres" type="Shader" id=35]
 [ext_resource path="res://Assets/BackgroundGradients/purple_clouds.png" type="Texture" id=36]
 [ext_resource path="res://WorldObjects/Destructables/Vase/Vase.tscn" type="PackedScene" id=37]
+[ext_resource path="res://WorldObjects/Dwellers/Dweller.tscn" type="PackedScene" id=38]
 
 [sub_resource type="Environment" id=67]
 background_mode = 4
@@ -1579,6 +1580,10 @@ margin_bottom = -38.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Dweller" parent="." instance=ExtResource( 38 )]
+position = Vector2( -362, 1 )
+moveXPositions = [ -350, -500 ]
 
 [editable path="Camera2D"]
 [editable path="Trees/AbstractTree5"]

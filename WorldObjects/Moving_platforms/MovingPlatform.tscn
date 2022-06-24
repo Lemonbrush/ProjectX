@@ -58,7 +58,7 @@ one_way_collision = true
 curve = ExtResource( 3 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2( 73.2556, 0 )
+position = Vector2( 73.2557, 0 )
 rotation = 3.14159
 offset = 30.7529
 rotate = false
