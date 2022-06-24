@@ -37,7 +37,7 @@
 [ext_resource path="res://Shaders/GodLightsShader.tres" type="Shader" id=35]
 [ext_resource path="res://Assets/BackgroundGradients/purple_clouds.png" type="Texture" id=36]
 [ext_resource path="res://WorldObjects/Destructables/Vase/Vase.tscn" type="PackedScene" id=37]
-[ext_resource path="res://WorldObjects/Dwellers/Dweller.tscn" type="PackedScene" id=38]
+[ext_resource path="res://Dwellers/Dweller.tscn" type="PackedScene" id=38]
 
 [sub_resource type="Environment" id=67]
 background_mode = 4

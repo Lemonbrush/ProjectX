@@ -9,6 +9,7 @@ export(int) var maxSpeed = 25
 
 onready var waitTimer = $WaitTimer
 onready var body = $Body
+onready var interactionController = $Body/InteractionController
 
 var is_state_new = true
 
@@ -26,6 +27,8 @@ func _ready():
 	direction = startDirection
 	waitTimer.wait_time = wait_time
 	
+	interactionController.connect("on_interact", self, "on_npc_interact")
+	interactionController.connect("on_leave", self, "finish_talking")
 	waitTimer.connect("timeout", self, "wait_timer_timeout")
 	
 func _process(delta): 
@@ -70,6 +73,10 @@ func wait_timer_timeout():
 	is_state_new = true
 
 ### Talking
+
+func on_npc_interact():
+	currentState = State.TALKING
+	is_state_new = true
 
 func process_talking(_delta):
 	if is_state_new:
