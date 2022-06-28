@@ -10,6 +10,7 @@ export(int) var maxSpeed = 25
 onready var waitTimer = $WaitTimer
 onready var body = $Body
 onready var interactionController = $Body/InteractionController
+onready var animationPlayer = $AnimationPlayer
 
 var is_state_new = true
 
@@ -58,6 +59,7 @@ func process_walking(delta):
 		if currentMoveIterator >= moveXPositions.size():
 			currentMoveIterator = 0
 		
+		animationPlayer.play("Idle")
 		currentState = State.IDLE
 		is_state_new = true
 
@@ -69,22 +71,26 @@ func process_idle(_delta):
 		waitTimer.start()
 
 func wait_timer_timeout():
+	animationPlayer.play("Walk")
 	currentState = State.WALKING
 	is_state_new = true
 
 ### Talking
 
 func on_npc_interact():
+	animationPlayer.play("Idle")
 	currentState = State.TALKING
 	is_state_new = true
 
 func process_talking(_delta):
 	if is_state_new:
+		animationPlayer.play("Idle")
 		currentState = State.TALKING
 		is_state_new = false
 		waitTimer.paused = true
 
 func finish_talking():
+	animationPlayer.play("Walk")
 	currentState = State.WALKING
 	waitTimer.paused = false
 	is_state_new = true

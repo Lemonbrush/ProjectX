@@ -1015,6 +1015,12 @@ nextDoorName = "Gates_2"
 [node name="WorldObjects" type="Node2D" parent="."]
 modulate = Color( 0.8, 0.803922, 0.831373, 1 )
 
+[node name="NPC" type="Node2D" parent="WorldObjects"]
+
+[node name="Dweller" parent="WorldObjects/NPC" instance=ExtResource( 38 )]
+position = Vector2( -362, 1 )
+moveXPositions = [ -350, -500 ]
+
 [node name="Signs" type="Node2D" parent="WorldObjects"]
 position = Vector2( 1, 62 )
 
@@ -1580,10 +1586,6 @@ margin_bottom = -38.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Dweller" parent="." instance=ExtResource( 38 )]
-position = Vector2( -362, 1 )
-moveXPositions = [ -350, -500 ]
 
 [editable path="Camera2D"]
 [editable path="Trees/AbstractTree5"]
