@@ -6,6 +6,7 @@ export(State) var currentState = State.IDLE
 export(Array, int) var moveXPositions
 export(int) var wait_time = 0
 export(int) var maxSpeed = 25
+export var currentMoveIterator = 0
 
 onready var waitTimer = $WaitTimer
 onready var body = $Body
@@ -14,10 +15,11 @@ onready var animationPlayer = $AnimationPlayer
 
 var is_state_new = true
 
-var currentMoveIterator = 0
 var velocity = Vector2.ZERO
 var direction = Vector2.ZERO
 var gravity = 500
+
+var current_animation_name
 
 var startDirection = Vector2.RIGHT
 
@@ -33,6 +35,9 @@ func _ready():
 	waitTimer.connect("timeout", self, "wait_timer_timeout")
 	
 func _process(delta): 
+	if !animationPlayer.current_animation:
+		set_animation_with_state(currentState)
+	
 	match currentState:
 		State.IDLE:
 			process_idle(delta)
@@ -59,9 +64,7 @@ func process_walking(delta):
 		if currentMoveIterator >= moveXPositions.size():
 			currentMoveIterator = 0
 		
-		animationPlayer.play("Idle")
-		currentState = State.IDLE
-		is_state_new = true
+		set_animation_with_state(State.IDLE)
 
 ### Idle
 
@@ -71,26 +74,34 @@ func process_idle(_delta):
 		waitTimer.start()
 
 func wait_timer_timeout():
-	animationPlayer.play("Walk")
-	currentState = State.WALKING
-	is_state_new = true
+	set_animation_with_state(State.WALKING)
 
 ### Talking
 
 func on_npc_interact():
-	animationPlayer.play("Idle")
-	currentState = State.TALKING
-	is_state_new = true
+	set_animation_with_state(State.IDLE)
 
 func process_talking(_delta):
 	if is_state_new:
-		animationPlayer.play("Idle")
-		currentState = State.TALKING
-		is_state_new = false
+		set_animation_with_state(State.TALKING)
 		waitTimer.paused = true
 
 func finish_talking():
-	animationPlayer.play("Walk")
-	currentState = State.WALKING
+	set_animation_with_state(State.WALKING)
 	waitTimer.paused = false
+
+### Helpers
+
+func set_animation_with_state(state):
 	is_state_new = true
+	
+	match state:
+		State.IDLE:
+			animationPlayer.play("Idle")
+			currentState = State.IDLE
+		State.WALKING:
+			animationPlayer.play("Walk")
+			currentState = State.WALKING
+		State.TALKING:
+			animationPlayer.play("Idle")
+			currentState = State.TALKING

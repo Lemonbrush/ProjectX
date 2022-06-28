@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/NPC/SimpleDwellerSprite-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Dwellers/Dweller.gd" type="Script" id=2]
@@ -22,11 +22,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
 }
-
-[sub_resource type="Animation" id=3]
-resource_name = "Loop"
-length = 4.0
-loop = true
 
 [sub_resource type="Animation" id=4]
 length = 0.001
@@ -75,10 +70,8 @@ wait_time = 5
 maxSpeed = 10
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "Loop"
 playback_process_mode = 0
 anims/Idle = SubResource( 6 )
-anims/Loop = SubResource( 3 )
 anims/RESET = SubResource( 4 )
 anims/Walk = SubResource( 7 )
 
