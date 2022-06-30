@@ -1,13 +1,14 @@
 extends KinematicBody2D
 
 enum State { IDLE, WALKING, TALKING, ACTING }
-
-class Eest:
-	var xpos: int
+enum Direction { LEFT = 1, RIGHT = -1 }
 
 export(Array, Resource) var actions
 export(Resource) var currentState 
 export var currentActionIndex = 0
+export(bool) var watch_player_on_talk = true
+
+export(Direction) var defaultDirection = Direction.LEFT
 
 onready var waitTimer = $WaitTimer
 onready var actTimer = $ActTimer
@@ -23,8 +24,6 @@ var gravity = 500
 
 var current_animation_name
 
-var startDirection = Vector2.RIGHT
-
 func _ready():
 	if !actions:
 		var idleAction = IdleNpcAction.new()
@@ -39,7 +38,7 @@ func _ready():
 	actTimer.connect("timeout", self, "act_timer_timeout")
 	
 	textBoxPopup.connect("dialogueFinished", self, "finish_talking")
-	
+
 func _process(delta): 
 	if !animationPlayer.current_animation:
 		set_animation_with_state(currentState.state)
@@ -114,10 +113,15 @@ func finish_talking():
 	currentState = actions[currentActionIndex]
 	set_animation_with_state(currentState.state)
 	waitTimer.paused = false
+	body.scale.x = defaultDirection
 
-func on_npc_interact():
-	is_state_new = true
-	currentState = TalkNpcAction.new()
+func on_npc_interact(interactedBody):
+	if currentState.state != State.TALKING:
+		is_state_new = true
+		currentState = TalkNpcAction.new()
+		
+		if watch_player_on_talk:
+			body.scale.x = 1 if interactedBody.position.x > position.x else -1
 
 ### Acting
 

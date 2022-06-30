@@ -47,7 +47,7 @@ func _on_leave():
 	hide()
 	current_text_show = 0
 	
-func _on_interact():
+func _on_interact(_body):
 	if current_text_show >= texts_array.size():
 		hide()
 		emit_signal("dialogueFinished")

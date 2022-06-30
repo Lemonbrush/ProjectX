@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=2]
+[gd_scene load_steps=97 format=2]
 
 [ext_resource path="res://Assets/WaterSurface/water_surface3.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -38,6 +38,7 @@
 [ext_resource path="res://Assets/BackgroundGradients/purple_clouds.png" type="Texture" id=36]
 [ext_resource path="res://WorldObjects/Destructables/Vase/Vase.tscn" type="PackedScene" id=37]
 [ext_resource path="res://Dweller/Dweller.tscn" type="PackedScene" id=38]
+[ext_resource path="res://Dweller/NpcActions/idle/idle_npc_action.gd" type="Script" id=39]
 [ext_resource path="res://Dweller/NpcActions/walk/Walk_npc_action.gd" type="Script" id=40]
 
 [sub_resource type="Environment" id=67]
@@ -598,6 +599,11 @@ script = ExtResource( 40 )
 move_speed = 100
 target_x_position = -500
 
+[sub_resource type="Resource" id=72]
+script = ExtResource( 39 )
+wait_time = 0.0
+is_infinite = true
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 17.5, 12 )
 
@@ -1033,12 +1039,13 @@ modulate = Color( 0.8, 0.803922, 0.831373, 1 )
 [node name="Dweller" parent="WorldObjects/NPC" instance=ExtResource( 38 )]
 position = Vector2( -362, 1 )
 actions = [ SubResource( 69 ), SubResource( 71 ) ]
-currentActionIndex = 0
+currentState = SubResource( 69 )
 
 [node name="Dweller2" parent="WorldObjects/NPC" instance=ExtResource( 38 )]
-position = Vector2( -833, -11 )
-actions = [  ]
-currentActionIndex = 0
+position = Vector2( -833, -11.0004 )
+actions = [ SubResource( 72 ) ]
+currentState = SubResource( 72 )
+defaultDirection = -1
 
 [node name="Body" parent="WorldObjects/NPC/Dweller2" index="6"]
 scale = Vector2( -1, 1 )

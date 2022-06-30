@@ -37,5 +37,5 @@ func _on_approach():
 func _on_leave():
 	hide()
 	
-func _on_interact():
+func _on_interact(_body):
 	hide()
