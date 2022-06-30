@@ -65,8 +65,6 @@ extents = Vector2( 16.5, 18 )
 collision_layer = 3
 collision_mask = 0
 script = ExtResource( 4 )
-actions = null
-currentActionIndex = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_process_mode = 0

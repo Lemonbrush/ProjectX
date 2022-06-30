@@ -14,6 +14,7 @@ onready var actTimer = $ActTimer
 onready var body = $Body
 onready var interactionController = $Body/InteractionController
 onready var animationPlayer = $AnimationPlayer
+onready var textBoxPopup = $TextBoxPopup
 
 var is_state_new = true
 
@@ -36,6 +37,8 @@ func _ready():
 	interactionController.connect("on_leave", self, "finish_talking")
 	waitTimer.connect("timeout", self, "wait_timer_timeout")
 	actTimer.connect("timeout", self, "act_timer_timeout")
+	
+	textBoxPopup.connect("dialogueFinished", self, "finish_talking")
 	
 func _process(delta): 
 	if !animationPlayer.current_animation:

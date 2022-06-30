@@ -1033,12 +1033,12 @@ modulate = Color( 0.8, 0.803922, 0.831373, 1 )
 [node name="Dweller" parent="WorldObjects/NPC" instance=ExtResource( 38 )]
 position = Vector2( -362, 1 )
 actions = [ SubResource( 69 ), SubResource( 71 ) ]
-currentActionIndex = null
+currentActionIndex = 0
 
 [node name="Dweller2" parent="WorldObjects/NPC" instance=ExtResource( 38 )]
 position = Vector2( -833, -11 )
-actions = null
-currentActionIndex = null
+actions = [  ]
+currentActionIndex = 0
 
 [node name="Body" parent="WorldObjects/NPC/Dweller2" index="6"]
 scale = Vector2( -1, 1 )
