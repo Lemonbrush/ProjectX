@@ -14,10 +14,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Levels/Base_world_scene/BaseLevel.gd"
 }, {
+"base": "NpcAction",
+"class": "IdleNpcAction",
+"language": "GDScript",
+"path": "res://Dweller/NpcActions/idle/idle_npc_action.gd"
+}, {
 "base": "Node2D",
 "class": "InteractionController",
 "language": "GDScript",
 "path": "res://WorldObjects/Technical/InteractionController/InteractionController.gd"
+}, {
+"base": "Resource",
+"class": "NpcAction",
+"language": "GDScript",
+"path": "res://Dweller/NpcActions/npc_action.gd"
 }, {
 "base": "Node2D",
 "class": "OpenableContainerOpenSceneObject",
@@ -58,10 +68,17 @@ _global_script_classes=[ {
 "class": "StateMachine",
 "language": "GDScript",
 "path": "res://Utils/StateMachine/StateMachine.gd"
+}, {
+"base": "NpcAction",
+"class": "TalkNpcAction",
+"language": "GDScript",
+"path": "res://Dweller/NpcActions/talk/talk_npc_action.gd"
 } ]
 _global_script_class_icons={
 "BaseLevel": "",
+"IdleNpcAction": "",
 "InteractionController": "",
+"NpcAction": "",
 "OpenableContainerOpenSceneObject": "",
 "PickupContainer": "",
 "Player": "",
@@ -69,7 +86,8 @@ _global_script_class_icons={
 "Save_file_resource": "",
 "SettingsResource": "",
 "State": "",
-"StateMachine": ""
+"StateMachine": "",
+"TalkNpcAction": ""
 }
 
 [application]

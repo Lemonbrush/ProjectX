@@ -13,7 +13,9 @@ export(ActionType) var action_type = 0
 
 signal on_approach(player, controller)
 signal on_leave(player, controller)
-signal on_interact(player, controller)
+signal on_interact(player, controller, body)
+
+var interactedBody
 
 func _ready():
 	area2D.connect("body_entered", self, "_on_approach")
@@ -21,9 +23,10 @@ func _ready():
 	
 func _unhandled_input(event: InputEvent):
 	if event.is_action_pressed("Interaction") && action_type == 1:
-		emit_signal("on_interact")
+		emit_signal("on_interact", interactedBody)
 
-func _on_approach(_body):
+func _on_approach(body):
+	interactedBody = body
 	action_type = 1
 	emit_signal("on_approach")
 	

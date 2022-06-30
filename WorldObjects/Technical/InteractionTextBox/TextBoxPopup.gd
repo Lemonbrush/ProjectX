@@ -1,5 +1,7 @@
 extends Node2D
 
+signal dialogueFinished
+
 export(NodePath) var interaction_controller_path
 export var CHAR_READ_RATE = 0.02
 export(Array, String, MULTILINE) var texts_array 
@@ -45,9 +47,10 @@ func _on_leave():
 	hide()
 	current_text_show = 0
 	
-func _on_interact():
+func _on_interact(_body):
 	if current_text_show >= texts_array.size():
 		hide()
+		emit_signal("dialogueFinished")
 		return
 	
 	show_next_text_portion()

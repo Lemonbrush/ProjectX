@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=2]
+[gd_scene load_steps=97 format=2]
 
 [ext_resource path="res://Assets/WaterSurface/water_surface3.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -37,6 +37,9 @@
 [ext_resource path="res://Shaders/GodLightsShader.tres" type="Shader" id=35]
 [ext_resource path="res://Assets/BackgroundGradients/purple_clouds.png" type="Texture" id=36]
 [ext_resource path="res://WorldObjects/Destructables/Vase/Vase.tscn" type="PackedScene" id=37]
+[ext_resource path="res://Dweller/Dweller.tscn" type="PackedScene" id=38]
+[ext_resource path="res://Dweller/NpcActions/idle/idle_npc_action.gd" type="Script" id=39]
+[ext_resource path="res://Dweller/NpcActions/walk/Walk_npc_action.gd" type="Script" id=40]
 
 [sub_resource type="Environment" id=67]
 background_mode = 4
@@ -584,6 +587,23 @@ extents = Vector2( 32.25, 4 )
 29/shapes = [  ]
 29/z_index = 0
 
+[sub_resource type="Resource" id=69]
+resource_local_to_scene = true
+script = ExtResource( 40 )
+move_speed = 100
+target_x_position = -350
+
+[sub_resource type="Resource" id=71]
+resource_local_to_scene = true
+script = ExtResource( 40 )
+move_speed = 100
+target_x_position = -500
+
+[sub_resource type="Resource" id=72]
+script = ExtResource( 39 )
+wait_time = 0.0
+is_infinite = true
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 17.5, 12 )
 
@@ -1013,6 +1033,22 @@ nextDoorName = "Gates_2"
 
 [node name="WorldObjects" type="Node2D" parent="."]
 modulate = Color( 0.8, 0.803922, 0.831373, 1 )
+
+[node name="NPC" type="Node2D" parent="WorldObjects"]
+
+[node name="Dweller" parent="WorldObjects/NPC" instance=ExtResource( 38 )]
+position = Vector2( -362, 1 )
+actions = [ SubResource( 69 ), SubResource( 71 ) ]
+currentState = SubResource( 69 )
+
+[node name="Dweller2" parent="WorldObjects/NPC" instance=ExtResource( 38 )]
+position = Vector2( -833, -11.0004 )
+actions = [ SubResource( 72 ) ]
+currentState = SubResource( 72 )
+defaultDirection = -1
+
+[node name="Body" parent="WorldObjects/NPC/Dweller2" index="6"]
+scale = Vector2( -1, 1 )
 
 [node name="Signs" type="Node2D" parent="WorldObjects"]
 position = Vector2( 1, 62 )
@@ -1601,6 +1637,8 @@ __meta__ = {
 [editable path="TreesFront/AbstractTree5/PassThroughBody"]
 [editable path="TreesFront/AbstractTree7"]
 [editable path="TreesFront/AbstractTree7/PassThroughBody"]
+[editable path="WorldObjects/NPC/Dweller2"]
+[editable path="WorldObjects/NPC/Dweller2/Body/InteractionController"]
 [editable path="WorldObjects/Signs/TumbSign/InteractionController"]
 [editable path="WorldObjects/Signs/GatesText/InteractionController"]
 [editable path="WorldObjects/Chests/Chest"]
