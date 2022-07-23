@@ -5,14 +5,14 @@
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Gradient" id=99]
-offsets = PoolRealArray( 0.00294118, 0.235294, 0.688235, 1 )
-colors = PoolColorArray( 0.964844, 0.650645, 0.206024, 1, 0.792969, 0.359628, 0.0117353, 1, 0.78125, 0.251676, 0.0677194, 1, 1, 1, 1, 1 )
+offsets = PoolRealArray( 0.00294118, 0.155882, 0.685294, 0.776471, 1 )
+colors = PoolColorArray( 0.964844, 0.650645, 0.206024, 1, 0.792969, 0.359628, 0.0117353, 1, 0.78125, 0.251676, 0.0677194, 1, 1, 1, 1, 0.541176, 1, 1, 1, 0 )
 
 [sub_resource type="GradientTexture" id=96]
 gradient = SubResource( 99 )
 
 [sub_resource type="Curve" id=100]
-_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.219072, 0.418954 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0315667 ), 0.0, 0.0, 0, 0 ]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.146907, 0.446133 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.148836 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="CurveTexture" id=98]
 curve = SubResource( 100 )
@@ -33,6 +33,7 @@ linear_accel = 4.0
 linear_accel_random = 1.0
 angle = 360.0
 angle_random = 1.0
+scale = 1.5
 scale_curve = SubResource( 98 )
 color_ramp = SubResource( 96 )
 
@@ -67,7 +68,7 @@ position = Vector2( 0, -43 )
 texture = ExtResource( 1 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
-position = Vector2( 12, -3 )
+position = Vector2( 12, -4 )
 amount = 100
 process_material = SubResource( 101 )
 texture = ExtResource( 2 )
