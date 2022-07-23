@@ -12,11 +12,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - tune player movement
 
-## [1.2.1] - 2022-06-21 - Hotfix
+## [1.2.1 Alpha] - 2022-06-21 - Hotfix
 ### Fixed
 - fixed game save system 
 
-## [1.2.0] - 2022-06-21 - Heart gate location update
+## [1.2.0 Alpha] - 2022-06-21 - Heart gate location update
 ### Added
 - add destructable items such as barrels and vases
 - add door entering animation
@@ -37,7 +37,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - the book element is yet to be removed
 - old game save system
 
-## [1.1.0] - 2022-06-21 - Core mechanics
+## [0.1.0 Alpha] - 2022-05-29 - Core mechanics
 ### Added
 - core mechanics
 - add game save system
