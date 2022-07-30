@@ -1,4 +1,4 @@
-[gd_scene load_steps=126 format=2]
+[gd_scene load_steps=149 format=2]
 
 [ext_resource path="res://Assets/Levels/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -31,6 +31,10 @@
 [ext_resource path="res://Resources/Tilemaps/Fountains.tres" type="TileSet" id=29]
 [ext_resource path="res://Resources/Tilemaps/SmallFountains.tres" type="TileSet" id=30]
 [ext_resource path="res://Levels/Central_hab/World_objects/Bonfire.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Levels/Central_hab/World_objects/WishShrine.tscn" type="PackedScene" id=32]
+[ext_resource path="res://WorldObjects/Moving_platforms/MovingPlatform.gd" type="Script" id=33]
+[ext_resource path="res://Assets/WorldObjects/Floating_block.png" type="Texture" id=34]
+[ext_resource path="res://WorldObjects/Moving_platforms/Paths/VerticalPath.tres" type="Curve2D" id=35]
 
 [sub_resource type="Environment" id=30]
 background_mode = 4
@@ -81,6 +85,9 @@ extents = Vector2( 11.75, 4 )
 
 [sub_resource type="RectangleShape2D" id=116]
 extents = Vector2( 19.75, 4 )
+
+[sub_resource type="RectangleShape2D" id=134]
+extents = Vector2( 24.25, 4 )
 
 [sub_resource type="RectangleShape2D" id=117]
 extents = Vector2( 11.75, 4 )
@@ -571,6 +578,12 @@ color_ramp = SubResource( 97 )
 [sub_resource type="RectangleShape2D" id=66]
 extents = Vector2( 184, 5 )
 
+[sub_resource type="RectangleShape2D" id=144]
+extents = Vector2( 8, 5 )
+
+[sub_resource type="RectangleShape2D" id=145]
+extents = Vector2( 16, 5 )
+
 [sub_resource type="RectangleShape2D" id=133]
 extents = Vector2( 15.5, 8 )
 
@@ -697,12 +710,6 @@ extents = Vector2( 8, 3.5 )
 [sub_resource type="RectangleShape2D" id=55]
 extents = Vector2( 160, 5.5 )
 
-[sub_resource type="RectangleShape2D" id=56]
-extents = Vector2( 88, 5 )
-
-[sub_resource type="RectangleShape2D" id=57]
-extents = Vector2( 72, 5 )
-
 [sub_resource type="RectangleShape2D" id=59]
 extents = Vector2( 32, 3.5 )
 
@@ -751,6 +758,270 @@ extents = Vector2( 7.5, 36.625 )
 [sub_resource type="RectangleShape2D" id=101]
 extents = Vector2( 7.5, 39 )
 
+[sub_resource type="RectangleShape2D" id=135]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="Animation" id=136]
+resource_name = "Loop"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=137]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Curve2D" id=154]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 97, 0, 0, 0, 0, 0, 97, -42 )
+}
+
+[sub_resource type="Animation" id=146]
+resource_name = "Loop"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=147]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=148]
+resource_name = "Loop"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=149]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=150]
+resource_name = "Loop"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=151]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=152]
+resource_name = "Loop"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=153]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=138]
+resource_name = "Loop"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=139]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=140]
+resource_name = "Loop"
+length = 6.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=141]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=142]
+resource_name = "Loop"
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=143]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
 [node name="Central_hab" type="Node2D"]
 position = Vector2( -3, -62 )
 script = ExtResource( 10 )
@@ -773,6 +1044,30 @@ position = Vector2( -106, 0 )
 shape = SubResource( 102 )
 disabled = true
 
+[node name="AbstractTree44" parent="Trees" instance=ExtResource( 19 )]
+position = Vector2( -960, -286 )
+
+[node name="Sprite" parent="Trees/AbstractTree44" index="0"]
+position = Vector2( -102, -80 )
+texture = ExtResource( 20 )
+
+[node name="CollisionShape2D" parent="Trees/AbstractTree44/PassThroughBody" index="0"]
+position = Vector2( -106, 0 )
+shape = SubResource( 102 )
+disabled = true
+
+[node name="AbstractTree45" parent="Trees" instance=ExtResource( 19 )]
+position = Vector2( -940, -346 )
+
+[node name="Sprite" parent="Trees/AbstractTree45" index="0"]
+position = Vector2( -102, -80 )
+texture = ExtResource( 20 )
+
+[node name="CollisionShape2D" parent="Trees/AbstractTree45/PassThroughBody" index="0"]
+position = Vector2( -106, 0 )
+shape = SubResource( 102 )
+disabled = true
+
 [node name="AbstractTree17" parent="Trees" instance=ExtResource( 19 )]
 position = Vector2( -323, -17 )
 
@@ -791,12 +1086,31 @@ position = Vector2( 69, -259 )
 position = Vector2( -102, -80 )
 texture = ExtResource( 21 )
 
+[node name="CollisionShape2D" parent="Trees/AbstractTree33/PassThroughBody" index="0"]
+position = Vector2( -96, -2 )
+disabled = true
+
+[node name="AbstractTree43" parent="Trees" instance=ExtResource( 19 )]
+position = Vector2( -857, -289 )
+
+[node name="Sprite" parent="Trees/AbstractTree43" index="0"]
+position = Vector2( -102, -80 )
+texture = ExtResource( 21 )
+
+[node name="CollisionShape2D" parent="Trees/AbstractTree43/PassThroughBody" index="0"]
+position = Vector2( -98, -2 )
+disabled = true
+
 [node name="AbstractTree34" parent="Trees" instance=ExtResource( 19 )]
 position = Vector2( 233, -250 )
 
 [node name="Sprite" parent="Trees/AbstractTree34" index="0"]
 position = Vector2( -102, -80 )
 texture = ExtResource( 23 )
+
+[node name="CollisionShape2D" parent="Trees/AbstractTree34/PassThroughBody" index="0"]
+position = Vector2( -98, 2 )
+disabled = true
 
 [node name="AbstractTree35" parent="Trees" instance=ExtResource( 19 )]
 position = Vector2( -50, -270 )
@@ -819,16 +1133,6 @@ texture = ExtResource( 4 )
 [node name="CollisionShape2D" parent="Trees/AbstractTree36/PassThroughBody" index="0"]
 position = Vector2( -99.25, -27 )
 shape = SubResource( 104 )
-
-[node name="AbstractTree37" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -1247, -63 )
-
-[node name="Sprite" parent="Trees/AbstractTree37" index="0"]
-position = Vector2( -102, -80 )
-texture = ExtResource( 20 )
-
-[node name="PassThroughBody" parent="Trees/AbstractTree37" index="2"]
-position = Vector2( -94, -103 )
 
 [node name="AbstractTree40" parent="Trees" instance=ExtResource( 19 )]
 position = Vector2( -1247, -63 )
@@ -853,6 +1157,17 @@ position = Vector2( -102, -80 )
 texture = ExtResource( 18 )
 
 [node name="CollisionShape2D" parent="Trees/AbstractTree39/PassThroughBody" index="0"]
+position = Vector2( -100.25, -15 )
+shape = SubResource( 106 )
+
+[node name="AbstractTree42" parent="Trees" instance=ExtResource( 19 )]
+position = Vector2( -1016, -302 )
+
+[node name="Sprite" parent="Trees/AbstractTree42" index="0"]
+position = Vector2( -102, -80 )
+texture = ExtResource( 18 )
+
+[node name="CollisionShape2D" parent="Trees/AbstractTree42/PassThroughBody" index="0"]
 position = Vector2( -100.25, -15 )
 shape = SubResource( 106 )
 
@@ -991,6 +1306,17 @@ texture = ExtResource( 17 )
 position = Vector2( -92.25, 21 )
 shape = SubResource( 116 )
 
+[node name="AbstractTree41" parent="Trees" instance=ExtResource( 19 )]
+position = Vector2( -747, -314 )
+
+[node name="Sprite" parent="Trees/AbstractTree41" index="0"]
+position = Vector2( -100, -56 )
+texture = ExtResource( 17 )
+
+[node name="CollisionShape2D" parent="Trees/AbstractTree41/PassThroughBody" index="0"]
+position = Vector2( -96.75, 21 )
+shape = SubResource( 134 )
+
 [node name="AbstractTree10" parent="Trees" instance=ExtResource( 19 )]
 position = Vector2( -492, -41 )
 
@@ -1009,6 +1335,16 @@ position = Vector2( -473, -66 )
 position = Vector2( -100, -56 )
 
 [node name="CollisionShape2D" parent="Trees/AbstractTree11/PassThroughBody" index="0"]
+position = Vector2( -97, -3 )
+shape = SubResource( 118 )
+
+[node name="AbstractTree23" parent="Trees" instance=ExtResource( 19 )]
+position = Vector2( -849, -338 )
+
+[node name="Sprite" parent="Trees/AbstractTree23" index="0"]
+position = Vector2( -100, -56 )
+
+[node name="CollisionShape2D" parent="Trees/AbstractTree23/PassThroughBody" index="0"]
 position = Vector2( -97, -3 )
 shape = SubResource( 118 )
 
@@ -1066,6 +1402,17 @@ position = Vector2( -100, -56 )
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" parent="Trees/AbstractTree19/PassThroughBody" index="0"]
+position = Vector2( -97.25, -3 )
+shape = SubResource( 122 )
+
+[node name="AbstractTree37" parent="Trees" instance=ExtResource( 19 )]
+position = Vector2( -1044, -338 )
+
+[node name="Sprite" parent="Trees/AbstractTree37" index="0"]
+position = Vector2( -100, -56 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" parent="Trees/AbstractTree37/PassThroughBody" index="0"]
 position = Vector2( -97.25, -3 )
 shape = SubResource( 122 )
 
@@ -1172,8 +1519,11 @@ format = 1
 tile_data = PoolIntArray( -524331, 1, 0, -524326, 1, 0, -458795, 1, 0, -458790, 1, 0, -393259, 1, 0, -393254, 1, 0, -327723, 1, 0, -327718, 1, 0, -262187, 1, 0, -262182, 1, 0, -196651, 1, 0, -196646, 1, 0, -131115, 1, 0, -131110, 1, 0, -65579, 1, 0, -65574, 1, 0, -43, 1, 0, -38, 1, 0, 65493, 1, 0, 65498, 1, 0, 524248, 1, 0, 589779, 0, 0, 589784, 1, 0, 655315, 1, 0, 655320, 1, 0, 720856, 1, 0, 786392, 1, 0, 786418, 1, 0, 851928, 1, 0, 851954, 1, 0, 917464, 1, 0, 917490, 1, 0, 983000, 1, 0, 983026, 1, 0, 1048536, 1, 0, 1048562, 1, 0, 1114072, 1, 0, 1114098, 1, 0, 1179608, 1, 0, 1179634, 1, 0, 1245144, 1, 0, 1245170, 1, 0, 1310680, 1, 0, 1310706, 1, 0, 1376216, 1, 0, 1376242, 1, 0, 1441752, 1, 0, 1441778, 1, 0, 1507288, 1, 0, 1507314, 1, 0, 1572824, 1, 0, 1572850, 1, 0, 1638360, 1, 0, 1638386, 1, 0, 1703896, 1, 0, 1703922, 1, 0, 1769432, 1, 0, 1769458, 1, 0, 1834968, 1, 0, 1834994, 1, 0, 1900504, 1, 0, 1900530, 1, 0, 1966040, 1, 0, 1966066, 1, 0, 2031576, 1, 0, 2031602, 1, 0, 2097112, 1, 0, 2097138, 1, 0, 2162648, 1, 0, 2162674, 1, 0, 2228184, 1, 0, 2228210, 1, 0, 2293720, 1, 0, 2293746, 1, 0, 2359256, 1, 0, 2359282, 1, 0, 2424792, 1, 0, 2424818, 1, 0, 2490328, 1, 0, 2490354, 1, 0, 2555864, 1, 0, 2555890, 1, 0, 2621400, 1, 0, 2621426, 1, 0, 2686962, 1, 0, 2752498, 1, 0 )
 
 [node name="WorldSprite" type="Sprite" parent="."]
-position = Vector2( -140, -191 )
+position = Vector2( -186, -244 )
 texture = ExtResource( 1 )
+
+[node name="WishShrine" parent="." instance=ExtResource( 32 )]
+position = Vector2( -1010, -276 )
 
 [node name="Doors" type="Node2D" parent="."]
 position = Vector2( -140, -191 )
@@ -1202,7 +1552,7 @@ position = Vector2( 0, -4 )
 tile_set = SubResource( 36 )
 cell_size = Vector2( 1, 1 )
 format = 1
-tile_data = PoolIntArray( -16711802, 17, 0, -16711765, 9, 0, -16711720, 14, 0, -16777189, 27, 0, -16777148, 28, 0, -16777000, 29, 0, -7274854, 6, 0, -7274835, 1, 0, -6226207, 27, 0, -5177729, 29, 0, -4849026, 17, 0, -4849011, 18, 0, -4848979, 3, 0, -4848962, 24, 0, -4848944, 14, 0, -4130151, 3, 0, -4130135, 1, 0, -4130118, 2, 0, -4130100, 12, 0, -3081694, 16, 0, -3081657, 20, 0, -3081628, 28, 0, -3081605, 24, 0, -3081555, 21, 0, -3081533, 25, 0, -3081512, 13, 0, -3081485, 21, 0, -3081412, 29, 0, -3081393, 27, 0, -3080277, 17, 0, -3080216, 8, 0, -3145711, 24, 0, -3145581, 2, 0, -3145566, 1, 0, -3144920, 9, 0, -3144901, 10, 0, -2817442, 20, 0, -2031720, 23, 0, -2097053, 21, 0, -2096945, 21, 0, -984167, 3, 0, -984150, 4, 0, -984133, 2, 0, -984108, 12, 0, -984001, 27, 0, -983900, 21, 0, -983883, 20, 0, -983638, 16, 0, -983606, 7, 0, -983555, 24, 0, -983531, 14, 0, -983505, 22, 0, -983489, 20, 0, -983444, 27, 0, -983428, 29, 0, -983392, 24, 0, -983367, 25, 0, -983344, 6, 0, -983299, 16, 0, -983267, 1, 0, -983249, 2, 0, -983232, 3, 0, -983210, 2, 0, -983179, 29, 0, -983157, 12, 0, -983140, 22, 0, -983118, 3, 0, -983101, 4, 0, -983069, 13, 0, -1048554, 1, 0, -1048520, 21, 0, -1048502, 22, 0, -1048468, 16, 0, -1048444, 20, 0, -1048420, 14, 0, -1048402, 22, 0, -1048376, 13, 0, -1048342, 22, 0, -1048324, 23, 0, -1048298, 29, 0, -1048280, 20, 0, -1048196, 12, 0, -1047999, 21, 0, -1047820, 13, 0, 5243660, 4, 0, 6292358, 29, 0, 7340851, 16, 0, 7340873, 24, 0, 7340900, 20, 0, 10550161, 21, 0, 10550181, 29, 0, 10550208, 26, 0, 10550231, 7, 0, 11533349, 22, 0, 12647429, 12, 0, 12647504, 20, 0, 12647584, 2, 0, 13695981, 15, 0, 19987528, 20, 0, 19987557, 5, 0, 19987579, 17, 0, 19987614, 2, 0, 21036585, 6, 0, 23133237, 27, 0, 23133263, 16, 0, 23133296, 24, 0, 23133352, 13, 0, 23133749, 22, 0, 23133836, 21, 0, 23133863, 29, 0, 24181489, 2, 0, 24181504, 4, 0, 24181531, 22, 0, 24181573, 20, 0, 24181590, 14, 0, 24181631, 9, 0, 24181683, 20, 0, 24181705, 7, 0, 24181804, 20, 0, 24181883, 12, 0, 24181957, 21, 0, 24181977, 1, 0, 24182006, 20, 0, 24182073, 20, 0, 24182089, 12, 0, 24182175, 20, 0, 24182285, 13, 0, 24182309, 27, 0, 24182332, 12, 0, 24182394, 1, 0, 24182410, 2, 0, 24182447, 20, 0, 24182505, 18, 0 )
+tile_data = PoolIntArray( -18809983, 2, 0, -18809954, 16, 0, -18809893, 12, 0, -18809801, 29, 0, -18809756, 21, 0, -18809716, 27, 0, -16711802, 17, 0, -16711765, 9, 0, -16711720, 14, 0, -16777189, 27, 0, -16777148, 28, 0, -16777000, 29, 0, -7274854, 6, 0, -7274835, 1, 0, -6226207, 27, 0, -5177729, 29, 0, -4849026, 17, 0, -4849011, 18, 0, -4848979, 3, 0, -4848962, 24, 0, -4848944, 14, 0, -4130151, 3, 0, -4130135, 1, 0, -4130118, 2, 0, -4130100, 12, 0, -3081694, 16, 0, -3081657, 20, 0, -3081628, 28, 0, -3081605, 24, 0, -3081555, 21, 0, -3081533, 25, 0, -3081512, 13, 0, -3081485, 21, 0, -3081412, 29, 0, -3081393, 27, 0, -3080277, 17, 0, -3080216, 8, 0, -3145711, 24, 0, -3145581, 2, 0, -3145566, 1, 0, -3144920, 9, 0, -3144901, 10, 0, -2817442, 20, 0, -2031720, 23, 0, -2097053, 21, 0, -2096945, 21, 0, -984167, 3, 0, -984150, 4, 0, -984133, 2, 0, -984108, 12, 0, -984001, 27, 0, -983900, 21, 0, -983883, 20, 0, -983638, 16, 0, -983606, 7, 0, -983555, 24, 0, -983531, 14, 0, -983505, 22, 0, -983489, 20, 0, -983444, 27, 0, -983428, 29, 0, -983392, 24, 0, -983367, 25, 0, -983344, 6, 0, -983299, 16, 0, -983267, 1, 0, -983249, 2, 0, -983232, 3, 0, -983210, 2, 0, -983179, 29, 0, -983157, 12, 0, -983140, 22, 0, -983118, 3, 0, -983101, 4, 0, -983069, 13, 0, -1048554, 1, 0, -1048520, 21, 0, -1048502, 22, 0, -1048468, 16, 0, -1048444, 20, 0, -1048420, 14, 0, -1048402, 22, 0, -1048376, 13, 0, -1048342, 22, 0, -1048324, 23, 0, -1048298, 29, 0, -1048280, 20, 0, -1048196, 12, 0, -1047999, 21, 0, -1047820, 13, 0, 5243660, 4, 0, 6292358, 29, 0, 7340851, 16, 0, 7340873, 24, 0, 7340900, 20, 0, 10550161, 21, 0, 10550181, 29, 0, 10550208, 26, 0, 10550231, 7, 0, 11533349, 22, 0, 12647429, 12, 0, 12647504, 20, 0, 12647584, 2, 0, 13695981, 15, 0, 19987528, 20, 0, 19987557, 5, 0, 19987579, 17, 0, 19987614, 2, 0, 21036585, 6, 0, 23133237, 27, 0, 23133263, 16, 0, 23133296, 24, 0, 23133352, 13, 0, 23133749, 22, 0, 23133836, 21, 0, 23133863, 29, 0, 24181489, 2, 0, 24181504, 4, 0, 24181531, 22, 0, 24181573, 20, 0, 24181590, 14, 0, 24181631, 9, 0, 24181683, 20, 0, 24181705, 7, 0, 24181804, 20, 0, 24181883, 12, 0, 24181957, 21, 0, 24181977, 1, 0, 24182006, 20, 0, 24182073, 20, 0, 24182089, 12, 0, 24182175, 20, 0, 24182285, 13, 0, 24182309, 27, 0, 24182332, 12, 0, 24182394, 1, 0, 24182410, 2, 0, 24182447, 20, 0, 24182505, 18, 0 )
 
 [node name="Fountains" type="TileMap" parent="Decorations"]
 tile_set = ExtResource( 29 )
@@ -1347,7 +1697,7 @@ position = Vector2( -1, 7 )
 z_index = -2
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 5 )]
-position = Vector2( 33, -100 )
+position = Vector2( 41, -98 )
 z_index = 2
 
 [node name="Light2D2" type="Light2D" parent="Player"]
@@ -1369,6 +1719,22 @@ position = Vector2( -228, -84 )
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody5" index="0"]
 position = Vector2( 279, 7 )
 shape = SubResource( 66 )
+one_way_collision = true
+
+[node name="PassThroughBody37" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
+position = Vector2( -782, -13 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody37" index="0"]
+position = Vector2( 1, 0 )
+shape = SubResource( 144 )
+one_way_collision = true
+
+[node name="PassThroughBody41" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
+position = Vector2( -702, -13 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody41" index="0"]
+position = Vector2( 9, 0 )
+shape = SubResource( 145 )
 one_way_collision = true
 
 [node name="PassThroughBody27" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
@@ -1787,60 +2153,12 @@ position = Vector2( -3, -0.5 )
 shape = SubResource( 53 )
 one_way_collision = true
 
-[node name="PassThroughBody42" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
-position = Vector2( -1162, -270 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody42" index="0"]
-position = Vector2( -3, -0.5 )
-shape = SubResource( 53 )
-one_way_collision = true
-
-[node name="PassThroughBody43" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
-position = Vector2( -1114, -254 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody43" index="0"]
-position = Vector2( -3, -0.5 )
-shape = SubResource( 53 )
-one_way_collision = true
-
-[node name="PassThroughBody44" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
-position = Vector2( -890, -254 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody44" index="0"]
-position = Vector2( -3, -0.5 )
-shape = SubResource( 53 )
-one_way_collision = true
-
-[node name="PassThroughBody45" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
-position = Vector2( -810, -334 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody45" index="0"]
-position = Vector2( -3, -0.5 )
-shape = SubResource( 53 )
-one_way_collision = true
-
 [node name="PassThroughBody47" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
 position = Vector2( -1162, -334 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody47" index="0"]
 position = Vector2( 149, 1.5 )
 shape = SubResource( 55 )
-one_way_collision = true
-
-[node name="PassThroughBody48" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
-position = Vector2( -1066, -350 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody48" index="0"]
-position = Vector2( 77, 1 )
-shape = SubResource( 56 )
-one_way_collision = true
-
-[node name="PassThroughBody49" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
-position = Vector2( -1050, -366 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody49" index="0"]
-position = Vector2( 61, 1 )
-shape = SubResource( 57 )
 one_way_collision = true
 
 [node name="PassThroughBody20" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
@@ -2063,8 +2381,8 @@ shape = SubResource( 101 )
 [node name="Lighting" type="Node" parent="."]
 
 [node name="Light2D" type="Light2D" parent="Lighting"]
-position = Vector2( 21, 41 )
-scale = Vector2( 2.08505, 0.319631 )
+position = Vector2( 21, 119.003 )
+scale = Vector2( 2.08505, 0.656576 )
 texture = ExtResource( 3 )
 color = Color( 1, 1, 1, 0.431373 )
 energy = 0.7
@@ -2087,32 +2405,32 @@ energy = 0.7
 mode = 2
 
 [node name="Light2D6" type="Light2D" parent="Lighting"]
-position = Vector2( -971, -17 )
-scale = Vector2( 0.50902, 0.149016 )
+position = Vector2( -971, 1.25139 )
+scale = Vector2( 0.50902, 0.227856 )
 texture = ExtResource( 3 )
 color = Color( 1, 1, 1, 0.431373 )
 energy = 0.7
 mode = 2
 
 [node name="Light2D7" type="Light2D" parent="Lighting"]
-position = Vector2( -1359, -54 )
-scale = Vector2( 0.50902, 0.149016 )
+position = Vector2( -1358, -38 )
+scale = Vector2( 0.50902, 0.266733 )
 texture = ExtResource( 3 )
 color = Color( 1, 1, 1, 0.431373 )
 energy = 0.7
 mode = 2
 
 [node name="Light2D9" type="Light2D" parent="Lighting"]
-position = Vector2( -782, 384.626 )
-scale = Vector2( 1.52513, 0.226239 )
+position = Vector2( -758, 409.187 )
+scale = Vector2( 1.52513, 0.324782 )
 texture = ExtResource( 3 )
 color = Color( 1, 1, 1, 0.431373 )
 energy = 0.7
 mode = 2
 
 [node name="Light2D8" type="Light2D" parent="Lighting"]
-position = Vector2( -1009, -287 )
-scale = Vector2( 0.50902, 0.149016 )
+position = Vector2( -1017, -250.749 )
+scale = Vector2( 0.50902, 0.366085 )
 texture = ExtResource( 3 )
 color = Color( 1, 1, 1, 0.431373 )
 energy = 0.7
@@ -2135,8 +2453,8 @@ energy = 0.7
 mode = 2
 
 [node name="Light2D2" type="Light2D" parent="Lighting"]
-position = Vector2( 74, 106 )
-scale = Vector2( 1.52803, 0.356909 )
+position = Vector2( 108.5, 113.5 )
+scale = Vector2( 2.0451, 0.658747 )
 texture = ExtResource( 3 )
 color = Color( 1, 1, 1, 0.431373 )
 energy = 0.57
@@ -2147,24 +2465,320 @@ mode = 2
 [node name="CookerDweller" parent="Dwellers" instance=ExtResource( 27 )]
 position = Vector2( -1249, -36 )
 
+[node name="MovingPlatforms" type="Node2D" parent="."]
+
+[node name="MovingPlatform2" type="Node2D" parent="MovingPlatforms"]
+position = Vector2( -810, -268 )
+script = ExtResource( 33 )
+
+[node name="Platform" type="KinematicBody2D" parent="MovingPlatforms/MovingPlatform2"]
+position = Vector2( 0, -16.9807 )
+motion/sync_to_physics = true
+
+[node name="Sprite" type="Sprite" parent="MovingPlatforms/MovingPlatform2/Platform"]
+texture = ExtResource( 34 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatforms/MovingPlatform2/Platform"]
+shape = SubResource( 135 )
+one_way_collision = true
+
+[node name="Path2D" type="Path2D" parent="MovingPlatforms/MovingPlatform2"]
+position = Vector2( -97, 0 )
+curve = ExtResource( 35 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatforms/MovingPlatform2/Path2D"]
+position = Vector2( 97, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MovingPlatforms/MovingPlatform2/Path2D/PathFollow2D"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatforms/MovingPlatform2"]
+autoplay = "Loop"
+playback_process_mode = 0
+playback_speed = 0.5
+anims/Loop = SubResource( 136 )
+anims/RESET = SubResource( 137 )
+
+[node name="MovingPlatform7" type="Node2D" parent="MovingPlatforms"]
+position = Vector2( -1268, 478 )
+script = ExtResource( 33 )
+
+[node name="Platform" type="KinematicBody2D" parent="MovingPlatforms/MovingPlatform7"]
+position = Vector2( 0, -5.9873 )
+motion/sync_to_physics = true
+
+[node name="Sprite" type="Sprite" parent="MovingPlatforms/MovingPlatform7/Platform"]
+texture = ExtResource( 34 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatforms/MovingPlatform7/Platform"]
+shape = SubResource( 135 )
+one_way_collision = true
+
+[node name="Path2D" type="Path2D" parent="MovingPlatforms/MovingPlatform7"]
+position = Vector2( -97, 0 )
+curve = SubResource( 154 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatforms/MovingPlatform7/Path2D"]
+position = Vector2( 97, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MovingPlatforms/MovingPlatform7/Path2D/PathFollow2D"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatforms/MovingPlatform7"]
+autoplay = "Loop"
+playback_process_mode = 0
+playback_speed = 0.5
+anims/Loop = SubResource( 146 )
+anims/RESET = SubResource( 147 )
+
+[node name="MovingPlatform8" type="Node2D" parent="MovingPlatforms"]
+position = Vector2( -1298, 431 )
+script = ExtResource( 33 )
+
+[node name="Platform" type="KinematicBody2D" parent="MovingPlatforms/MovingPlatform8"]
+position = Vector2( 0, -15.2346 )
+motion/sync_to_physics = true
+
+[node name="Sprite" type="Sprite" parent="MovingPlatforms/MovingPlatform8/Platform"]
+texture = ExtResource( 34 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatforms/MovingPlatform8/Platform"]
+shape = SubResource( 135 )
+one_way_collision = true
+
+[node name="Path2D" type="Path2D" parent="MovingPlatforms/MovingPlatform8"]
+position = Vector2( -97, 0 )
+curve = ExtResource( 35 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatforms/MovingPlatform8/Path2D"]
+position = Vector2( 97, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MovingPlatforms/MovingPlatform8/Path2D/PathFollow2D"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatforms/MovingPlatform8"]
+autoplay = "Loop"
+playback_process_mode = 0
+playback_speed = 0.5
+anims/Loop = SubResource( 148 )
+anims/RESET = SubResource( 149 )
+
+[node name="MovingPlatform9" type="Node2D" parent="MovingPlatforms"]
+position = Vector2( -268, 456 )
+script = ExtResource( 33 )
+
+[node name="Platform" type="KinematicBody2D" parent="MovingPlatforms/MovingPlatform9"]
+position = Vector2( 0, -15.2346 )
+motion/sync_to_physics = true
+
+[node name="Sprite" type="Sprite" parent="MovingPlatforms/MovingPlatform9/Platform"]
+texture = ExtResource( 34 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatforms/MovingPlatform9/Platform"]
+shape = SubResource( 135 )
+one_way_collision = true
+
+[node name="Path2D" type="Path2D" parent="MovingPlatforms/MovingPlatform9"]
+position = Vector2( -97, 0 )
+curve = ExtResource( 35 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatforms/MovingPlatform9/Path2D"]
+position = Vector2( 97, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MovingPlatforms/MovingPlatform9/Path2D/PathFollow2D"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatforms/MovingPlatform9"]
+autoplay = "Loop"
+playback_process_mode = 0
+playback_speed = 0.5
+anims/Loop = SubResource( 150 )
+anims/RESET = SubResource( 151 )
+
+[node name="MovingPlatform6" type="Node2D" parent="MovingPlatforms"]
+position = Vector2( -1522, 18 )
+script = ExtResource( 33 )
+
+[node name="Platform" type="KinematicBody2D" parent="MovingPlatforms/MovingPlatform6"]
+position = Vector2( 0, -7.11831 )
+motion/sync_to_physics = true
+
+[node name="Sprite" type="Sprite" parent="MovingPlatforms/MovingPlatform6/Platform"]
+texture = ExtResource( 34 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatforms/MovingPlatform6/Platform"]
+shape = SubResource( 135 )
+one_way_collision = true
+
+[node name="Path2D" type="Path2D" parent="MovingPlatforms/MovingPlatform6"]
+position = Vector2( -97, 0 )
+curve = ExtResource( 35 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatforms/MovingPlatform6/Path2D"]
+position = Vector2( 97, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MovingPlatforms/MovingPlatform6/Path2D/PathFollow2D"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatforms/MovingPlatform6"]
+autoplay = "Loop"
+playback_process_mode = 0
+playback_speed = 0.5
+anims/Loop = SubResource( 152 )
+anims/RESET = SubResource( 153 )
+
+[node name="MovingPlatform3" type="Node2D" parent="MovingPlatforms"]
+position = Vector2( -890, -188 )
+script = ExtResource( 33 )
+
+[node name="Platform" type="KinematicBody2D" parent="MovingPlatforms/MovingPlatform3"]
+position = Vector2( 0, -12.6874 )
+motion/sync_to_physics = true
+
+[node name="Sprite" type="Sprite" parent="MovingPlatforms/MovingPlatform3/Platform"]
+texture = ExtResource( 34 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatforms/MovingPlatform3/Platform"]
+shape = SubResource( 135 )
+one_way_collision = true
+
+[node name="Path2D" type="Path2D" parent="MovingPlatforms/MovingPlatform3"]
+position = Vector2( -97, 0 )
+curve = ExtResource( 35 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatforms/MovingPlatform3/Path2D"]
+position = Vector2( 97, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MovingPlatforms/MovingPlatform3/Path2D/PathFollow2D"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatforms/MovingPlatform3"]
+autoplay = "Loop"
+playback_process_mode = 0
+playback_speed = 0.5
+anims/Loop = SubResource( 138 )
+anims/RESET = SubResource( 139 )
+
+[node name="MovingPlatform4" type="Node2D" parent="MovingPlatforms"]
+position = Vector2( -1114, -188 )
+script = ExtResource( 33 )
+
+[node name="Platform" type="KinematicBody2D" parent="MovingPlatforms/MovingPlatform4"]
+position = Vector2( 0, -0.686813 )
+motion/sync_to_physics = true
+
+[node name="Sprite" type="Sprite" parent="MovingPlatforms/MovingPlatform4/Platform"]
+texture = ExtResource( 34 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatforms/MovingPlatform4/Platform"]
+shape = SubResource( 135 )
+one_way_collision = true
+
+[node name="Path2D" type="Path2D" parent="MovingPlatforms/MovingPlatform4"]
+position = Vector2( -97, 0 )
+curve = ExtResource( 35 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatforms/MovingPlatform4/Path2D"]
+position = Vector2( 97, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MovingPlatforms/MovingPlatform4/Path2D/PathFollow2D"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatforms/MovingPlatform4"]
+autoplay = "Loop"
+playback_process_mode = 0
+playback_speed = 0.5
+anims/Loop = SubResource( 140 )
+anims/RESET = SubResource( 141 )
+
+[node name="MovingPlatform5" type="Node2D" parent="MovingPlatforms"]
+position = Vector2( -1162, -204 )
+script = ExtResource( 33 )
+
+[node name="Platform" type="KinematicBody2D" parent="MovingPlatforms/MovingPlatform5"]
+position = Vector2( 0, -16.8001 )
+motion/sync_to_physics = true
+
+[node name="Sprite" type="Sprite" parent="MovingPlatforms/MovingPlatform5/Platform"]
+texture = ExtResource( 34 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatforms/MovingPlatform5/Platform"]
+shape = SubResource( 135 )
+one_way_collision = true
+
+[node name="Path2D" type="Path2D" parent="MovingPlatforms/MovingPlatform5"]
+position = Vector2( -97, 0 )
+curve = ExtResource( 35 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatforms/MovingPlatform5/Path2D"]
+position = Vector2( 97, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MovingPlatforms/MovingPlatform5/Path2D/PathFollow2D"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatforms/MovingPlatform5"]
+autoplay = "Loop"
+playback_process_mode = 0
+playback_speed = 0.5
+anims/Loop = SubResource( 142 )
+anims/RESET = SubResource( 143 )
+
 [editable path="Trees/AbstractTree16"]
 [editable path="Trees/AbstractTree16/PassThroughBody"]
+[editable path="Trees/AbstractTree44"]
+[editable path="Trees/AbstractTree44/PassThroughBody"]
+[editable path="Trees/AbstractTree45"]
+[editable path="Trees/AbstractTree45/PassThroughBody"]
 [editable path="Trees/AbstractTree17"]
 [editable path="Trees/AbstractTree17/PassThroughBody"]
 [editable path="Trees/AbstractTree33"]
 [editable path="Trees/AbstractTree33/PassThroughBody"]
+[editable path="Trees/AbstractTree43"]
+[editable path="Trees/AbstractTree43/PassThroughBody"]
 [editable path="Trees/AbstractTree34"]
 [editable path="Trees/AbstractTree34/PassThroughBody"]
 [editable path="Trees/AbstractTree35"]
 [editable path="Trees/AbstractTree35/PassThroughBody"]
 [editable path="Trees/AbstractTree36"]
 [editable path="Trees/AbstractTree36/PassThroughBody"]
-[editable path="Trees/AbstractTree37"]
-[editable path="Trees/AbstractTree37/PassThroughBody"]
 [editable path="Trees/AbstractTree40"]
 [editable path="Trees/AbstractTree40/PassThroughBody"]
 [editable path="Trees/AbstractTree39"]
 [editable path="Trees/AbstractTree39/PassThroughBody"]
+[editable path="Trees/AbstractTree42"]
+[editable path="Trees/AbstractTree42/PassThroughBody"]
 [editable path="Trees/AbstractTree38"]
 [editable path="Trees/AbstractTree38/PassThroughBody"]
 [editable path="Trees/AbstractTree18"]
@@ -2191,10 +2805,14 @@ position = Vector2( -1249, -36 )
 [editable path="Trees/AbstractTree8/PassThroughBody"]
 [editable path="Trees/AbstractTree9"]
 [editable path="Trees/AbstractTree9/PassThroughBody"]
+[editable path="Trees/AbstractTree41"]
+[editable path="Trees/AbstractTree41/PassThroughBody"]
 [editable path="Trees/AbstractTree10"]
 [editable path="Trees/AbstractTree10/PassThroughBody"]
 [editable path="Trees/AbstractTree11"]
 [editable path="Trees/AbstractTree11/PassThroughBody"]
+[editable path="Trees/AbstractTree23"]
+[editable path="Trees/AbstractTree23/PassThroughBody"]
 [editable path="Trees/AbstractTree12"]
 [editable path="Trees/AbstractTree12/PassThroughBody"]
 [editable path="Trees/AbstractTree22"]
@@ -2205,6 +2823,8 @@ position = Vector2( -1249, -36 )
 [editable path="Trees/AbstractTree25/PassThroughBody"]
 [editable path="Trees/AbstractTree19"]
 [editable path="Trees/AbstractTree19/PassThroughBody"]
+[editable path="Trees/AbstractTree37"]
+[editable path="Trees/AbstractTree37/PassThroughBody"]
 [editable path="Trees/AbstractTree20"]
 [editable path="Trees/AbstractTree20/PassThroughBody"]
 [editable path="Trees/AbstractTree26"]
@@ -2225,6 +2845,8 @@ position = Vector2( -1249, -36 )
 [editable path="Doors/Shed_door/InteractionController"]
 [editable path="Doors/Gates_2"]
 [editable path="Collisions/PassTrough/PassThroughBody5"]
+[editable path="Collisions/PassTrough/PassThroughBody37"]
+[editable path="Collisions/PassTrough/PassThroughBody41"]
 [editable path="Collisions/PassTrough/PassThroughBody27"]
 [editable path="Collisions/PassTrough/PassThroughBody22"]
 [editable path="Collisions/PassTrough/PassThroughBody26"]
@@ -2277,13 +2899,7 @@ position = Vector2( -1249, -36 )
 [editable path="Collisions/PassTrough/PassThroughBody62"]
 [editable path="Collisions/PassTrough/PassThroughBody36"]
 [editable path="Collisions/PassTrough/PassThroughBody38"]
-[editable path="Collisions/PassTrough/PassThroughBody42"]
-[editable path="Collisions/PassTrough/PassThroughBody43"]
-[editable path="Collisions/PassTrough/PassThroughBody44"]
-[editable path="Collisions/PassTrough/PassThroughBody45"]
 [editable path="Collisions/PassTrough/PassThroughBody47"]
-[editable path="Collisions/PassTrough/PassThroughBody48"]
-[editable path="Collisions/PassTrough/PassThroughBody49"]
 [editable path="Collisions/PassTrough/PassThroughBody20"]
 [editable path="Collisions/PassTrough/PassThroughBody21"]
 [editable path="Collisions/PassTrough/PassThroughBody23"]
