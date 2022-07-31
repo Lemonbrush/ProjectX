@@ -1,4 +1,4 @@
-[gd_scene load_steps=149 format=2]
+[gd_scene load_steps=151 format=2]
 
 [ext_resource path="res://Assets/Levels/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -35,6 +35,8 @@
 [ext_resource path="res://WorldObjects/Moving_platforms/MovingPlatform.gd" type="Script" id=33]
 [ext_resource path="res://Assets/WorldObjects/Floating_block.png" type="Texture" id=34]
 [ext_resource path="res://WorldObjects/Moving_platforms/Paths/VerticalPath.tres" type="Curve2D" id=35]
+[ext_resource path="res://UI/DebugScreen/GameSpecs.tscn" type="PackedScene" id=36]
+[ext_resource path="res://GameSpecs.gd" type="Script" id=37]
 
 [sub_resource type="Environment" id=30]
 background_mode = 4
@@ -1025,6 +1027,9 @@ tracks/0/keys = {
 [node name="Central_hab" type="Node2D"]
 position = Vector2( -3, -62 )
 script = ExtResource( 10 )
+
+[node name="GameSpecs" type="CanvasLayer" parent="." instance=ExtResource( 36 )]
+script = ExtResource( 37 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 30 )
@@ -2472,7 +2477,6 @@ position = Vector2( -810, -268 )
 script = ExtResource( 33 )
 
 [node name="Platform" type="KinematicBody2D" parent="MovingPlatforms/MovingPlatform2"]
-position = Vector2( 0, -16.9807 )
 motion/sync_to_physics = true
 
 [node name="Sprite" type="Sprite" parent="MovingPlatforms/MovingPlatform2/Platform"]
@@ -2508,7 +2512,6 @@ position = Vector2( -1268, 478 )
 script = ExtResource( 33 )
 
 [node name="Platform" type="KinematicBody2D" parent="MovingPlatforms/MovingPlatform7"]
-position = Vector2( 0, -5.9873 )
 motion/sync_to_physics = true
 
 [node name="Sprite" type="Sprite" parent="MovingPlatforms/MovingPlatform7/Platform"]
@@ -2544,7 +2547,6 @@ position = Vector2( -1298, 431 )
 script = ExtResource( 33 )
 
 [node name="Platform" type="KinematicBody2D" parent="MovingPlatforms/MovingPlatform8"]
-position = Vector2( 0, -15.2346 )
 motion/sync_to_physics = true
 
 [node name="Sprite" type="Sprite" parent="MovingPlatforms/MovingPlatform8/Platform"]
@@ -2580,7 +2582,6 @@ position = Vector2( -268, 456 )
 script = ExtResource( 33 )
 
 [node name="Platform" type="KinematicBody2D" parent="MovingPlatforms/MovingPlatform9"]
-position = Vector2( 0, -15.2346 )
 motion/sync_to_physics = true
 
 [node name="Sprite" type="Sprite" parent="MovingPlatforms/MovingPlatform9/Platform"]
@@ -2616,7 +2617,6 @@ position = Vector2( -1522, 18 )
 script = ExtResource( 33 )
 
 [node name="Platform" type="KinematicBody2D" parent="MovingPlatforms/MovingPlatform6"]
-position = Vector2( 0, -7.11831 )
 motion/sync_to_physics = true
 
 [node name="Sprite" type="Sprite" parent="MovingPlatforms/MovingPlatform6/Platform"]
@@ -2652,7 +2652,6 @@ position = Vector2( -890, -188 )
 script = ExtResource( 33 )
 
 [node name="Platform" type="KinematicBody2D" parent="MovingPlatforms/MovingPlatform3"]
-position = Vector2( 0, -12.6874 )
 motion/sync_to_physics = true
 
 [node name="Sprite" type="Sprite" parent="MovingPlatforms/MovingPlatform3/Platform"]
@@ -2688,7 +2687,6 @@ position = Vector2( -1114, -188 )
 script = ExtResource( 33 )
 
 [node name="Platform" type="KinematicBody2D" parent="MovingPlatforms/MovingPlatform4"]
-position = Vector2( 0, -0.686813 )
 motion/sync_to_physics = true
 
 [node name="Sprite" type="Sprite" parent="MovingPlatforms/MovingPlatform4/Platform"]
@@ -2724,7 +2722,6 @@ position = Vector2( -1162, -204 )
 script = ExtResource( 33 )
 
 [node name="Platform" type="KinematicBody2D" parent="MovingPlatforms/MovingPlatform5"]
-position = Vector2( 0, -16.8001 )
 motion/sync_to_physics = true
 
 [node name="Sprite" type="Sprite" parent="MovingPlatforms/MovingPlatform5/Platform"]

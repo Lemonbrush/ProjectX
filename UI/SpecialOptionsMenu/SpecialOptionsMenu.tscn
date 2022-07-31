@@ -24,14 +24,14 @@ color = Color( 0.0941176, 0.0784314, 0.168627, 0.368627 )
 
 [node name="MarginContainer" type="MarginContainer" parent="MainMarginContainer"]
 margin_right = 530.0
-margin_bottom = 206.0
+margin_bottom = 224.0
 size_flags_vertical = 0
 custom_constants/margin_top = 60
 
 [node name="ContentVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer"]
 margin_top = 60.0
 margin_right = 530.0
-margin_bottom = 206.0
+margin_bottom = 224.0
 custom_constants/separation = 30
 
 [node name="Header" type="Label" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer"]
@@ -47,7 +47,7 @@ align = 1
 margin_left = 181.0
 margin_top = 56.0
 margin_right = 349.0
-margin_bottom = 146.0
+margin_bottom = 164.0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme = ExtResource( 2 )
@@ -55,7 +55,7 @@ custom_constants/separation = 15
 
 [node name="OptionsVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer"]
 margin_right = 168.0
-margin_bottom = 61.0
+margin_bottom = 79.0
 custom_constants/separation = 15
 
 [node name="ButtonsVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsVBoxContainer"]
@@ -76,28 +76,48 @@ text = "Сбросить настройки"
 [node name="RadioButtonsVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsVBoxContainer"]
 margin_top = 47.0
 margin_right = 168.0
-margin_bottom = 61.0
+margin_bottom = 79.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsVBoxContainer/RadioButtonsVBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsVBoxContainer/RadioButtonsVBoxContainer"]
 margin_right = 168.0
-margin_bottom = 14.0
+margin_bottom = 32.0
 custom_constants/separation = 15
 
-[node name="DeleteAllSavesAlwaysButton" type="Label" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsVBoxContainer/RadioButtonsVBoxContainer/HBoxContainer"]
+[node name="VBoxContainerTitles" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsVBoxContainer/RadioButtonsVBoxContainer/HBoxContainer2"]
+margin_right = 142.0
+margin_bottom = 32.0
+
+[node name="DeleteAllSavesAlwaysButton" type="Label" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsVBoxContainer/RadioButtonsVBoxContainer/HBoxContainer2/VBoxContainerTitles"]
 margin_right = 142.0
 margin_bottom = 13.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 4 )
 text = "Автоудаление сохранений"
-align = 1
 
-[node name="CheckBox" type="CheckBox" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsVBoxContainer/RadioButtonsVBoxContainer/HBoxContainer"]
+[node name="ActivateDebugScreen" type="Label" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsVBoxContainer/RadioButtonsVBoxContainer/HBoxContainer2/VBoxContainerTitles"]
+margin_top = 17.0
+margin_right = 142.0
+margin_bottom = 30.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "Экран дебага"
+
+[node name="VBoxContainerRadioButtons" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsVBoxContainer/RadioButtonsVBoxContainer/HBoxContainer2"]
 margin_left = 157.0
 margin_right = 168.0
+margin_bottom = 32.0
+
+[node name="DeleteAllSavesAlwaysCheckBox" type="CheckBox" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsVBoxContainer/RadioButtonsVBoxContainer/HBoxContainer2/VBoxContainerRadioButtons"]
+margin_right = 11.0
 margin_bottom = 14.0
 
+[node name="ActivateDebugScreenCheckBox" type="CheckBox" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsVBoxContainer/RadioButtonsVBoxContainer/HBoxContainer2/VBoxContainerRadioButtons"]
+margin_top = 18.0
+margin_right = 11.0
+margin_bottom = 32.0
+
 [node name="ExitButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer"]
-margin_top = 76.0
+margin_top = 94.0
 margin_right = 168.0
-margin_bottom = 90.0
+margin_bottom = 108.0
 text = "Выход"

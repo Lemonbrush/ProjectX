@@ -30,6 +30,10 @@ func has_settings_file():
 	
 ################### Update properties functions ##################
 
+func update_debug_screen_option():
+	settings.is_debug_screen_active = !settings.is_debug_screen_active
+	save_settings()
+	
 func update_should_delete_all_saves_on_start_session_option():
 	settings.should_delete_all_saves_on_start_session = !settings.should_delete_all_saves_on_start_session
 	save_settings()
