@@ -25,6 +25,9 @@ func _unhandled_input(event):
 		save_game()
 		var bookInstance = bookMenu.instance()
 		add_child(bookInstance)
+	elif event.is_action_pressed("debug_screen"):
+		SettingsManager.update_debug_screen_option()
+		EventBus.debug_screen_visibility_updated()
 	
 ###### Helpers #########
 
