@@ -21,6 +21,8 @@ func save_settings():
 		print("Game settings saved")
 		
 func load_settings():
+	TranslationServer.set_locale("ru")
+	
 	if has_settings_file():
 		settings = load(save_path)
 

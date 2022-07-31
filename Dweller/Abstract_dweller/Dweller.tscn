@@ -102,7 +102,7 @@ texts_array = [ "Привет!" ]
 [node name="InteractionPopup" parent="." instance=ExtResource( 5 )]
 position = Vector2( 0, -15 )
 interaction_controller_path = NodePath("../Body/InteractionController")
-labelText = "Говорить"
+labelText = "talk"
 
 [node name="Body" type="Node2D" parent="."]
 

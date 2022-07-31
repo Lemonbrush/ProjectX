@@ -1,9 +1,9 @@
 extends CanvasLayer
 
-onready var continueButton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionButtonsVBoxContainer/ContinueButton
+onready var continueButton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/ContinueButton
 onready var optionsButton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionButtonsVBoxContainer/OptionsButton
 onready var exitButton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionButtonsVBoxContainer/ExitButton
-onready var exitGameButton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/ExitGameButton
+onready var exitGameButton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionButtonsVBoxContainer/ExitGameButton
 
 onready var marginContainer = $MainMarginContainer
 

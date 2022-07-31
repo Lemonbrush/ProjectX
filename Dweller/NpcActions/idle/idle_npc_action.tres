@@ -6,4 +6,4 @@
 resource_local_to_scene = true
 script = ExtResource( 1 )
 wait_time = 10.0
-is_infinite = false
+is_infinite = true

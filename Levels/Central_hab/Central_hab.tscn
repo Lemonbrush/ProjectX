@@ -1,4 +1,4 @@
-[gd_scene load_steps=123 format=2]
+[gd_scene load_steps=133 format=2]
 
 [ext_resource path="res://Assets/Levels/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -17,6 +17,8 @@
 [ext_resource path="res://WorldObjects/Technical/Clouds/Clouds.tscn" type="PackedScene" id=15]
 [ext_resource path="res://WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=16]
 [ext_resource path="res://WorldObjects/Decorative/Tree/Background_trees/BackgroundTallWideTree.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Dweller/Abstract_dweller/Dweller.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Dweller/NpcActions/idle/idle_npc_action.tres" type="Resource" id=19]
 [ext_resource path="res://Levels/Central_hab/World_objects/Mill_gear.tscn" type="PackedScene" id=24]
 [ext_resource path="res://WorldObjects/Destructables/Vase/Vase.tscn" type="PackedScene" id=25]
 [ext_resource path="res://WorldObjects/Destructables/Barrel/Barrel.tscn" type="PackedScene" id=26]
@@ -41,6 +43,21 @@
 background_mode = 4
 glow_enabled = true
 glow_hdr_threshold = 1.5
+
+[sub_resource type="RectangleShape2D" id=159]
+extents = Vector2( 18, 4 )
+
+[sub_resource type="RectangleShape2D" id=160]
+extents = Vector2( 13, 4 )
+
+[sub_resource type="RectangleShape2D" id=161]
+extents = Vector2( 19, 4 )
+
+[sub_resource type="RectangleShape2D" id=162]
+extents = Vector2( 20, 4 )
+
+[sub_resource type="RectangleShape2D" id=163]
+extents = Vector2( 26.5, 4 )
 
 [sub_resource type="TileSet" id=36]
 0/name = "GrassDecorationsSheet.png 0"
@@ -675,6 +692,55 @@ extents = Vector2( 7.5, 36.625 )
 [sub_resource type="RectangleShape2D" id=101]
 extents = Vector2( 7.5, 39 )
 
+[sub_resource type="Animation" id=156]
+resource_name = "Idle"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
+}
+
+[sub_resource type="Animation" id=157]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=158]
+resource_name = "Walk"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 13, 14, 15, 16, 17, 18 ]
+}
+
 [sub_resource type="RectangleShape2D" id=135]
 extents = Vector2( 8, 8 )
 
@@ -977,6 +1043,9 @@ position = Vector2( -847, -338 )
 [node name="TallTree" parent="Trees/ShrineTrees" instance=ExtResource( 37 )]
 position = Vector2( -949, -338 )
 
+[node name="CollisionShape2D" parent="Trees/ShrineTrees/TallTree/PassThroughBody" index="0"]
+shape = SubResource( 159 )
+
 [node name="PinkHouseTrees" type="Node2D" parent="Trees"]
 
 [node name="BackgroundWideTree" parent="Trees/PinkHouseTrees" instance=ExtResource( 42 )]
@@ -1007,8 +1076,16 @@ position = Vector2( -33, -308 )
 [node name="BushyTree3" parent="Trees/MillTrees" instance=ExtResource( 39 )]
 position = Vector2( -951, -66 )
 
+[node name="CollisionShape2D" parent="Trees/MillTrees/BushyTree3/PassThroughBody" index="0"]
+position = Vector2( -8, 45 )
+shape = SubResource( 160 )
+
 [node name="BushyTree2" parent="Trees/MillTrees" instance=ExtResource( 39 )]
 position = Vector2( -857, -66 )
+
+[node name="CollisionShape2D" parent="Trees/MillTrees/BushyTree2/PassThroughBody" index="0"]
+position = Vector2( 8, 45 )
+shape = SubResource( 161 )
 
 [node name="BushyTree" parent="Trees/MillTrees" instance=ExtResource( 39 )]
 position = Vector2( -842, 142 )
@@ -1044,6 +1121,9 @@ position = Vector2( -321, -162 )
 [node name="BackgroundSmallTree2" parent="Trees/GateTrees" instance=ExtResource( 4 )]
 position = Vector2( -228, -65 )
 
+[node name="BackgroundWideTree6" parent="Trees/GateTrees" instance=ExtResource( 42 )]
+position = Vector2( 454, -22 )
+
 [node name="BackgroundWideTree3" parent="Trees/GateTrees" instance=ExtResource( 42 )]
 position = Vector2( -476, -64 )
 
@@ -1051,9 +1131,18 @@ position = Vector2( -476, -64 )
 position = Vector2( -542, -66 )
 
 [node name="BackgroundWideTree" parent="Trees/GateTrees" instance=ExtResource( 42 )]
-position = Vector2( 488, -66 )
+position = Vector2( 490, -48 )
+
+[node name="BackgroundWideTree4" parent="Trees/GateTrees" instance=ExtResource( 42 )]
+position = Vector2( 490, -48 )
+
+[node name="BackgroundWideTree5" parent="Trees/GateTrees" instance=ExtResource( 42 )]
+position = Vector2( 380, -55 )
 
 [node name="BackgroundSmallWideTree" parent="Trees/GateTrees" instance=ExtResource( 38 )]
+position = Vector2( 326, -66 )
+
+[node name="BackgroundSmallWideTree3" parent="Trees/GateTrees" instance=ExtResource( 38 )]
 position = Vector2( 326, -66 )
 
 [node name="TallTree" parent="Trees/GateTrees" instance=ExtResource( 37 )]
@@ -1062,14 +1151,25 @@ position = Vector2( 276, -44 )
 [node name="TallTree2" parent="Trees/GateTrees" instance=ExtResource( 37 )]
 position = Vector2( 487, -65 )
 
+[node name="TallTree8" parent="Trees/GateTrees" instance=ExtResource( 37 )]
+position = Vector2( 411, -39 )
+
 [node name="TallTree3" parent="Trees/GateTrees" instance=ExtResource( 37 )]
 position = Vector2( 592, -45 )
 
 [node name="BushyTree" parent="Trees/GateTrees" instance=ExtResource( 39 )]
 position = Vector2( 202, -98 )
 
+[node name="CollisionShape2D" parent="Trees/GateTrees/BushyTree/PassThroughBody" index="0"]
+position = Vector2( 7, 45 )
+shape = SubResource( 162 )
+
 [node name="SquashedTree" parent="Trees/GateTrees" instance=ExtResource( 40 )]
 position = Vector2( -105, -98 )
+
+[node name="CollisionShape2D" parent="Trees/GateTrees/SquashedTree/PassThroughBody" index="0"]
+position = Vector2( -4.5, 21 )
+shape = SubResource( 163 )
 
 [node name="TallTree4" parent="Trees/GateTrees" instance=ExtResource( 37 )]
 position = Vector2( -573, -66 )
@@ -1122,6 +1222,9 @@ tile_data = PoolIntArray( -524331, 1, 0, -524326, 1, 0, -458795, 1, 0, -458790, 
 [node name="WorldSprite" type="Sprite" parent="."]
 position = Vector2( -186, -244 )
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="WishShrine" parent="." instance=ExtResource( 32 )]
 position = Vector2( -1010, -276 )
@@ -1300,6 +1403,8 @@ z_index = -2
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 5 )]
 position = Vector2( 15, -51 )
 z_index = 2
+collision_layer = 131
+collision_mask = 124
 
 [node name="Light2D2" type="Light2D" parent="Player"]
 visible = false
@@ -2096,6 +2201,28 @@ __meta__ = {
 [node name="CookerDweller" parent="Dwellers" instance=ExtResource( 27 )]
 position = Vector2( -1249, -36 )
 
+[node name="FiresideDwellerLeft" parent="Dwellers" instance=ExtResource( 18 )]
+position = Vector2( 408, -4 )
+actions = [  ]
+currentState = ExtResource( 19 )
+
+[node name="TextBoxPopup" parent="Dwellers/FiresideDwellerLeft" index="4"]
+texts_array = [ "central_hub_fireside_dweller_left_1", "central_hub_fireside_dweller_left_2", "central_hub_fireside_dweller_left_3" ]
+
+[node name="FiresideDwellerRight" parent="Dwellers" instance=ExtResource( 18 )]
+position = Vector2( 472, -4 )
+actions = [  ]
+currentState = ExtResource( 19 )
+defaultDirection = -1
+
+[node name="AnimationPlayer" parent="Dwellers/FiresideDwellerRight" index="0"]
+anims/Idle = SubResource( 156 )
+anims/RESET = SubResource( 157 )
+anims/Walk = SubResource( 158 )
+
+[node name="Body" parent="Dwellers/FiresideDwellerRight" index="6"]
+scale = Vector2( -1, 1 )
+
 [node name="MovingPlatforms" type="Node2D" parent="."]
 
 [node name="MovingPlatform2" type="Node2D" parent="MovingPlatforms"]
@@ -2389,6 +2516,16 @@ collision_mask = 64
 position = Vector2( 1873.5, 319 )
 shape = SubResource( 155 )
 
+[editable path="Trees/ShrineTrees/TallTree"]
+[editable path="Trees/ShrineTrees/TallTree/PassThroughBody"]
+[editable path="Trees/MillTrees/BushyTree3"]
+[editable path="Trees/MillTrees/BushyTree3/PassThroughBody"]
+[editable path="Trees/MillTrees/BushyTree2"]
+[editable path="Trees/MillTrees/BushyTree2/PassThroughBody"]
+[editable path="Trees/GateTrees/BushyTree"]
+[editable path="Trees/GateTrees/BushyTree/PassThroughBody"]
+[editable path="Trees/GateTrees/SquashedTree"]
+[editable path="Trees/GateTrees/SquashedTree/PassThroughBody"]
 [editable path="Doors/Shed_door"]
 [editable path="Doors/Shed_door/InteractionController"]
 [editable path="Doors/Gates_2"]
@@ -2472,3 +2609,7 @@ shape = SubResource( 155 )
 [editable path="AirBlowers/AirBeam3"]
 [editable path="AirBlowers/AirBeam5"]
 [editable path="AirBlowers/AirBeam4"]
+[editable path="Dwellers/FiresideDwellerLeft"]
+[editable path="Dwellers/FiresideDwellerLeft/Body/InteractionController"]
+[editable path="Dwellers/FiresideDwellerRight"]
+[editable path="Dwellers/FiresideDwellerRight/Body/InteractionController"]

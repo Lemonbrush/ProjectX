@@ -941,6 +941,9 @@ actions = [ SubResource( 72 ) ]
 currentState = SubResource( 72 )
 defaultDirection = -1
 
+[node name="InteractionPopup" parent="WorldObjects/NPC/Dweller2" index="5"]
+labelText = "talky"
+
 [node name="Body" parent="WorldObjects/NPC/Dweller2" index="6"]
 scale = Vector2( -1, 1 )
 
@@ -957,7 +960,7 @@ texture = ExtResource( 23 )
 [node name="InteractionPopup" parent="WorldObjects/Signs/TumbSign" instance=ExtResource( 22 )]
 position = Vector2( 0, -39 )
 z_index = 99
-labelText = "смотреть"
+labelText = "inspect"
 
 [node name="TextBoxPopup" parent="WorldObjects/Signs/TumbSign" instance=ExtResource( 20 )]
 position = Vector2( 0, -52 )
@@ -981,14 +984,13 @@ position = Vector2( 2, -22 )
 [node name="InteractionPopup" parent="WorldObjects/Signs/GatesText" instance=ExtResource( 22 )]
 position = Vector2( 0, -19 )
 z_index = 99
-labelText = "осмотреть"
+labelText = "inspect"
 
 [node name="TextBoxPopup" parent="WorldObjects/Signs/GatesText" instance=ExtResource( 20 )]
 position = Vector2( 0, -32 )
 z_index = 99
 interaction_controller_path = NodePath("../InteractionController")
-texts_array = [ "Лишь тот войдет, кто ключ от 
-сердца подберет" ]
+texts_array = [ "gate_location_gate_door" ]
 
 [node name="InteractionController" parent="WorldObjects/Signs/GatesText" instance=ExtResource( 21 )]
 
@@ -1053,6 +1055,9 @@ position = Vector2( -160, -69 )
 [node name="Chest" parent="WorldObjects/Chests" instance=ExtResource( 19 )]
 position = Vector2( 61, -566 )
 innerItemScene = ExtResource( 4 )
+
+[node name="InteractionPopup" parent="WorldObjects/Chests/Chest" index="1"]
+labelText = "open"
 
 [node name="Collisions" type="Node" parent="."]
 
@@ -1375,6 +1380,9 @@ texture = ExtResource( 3 )
 color = Color( 1, 1, 1, 0.431373 )
 energy = 0.7
 mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Light2D2" type="Light2D" parent="Lighting"]
 position = Vector2( -210.062, 20 )
@@ -1383,6 +1391,9 @@ texture = ExtResource( 3 )
 color = Color( 1, 1, 1, 0.764706 )
 energy = 0.57
 mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Light2D3" type="Light2D" parent="Lighting"]
 position = Vector2( -2, -321.5 )
@@ -1391,6 +1402,9 @@ texture = ExtResource( 3 )
 color = Color( 1, 1, 1, 0.431373 )
 energy = 0.7
 mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="MovingPlatforms" type="Node2D" parent="."]
 

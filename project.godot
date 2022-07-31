@@ -142,6 +142,10 @@ texture={
 "stream": false,
 "svg/scale": 1.0
 }
+csv_translation={
+"compress": true,
+"delimiter": 0
+}
 
 [input]
 
@@ -212,6 +216,11 @@ debug_screen={
 2d_physics/layer_6="COLLECTABLES"
 2d_physics/layer_7="WATERSURFACE"
 2d_physics/layer_8="PLAYER_BODY"
+
+[locale]
+
+translations=PoolStringArray( "res://ProjectResources/Localization/LocalizationSheet.ru.translation" )
+locale_filter=[ 0, [ "ru" ] ]
 
 [physics]
 
