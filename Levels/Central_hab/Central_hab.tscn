@@ -1,9 +1,9 @@
-[gd_scene load_steps=150 format=2]
+[gd_scene load_steps=122 format=2]
 
 [ext_resource path="res://Assets/Levels/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=3]
-[ext_resource path="res://Assets/WorldObjects/Trees/tree1.png" type="Texture" id=4]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Background_trees/BackgroundSmallTree.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=6]
 [ext_resource path="res://WorldObjects/Technical/Camera2D/Camera2D.tscn" type="PackedScene" id=7]
@@ -16,13 +16,7 @@
 [ext_resource path="res://Assets/BackgroundGradients/BackgroundGradient1.png" type="Texture" id=14]
 [ext_resource path="res://WorldObjects/Technical/Clouds/Clouds.tscn" type="PackedScene" id=15]
 [ext_resource path="res://WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Assets/WorldObjects/Trees/tree2.png" type="Texture" id=17]
-[ext_resource path="res://Assets/WorldObjects/Trees/tree3.png" type="Texture" id=18]
-[ext_resource path="res://WorldObjects/Decorative/Tree/Abstract_scene/AbstractTree.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Assets/WorldObjects/Trees/back_tree1.png" type="Texture" id=20]
-[ext_resource path="res://Assets/WorldObjects/Trees/back_tree3.png" type="Texture" id=21]
-[ext_resource path="res://Assets/WorldObjects/Trees/back_tree4.png" type="Texture" id=22]
-[ext_resource path="res://Assets/WorldObjects/Trees/back_tree2.png" type="Texture" id=23]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Background_trees/BackgroundTallWideTree.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Levels/Central_hab/World_objects/Mill_gear.tscn" type="PackedScene" id=24]
 [ext_resource path="res://WorldObjects/Destructables/Vase/Vase.tscn" type="PackedScene" id=25]
 [ext_resource path="res://WorldObjects/Destructables/Barrel/Barrel.tscn" type="PackedScene" id=26]
@@ -36,95 +30,17 @@
 [ext_resource path="res://Assets/WorldObjects/Floating_block.png" type="Texture" id=34]
 [ext_resource path="res://WorldObjects/Moving_platforms/Paths/VerticalPath.tres" type="Curve2D" id=35]
 [ext_resource path="res://UI/DebugScreen/GameSpecs.tscn" type="PackedScene" id=36]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Trees/TallTree.tscn" type="PackedScene" id=37]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Background_trees/BackgroundSmallWideTree.tscn" type="PackedScene" id=38]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Trees/BushyTree.tscn" type="PackedScene" id=39]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Trees/SquashedTree.tscn" type="PackedScene" id=40]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Trees/CurvedTree.tscn" type="PackedScene" id=41]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Background_trees/BackgroundWideTree.tscn" type="PackedScene" id=42]
 
 [sub_resource type="Environment" id=30]
 background_mode = 4
 glow_enabled = true
 glow_hdr_threshold = 1.5
-
-[sub_resource type="RectangleShape2D" id=102]
-extents = Vector2( 7, 4 )
-
-[sub_resource type="RectangleShape2D" id=103]
-extents = Vector2( 33.75, 4 )
-
-[sub_resource type="RectangleShape2D" id=104]
-extents = Vector2( 32.25, 4 )
-
-[sub_resource type="RectangleShape2D" id=105]
-extents = Vector2( 22.75, 4 )
-
-[sub_resource type="RectangleShape2D" id=106]
-extents = Vector2( 33.25, 4 )
-
-[sub_resource type="RectangleShape2D" id=107]
-extents = Vector2( 33.75, 4 )
-
-[sub_resource type="RectangleShape2D" id=108]
-extents = Vector2( 31, 4 )
-
-[sub_resource type="RectangleShape2D" id=109]
-extents = Vector2( 29, 4 )
-
-[sub_resource type="RectangleShape2D" id=110]
-extents = Vector2( 23.75, 4 )
-
-[sub_resource type="RectangleShape2D" id=111]
-extents = Vector2( 23.25, 4 )
-
-[sub_resource type="RectangleShape2D" id=112]
-extents = Vector2( 36.25, 4 )
-
-[sub_resource type="RectangleShape2D" id=113]
-extents = Vector2( 19.75, 4 )
-
-[sub_resource type="RectangleShape2D" id=114]
-extents = Vector2( 26.75, 4 )
-
-[sub_resource type="RectangleShape2D" id=115]
-extents = Vector2( 11.75, 4 )
-
-[sub_resource type="RectangleShape2D" id=116]
-extents = Vector2( 19.75, 4 )
-
-[sub_resource type="RectangleShape2D" id=134]
-extents = Vector2( 24.25, 4 )
-
-[sub_resource type="RectangleShape2D" id=117]
-extents = Vector2( 11.75, 4 )
-
-[sub_resource type="RectangleShape2D" id=118]
-extents = Vector2( 16.5, 4 )
-
-[sub_resource type="RectangleShape2D" id=119]
-extents = Vector2( 31.75, 4 )
-
-[sub_resource type="RectangleShape2D" id=120]
-extents = Vector2( 22.25, 4 )
-
-[sub_resource type="RectangleShape2D" id=121]
-extents = Vector2( 22.25, 4 )
-
-[sub_resource type="RectangleShape2D" id=122]
-extents = Vector2( 32.25, 4 )
-
-[sub_resource type="RectangleShape2D" id=123]
-extents = Vector2( 17.25, 4 )
-
-[sub_resource type="RectangleShape2D" id=124]
-extents = Vector2( 17.75, 4 )
-
-[sub_resource type="RectangleShape2D" id=125]
-extents = Vector2( 24.5, 4 )
-
-[sub_resource type="RectangleShape2D" id=126]
-extents = Vector2( 20.25, 4 )
-
-[sub_resource type="RectangleShape2D" id=127]
-extents = Vector2( 16.5, 4 )
-
-[sub_resource type="RectangleShape2D" id=128]
-extents = Vector2( 16.5, 4 )
 
 [sub_resource type="TileSet" id=36]
 0/name = "GrassDecorationsSheet.png 0"
@@ -1035,470 +951,149 @@ environment = SubResource( 30 )
 [node name="Trees" type="Node2D" parent="."]
 position = Vector2( 3, 62 )
 
-[node name="AbstractTree16" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -440, -15 )
+[node name="ShrineTrees" type="Node2D" parent="Trees"]
 
-[node name="Sprite" parent="Trees/AbstractTree16" index="1"]
-position = Vector2( -102, -80 )
-texture = ExtResource( 20 )
+[node name="BackgroundWideTree" parent="Trees/ShrineTrees" instance=ExtResource( 42 )]
+position = Vector2( -1042, -397 )
 
-[node name="CollisionShape2D" parent="Trees/AbstractTree16/PassThroughBody" index="0"]
-position = Vector2( -106, 0 )
-shape = SubResource( 102 )
-disabled = true
+[node name="BackgroundWideTree2" parent="Trees/ShrineTrees" instance=ExtResource( 42 )]
+position = Vector2( -1062, -337 )
 
-[node name="AbstractTree44" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -960, -286 )
+[node name="BackgroundSmallWideTree" parent="Trees/ShrineTrees" instance=ExtResource( 38 )]
+position = Vector2( -959, -338 )
 
-[node name="Sprite" parent="Trees/AbstractTree44" index="1"]
-position = Vector2( -102, -80 )
-texture = ExtResource( 20 )
+[node name="SquashedTree" parent="Trees/ShrineTrees" instance=ExtResource( 40 )]
+position = Vector2( -1119, -338 )
 
-[node name="CollisionShape2D" parent="Trees/AbstractTree44/PassThroughBody" index="0"]
-position = Vector2( -106, 0 )
-shape = SubResource( 102 )
-disabled = true
+[node name="CurvedTree" parent="Trees/ShrineTrees" instance=ExtResource( 41 )]
+position = Vector2( -1144, -338 )
 
-[node name="AbstractTree45" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -940, -346 )
+[node name="BushyTree" parent="Trees/ShrineTrees" instance=ExtResource( 39 )]
+position = Vector2( -847, -338 )
 
-[node name="Sprite" parent="Trees/AbstractTree45" index="1"]
-position = Vector2( -102, -80 )
-texture = ExtResource( 20 )
+[node name="TallTree" parent="Trees/ShrineTrees" instance=ExtResource( 37 )]
+position = Vector2( -949, -338 )
 
-[node name="CollisionShape2D" parent="Trees/AbstractTree45/PassThroughBody" index="0"]
-position = Vector2( -106, 0 )
-shape = SubResource( 102 )
-disabled = true
+[node name="PinkHouseTrees" type="Node2D" parent="Trees"]
 
-[node name="AbstractTree17" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -323, -17 )
+[node name="BackgroundWideTree" parent="Trees/PinkHouseTrees" instance=ExtResource( 42 )]
+position = Vector2( -1349, -114 )
 
-[node name="Sprite" parent="Trees/AbstractTree17" index="1"]
-position = Vector2( -102, -80 )
-texture = ExtResource( 21 )
+[node name="TallTree" parent="Trees/PinkHouseTrees" instance=ExtResource( 37 )]
+position = Vector2( -1486, -96 )
 
-[node name="CollisionShape2D" parent="Trees/AbstractTree17/PassThroughBody" index="0"]
-position = Vector2( -94, -2 )
-disabled = true
+[node name="SquashedTree" parent="Trees/PinkHouseTrees" instance=ExtResource( 40 )]
+position = Vector2( -1527, -98 )
 
-[node name="AbstractTree33" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( 69, -259 )
+[node name="LightHouseTrees" type="Node2D" parent="Trees"]
 
-[node name="Sprite" parent="Trees/AbstractTree33" index="1"]
-position = Vector2( -102, -80 )
-texture = ExtResource( 21 )
+[node name="BackgroundWideTree" parent="Trees/LightHouseTrees" instance=ExtResource( 42 )]
+position = Vector2( 131, -299 )
 
-[node name="CollisionShape2D" parent="Trees/AbstractTree33/PassThroughBody" index="0"]
-position = Vector2( -96, -2 )
-disabled = true
+[node name="SquashedTree" parent="Trees/LightHouseTrees" instance=ExtResource( 40 )]
+position = Vector2( -153, -306 )
 
-[node name="AbstractTree43" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -857, -289 )
+[node name="CurvedTree" parent="Trees/LightHouseTrees" instance=ExtResource( 41 )]
+position = Vector2( 238, -305 )
 
-[node name="Sprite" parent="Trees/AbstractTree43" index="1"]
-position = Vector2( -102, -80 )
-texture = ExtResource( 21 )
+[node name="BackgroundSmallWideTree" parent="Trees/LightHouseTrees" instance=ExtResource( 38 )]
+position = Vector2( -33, -308 )
 
-[node name="CollisionShape2D" parent="Trees/AbstractTree43/PassThroughBody" index="0"]
-position = Vector2( -98, -2 )
-disabled = true
+[node name="MillTrees" type="Node2D" parent="Trees"]
 
-[node name="AbstractTree34" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( 233, -250 )
+[node name="BushyTree3" parent="Trees/MillTrees" instance=ExtResource( 39 )]
+position = Vector2( -951, -66 )
 
-[node name="Sprite" parent="Trees/AbstractTree34" index="1"]
-position = Vector2( -102, -80 )
-texture = ExtResource( 23 )
+[node name="BushyTree2" parent="Trees/MillTrees" instance=ExtResource( 39 )]
+position = Vector2( -857, -66 )
 
-[node name="CollisionShape2D" parent="Trees/AbstractTree34/PassThroughBody" index="0"]
-position = Vector2( -98, 2 )
-disabled = true
+[node name="BushyTree" parent="Trees/MillTrees" instance=ExtResource( 39 )]
+position = Vector2( -842, 142 )
 
-[node name="AbstractTree35" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -50, -270 )
+[node name="TownTrees" type="Node2D" parent="Trees"]
 
-[node name="Sprite" parent="Trees/AbstractTree35" index="1"]
-position = Vector2( -102, -80 )
-texture = ExtResource( 18 )
+[node name="TallTree" parent="Trees/TownTrees" instance=ExtResource( 37 )]
+position = Vector2( -573, 318 )
 
-[node name="CollisionShape2D" parent="Trees/AbstractTree35/PassThroughBody" index="0"]
-position = Vector2( -98.75, -15 )
-shape = SubResource( 103 )
+[node name="BushyTree" parent="Trees/TownTrees" instance=ExtResource( 39 )]
+position = Vector2( -294, 318 )
 
-[node name="AbstractTree36" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( 340, -281 )
-
-[node name="Sprite" parent="Trees/AbstractTree36" index="1"]
-position = Vector2( -102, -80 )
-texture = ExtResource( 4 )
-
-[node name="CollisionShape2D" parent="Trees/AbstractTree36/PassThroughBody" index="0"]
-position = Vector2( -99.25, -27 )
-shape = SubResource( 104 )
-
-[node name="AbstractTree40" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -1247, -63 )
-
-[node name="Sprite" parent="Trees/AbstractTree40" index="1"]
-position = Vector2( -102, -80 )
-texture = ExtResource( 20 )
-
-[node name="PassThroughBody" parent="Trees/AbstractTree40" index="3"]
-position = Vector2( -94, -103 )
-
-[node name="CollisionShape2D" parent="Trees/AbstractTree40/PassThroughBody" index="0"]
-position = Vector2( 9.25, -3 )
-shape = SubResource( 105 )
-disabled = true
-
-[node name="AbstractTree39" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -1424, -62 )
-
-[node name="Sprite" parent="Trees/AbstractTree39" index="1"]
-position = Vector2( -102, -80 )
-texture = ExtResource( 18 )
-
-[node name="CollisionShape2D" parent="Trees/AbstractTree39/PassThroughBody" index="0"]
-position = Vector2( -100.25, -15 )
-shape = SubResource( 106 )
-
-[node name="AbstractTree42" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -1016, -302 )
-
-[node name="Sprite" parent="Trees/AbstractTree42" index="1"]
-position = Vector2( -102, -80 )
-texture = ExtResource( 18 )
-
-[node name="CollisionShape2D" parent="Trees/AbstractTree42/PassThroughBody" index="0"]
-position = Vector2( -100.25, -15 )
-shape = SubResource( 106 )
-
-[node name="AbstractTree38" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -1384, -72 )
-
-[node name="Sprite" parent="Trees/AbstractTree38" index="1"]
-position = Vector2( -102, -80 )
-
-[node name="CollisionShape2D" parent="Trees/AbstractTree38/PassThroughBody" index="0"]
-position = Vector2( -99, -27 )
-
-[node name="AbstractTree18" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -374, -13 )
-
-[node name="Sprite" parent="Trees/AbstractTree18" index="1"]
-position = Vector2( -102, -80 )
-texture = ExtResource( 20 )
-
-[node name="AbstractTree" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -631, 330 )
-
-[node name="Sprite" parent="Trees/AbstractTree" index="1"]
-texture = ExtResource( 18 )
-
-[node name="CollisionShape2D" parent="Trees/AbstractTree/PassThroughBody" index="0"]
-position = Vector2( 2.25, 9 )
-shape = SubResource( 107 )
-
-[node name="AbstractTree2" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -574, 318 )
-
-[node name="AbstractTree3" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -830, 318 )
-
-[node name="Sprite" parent="Trees/AbstractTree3" index="1"]
-texture = ExtResource( 4 )
-
-[node name="CollisionShape2D" parent="Trees/AbstractTree3/PassThroughBody" index="0"]
-shape = SubResource( 108 )
-
-[node name="AbstractTree4" parent="Trees" instance=ExtResource( 19 )]
+[node name="CurvedTree" parent="Trees/TownTrees" instance=ExtResource( 41 )]
 position = Vector2( -1207, 318 )
 
-[node name="Sprite" parent="Trees/AbstractTree4" index="1"]
-texture = ExtResource( 4 )
+[node name="CurvedTree2" parent="Trees/TownTrees" instance=ExtResource( 41 )]
+position = Vector2( -830, 318 )
 
-[node name="CollisionShape2D" parent="Trees/AbstractTree4/PassThroughBody" index="0"]
-position = Vector2( 1, -3 )
-shape = SubResource( 109 )
+[node name="SquashedTree" parent="Trees/TownTrees" instance=ExtResource( 40 )]
+position = Vector2( -632, 318 )
 
-[node name="AbstractTree6" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -294, 342 )
+[node name="GateTrees" type="Node2D" parent="Trees"]
 
-[node name="Sprite" parent="Trees/AbstractTree6" index="1"]
-texture = ExtResource( 17 )
+[node name="BackgroundTallWideTree" parent="Trees/GateTrees" instance=ExtResource( 17 )]
+position = Vector2( -281, -146 )
 
-[node name="CollisionShape2D" parent="Trees/AbstractTree6/PassThroughBody" index="0"]
-position = Vector2( 3.25, 21 )
-shape = SubResource( 110 )
+[node name="BackgroundSmallWideTree2" parent="Trees/GateTrees" instance=ExtResource( 38 )]
+position = Vector2( -425, -66 )
 
-[node name="AbstractTree7" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -842, 166 )
+[node name="BackgroundSmallTree" parent="Trees/GateTrees" instance=ExtResource( 4 )]
+position = Vector2( -321, -162 )
 
-[node name="Sprite" parent="Trees/AbstractTree7" index="1"]
-texture = ExtResource( 17 )
+[node name="BackgroundSmallTree2" parent="Trees/GateTrees" instance=ExtResource( 4 )]
+position = Vector2( -228, -65 )
 
-[node name="CollisionShape2D" parent="Trees/AbstractTree7/PassThroughBody" index="0"]
-position = Vector2( 2.75, 21 )
-shape = SubResource( 111 )
+[node name="BackgroundWideTree3" parent="Trees/GateTrees" instance=ExtResource( 42 )]
+position = Vector2( -476, -64 )
 
-[node name="AbstractTree29" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( 426, -41 )
+[node name="BackgroundWideTree2" parent="Trees/GateTrees" instance=ExtResource( 42 )]
+position = Vector2( -542, -66 )
 
-[node name="Sprite" parent="Trees/AbstractTree29" index="1"]
-position = Vector2( -100, -56 )
-texture = ExtResource( 21 )
+[node name="BackgroundWideTree" parent="Trees/GateTrees" instance=ExtResource( 42 )]
+position = Vector2( 488, -66 )
 
-[node name="CollisionShape2D" parent="Trees/AbstractTree29/PassThroughBody" index="0"]
-position = Vector2( -93.75, 22 )
-shape = SubResource( 112 )
-disabled = true
+[node name="BackgroundSmallWideTree" parent="Trees/GateTrees" instance=ExtResource( 38 )]
+position = Vector2( 326, -66 )
 
-[node name="AbstractTree30" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( 588, -39 )
+[node name="TallTree" parent="Trees/GateTrees" instance=ExtResource( 37 )]
+position = Vector2( 276, -44 )
 
-[node name="Sprite" parent="Trees/AbstractTree30" index="1"]
-position = Vector2( -100, -56 )
-texture = ExtResource( 20 )
+[node name="TallTree2" parent="Trees/GateTrees" instance=ExtResource( 37 )]
+position = Vector2( 487, -65 )
 
-[node name="CollisionShape2D" parent="Trees/AbstractTree30/PassThroughBody" index="0"]
-position = Vector2( -98, 24 )
-disabled = true
+[node name="TallTree3" parent="Trees/GateTrees" instance=ExtResource( 37 )]
+position = Vector2( 592, -45 )
 
-[node name="AbstractTree31" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( 302, -74 )
+[node name="BushyTree" parent="Trees/GateTrees" instance=ExtResource( 39 )]
+position = Vector2( 202, -98 )
 
-[node name="Sprite" parent="Trees/AbstractTree31" index="1"]
-position = Vector2( -100, -56 )
-texture = ExtResource( 17 )
+[node name="SquashedTree" parent="Trees/GateTrees" instance=ExtResource( 40 )]
+position = Vector2( -105, -98 )
 
-[node name="CollisionShape2D" parent="Trees/AbstractTree31/PassThroughBody" index="0"]
-position = Vector2( -93.75, 21 )
-shape = SubResource( 113 )
+[node name="TallTree4" parent="Trees/GateTrees" instance=ExtResource( 37 )]
+position = Vector2( -573, -66 )
 
-[node name="AbstractTree32" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -4, -86 )
+[node name="TallTree5" parent="Trees/GateTrees" instance=ExtResource( 37 )]
+position = Vector2( -438, -38 )
 
-[node name="Sprite" parent="Trees/AbstractTree32" index="1"]
-position = Vector2( -100, -56 )
-texture = ExtResource( 18 )
+[node name="TallTree6" parent="Trees/GateTrees" instance=ExtResource( 37 )]
+position = Vector2( -398, -66 )
 
-[node name="CollisionShape2D" parent="Trees/AbstractTree32/PassThroughBody" index="0"]
-position = Vector2( -104.75, 9 )
-shape = SubResource( 114 )
+[node name="TallTree7" parent="Trees/GateTrees" instance=ExtResource( 37 )]
+position = Vector2( -302, -122 )
 
-[node name="AbstractTree8" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -851, -42 )
+[node name="CurvedTree" parent="Trees/GateTrees" instance=ExtResource( 41 )]
+position = Vector2( -511, -66 )
 
-[node name="Sprite" parent="Trees/AbstractTree8" index="1"]
-position = Vector2( -100, -56 )
-texture = ExtResource( 17 )
+[node name="CurvedTree2" parent="Trees/GateTrees" instance=ExtResource( 41 )]
+position = Vector2( -348, -161 )
 
-[node name="CollisionShape2D" parent="Trees/AbstractTree8/PassThroughBody" index="0"]
-position = Vector2( -105.25, 21 )
-shape = SubResource( 115 )
+[node name="BushyTree2" parent="Trees/GateTrees" instance=ExtResource( 39 )]
+position = Vector2( -592, -65 )
 
-[node name="AbstractTree9" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -757, -42 )
+[node name="BushyTree3" parent="Trees/GateTrees" instance=ExtResource( 39 )]
+position = Vector2( -474, -66 )
 
-[node name="Sprite" parent="Trees/AbstractTree9" index="1"]
-position = Vector2( -100, -56 )
-texture = ExtResource( 17 )
-
-[node name="CollisionShape2D" parent="Trees/AbstractTree9/PassThroughBody" index="0"]
-position = Vector2( -92.25, 21 )
-shape = SubResource( 116 )
-
-[node name="AbstractTree41" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -747, -314 )
-
-[node name="Sprite" parent="Trees/AbstractTree41" index="1"]
-position = Vector2( -100, -56 )
-texture = ExtResource( 17 )
-
-[node name="CollisionShape2D" parent="Trees/AbstractTree41/PassThroughBody" index="0"]
-position = Vector2( -96.75, 21 )
-shape = SubResource( 134 )
-
-[node name="AbstractTree10" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -492, -41 )
-
-[node name="Sprite" parent="Trees/AbstractTree10" index="1"]
-position = Vector2( -100, -56 )
-texture = ExtResource( 17 )
-
-[node name="CollisionShape2D" parent="Trees/AbstractTree10/PassThroughBody" index="0"]
-position = Vector2( -107.75, 21 )
-shape = SubResource( 117 )
-
-[node name="AbstractTree11" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -473, -66 )
-
-[node name="Sprite" parent="Trees/AbstractTree11" index="1"]
-position = Vector2( -100, -56 )
-
-[node name="CollisionShape2D" parent="Trees/AbstractTree11/PassThroughBody" index="0"]
-position = Vector2( -97, -3 )
-shape = SubResource( 118 )
-
-[node name="AbstractTree23" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -849, -338 )
-
-[node name="Sprite" parent="Trees/AbstractTree23" index="1"]
-position = Vector2( -100, -56 )
-
-[node name="CollisionShape2D" parent="Trees/AbstractTree23/PassThroughBody" index="0"]
-position = Vector2( -97, -3 )
-shape = SubResource( 118 )
-
-[node name="AbstractTree12" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -410, -66 )
-
-[node name="Sprite" parent="Trees/AbstractTree12" index="1"]
-position = Vector2( -100, -56 )
-texture = ExtResource( 4 )
-
-[node name="CollisionShape2D" parent="Trees/AbstractTree12/PassThroughBody" index="0"]
-position = Vector2( -96.75, -3 )
-shape = SubResource( 119 )
-
-[node name="AbstractTree22" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -127, -35 )
-
-[node name="Sprite" parent="Trees/AbstractTree22" index="1"]
-position = Vector2( -100, -56 )
-texture = ExtResource( 22 )
-
-[node name="CollisionShape2D" parent="Trees/AbstractTree22/PassThroughBody" index="0"]
-position = Vector2( -93.25, 28 )
-shape = SubResource( 120 )
-disabled = true
-
-[node name="AbstractTree24" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -222, -131 )
-
-[node name="Sprite" parent="Trees/AbstractTree24" index="1"]
-position = Vector2( -100, -56 )
-texture = ExtResource( 22 )
-
-[node name="CollisionShape2D" parent="Trees/AbstractTree24/PassThroughBody" index="0"]
-position = Vector2( -102, 30 )
-disabled = true
-
-[node name="AbstractTree25" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -181, -117 )
-
-[node name="Sprite" parent="Trees/AbstractTree25" index="1"]
-position = Vector2( -100, -56 )
-texture = ExtResource( 23 )
-
-[node name="CollisionShape2D" parent="Trees/AbstractTree25/PassThroughBody" index="0"]
-position = Vector2( -78.25, 26 )
-shape = SubResource( 121 )
-disabled = true
-
-[node name="AbstractTree19" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -249, -162 )
-
-[node name="Sprite" parent="Trees/AbstractTree19" index="1"]
-position = Vector2( -100, -56 )
-texture = ExtResource( 4 )
-
-[node name="CollisionShape2D" parent="Trees/AbstractTree19/PassThroughBody" index="0"]
-position = Vector2( -97.25, -3 )
-shape = SubResource( 122 )
-
-[node name="AbstractTree37" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -1044, -338 )
-
-[node name="Sprite" parent="Trees/AbstractTree37" index="1"]
-position = Vector2( -100, -56 )
-texture = ExtResource( 4 )
-
-[node name="CollisionShape2D" parent="Trees/AbstractTree37/PassThroughBody" index="0"]
-position = Vector2( -97.25, -3 )
-shape = SubResource( 122 )
-
-[node name="AbstractTree20" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -202, -122 )
-
-[node name="Sprite" parent="Trees/AbstractTree20" index="1"]
-position = Vector2( -100, -56 )
-
-[node name="CollisionShape2D" parent="Trees/AbstractTree20/PassThroughBody" index="0"]
-position = Vector2( -97.75, -3 )
-shape = SubResource( 123 )
-
-[node name="AbstractTree26" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( 376, -44 )
-
-[node name="Sprite" parent="Trees/AbstractTree26" index="1"]
-position = Vector2( -100, -56 )
-
-[node name="CollisionShape2D" parent="Trees/AbstractTree26/PassThroughBody" index="0"]
-position = Vector2( -97, -3 )
-
-[node name="AbstractTree27" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( 587, -65 )
-
-[node name="Sprite" parent="Trees/AbstractTree27" index="1"]
-position = Vector2( -100, -56 )
-
-[node name="CollisionShape2D" parent="Trees/AbstractTree27/PassThroughBody" index="0"]
-position = Vector2( -97.75, -3 )
-shape = SubResource( 124 )
-
-[node name="AbstractTree28" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( 691, -45 )
-
-[node name="Sprite" parent="Trees/AbstractTree28" index="1"]
-position = Vector2( -100, -56 )
-
-[node name="CollisionShape2D" parent="Trees/AbstractTree28/PassThroughBody" index="0"]
-position = Vector2( -99, -3 )
-disabled = true
-
-[node name="AbstractTree21" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -135, -99 )
-
-[node name="Sprite" parent="Trees/AbstractTree21" index="1"]
-position = Vector2( -100, -56 )
-texture = ExtResource( 17 )
-
-[node name="CollisionShape2D" parent="Trees/AbstractTree21/PassThroughBody" index="0"]
-position = Vector2( -96.5, 21 )
-shape = SubResource( 125 )
-
-[node name="AbstractTree13" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -373, -42 )
-
-[node name="Sprite" parent="Trees/AbstractTree13" index="1"]
-position = Vector2( -100, -56 )
-texture = ExtResource( 17 )
-
-[node name="CollisionShape2D" parent="Trees/AbstractTree13/PassThroughBody" index="0"]
-position = Vector2( -100.25, 21 )
-shape = SubResource( 126 )
-
-[node name="AbstractTree14" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -296, -42 )
-
-[node name="Sprite" parent="Trees/AbstractTree14" index="1"]
-position = Vector2( -102, -80 )
-
-[node name="CollisionShape2D" parent="Trees/AbstractTree14/PassThroughBody" index="0"]
-position = Vector2( -99, -27 )
-shape = SubResource( 127 )
-
-[node name="AbstractTree15" parent="Trees" instance=ExtResource( 19 )]
-position = Vector2( -336, -14 )
-
-[node name="Sprite" parent="Trees/AbstractTree15" index="1"]
-position = Vector2( -102, -80 )
-
-[node name="CollisionShape2D" parent="Trees/AbstractTree15/PassThroughBody" index="0"]
-position = Vector2( -100, -27 )
-shape = SubResource( 128 )
+[node name="BushyTree4" parent="Trees/GateTrees" instance=ExtResource( 39 )]
+position = Vector2( -234, -123 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_limit_end = Vector2( 0, 320 )
@@ -2390,6 +1985,9 @@ texture = ExtResource( 3 )
 color = Color( 1, 1, 1, 0.431373 )
 energy = 0.7
 mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Light2D5" type="Light2D" parent="Lighting"]
 position = Vector2( -1028, 181 )
@@ -2398,6 +1996,9 @@ texture = ExtResource( 3 )
 color = Color( 1, 1, 1, 0.431373 )
 energy = 0.7
 mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Light2D10" type="Light2D" parent="Lighting"]
 position = Vector2( 47.25, -262.249 )
@@ -2406,6 +2007,9 @@ texture = ExtResource( 3 )
 color = Color( 1, 1, 1, 0.431373 )
 energy = 0.7
 mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Light2D6" type="Light2D" parent="Lighting"]
 position = Vector2( -971, 1.25139 )
@@ -2414,6 +2018,9 @@ texture = ExtResource( 3 )
 color = Color( 1, 1, 1, 0.431373 )
 energy = 0.7
 mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Light2D7" type="Light2D" parent="Lighting"]
 position = Vector2( -1358, -38 )
@@ -2422,6 +2029,9 @@ texture = ExtResource( 3 )
 color = Color( 1, 1, 1, 0.431373 )
 energy = 0.7
 mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Light2D9" type="Light2D" parent="Lighting"]
 position = Vector2( -758, 409.187 )
@@ -2430,6 +2040,9 @@ texture = ExtResource( 3 )
 color = Color( 1, 1, 1, 0.431373 )
 energy = 0.7
 mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Light2D8" type="Light2D" parent="Lighting"]
 position = Vector2( -1017, -250.749 )
@@ -2438,6 +2051,9 @@ texture = ExtResource( 3 )
 color = Color( 1, 1, 1, 0.431373 )
 energy = 0.7
 mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Light2D3" type="Light2D" parent="Lighting"]
 position = Vector2( 693.5, -137.999 )
@@ -2446,6 +2062,9 @@ texture = ExtResource( 3 )
 color = Color( 1, 1, 1, 0.431373 )
 energy = 0.7
 mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Light2D4" type="Light2D" parent="Lighting"]
 position = Vector2( 943, -20 )
@@ -2454,6 +2073,9 @@ texture = ExtResource( 3 )
 color = Color( 1, 1, 1, 0.431373 )
 energy = 0.7
 mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Light2D2" type="Light2D" parent="Lighting"]
 position = Vector2( 108.5, 113.5 )
@@ -2462,6 +2084,9 @@ texture = ExtResource( 3 )
 color = Color( 1, 1, 1, 0.431373 )
 energy = 0.57
 mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Dwellers" type="Node2D" parent="."]
 
@@ -2750,92 +2375,6 @@ playback_speed = 0.5
 anims/Loop = SubResource( 142 )
 anims/RESET = SubResource( 143 )
 
-[editable path="Trees/AbstractTree16"]
-[editable path="Trees/AbstractTree16/PassThroughBody"]
-[editable path="Trees/AbstractTree44"]
-[editable path="Trees/AbstractTree44/PassThroughBody"]
-[editable path="Trees/AbstractTree45"]
-[editable path="Trees/AbstractTree45/PassThroughBody"]
-[editable path="Trees/AbstractTree17"]
-[editable path="Trees/AbstractTree17/PassThroughBody"]
-[editable path="Trees/AbstractTree33"]
-[editable path="Trees/AbstractTree33/PassThroughBody"]
-[editable path="Trees/AbstractTree43"]
-[editable path="Trees/AbstractTree43/PassThroughBody"]
-[editable path="Trees/AbstractTree34"]
-[editable path="Trees/AbstractTree34/PassThroughBody"]
-[editable path="Trees/AbstractTree35"]
-[editable path="Trees/AbstractTree35/PassThroughBody"]
-[editable path="Trees/AbstractTree36"]
-[editable path="Trees/AbstractTree36/PassThroughBody"]
-[editable path="Trees/AbstractTree40"]
-[editable path="Trees/AbstractTree40/PassThroughBody"]
-[editable path="Trees/AbstractTree39"]
-[editable path="Trees/AbstractTree39/PassThroughBody"]
-[editable path="Trees/AbstractTree42"]
-[editable path="Trees/AbstractTree42/PassThroughBody"]
-[editable path="Trees/AbstractTree38"]
-[editable path="Trees/AbstractTree38/PassThroughBody"]
-[editable path="Trees/AbstractTree18"]
-[editable path="Trees/AbstractTree18/PassThroughBody"]
-[editable path="Trees/AbstractTree"]
-[editable path="Trees/AbstractTree/PassThroughBody"]
-[editable path="Trees/AbstractTree3"]
-[editable path="Trees/AbstractTree3/PassThroughBody"]
-[editable path="Trees/AbstractTree4"]
-[editable path="Trees/AbstractTree4/PassThroughBody"]
-[editable path="Trees/AbstractTree6"]
-[editable path="Trees/AbstractTree6/PassThroughBody"]
-[editable path="Trees/AbstractTree7"]
-[editable path="Trees/AbstractTree7/PassThroughBody"]
-[editable path="Trees/AbstractTree29"]
-[editable path="Trees/AbstractTree29/PassThroughBody"]
-[editable path="Trees/AbstractTree30"]
-[editable path="Trees/AbstractTree30/PassThroughBody"]
-[editable path="Trees/AbstractTree31"]
-[editable path="Trees/AbstractTree31/PassThroughBody"]
-[editable path="Trees/AbstractTree32"]
-[editable path="Trees/AbstractTree32/PassThroughBody"]
-[editable path="Trees/AbstractTree8"]
-[editable path="Trees/AbstractTree8/PassThroughBody"]
-[editable path="Trees/AbstractTree9"]
-[editable path="Trees/AbstractTree9/PassThroughBody"]
-[editable path="Trees/AbstractTree41"]
-[editable path="Trees/AbstractTree41/PassThroughBody"]
-[editable path="Trees/AbstractTree10"]
-[editable path="Trees/AbstractTree10/PassThroughBody"]
-[editable path="Trees/AbstractTree11"]
-[editable path="Trees/AbstractTree11/PassThroughBody"]
-[editable path="Trees/AbstractTree23"]
-[editable path="Trees/AbstractTree23/PassThroughBody"]
-[editable path="Trees/AbstractTree12"]
-[editable path="Trees/AbstractTree12/PassThroughBody"]
-[editable path="Trees/AbstractTree22"]
-[editable path="Trees/AbstractTree22/PassThroughBody"]
-[editable path="Trees/AbstractTree24"]
-[editable path="Trees/AbstractTree24/PassThroughBody"]
-[editable path="Trees/AbstractTree25"]
-[editable path="Trees/AbstractTree25/PassThroughBody"]
-[editable path="Trees/AbstractTree19"]
-[editable path="Trees/AbstractTree19/PassThroughBody"]
-[editable path="Trees/AbstractTree37"]
-[editable path="Trees/AbstractTree37/PassThroughBody"]
-[editable path="Trees/AbstractTree20"]
-[editable path="Trees/AbstractTree20/PassThroughBody"]
-[editable path="Trees/AbstractTree26"]
-[editable path="Trees/AbstractTree26/PassThroughBody"]
-[editable path="Trees/AbstractTree27"]
-[editable path="Trees/AbstractTree27/PassThroughBody"]
-[editable path="Trees/AbstractTree28"]
-[editable path="Trees/AbstractTree28/PassThroughBody"]
-[editable path="Trees/AbstractTree21"]
-[editable path="Trees/AbstractTree21/PassThroughBody"]
-[editable path="Trees/AbstractTree13"]
-[editable path="Trees/AbstractTree13/PassThroughBody"]
-[editable path="Trees/AbstractTree14"]
-[editable path="Trees/AbstractTree14/PassThroughBody"]
-[editable path="Trees/AbstractTree15"]
-[editable path="Trees/AbstractTree15/PassThroughBody"]
 [editable path="Doors/Shed_door"]
 [editable path="Doors/Shed_door/InteractionController"]
 [editable path="Doors/Gates_2"]

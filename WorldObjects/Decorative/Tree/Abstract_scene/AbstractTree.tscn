@@ -45,11 +45,12 @@ color = Color( 0.639216, 0.807843, 0.211765, 1 )
 color_ramp = SubResource( 3 )
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 16.5, 4 )
+extents = Vector2( 17.5, 4 )
 
 [node name="AbstractTree" type="Node2D"]
 
 [node name="VisibilityChecker" parent="." instance=ExtResource( 4 )]
+visible = false
 position = Vector2( 0, -73 )
 scale = Vector2( 4.5, 7.3 )
 
@@ -70,7 +71,7 @@ process_material = SubResource( 6 )
 position = Vector2( -3, -106 )
 
 [node name="CollisionShape2D" parent="PassThroughBody" index="0"]
-position = Vector2( 3, -3 )
+position = Vector2( 2.5, -3 )
 shape = SubResource( 7 )
 one_way_collision = true
 
