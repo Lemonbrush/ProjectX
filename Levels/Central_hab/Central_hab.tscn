@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=2]
+[gd_scene load_steps=123 format=2]
 
 [ext_resource path="res://Assets/Levels/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -938,6 +938,9 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
+
+[sub_resource type="RectangleShape2D" id=155]
+extents = Vector2( 7014.5, 150 )
 
 [node name="Central_hab" type="Node2D"]
 position = Vector2( -3, -62 )
@@ -2374,6 +2377,17 @@ playback_process_mode = 0
 playback_speed = 0.5
 anims/Loop = SubResource( 142 )
 anims/RESET = SubResource( 143 )
+
+[node name="WaterSurface" type="Node" parent="."]
+
+[node name="water" type="Area2D" parent="WaterSurface"]
+position = Vector2( -1019, 502 )
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterSurface/water"]
+position = Vector2( 1873.5, 319 )
+shape = SubResource( 155 )
 
 [editable path="Doors/Shed_door"]
 [editable path="Doors/Shed_door/InteractionController"]
