@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://WorldObjects/Moving_platforms/MovingPlatform.gd" type="Script" id=1]
 [ext_resource path="res://Assets/WorldObjects/Floating_block.png" type="Texture" id=2]
 [ext_resource path="res://WorldObjects/Moving_platforms/Paths/HorizontalPath.tres" type="Curve2D" id=3]
+[ext_resource path="res://WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=48]
 extents = Vector2( 8, 8 )
@@ -43,9 +44,12 @@ tracks/0/keys = {
 script = ExtResource( 1 )
 
 [node name="Platform" type="KinematicBody2D" parent="."]
-position = Vector2( 73.2556, 0 )
+position = Vector2( 73.2557, 0 )
 collision_layer = 3
 motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="Platform" instance=ExtResource( 4 )]
+position = Vector2( -0.255653, 0 )
 
 [node name="Sprite" type="Sprite" parent="Platform"]
 texture = ExtResource( 2 )
@@ -58,9 +62,8 @@ one_way_collision = true
 curve = ExtResource( 3 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2( 73.2557, 0 )
+position = Vector2( 104, 0 )
 rotation = 3.14159
-offset = 30.7529
 rotate = false
 loop = false
 

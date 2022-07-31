@@ -37,11 +37,11 @@
 [ext_resource path="res://Shaders/GodLightsShader.tres" type="Shader" id=35]
 [ext_resource path="res://Assets/BackgroundGradients/purple_clouds.png" type="Texture" id=36]
 [ext_resource path="res://WorldObjects/Destructables/Vase/Vase.tscn" type="PackedScene" id=37]
-[ext_resource path="res://Dweller/Dweller.tscn" type="PackedScene" id=38]
+[ext_resource path="res://Dweller/Abstract_dweller/Dweller.tscn" type="PackedScene" id=38]
 [ext_resource path="res://Dweller/NpcActions/idle/idle_npc_action.gd" type="Script" id=39]
 [ext_resource path="res://Dweller/NpcActions/walk/Walk_npc_action.gd" type="Script" id=40]
 [ext_resource path="res://UI/DebugScreen/GameSpecs.tscn" type="PackedScene" id=41]
-[ext_resource path="res://GameSpecs.gd" type="Script" id=42]
+[ext_resource path="res://WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=42]
 
 [sub_resource type="Environment" id=67]
 background_mode = 4
@@ -838,8 +838,7 @@ shader_param/seed = 10.0
 position = Vector2( -3, -62 )
 script = ExtResource( 10 )
 
-[node name="GameSpecs" type="CanvasLayer" parent="." instance=ExtResource( 41 )]
-script = ExtResource( 42 )
+[node name="GameSpecs" parent="." instance=ExtResource( 41 )]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 67 )
@@ -876,7 +875,7 @@ position = Vector2( -338, -44 )
 [node name="AbstractTree5" parent="Trees" instance=ExtResource( 27 )]
 position = Vector2( 480, -57 )
 
-[node name="Sprite" parent="Trees/AbstractTree5" index="0"]
+[node name="Sprite" parent="Trees/AbstractTree5" index="1"]
 texture = ExtResource( 28 )
 
 [node name="CollisionShape2D" parent="Trees/AbstractTree5/PassThroughBody" index="0"]
@@ -886,10 +885,10 @@ shape = SubResource( 60 )
 [node name="AbstractTree6" parent="Trees" instance=ExtResource( 27 )]
 position = Vector2( 211, -353 )
 
-[node name="Sprite" parent="Trees/AbstractTree6" index="0"]
+[node name="Sprite" parent="Trees/AbstractTree6" index="1"]
 texture = ExtResource( 29 )
 
-[node name="PassThroughBody" parent="Trees/AbstractTree6" index="2"]
+[node name="PassThroughBody" parent="Trees/AbstractTree6" index="3"]
 position = Vector2( -7, -82 )
 
 [node name="CollisionShape2D" parent="Trees/AbstractTree6/PassThroughBody" index="0"]
@@ -899,10 +898,10 @@ shape = SubResource( 61 )
 [node name="AbstractTree8" parent="Trees" instance=ExtResource( 27 )]
 position = Vector2( -312, -365 )
 
-[node name="Sprite" parent="Trees/AbstractTree8" index="0"]
+[node name="Sprite" parent="Trees/AbstractTree8" index="1"]
 texture = ExtResource( 30 )
 
-[node name="PassThroughBody" parent="Trees/AbstractTree8" index="2"]
+[node name="PassThroughBody" parent="Trees/AbstractTree8" index="3"]
 position = Vector2( -3, -94 )
 
 [node name="CollisionShape2D" parent="Trees/AbstractTree8/PassThroughBody" index="0"]
@@ -935,11 +934,11 @@ position = Vector2( -622, -75 )
 [node name="AbstractTree8" parent="TreesFront" instance=ExtResource( 27 )]
 position = Vector2( -43, 25 )
 
-[node name="Sprite" parent="TreesFront/AbstractTree8" index="0"]
+[node name="Sprite" parent="TreesFront/AbstractTree8" index="1"]
 position = Vector2( 21, -82 )
 texture = ExtResource( 33 )
 
-[node name="PassThroughBody" parent="TreesFront/AbstractTree8" index="2"]
+[node name="PassThroughBody" parent="TreesFront/AbstractTree8" index="3"]
 visible = false
 position = Vector2( 8, -101 )
 
@@ -949,11 +948,11 @@ disabled = true
 [node name="AbstractTree9" parent="TreesFront" instance=ExtResource( 27 )]
 position = Vector2( -43, 25 )
 
-[node name="Sprite" parent="TreesFront/AbstractTree9" index="0"]
+[node name="Sprite" parent="TreesFront/AbstractTree9" index="1"]
 position = Vector2( -59, -55 )
 texture = ExtResource( 32 )
 
-[node name="PassThroughBody" parent="TreesFront/AbstractTree9" index="2"]
+[node name="PassThroughBody" parent="TreesFront/AbstractTree9" index="3"]
 visible = false
 position = Vector2( -38, -80 )
 
@@ -963,7 +962,7 @@ disabled = true
 [node name="AbstractTree10" parent="TreesFront" instance=ExtResource( 27 )]
 position = Vector2( -43, 25 )
 
-[node name="Sprite" parent="TreesFront/AbstractTree10" index="0"]
+[node name="Sprite" parent="TreesFront/AbstractTree10" index="1"]
 position = Vector2( 31, -51 )
 texture = ExtResource( 34 )
 
@@ -974,11 +973,11 @@ disabled = true
 [node name="AbstractTree11" parent="TreesFront" instance=ExtResource( 27 )]
 position = Vector2( -43, 25 )
 
-[node name="Sprite" parent="TreesFront/AbstractTree11" index="0"]
+[node name="Sprite" parent="TreesFront/AbstractTree11" index="1"]
 position = Vector2( -8, -53 )
 texture = ExtResource( 31 )
 
-[node name="PassThroughBody" parent="TreesFront/AbstractTree11" index="2"]
+[node name="PassThroughBody" parent="TreesFront/AbstractTree11" index="3"]
 visible = false
 
 [node name="CollisionShape2D" parent="TreesFront/AbstractTree11/PassThroughBody" index="0"]
@@ -990,10 +989,10 @@ position = Vector2( -97, 1 )
 [node name="AbstractTree6" parent="TreesFront" instance=ExtResource( 27 )]
 position = Vector2( 30, 25 )
 
-[node name="Sprite" parent="TreesFront/AbstractTree6" index="0"]
+[node name="Sprite" parent="TreesFront/AbstractTree6" index="1"]
 texture = ExtResource( 29 )
 
-[node name="PassThroughBody" parent="TreesFront/AbstractTree6" index="2"]
+[node name="PassThroughBody" parent="TreesFront/AbstractTree6" index="3"]
 position = Vector2( 4, -82 )
 
 [node name="CollisionShape2D" parent="TreesFront/AbstractTree6/PassThroughBody" index="0"]
@@ -1003,7 +1002,7 @@ shape = SubResource( 63 )
 [node name="AbstractTree5" parent="TreesFront" instance=ExtResource( 27 )]
 position = Vector2( 9, 1 )
 
-[node name="Sprite" parent="TreesFront/AbstractTree5" index="0"]
+[node name="Sprite" parent="TreesFront/AbstractTree5" index="1"]
 texture = ExtResource( 28 )
 
 [node name="CollisionShape2D" parent="TreesFront/AbstractTree5/PassThroughBody" index="0"]
@@ -1012,10 +1011,10 @@ shape = SubResource( 64 )
 [node name="AbstractTree7" parent="TreesFront" instance=ExtResource( 27 )]
 position = Vector2( -137, 13 )
 
-[node name="Sprite" parent="TreesFront/AbstractTree7" index="0"]
+[node name="Sprite" parent="TreesFront/AbstractTree7" index="1"]
 texture = ExtResource( 30 )
 
-[node name="PassThroughBody" parent="TreesFront/AbstractTree7" index="2"]
+[node name="PassThroughBody" parent="TreesFront/AbstractTree7" index="3"]
 position = Vector2( -19, -94 )
 
 [node name="CollisionShape2D" parent="TreesFront/AbstractTree7/PassThroughBody" index="0"]
@@ -1617,9 +1616,11 @@ margin_left = -865.0
 margin_top = -697.0
 margin_right = -575.0
 margin_bottom = -38.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+
+[node name="VisibilityChecker" parent="GodLights" instance=ExtResource( 42 )]
+visible = false
+position = Vector2( 155.5, 360.5 )
+scale = Vector2( 20.55, 37.05 )
 
 [editable path="Camera2D"]
 [editable path="Trees/AbstractTree5"]

@@ -3,7 +3,8 @@ class_name PickupContainer
 
 export(PackedScene) var itemScene
 
-onready var area2d			= $Area2D
+onready var area2d			    = $Area2D
+onready var visibility_notifier 	= $VisibilityNotifier2D
 
 func _ready():
 	area2d.connect("body_entered", self, "on_area_entered")

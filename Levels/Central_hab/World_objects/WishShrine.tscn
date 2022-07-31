@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/WorldObjects/Misc/WishShrine-Sheet.png" type="Texture" id=1]
+[ext_resource path="res://WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=2]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -46,6 +47,10 @@ tracks/0/keys = {
 }
 
 [node name="WishShrine" type="Node2D"]
+
+[node name="VisibilityChecker" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, -62.25 )
+scale = Vector2( 6.35, 6.525 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -77 )

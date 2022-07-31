@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://WorldObjects/Technical/InteractionPopup/InteractionPopup.tscn" type="PackedScene" id=1]
 [ext_resource path="res://WorldObjects/Technical/InteractionController/InteractionController.tscn" type="PackedScene" id=2]
 [ext_resource path="res://WorldObjects/Interactables/Door/SimpleGate.gd" type="Script" id=3]
+[ext_resource path="res://WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 16 )
@@ -11,18 +12,18 @@ extents = Vector2( 8, 16 )
 extents = Vector2( 3, 16 )
 
 [node name="Door" type="Node2D" groups=["Persist"]]
-position = Vector2( -456, -115 )
 z_index = 1
 script = ExtResource( 3 )
+
+[node name="VisibilityChecker" parent="." instance=ExtResource( 4 )]
+position = Vector2( 0, -17 )
+scale = Vector2( 1, 1.7 )
 
 [node name="GatesBackground" type="ColorRect" parent="."]
 margin_left = -8.0
 margin_top = -32.0
 margin_right = 8.0
 color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 32
@@ -36,7 +37,7 @@ shape = SubResource( 1 )
 action_type = 1
 
 [node name="CollisionShape2D" parent="InteractionController/Area2D" index="0"]
-position = Vector2( 0, -4 )
+position = Vector2( 0, -6 )
 shape = SubResource( 2 )
 
 [node name="InteractionPopup" parent="." instance=ExtResource( 1 )]
