@@ -1489,6 +1489,9 @@ position = Vector2( 1, 3 )
 scale = Vector2( 0.143938, 0.197316 )
 texture = ExtResource( 2 )
 energy = 0.5
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="WaterSurface" type="Node" parent="."]
 
@@ -1520,6 +1523,9 @@ margin_left = -865.0
 margin_top = -697.0
 margin_right = -575.0
 margin_bottom = -38.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="VisibilityChecker" parent="GodLights" instance=ExtResource( 42 )]
 visible = false
@@ -1527,6 +1533,8 @@ position = Vector2( 155.5, 360.5 )
 scale = Vector2( 20.55, 37.05 )
 
 [editable path="Camera2D"]
+[editable path="TreesFront/TallTree"]
+[editable path="TreesFront/TallTree/PassThroughBody"]
 [editable path="WorldObjects/NPC/Dweller2"]
 [editable path="WorldObjects/NPC/Dweller2/Body/InteractionController"]
 [editable path="WorldObjects/Signs/TumbSign/InteractionController"]
