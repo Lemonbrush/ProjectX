@@ -1,0 +1,29 @@
+{
+  "intro": {
+    "type": "response",
+    "text": "Hello what do you want",
+    "responses": {
+      "Nothing": {"next": "1"},
+      "Tell me about you": {"next": "2"}
+    },
+    "commands": [
+      ""
+    ]
+  },
+  "1": {
+    "type": "dialogue",
+    "text": "ok...",
+    "next": "2",
+    "commands": [
+      ""
+    ]
+  },
+  "2": {
+    "type": "dialogue",
+    "text": "bye",
+    "next": null,
+    "commands": [
+      ""
+    ]
+  }
+}

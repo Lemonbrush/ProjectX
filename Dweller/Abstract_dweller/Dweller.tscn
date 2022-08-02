@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://WorldObjects/Technical/InteractionTextBox/TextBoxPopup.tscn" type="PackedScene" id=1]
+[ext_resource path="res://WorldObjects/Technical/TextBoxController/DialogTextBoxController.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Dweller/NpcActions/idle/idle_npc_action.gd" type="Script" id=2]
 [ext_resource path="res://Dweller/Abstract_dweller/Dweller.gd" type="Script" id=3]
 [ext_resource path="res://Assets/NPC/SimpleDwellerSprite-Sheet.png" type="Texture" id=4]
@@ -69,6 +69,7 @@ extents = Vector2( 4.5, 10 )
 extents = Vector2( 16.5, 18 )
 
 [node name="Dweller" type="KinematicBody2D"]
+position = Vector2( -1, 0 )
 collision_layer = 3
 collision_mask = 0
 script = ExtResource( 3 )
@@ -94,11 +95,6 @@ visible = false
 position = Vector2( -0.5, -10 )
 shape = SubResource( 1 )
 
-[node name="TextBoxPopup" parent="." instance=ExtResource( 1 )]
-position = Vector2( 0, -32 )
-interaction_controller_path = NodePath("../Body/InteractionController")
-texts_array = [ "Привет!" ]
-
 [node name="InteractionPopup" parent="." instance=ExtResource( 5 )]
 position = Vector2( 0, -15 )
 interaction_controller_path = NodePath("../Body/InteractionController")
@@ -122,5 +118,9 @@ position = Vector2( -1, -16 )
 texture = ExtResource( 4 )
 hframes = 13
 vframes = 2
+
+[node name="DialogTextBoxController" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, -30 )
+interaction_controller_path = NodePath("../Body/InteractionController")
 
 [editable path="Body/InteractionController"]

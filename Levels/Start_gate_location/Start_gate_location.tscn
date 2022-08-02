@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=2]
+[gd_scene load_steps=90 format=2]
 
 [ext_resource path="res://Assets/WaterSurface/water_surface3.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -35,7 +35,6 @@
 [ext_resource path="res://WorldObjects/Destructables/Vase/Vase.tscn" type="PackedScene" id=37]
 [ext_resource path="res://Dweller/Abstract_dweller/Dweller.tscn" type="PackedScene" id=38]
 [ext_resource path="res://Dweller/NpcActions/idle/idle_npc_action.gd" type="Script" id=39]
-[ext_resource path="res://Dweller/NpcActions/walk/Walk_npc_action.gd" type="Script" id=40]
 [ext_resource path="res://UI/DebugScreen/GameSpecs.tscn" type="PackedScene" id=41]
 [ext_resource path="res://WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=42]
 [ext_resource path="res://WorldObjects/Decorative/Tree/Trees/CurvedTree.tscn" type="PackedScene" id=43]
@@ -571,18 +570,6 @@ resource_name = "open_transition"
 29/shapes = [  ]
 29/z_index = 0
 
-[sub_resource type="Resource" id=69]
-resource_local_to_scene = true
-script = ExtResource( 40 )
-move_speed = 100
-target_x_position = -350
-
-[sub_resource type="Resource" id=71]
-resource_local_to_scene = true
-script = ExtResource( 40 )
-move_speed = 100
-target_x_position = -500
-
 [sub_resource type="Resource" id=72]
 script = ExtResource( 39 )
 wait_time = 0.0
@@ -930,21 +917,17 @@ modulate = Color( 0.8, 0.803922, 0.831373, 1 )
 
 [node name="NPC" type="Node2D" parent="WorldObjects"]
 
-[node name="Dweller" parent="WorldObjects/NPC" instance=ExtResource( 38 )]
-position = Vector2( -362, 1 )
-actions = [ SubResource( 69 ), SubResource( 71 ) ]
-currentState = SubResource( 69 )
-
 [node name="Dweller2" parent="WorldObjects/NPC" instance=ExtResource( 38 )]
 position = Vector2( -833, -11.0004 )
+dialogId = "central_gate_camp_left_dweller"
 actions = [ SubResource( 72 ) ]
 currentState = SubResource( 72 )
 defaultDirection = -1
 
-[node name="InteractionPopup" parent="WorldObjects/NPC/Dweller2" index="5"]
+[node name="InteractionPopup" parent="WorldObjects/NPC/Dweller2" index="4"]
 labelText = "talky"
 
-[node name="Body" parent="WorldObjects/NPC/Dweller2" index="6"]
+[node name="Body" parent="WorldObjects/NPC/Dweller2" index="5"]
 scale = Vector2( -1, 1 )
 
 [node name="Signs" type="Node2D" parent="WorldObjects"]
@@ -1523,6 +1506,7 @@ margin_left = -865.0
 margin_top = -697.0
 margin_right = -575.0
 margin_bottom = -38.0
+mouse_filter = 2
 __meta__ = {
 "_edit_lock_": true
 }
