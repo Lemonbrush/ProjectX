@@ -13,7 +13,8 @@ func _init(dialog_id: String):
 		print("Error - %s" % error)
 
 func get_next_dialog(phrase_id = null):
-	current_phrase_id = phrase_id
+	if phrase_id != null:
+		current_phrase_id = phrase_id
 	
 	if phrase_id:
 		return current_dialog[phrase_id]
@@ -22,7 +23,7 @@ func get_next_dialog(phrase_id = null):
 		if next_phrase_id == null:
 			return
 			
-		return current_dialog[get_next_phrase_id()]
+		return current_dialog[next_phrase_id]
 
 func get_next_dialog_by_option(button_option):
 	return current_dialog[current_phrase_id]["responses"][button_option]["next"]
@@ -32,5 +33,7 @@ func get_next_dialog_by_option(button_option):
 func get_next_phrase_id():
 	if current_phrase_id == null:
 		return
-		
-	return current_dialog[current_phrase_id]["next"]
+	
+	current_phrase_id = current_dialog[current_phrase_id]["next"]
+	
+	return current_phrase_id

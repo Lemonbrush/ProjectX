@@ -38,7 +38,7 @@ func on_interact(_body):
 			finish_dialog()
 			return
 			
-		phrase = dialogManager.get_next_dialog()
+		phrase = next_phrase
 	
 	process_gialog_interaction(phrase)
 

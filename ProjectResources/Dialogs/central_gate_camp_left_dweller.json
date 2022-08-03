@@ -1,29 +1,49 @@
 {
-  "intro": {
-    "type": "response",
-    "text": "Hello what do you want",
-    "responses": {
-      "Nothing": {"next": "1"},
-      "Tell me about you": {"next": "2"}
-    },
-    "commands": [
-      ""
-    ]
+	"intro": {
+    "type": "dialog",
+    "text": "Иногда мне грустно",
+    "next": "1",
+    "commands": []
   },
   "1": {
     "type": "dialog",
-    "text": "ok...",
+    "text": "В такие моменты мне нравится приходить сюда и слушать звук волн",
     "next": "2",
-    "commands": [
-      ""
-    ]
-  },
-  "2": {
+    "commands": []
+   },
+   "2": {
     "type": "dialog",
-    "text": "bye",
+    "text": "иногда мне становится лучше",
+    "next": "3",
+    "commands": []
+   },
+   "3": {
+    "type": "response",
+    "text": "а иногда нет",
+    "responses": {
+      "Почему ты грустишь?": {"next": "5"},
+      "*погладить*": {"next": "4"}
+    },
+    "commands": []
+   },
+   "4": {
+    "type": "dialog",
+    "text": "*Фррр*",
     "next": null,
-    "commands": [
-      ""
-    ]
-  }
+    "commands": []
+   },
+   "5": {
+    "type": "dialog",
+    "text": "мне грустно, потому что рядом со мной никого нет",
+    "next": "6",
+    "commands": []
+   },
+   "6": {
+    "type": "response",
+    "text": "мне одиноко",
+    "responses": {
+      "*погладить*": {"next": "4"}
+    },
+    "commands": []
+   }
 }
