@@ -1,6 +1,6 @@
 extends Node2D
 
-signal pressed_button_number(button_number)
+signal pressed_button_number(button_text)
 
 export var CHAR_READ_RATE = 0.02
 
@@ -10,6 +10,8 @@ onready var label = $MarginNode/PanelContainer/MarginContainer/VBoxContainer/Lab
 onready var marginNode = $MarginNode
 onready var buttonHint = $MarginNode/PanelContainer/ButtonHint
 onready var buttonsContainer = $MarginNode/PanelContainer/MarginContainer/VBoxContainer/ButtonsContainer
+
+var animated_button_scene_path = preload("res://UI/Animated_dialog_button/AnimatedDialogButton.tscn")
 
 func _ready():
 	buttonHint.modulate.a = 0.0
@@ -29,6 +31,14 @@ func hide():
 	if modulate.a != 0.0:
 		start_hide_animation()
 
+func set_button_hint_visibility(visible):
+	buttonHint.visible = visible
+
+#### Actions
+
+func button_option_pressed(button_text):
+	emit_signal("pressed_button_number", button_text)
+
 #### Helper functions
 
 func remove_buttons():
@@ -37,9 +47,10 @@ func remove_buttons():
 
 func setup_buttons(button_options):
 	for button_option in button_options:
-		var button = Button.new()
+		var button = animated_button_scene_path.instance()
 		button.set_text(button_option)
 		buttonsContainer.add_child(button)
+		button.connect("pressed", self, "button_option_pressed", [button.text])
 	
 func add_text(next_text):
 	label.text = next_text

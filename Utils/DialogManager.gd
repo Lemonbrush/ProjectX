@@ -16,13 +16,21 @@ func get_next_dialog(phrase_id = null):
 	current_phrase_id = phrase_id
 	
 	if phrase_id:
-		print(current_dialog[phrase_id])
 		return current_dialog[phrase_id]
 	else:
-		print(current_dialog[get_next_phrase_id()])
+		var next_phrase_id = get_next_phrase_id()
+		if next_phrase_id == null:
+			return
+			
 		return current_dialog[get_next_phrase_id()]
 
+func get_next_dialog_by_option(button_option):
+	return current_dialog[current_phrase_id]["responses"][button_option]["next"]
+	
 ##### Helper functions
 
 func get_next_phrase_id():
+	if current_phrase_id == null:
+		return
+		
 	return current_dialog[current_phrase_id]["next"]
