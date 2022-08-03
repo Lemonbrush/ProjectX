@@ -6,16 +6,21 @@ export var CHAR_READ_RATE = 0.02
 
 onready var textTween = $TextTween
 onready var appearanceTween = $AppearanceTween
+onready var floatTween  = $FloatTween
 onready var label = $MarginNode/PanelContainer/MarginContainer/VBoxContainer/Label
 onready var marginNode = $MarginNode
 onready var buttonHint = $MarginNode/PanelContainer/ButtonHint
 onready var buttonsContainer = $MarginNode/PanelContainer/MarginContainer/VBoxContainer/ButtonsContainer
 
 var animated_button_scene_path = preload("res://UI/Animated_dialog_button/AnimatedDialogButton.tscn")
+var float_animation_direction_up = false
 
 func _ready():
 	buttonHint.modulate.a = 0.0
 	modulate.a = 0.0
+	
+	floatTween.connect("tween_completed", self, "floating_tween_finished")
+	start_floating_animation()
 
 func show_text(text, button_options = null):
 	remove_buttons()
@@ -72,3 +77,19 @@ func start_hide_animation():
 	appearanceTween.interpolate_property(self, 'modulate:a', get_modulate().a, 0.0, 0.25, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0)
 	appearanceTween.interpolate_property(marginNode, 'position:y', marginNode.position.y, -10, 0.25, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0)
 	appearanceTween.start()
+
+#### Floating animation
+
+func start_floating_animation():
+	var new_y_position = 0
+	if float_animation_direction_up:
+		new_y_position = 3 
+	float_animation_direction_up = !float_animation_direction_up
+
+	floatTween.stop(self)
+	floatTween.interpolate_property(marginNode, 'position:y', marginNode.position.y, new_y_position, 2, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT, 0)
+	floatTween.start()
+	
+
+func floating_tween_finished(_arg1, _arg2):
+	start_floating_animation()

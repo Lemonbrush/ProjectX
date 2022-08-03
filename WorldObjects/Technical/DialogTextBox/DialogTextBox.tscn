@@ -81,6 +81,8 @@ margin_bottom = 23.0
 
 [node name="AppearanceTween" type="Tween" parent="."]
 
+[node name="FloatTween" type="Tween" parent="."]
+
 [node name="HintButtonAnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"
 anims/Idle = SubResource( 1 )
