@@ -24,14 +24,14 @@ color = Color( 0.0941176, 0.0784314, 0.168627, 0.368627 )
 
 [node name="MarginContainer" type="MarginContainer" parent="MainMarginContainer"]
 margin_right = 530.0
-margin_bottom = 224.0
+margin_bottom = 252.0
 size_flags_vertical = 0
 custom_constants/margin_top = 60
 
 [node name="ContentVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer"]
 margin_top = 60.0
 margin_right = 530.0
-margin_bottom = 224.0
+margin_bottom = 252.0
 custom_constants/separation = 30
 
 [node name="Header" type="Label" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer"]
@@ -47,7 +47,7 @@ align = 1
 margin_left = 201.0
 margin_top = 56.0
 margin_right = 329.0
-margin_bottom = 164.0
+margin_bottom = 192.0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme = ExtResource( 2 )
@@ -55,12 +55,19 @@ custom_constants/separation = 15
 
 [node name="OptionsVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer"]
 margin_right = 128.0
-margin_bottom = 79.0
+margin_bottom = 107.0
 custom_constants/separation = 15
 
-[node name="ButtonsVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsVBoxContainer"]
+[node name="GameConstsEditorButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsVBoxContainer"]
 margin_right = 128.0
-margin_bottom = 32.0
+margin_bottom = 13.0
+custom_fonts/font = ExtResource( 4 )
+text = "Game consts editor"
+
+[node name="ButtonsVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsVBoxContainer"]
+margin_top = 28.0
+margin_right = 128.0
+margin_bottom = 60.0
 
 [node name="DeleteAllSavesButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsVBoxContainer/ButtonsVBoxContainer"]
 margin_right = 128.0
@@ -74,9 +81,9 @@ margin_bottom = 32.0
 text = "reset_options"
 
 [node name="RadioButtonsVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsVBoxContainer"]
-margin_top = 47.0
+margin_top = 75.0
 margin_right = 128.0
-margin_bottom = 79.0
+margin_bottom = 107.0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsVBoxContainer/RadioButtonsVBoxContainer"]
 margin_right = 128.0
@@ -117,7 +124,7 @@ margin_right = 11.0
 margin_bottom = 32.0
 
 [node name="ExitButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer"]
-margin_top = 94.0
+margin_top = 122.0
 margin_right = 128.0
-margin_bottom = 108.0
+margin_bottom = 136.0
 text = "exit"

@@ -17,8 +17,8 @@ func _ready():
 	
 	get_tree().paused = true
 
-func _unhandled_input(event):
-	if event.is_action_pressed("pause_menu"):
+func _unhandled_input(_event):
+	if Input.is_action_just_pressed("pause_menu") and marginContainer.visible:
 		unpause()
 		get_tree().set_input_as_handled()
 		

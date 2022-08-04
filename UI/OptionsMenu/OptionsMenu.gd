@@ -11,7 +11,11 @@ var specialOptionsMenuScene = preload("res://UI/SpecialOptionsMenu/SpecialOption
 func _ready():
 	quitButton.connect("pressed", self, "on_quit_pressed") 
 	specialOptionsButton.connect("pressed", self, "on_special_options_pressed") 
-	
+
+func _unhandled_input(_event):
+	if Input.is_action_just_pressed("pause_menu") and mainMarginContainer.visible:
+		on_quit_pressed()
+		
 func on_quit_pressed():
 	queue_free()
 	emit_signal("back_pressed")
