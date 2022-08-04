@@ -4,7 +4,8 @@ var constants: Dictionary
 
 func set_default_constants():
 	constants = {
-		is_player_talked_to_shore_dweller = false
+		is_player_talked_to_shore_dweller = false,
+		is_start_gate_open = false
 	}
 	EventBus.game_const_changed()
 
