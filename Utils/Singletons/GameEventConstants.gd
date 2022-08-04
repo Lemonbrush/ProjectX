@@ -7,7 +7,6 @@ func set_default_constants():
 		is_player_talked_to_shore_dweller = false
 	}
 	EventBus.game_const_changed()
-	FileManager.save_game()
 
 func set_constant(constant_name, value):
 	if constants.has(constant_name):

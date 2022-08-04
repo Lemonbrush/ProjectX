@@ -70,3 +70,4 @@ func on_options_back_pressed():
 
 func on_reset_game_constants_pressed():
 	GameEventConstants.set_default_constants()
+	FileManager.save_game()

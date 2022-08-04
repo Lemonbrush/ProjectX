@@ -33,9 +33,6 @@ func save_game():
 	if GameEventConstants.constants:
 		save_file_resource.gameLogicVariables = GameEventConstants.constants
 	
-	print(GameEventConstants.constants)
-	save_file_resource.gameLogicVariables = GameEventConstants.constants
-	
 	var error = ResourceSaver.save(save_path, save_file_resource)
 	if error != OK:
 		print("Save Error")
