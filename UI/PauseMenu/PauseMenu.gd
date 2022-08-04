@@ -27,10 +27,10 @@ func on_continue_button_pressed():
 
 func on_exit_button_pressed():
 	unpause()
-	Global.door_name = null
 	var _scene = get_tree().change_scene("res://UI/GameMenu/GameMenu.tscn")
 
 func on_exit_game_button_pressed():
+	unpause()
 	get_tree().quit()
 
 func unpause():

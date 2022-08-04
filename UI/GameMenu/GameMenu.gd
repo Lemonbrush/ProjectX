@@ -10,6 +10,8 @@ onready var mainMenuMarginContainer = $MainMenuMarginContainer
 var optionsMenuScene = preload("res://UI/OptionsMenu/OptionsMenu.tscn")
 
 func _ready():
+	Global.is_game_loaded = false
+	
 	play_button.connect("pressed", self, "on_play_pressed")
 	exit_button.connect("pressed", self, "on_exit_pressed")
 	options_button.connect("pressed", self, "on_options_pressed")

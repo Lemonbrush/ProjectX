@@ -36,6 +36,7 @@ func resset_game_const_list():
 func command_entered(text):
 	execute_command(text)
 	textField.text = ""
+	FileManager.save_game()
 		
 func on_quit_pressed():
 	queue_free()

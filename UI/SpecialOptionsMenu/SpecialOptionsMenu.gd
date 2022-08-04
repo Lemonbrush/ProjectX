@@ -6,6 +6,7 @@ onready var quitButton = $MainMarginContainer/MarginContainer/ContentVBoxContain
 onready var deleteAllSavesButton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsVBoxContainer/ButtonsVBoxContainer/DeleteAllSavesButton
 onready var deleteSettingsDataButton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsVBoxContainer/ButtonsVBoxContainer/DeleteSystemDataButton
 
+onready var resetGameConstantsButton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsVBoxContainer/ButtonsVBoxContainer/ResetGameConstantsButton
 onready var deleteAllSavesByDefaultRadiobutton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsVBoxContainer/RadioButtonsVBoxContainer/HBoxContainer2/VBoxContainerRadioButtons/DeleteAllSavesAlwaysCheckBox
 onready var activateDebugScreenRadiobutton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsVBoxContainer/RadioButtonsVBoxContainer/HBoxContainer2/VBoxContainerRadioButtons/ActivateDebugScreenCheckBox
 onready var gameConstsEditorButton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsVBoxContainer/GameConstsEditorButton
@@ -18,8 +19,13 @@ func _ready():
 	deleteAllSavesByDefaultRadiobutton.connect("pressed", self, "on_delete_all_saves_by_default_radiobutton_checked")
 	deleteSettingsDataButton.connect("pressed", self, "on_delete_settings_data_pressed")
 	activateDebugScreenRadiobutton.connect("pressed", self, "on_debug_screen_radiobutton_pressed")
+	resetGameConstantsButton.connect("pressed", self, "on_reset_game_constants_pressed")
 	
 	gameConstsEditorButton.connect("pressed", self, "on_special_options_pressed") 
+	
+	var is_game_loaded = Global.is_game_loaded
+	resetGameConstantsButton.disabled = !is_game_loaded
+	gameConstsEditorButton.disabled = !is_game_loaded
 	
 	setup_ui()
 
@@ -61,3 +67,6 @@ func on_special_options_pressed():
 
 func on_options_back_pressed():
 	mainMarginContainer.visible = true
+
+func on_reset_game_constants_pressed():
+	GameEventConstants.set_default_constants()
