@@ -15,6 +15,11 @@ _global_script_classes=[ {
 "path": "res://Levels/Base_world_scene/BaseLevel.gd"
 }, {
 "base": "Node",
+"class": "CommandHandler",
+"language": "GDScript",
+"path": "res://Utils/CommandHandler.gd"
+}, {
+"base": "Node",
 "class": "DialogManager",
 "language": "GDScript",
 "path": "res://Utils/DialogManager.gd"
@@ -81,6 +86,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "BaseLevel": "",
+"CommandHandler": "",
 "DialogManager": "",
 "IdleNpcAction": "",
 "InteractionController": "",
@@ -110,6 +116,7 @@ Global="*res://Utils/Singletons/Global.gd"
 LevelManager="*res://Utils/Singletons/LevelManager.gd"
 EventBus="*res://Utils/Singletons/EventBus.gd"
 SettingsManager="*res://Utils/Singletons/SettingsManager/SettingsManager.gd"
+GameEventConstants="*res://Utils/Singletons/GameEventConstants.gd"
 
 [display]
 

@@ -31,6 +31,9 @@ func save_game():
 	save_file_resource.savedLevelScenes[lastVisitedSceneName] = packedScene
 	save_file_resource.playerPosition = get_tree().get_current_scene().find_node("Player").get_global_position()
 	
+	print(GameEventConstants.constants)
+	save_file_resource.gameLogicVariables = GameEventConstants.constants
+	
 	var error = ResourceSaver.save(save_path, save_file_resource)
 	if error != OK:
 		print("Save Error")
@@ -43,6 +46,8 @@ func load_game():
 		var lastVisitedSceneName = save_file_resource.lastVisitedSceneName
 		var lastVisitedScene = save_file_resource.savedLevelScenes[lastVisitedSceneName]
 		var _changedScene = get_tree().change_scene_to(lastVisitedScene)
+		
+		print(save_file_resource.gameLogicVariables)
 	else:
 		delete_save()
 		var _scene = get_tree().change_scene("res://Levels/Start_gate_location/Start_gate_location.tscn")

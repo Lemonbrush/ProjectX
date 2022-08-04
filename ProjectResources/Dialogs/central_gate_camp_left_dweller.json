@@ -30,7 +30,7 @@
     "type": "dialog",
     "text": "*Фррр*",
     "next": null,
-    "commands": []
+    "commands": ["set is_player_talked_to_shore_dweller true"]
    },
    "5": {
     "type": "dialog",

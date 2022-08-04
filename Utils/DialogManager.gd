@@ -16,6 +16,8 @@ func get_next_dialog(phrase_id = null):
 	if phrase_id != null:
 		current_phrase_id = phrase_id
 	
+	execute_commands_if_needed()
+	
 	if phrase_id:
 		return current_dialog[phrase_id]
 	else:
@@ -33,7 +35,14 @@ func get_next_dialog_by_option(button_option):
 func get_next_phrase_id():
 	if current_phrase_id == null:
 		return
-	
-	current_phrase_id = current_dialog[current_phrase_id]["next"]
+		
+	if current_dialog[current_phrase_id].has("next"):
+		current_phrase_id = current_dialog[current_phrase_id]["next"]
 	
 	return current_phrase_id
+
+func execute_commands_if_needed():
+	var current_phrase = current_dialog[current_phrase_id]
+	if current_phrase.has("commands"):
+		var commands = current_phrase["commands"]
+		CommandHandler.executeCommands(commands)
