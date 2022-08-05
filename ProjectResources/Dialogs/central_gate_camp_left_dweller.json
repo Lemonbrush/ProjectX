@@ -1,5 +1,13 @@
 {
-	"intro": {
+  "intro": {
+    "type":  "condition" ,
+    "condition_name": "is_player_talked_to_shore_dweller",
+    "condition_value": true,
+    "condition_sign": "=",
+    "condition_satisfied":  "3",
+    "default": "99"
+  },
+  "99": {
     "type": "dialog",
     "text": "Иногда мне грустно",
     "next": "1",
@@ -19,7 +27,7 @@
    },
    "3": {
     "type": "response",
-    "text": "а иногда нет",
+    "text": null,
     "responses": {
       "Почему ты грустишь?": {"next": "5"},
       "*погладить*": {"next": "4"}

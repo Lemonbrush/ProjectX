@@ -58,7 +58,13 @@ func setup_buttons(button_options):
 		button.connect("pressed", self, "button_option_pressed", [button.text])
 	
 func add_text(next_text):
+	if next_text == null:
+		label.visible = false
+		return
+
+	label.visible = true
 	label.text = next_text
+	
 	textTween.interpolate_property(label, "percent_visible", 0.0, 1.0, len(next_text) * CHAR_READ_RATE, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	textTween.start()
 
