@@ -25,7 +25,7 @@ curve = SubResource( 6 )
 
 [sub_resource type="ParticlesMaterial" id=5]
 emission_shape = 2
-emission_box_extents = Vector3( 1000, 1000, 1 )
+emission_box_extents = Vector3( 3000, 3000, 1 )
 flag_disable_z = true
 spread = 0.0
 gravity = Vector3( 0, 0, 0 )
@@ -45,10 +45,11 @@ anim_offset_curve = SubResource( 7 )
 self_modulate = Color( 1, 1, 1, 0.784314 )
 show_behind_parent = true
 material = SubResource( 1 )
-amount = 70
+amount = 1000
 lifetime = 60.0
-preprocess = 10.0
+preprocess = 60.0
 randomness = 1.0
+visibility_rect = Rect2( -1000, -1000, 2000, 2000 )
 local_coords = false
 process_material = SubResource( 5 )
 texture = ExtResource( 1 )

@@ -30,6 +30,8 @@ func save_game():
 	save_file_resource.lastVisitedSceneName = lastVisitedSceneName
 	save_file_resource.savedLevelScenes[lastVisitedSceneName] = packedScene
 	save_file_resource.playerPosition = get_tree().get_current_scene().find_node("Player").get_global_position()
+	if GameEventConstants.constants:
+		save_file_resource.gameLogicVariables = GameEventConstants.constants
 	
 	var error = ResourceSaver.save(save_path, save_file_resource)
 	if error != OK:
@@ -38,10 +40,13 @@ func save_game():
 		print("Game saved")
 		
 func load_game():
+	Global.is_game_loaded = true
+	
 	if has_any_save_file() && !SettingsManager.settings.should_delete_all_saves_on_start_session:
 		save_file_resource = load(save_path)
 		var lastVisitedSceneName = save_file_resource.lastVisitedSceneName
 		var lastVisitedScene = save_file_resource.savedLevelScenes[lastVisitedSceneName]
+		GameEventConstants.constants = save_file_resource.gameLogicVariables
 		var _changedScene = get_tree().change_scene_to(lastVisitedScene)
 	else:
 		delete_save()
@@ -50,6 +55,7 @@ func load_game():
 func delete_save():
 	var dir = Directory.new()
 	dir.remove(save_path)
+	GameEventConstants.set_default_constants()
 	
 func has_any_save_file():
 	var file = File.new()

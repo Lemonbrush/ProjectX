@@ -14,6 +14,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Levels/Base_world_scene/BaseLevel.gd"
 }, {
+"base": "Node",
+"class": "CommandHandler",
+"language": "GDScript",
+"path": "res://Utils/CommandHandler.gd"
+}, {
+"base": "Node",
+"class": "DialogManager",
+"language": "GDScript",
+"path": "res://Utils/DialogManager.gd"
+}, {
 "base": "NpcAction",
 "class": "IdleNpcAction",
 "language": "GDScript",
@@ -76,6 +86,8 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "BaseLevel": "",
+"CommandHandler": "",
+"DialogManager": "",
 "IdleNpcAction": "",
 "InteractionController": "",
 "NpcAction": "",
@@ -104,6 +116,7 @@ Global="*res://Utils/Singletons/Global.gd"
 LevelManager="*res://Utils/Singletons/LevelManager.gd"
 EventBus="*res://Utils/Singletons/EventBus.gd"
 SettingsManager="*res://Utils/Singletons/SettingsManager/SettingsManager.gd"
+GameEventConstants="*res://Utils/Singletons/GameEventConstants.gd"
 
 [display]
 
@@ -141,6 +154,10 @@ texture={
 "size_limit": 0,
 "stream": false,
 "svg/scale": 1.0
+}
+csv_translation={
+"compress": true,
+"delimiter": 0
 }
 
 [input]
@@ -212,6 +229,11 @@ debug_screen={
 2d_physics/layer_6="COLLECTABLES"
 2d_physics/layer_7="WATERSURFACE"
 2d_physics/layer_8="PLAYER_BODY"
+
+[locale]
+
+translations=PoolStringArray( "res://ProjectResources/Localization/LocalizationSheet.ru.translation" )
+locale_filter=[ 0, [ "ru" ] ]
 
 [physics]
 

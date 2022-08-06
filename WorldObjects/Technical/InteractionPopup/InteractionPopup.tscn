@@ -22,9 +22,9 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginNode/CenterContainer"]
-margin_left = 10.0
+margin_left = 22.0
 margin_top = 13.0
-margin_right = 70.0
+margin_right = 57.0
 margin_bottom = 27.0
 alignment = 1
 
@@ -36,9 +36,9 @@ stretch_mode = 6
 
 [node name="Label" type="Label" parent="MarginNode/CenterContainer/HBoxContainer"]
 margin_left = 18.0
-margin_right = 60.0
+margin_right = 35.0
 margin_bottom = 13.0
 custom_fonts/font = ExtResource( 3 )
-text = "test text"
+text = "talk"
 
 [node name="Tween" type="Tween" parent="."]

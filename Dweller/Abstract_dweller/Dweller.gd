@@ -3,6 +3,7 @@ extends KinematicBody2D
 enum State { IDLE, WALKING, TALKING, ACTING }
 enum Direction { LEFT = 1, RIGHT = -1 }
 
+export (String) var dialogId
 export(Array, Resource) var actions
 export(Resource) var currentState 
 export var currentActionIndex = 0
@@ -15,7 +16,7 @@ onready var actTimer = $ActTimer
 onready var body = $Body
 onready var interactionController = $Body/InteractionController
 onready var animationPlayer = $AnimationPlayer
-onready var textBoxPopup = $TextBoxPopup
+onready var dialogTextBoxController = $DialogTextBoxController
 
 var is_state_new = true
 
@@ -25,6 +26,8 @@ var gravity = 500
 var current_animation_name
 
 func _ready():
+	dialogTextBoxController.set_dialog_id(dialogId)
+	
 	if !actions:
 		var idleAction = IdleNpcAction.new()
 		idleAction.is_infinite = true
@@ -37,7 +40,7 @@ func _ready():
 	waitTimer.connect("timeout", self, "wait_timer_timeout")
 	actTimer.connect("timeout", self, "act_timer_timeout")
 	
-	textBoxPopup.connect("dialogueFinished", self, "finish_talking")
+	#textBoxPopup.connect("dialogueFinished", self, "finish_talking")
 
 func _process(delta): 
 	if !animationPlayer.current_animation:

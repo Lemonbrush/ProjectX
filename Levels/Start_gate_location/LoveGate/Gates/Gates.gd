@@ -5,9 +5,10 @@ export(String) var nextDoorName = "-"
 
 onready var area2d = $Area2D
 onready var interactionController = $InteractionController
+onready var animationPlayer = $AnimationPlayer
+onready var gateSign = $GatesText
 
 export var isAbleToTransition = false
-export var isOpened = false
 
 func _ready():
 	interactionController.disabled(true)
@@ -16,15 +17,19 @@ func _ready():
 	
 	interactionController.connect("on_interact", self, "_on_interact")
 	
-	if isOpened:
-		interactionController.disabled(false)
-		$AnimationPlayer.play("Opened")
+	if GameEventConstants.constants["is_start_gate_open"]:
+		animationPlayer.play("Opened")
+		set_gate_opened()
 
 func on_open_gates_call():
-	isOpened = true
-	$AnimationPlayer.play("Open")
-	interactionController.disabled(false)
+	GameEventConstants.set_constant("is_start_gate_open", true)
+	animationPlayer.play("Open")
+	set_gate_opened()
 
+func set_gate_opened():
+	gateSign.visible = false
+	interactionController.disabled(false)
+	
 # Area2D functions
 
 func on_player_entered(_body):
@@ -35,5 +40,4 @@ func on_player_exited(_body):
 
 func _on_interact(_body):
 	Global.door_name = nextDoorName
-	
 	EventBus.player_entered_door(nextScenePath)

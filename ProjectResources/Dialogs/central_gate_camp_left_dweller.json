@@ -1,0 +1,57 @@
+{
+  "intro": {
+    "type":  "condition" ,
+    "condition_name": "is_player_talked_to_shore_dweller",
+    "condition_value": true,
+    "condition_sign": "=",
+    "condition_satisfied":  "3",
+    "default": "99"
+  },
+  "99": {
+    "type": "dialog",
+    "text": "Иногда мне грустно",
+    "next": "1",
+    "commands": []
+  },
+  "1": {
+    "type": "dialog",
+    "text": "В такие моменты мне нравится приходить сюда и слушать звук волн",
+    "next": "2",
+    "commands": []
+   },
+   "2": {
+    "type": "dialog",
+    "text": "иногда мне становится лучше",
+    "next": "3",
+    "commands": []
+   },
+   "3": {
+    "type": "response",
+    "text": null,
+    "responses": {
+      "Почему ты грустишь?": {"next": "5"},
+      "*погладить*": {"next": "4"}
+    },
+    "commands": []
+   },
+   "4": {
+    "type": "dialog",
+    "text": "*Фррр*",
+    "next": null,
+    "commands": ["set is_player_talked_to_shore_dweller true"]
+   },
+   "5": {
+    "type": "dialog",
+    "text": "мне грустно, потому что рядом со мной никого нет",
+    "next": "6",
+    "commands": []
+   },
+   "6": {
+    "type": "response",
+    "text": "мне одиноко",
+    "responses": {
+      "*погладить*": {"next": "4"}
+    },
+    "commands": []
+   }
+}
