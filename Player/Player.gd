@@ -183,7 +183,7 @@ func unhandled_input(event: InputEvent):
 	elif event.is_action_pressed("jump"):
 		if is_able_to_glide:
 			 glide = true
-		if !jump && !is_able_to_glide:
+		if !jump && !is_able_to_glide && !is_climbing:
 			jump = true
 		else:
 			glide = true
