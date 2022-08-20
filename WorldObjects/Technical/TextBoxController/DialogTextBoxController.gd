@@ -31,7 +31,7 @@ func on_interact(_body):
 	var phrase
 	if dialogManager == null:
 		dialogManager = DialogManager.new(dialog_id)
-		phrase = dialogManager.get_next_dialog("intro")
+		phrase = dialogManager.get_next_dialog("Initial")
 	else:
 		var next_phrase =  dialogManager.get_next_dialog()
 		if next_phrase == null:

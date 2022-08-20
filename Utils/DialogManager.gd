@@ -16,8 +16,6 @@ func get_next_dialog(phrase_id = null):
 	if phrase_id != null:
 		current_phrase_id = phrase_id
 	
-	execute_commands_if_needed()
-	
 	if phrase_id:
 		return get_validated_phrase(current_dialog[phrase_id])
 	else:
@@ -28,32 +26,46 @@ func get_next_dialog(phrase_id = null):
 		return get_validated_phrase(current_dialog[next_phrase_id])
 	
 func get_next_dialog_by_option(button_option):
-	var next_dialog_id = current_dialog[current_phrase_id]["responses"][button_option]["next"]
-	return get_next_dialog(next_dialog_id)
+	for response in current_dialog[current_phrase_id]["responses"]:
+		if response["text"] == button_option:
+			return get_next_dialog(response["next"])
 	
 ##### Helper functions
 
 func get_validated_phrase(next_phrase):
-	if next_phrase["type"] == "condition":
-		return process_condition(next_phrase)
+	if next_phrase["type"] == "condition":		
+		if is_conditions_satisfied(next_phrase["conditions"]):
+			return get_next_dialog(next_phrase["true"])
+		else:
+			return get_next_dialog(next_phrase["false"])
 	else:
 		return next_phrase
 
-func process_condition(condition_node):
-	var condition_name = condition_node["condition_name"]
-	var condition_value = condition_node["condition_value"]
+func is_conditions_satisfied(conditions):
+	var condition_satisfied = true
+	
+	for condition in conditions:
+		if !is_condition_satisfied(condition):
+			condition_satisfied = false
+	
+	return condition_satisfied
+
+func is_condition_satisfied(condition):
+	var condition_name = condition["condition"]
+	var condition_sign = condition["sign"]
+	var condition_value = condition["value"]
+	
 	if GameEventConstants.constants.has(condition_name):
 		var game_value = GameEventConstants.constants[condition_name]
-		var condition_sign = condition_node["condition_sign"]
-		if calculate_result_by_condition_sign(condition_sign, game_value, condition_value):
-			return get_next_dialog(condition_node["condition_satisfied"])
-		else:
-			return get_next_dialog(condition_node["default"])
+		
+		return calculate_result_by_condition_sign(condition_sign, game_value, condition_value)
 
 func get_next_phrase_id():
 	if current_phrase_id == null:
 		return
-		
+	
+	execute_commands_if_needed()
+	
 	if current_dialog[current_phrase_id].has("next"):
 		current_phrase_id = current_dialog[current_phrase_id]["next"]
 	
