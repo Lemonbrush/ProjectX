@@ -19,6 +19,10 @@ func _process(delta):
 		acquire_target_position()
 		global_position = lerp(targetPosition, global_position, pow(2, -15 * delta))
 
+func instant_focuse_on_target():
+	acquire_target_position()
+	global_position = targetPosition
+
 func acquire_target_position():
 	var acquired = get_target_position_from_node_group("player")
 	if (!acquired):

@@ -91,7 +91,7 @@ nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "BlueHouseDoor"
 
 [node name="Camera2D" parent="." index="4"]
-position = Vector2( 1, -13 )
+position = Vector2( -3, -12 )
 zoom = Vector2( 0.6, 0.6 )
 follow_player = false
 
