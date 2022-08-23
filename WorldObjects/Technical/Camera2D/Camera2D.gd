@@ -5,6 +5,7 @@ onready var screenShaker = $ScreenShaker
 
 var targetPosition = Vector2.ZERO
 
+export(bool) var follow_player = true
 export(Color, RGB) var backgroundColor
 
 # Lifecycle Functions
@@ -14,8 +15,9 @@ func _ready():
 	VisualServer.set_default_clear_color(backgroundColor)
 
 func _process(delta):
-	acquire_target_position()
-	global_position = lerp(targetPosition, global_position, pow(2, -15 * delta))
+	if follow_player:
+		acquire_target_position()
+		global_position = lerp(targetPosition, global_position, pow(2, -15 * delta))
 
 func acquire_target_position():
 	var acquired = get_target_position_from_node_group("player")
