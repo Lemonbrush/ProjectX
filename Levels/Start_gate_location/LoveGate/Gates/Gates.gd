@@ -17,7 +17,7 @@ func _ready():
 	
 	interactionController.connect("on_interact", self, "_on_interact")
 	
-	if GameEventConstants.constants["is_start_gate_open"]:
+	if GameEventConstants.constants.has("is_start_gate_open") and GameEventConstants.constants["is_start_gate_open"]:
 		animationPlayer.play("Opened")
 		set_gate_opened()
 
