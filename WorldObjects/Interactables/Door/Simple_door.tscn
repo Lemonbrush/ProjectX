@@ -34,7 +34,6 @@ position = Vector2( 0, -16 )
 shape = SubResource( 1 )
 
 [node name="InteractionController" parent="." instance=ExtResource( 2 )]
-action_type = 1
 
 [node name="CollisionShape2D" parent="InteractionController/Area2D" index="0"]
 position = Vector2( 0, -6 )

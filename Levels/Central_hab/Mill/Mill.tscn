@@ -1,0 +1,708 @@
+[gd_scene load_steps=59 format=2]
+
+[ext_resource path="res://Assets/Levels/Rooms/Mill/Mill_front.png" type="Texture" id=1]
+[ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Levels/Rooms/Mill/Mill_back.png" type="Texture" id=4]
+[ext_resource path="res://WorldObjects/Technical/Ladder/Ladder.tscn" type="PackedScene" id=5]
+[ext_resource path="res://WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/effects/WhiteSquare.png" type="Texture" id=7]
+[ext_resource path="res://WorldObjects/Technical/Clouds/Clouds.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Levels/Central_hab/Mill/Shaft.tscn" type="PackedScene" id=9]
+[ext_resource path="res://WorldObjects/Moving_platforms/MovingPlatform.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Levels/Rooms/Mill/MovingPlatform.png" type="Texture" id=11]
+[ext_resource path="res://Levels/Central_hab/Mill/Millstone.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Levels/Central_hab/Mill/MillGear.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=15]
+
+[sub_resource type="CurveTexture" id=7]
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.00285307, 0.248217, 0.774608, 0.997147, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.239024, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 3 )
+
+[sub_resource type="Curve" id=6]
+_data = [ Vector2( 0, 0.840033 ), 0.0, 0.0, 0, 0, Vector2( 0.103806, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.571868 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 6 )
+
+[sub_resource type="ParticlesMaterial" id=106]
+emission_shape = 2
+emission_box_extents = Vector3( 500, 500, 1 )
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 9 )
+color_ramp = SubResource( 8 )
+anim_offset = 1.0
+anim_offset_random = 1.0
+anim_offset_curve = SubResource( 7 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 12, 2 )
+
+[sub_resource type="RectangleShape2D" id=102]
+extents = Vector2( 31.5, 3.5 )
+
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 7, 2 )
+
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 10, 2 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 28, 2 )
+
+[sub_resource type="RectangleShape2D" id=107]
+extents = Vector2( 10, 2 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10.5, 2 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 15, 2 )
+
+[sub_resource type="RectangleShape2D" id=108]
+extents = Vector2( 11.5, 2 )
+
+[sub_resource type="RectangleShape2D" id=109]
+extents = Vector2( 10, 2 )
+
+[sub_resource type="RectangleShape2D" id=110]
+extents = Vector2( 10.5, 2 )
+
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 8, 1.5 )
+
+[sub_resource type="RectangleShape2D" id=111]
+extents = Vector2( 13, 5 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 28.5, 3.5 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 16.5, 1 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 1, 3.5 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 4, 36 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 5, 14 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 5, 31 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 56, 8 )
+
+[sub_resource type="RectangleShape2D" id=104]
+extents = Vector2( 4, 173.5 )
+
+[sub_resource type="RectangleShape2D" id=105]
+extents = Vector2( 4, 145.5 )
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 42.125, 3.9375 )
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 69.125, 5 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 26.125, 5 )
+
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 45.625, 5 )
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 4, 58 )
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 10, 4 )
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 4, 6.5 )
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 8, 32.5 )
+
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 8, 37 )
+
+[sub_resource type="Gradient" id=99]
+offsets = PoolRealArray( 0.00294118, 0.147059, 0.467647, 0.835294, 0.997059, 1 )
+colors = PoolColorArray( 0.964844, 0.650645, 0.206024, 1, 0.792969, 0.359628, 0.0117353, 1, 0.78125, 0.251676, 0.0677194, 1, 1, 1, 1, 0.694117, 1, 1, 1, 0.541176, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=96]
+gradient = SubResource( 99 )
+
+[sub_resource type="Curve" id=100]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.21134, 0.354712 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0393969 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=98]
+curve = SubResource( 100 )
+
+[sub_resource type="ParticlesMaterial" id=101]
+emission_shape = 2
+emission_box_extents = Vector3( 3, 2, 1 )
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 10.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 0.03
+angular_velocity = 250.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 4.0
+linear_accel_random = 1.0
+angle = 360.0
+angle_random = 1.0
+scale = 1.5
+scale_curve = SubResource( 98 )
+color_ramp = SubResource( 96 )
+
+[sub_resource type="RectangleShape2D" id=103]
+extents = Vector2( 17.5, 2.5 )
+
+[node name="Mill" instance=ExtResource( 3 )]
+
+[node name="Camera2D" parent="." index="2"]
+zoom = Vector2( 0.8, 0.8 )
+
+[node name="Clouds" parent="Camera2D" index="2" instance=ExtResource( 8 )]
+position = Vector2( -2, -19 )
+z_index = -2
+
+[node name="Particles2D" parent="Camera2D/Clouds" index="0"]
+amount = 100
+lifetime = 10.0
+process_material = SubResource( 106 )
+
+[node name="Light2D" type="Light2D" parent="." index="3"]
+position = Vector2( -3, 21.5 )
+scale = Vector2( 0.170103, 0.0410367 )
+texture = ExtResource( 14 )
+color = Color( 1, 1, 1, 0.615686 )
+energy = 0.43
+mode = 2
+
+[node name="Light2D2" type="Light2D" parent="." index="4"]
+position = Vector2( 15.5, 85 )
+scale = Vector2( 0.215206, 0.0410367 )
+texture = ExtResource( 14 )
+color = Color( 1, 1, 1, 0.615686 )
+energy = 0.43
+mode = 2
+
+[node name="Light2D3" type="Light2D" parent="." index="5"]
+position = Vector2( 7, 149 )
+scale = Vector2( 0.215206, 0.0410367 )
+texture = ExtResource( 14 )
+color = Color( 1, 1, 1, 0.615686 )
+energy = 0.43
+mode = 2
+
+[node name="Light2D4" type="Light2D" parent="." index="6"]
+position = Vector2( -20, 102 )
+scale = Vector2( 0.0538967, 0.037664 )
+texture = ExtResource( 15 )
+energy = 0.7
+
+[node name="WorldSpriteBack" type="Sprite" parent="." index="7"]
+position = Vector2( 3, 0 )
+texture = ExtResource( 4 )
+
+[node name="MillGear" parent="." index="8" instance=ExtResource( 13 )]
+position = Vector2( 8, -225 )
+
+[node name="Shaft" parent="." index="9" instance=ExtResource( 9 )]
+position = Vector2( 9, -12 )
+
+[node name="Player" parent="." index="10"]
+position = Vector2( 34, -148 )
+z_index = 2
+
+[node name="Light2D2" parent="Player" index="5"]
+visible = false
+
+[node name="WorldSprite" parent="." index="11"]
+position = Vector2( 3, 0 )
+texture = ExtResource( 1 )
+
+[node name="PassThroughBody4" parent="Collisions/PassTrough" index="0" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( -18, -199 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody4" index="0"]
+position = Vector2( -4, 4 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="PassThroughBody25" parent="Collisions/PassTrough" index="1" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( 15, -212 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody25" index="0"]
+position = Vector2( -6.5, 5.5 )
+shape = SubResource( 102 )
+one_way_collision = true
+
+[node name="PassThroughBody5" parent="Collisions/PassTrough" index="2" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( 42, -93 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody5" index="0"]
+position = Vector2( -4, 4 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="PassThroughBody22" parent="Collisions/PassTrough" index="3" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( -13, -65 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody22" index="0"]
+position = Vector2( -9, 4 )
+shape = SubResource( 27 )
+one_way_collision = true
+
+[node name="PassThroughBody23" parent="Collisions/PassTrough" index="4" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( 49, -105 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody23" index="0"]
+position = Vector2( -9, 4 )
+shape = SubResource( 27 )
+one_way_collision = true
+
+[node name="PassThroughBody21" parent="Collisions/PassTrough" index="5" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( 44, -59 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody21" index="0"]
+position = Vector2( -6, 4 )
+shape = SubResource( 28 )
+one_way_collision = true
+
+[node name="PassThroughBody6" parent="Collisions/PassTrough" index="6" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( 43, -30 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody6" index="0"]
+position = Vector2( -4, 4 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="PassThroughBody7" parent="Collisions/PassTrough" index="7" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( 42, 10 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody7" index="0"]
+position = Vector2( -4, 4 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="PassThroughBody8" parent="Collisions/PassTrough" index="8" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( 42, 26 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody8" index="0"]
+position = Vector2( -4, 4 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="PassThroughBody11" parent="Collisions/PassTrough" index="9" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( -42, 31 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody11" index="0"]
+position = Vector2( 12, 4 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="PassThroughBody12" parent="Collisions/PassTrough" index="10" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( -33, 65 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody12" index="0"]
+position = Vector2( -6, 4 )
+shape = SubResource( 107 )
+one_way_collision = true
+
+[node name="PassThroughBody13" parent="Collisions/PassTrough" index="11" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( -62, 72 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody13" index="0"]
+position = Vector2( -5.5, 4 )
+shape = SubResource( 4 )
+one_way_collision = true
+
+[node name="PassThroughBody14" parent="Collisions/PassTrough" index="12" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( -62, 88 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody14" index="0"]
+position = Vector2( -5.5, 4 )
+shape = SubResource( 4 )
+one_way_collision = true
+
+[node name="PassThroughBody15" parent="Collisions/PassTrough" index="13" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( -62, 104 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody15" index="0"]
+position = Vector2( -5.5, 4 )
+shape = SubResource( 4 )
+one_way_collision = true
+
+[node name="PassThroughBody16" parent="Collisions/PassTrough" index="14" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( -62, 120 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody16" index="0"]
+position = Vector2( -5.5, 4 )
+shape = SubResource( 4 )
+one_way_collision = true
+
+[node name="PassThroughBody17" parent="Collisions/PassTrough" index="15" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( -21, 126 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody17" index="0"]
+position = Vector2( -1, 4 )
+shape = SubResource( 5 )
+one_way_collision = true
+
+[node name="PassThroughBody18" parent="Collisions/PassTrough" index="16" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( 70, 106 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody18" index="0"]
+position = Vector2( -4.5, 4 )
+shape = SubResource( 108 )
+one_way_collision = true
+
+[node name="PassThroughBody19" parent="Collisions/PassTrough" index="17" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( 49, 122 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody19" index="0"]
+position = Vector2( -6, 4 )
+shape = SubResource( 109 )
+one_way_collision = true
+
+[node name="PassThroughBody20" parent="Collisions/PassTrough" index="18" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( 71, 128 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody20" index="0"]
+position = Vector2( -5.5, 4 )
+shape = SubResource( 110 )
+one_way_collision = true
+
+[node name="PassThroughBody9" parent="Collisions/PassTrough" index="19" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( 42, 42 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody9" index="0"]
+position = Vector2( -4, 4 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="PassThroughBody10" parent="Collisions/PassTrough" index="20" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( 42, 58 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody10" index="0"]
+position = Vector2( -4, 4 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="PassThroughBody24" parent="Collisions/PassTrough" index="21" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( -12, 132 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody24" index="0"]
+position = Vector2( -8, 5.5 )
+shape = SubResource( 29 )
+one_way_collision = true
+
+[node name="Collisions@Solid@PassThroughBody" parent="Collisions/Solid" index="0" instance=ExtResource( 2 )]
+position = Vector2( 42, -118 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/Collisions@Solid@PassThroughBody" index="0"]
+position = Vector2( -3, -11 )
+shape = SubResource( 111 )
+
+[node name="CollisionsSolidPassThroughBody" parent="Collisions/Solid" index="1" instance=ExtResource( 2 )]
+position = Vector2( -19, -118 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/CollisionsSolidPassThroughBody" index="0"]
+position = Vector2( -3, -11 )
+shape = SubResource( 111 )
+
+[node name="CollisionsSolidPassThroughBody2" parent="Collisions/Solid" index="2" instance=ExtResource( 2 )]
+position = Vector2( -19, -34 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/CollisionsSolidPassThroughBody2" index="0"]
+position = Vector2( -3, -11 )
+shape = SubResource( 111 )
+
+[node name="CollisionsSolidPassThroughBody3" parent="Collisions/Solid" index="3" instance=ExtResource( 2 )]
+position = Vector2( 42, -34 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/CollisionsSolidPassThroughBody3" index="0"]
+position = Vector2( -3, -11 )
+shape = SubResource( 111 )
+
+[node name="CollisionsSolidPassThroughBody4" parent="Collisions/Solid" index="4" instance=ExtResource( 2 )]
+position = Vector2( -19, 28 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/CollisionsSolidPassThroughBody4" index="0"]
+position = Vector2( -18.5, -12.5 )
+shape = SubResource( 10 )
+
+[node name="CollisionsSolidPassThroughBody5" parent="Collisions/Solid" index="5" instance=ExtResource( 2 )]
+position = Vector2( 7, 28 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/CollisionsSolidPassThroughBody5" index="0"]
+position = Vector2( 0.5, -10 )
+shape = SubResource( 11 )
+
+[node name="CollisionsSolidPassThroughBody6" parent="Collisions/Solid" index="6" instance=ExtResource( 2 )]
+position = Vector2( 26, 5 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/CollisionsSolidPassThroughBody6" index="0"]
+position = Vector2( -1, 10.5 )
+shape = SubResource( 12 )
+
+[node name="CollisionsSolidPassThroughBody15" parent="Collisions/Solid" index="7" instance=ExtResource( 2 )]
+position = Vector2( 81, 123 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/CollisionsSolidPassThroughBody15" index="0"]
+position = Vector2( 2, -13 )
+shape = SubResource( 13 )
+
+[node name="CollisionsSolidPassThroughBody16" parent="Collisions/Solid" index="8" instance=ExtResource( 2 )]
+position = Vector2( 24, 79 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/CollisionsSolidPassThroughBody16" index="0"]
+position = Vector2( 3, 9 )
+shape = SubResource( 14 )
+
+[node name="CollisionsSolidPassThroughBody17" parent="Collisions/Solid" index="9" instance=ExtResource( 2 )]
+position = Vector2( 48, 151 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/CollisionsSolidPassThroughBody17" index="0"]
+position = Vector2( 3, 26 )
+shape = SubResource( 15 )
+
+[node name="CollisionsSolidPassThroughBody18" parent="Collisions/Solid" index="10" instance=ExtResource( 2 )]
+position = Vector2( -38, 151 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/CollisionsSolidPassThroughBody18" index="0"]
+position = Vector2( 3, 26 )
+shape = SubResource( 15 )
+
+[node name="CollisionsSolidPassThroughBody19" parent="Collisions/Solid" index="11" instance=ExtResource( 2 )]
+position = Vector2( -46, 213 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/CollisionsSolidPassThroughBody19" index="0"]
+position = Vector2( 54, 3 )
+shape = SubResource( 16 )
+
+[node name="CollisionsSolidPassThroughBody7" parent="Collisions/Solid" index="12" instance=ExtResource( 2 )]
+position = Vector2( 51, -46 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/CollisionsSolidPassThroughBody7" index="0"]
+position = Vector2( 3, -51.5 )
+shape = SubResource( 104 )
+
+[node name="CollisionsSolidPassThroughBody8" parent="Collisions/Solid" index="13" instance=ExtResource( 2 )]
+position = Vector2( -41, -103 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/CollisionsSolidPassThroughBody8" index="0"]
+position = Vector2( 3, -23.5 )
+shape = SubResource( 105 )
+
+[node name="CollisionsSolidPassThroughBody9" parent="Collisions/Solid" index="14" instance=ExtResource( 2 )]
+position = Vector2( 9, -269 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/CollisionsSolidPassThroughBody9" index="0"]
+position = Vector2( -1.125, 0.9375 )
+shape = SubResource( 19 )
+
+[node name="CollisionsSolidPassThroughBody10" parent="Collisions/Solid" index="15" instance=ExtResource( 2 )]
+position = Vector2( -14, 77 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/CollisionsSolidPassThroughBody10" index="0"]
+position = Vector2( 25.875, 2 )
+shape = SubResource( 20 )
+
+[node name="CollisionsSolidPassThroughBody11" parent="Collisions/Solid" index="16" instance=ExtResource( 2 )]
+position = Vector2( -37, 139 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/CollisionsSolidPassThroughBody11" index="0"]
+position = Vector2( -17.125, 2 )
+shape = SubResource( 21 )
+
+[node name="CollisionsSolidPassThroughBody20" parent="Collisions/Solid" index="17" instance=ExtResource( 2 )]
+position = Vector2( 31, 139 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/CollisionsSolidPassThroughBody20" index="0"]
+position = Vector2( 2.375, 2 )
+shape = SubResource( 30 )
+
+[node name="CollisionsSolidPassThroughBody12" parent="Collisions/Solid" index="18" instance=ExtResource( 2 )]
+position = Vector2( -90, 81 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/CollisionsSolidPassThroughBody12" index="0"]
+position = Vector2( 8, 7 )
+shape = SubResource( 22 )
+
+[node name="CollisionsSolidPassThroughBody13" parent="Collisions/Solid" index="19" instance=ExtResource( 2 )]
+position = Vector2( -82, 81 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/CollisionsSolidPassThroughBody13" index="0"]
+position = Vector2( 14, -47 )
+shape = SubResource( 23 )
+
+[node name="CollisionsSolidPassThroughBody14" parent="Collisions/Solid" index="20" instance=ExtResource( 2 )]
+position = Vector2( -70, 73 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/CollisionsSolidPassThroughBody14" index="0"]
+position = Vector2( 8, -49.5 )
+shape = SubResource( 24 )
+
+[node name="Ladder2" parent="Ladders" index="0" instance=ExtResource( 5 )]
+position = Vector2( -23, -134 )
+
+[node name="CollisionShape2D" parent="Ladders/Ladder2" index="0"]
+position = Vector2( 0, -32.5 )
+shape = SubResource( 25 )
+
+[node name="Ladder3" parent="Ladders" index="1" instance=ExtResource( 5 )]
+position = Vector2( -20, 199 )
+
+[node name="CollisionShape2D" parent="Ladders/Ladder3" index="0"]
+position = Vector2( 0, -28 )
+shape = SubResource( 26 )
+
+[node name="MillDoorTop" parent="Doors" index="0" instance=ExtResource( 6 )]
+position = Vector2( 36, -134 )
+z_index = 0
+nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
+nextDoorName = "MillDoorTop"
+
+[node name="MillDoorBottom" parent="Doors" index="1" instance=ExtResource( 6 )]
+position = Vector2( -13, 74 )
+nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
+nextDoorName = "MillDoorBottom"
+
+[node name="MillDoorMiddle" parent="Doors" index="2" instance=ExtResource( 6 )]
+position = Vector2( -20, 12 )
+nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
+nextDoorName = "MillDoorMiddle"
+
+[node name="fire" type="Particles2D" parent="." index="15"]
+position = Vector2( -22, 103 )
+amount = 20
+randomness = 1.0
+process_material = SubResource( 101 )
+texture = ExtResource( 7 )
+
+[node name="MovingPlatform" parent="." index="16" instance=ExtResource( 10 )]
+position = Vector2( -95, -130 )
+
+[node name="Platform" parent="MovingPlatform" index="0"]
+position = Vector2( 104, 0 )
+
+[node name="Sprite" parent="MovingPlatform/Platform" index="1"]
+texture = ExtResource( 11 )
+
+[node name="CollisionShape2D" parent="MovingPlatform/Platform" index="2"]
+position = Vector2( -0.5, -0.5 )
+shape = SubResource( 103 )
+
+[node name="Millstone" parent="." index="17" instance=ExtResource( 12 )]
+position = Vector2( 9, 208 )
+
+[editable path="Camera2D/Clouds"]
+[editable path="Collisions/PassTrough/PassThroughBody4"]
+[editable path="Collisions/PassTrough/PassThroughBody25"]
+[editable path="Collisions/PassTrough/PassThroughBody5"]
+[editable path="Collisions/PassTrough/PassThroughBody22"]
+[editable path="Collisions/PassTrough/PassThroughBody23"]
+[editable path="Collisions/PassTrough/PassThroughBody21"]
+[editable path="Collisions/PassTrough/PassThroughBody6"]
+[editable path="Collisions/PassTrough/PassThroughBody7"]
+[editable path="Collisions/PassTrough/PassThroughBody8"]
+[editable path="Collisions/PassTrough/PassThroughBody11"]
+[editable path="Collisions/PassTrough/PassThroughBody12"]
+[editable path="Collisions/PassTrough/PassThroughBody13"]
+[editable path="Collisions/PassTrough/PassThroughBody14"]
+[editable path="Collisions/PassTrough/PassThroughBody15"]
+[editable path="Collisions/PassTrough/PassThroughBody16"]
+[editable path="Collisions/PassTrough/PassThroughBody17"]
+[editable path="Collisions/PassTrough/PassThroughBody18"]
+[editable path="Collisions/PassTrough/PassThroughBody19"]
+[editable path="Collisions/PassTrough/PassThroughBody20"]
+[editable path="Collisions/PassTrough/PassThroughBody9"]
+[editable path="Collisions/PassTrough/PassThroughBody10"]
+[editable path="Collisions/PassTrough/PassThroughBody24"]
+[editable path="Collisions/Solid/Collisions@Solid@PassThroughBody"]
+[editable path="Collisions/Solid/CollisionsSolidPassThroughBody"]
+[editable path="Collisions/Solid/CollisionsSolidPassThroughBody2"]
+[editable path="Collisions/Solid/CollisionsSolidPassThroughBody3"]
+[editable path="Collisions/Solid/CollisionsSolidPassThroughBody4"]
+[editable path="Collisions/Solid/CollisionsSolidPassThroughBody5"]
+[editable path="Collisions/Solid/CollisionsSolidPassThroughBody6"]
+[editable path="Collisions/Solid/CollisionsSolidPassThroughBody15"]
+[editable path="Collisions/Solid/CollisionsSolidPassThroughBody16"]
+[editable path="Collisions/Solid/CollisionsSolidPassThroughBody17"]
+[editable path="Collisions/Solid/CollisionsSolidPassThroughBody18"]
+[editable path="Collisions/Solid/CollisionsSolidPassThroughBody19"]
+[editable path="Collisions/Solid/CollisionsSolidPassThroughBody7"]
+[editable path="Collisions/Solid/CollisionsSolidPassThroughBody8"]
+[editable path="Collisions/Solid/CollisionsSolidPassThroughBody9"]
+[editable path="Collisions/Solid/CollisionsSolidPassThroughBody10"]
+[editable path="Collisions/Solid/CollisionsSolidPassThroughBody11"]
+[editable path="Collisions/Solid/CollisionsSolidPassThroughBody20"]
+[editable path="Collisions/Solid/CollisionsSolidPassThroughBody12"]
+[editable path="Collisions/Solid/CollisionsSolidPassThroughBody13"]
+[editable path="Collisions/Solid/CollisionsSolidPassThroughBody14"]
+[editable path="Ladders/Ladder2"]
+[editable path="Ladders/Ladder3"]
+[editable path="MovingPlatform"]

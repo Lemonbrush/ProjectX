@@ -29,10 +29,8 @@ func process(_delta):
 func state_check():
 	if !player.is_able_to_climb || player.is_grounded && player.down > 0.01:
 		_state_machine.transition_to("Idle", {})
-		print("tr to idle")
 	elif player.jump && (vertical_move_direction.y == 0):
 		_state_machine.transition_to("Jump")
-		print("tr to jump")
 
 func enter(_msg: Dictionary = {}):
 	player.speed = player.max_run_speed
