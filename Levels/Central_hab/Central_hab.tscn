@@ -1235,14 +1235,26 @@ position = Vector2( -1010, -276 )
 [node name="Doors" type="Node2D" parent="."]
 position = Vector2( -140, -191 )
 
+[node name="MillDoorBottom" parent="Doors" instance=ExtResource( 16 )]
+position = Vector2( -777, 395 )
+nextScenePath = "res://Levels/Central_hab/Mill/Mill.tscn"
+nextDoorName = "MillDoorBottom"
+
+[node name="MillDoorMiddle" parent="Doors" instance=ExtResource( 16 )]
+position = Vector2( -757, 343 )
+nextScenePath = "res://Levels/Central_hab/Mill/Mill.tscn"
+nextDoorName = "MillDoorMiddle"
+
+[node name="MillDoorTop" parent="Doors" instance=ExtResource( 16 )]
+position = Vector2( -757, 187 )
+nextScenePath = "res://Levels/Central_hab/Mill/Mill.tscn"
+nextDoorName = "MillDoorTop"
+
 [node name="Shed_door" parent="Doors" instance=ExtResource( 16 )]
 position = Vector2( -62, 571 )
 z_index = 0
 nextScenePath = "res://Levels/Harbor_house/Harbor_house.tscn"
 nextDoorName = "Harbor_house_door"
-
-[node name="InteractionController" parent="Doors/Shed_door" index="3"]
-action_type = 0
 
 [node name="Gates_2" parent="Doors" instance=ExtResource( 9 )]
 position = Vector2( 191, 154 )
