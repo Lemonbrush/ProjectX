@@ -1250,6 +1250,11 @@ position = Vector2( -757, 187 )
 nextScenePath = "res://Levels/Central_hab/Mill/Mill.tscn"
 nextDoorName = "MillDoorTop"
 
+[node name="PinkHouseDoor" parent="Doors" instance=ExtResource( 16 )]
+position = Vector2( -1262, 139 )
+nextScenePath = "res://Levels/Central_hab/Pink_house/PinkHouse.tscn"
+nextDoorName = "PinkHouseDoor"
+
 [node name="Shed_door" parent="Doors" instance=ExtResource( 16 )]
 position = Vector2( -62, 571 )
 z_index = 0
