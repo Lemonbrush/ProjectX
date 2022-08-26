@@ -16,19 +16,19 @@
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=15]
 
-[sub_resource type="CurveTexture" id=7]
+[sub_resource type="CurveTexture" id=112]
 
 [sub_resource type="Gradient" id=3]
 offsets = PoolRealArray( 0, 0.00285307, 0.248217, 0.774608, 0.997147, 1 )
 colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.239024, 1, 1, 1, 0 )
 
-[sub_resource type="GradientTexture" id=8]
+[sub_resource type="GradientTexture" id=113]
 gradient = SubResource( 3 )
 
 [sub_resource type="Curve" id=6]
 _data = [ Vector2( 0, 0.840033 ), 0.0, 0.0, 0, 0, Vector2( 0.103806, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.571868 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=9]
+[sub_resource type="CurveTexture" id=114]
 curve = SubResource( 6 )
 
 [sub_resource type="ParticlesMaterial" id=106]
@@ -41,11 +41,11 @@ initial_velocity = 10.0
 initial_velocity_random = 0.5
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale_curve = SubResource( 9 )
-color_ramp = SubResource( 8 )
+scale_curve = SubResource( 114 )
+color_ramp = SubResource( 113 )
 anim_offset = 1.0
 anim_offset_random = 1.0
-anim_offset_curve = SubResource( 7 )
+anim_offset_curve = SubResource( 112 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 12, 2 )
@@ -144,13 +144,13 @@ extents = Vector2( 8, 37 )
 offsets = PoolRealArray( 0.00294118, 0.147059, 0.467647, 0.835294, 0.997059, 1 )
 colors = PoolColorArray( 0.964844, 0.650645, 0.206024, 1, 0.792969, 0.359628, 0.0117353, 1, 0.78125, 0.251676, 0.0677194, 1, 1, 1, 1, 0.694117, 1, 1, 1, 0.541176, 1, 1, 1, 0 )
 
-[sub_resource type="GradientTexture" id=96]
+[sub_resource type="GradientTexture" id=115]
 gradient = SubResource( 99 )
 
 [sub_resource type="Curve" id=100]
 _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.21134, 0.354712 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0393969 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=98]
+[sub_resource type="CurveTexture" id=116]
 curve = SubResource( 100 )
 
 [sub_resource type="ParticlesMaterial" id=101]
@@ -170,8 +170,8 @@ linear_accel_random = 1.0
 angle = 360.0
 angle_random = 1.0
 scale = 1.5
-scale_curve = SubResource( 98 )
-color_ramp = SubResource( 96 )
+scale_curve = SubResource( 116 )
+color_ramp = SubResource( 115 )
 
 [sub_resource type="RectangleShape2D" id=103]
 extents = Vector2( 17.5, 2.5 )
