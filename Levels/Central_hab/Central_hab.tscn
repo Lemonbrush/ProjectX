@@ -1240,6 +1240,16 @@ position = Vector2( -777, 395 )
 nextScenePath = "res://Levels/Central_hab/Mill/Mill.tscn"
 nextDoorName = "MillDoorBottom"
 
+[node name="YellowHouseTopDoor" parent="Doors" instance=ExtResource( 16 )]
+position = Vector2( -570, 519 )
+nextScenePath = "res://Levels/Central_hab/Yellow_house/YellowHouse.tscn"
+nextDoorName = "YellowHouseTopDoor"
+
+[node name="YellowHouseBottomDoor" parent="Doors" instance=ExtResource( 16 )]
+position = Vector2( -590, 571 )
+nextScenePath = "res://Levels/Central_hab/Yellow_house/YellowHouse.tscn"
+nextDoorName = "YellowHouseBottomDoor"
+
 [node name="MillDoorMiddle" parent="Doors" instance=ExtResource( 16 )]
 position = Vector2( -757, 343 )
 nextScenePath = "res://Levels/Central_hab/Mill/Mill.tscn"
