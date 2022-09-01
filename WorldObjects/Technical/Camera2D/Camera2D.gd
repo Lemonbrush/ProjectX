@@ -5,8 +5,9 @@ onready var screenShaker = $ScreenShaker
 
 var targetPosition = Vector2.ZERO
 
-export(bool) var follow_player = true
 export(Color, RGB) var backgroundColor
+
+var follow_player = true
 
 # Lifecycle Functions
 

@@ -4,6 +4,8 @@ class_name BaseLevel
 var pauseMenu 					= preload("res://UI/PauseMenu/PauseMenu.tscn")
 var bookMenu						= preload("res://UI/BookMenu/BookMenu.tscn")
 
+export(bool) var dynamic_camera = true
+
 onready var player 				= get_node("Player")
 onready var animationPlayer 		= $AnimationPlayer
 onready var camera				= $Camera2D
@@ -15,6 +17,8 @@ func _ready():
 	
 	FileManager.current_level = get_tree().get_current_scene().get_name()
 	correct_player_position_by_door()
+	
+	camera.follow_player = dynamic_camera
 	
 func _unhandled_input(event):
 	if event.is_action_pressed("pause_menu"):
@@ -40,7 +44,7 @@ func correct_player_position_by_door():
 		if door_node:
 			player.global_position = door_node.global_position
 			player.is_entering_out = true
-			if camera.follow_player:
+			if dynamic_camera:
 				camera.instant_focuse_on_target()
 			
 func player_animation_mode_change(isPlayerAnimating):
