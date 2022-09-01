@@ -108,11 +108,11 @@ scale_curve = SubResource( 98 )
 color_ramp = SubResource( 96 )
 
 [node name="PinkHouse" instance=ExtResource( 3 )]
+dynamic_camera = false
 
 [node name="Camera2D" parent="." index="2"]
 position = Vector2( 9, 0 )
 zoom = Vector2( 0.6, 0.6 )
-follow_player = false
 
 [node name="Clouds2" parent="Camera2D" index="2" instance=ExtResource( 5 )]
 position = Vector2( -2, -19 )

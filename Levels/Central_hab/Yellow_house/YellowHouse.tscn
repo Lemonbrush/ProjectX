@@ -86,11 +86,11 @@ extents = Vector2( 4, 25.5 )
 extents = Vector2( 4, 4 )
 
 [node name="YellowHouse" instance=ExtResource( 1 )]
+dynamic_camera = false
 
 [node name="Camera2D" parent="." index="2"]
 position = Vector2( 3, 19 )
 zoom = Vector2( 0.6, 0.6 )
-follow_player = false
 
 [node name="Clouds2" parent="Camera2D" index="2" instance=ExtResource( 5 )]
 position = Vector2( -2, -19 )

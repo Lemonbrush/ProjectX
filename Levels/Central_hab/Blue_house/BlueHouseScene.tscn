@@ -111,11 +111,11 @@ scale_curve = SubResource( 108 )
 color_ramp = SubResource( 107 )
 
 [node name="BlueHouseScene" instance=ExtResource( 2 )]
+dynamic_camera = false
 
 [node name="Camera2D" parent="." index="2"]
 position = Vector2( -3, -12 )
 zoom = Vector2( 0.6, 0.6 )
-follow_player = false
 
 [node name="Clouds2" parent="Camera2D" index="2" instance=ExtResource( 6 )]
 position = Vector2( -2, -19 )
@@ -132,15 +132,15 @@ z_index = 0
 nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "BlueHouseDoor"
 
-[node name="Player" parent="." index="4"]
+[node name="WorldSprite" parent="." index="4"]
+texture = ExtResource( 1 )
+
+[node name="Player" parent="." index="5"]
 position = Vector2( 7, -32 )
 z_index = 1
 
 [node name="Light2D2" parent="Player" index="5"]
 visible = false
-
-[node name="WorldSprite" parent="." index="5"]
-texture = ExtResource( 1 )
 
 [node name="PassThrough" type="Node" parent="Collisions" index="1"]
 
