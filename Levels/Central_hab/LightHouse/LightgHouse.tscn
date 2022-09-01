@@ -583,6 +583,9 @@ shape = SubResource( 116 )
 position = Vector2( 0, -25.5 )
 shape = SubResource( 117 )
 
+[node name="InteractionPopup" parent="Doors/LightPortal" index="4"]
+position = Vector2( 0, -38 )
+
 [node name="AirBeam" parent="AirBlowers" index="0" instance=ExtResource( 5 )]
 position = Vector2( -11, 279 )
 
