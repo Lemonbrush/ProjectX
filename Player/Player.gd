@@ -24,7 +24,7 @@ signal died
 const SNAP 						= 4.0
 const NO_SNAP 					= 0
 
-var respawn_position				
+export(Vector2) var respawn_position				
 var is_ray_ground_detected 		= false
 
 var snap							= Vector2.ZERO
@@ -261,7 +261,8 @@ func disable_attack_area():
 
 func on_hazard_entered(_area):
 	spawnAppearParticles()
-	global_position = respawn_position
+	if respawn_position:
+		global_position = respawn_position
 	spawnAppearParticles()
 
 ############################## Helper Functions ##############################
