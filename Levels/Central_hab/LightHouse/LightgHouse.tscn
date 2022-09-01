@@ -228,6 +228,9 @@ extents = Vector2( 5.5, 35.5 )
 
 [node name="LightgHouse" instance=ExtResource( 1 )]
 
+[node name="Camera2D" parent="." index="2"]
+position = Vector2( 13, 359 )
+
 [node name="WorldSprite" parent="." index="3"]
 texture = ExtResource( 2 )
 

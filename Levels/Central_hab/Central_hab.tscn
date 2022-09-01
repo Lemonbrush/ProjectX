@@ -1,4 +1,4 @@
-[gd_scene load_steps=137 format=2]
+[gd_scene load_steps=138 format=2]
 
 [ext_resource path="res://Assets/Levels/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Dweller/Abstract_dweller/Dweller.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Dweller/NpcActions/idle/idle_npc_action.tres" type="Resource" id=19]
 [ext_resource path="res://Assets/BackgroundGradients/Blue_clouds.png" type="Texture" id=20]
+[ext_resource path="res://WorldObjects/Interactables/Locked_doors/Big_locked_door/BigLockedDoor.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Levels/Central_hab/World_objects/Mill_gear.tscn" type="PackedScene" id=24]
 [ext_resource path="res://WorldObjects/Destructables/Vase/Vase.tscn" type="PackedScene" id=25]
 [ext_resource path="res://WorldObjects/Destructables/Barrel/Barrel.tscn" type="PackedScene" id=26]
@@ -1302,25 +1303,6 @@ z_index = 0
 nextScenePath = "res://Levels/Central_hab/Blue_house/BlueHouseScene.tscn"
 nextDoorName = "BlueHouseDoor"
 
-[node name="LightHouseBottomDoor" parent="Doors" instance=ExtResource( 16 )]
-position = Vector2( 192, -53 )
-z_index = 0
-nextScenePath = "res://Levels/Central_hab/LightHouse/LightgHouse.tscn"
-nextDoorName = "LightHouseBottomDoor"
-
-[node name="GatesBackground" parent="Doors/LightHouseBottomDoor" index="1"]
-margin_left = -15.0
-margin_top = -54.0
-margin_right = 17.0
-
-[node name="CollisionShape2D" parent="Doors/LightHouseBottomDoor/Area2D" index="0"]
-position = Vector2( 1, -27 )
-shape = SubResource( 170 )
-
-[node name="CollisionShape2D" parent="Doors/LightHouseBottomDoor/InteractionController/Area2D" index="0"]
-position = Vector2( 1.5, -17 )
-shape = SubResource( 171 )
-
 [node name="LightHouseTopDoor" parent="Doors" instance=ExtResource( 16 )]
 position = Vector2( 192, -575 )
 z_index = 0
@@ -1339,6 +1321,12 @@ shape = SubResource( 170 )
 [node name="CollisionShape2D" parent="Doors/LightHouseTopDoor/InteractionController/Area2D" index="0"]
 position = Vector2( 1.5, -17 )
 shape = SubResource( 171 )
+
+[node name="LightHouseBottomDoor" parent="Doors" instance=ExtResource( 21 )]
+position = Vector2( 193, -53 )
+nextScenePath = "res://Levels/Central_hab/LightHouse/LightgHouse.tscn"
+nextDoorName = "LightHouseBottomDoor"
+keyGameConstant = "is_lighthouse_key_available"
 
 [node name="Decorations" type="Node2D" parent="."]
 
@@ -2617,8 +2605,6 @@ shape = SubResource( 155 )
 [editable path="Doors/Shed_door"]
 [editable path="Doors/Shed_door/InteractionController"]
 [editable path="Doors/Gates_2"]
-[editable path="Doors/LightHouseBottomDoor"]
-[editable path="Doors/LightHouseBottomDoor/InteractionController"]
 [editable path="Doors/LightHouseTopDoor"]
 [editable path="Doors/LightHouseTopDoor/InteractionController"]
 [editable path="Collisions/PassTrough/PassThroughBody5"]
