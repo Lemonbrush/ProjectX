@@ -66,6 +66,7 @@ var down							= 0.0
 var jump							= false
 var glide						= false
 var is_able_to_glide				= false
+var glide_area_count				= 0
 
 var is_climbing					= false
 var is_grounded					= false
@@ -233,13 +234,17 @@ func on_glide_area_entered(area):
 	if area.get_name() == "water":
 		is_in_water = true
 	else:
+		glide_area_count += 1
 		y_velocity_boost = 6000
 	
 func on_glide_area_exited(area):
 	if area.get_name() == "water":
 		is_in_water = false
-		
-	y_velocity_boost = 0
+	
+	glide_area_count -= 1
+	
+	if glide_area_count == 0:
+		y_velocity_boost = 0
 	
 # Attack
 func on_attack_area_entered(attacked_object):
