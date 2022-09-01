@@ -20,6 +20,7 @@ func on_player_entered(_body):
 func on_player_exited(_body):
 	isAbleToTransition = false
 
-func _on_interact(_body):
+func _on_interact(body):
 	Global.door_name = nextDoorName
+	body.global_position = global_position
 	EventBus.player_entered_door(nextScenePath)
