@@ -48,3 +48,5 @@ energy = 0.7
 [node name="Doors" type="Node2D" parent="."]
 
 [node name="Lighting" type="Node" parent="."]
+
+[node name="AirBlowers" type="Node" parent="."]

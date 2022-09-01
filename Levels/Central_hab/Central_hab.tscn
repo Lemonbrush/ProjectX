@@ -1,4 +1,4 @@
-[gd_scene load_steps=133 format=2]
+[gd_scene load_steps=137 format=2]
 
 [ext_resource path="res://Assets/Levels/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -59,6 +59,12 @@ extents = Vector2( 20, 4 )
 
 [sub_resource type="RectangleShape2D" id=163]
 extents = Vector2( 26.5, 4 )
+
+[sub_resource type="RectangleShape2D" id=170]
+extents = Vector2( 16, 27 )
+
+[sub_resource type="RectangleShape2D" id=171]
+extents = Vector2( 5.5, 27 )
 
 [sub_resource type="TileSet" id=36]
 0/name = "GrassDecorationsSheet.png 0"
@@ -492,7 +498,7 @@ particles_anim_loop = false
 offsets = PoolRealArray( 0.0323529, 0.114706, 0.670588, 1 )
 colors = PoolColorArray( 0, 0, 0, 0, 0.972656, 0.972656, 0.972656, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
 
-[sub_resource type="GradientTexture" id=97]
+[sub_resource type="GradientTexture" id=169]
 gradient = SubResource( 96 )
 
 [sub_resource type="ParticlesMaterial" id=98]
@@ -508,7 +514,7 @@ angular_velocity_random = 1.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 2.0
-color_ramp = SubResource( 97 )
+color_ramp = SubResource( 169 )
 
 [sub_resource type="RectangleShape2D" id=66]
 extents = Vector2( 184, 5 )
@@ -531,11 +537,17 @@ extents = Vector2( 151.5, 8 )
 [sub_resource type="RectangleShape2D" id=37]
 extents = Vector2( 198.5, 8 )
 
-[sub_resource type="RectangleShape2D" id=38]
-extents = Vector2( 88, 8 )
+[sub_resource type="RectangleShape2D" id=165]
+extents = Vector2( 35.5, 8 )
 
-[sub_resource type="RectangleShape2D" id=39]
-extents = Vector2( 72, 8 )
+[sub_resource type="RectangleShape2D" id=166]
+extents = Vector2( 36.5, 8 )
+
+[sub_resource type="RectangleShape2D" id=167]
+extents = Vector2( 27.5, 8 )
+
+[sub_resource type="RectangleShape2D" id=168]
+extents = Vector2( 28.5, 8 )
 
 [sub_resource type="RectangleShape2D" id=40]
 extents = Vector2( 10, 4 )
@@ -1290,6 +1302,44 @@ z_index = 0
 nextScenePath = "res://Levels/Central_hab/Blue_house/BlueHouseScene.tscn"
 nextDoorName = "BlueHouseDoor"
 
+[node name="LightHouseBottomDoor" parent="Doors" instance=ExtResource( 16 )]
+position = Vector2( 192, -53 )
+z_index = 0
+nextScenePath = "res://Levels/Central_hab/LightHouse/LightgHouse.tscn"
+nextDoorName = "LightHouseBottomDoor"
+
+[node name="GatesBackground" parent="Doors/LightHouseBottomDoor" index="1"]
+margin_left = -15.0
+margin_top = -54.0
+margin_right = 17.0
+
+[node name="CollisionShape2D" parent="Doors/LightHouseBottomDoor/Area2D" index="0"]
+position = Vector2( 1, -27 )
+shape = SubResource( 170 )
+
+[node name="CollisionShape2D" parent="Doors/LightHouseBottomDoor/InteractionController/Area2D" index="0"]
+position = Vector2( 1.5, -17 )
+shape = SubResource( 171 )
+
+[node name="LightHouseTopDoor" parent="Doors" instance=ExtResource( 16 )]
+position = Vector2( 192, -575 )
+z_index = 0
+nextScenePath = "res://Levels/Central_hab/LightHouse/LightgHouse.tscn"
+nextDoorName = "LightHouseTopDoor"
+
+[node name="GatesBackground" parent="Doors/LightHouseTopDoor" index="1"]
+margin_left = -15.0
+margin_top = -54.0
+margin_right = 17.0
+
+[node name="CollisionShape2D" parent="Doors/LightHouseTopDoor/Area2D" index="0"]
+position = Vector2( 1, -27 )
+shape = SubResource( 170 )
+
+[node name="CollisionShape2D" parent="Doors/LightHouseTopDoor/InteractionController/Area2D" index="0"]
+position = Vector2( 1.5, -17 )
+shape = SubResource( 171 )
+
 [node name="Decorations" type="Node2D" parent="."]
 
 [node name="Decorations" type="TileMap" parent="Decorations"]
@@ -1528,16 +1578,32 @@ one_way_collision = true
 position = Vector2( -51, -324 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody8" index="0"]
-position = Vector2( 102, 10 )
-shape = SubResource( 38 )
+position = Vector2( 49.5, 10 )
+shape = SubResource( 165 )
+one_way_collision = true
+
+[node name="PassThroughBody13" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
+position = Vector2( 52, -324 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody13" index="0"]
+position = Vector2( 50.5, 10 )
+shape = SubResource( 166 )
 one_way_collision = true
 
 [node name="PassThroughBody9" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
 position = Vector2( -35, -340 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody9" index="0"]
-position = Vector2( 86, 10 )
-shape = SubResource( 39 )
+position = Vector2( 41.5, 10 )
+shape = SubResource( 167 )
+one_way_collision = true
+
+[node name="PassThroughBody25" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
+position = Vector2( 52, -340 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody25" index="0"]
+position = Vector2( 42.5, 10 )
+shape = SubResource( 168 )
 one_way_collision = true
 
 [node name="PassThroughBody11" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
@@ -2078,13 +2144,13 @@ shape = SubResource( 68 )
 [node name="AirBlowers" type="Node" parent="."]
 
 [node name="AirBeam3" parent="AirBlowers" instance=ExtResource( 8 )]
-position = Vector2( -696, 179 )
+position = Vector2( -695, 179 )
 
 [node name="Area2D" parent="AirBlowers/AirBeam3" index="0"]
 position = Vector2( 0, 1 )
 
 [node name="CollisionShape2D" parent="AirBlowers/AirBeam3/Area2D" index="0"]
-position = Vector2( 0.5, -73 )
+position = Vector2( 0, -73 )
 shape = SubResource( 99 )
 
 [node name="AirBeam5" parent="AirBlowers" instance=ExtResource( 8 )]
@@ -2551,6 +2617,10 @@ shape = SubResource( 155 )
 [editable path="Doors/Shed_door"]
 [editable path="Doors/Shed_door/InteractionController"]
 [editable path="Doors/Gates_2"]
+[editable path="Doors/LightHouseBottomDoor"]
+[editable path="Doors/LightHouseBottomDoor/InteractionController"]
+[editable path="Doors/LightHouseTopDoor"]
+[editable path="Doors/LightHouseTopDoor/InteractionController"]
 [editable path="Collisions/PassTrough/PassThroughBody5"]
 [editable path="Collisions/PassTrough/PassThroughBody37"]
 [editable path="Collisions/PassTrough/PassThroughBody41"]
@@ -2560,7 +2630,9 @@ shape = SubResource( 155 )
 [editable path="Collisions/PassTrough/PassThroughBody6"]
 [editable path="Collisions/PassTrough/PassThroughBody7"]
 [editable path="Collisions/PassTrough/PassThroughBody8"]
+[editable path="Collisions/PassTrough/PassThroughBody13"]
 [editable path="Collisions/PassTrough/PassThroughBody9"]
+[editable path="Collisions/PassTrough/PassThroughBody25"]
 [editable path="Collisions/PassTrough/PassThroughBody11"]
 [editable path="Collisions/PassTrough/PassThroughBody14"]
 [editable path="Collisions/PassTrough/PassThroughBody15"]
