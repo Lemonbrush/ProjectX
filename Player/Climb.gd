@@ -38,6 +38,7 @@ func enter(_msg: Dictionary = {}):
 	player.is_jumping = false
 	player.is_climbing = true
 	player.glide = false
+	player.jump = false
 	player.is_able_to_glide = false
 	player.global_position.x = player.climbing_area_position_x
 	vertical_move_direction = Vector2.ZERO
