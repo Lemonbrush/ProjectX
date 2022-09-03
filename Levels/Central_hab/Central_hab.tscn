@@ -1055,7 +1055,9 @@ position = Vector2( -847, -338 )
 position = Vector2( -949, -338 )
 
 [node name="CollisionShape2D" parent="Trees/ShrineTrees/TallTree/PassThroughBody" index="0"]
+position = Vector2( 2.5, -3 )
 shape = SubResource( 159 )
+one_way_collision = true
 
 [node name="PinkHouseTrees" type="Node2D" parent="Trees"]
 
@@ -1181,6 +1183,7 @@ position = Vector2( -105, -98 )
 [node name="CollisionShape2D" parent="Trees/GateTrees/SquashedTree/PassThroughBody" index="0"]
 position = Vector2( -4.5, 21 )
 shape = SubResource( 163 )
+one_way_collision = true
 
 [node name="TallTree4" parent="Trees/GateTrees" instance=ExtResource( 37 )]
 position = Vector2( -573, -66 )
