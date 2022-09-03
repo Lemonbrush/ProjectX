@@ -97,7 +97,6 @@ shape = SubResource( 1 )
 
 [node name="InteractionPopup" parent="." instance=ExtResource( 5 )]
 position = Vector2( 0, -15 )
-interaction_controller_path = NodePath("../Body/InteractionController")
 labelText = "talk"
 
 [node name="Body" type="Node2D" parent="."]

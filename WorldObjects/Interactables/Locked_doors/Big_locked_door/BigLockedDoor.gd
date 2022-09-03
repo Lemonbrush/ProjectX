@@ -31,10 +31,10 @@ func _on_interact(_body):
 	else:
 		enter_door()
 
-func get_game_constant_value_by_string(keyGameConstant):
-	if !GameEventConstants.constants.has(keyGameConstant):
+func get_game_constant_value_by_string(gameConstant):
+	if !GameEventConstants.constants.has(gameConstant):
 		return false
-	return GameEventConstants.constants[keyGameConstant]
+	return GameEventConstants.constants[gameConstant]
 
 func try_to_open_door(could_be_opened):
 	if could_be_opened:

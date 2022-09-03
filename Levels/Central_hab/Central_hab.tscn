@@ -1,4 +1,4 @@
-[gd_scene load_steps=138 format=2]
+[gd_scene load_steps=137 format=2]
 
 [ext_resource path="res://Assets/Levels/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -60,9 +60,6 @@ extents = Vector2( 20, 4 )
 
 [sub_resource type="RectangleShape2D" id=163]
 extents = Vector2( 26.5, 4 )
-
-[sub_resource type="RectangleShape2D" id=170]
-extents = Vector2( 16, 27 )
 
 [sub_resource type="RectangleShape2D" id=171]
 extents = Vector2( 5.5, 27 )
@@ -1055,9 +1052,7 @@ position = Vector2( -847, -338 )
 position = Vector2( -949, -338 )
 
 [node name="CollisionShape2D" parent="Trees/ShrineTrees/TallTree/PassThroughBody" index="0"]
-position = Vector2( 2.5, -3 )
 shape = SubResource( 159 )
-one_way_collision = true
 
 [node name="PinkHouseTrees" type="Node2D" parent="Trees"]
 
@@ -1183,7 +1178,6 @@ position = Vector2( -105, -98 )
 [node name="CollisionShape2D" parent="Trees/GateTrees/SquashedTree/PassThroughBody" index="0"]
 position = Vector2( -4.5, 21 )
 shape = SubResource( 163 )
-one_way_collision = true
 
 [node name="TallTree4" parent="Trees/GateTrees" instance=ExtResource( 37 )]
 position = Vector2( -573, -66 )
@@ -1316,10 +1310,6 @@ nextDoorName = "LightHouseTopDoor"
 margin_left = -15.0
 margin_top = -54.0
 margin_right = 17.0
-
-[node name="CollisionShape2D" parent="Doors/LightHouseTopDoor/Area2D" index="0"]
-position = Vector2( 1, -27 )
-shape = SubResource( 170 )
 
 [node name="CollisionShape2D" parent="Doors/LightHouseTopDoor/InteractionController/Area2D" index="0"]
 position = Vector2( 1.5, -17 )
