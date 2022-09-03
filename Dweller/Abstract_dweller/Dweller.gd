@@ -17,6 +17,7 @@ onready var body = $Body
 onready var interactionController = $Body/InteractionController
 onready var animationPlayer = $AnimationPlayer
 onready var dialogTextBoxController = $DialogTextBoxController
+onready var interactionPopup = $InteractionPopup
 
 var is_state_new = true
 
@@ -36,6 +37,7 @@ func _ready():
 	currentState = actions[currentActionIndex]
 	
 	interactionController.connect("on_interact", self, "on_npc_interact")
+	interactionController.connect("on_approach", self, "on_npc_approach")
 	interactionController.connect("on_leave", self, "finish_talking")
 	waitTimer.connect("timeout", self, "wait_timer_timeout")
 	actTimer.connect("timeout", self, "act_timer_timeout")
@@ -113,12 +115,17 @@ func process_talking(delta):
 	process_still(delta)
 
 func finish_talking():
+	interactionPopup.hide()
 	currentState = actions[currentActionIndex]
 	set_animation_with_state(currentState.state)
 	waitTimer.paused = false
 	body.scale.x = defaultDirection
 
+func on_npc_approach(_body):
+	interactionPopup.show()
+
 func on_npc_interact(interactedBody):
+	interactionPopup.hide()
 	if currentState.state != State.TALKING:
 		is_state_new = true
 		currentState = TalkNpcAction.new()

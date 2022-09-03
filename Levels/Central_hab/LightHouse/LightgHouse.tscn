@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Levels/Rooms/LightHouse/Lighthouse.png" type="Texture" id=2]
@@ -193,20 +193,11 @@ scale_random = 1.0
 scale_curve = SubResource( 114 )
 color_ramp = SubResource( 112 )
 
-[sub_resource type="RectangleShape2D" id=107]
-extents = Vector2( 16, 27 )
-
 [sub_resource type="RectangleShape2D" id=108]
 extents = Vector2( 5.5, 27 )
 
-[sub_resource type="RectangleShape2D" id=109]
-extents = Vector2( 16.5, 27 )
-
 [sub_resource type="RectangleShape2D" id=110]
 extents = Vector2( 6, 27 )
-
-[sub_resource type="RectangleShape2D" id=116]
-extents = Vector2( 12, 35.5 )
 
 [sub_resource type="RectangleShape2D" id=117]
 extents = Vector2( 6, 35.5 )
@@ -536,10 +527,6 @@ margin_left = -15.0
 margin_top = -54.0
 margin_right = 17.0
 
-[node name="CollisionShape2D" parent="Doors/LightHouseBottomDoor/Area2D" index="0"]
-position = Vector2( 1, -27 )
-shape = SubResource( 107 )
-
 [node name="CollisionShape2D" parent="Doors/LightHouseBottomDoor/InteractionController/Area2D" index="0"]
 position = Vector2( 1.5, -17 )
 shape = SubResource( 108 )
@@ -554,10 +541,6 @@ nextDoorName = "LightHouseTopDoor"
 margin_left = -16.0
 margin_top = -54.0
 margin_right = 17.0
-
-[node name="CollisionShape2D" parent="Doors/LightHouseTopDoor/Area2D" index="0"]
-position = Vector2( 0.5, -27 )
-shape = SubResource( 109 )
 
 [node name="CollisionShape2D" parent="Doors/LightHouseTopDoor/InteractionController/Area2D" index="0"]
 position = Vector2( 0, -17 )
@@ -575,15 +558,11 @@ margin_left = -16.0
 margin_top = -54.0
 margin_right = 17.0
 
-[node name="CollisionShape2D" parent="Doors/LightPortal/Area2D" index="0"]
-position = Vector2( 0, -35.5 )
-shape = SubResource( 116 )
-
 [node name="CollisionShape2D" parent="Doors/LightPortal/InteractionController/Area2D" index="0"]
 position = Vector2( 0, -25.5 )
 shape = SubResource( 117 )
 
-[node name="InteractionPopup" parent="Doors/LightPortal" index="4"]
+[node name="InteractionPopup" parent="Doors/LightPortal" index="3"]
 position = Vector2( 0, -38 )
 
 [node name="AirBeam" parent="AirBlowers" index="0" instance=ExtResource( 5 )]

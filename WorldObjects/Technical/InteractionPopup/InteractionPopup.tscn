@@ -7,7 +7,6 @@
 
 [node name="InteractionPopup" type="Node2D"]
 script = ExtResource( 1 )
-interaction_controller_path = NodePath("../InteractionController")
 
 [node name="MarginNode" type="Node2D" parent="."]
 

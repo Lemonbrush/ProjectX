@@ -11,7 +11,7 @@ enum ActionType {
 
 export(ActionType) var action_type = 0
 
-signal on_approach(player, controller)
+signal on_approach(player, controller, body)
 signal on_leave(player, controller)
 signal on_interact(player, controller, body)
 
@@ -28,7 +28,7 @@ func _unhandled_input(event: InputEvent):
 func _on_approach(body):
 	interactedBody = body
 	action_type = 1
-	emit_signal("on_approach")
+	emit_signal("on_approach", body)
 	
 func _on_leave(_body):
 	action_type = 0
