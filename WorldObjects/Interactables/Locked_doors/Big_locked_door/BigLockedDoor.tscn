@@ -41,7 +41,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("UnlockDoorInteractionPopup:visible")
+tracks/1/path = NodePath("InteractionPopup:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -51,18 +51,6 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("EnterDoorInteractionPopup:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -81,7 +69,7 @@ tracks/0/keys = {
 "values": [ 5 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("UnlockDoorInteractionPopup:visible")
+tracks/1/path = NodePath("InteractionPopup:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -91,18 +79,6 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("EnterDoorInteractionPopup:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -144,14 +120,9 @@ hframes = 6
 position = Vector2( 0, -17 )
 shape = SubResource( 2 )
 
-[node name="UnlockDoorInteractionPopup" parent="." instance=ExtResource( 3 )]
-visible = false
+[node name="InteractionPopup" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0, -45 )
 labelText = "Открыть"
-
-[node name="EnterDoorInteractionPopup" parent="." instance=ExtResource( 3 )]
-position = Vector2( 0, -45 )
-labelText = "Войти"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Open"

@@ -6,21 +6,32 @@ export(bool) var isLocked = true
 export(String) var keyGameConstant
 
 onready var interactionController = $InteractionController
-onready var unlockDoorPopup = $UnlockDoorInteractionPopup
-onready var enterDoorPopup = $EnterDoorInteractionPopup
+onready var interactionPopup = $InteractionPopup
 onready var animationPlayer = $AnimationPlayer
 
 var isAbleToTransition = false
 
 func _ready():
 	interactionController.connect("on_interact", self, "_on_interact")
+	interactionController.connect("on_approach", self, "_on_approach")
+	interactionController.connect("on_leave", self, "_on_leave")
 	
 	if isLocked:
 		animationPlayer.play("Idle")
 	else:
 		animationPlayer.play("Opened")
 
+func _on_approach(_body):
+	if isLocked:
+		interactionPopup.show("Открыть")
+	else:
+		interactionPopup.show("Войти")
+	
+func _on_leave():
+	interactionPopup.hide()
+	
 func _on_interact(_body):
+	interactionPopup.hide()
 	var could_be_opened = false
 	
 	if keyGameConstant == null || get_game_constant_value_by_string(keyGameConstant):

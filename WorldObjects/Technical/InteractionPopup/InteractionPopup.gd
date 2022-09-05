@@ -10,7 +10,10 @@ func _ready():
 	modulate.a = 0.0
 	label.text = labelText
 	
-func show():
+func show(new_text = null):
+	if new_text != null:
+		labelText = new_text
+	
 	if modulate.a != 1.0:
 		marginNode.position.y = 10
 		tween.stop(self)

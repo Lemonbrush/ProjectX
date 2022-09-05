@@ -1,4 +1,4 @@
-[gd_scene load_steps=137 format=2]
+[gd_scene load_steps=167 format=2]
 
 [ext_resource path="res://Assets/Levels/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -21,6 +21,8 @@
 [ext_resource path="res://Dweller/NpcActions/idle/idle_npc_action.tres" type="Resource" id=19]
 [ext_resource path="res://Assets/BackgroundGradients/Blue_clouds.png" type="Texture" id=20]
 [ext_resource path="res://WorldObjects/Interactables/Locked_doors/Big_locked_door/BigLockedDoor.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Dweller/NpcActions/idle/idle_npc_action.gd" type="Script" id=22]
+[ext_resource path="res://Dweller/NpcActions/walk/Walk_npc_action.gd" type="Script" id=23]
 [ext_resource path="res://Levels/Central_hab/World_objects/Mill_gear.tscn" type="PackedScene" id=24]
 [ext_resource path="res://WorldObjects/Destructables/Vase/Vase.tscn" type="PackedScene" id=25]
 [ext_resource path="res://WorldObjects/Destructables/Barrel/Barrel.tscn" type="PackedScene" id=26]
@@ -748,6 +750,205 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 13, 14, 15, 16, 17, 18 ]
 }
+
+[sub_resource type="Resource" id=175]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 50
+target_x_position = 80
+
+[sub_resource type="Resource" id=176]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 50
+target_x_position = 225
+
+[sub_resource type="Resource" id=177]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 40
+target_x_position = 80
+
+[sub_resource type="Resource" id=178]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 40
+target_x_position = 225
+
+[sub_resource type="Resource" id=172]
+resource_local_to_scene = true
+script = ExtResource( 22 )
+wait_time = 3.0
+is_infinite = false
+
+[sub_resource type="Resource" id=173]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 10
+target_x_position = -300
+
+[sub_resource type="Resource" id=174]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 10
+target_x_position = -600
+
+[sub_resource type="Animation" id=179]
+resource_name = "Idle"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
+}
+
+[sub_resource type="Animation" id=180]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=181]
+resource_name = "Walk"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 13, 14, 15, 16, 17, 18 ]
+}
+
+[sub_resource type="Resource" id=193]
+resource_local_to_scene = true
+script = ExtResource( 22 )
+wait_time = 10.0
+is_infinite = false
+
+[sub_resource type="Resource" id=194]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 25
+target_x_position = -1000
+
+[sub_resource type="Resource" id=195]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 25
+target_x_position = -750
+
+[sub_resource type="Resource" id=196]
+resource_local_to_scene = true
+script = ExtResource( 22 )
+wait_time = 3.0
+is_infinite = false
+
+[sub_resource type="Resource" id=197]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 10
+target_x_position = -960
+
+[sub_resource type="Resource" id=199]
+resource_local_to_scene = true
+script = ExtResource( 22 )
+wait_time = 3.0
+is_infinite = false
+
+[sub_resource type="Resource" id=198]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 10
+target_x_position = -925
+
+[sub_resource type="Resource" id=182]
+resource_local_to_scene = true
+script = ExtResource( 22 )
+wait_time = 3.0
+is_infinite = false
+
+[sub_resource type="Resource" id=183]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 10
+target_x_position = -1250
+
+[sub_resource type="Resource" id=184]
+resource_local_to_scene = true
+script = ExtResource( 22 )
+wait_time = 3.0
+is_infinite = false
+
+[sub_resource type="Resource" id=185]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 10
+target_x_position = -1175
+
+[sub_resource type="Resource" id=190]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 10
+target_x_position = -775
+
+[sub_resource type="Resource" id=191]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 10
+target_x_position = -700
+
+[sub_resource type="Resource" id=192]
+resource_local_to_scene = true
+script = ExtResource( 22 )
+wait_time = 3.0
+is_infinite = false
+
+[sub_resource type="Resource" id=186]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 50
+target_x_position = -300
+
+[sub_resource type="Resource" id=187]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 50
+target_x_position = -850
+
+[sub_resource type="Resource" id=188]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 30
+target_x_position = -1100
+
+[sub_resource type="Resource" id=189]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 30
+target_x_position = -400
 
 [sub_resource type="RectangleShape2D" id=135]
 extents = Vector2( 8, 8 )
@@ -2292,6 +2493,68 @@ anims/Walk = SubResource( 158 )
 [node name="Body" parent="Dwellers/FiresideDwellerRight" index="5"]
 scale = Vector2( -1, 1 )
 
+[node name="DwellerKidBoy" parent="Dwellers" instance=ExtResource( 18 )]
+position = Vector2( 204, -244 )
+actions = [ SubResource( 175 ), SubResource( 176 ) ]
+
+[node name="DwellerKidGirl" parent="Dwellers" instance=ExtResource( 18 )]
+position = Vector2( 95, -244 )
+actions = [ SubResource( 177 ), SubResource( 178 ) ]
+
+[node name="Dweller2" parent="Dwellers" instance=ExtResource( 18 )]
+position = Vector2( -585, -4 )
+actions = [ SubResource( 172 ), SubResource( 173 ), SubResource( 172 ), SubResource( 174 ) ]
+
+[node name="Dweller3" parent="Dwellers" instance=ExtResource( 18 )]
+position = Vector2( -970, -4 )
+
+[node name="PicnicDwellerLeft" parent="Dwellers" instance=ExtResource( 18 )]
+position = Vector2( -1194, 167 )
+
+[node name="PicnicDwellerRight" parent="Dwellers" instance=ExtResource( 18 )]
+position = Vector2( -1165, 167 )
+
+[node name="AnimationPlayer" parent="Dwellers/PicnicDwellerRight" index="0"]
+anims/Idle = SubResource( 179 )
+anims/RESET = SubResource( 180 )
+anims/Walk = SubResource( 181 )
+
+[node name="Body" parent="Dwellers/PicnicDwellerRight" index="5"]
+scale = Vector2( -1, 1 )
+
+[node name="MiddleMillDweller" parent="Dwellers" instance=ExtResource( 18 )]
+position = Vector2( -752, 200 )
+actions = [ SubResource( 193 ), SubResource( 194 ), SubResource( 195 ) ]
+
+[node name="MiddleMillBalconyDweller" parent="Dwellers" instance=ExtResource( 18 )]
+position = Vector2( -952, 152 )
+actions = [ SubResource( 196 ), SubResource( 197 ), SubResource( 199 ), SubResource( 198 ) ]
+
+[node name="Dweller7" parent="Dwellers" instance=ExtResource( 18 )]
+position = Vector2( -1015, 380 )
+
+[node name="GrannyDweller" parent="Dwellers" instance=ExtResource( 18 )]
+position = Vector2( -1234, 381 )
+actions = [ SubResource( 182 ), SubResource( 183 ), SubResource( 184 ), SubResource( 185 ) ]
+
+[node name="YellowHouseDweller" parent="Dwellers" instance=ExtResource( 18 )]
+position = Vector2( -771, 328 )
+actions = [ SubResource( 190 ), SubResource( 191 ), SubResource( 192 ) ]
+
+[node name="Dweller10" parent="Dwellers" instance=ExtResource( 18 )]
+position = Vector2( -634, 380 )
+
+[node name="Dweller11" parent="Dwellers" instance=ExtResource( 18 )]
+position = Vector2( -534, 380 )
+
+[node name="DwellerPeasant" parent="Dwellers" instance=ExtResource( 18 )]
+position = Vector2( -291, 380 )
+actions = [ SubResource( 186 ), SubResource( 187 ) ]
+
+[node name="DwellerPeasant2" parent="Dwellers" instance=ExtResource( 18 )]
+position = Vector2( -808, 380 )
+actions = [ SubResource( 188 ), SubResource( 189 ) ]
+
 [node name="MovingPlatforms" type="Node2D" parent="."]
 
 [node name="MovingPlatform2" type="Node2D" parent="MovingPlatforms"]
@@ -2684,3 +2947,7 @@ shape = SubResource( 155 )
 [editable path="Dwellers/FiresideDwellerLeft/Body/InteractionController"]
 [editable path="Dwellers/FiresideDwellerRight"]
 [editable path="Dwellers/FiresideDwellerRight/Body/InteractionController"]
+[editable path="Dwellers/PicnicDwellerLeft"]
+[editable path="Dwellers/PicnicDwellerLeft/Body/InteractionController"]
+[editable path="Dwellers/PicnicDwellerRight"]
+[editable path="Dwellers/PicnicDwellerRight/Body/InteractionController"]
