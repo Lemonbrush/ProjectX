@@ -1,4 +1,4 @@
-[gd_scene load_steps=170 format=2]
+[gd_scene load_steps=173 format=2]
 
 [ext_resource path="res://Assets/Levels/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -43,6 +43,8 @@
 [ext_resource path="res://WorldObjects/Decorative/Tree/Trees/CurvedTree.tscn" type="PackedScene" id=41]
 [ext_resource path="res://WorldObjects/Decorative/Tree/Background_trees/BackgroundWideTree.tscn" type="PackedScene" id=42]
 [ext_resource path="res://Assets/NPC/OldDwellerSpriteSheet-Sheet.png" type="Texture" id=43]
+[ext_resource path="res://Assets/NPC/RedBandDweller-Sheet.png" type="Texture" id=44]
+[ext_resource path="res://Assets/NPC/GreenBandDweller-Sheet.png" type="Texture" id=45]
 
 [sub_resource type="Environment" id=30]
 background_mode = 4
@@ -703,6 +705,23 @@ extents = Vector2( 7.5, 36.625 )
 [sub_resource type="RectangleShape2D" id=101]
 extents = Vector2( 7.5, 39 )
 
+[sub_resource type="Animation" id=200]
+resource_name = "Idle"
+length = 2.2
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+}
+
 [sub_resource type="Animation" id=156]
 resource_name = "Idle"
 length = 1.2
@@ -821,10 +840,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.001, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+"values": [ 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 }
 
 [sub_resource type="Animation" id=179]
@@ -2509,14 +2528,24 @@ __meta__ = {
 position = Vector2( -1249, -36 )
 
 [node name="FiresideDwellerLeft" parent="Dwellers" instance=ExtResource( 18 )]
-position = Vector2( 408, -4 )
+position = Vector2( 416, -4 )
 actions = [  ]
 currentState = ExtResource( 19 )
+watch_player_on_talk = false
+
+[node name="AnimationPlayer" parent="Dwellers/FiresideDwellerLeft" index="0"]
+autoplay = "RESET"
+anims/Idle = SubResource( 200 )
+
+[node name="Sprite" parent="Dwellers/FiresideDwellerLeft/Body" index="2"]
+texture = ExtResource( 45 )
+vframes = 1
 
 [node name="FiresideDwellerRight" parent="Dwellers" instance=ExtResource( 18 )]
-position = Vector2( 472, -4 )
+position = Vector2( 468, -4 )
 actions = [  ]
 currentState = ExtResource( 19 )
+watch_player_on_talk = false
 defaultDirection = -1
 
 [node name="AnimationPlayer" parent="Dwellers/FiresideDwellerRight" index="0"]
@@ -2526,6 +2555,10 @@ anims/Walk = SubResource( 158 )
 
 [node name="Body" parent="Dwellers/FiresideDwellerRight" index="5"]
 scale = Vector2( -1, 1 )
+
+[node name="Sprite" parent="Dwellers/FiresideDwellerRight/Body" index="2"]
+texture = ExtResource( 44 )
+vframes = 1
 
 [node name="DwellerKidBoy" parent="Dwellers" instance=ExtResource( 18 )]
 position = Vector2( 204, -244 )
