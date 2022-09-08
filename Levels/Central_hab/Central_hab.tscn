@@ -1,4 +1,4 @@
-[gd_scene load_steps=175 format=2]
+[gd_scene load_steps=180 format=2]
 
 [ext_resource path="res://Assets/Levels/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -47,6 +47,14 @@
 [ext_resource path="res://Assets/NPC/GreenBandDweller-Sheet.png" type="Texture" id=45]
 [ext_resource path="res://Assets/NPC/GirlKidDweller-Sheet.png" type="Texture" id=46]
 [ext_resource path="res://Assets/NPC/BoyKidDweller-Sheet.png" type="Texture" id=47]
+[ext_resource path="res://Assets/NPC/GlassesDwellerSprite-Sheet.png" type="Texture" id=48]
+[ext_resource path="res://Assets/NPC/CilinderDwellerSprite-Sheet.png" type="Texture" id=49]
+[ext_resource path="res://Assets/NPC/LongEaredDwellerSprite-Sheet.png" type="Texture" id=50]
+[ext_resource path="res://Assets/NPC/BrownHairGirlDwellerSprite-Sheet.png" type="Texture" id=51]
+[ext_resource path="res://Assets/NPC/PinkHairGirlDwellerSprite-Sheet.png" type="Texture" id=52]
+[ext_resource path="res://Assets/NPC/DoggyLikeDwellerSprite-Sheet.png" type="Texture" id=53]
+[ext_resource path="res://Assets/NPC/SittingBoyDwellerSprite-Sheet.png" type="Texture" id=54]
+[ext_resource path="res://Assets/NPC/SittingGirlDwellerSprite-Sheet.png" type="Texture" id=55]
 
 [sub_resource type="Environment" id=30]
 background_mode = 4
@@ -693,10 +701,10 @@ extents = Vector2( 5.5, 26.5 )
 extents = Vector2( 4.5, 10 )
 
 [sub_resource type="RectangleShape2D" id=94]
-extents = Vector2( 8, 109 )
+extents = Vector2( 8, 105 )
 
 [sub_resource type="RectangleShape2D" id=68]
-extents = Vector2( 8, 93 )
+extents = Vector2( 8, 89 )
 
 [sub_resource type="RectangleShape2D" id=99]
 extents = Vector2( 7.5, 72.25 )
@@ -846,55 +854,6 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-}
-
-[sub_resource type="Animation" id=179]
-resource_name = "Idle"
-length = 1.2
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Body/Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
-}
-
-[sub_resource type="Animation" id=180]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Body/Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
-
-[sub_resource type="Animation" id=181]
-resource_name = "Walk"
-length = 0.6
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Body/Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 13, 14, 15, 16, 17, 18 ]
 }
 
 [sub_resource type="Resource" id=193]
@@ -2368,14 +2327,14 @@ shape = SubResource( 72 )
 position = Vector2( -61, -185 )
 
 [node name="CollisionShape2D" parent="Ladders/Ladder3" index="0"]
-position = Vector2( 0, -22 )
+position = Vector2( 0, -18 )
 shape = SubResource( 94 )
 
 [node name="Ladder2" parent="Ladders" instance=ExtResource( 12 )]
 position = Vector2( -877, 230 )
 
 [node name="CollisionShape2D" parent="Ladders/Ladder2" index="0"]
-position = Vector2( 0, -5 )
+position = Vector2( 0, -1 )
 shape = SubResource( 68 )
 
 [node name="AirBlowers" type="Node" parent="."]
@@ -2593,26 +2552,38 @@ hframes = 16
 position = Vector2( -970, -4 )
 
 [node name="PicnicDwellerLeft" parent="Dwellers" instance=ExtResource( 18 )]
-position = Vector2( -1194, 167 )
+position = Vector2( -1194, 172 )
+watch_player_on_talk = false
+
+[node name="Sprite" parent="Dwellers/PicnicDwellerLeft/Body" index="2"]
+texture = ExtResource( 54 )
+vframes = 1
 
 [node name="PicnicDwellerRight" parent="Dwellers" instance=ExtResource( 18 )]
-position = Vector2( -1165, 167 )
-
-[node name="AnimationPlayer" parent="Dwellers/PicnicDwellerRight" index="0"]
-anims/Idle = SubResource( 179 )
-anims/RESET = SubResource( 180 )
-anims/Walk = SubResource( 181 )
+position = Vector2( -1161, 172 )
+watch_player_on_talk = false
+defaultDirection = -1
 
 [node name="Body" parent="Dwellers/PicnicDwellerRight" index="5"]
 scale = Vector2( -1, 1 )
+
+[node name="Sprite" parent="Dwellers/PicnicDwellerRight/Body" index="2"]
+texture = ExtResource( 55 )
+vframes = 1
 
 [node name="MiddleMillDweller" parent="Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -752, 200 )
 actions = [ SubResource( 193 ), SubResource( 194 ), SubResource( 195 ) ]
 
+[node name="Sprite" parent="Dwellers/MiddleMillDweller/Body" index="2"]
+texture = ExtResource( 48 )
+
 [node name="MiddleMillBalconyDweller" parent="Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -952, 152 )
 actions = [ SubResource( 196 ), SubResource( 197 ), SubResource( 199 ), SubResource( 198 ) ]
+
+[node name="Sprite" parent="Dwellers/MiddleMillBalconyDweller/Body" index="2"]
+texture = ExtResource( 51 )
 
 [node name="BottomMillDweller" parent="Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -1015, 380 )
@@ -2621,9 +2592,15 @@ position = Vector2( -1015, 380 )
 position = Vector2( -1234, 381 )
 actions = [ SubResource( 182 ), SubResource( 183 ), SubResource( 184 ), SubResource( 185 ) ]
 
+[node name="Sprite" parent="Dwellers/GrannyDweller/Body" index="2"]
+texture = ExtResource( 52 )
+
 [node name="YellowHouseDweller" parent="Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -771, 328 )
 actions = [ SubResource( 190 ), SubResource( 191 ), SubResource( 192 ) ]
+
+[node name="Sprite" parent="Dwellers/YellowHouseDweller/Body" index="2"]
+texture = ExtResource( 53 )
 
 [node name="BlueTraderDweller" parent="Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -634, 380 )
@@ -2635,9 +2612,15 @@ position = Vector2( -534, 380 )
 position = Vector2( -291, 380 )
 actions = [ SubResource( 186 ), SubResource( 187 ) ]
 
+[node name="Sprite" parent="Dwellers/DwellerPeasant/Body" index="2"]
+texture = ExtResource( 49 )
+
 [node name="DwellerPeasant2" parent="Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -808, 380 )
 actions = [ SubResource( 188 ), SubResource( 189 ) ]
+
+[node name="Sprite" parent="Dwellers/DwellerPeasant2/Body" index="2"]
+texture = ExtResource( 50 )
 
 [node name="MovingPlatforms" type="Node2D" parent="."]
 
@@ -3041,3 +3024,15 @@ shape = SubResource( 155 )
 [editable path="Dwellers/PicnicDwellerLeft/Body/InteractionController"]
 [editable path="Dwellers/PicnicDwellerRight"]
 [editable path="Dwellers/PicnicDwellerRight/Body/InteractionController"]
+[editable path="Dwellers/MiddleMillDweller"]
+[editable path="Dwellers/MiddleMillDweller/Body/InteractionController"]
+[editable path="Dwellers/MiddleMillBalconyDweller"]
+[editable path="Dwellers/MiddleMillBalconyDweller/Body/InteractionController"]
+[editable path="Dwellers/GrannyDweller"]
+[editable path="Dwellers/GrannyDweller/Body/InteractionController"]
+[editable path="Dwellers/YellowHouseDweller"]
+[editable path="Dwellers/YellowHouseDweller/Body/InteractionController"]
+[editable path="Dwellers/DwellerPeasant"]
+[editable path="Dwellers/DwellerPeasant/Body/InteractionController"]
+[editable path="Dwellers/DwellerPeasant2"]
+[editable path="Dwellers/DwellerPeasant2/Body/InteractionController"]
