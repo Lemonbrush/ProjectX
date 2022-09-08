@@ -1,4 +1,4 @@
-[gd_scene load_steps=180 format=2]
+[gd_scene load_steps=184 format=2]
 
 [ext_resource path="res://Assets/Levels/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -55,6 +55,10 @@
 [ext_resource path="res://Assets/NPC/DoggyLikeDwellerSprite-Sheet.png" type="Texture" id=53]
 [ext_resource path="res://Assets/NPC/SittingBoyDwellerSprite-Sheet.png" type="Texture" id=54]
 [ext_resource path="res://Assets/NPC/SittingGirlDwellerSprite-Sheet.png" type="Texture" id=55]
+[ext_resource path="res://Assets/NPC/TraderDwellerSprite_1-Sheet.png" type="Texture" id=56]
+[ext_resource path="res://Assets/NPC/TraderDwellerSprite_2-Sheet.png" type="Texture" id=57]
+[ext_resource path="res://Assets/NPC/TraderDwellerSprite_3-Sheet.png" type="Texture" id=58]
+[ext_resource path="res://Assets/NPC/FatDwellerSprite-Sheet.png" type="Texture" id=59]
 
 [sub_resource type="Environment" id=30]
 background_mode = 4
@@ -2549,7 +2553,11 @@ texture = ExtResource( 43 )
 hframes = 16
 
 [node name="TopMillDweller" parent="Dwellers" instance=ExtResource( 18 )]
-position = Vector2( -970, -4 )
+position = Vector2( -990, -4 )
+
+[node name="Sprite" parent="Dwellers/TopMillDweller/Body" index="2"]
+texture = ExtResource( 58 )
+vframes = 1
 
 [node name="PicnicDwellerLeft" parent="Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -1194, 172 )
@@ -2586,7 +2594,11 @@ actions = [ SubResource( 196 ), SubResource( 197 ), SubResource( 199 ), SubResou
 texture = ExtResource( 51 )
 
 [node name="BottomMillDweller" parent="Dwellers" instance=ExtResource( 18 )]
-position = Vector2( -1015, 380 )
+position = Vector2( -1013, 380 )
+
+[node name="Sprite" parent="Dwellers/BottomMillDweller/Body" index="2"]
+texture = ExtResource( 57 )
+vframes = 1
 
 [node name="GrannyDweller" parent="Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -1234, 381 )
@@ -2603,10 +2615,20 @@ actions = [ SubResource( 190 ), SubResource( 191 ), SubResource( 192 ) ]
 texture = ExtResource( 53 )
 
 [node name="BlueTraderDweller" parent="Dwellers" instance=ExtResource( 18 )]
-position = Vector2( -634, 380 )
+position = Vector2( -635, 380 )
+
+[node name="Sprite" parent="Dwellers/BlueTraderDweller/Body" index="2"]
+position = Vector2( -1, -11 )
+texture = ExtResource( 59 )
+hframes = 12
+vframes = 1
 
 [node name="PinkTraderDweller" parent="Dwellers" instance=ExtResource( 18 )]
-position = Vector2( -534, 380 )
+position = Vector2( -533, 380 )
+
+[node name="Sprite" parent="Dwellers/PinkTraderDweller/Body" index="2"]
+texture = ExtResource( 56 )
+vframes = 1
 
 [node name="DwellerPeasant" parent="Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -291, 380 )
@@ -3020,6 +3042,8 @@ shape = SubResource( 155 )
 [editable path="Dwellers/DwellerKidGirl/Body/InteractionController"]
 [editable path="Dwellers/ForestOlderDweller"]
 [editable path="Dwellers/ForestOlderDweller/Body/InteractionController"]
+[editable path="Dwellers/TopMillDweller"]
+[editable path="Dwellers/TopMillDweller/Body/InteractionController"]
 [editable path="Dwellers/PicnicDwellerLeft"]
 [editable path="Dwellers/PicnicDwellerLeft/Body/InteractionController"]
 [editable path="Dwellers/PicnicDwellerRight"]
@@ -3028,10 +3052,16 @@ shape = SubResource( 155 )
 [editable path="Dwellers/MiddleMillDweller/Body/InteractionController"]
 [editable path="Dwellers/MiddleMillBalconyDweller"]
 [editable path="Dwellers/MiddleMillBalconyDweller/Body/InteractionController"]
+[editable path="Dwellers/BottomMillDweller"]
+[editable path="Dwellers/BottomMillDweller/Body/InteractionController"]
 [editable path="Dwellers/GrannyDweller"]
 [editable path="Dwellers/GrannyDweller/Body/InteractionController"]
 [editable path="Dwellers/YellowHouseDweller"]
 [editable path="Dwellers/YellowHouseDweller/Body/InteractionController"]
+[editable path="Dwellers/BlueTraderDweller"]
+[editable path="Dwellers/BlueTraderDweller/Body/InteractionController"]
+[editable path="Dwellers/PinkTraderDweller"]
+[editable path="Dwellers/PinkTraderDweller/Body/InteractionController"]
 [editable path="Dwellers/DwellerPeasant"]
 [editable path="Dwellers/DwellerPeasant/Body/InteractionController"]
 [editable path="Dwellers/DwellerPeasant2"]
