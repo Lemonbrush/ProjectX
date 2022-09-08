@@ -1,4 +1,4 @@
-[gd_scene load_steps=174 format=2]
+[gd_scene load_steps=175 format=2]
 
 [ext_resource path="res://Assets/Levels/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -46,6 +46,7 @@
 [ext_resource path="res://Assets/NPC/RedBandDweller-Sheet.png" type="Texture" id=44]
 [ext_resource path="res://Assets/NPC/GreenBandDweller-Sheet.png" type="Texture" id=45]
 [ext_resource path="res://Assets/NPC/GirlKidDweller-Sheet.png" type="Texture" id=46]
+[ext_resource path="res://Assets/NPC/BoyKidDweller-Sheet.png" type="Texture" id=47]
 
 [sub_resource type="Environment" id=30]
 background_mode = 4
@@ -2565,6 +2566,9 @@ vframes = 1
 position = Vector2( 204, -244 )
 actions = [ SubResource( 175 ), SubResource( 176 ) ]
 
+[node name="Sprite" parent="Dwellers/DwellerKidBoy/Body" index="2"]
+texture = ExtResource( 47 )
+
 [node name="DwellerKidGirl" parent="Dwellers" instance=ExtResource( 18 )]
 position = Vector2( 95, -244 )
 actions = [ SubResource( 177 ), SubResource( 178 ) ]
@@ -3027,6 +3031,8 @@ shape = SubResource( 155 )
 [editable path="Dwellers/FiresideDwellerLeft/Body/InteractionController"]
 [editable path="Dwellers/FiresideDwellerRight"]
 [editable path="Dwellers/FiresideDwellerRight/Body/InteractionController"]
+[editable path="Dwellers/DwellerKidBoy"]
+[editable path="Dwellers/DwellerKidBoy/Body/InteractionController"]
 [editable path="Dwellers/DwellerKidGirl"]
 [editable path="Dwellers/DwellerKidGirl/Body/InteractionController"]
 [editable path="Dwellers/ForestOlderDweller"]
