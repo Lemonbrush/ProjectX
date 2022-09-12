@@ -22,7 +22,8 @@ func _ready():
 	area2D.connect("body_exited", self, "_on_leave")
 	
 func _unhandled_input(event: InputEvent):
-	if event.is_action_pressed("Interaction") && action_type == 1:
+	if event.is_action_pressed("Interaction") && action_type == 1 && interactedBody != null:
+		print(interactedBody)
 		emit_signal("on_interact", interactedBody)
 
 func _on_approach(body):
