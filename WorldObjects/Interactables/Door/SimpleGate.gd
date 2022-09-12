@@ -21,6 +21,5 @@ func _on_player_exited():
 func _on_interact(body):
 	interactionPopup.hide()
 	Global.door_name = nextDoorName
-	print(body)
 	body.global_position = global_position
 	EventBus.player_entered_door(nextScenePath)

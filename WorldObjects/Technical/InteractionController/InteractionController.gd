@@ -23,7 +23,6 @@ func _ready():
 	
 func _unhandled_input(event: InputEvent):
 	if event.is_action_pressed("Interaction") && action_type == 1 && interactedBody != null:
-		print(interactedBody)
 		emit_signal("on_interact", interactedBody)
 
 func _on_approach(body):
