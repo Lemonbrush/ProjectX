@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=2]
+[gd_scene load_steps=87 format=2]
 
 [ext_resource path="res://Assets/WaterSurface/water_surface3.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -19,9 +19,7 @@
 [ext_resource path="res://WorldObjects/AbstractScenes/AbstractAirBlower.tscn" type="PackedScene" id=17]
 [ext_resource path="res://WorldObjects/Technical/Ladder/Ladder.tscn" type="PackedScene" id=18]
 [ext_resource path="res://WorldObjects/Interactables/OpenableContainers/Chest/Chest.tscn" type="PackedScene" id=19]
-[ext_resource path="res://WorldObjects/Technical/InteractionTextBox/TextBoxPopup.tscn" type="PackedScene" id=20]
-[ext_resource path="res://WorldObjects/Technical/InteractionController/InteractionController.tscn" type="PackedScene" id=21]
-[ext_resource path="res://WorldObjects/Technical/InteractionPopup/InteractionPopup.tscn" type="PackedScene" id=22]
+[ext_resource path="res://WorldObjects/Sign/Sign.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Assets/WorldObjects/Signs/Tumbstone.png" type="Texture" id=23]
 [ext_resource path="res://WorldObjects/Moving_platforms/MovingPlatform.gd" type="Script" id=24]
 [ext_resource path="res://Assets/WorldObjects/Floating_block.png" type="Texture" id=25]
@@ -563,8 +561,8 @@ script = ExtResource( 39 )
 wait_time = 0.0
 is_infinite = true
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 17.5, 12 )
+[sub_resource type="RectangleShape2D" id=74]
+extents = Vector2( 20.5, 16 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 12, 7 )
@@ -918,30 +916,25 @@ scale = Vector2( -1, 1 )
 [node name="Signs" type="Node2D" parent="WorldObjects"]
 position = Vector2( 1, 62 )
 
-[node name="TumbSign" type="Node2D" parent="WorldObjects/Signs"]
-position = Vector2( -51, -377 )
-
-[node name="Sprite" type="Sprite" parent="WorldObjects/Signs/TumbSign"]
-position = Vector2( 2, -22 )
-texture = ExtResource( 23 )
-
-[node name="InteractionPopup" parent="WorldObjects/Signs/TumbSign" instance=ExtResource( 22 )]
-position = Vector2( 0, -39 )
-z_index = 99
-labelText = "inspect"
-
-[node name="TextBoxPopup" parent="WorldObjects/Signs/TumbSign" instance=ExtResource( 20 )]
-position = Vector2( 0, -52 )
-z_index = 99
-interaction_controller_path = NodePath("../InteractionController")
+[node name="TumbSign" parent="WorldObjects/Signs" instance=ExtResource( 20 )]
 texts_array = [ "Здесь хранится память 
 о былых временах", "и парочка конфеток..." ]
 
-[node name="InteractionController" parent="WorldObjects/Signs/TumbSign" instance=ExtResource( 21 )]
+[node name="Sprite" parent="WorldObjects/Signs/TumbSign" index="0"]
+position = Vector2( 0, -22 )
+texture = ExtResource( 23 )
+
+[node name="InteractionPopup" parent="WorldObjects/Signs/TumbSign" index="1"]
+position = Vector2( -1, -35 )
+
+[node name="TextBoxPopup" parent="WorldObjects/Signs/TumbSign" index="2"]
+position = Vector2( -1, -52 )
+texts_array = [ "Здесь хранится память 
+о былых временах", "и парочка конфеток..." ]
 
 [node name="CollisionShape2D" parent="WorldObjects/Signs/TumbSign/InteractionController/Area2D" index="0"]
-position = Vector2( 0.5, -2 )
-shape = SubResource( 1 )
+position = Vector2( -1.5, -6 )
+shape = SubResource( 74 )
 
 [node name="Barrels" type="Node2D" parent="WorldObjects"]
 
@@ -1483,6 +1476,7 @@ scale = Vector2( 20.55, 37.05 )
 [editable path="TreesFront/TallTree/PassThroughBody"]
 [editable path="WorldObjects/NPC/Dweller2"]
 [editable path="WorldObjects/NPC/Dweller2/Body/InteractionController"]
+[editable path="WorldObjects/Signs/TumbSign"]
 [editable path="WorldObjects/Signs/TumbSign/InteractionController"]
 [editable path="WorldObjects/Chests/Chest"]
 [editable path="WorldObjects/Chests/Chest/InteractionController"]
