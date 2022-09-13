@@ -1938,7 +1938,7 @@ actions = [ SubResource( 188 ), SubResource( 189 ) ]
 texture = ExtResource( 50 )
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 5 )]
-position = Vector2( -1142, -324 )
+position = Vector2( 51, -41 )
 z_index = 2
 collision_layer = 131
 collision_mask = 124
