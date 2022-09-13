@@ -144,8 +144,6 @@ texture = ExtResource( 2 )
 [node name="Player" parent="." index="4"]
 position = Vector2( 25, 83 )
 z_index = 2
-collision_layer = 131
-collision_mask = 124
 
 [node name="Light2D2" parent="Player" index="5"]
 visible = false
@@ -318,13 +316,11 @@ shape = SubResource( 16 )
 
 [node name="YellowHouseTopDoor" parent="Doors" index="0" instance=ExtResource( 4 )]
 position = Vector2( 32, 21 )
-z_index = 0
 nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "YellowHouseTopDoor"
 
 [node name="YellowHouseBottomDoor" parent="Doors" index="1" instance=ExtResource( 4 )]
 position = Vector2( 3, 83 )
-z_index = 0
 nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "YellowHouseBottomDoor"
 

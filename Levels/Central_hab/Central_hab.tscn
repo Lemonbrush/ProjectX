@@ -1253,7 +1253,7 @@ tracks/0/keys = {
 extents = Vector2( 7014.5, 150 )
 
 [node name="Central_hab" type="Node2D"]
-position = Vector2( -3, -62 )
+position = Vector2( -4, -62 )
 script = ExtResource( 10 )
 
 [node name="GameSpecs" parent="." instance=ExtResource( 36 )]

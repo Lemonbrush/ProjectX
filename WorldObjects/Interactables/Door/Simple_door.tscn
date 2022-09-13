@@ -9,7 +9,6 @@
 extents = Vector2( 3, 16 )
 
 [node name="Door" type="Node2D" groups=["Persist"]]
-z_index = 1
 script = ExtResource( 3 )
 
 [node name="VisibilityChecker" parent="." instance=ExtResource( 4 )]

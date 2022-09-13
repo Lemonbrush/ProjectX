@@ -30,6 +30,8 @@ anims/open_transition = SubResource( 39 )
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 4 )]
 position = Vector2( -410, -9 )
+collision_layer = 131
+collision_mask = 124
 
 [node name="Light2D2" type="Light2D" parent="Player"]
 position = Vector2( 1, 3 )

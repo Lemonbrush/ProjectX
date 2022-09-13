@@ -4,12 +4,12 @@ enum State { IDLE, WALKING, TALKING, ACTING }
 enum Direction { LEFT = 1, RIGHT = -1 }
 
 export (String) var dialogId
-export(Array, Resource) var actions
-export(Resource) var currentState 
+export (Array, Resource) var actions
+export (Resource) var currentState 
 export var currentActionIndex = 0
-export(bool) var watch_player_on_talk = true
+export (bool) var watch_player_on_talk = true
 
-export(Direction) var defaultDirection = Direction.LEFT
+export (Direction) var defaultDirection = Direction.LEFT
 
 onready var waitTimer = $WaitTimer
 onready var actTimer = $ActTimer
