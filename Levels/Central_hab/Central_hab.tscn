@@ -1483,37 +1483,31 @@ position = Vector2( -140, -191 )
 
 [node name="MillDoorBottom" parent="Doors" instance=ExtResource( 16 )]
 position = Vector2( -777, 395 )
-z_index = 0
 nextScenePath = "res://Levels/Central_hab/Mill/Mill.tscn"
 nextDoorName = "MillDoorBottom"
 
 [node name="GreenHouseDoor" parent="Doors" instance=ExtResource( 16 )]
 position = Vector2( -986, 571 )
-z_index = 0
 nextScenePath = "res://Levels/Central_hab/Green_house/GreenHouse.tscn"
 nextDoorName = "GreenHouseDoor"
 
 [node name="YellowHouseTopDoor" parent="Doors" instance=ExtResource( 16 )]
 position = Vector2( -570, 519 )
-z_index = 0
 nextScenePath = "res://Levels/Central_hab/Yellow_house/YellowHouse.tscn"
 nextDoorName = "YellowHouseTopDoor"
 
 [node name="YellowHouseBottomDoor" parent="Doors" instance=ExtResource( 16 )]
 position = Vector2( -590, 571 )
-z_index = 0
 nextScenePath = "res://Levels/Central_hab/Yellow_house/YellowHouse.tscn"
 nextDoorName = "YellowHouseBottomDoor"
 
 [node name="MillDoorMiddle" parent="Doors" instance=ExtResource( 16 )]
 position = Vector2( -757, 343 )
-z_index = 0
 nextScenePath = "res://Levels/Central_hab/Mill/Mill.tscn"
 nextDoorName = "MillDoorMiddle"
 
 [node name="MillDoorTop" parent="Doors" instance=ExtResource( 16 )]
 position = Vector2( -757, 187 )
-z_index = 0
 nextScenePath = "res://Levels/Central_hab/Mill/Mill.tscn"
 nextDoorName = "MillDoorTop"
 
@@ -1524,7 +1518,6 @@ nextDoorName = "PinkHouseDoor"
 
 [node name="Shed_door" parent="Doors" instance=ExtResource( 16 )]
 position = Vector2( -62, 571 )
-z_index = 0
 nextScenePath = "res://Levels/Harbor_house/Harbor_house.tscn"
 nextDoorName = "Harbor_house_door"
 
@@ -1538,13 +1531,11 @@ margin_top = -80.0
 
 [node name="BlueHouseDoor" parent="Doors" instance=ExtResource( 16 )]
 position = Vector2( -255, 555 )
-z_index = 0
 nextScenePath = "res://Levels/Central_hab/Blue_house/BlueHouseScene.tscn"
 nextDoorName = "BlueHouseDoor"
 
 [node name="LightHouseTopDoor" parent="Doors" instance=ExtResource( 16 )]
 position = Vector2( 192, -575 )
-z_index = 0
 nextScenePath = "res://Levels/Central_hab/LightHouse/LightgHouse.tscn"
 nextDoorName = "LightHouseTopDoor"
 
