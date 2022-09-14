@@ -269,7 +269,6 @@ position = Vector2( -9, -28 )
 
 [node name="Sprite" parent="TableDweller/Body" index="2"]
 texture = ExtResource( 6 )
-vframes = 1
 
 [node name="TableSprite" type="Sprite" parent="." index="10"]
 position = Vector2( 8, -38 )
