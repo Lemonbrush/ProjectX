@@ -1775,7 +1775,6 @@ anims/Idle = SubResource( 200 )
 
 [node name="Sprite" parent="Dwellers/FiresideDwellerLeft/Body" index="2"]
 texture = ExtResource( 45 )
-vframes = 1
 
 [node name="FiresideDwellerRight" parent="Dwellers" instance=ExtResource( 18 )]
 position = Vector2( 468, -4 )
@@ -1794,7 +1793,6 @@ scale = Vector2( -1, 1 )
 
 [node name="Sprite" parent="Dwellers/FiresideDwellerRight/Body" index="2"]
 texture = ExtResource( 44 )
-vframes = 1
 
 [node name="DwellerKidBoy" parent="Dwellers" instance=ExtResource( 18 )]
 position = Vector2( 204, -244 )
@@ -1811,7 +1809,7 @@ actions = [ SubResource( 177 ), SubResource( 178 ) ]
 texture = ExtResource( 46 )
 
 [node name="ForestOlderDweller" parent="Dwellers" instance=ExtResource( 18 )]
-position = Vector2( -585, -4 )
+position = Vector2( -585, -5 )
 actions = [ SubResource( 172 ), SubResource( 173 ), SubResource( 172 ), SubResource( 174 ) ]
 
 [node name="AnimationPlayer" parent="Dwellers/ForestOlderDweller" index="0"]
@@ -1819,7 +1817,7 @@ anims/Idle = SubResource( 7 )
 anims/Walk = SubResource( 6 )
 
 [node name="Sprite" parent="Dwellers/ForestOlderDweller/Body" index="2"]
-position = Vector2( 0, -12 )
+position = Vector2( 0, -16 )
 texture = ExtResource( 43 )
 hframes = 16
 
@@ -1828,7 +1826,6 @@ position = Vector2( -990, -4 )
 
 [node name="Sprite" parent="Dwellers/TopMillDweller/Body" index="2"]
 texture = ExtResource( 58 )
-vframes = 1
 
 [node name="MagentaTable" type="Sprite" parent="Dwellers/TopMillDweller"]
 position = Vector2( -4, -9 )
@@ -1840,7 +1837,6 @@ watch_player_on_talk = false
 
 [node name="Sprite" parent="Dwellers/PicnicDwellerLeft/Body" index="2"]
 texture = ExtResource( 54 )
-vframes = 1
 
 [node name="PicnicDwellerRight" parent="Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -1161, 172 )
@@ -1852,7 +1848,6 @@ scale = Vector2( -1, 1 )
 
 [node name="Sprite" parent="Dwellers/PicnicDwellerRight/Body" index="2"]
 texture = ExtResource( 55 )
-vframes = 1
 
 [node name="MiddleMillDweller" parent="Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -752, 203 )
@@ -1873,7 +1868,6 @@ position = Vector2( -1013, 380 )
 
 [node name="Sprite" parent="Dwellers/BottomMillDweller/Body" index="2"]
 texture = ExtResource( 57 )
-vframes = 1
 
 [node name="RedTable" type="Sprite" parent="Dwellers/BottomMillDweller"]
 position = Vector2( -1, -5 )
@@ -1897,10 +1891,8 @@ texture = ExtResource( 53 )
 position = Vector2( -635, 380 )
 
 [node name="Sprite" parent="Dwellers/BlueTraderDweller/Body" index="2"]
-position = Vector2( -1, -11 )
 texture = ExtResource( 59 )
 hframes = 12
-vframes = 1
 
 [node name="BlueTable" type="Sprite" parent="Dwellers/BlueTraderDweller"]
 position = Vector2( -2, -5 )
@@ -1911,7 +1903,6 @@ position = Vector2( -533, 380 )
 
 [node name="Sprite" parent="Dwellers/PinkTraderDweller/Body" index="2"]
 texture = ExtResource( 56 )
-vframes = 1
 
 [node name="PinkTable" type="Sprite" parent="Dwellers/PinkTraderDweller"]
 position = Vector2( -7, -9 )

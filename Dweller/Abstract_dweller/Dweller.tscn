@@ -116,7 +116,7 @@ shape = SubResource( 5 )
 position = Vector2( -1, -16 )
 texture = ExtResource( 4 )
 hframes = 13
-vframes = 2
+vframes = 4
 
 [node name="DialogTextBoxController" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0, -30 )
