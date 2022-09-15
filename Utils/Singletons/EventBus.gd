@@ -28,7 +28,6 @@ func player_picked_up_item(item_name):
 	emit_signal("player_picked_up_item", item_name)
 
 func player_entered_door(nextScenePath):
-	print(nextScenePath)
 	emit_signal("player_entered_door", nextScenePath)
 
 func debug_screen_visibility_updated():

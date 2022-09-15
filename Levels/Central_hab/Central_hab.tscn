@@ -1,4 +1,4 @@
-[gd_scene load_steps=206 format=2]
+[gd_scene load_steps=207 format=2]
 
 [ext_resource path="res://Assets/Levels/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -72,6 +72,7 @@
 [ext_resource path="res://Assets/WorldObjects/Signs/Stone_tumb_sign.png" type="Texture" id=70]
 [ext_resource path="res://Assets/NPC/mysticDweller-Sheet.png" type="Texture" id=71]
 [ext_resource path="res://Dweller/Abstract_dweller/AbstractDweller.tscn" type="PackedScene" id=72]
+[ext_resource path="res://WorldObjects/Pick_ups/Items/Banana/BananaItem.tscn" type="PackedScene" id=73]
 
 [sub_resource type="Environment" id=30]
 background_mode = 4
@@ -2001,22 +2002,22 @@ collision_layer = 3
 collision_mask = 0
 actions = [ SubResource( 205 ), SubResource( 206 ), SubResource( 203 ), SubResource( 204 ) ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Dwellers/MysticDweller"]
-anims/Idle = SubResource( 207 )
-anims/RESET = SubResource( 208 )
-anims/Walk = SubResource( 209 )
-
 [node name="Sprite" type="Sprite" parent="Dwellers/MysticDweller/Body" index="2"]
 position = Vector2( 0, -16 )
 texture = ExtResource( 71 )
 hframes = 26
 vframes = 4
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Dwellers/MysticDweller"]
+anims/Idle = SubResource( 207 )
+anims/RESET = SubResource( 208 )
+anims/Walk = SubResource( 209 )
+
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 5 )]
-position = Vector2( 108, -793 )
+position = Vector2( 530, -20 )
 z_index = 2
 collision_layer = 131
-collision_mask = 124
+collision_mask = 108
 
 [node name="Light2D2" type="Light2D" parent="Player"]
 visible = false
@@ -3155,6 +3156,9 @@ collision_mask = 64
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaterSurface/water"]
 position = Vector2( 1873.5, 319 )
 shape = SubResource( 155 )
+
+[node name="BananaItem" parent="." instance=ExtResource( 73 )]
+position = Vector2( 584, -19 )
 
 [editable path="Trees/ShrineTrees/TallTree"]
 [editable path="Trees/ShrineTrees/TallTree/PassThroughBody"]
