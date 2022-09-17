@@ -1827,7 +1827,7 @@ position = Vector2( 3, -4 )
 scale = Vector2( -1, 1 )
 
 [node name="LighthouseKeyItem" parent="WorldObjects" instance=ExtResource( 74 )]
-position = Vector2( 153, -278 )
+position = Vector2( 83, -256 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 7 )]
 position = Vector2( 44, -72 )
