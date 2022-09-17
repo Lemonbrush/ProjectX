@@ -122,7 +122,7 @@ shape = SubResource( 2 )
 
 [node name="InteractionPopup" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0, -45 )
-labelText = "Открыть"
+labelText = "Войти"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Open"

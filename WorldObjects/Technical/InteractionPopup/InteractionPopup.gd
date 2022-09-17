@@ -13,6 +13,7 @@ func _ready():
 func show(new_text = null):
 	if new_text != null:
 		labelText = new_text
+		label.text = new_text
 	
 	if modulate.a != 1.0:
 		marginNode.position.y = 10

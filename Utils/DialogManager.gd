@@ -33,7 +33,6 @@ func get_next_dialog_by_option(button_option):
 ##### Helper functions
 
 func get_validated_phrase(next_phrase):
-	print(next_phrase["type"])
 	if next_phrase["type"] == "condition":		
 		if is_conditions_satisfied(next_phrase["conditions"]):
 			return get_next_dialog(next_phrase["true"])

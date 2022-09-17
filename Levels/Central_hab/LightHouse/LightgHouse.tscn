@@ -518,7 +518,6 @@ process_material = SubResource( 115 )
 
 [node name="LightHouseBottomDoor" parent="Doors" index="1" instance=ExtResource( 7 )]
 position = Vector2( 7, 386 )
-z_index = 0
 nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "LightHouseBottomDoor"
 
@@ -531,9 +530,11 @@ margin_right = 17.0
 position = Vector2( 1.5, -17 )
 shape = SubResource( 108 )
 
+[node name="InteractionPopup" parent="Doors/LightHouseBottomDoor" index="3"]
+position = Vector2( 0, -47 )
+
 [node name="LightHouseTopDoor" parent="Doors" index="2" instance=ExtResource( 7 )]
 position = Vector2( 7, -136 )
-z_index = 0
 nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "LightHouseTopDoor"
 
@@ -546,9 +547,11 @@ margin_right = 17.0
 position = Vector2( 0, -17 )
 shape = SubResource( 110 )
 
+[node name="InteractionPopup" parent="Doors/LightHouseTopDoor" index="3"]
+position = Vector2( 0, -44 )
+
 [node name="LightPortal" parent="Doors" index="3" instance=ExtResource( 7 )]
 position = Vector2( 8, -224 )
-z_index = 0
 nextScenePath = "res://Levels/FinalLevel/FinalLevel.tscn"
 nextDoorName = "LightPortal"
 
