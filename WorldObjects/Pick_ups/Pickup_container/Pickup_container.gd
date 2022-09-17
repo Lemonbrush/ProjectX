@@ -25,4 +25,4 @@ func on_area_entered(body):
 	queue_free()
 
 func pickedUp():
-	CommandHandler.execute("set %s True" % toggleGameConstant)
+	CommandHandler.execute("set %s %s" %[toggleGameConstant, true])

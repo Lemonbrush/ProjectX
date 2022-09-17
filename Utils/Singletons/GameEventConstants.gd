@@ -7,7 +7,8 @@ func set_default_constants():
 		is_player_talked_to_shore_dweller = false,
 		is_start_gate_open = false,
 		is_lighthouse_key_available = false,
-		is_banana_item_picked_up = false
+		is_banana_item_picked_up = false,
+		is_red_band_dweller_get_banana = false
 	}
 	EventBus.game_const_changed()
 

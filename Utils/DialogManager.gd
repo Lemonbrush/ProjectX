@@ -33,6 +33,7 @@ func get_next_dialog_by_option(button_option):
 ##### Helper functions
 
 func get_validated_phrase(next_phrase):
+	print(next_phrase["type"])
 	if next_phrase["type"] == "condition":		
 		if is_conditions_satisfied(next_phrase["conditions"]):
 			return get_next_dialog(next_phrase["true"])
@@ -54,10 +55,8 @@ func is_condition_satisfied(condition):
 	var condition_name = condition["condition"]
 	var condition_sign = condition["sign"]
 	var condition_value = condition["value"]
-	
 	if GameEventConstants.constants.has(condition_name):
 		var game_value = GameEventConstants.constants[condition_name]
-		
 		return calculate_result_by_condition_sign(condition_sign, game_value, condition_value)
 
 func get_next_phrase_id():
@@ -79,6 +78,7 @@ func execute_commands_if_needed():
 
 func calculate_result_by_condition_sign(condition_sign, value_1, value_2):
 	if typeof(value_1) != typeof(value_2):
+		print("Different condition value types: \n", "game value - ", typeof(value_1), "\ncondition value - ", typeof(value_2))
 		return false
 	
 	match condition_sign:

@@ -1852,6 +1852,7 @@ texture = ExtResource( 45 )
 
 [node name="FiresideDwellerRight" parent="Dwellers" instance=ExtResource( 18 )]
 position = Vector2( 468, -4 )
+dialogId = "red_band_dweller"
 actions = [  ]
 currentState = ExtResource( 19 )
 watch_player_on_talk = false
@@ -2014,7 +2015,7 @@ anims/RESET = SubResource( 208 )
 anims/Walk = SubResource( 209 )
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 5 )]
-position = Vector2( 530, -20 )
+position = Vector2( 76, -50 )
 z_index = 2
 collision_layer = 131
 collision_mask = 108
