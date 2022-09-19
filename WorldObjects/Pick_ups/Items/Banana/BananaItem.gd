@@ -19,9 +19,10 @@ func hit_has_been_landed(_body):
 	if viewScene != null && viewScene.has_method("play_dropped_animation"):
 		viewScene.play_dropped_animation()
 	
-	unpickable_timer.wait_time = pickup_wait_time
-	var _connect = unpickable_timer.connect("timeout", self, "_pickable_timer_handle")
-	unpickable_timer.call_deferred("start")
+	if pickup_wait_time > 0:
+		unpickable_timer.wait_time = pickup_wait_time
+		var _connect = unpickable_timer.connect("timeout", self, "_pickable_timer_handle")
+		unpickable_timer.call_deferred("start")
 
 func _pickable_timer_handle():
 	pickupCollisionShape.set_deferred("disabled", false)
