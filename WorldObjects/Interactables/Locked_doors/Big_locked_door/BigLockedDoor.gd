@@ -21,7 +21,10 @@ func _ready():
 	else:
 		animationPlayer.play("Opened")
 
-func _on_approach(_body):
+func _on_approach(body):
+	if !("is_entering_out" in body && body.is_entering_out == false):
+		return
+	
 	if isLocked:
 		interactionPopup.show("Открыть")
 	else:

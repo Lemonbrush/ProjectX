@@ -11,6 +11,7 @@ signal stop_shake_screen()
 signal debug_screen_visibility_updated()
 
 signal game_const_changed()
+signal show_lighthouse_key()
 
 func start_shake_screen(duration = 0.2, frequency = 16, amplitude = 2, infinity = true):
 	emit_signal("start_shake_screen", duration, frequency, amplitude, infinity)
@@ -28,7 +29,6 @@ func player_picked_up_item(item_name):
 	emit_signal("player_picked_up_item", item_name)
 
 func player_entered_door(nextScenePath):
-	print(nextScenePath)
 	emit_signal("player_entered_door", nextScenePath)
 
 func debug_screen_visibility_updated():
@@ -36,3 +36,6 @@ func debug_screen_visibility_updated():
 
 func game_const_changed():
 	emit_signal("game_const_changed")
+
+func show_lighthouse_key():
+	emit_signal("show_lighthouse_key")

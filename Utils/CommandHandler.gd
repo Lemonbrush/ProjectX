@@ -22,6 +22,8 @@ static func execute(command_line: String):
 			"set":
 				var var_name = args[0]
 				var value = str2var(args[1])
-				GameEventConstants.set_constant(var_name, value)
+				GameEventConstants.set_constant(var_name, bool(value))
 			"emmit":
-				pass
+				var signal_name = args[0]
+				if EventBus.has_method(signal_name):
+					EventBus.call(signal_name)

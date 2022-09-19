@@ -8,7 +8,4 @@
 script = ExtResource( 1 )
 itemScene = ExtResource( 3 )
 
-[node name="Area2D" parent="." index="0"]
-visible = false
-
 [node name="UnpickableTimer" type="Timer" parent="." index="2"]
