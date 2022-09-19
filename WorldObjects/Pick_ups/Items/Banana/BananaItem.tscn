@@ -18,6 +18,7 @@ gravity_scale = 0.0
 script = ExtResource( 1 )
 itemScene = ExtResource( 3 )
 toggleGameConstant = "is_banana_item_picked_up"
+pickup_wait_time = 0.5
 
 [node name="VisibilityNotifier2D" parent="." index="0"]
 visible = false
@@ -46,3 +47,5 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HazardArea" index="0"]
 position = Vector2( -0.5, 2 )
 shape = SubResource( 3 )
+
+[node name="UnpickableTimer" type="Timer" parent="." index="4"]

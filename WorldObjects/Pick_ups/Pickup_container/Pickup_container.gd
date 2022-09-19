@@ -4,8 +4,8 @@ class_name PickupContainer
 export(PackedScene) var itemScene
 export(String) var toggleGameConstant
 
-onready var area2d			    = $PickupArea2D
-onready var visibility_notifier 	= $VisibilityNotifier2D
+onready var area2d			    		= $PickupArea2D
+onready var visibility_notifier 		= $VisibilityNotifier2D
 
 var viewScene
 
