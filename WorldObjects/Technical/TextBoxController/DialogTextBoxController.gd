@@ -60,7 +60,17 @@ func process_gialog_interaction(phrase):
 			finish_dialog()
 
 func process_response(phrase):
-	dialogTextBox.show_text(phrase.text, phrase["responses"])
+	var responses = remove_unconditional_responses(phrase)
+	dialogTextBox.show_text(phrase.text, responses)
+
+func remove_unconditional_responses(phrase):
+	var responses = []
+	for response in phrase["responses"]:
+		if response["conditions"] != null && dialogManager.is_conditions_satisfied(response["conditions"]) == false:
+			continue
+		responses.append(response)
+	
+	return responses
 
 func process_dialog(phrase):
 	dialogTextBox.show_text(phrase.text)

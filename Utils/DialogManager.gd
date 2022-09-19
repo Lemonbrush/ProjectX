@@ -57,6 +57,8 @@ func is_condition_satisfied(condition):
 	if GameEventConstants.constants.has(condition_name):
 		var game_value = GameEventConstants.constants[condition_name]
 		return calculate_result_by_condition_sign(condition_sign, game_value, condition_value)
+	else:
+		print("There is no such game constant as (", condition_name, ")")
 
 func get_next_phrase_id():
 	if current_phrase_id == null:

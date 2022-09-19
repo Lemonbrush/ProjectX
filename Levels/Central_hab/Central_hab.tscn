@@ -2108,7 +2108,7 @@ anims/RESET = SubResource( 208 )
 anims/Walk = SubResource( 209 )
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 5 )]
-position = Vector2( 76, -50 )
+position = Vector2( -1252, -110 )
 z_index = 2
 collision_layer = 131
 collision_mask = 108
