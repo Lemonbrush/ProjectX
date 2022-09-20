@@ -25,7 +25,7 @@ func _ready():
 	
 	var is_game_loaded = Global.is_game_loaded
 	resetGameConstantsButton.disabled = !is_game_loaded
-	gameConstsEditorButton.disabled = !is_game_loaded
+	#gameConstsEditorButton.disabled = !is_game_loaded
 	
 	setup_ui()
 

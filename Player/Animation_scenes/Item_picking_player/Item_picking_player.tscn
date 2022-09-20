@@ -170,4 +170,4 @@ vframes = 13
 frame = 190
 
 [node name="ItemPosition" type="Position2D" parent="."]
-position = Vector2( 0, -20 )
+position = Vector2( 0, -23 )

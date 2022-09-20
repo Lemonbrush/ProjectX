@@ -1,7 +1,7 @@
 extends KinematicBody2D
 class_name AbstractDweller
 
-enum State { IDLE, WALKING, TALKING, ACTING }
+enum State { IDLE, WALKING, TALKING, ACTING, CUSTOME }
 enum Direction { LEFT = 1, RIGHT = -1 }
 
 export(String) var dialogId
@@ -9,6 +9,7 @@ export(Array, Resource) var actions
 export(Resource) var currentState 
 export var currentActionIndex = 0
 export(bool) var watch_player_on_talk = true
+export(String) var custome_animation
 
 export(Direction) var defaultDirection = Direction.LEFT
 
@@ -24,8 +25,6 @@ var is_state_new = true
 
 var velocity = Vector2.ZERO
 var gravity = 500
-
-var current_animation_name
 
 func _ready():
 	dialogTextBoxController.set_dialog_id(dialogId)
@@ -45,7 +44,7 @@ func _ready():
 	
 	#textBoxPopup.connect("dialogueFinished", self, "finish_talking")
 
-func _process(delta): 
+func _process(delta):
 	if !animationPlayer.current_animation:
 		set_animation_with_state(currentState.state)
 	
@@ -58,6 +57,15 @@ func _process(delta):
 			process_talking(delta)
 		State.ACTING:
 			process_acting(delta)
+		State.CUSTOME:
+			process_custome_animation(delta)
+
+func setup_custome_animation(animation_name):
+	var customeAction = NpcAction.new()
+	customeAction.state = State.CUSTOME
+	custome_animation = animation_name
+	currentState = customeAction
+	is_state_new = true
 			
 func setupNextAction():
 	currentActionIndex += 1
@@ -117,17 +125,18 @@ func process_talking(delta):
 
 func finish_talking():
 	interactionPopup.hide()
-	currentState = actions[currentActionIndex]
-	set_animation_with_state(currentState.state)
-	waitTimer.paused = false
-	body.scale.x = defaultDirection
+	if currentState.state != State.CUSTOME:
+		currentState = actions[currentActionIndex]
+		set_animation_with_state(currentState.state)
+		waitTimer.paused = false
+		body.scale.x = defaultDirection
 
 func on_npc_approach(_body):
 	interactionPopup.show()
 
 func on_npc_interact(interactedBody):
 	interactionPopup.hide()
-	if currentState.state != State.TALKING:
+	if currentState.state != State.TALKING && currentState.state != State.CUSTOME:
 		is_state_new = true
 		currentState = TalkNpcAction.new()
 		
@@ -135,6 +144,13 @@ func on_npc_interact(interactedBody):
 			body.scale.x = 1 if interactedBody.position.x > position.x else -1
 
 ### Acting
+
+func process_custome_animation(delta):
+	if is_state_new:
+		animationPlayer.play(custome_animation)
+		is_state_new = false
+	
+	process_still(delta)
 
 func process_acting(delta):
 	if is_state_new:
@@ -163,3 +179,5 @@ func set_animation_with_state(state):
 			animationPlayer.play("Idle")
 		State.ACTING:
 			animationPlayer.play("Act")
+		State.CUSTOME:
+			animationPlayer.play(custome_animation)
