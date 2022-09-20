@@ -11,7 +11,8 @@ func set_default_constants():
 		is_red_band_dweller_get_banana = false,
 		is_love_potion_last_ingredient_pickedup = false,
 		is_love_potion_created = false,
-		is_cauldron_dweller_spoken = false
+		is_cauldron_dweller_spoken = false,
+		is_wish_star_picked_up = false
 	}
 	EventBus.game_const_changed()
 
@@ -22,3 +23,8 @@ func set_constant(constant_name, value):
 		FileManager.save_game()
 	else:
 		print("Error setting game constant")
+
+func is_cauldron_quest_completed():
+	var is_wish_star_picked_up = GameEventConstants.constants.has("is_wish_star_picked_up") && GameEventConstants.constants["is_wish_star_picked_up"]
+	var is_love_potion_created = GameEventConstants.constants.has("is_love_potion_created") && GameEventConstants.constants["is_love_potion_created"]
+	return is_love_potion_created && is_wish_star_picked_up
