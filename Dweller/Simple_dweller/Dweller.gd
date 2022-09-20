@@ -20,6 +20,7 @@ onready var dialogTextBoxController = $DialogTextBoxController
 onready var interactionPopup = $InteractionPopup
 
 var is_state_new = true
+var ignore_process = false
 
 var velocity = Vector2.ZERO
 var gravity = 500
