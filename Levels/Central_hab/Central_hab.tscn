@@ -1621,6 +1621,7 @@ scale = Vector2( 0.77, 0.77 )
 texture = ExtResource( 20 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+pause_mode = 2
 anims/show_lighthouse_key_cut_scene = SubResource( 210 )
 
 [node name="DecorationsBackground" type="Node2D" parent="."]
