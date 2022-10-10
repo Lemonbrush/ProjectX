@@ -75,6 +75,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 0, -32 ), Vector2( 0, -33 ), Vector2( 0, -31 ), Vector2( 0, -32 ), Vector2( 0, -33 ), Vector2( 0, -32 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Particles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=7]
 resource_name = "MillStale"
@@ -148,7 +160,7 @@ color_ramp = SubResource( 6 )
 script = ExtResource( 3 )
 
 [node name="Top" type="Sprite" parent="."]
-position = Vector2( 0, -40.4824 )
+position = Vector2( 0, -32 )
 texture = ExtResource( 1 )
 hframes = 2
 

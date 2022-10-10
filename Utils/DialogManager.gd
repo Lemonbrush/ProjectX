@@ -64,6 +64,9 @@ func get_next_phrase_id():
 	if current_phrase_id == null:
 		return
 	
+	if current_dialog[current_phrase_id]["type"] == "condition":
+		return
+	
 	execute_commands_if_needed()
 	
 	if current_dialog[current_phrase_id].has("next"):

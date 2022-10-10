@@ -26,3 +26,7 @@ func on_area_entered(body):
 
 func pickedUp():
 	CommandHandler.execute("set %s %s" %[toggleGameConstant, true])
+
+func play_view_animation(animation_name):
+	if viewScene.has_method("play_animation"):
+		viewScene.play_animation(animation_name)

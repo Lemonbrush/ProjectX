@@ -14,7 +14,10 @@ func set_default_constants():
 		is_cauldron_dweller_spoken = false,
 		is_wish_star_picked_up = false,
 		is_mill_gear_clanged = true,
-		is_mill_gear_activated = false
+		is_mill_gear_activated = false,
+		player_knows_about_kiss_nip = false,
+		mill_ladder_placed = false,
+		kissnip_picked_up = false
 	}
 	EventBus.game_const_changed()
 

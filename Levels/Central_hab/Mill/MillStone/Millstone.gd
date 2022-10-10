@@ -7,3 +7,6 @@ func _ready():
 		animationPlayer.play("MillActive")
 	else:
 		animationPlayer.play("MillStale")
+
+func show_activate_animation():
+	animationPlayer.play("Activate")

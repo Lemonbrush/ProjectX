@@ -8,7 +8,7 @@ func _ready():
 	else:
 		animationPlayer.play("Run")
 	
-	EventBus.connect("mill_gear_barrel_destructed", self, "mill_gear_cleared")
+	var _connection = EventBus.connect("mill_gear_barrel_destructed", self, "mill_gear_cleared")
 
 func mill_gear_cleared():
 	animationPlayer.play("Run")
