@@ -1,4 +1,5 @@
 extends KinematicBody2D
+class_name Barrel
 
 export (PackedScene) var crashAnimationScene
 export (int) var weight = 600

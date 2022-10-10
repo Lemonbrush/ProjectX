@@ -15,6 +15,10 @@ signal show_lighthouse_key()
 
 signal show_create_love_potion_cut_scene()
 
+signal mill_gear_barrel_destructed()
+signal show_mill_ladder_cut_scene()
+signal show_cat_nip_creation_cut_scene()
+
 func start_shake_screen(duration = 0.2, frequency = 16, amplitude = 2, infinity = true):
 	emit_signal("start_shake_screen", duration, frequency, amplitude, infinity)
 
@@ -44,3 +48,12 @@ func show_lighthouse_key():
 
 func show_create_love_potion_cut_scene():
 	emit_signal("show_create_love_potion_cut_scene")
+	
+func mill_gear_barrel_destructed():
+	emit_signal("mill_gear_barrel_destructed")
+
+func show_mill_ladder_cut_scene():
+	emit_signal("show_mill_ladder_cut_scene")
+
+func show_cat_nip_creation_cut_scene():
+	emit_signal("show_cat_nip_creation_cut_scene")
