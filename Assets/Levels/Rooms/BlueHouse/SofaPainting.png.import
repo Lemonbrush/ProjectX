@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Blue_house_interior.png-b6663de31e2dba5126c38373cbea502a.stex"
+path="res://.import/SofaPainting.png-d3af74afa445253142e763dd05675f8a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Levels/Rooms/Blue_house_interior.png"
-dest_files=[ "res://.import/Blue_house_interior.png-b6663de31e2dba5126c38373cbea502a.stex" ]
+source_file="res://Assets/Levels/Rooms/BlueHouse/SofaPainting.png"
+dest_files=[ "res://.import/SofaPainting.png-d3af74afa445253142e763dd05675f8a.stex" ]
 
 [params]
 

@@ -17,7 +17,8 @@ func set_default_constants():
 		is_mill_gear_activated = false,
 		player_knows_about_kiss_nip = false,
 		mill_ladder_placed = false,
-		kissnip_picked_up = false
+		kissnip_picked_up = false,
+		artist_created_artwork = false
 	}
 	EventBus.game_const_changed()
 
