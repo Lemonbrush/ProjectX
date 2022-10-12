@@ -16,6 +16,8 @@ func get_next_dialog(phrase_id = null):
 	if phrase_id != null:
 		current_phrase_id = phrase_id
 	
+	execute_commands_if_needed()
+	
 	if phrase_id:
 		return get_validated_phrase(current_dialog[phrase_id])
 	else:
@@ -28,6 +30,7 @@ func get_next_dialog(phrase_id = null):
 func get_next_dialog_by_option(button_option):
 	for response in current_dialog[current_phrase_id]["responses"]:
 		if response["text"] == button_option:
+			execute_commands_if_needed()
 			return get_next_dialog(response["next"])
 	
 ##### Helper functions
@@ -66,8 +69,6 @@ func get_next_phrase_id():
 	
 	if current_dialog[current_phrase_id]["type"] == "condition":
 		return
-	
-	execute_commands_if_needed()
 	
 	if current_dialog[current_phrase_id].has("next"):
 		current_phrase_id = current_dialog[current_phrase_id]["next"]

@@ -293,7 +293,7 @@ func spawnAppearParticles():
 	particles.scale = Vector2.ONE * scale
 	particles.global_position = global_position
 
-func start_item_pickup_animation(itemScene):
+func start_item_pickup_animation(itemScene, use_scale_animation = true):
 	EventBus.player_animation_mode_change(true)
 	
 	var itemPickupScene = itemPickupScenePath.instance()
@@ -301,19 +301,23 @@ func start_item_pickup_animation(itemScene):
 	get_parent().add_child(itemPickupScene)
 	itemPickupScene.global_position = global_position
 	itemPickupScene.scale = Vector2.ONE * body.scale
-	itemPickupScene.connect("animationFinished", self, "on_pickup_animation_finished")
+	itemPickupScene.connect("animationFinished", self, "on_pickup_animation_finished", [use_scale_animation])
 	
 	body.visible = false
-	EventBus.camera_focuse_animation(Vector2(0.5, 0.5), 1)
+	
+	if use_scale_animation:
+		EventBus.camera_focuse_animation(Vector2(0.5, 0.5), 1)
 
 func start_door_entering_animation(nextScenePath):
 	entering_scene_path = nextScenePath
 	
-func on_pickup_animation_finished():
+func on_pickup_animation_finished(use_scale_animation = true):
 	EventBus.player_animation_mode_change(false)
 	
 	body.visible = true
-	EventBus.camera_focuse_animation(Vector2(1, 1), 0.5)
+	
+	if use_scale_animation:
+		EventBus.camera_focuse_animation(Vector2(1, 1), 0.5)
 
 func pause_level():
 	get_tree().paused = true 

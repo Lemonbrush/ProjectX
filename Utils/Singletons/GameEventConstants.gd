@@ -18,7 +18,11 @@ func set_default_constants():
 		player_knows_about_kiss_nip = false,
 		mill_ladder_placed = false,
 		kissnip_picked_up = false,
-		artist_created_artwork = false
+		artist_created_artwork = false,
+		artist_told_about_kitty = false,
+		artist_told_about_artwork = false,
+		artist_brush_given = false,
+		is_artist_brush_picked_up = false
 	}
 	EventBus.game_const_changed()
 
@@ -28,7 +32,7 @@ func set_constant(constant_name, value):
 		EventBus.game_const_changed()
 		FileManager.save_game()
 	else:
-		print("Error setting game constant")
+		print("Error setting game constant - ", constant_name, " with value ", value)
 
 func is_cauldron_quest_completed():
 	var is_wish_star_picked_up = GameEventConstants.constants.has("is_wish_star_picked_up") && GameEventConstants.constants["is_wish_star_picked_up"]
