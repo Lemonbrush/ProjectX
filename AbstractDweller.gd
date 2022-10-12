@@ -10,6 +10,7 @@ export(Resource) var currentState
 export var currentActionIndex = 0
 export(bool) var watch_player_on_talk = true
 export(String) var custome_animation
+export(bool) var custom_animations_behavior = false
 
 export(Direction) var defaultDirection = Direction.LEFT
 

@@ -3,6 +3,7 @@ class_name PickupContainer
 
 export(PackedScene) var itemScene
 export(String) var toggleGameConstant
+export(bool) var use_player_pick_up_scale_animation = true
 
 onready var area2d			    		= $PickupArea2D
 onready var visibility_notifier 		= $VisibilityNotifier2D
@@ -19,7 +20,7 @@ func _ready():
 
 func on_area_entered(body):
 	if body.has_method("start_item_pickup_animation"):
-		body.start_item_pickup_animation(itemScene)
+		body.start_item_pickup_animation(itemScene, use_player_pick_up_scale_animation)
 	EventBus.player_picked_up_item(get_name())
 	pickedUp()
 	queue_free()
