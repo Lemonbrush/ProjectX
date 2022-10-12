@@ -1932,6 +1932,7 @@ position = Vector2( -1249, -36 )
 
 [node name="FiresideDwellerLeft" parent="Dwellers" instance=ExtResource( 18 )]
 position = Vector2( 416, -4 )
+dialogId = "green_band_dweller"
 actions = [  ]
 currentState = ExtResource( 19 )
 watch_player_on_talk = false
