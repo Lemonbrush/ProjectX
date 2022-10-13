@@ -22,7 +22,8 @@ func set_default_constants():
 		artist_told_about_kitty = false,
 		artist_told_about_artwork = false,
 		artist_brush_given = false,
-		is_artist_brush_picked_up = false
+		is_artist_brush_picked_up = false,
+		old_dweller_told_about_kittens = false
 	}
 	EventBus.game_const_changed()
 

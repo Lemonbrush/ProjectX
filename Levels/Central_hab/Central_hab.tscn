@@ -1980,6 +1980,7 @@ texture = ExtResource( 46 )
 
 [node name="ForestOlderDweller" parent="Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -585, -5 )
+dialogId = "old_dweller"
 actions = [ SubResource( 172 ), SubResource( 173 ), SubResource( 172 ), SubResource( 174 ) ]
 
 [node name="AnimationPlayer" parent="Dwellers/ForestOlderDweller" index="0"]
