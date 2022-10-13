@@ -1966,6 +1966,7 @@ texture = ExtResource( 44 )
 
 [node name="DwellerKidBoy" parent="Dwellers" instance=ExtResource( 18 )]
 position = Vector2( 204, -244 )
+dialogId = "boy_dweller"
 actions = [ SubResource( 175 ), SubResource( 176 ) ]
 
 [node name="Sprite" parent="Dwellers/DwellerKidBoy/Body" index="2"]
@@ -1973,6 +1974,7 @@ texture = ExtResource( 47 )
 
 [node name="DwellerKidGirl" parent="Dwellers" instance=ExtResource( 18 )]
 position = Vector2( 95, -244 )
+dialogId = "girl_dweller"
 actions = [ SubResource( 177 ), SubResource( 178 ) ]
 
 [node name="Sprite" parent="Dwellers/DwellerKidGirl/Body" index="2"]
@@ -1994,6 +1996,7 @@ hframes = 16
 
 [node name="TopMillDweller" parent="Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -990, -4 )
+dialogId = "mill_employee_dweller"
 
 [node name="Sprite" parent="Dwellers/TopMillDweller/Body" index="2"]
 texture = ExtResource( 58 )
@@ -2022,6 +2025,7 @@ texture = ExtResource( 55 )
 
 [node name="MiddleMillDweller" parent="Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -752, 203 )
+dialogId = "engeneer_dweller"
 actions = [ SubResource( 193 ), SubResource( 194 ), SubResource( 195 ) ]
 
 [node name="Sprite" parent="Dwellers/MiddleMillDweller/Body" index="2"]
@@ -2060,10 +2064,14 @@ texture = ExtResource( 53 )
 
 [node name="BlueTraderDweller" parent="Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -635, 380 )
+dialogId = "fat_dweller"
 
 [node name="Sprite" parent="Dwellers/BlueTraderDweller/Body" index="2"]
 texture = ExtResource( 59 )
 hframes = 12
+
+[node name="DialogTextBoxController" parent="Dwellers/BlueTraderDweller" index="6"]
+z_index = 10
 
 [node name="BlueTable" type="Sprite" parent="Dwellers/BlueTraderDweller"]
 position = Vector2( -2, -5 )
@@ -2074,6 +2082,9 @@ position = Vector2( -533, 380 )
 
 [node name="Sprite" parent="Dwellers/PinkTraderDweller/Body" index="2"]
 texture = ExtResource( 56 )
+
+[node name="DialogTextBoxController" parent="Dwellers/PinkTraderDweller" index="6"]
+z_index = 10
 
 [node name="PinkTable" type="Sprite" parent="Dwellers/PinkTraderDweller"]
 position = Vector2( -7, -9 )
