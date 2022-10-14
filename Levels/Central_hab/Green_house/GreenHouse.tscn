@@ -266,6 +266,7 @@ nextDoorName = "GreenHouseDoor"
 
 [node name="TableDweller" parent="." index="9" instance=ExtResource( 7 )]
 position = Vector2( -9, -28 )
+dialogId = "chinise_son_dweller"
 
 [node name="Sprite" parent="TableDweller/Body" index="2"]
 texture = ExtResource( 6 )
