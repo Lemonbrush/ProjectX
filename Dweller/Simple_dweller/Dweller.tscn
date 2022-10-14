@@ -120,6 +120,7 @@ vframes = 4
 
 [node name="DialogTextBoxController" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, -30 )
+z_index = 10
 interaction_controller_path = NodePath("../Body/InteractionController")
 
 [editable path="Body/InteractionController"]
