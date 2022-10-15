@@ -2016,6 +2016,9 @@ watch_player_on_talk = false
 [node name="Sprite" parent="Dwellers/PicnicDwellerLeft/Body" index="2"]
 texture = ExtResource( 54 )
 
+[node name="DialogTextBoxController" parent="Dwellers/PicnicDwellerLeft" index="6"]
+z_index = 100
+
 [node name="PicnicDwellerRight" parent="Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -1161, 172 )
 dialogId = "lovers_girl_dweller"
@@ -2131,7 +2134,7 @@ anims/RESET = SubResource( 208 )
 anims/Walk = SubResource( 209 )
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 5 )]
-position = Vector2( 52, -51 )
+position = Vector2( -1113, 162 )
 z_index = 2
 collision_layer = 131
 collision_mask = 108
