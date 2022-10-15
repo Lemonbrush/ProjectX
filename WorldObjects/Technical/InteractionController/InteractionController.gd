@@ -23,7 +23,11 @@ func _ready():
 	
 func _unhandled_input(event: InputEvent):
 	if event.is_action_pressed("Interaction") && action_type == 1 && interactedBody != null:
-		emit_signal("on_interact", interactedBody)
+		if Global.active_interaction_controller == null:
+			Global.active_interaction_controller = self
+		
+		if Global.active_interaction_controller == self:
+			emit_signal("on_interact", interactedBody)
 
 func _on_approach(body):
 	interactedBody = body
@@ -32,6 +36,7 @@ func _on_approach(body):
 	
 func _on_leave(_body):
 	action_type = 0
+	Global.active_interaction_controller = null
 	emit_signal("on_leave")
 	
 func disabled(isDisabled):
