@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "AbstractDweller",
 "language": "GDScript",
-"path": "res://AbstractDweller.gd"
+"path": "res://Dweller/Abstract_dweller/AbstractDweller.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Barrel",
