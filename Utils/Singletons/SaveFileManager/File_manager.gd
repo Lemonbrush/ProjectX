@@ -64,7 +64,7 @@ func has_any_save_file():
 ###############
 
 func get_project_version():
-	var version_file_path = 'res://VERSION'
+	var version_file_path = "res://VERSION"
 	var version_file = File.new()
 	var project_version
 	
