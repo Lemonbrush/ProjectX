@@ -1,4 +1,4 @@
-[gd_scene load_steps=209 format=2]
+[gd_scene load_steps=213 format=2]
 
 [ext_resource path="res://Assets/Levels/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -72,6 +72,7 @@
 [ext_resource path="res://Assets/WorldObjects/Signs/Stone_tumb_sign.png" type="Texture" id=70]
 [ext_resource path="res://Assets/NPC/mysticDweller-Sheet.png" type="Texture" id=71]
 [ext_resource path="res://Dweller/Abstract_dweller/AbstractDweller.tscn" type="PackedScene" id=72]
+[ext_resource path="res://Assets/effects/Heart.png" type="Texture" id=73]
 [ext_resource path="res://WorldObjects/Pick_ups/Items/LighthouseKey/LighthouseKeyItem.tscn" type="PackedScene" id=74]
 
 [sub_resource type="Environment" id=30]
@@ -637,6 +638,23 @@ color_ramp = SubResource( 169 )
 
 [sub_resource type="RectangleShape2D" id=202]
 extents = Vector2( 14.75, 16.625 )
+
+[sub_resource type="Curve" id=213]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.282238, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.890511, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=214]
+curve = SubResource( 213 )
+
+[sub_resource type="ParticlesMaterial" id=212]
+emission_shape = 2
+emission_box_extents = Vector3( 15, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, -10, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.1
+scale_random = 1.0
+scale_curve = SubResource( 214 )
 
 [sub_resource type="Animation" id=200]
 resource_name = "Idle"
@@ -1879,39 +1897,41 @@ randomness = 1.0
 process_material = SubResource( 98 )
 texture = ExtResource( 28 )
 
-[node name="MillSign" parent="WorldObjects" instance=ExtResource( 69 )]
+[node name="Signs" type="Node2D" parent="WorldObjects"]
+
+[node name="MillSign" parent="WorldObjects/Signs" instance=ExtResource( 69 )]
 position = Vector2( -829, -4 )
 texts_array = [ "Кисельск", "Население 21 ксися " ]
 
-[node name="LoversSign" parent="WorldObjects" instance=ExtResource( 69 )]
+[node name="LoversSign" parent="WorldObjects/Signs" instance=ExtResource( 69 )]
 position = Vector2( -1075, 170 )
 texts_array = [ "Не мешайте влюбленным", "Свидание в процессе" ]
 
-[node name="CaveTopSign" parent="WorldObjects" instance=ExtResource( 69 )]
+[node name="CaveTopSign" parent="WorldObjects/Signs" instance=ExtResource( 69 )]
 position = Vector2( -328, -100 )
 texts_array = [ " Ми!" ]
 
-[node name="StoneSign" parent="WorldObjects" instance=ExtResource( 69 )]
+[node name="StoneSign" parent="WorldObjects/Signs" instance=ExtResource( 69 )]
 position = Vector2( -1091, -276 )
 
-[node name="Sprite" parent="WorldObjects/StoneSign" index="0"]
+[node name="Sprite" parent="WorldObjects/Signs/StoneSign" index="0"]
 position = Vector2( 0, -20 )
 texture = ExtResource( 70 )
 
-[node name="InteractionPopup" parent="WorldObjects/StoneSign" index="1"]
+[node name="InteractionPopup" parent="WorldObjects/Signs/StoneSign" index="1"]
 position = Vector2( 0, -30 )
 
-[node name="TextBoxPopup" parent="WorldObjects/StoneSign" index="2"]
+[node name="TextBoxPopup" parent="WorldObjects/Signs/StoneSign" index="2"]
 position = Vector2( 0, -47 )
 
-[node name="CollisionShape2D" parent="WorldObjects/StoneSign/InteractionController/Area2D" index="0"]
+[node name="CollisionShape2D" parent="WorldObjects/Signs/StoneSign/InteractionController/Area2D" index="0"]
 position = Vector2( -6.25, -6.375 )
 shape = SubResource( 202 )
 
-[node name="BranchSign" parent="WorldObjects" instance=ExtResource( 69 )]
+[node name="BranchSign" parent="WorldObjects/Signs" instance=ExtResource( 69 )]
 position = Vector2( 870, 124 )
 
-[node name="Sprite" parent="WorldObjects/BranchSign" index="0"]
+[node name="Sprite" parent="WorldObjects/Signs/BranchSign" index="0"]
 position = Vector2( 3, -4 )
 scale = Vector2( -1, 1 )
 
@@ -1920,6 +1940,14 @@ visible = false
 position = Vector2( -94, -257 )
 mode = 0
 gravity_scale = 0.6
+
+[node name="LoversHeartsParticles" type="Particles2D" parent="WorldObjects"]
+position = Vector2( -1177, 147 )
+emitting = false
+amount = 15
+lifetime = 3.0
+process_material = SubResource( 212 )
+texture = ExtResource( 73 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 7 )]
 position = Vector2( -94, -260 )
@@ -2010,13 +2038,18 @@ texture = ExtResource( 61 )
 
 [node name="PicnicDwellerLeft" parent="Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -1194, 172 )
+dialogId = "lover_boy_dweller"
 watch_player_on_talk = false
 
 [node name="Sprite" parent="Dwellers/PicnicDwellerLeft/Body" index="2"]
 texture = ExtResource( 54 )
 
+[node name="DialogTextBoxController" parent="Dwellers/PicnicDwellerLeft" index="6"]
+z_index = 100
+
 [node name="PicnicDwellerRight" parent="Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -1161, 172 )
+dialogId = "lovers_girl_dweller"
 watch_player_on_talk = false
 defaultDirection = -1
 
@@ -2129,7 +2162,7 @@ anims/RESET = SubResource( 208 )
 anims/Walk = SubResource( 209 )
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 5 )]
-position = Vector2( 52, -51 )
+position = Vector2( 54, -58 )
 z_index = 2
 collision_layer = 131
 collision_mask = 108
@@ -3318,10 +3351,10 @@ shape = SubResource( 155 )
 [editable path="Doors/Gates_2"]
 [editable path="Doors/LightHouseTopDoor"]
 [editable path="Doors/LightHouseTopDoor/InteractionController"]
-[editable path="WorldObjects/StoneSign"]
-[editable path="WorldObjects/StoneSign/InteractionController"]
-[editable path="WorldObjects/BranchSign"]
-[editable path="WorldObjects/BranchSign/InteractionController"]
+[editable path="WorldObjects/Signs/StoneSign"]
+[editable path="WorldObjects/Signs/StoneSign/InteractionController"]
+[editable path="WorldObjects/Signs/BranchSign"]
+[editable path="WorldObjects/Signs/BranchSign/InteractionController"]
 [editable path="Dwellers/FiresideDwellerLeft"]
 [editable path="Dwellers/FiresideDwellerLeft/Body/InteractionController"]
 [editable path="Dwellers/FiresideDwellerRight"]

@@ -24,7 +24,16 @@ func set_default_constants():
 		artist_brush_given = false,
 		is_artist_brush_picked_up = false,
 		old_dweller_told_about_kittens = false,
-		talked_to_eary_dweller = false
+		talked_to_eary_dweller = false,
+		lovers_help_offered = false,
+		lovers_she_has_been_asked_about_what_she_like = false,
+		lovers_asking_what_she_like = false,
+		lovers_she_has_been_told_about_him = false,
+		lovers_asking_to_tell_about_him = false,
+		lovers_she_has_been_told_a_story = false,
+		lovers_asking_to_tell_a_story = false,
+		lovers_girl_said_yes = false,
+		lover_dweller_said_thank_you = false
 	}
 	EventBus.game_const_changed()
 
@@ -35,6 +44,13 @@ func set_constant(constant_name, value):
 		FileManager.save_game()
 	else:
 		print("Error setting game constant - ", constant_name, " with value ", value)
+
+func get_constant(constant_name):
+	if constants.has(constant_name):
+		return constants[constant_name]
+	else:
+		print("Error getting game constant - ", constant_name)
+		return
 
 func is_cauldron_quest_completed():
 	var is_wish_star_picked_up = GameEventConstants.constants.has("is_wish_star_picked_up") && GameEventConstants.constants["is_wish_star_picked_up"]

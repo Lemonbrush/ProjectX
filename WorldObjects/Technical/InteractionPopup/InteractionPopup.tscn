@@ -14,22 +14,22 @@ script = ExtResource( 1 )
 margin_left = -40.0
 margin_top = -40.0
 margin_right = 40.0
+mouse_filter = 2
 size_flags_horizontal = 0
 theme = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginNode/CenterContainer"]
 margin_left = 22.0
 margin_top = 13.0
 margin_right = 57.0
 margin_bottom = 27.0
+mouse_filter = 2
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="MarginNode/CenterContainer/HBoxContainer"]
 margin_right = 14.0
 margin_bottom = 14.0
+mouse_filter = 2
 texture = ExtResource( 4 )
 stretch_mode = 6
 
