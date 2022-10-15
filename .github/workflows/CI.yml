@@ -25,12 +25,12 @@ jobs:
       image: barichello/godot-ci:3.5
     steps:
       - name: Download + Authorize Godot
-        uses: actions/checkout@v2.3.4
+        uses: actions/checkout@v2
         
       - name: Setup templates
         run: |
           mkdir -p ~/.local/share/godot/templates/
-          mv /root/.local/share/godot/templates/$GODOT_VERSION.stable ~/.local/share/godot/templates/$GODOT_VERSION.stable
+          mv /root/.local/share/godot/templates/3.5.stable ~/.local/share/godot/templates/3.5.stable
           
       - name: Export (Windows)
         run: |
@@ -47,12 +47,12 @@ jobs:
           mkdir -p dist/linux/
           godot -v --export "Linux/X11" "dist/linux/$EXPORT_NAME.x86_64"
           
-      - name: Add Version Number to Exports # This action requires the VERSION file to be in the directory
+      - name: Add Version Number to Exports # This action requires the VERSION text file to be in the directory
         run: |
           cp ./VERSION ./dist/VERSION
           
       - name: Upload Artifact
-        uses: actions/upload-artifact@v2.2.3
+        uses: actions/upload-artifact@v2
         with:
           name: exports
           path: dist
