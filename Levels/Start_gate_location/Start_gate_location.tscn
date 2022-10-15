@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=2]
+[gd_scene load_steps=87 format=2]
 
 [ext_resource path="res://Assets/WaterSurface/water_surface3.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -19,27 +19,26 @@
 [ext_resource path="res://WorldObjects/AbstractScenes/AbstractAirBlower.tscn" type="PackedScene" id=17]
 [ext_resource path="res://WorldObjects/Technical/Ladder/Ladder.tscn" type="PackedScene" id=18]
 [ext_resource path="res://WorldObjects/Interactables/OpenableContainers/Chest/Chest.tscn" type="PackedScene" id=19]
-[ext_resource path="res://WorldObjects/Technical/InteractionTextBox/TextBoxPopup.tscn" type="PackedScene" id=20]
-[ext_resource path="res://WorldObjects/Technical/InteractionController/InteractionController.tscn" type="PackedScene" id=21]
-[ext_resource path="res://WorldObjects/Technical/InteractionPopup/InteractionPopup.tscn" type="PackedScene" id=22]
+[ext_resource path="res://WorldObjects/Sign/Sign.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Assets/WorldObjects/Signs/Tumbstone.png" type="Texture" id=23]
 [ext_resource path="res://WorldObjects/Moving_platforms/MovingPlatform.gd" type="Script" id=24]
 [ext_resource path="res://Assets/WorldObjects/Floating_block.png" type="Texture" id=25]
 [ext_resource path="res://WorldObjects/Moving_platforms/Paths/VerticalPath.tres" type="Curve2D" id=26]
-[ext_resource path="res://WorldObjects/Decorative/Tree/Abstract_scene/AbstractTree.tscn" type="PackedScene" id=27]
-[ext_resource path="res://Assets/WorldObjects/Trees/tree1.png" type="Texture" id=28]
-[ext_resource path="res://Assets/WorldObjects/Trees/tree2.png" type="Texture" id=29]
-[ext_resource path="res://Assets/WorldObjects/Trees/tree3.png" type="Texture" id=30]
-[ext_resource path="res://Assets/WorldObjects/Trees/back_tree1.png" type="Texture" id=31]
-[ext_resource path="res://Assets/WorldObjects/Trees/back_tree3.png" type="Texture" id=32]
-[ext_resource path="res://Assets/WorldObjects/Trees/back_tree4.png" type="Texture" id=33]
-[ext_resource path="res://Assets/WorldObjects/Trees/back_tree2.png" type="Texture" id=34]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Background_trees/BackgroundSmallWideTree.tscn" type="PackedScene" id=27]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Background_trees/BackgroundSmallTree.tscn" type="PackedScene" id=28]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Background_trees/BackgroundTallWideTree.tscn" type="PackedScene" id=29]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Background_trees/BackgroundWideTree.tscn" type="PackedScene" id=30]
 [ext_resource path="res://Shaders/GodLightsShader.tres" type="Shader" id=35]
 [ext_resource path="res://Assets/BackgroundGradients/purple_clouds.png" type="Texture" id=36]
 [ext_resource path="res://WorldObjects/Destructables/Vase/Vase.tscn" type="PackedScene" id=37]
-[ext_resource path="res://Dweller/Dweller.tscn" type="PackedScene" id=38]
+[ext_resource path="res://Dweller/Simple_dweller/Dweller.tscn" type="PackedScene" id=38]
 [ext_resource path="res://Dweller/NpcActions/idle/idle_npc_action.gd" type="Script" id=39]
-[ext_resource path="res://Dweller/NpcActions/walk/Walk_npc_action.gd" type="Script" id=40]
+[ext_resource path="res://UI/DebugScreen/GameSpecs.tscn" type="PackedScene" id=41]
+[ext_resource path="res://WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=42]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Trees/CurvedTree.tscn" type="PackedScene" id=43]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Trees/BushyTree.tscn" type="PackedScene" id=44]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Trees/TallTree.tscn" type="PackedScene" id=45]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Trees/SquashedTree.tscn" type="PackedScene" id=46]
 
 [sub_resource type="Environment" id=67]
 background_mode = 4
@@ -114,25 +113,13 @@ tracks/3/keys = {
 "method": "on_open_gates_call"
 } ]
 }
-tracks/4/type = "value"
-tracks/4/path = NodePath("WorldObjects/Signs/GatesText:visible")
+tracks/4/type = "method"
+tracks/4/path = NodePath("Camera2D")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-tracks/5/type = "method"
-tracks/5/path = NodePath("Camera2D")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
 "times": PoolRealArray( 1.9, 4.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
@@ -146,24 +133,6 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id=34]
 resource_name = "open_transition"
-
-[sub_resource type="RectangleShape2D" id=60]
-extents = Vector2( 32, 4 )
-
-[sub_resource type="RectangleShape2D" id=61]
-extents = Vector2( 23, 4 )
-
-[sub_resource type="RectangleShape2D" id=62]
-extents = Vector2( 33, 4 )
-
-[sub_resource type="RectangleShape2D" id=63]
-extents = Vector2( 6.25, 4 )
-
-[sub_resource type="RectangleShape2D" id=64]
-extents = Vector2( 31, 4 )
-
-[sub_resource type="RectangleShape2D" id=65]
-extents = Vector2( 32.25, 4 )
 
 [sub_resource type="TileSet" id=36]
 0/name = "GrassDecorationsSheet.png 0"
@@ -587,28 +556,13 @@ extents = Vector2( 32.25, 4 )
 29/shapes = [  ]
 29/z_index = 0
 
-[sub_resource type="Resource" id=69]
-resource_local_to_scene = true
-script = ExtResource( 40 )
-move_speed = 100
-target_x_position = -350
-
-[sub_resource type="Resource" id=71]
-resource_local_to_scene = true
-script = ExtResource( 40 )
-move_speed = 100
-target_x_position = -500
-
 [sub_resource type="Resource" id=72]
 script = ExtResource( 39 )
 wait_time = 0.0
 is_infinite = true
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 17.5, 12 )
-
-[sub_resource type="RectangleShape2D" id=46]
-extents = Vector2( 11.5, 16.5 )
+[sub_resource type="RectangleShape2D" id=74]
+extents = Vector2( 20.5, 16 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 12, 7 )
@@ -773,7 +727,7 @@ tracks/0/keys = {
 [sub_resource type="CanvasItemMaterial" id=40]
 light_mode = 1
 
-[sub_resource type="ConvexPolygonShape2D" id=42]
+[sub_resource type="ConvexPolygonShape2D" id=73]
 points = PoolVector2Array( 0, 0, 0, 16, 16, 16, 16, 0 )
 
 [sub_resource type="TileSet" id=39]
@@ -787,14 +741,14 @@ points = PoolVector2Array( 0, 0, 0, 16, 16, 16, 16, 0 )
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 42 )
+0/shape = SubResource( 73 )
 0/shape_one_way = false
 0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 42 ),
+"shape": SubResource( 73 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
@@ -836,6 +790,8 @@ shader_param/seed = 10.0
 position = Vector2( -3, -62 )
 script = ExtResource( 10 )
 
+[node name="GameSpecs" parent="." instance=ExtResource( 41 )]
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 67 )
 
@@ -845,7 +801,6 @@ anims/Gate_opening_cut_scene = SubResource( 35 )
 anims/open_transition = SubResource( 34 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 7 )]
-position = Vector2( -675, -116 )
 backgroundColor = Color( 0.403922, 0.596078, 0.741176, 1 )
 
 [node name="Stars" parent="Camera2D" instance=ExtResource( 15 )]
@@ -853,55 +808,29 @@ backgroundColor = Color( 0.403922, 0.596078, 0.741176, 1 )
 [node name="Trees" type="Node2D" parent="."]
 position = Vector2( 3, 62 )
 
-[node name="AbstractTree" parent="Trees" instance=ExtResource( 27 )]
-position = Vector2( -474, -57 )
-
-[node name="AbstractTree2" parent="Trees" instance=ExtResource( 27 )]
-position = Vector2( -423, -26 )
-
-[node name="AbstractTree4" parent="Trees" instance=ExtResource( 27 )]
-position = Vector2( 241, -377 )
-
-[node name="AbstractTree7" parent="Trees" instance=ExtResource( 27 )]
-position = Vector2( -183, -377 )
-
-[node name="AbstractTree3" parent="Trees" instance=ExtResource( 27 )]
-position = Vector2( -338, -44 )
-
-[node name="AbstractTree5" parent="Trees" instance=ExtResource( 27 )]
+[node name="CurvedTree" parent="Trees" instance=ExtResource( 43 )]
 position = Vector2( 480, -57 )
 
-[node name="Sprite" parent="Trees/AbstractTree5" index="0"]
-texture = ExtResource( 28 )
+[node name="BushyTree" parent="Trees" instance=ExtResource( 44 )]
+position = Vector2( 211, -377 )
 
-[node name="CollisionShape2D" parent="Trees/AbstractTree5/PassThroughBody" index="0"]
-position = Vector2( 4, -3 )
-shape = SubResource( 60 )
+[node name="TallTree" parent="Trees" instance=ExtResource( 45 )]
+position = Vector2( -474, -57 )
 
-[node name="AbstractTree6" parent="Trees" instance=ExtResource( 27 )]
-position = Vector2( 211, -353 )
+[node name="TallTree2" parent="Trees" instance=ExtResource( 45 )]
+position = Vector2( -423, -26 )
 
-[node name="Sprite" parent="Trees/AbstractTree6" index="0"]
-texture = ExtResource( 29 )
+[node name="TallTree3" parent="Trees" instance=ExtResource( 45 )]
+position = Vector2( -338, -44 )
 
-[node name="PassThroughBody" parent="Trees/AbstractTree6" index="2"]
-position = Vector2( -7, -82 )
+[node name="TallTree4" parent="Trees" instance=ExtResource( 45 )]
+position = Vector2( -183, -377 )
 
-[node name="CollisionShape2D" parent="Trees/AbstractTree6/PassThroughBody" index="0"]
-position = Vector2( 7, -3 )
-shape = SubResource( 61 )
+[node name="TallTree5" parent="Trees" instance=ExtResource( 45 )]
+position = Vector2( 241, -377 )
 
-[node name="AbstractTree8" parent="Trees" instance=ExtResource( 27 )]
-position = Vector2( -312, -365 )
-
-[node name="Sprite" parent="Trees/AbstractTree8" index="0"]
-texture = ExtResource( 30 )
-
-[node name="PassThroughBody" parent="Trees/AbstractTree8" index="2"]
-position = Vector2( -3, -94 )
-
-[node name="CollisionShape2D" parent="Trees/AbstractTree8/PassThroughBody" index="0"]
-shape = SubResource( 62 )
+[node name="SquashedTree" parent="Trees" instance=ExtResource( 46 )]
+position = Vector2( -313, -377 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_limit_end = Vector2( 0, 320 )
@@ -927,95 +856,29 @@ texture = ExtResource( 9 )
 [node name="TreesFront" type="Node2D" parent="."]
 position = Vector2( -622, -75 )
 
-[node name="AbstractTree8" parent="TreesFront" instance=ExtResource( 27 )]
-position = Vector2( -43, 25 )
+[node name="BackgroundSmallTree" parent="TreesFront" instance=ExtResource( 28 )]
+position = Vector2( -93, -28 )
 
-[node name="Sprite" parent="TreesFront/AbstractTree8" index="0"]
-position = Vector2( 21, -82 )
-texture = ExtResource( 33 )
+[node name="BackgroundTallWideTree" parent="TreesFront" instance=ExtResource( 29 )]
+position = Vector2( -106, 1 )
 
-[node name="PassThroughBody" parent="TreesFront/AbstractTree8" index="2"]
-visible = false
-position = Vector2( 8, -101 )
+[node name="BackgroundSmallWideTree" parent="TreesFront" instance=ExtResource( 27 )]
+position = Vector2( -15, 1 )
 
-[node name="CollisionShape2D" parent="TreesFront/AbstractTree8/PassThroughBody" index="0"]
-disabled = true
+[node name="BackgroundWideTree" parent="TreesFront" instance=ExtResource( 30 )]
+position = Vector2( -52, 1 )
 
-[node name="AbstractTree9" parent="TreesFront" instance=ExtResource( 27 )]
-position = Vector2( -43, 25 )
-
-[node name="Sprite" parent="TreesFront/AbstractTree9" index="0"]
-position = Vector2( -59, -55 )
-texture = ExtResource( 32 )
-
-[node name="PassThroughBody" parent="TreesFront/AbstractTree9" index="2"]
-visible = false
-position = Vector2( -38, -80 )
-
-[node name="CollisionShape2D" parent="TreesFront/AbstractTree9/PassThroughBody" index="0"]
-disabled = true
-
-[node name="AbstractTree10" parent="TreesFront" instance=ExtResource( 27 )]
-position = Vector2( -43, 25 )
-
-[node name="Sprite" parent="TreesFront/AbstractTree10" index="0"]
-position = Vector2( 31, -51 )
-texture = ExtResource( 34 )
-
-[node name="CollisionShape2D" parent="TreesFront/AbstractTree10/PassThroughBody" index="0"]
-visible = false
-disabled = true
-
-[node name="AbstractTree11" parent="TreesFront" instance=ExtResource( 27 )]
-position = Vector2( -43, 25 )
-
-[node name="Sprite" parent="TreesFront/AbstractTree11" index="0"]
-position = Vector2( -8, -53 )
-texture = ExtResource( 31 )
-
-[node name="PassThroughBody" parent="TreesFront/AbstractTree11" index="2"]
-visible = false
-
-[node name="CollisionShape2D" parent="TreesFront/AbstractTree11/PassThroughBody" index="0"]
-disabled = true
-
-[node name="AbstractTree4" parent="TreesFront" instance=ExtResource( 27 )]
+[node name="TallTree" parent="TreesFront" instance=ExtResource( 45 )]
 position = Vector2( -97, 1 )
 
-[node name="AbstractTree6" parent="TreesFront" instance=ExtResource( 27 )]
-position = Vector2( 30, 25 )
+[node name="BushyTree" parent="TreesFront" instance=ExtResource( 44 )]
+position = Vector2( 30, 1 )
 
-[node name="Sprite" parent="TreesFront/AbstractTree6" index="0"]
-texture = ExtResource( 29 )
-
-[node name="PassThroughBody" parent="TreesFront/AbstractTree6" index="2"]
-position = Vector2( 4, -82 )
-
-[node name="CollisionShape2D" parent="TreesFront/AbstractTree6/PassThroughBody" index="0"]
-position = Vector2( 13.25, -3 )
-shape = SubResource( 63 )
-
-[node name="AbstractTree5" parent="TreesFront" instance=ExtResource( 27 )]
+[node name="CurvedTree" parent="TreesFront" instance=ExtResource( 43 )]
 position = Vector2( 9, 1 )
 
-[node name="Sprite" parent="TreesFront/AbstractTree5" index="0"]
-texture = ExtResource( 28 )
-
-[node name="CollisionShape2D" parent="TreesFront/AbstractTree5/PassThroughBody" index="0"]
-shape = SubResource( 64 )
-
-[node name="AbstractTree7" parent="TreesFront" instance=ExtResource( 27 )]
-position = Vector2( -137, 13 )
-
-[node name="Sprite" parent="TreesFront/AbstractTree7" index="0"]
-texture = ExtResource( 30 )
-
-[node name="PassThroughBody" parent="TreesFront/AbstractTree7" index="2"]
-position = Vector2( -19, -94 )
-
-[node name="CollisionShape2D" parent="TreesFront/AbstractTree7/PassThroughBody" index="0"]
-position = Vector2( 18.75, -3 )
-shape = SubResource( 65 )
+[node name="SquashedTree" parent="TreesFront" instance=ExtResource( 46 )]
+position = Vector2( -138, 1 )
 
 [node name="Decorations" type="TileMap" parent="."]
 position = Vector2( 0, 5 )
@@ -1036,71 +899,41 @@ modulate = Color( 0.8, 0.803922, 0.831373, 1 )
 
 [node name="NPC" type="Node2D" parent="WorldObjects"]
 
-[node name="Dweller" parent="WorldObjects/NPC" instance=ExtResource( 38 )]
-position = Vector2( -362, 1 )
-actions = [ SubResource( 69 ), SubResource( 71 ) ]
-currentState = SubResource( 69 )
-
 [node name="Dweller2" parent="WorldObjects/NPC" instance=ExtResource( 38 )]
 position = Vector2( -833, -11.0004 )
+dialogId = "central_gate_camp_left_dweller"
 actions = [ SubResource( 72 ) ]
 currentState = SubResource( 72 )
 defaultDirection = -1
 
-[node name="Body" parent="WorldObjects/NPC/Dweller2" index="6"]
+[node name="InteractionPopup" parent="WorldObjects/NPC/Dweller2" index="4"]
+labelText = "talky"
+
+[node name="Body" parent="WorldObjects/NPC/Dweller2" index="5"]
 scale = Vector2( -1, 1 )
 
 [node name="Signs" type="Node2D" parent="WorldObjects"]
 position = Vector2( 1, 62 )
 
-[node name="TumbSign" type="Node2D" parent="WorldObjects/Signs"]
-position = Vector2( -51, -377 )
-
-[node name="Sprite" type="Sprite" parent="WorldObjects/Signs/TumbSign"]
-position = Vector2( 2, -22 )
-texture = ExtResource( 23 )
-
-[node name="InteractionPopup" parent="WorldObjects/Signs/TumbSign" instance=ExtResource( 22 )]
-position = Vector2( 0, -39 )
-z_index = 99
-labelText = "смотреть"
-
-[node name="TextBoxPopup" parent="WorldObjects/Signs/TumbSign" instance=ExtResource( 20 )]
-position = Vector2( 0, -52 )
-z_index = 99
-interaction_controller_path = NodePath("../InteractionController")
+[node name="TumbSign" parent="WorldObjects/Signs" instance=ExtResource( 20 )]
 texts_array = [ "Здесь хранится память 
 о былых временах", "и парочка конфеток..." ]
 
-[node name="InteractionController" parent="WorldObjects/Signs/TumbSign" instance=ExtResource( 21 )]
+[node name="Sprite" parent="WorldObjects/Signs/TumbSign" index="0"]
+position = Vector2( 0, -22 )
+texture = ExtResource( 23 )
+
+[node name="InteractionPopup" parent="WorldObjects/Signs/TumbSign" index="1"]
+position = Vector2( -1, -35 )
+
+[node name="TextBoxPopup" parent="WorldObjects/Signs/TumbSign" index="2"]
+position = Vector2( -1, -52 )
+texts_array = [ "Здесь хранится память 
+о былых временах", "и парочка конфеток..." ]
 
 [node name="CollisionShape2D" parent="WorldObjects/Signs/TumbSign/InteractionController/Area2D" index="0"]
-position = Vector2( 0.5, -2 )
-shape = SubResource( 1 )
-
-[node name="GatesText" type="Node2D" parent="WorldObjects/Signs"]
-position = Vector2( -19, -100 )
-
-[node name="Sprite" type="Sprite" parent="WorldObjects/Signs/GatesText"]
-position = Vector2( 2, -22 )
-
-[node name="InteractionPopup" parent="WorldObjects/Signs/GatesText" instance=ExtResource( 22 )]
-position = Vector2( 0, -19 )
-z_index = 99
-labelText = "осмотреть"
-
-[node name="TextBoxPopup" parent="WorldObjects/Signs/GatesText" instance=ExtResource( 20 )]
-position = Vector2( 0, -32 )
-z_index = 99
-interaction_controller_path = NodePath("../InteractionController")
-texts_array = [ "Лишь тот войдет, кто ключ от 
-сердца подберет" ]
-
-[node name="InteractionController" parent="WorldObjects/Signs/GatesText" instance=ExtResource( 21 )]
-
-[node name="CollisionShape2D" parent="WorldObjects/Signs/GatesText/InteractionController/Area2D" index="0"]
-position = Vector2( 0.5, 0.5 )
-shape = SubResource( 46 )
+position = Vector2( -1.5, -6 )
+shape = SubResource( 74 )
 
 [node name="Barrels" type="Node2D" parent="WorldObjects"]
 
@@ -1159,6 +992,9 @@ position = Vector2( -160, -69 )
 [node name="Chest" parent="WorldObjects/Chests" instance=ExtResource( 19 )]
 position = Vector2( 61, -566 )
 innerItemScene = ExtResource( 4 )
+
+[node name="InteractionPopup" parent="WorldObjects/Chests/Chest" index="1"]
+labelText = "open"
 
 [node name="Collisions" type="Node" parent="."]
 
@@ -1481,6 +1317,9 @@ texture = ExtResource( 3 )
 color = Color( 1, 1, 1, 0.431373 )
 energy = 0.7
 mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Light2D2" type="Light2D" parent="Lighting"]
 position = Vector2( -210.062, 20 )
@@ -1489,6 +1328,9 @@ texture = ExtResource( 3 )
 color = Color( 1, 1, 1, 0.764706 )
 energy = 0.57
 mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Light2D3" type="Light2D" parent="Lighting"]
 position = Vector2( -2, -321.5 )
@@ -1497,6 +1339,9 @@ texture = ExtResource( 3 )
 color = Color( 1, 1, 1, 0.431373 )
 energy = 0.7
 mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="MovingPlatforms" type="Node2D" parent="."]
 
@@ -1581,6 +1426,9 @@ position = Vector2( 1, 3 )
 scale = Vector2( 0.143938, 0.197316 )
 texture = ExtResource( 2 )
 energy = 0.5
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="WaterSurface" type="Node" parent="."]
 
@@ -1612,35 +1460,26 @@ margin_left = -865.0
 margin_top = -697.0
 margin_right = -575.0
 margin_bottom = -38.0
+mouse_filter = 2
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_lock_": true
 }
 
+[node name="VisibilityChecker" parent="GodLights" instance=ExtResource( 42 )]
+visible = false
+position = Vector2( 155.5, 360.5 )
+scale = Vector2( 20.55, 37.05 )
+
 [editable path="Camera2D"]
-[editable path="Trees/AbstractTree5"]
-[editable path="Trees/AbstractTree5/PassThroughBody"]
-[editable path="Trees/AbstractTree6"]
-[editable path="Trees/AbstractTree6/PassThroughBody"]
-[editable path="Trees/AbstractTree8"]
-[editable path="Trees/AbstractTree8/PassThroughBody"]
-[editable path="TreesFront/AbstractTree8"]
-[editable path="TreesFront/AbstractTree8/PassThroughBody"]
-[editable path="TreesFront/AbstractTree9"]
-[editable path="TreesFront/AbstractTree9/PassThroughBody"]
-[editable path="TreesFront/AbstractTree10"]
-[editable path="TreesFront/AbstractTree10/PassThroughBody"]
-[editable path="TreesFront/AbstractTree11"]
-[editable path="TreesFront/AbstractTree11/PassThroughBody"]
-[editable path="TreesFront/AbstractTree6"]
-[editable path="TreesFront/AbstractTree6/PassThroughBody"]
-[editable path="TreesFront/AbstractTree5"]
-[editable path="TreesFront/AbstractTree5/PassThroughBody"]
-[editable path="TreesFront/AbstractTree7"]
-[editable path="TreesFront/AbstractTree7/PassThroughBody"]
+[editable path="TreesFront/TallTree"]
+[editable path="TreesFront/TallTree/PassThroughBody"]
+[editable path="Gates"]
+[editable path="Gates/GatesText"]
+[editable path="Gates/GatesText/InteractionController"]
 [editable path="WorldObjects/NPC/Dweller2"]
 [editable path="WorldObjects/NPC/Dweller2/Body/InteractionController"]
+[editable path="WorldObjects/Signs/TumbSign"]
 [editable path="WorldObjects/Signs/TumbSign/InteractionController"]
-[editable path="WorldObjects/Signs/GatesText/InteractionController"]
 [editable path="WorldObjects/Chests/Chest"]
 [editable path="WorldObjects/Chests/Chest/InteractionController"]
 [editable path="Collisions/PassTrough/PassThroughBody4"]

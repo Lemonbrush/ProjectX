@@ -33,49 +33,63 @@ margin_bottom = 320.0
 custom_constants/separation = 30
 
 [node name="HeaderLabel" type="Label" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer"]
-margin_left = 201.0
-margin_right = 329.0
+margin_left = 223.0
+margin_right = 307.0
 margin_bottom = 26.0
 size_flags_horizontal = 4
 custom_fonts/font = ExtResource( 1 )
-text = "Настройки"
+text = "options"
 align = 1
 
 [node name="MenuVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer"]
-margin_left = 235.0
+margin_left = 241.0
 margin_top = 56.0
-margin_right = 295.0
-margin_bottom = 135.0
+margin_right = 289.0
+margin_bottom = 171.0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme = ExtResource( 3 )
 custom_constants/separation = 15
 
 [node name="OptionButtonsVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer"]
-margin_right = 60.0
-margin_bottom = 50.0
+margin_right = 48.0
+margin_bottom = 86.0
 
 [node name="SoundButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionButtonsVBoxContainer"]
-margin_right = 60.0
+margin_right = 48.0
 margin_bottom = 14.0
 disabled = true
-text = "Звук"
+text = "sound"
 
-[node name="ControlsButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionButtonsVBoxContainer"]
+[node name="VideoButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionButtonsVBoxContainer"]
 margin_top = 18.0
-margin_right = 60.0
+margin_right = 48.0
 margin_bottom = 32.0
 disabled = true
-text = "Управление"
+text = "Видео"
+
+[node name="LanguageButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionButtonsVBoxContainer"]
+margin_top = 36.0
+margin_right = 48.0
+margin_bottom = 50.0
+disabled = true
+text = "language"
+
+[node name="ControlsButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionButtonsVBoxContainer"]
+margin_top = 54.0
+margin_right = 48.0
+margin_bottom = 68.0
+disabled = true
+text = "controls"
 
 [node name="SpecialOptionButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionButtonsVBoxContainer"]
-margin_top = 36.0
-margin_right = 60.0
-margin_bottom = 50.0
-text = "Особые"
+margin_top = 72.0
+margin_right = 48.0
+margin_bottom = 86.0
+text = "special"
 
 [node name="ExitButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer"]
-margin_top = 65.0
-margin_right = 60.0
-margin_bottom = 79.0
-text = "Выход"
+margin_top = 101.0
+margin_right = 48.0
+margin_bottom = 115.0
+text = "exit"

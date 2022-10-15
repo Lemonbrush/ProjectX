@@ -11,7 +11,7 @@ enum ActionType {
 
 export(ActionType) var action_type = 0
 
-signal on_approach(player, controller)
+signal on_approach(player, controller, body)
 signal on_leave(player, controller)
 signal on_interact(player, controller, body)
 
@@ -22,16 +22,21 @@ func _ready():
 	area2D.connect("body_exited", self, "_on_leave")
 	
 func _unhandled_input(event: InputEvent):
-	if event.is_action_pressed("Interaction") && action_type == 1:
-		emit_signal("on_interact", interactedBody)
+	if event.is_action_pressed("Interaction") && action_type == 1 && interactedBody != null:
+		if Global.active_interaction_controller == null:
+			Global.active_interaction_controller = self
+		
+		if Global.active_interaction_controller == self:
+			emit_signal("on_interact", interactedBody)
 
 func _on_approach(body):
 	interactedBody = body
 	action_type = 1
-	emit_signal("on_approach")
+	emit_signal("on_approach", body)
 	
 func _on_leave(_body):
 	action_type = 0
+	Global.active_interaction_controller = null
 	emit_signal("on_leave")
 	
 func disabled(isDisabled):

@@ -7,6 +7,8 @@ var targetPosition = Vector2.ZERO
 
 export(Color, RGB) var backgroundColor
 
+var follow_player = true
+
 # Lifecycle Functions
 
 func _ready():
@@ -14,8 +16,13 @@ func _ready():
 	VisualServer.set_default_clear_color(backgroundColor)
 
 func _process(delta):
+	if follow_player:
+		acquire_target_position()
+		global_position = lerp(targetPosition, global_position, pow(2, -15 * delta))
+
+func instant_focuse_on_target():
 	acquire_target_position()
-	global_position = lerp(targetPosition, global_position, pow(2, -15 * delta))
+	global_position = targetPosition
 
 func acquire_target_position():
 	var acquired = get_target_position_from_node_group("player")

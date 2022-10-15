@@ -8,7 +8,7 @@ export(Array, String, MULTILINE) var texts_array
 
 onready var textTween = $TextTween
 onready var appearanceTween = $AppearanceTween
-onready var label = $MarginNode/PanelContainer/MarginContainer/Label
+onready var label = $MarginNode/PanelContainer/MarginContainer/VBoxContainer/Label
 onready var marginNode = $MarginNode
 onready var buttonHint = $MarginNode/PanelContainer/ButtonHint
 

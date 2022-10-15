@@ -4,22 +4,22 @@ export(String, FILE, "*.tscn, *scn") var nextScenePath
 export(String) var nextDoorName
 
 onready var interactionController = $InteractionController
-onready var area2d = $Area2D
-
-var isAbleToTransition = false
+onready var interactionPopup = $InteractionPopup
 
 func _ready():
-	area2d.connect("body_entered", self, "on_player_entered")
-	area2d.connect("body_exited", self, "on_player_exited")
-	
 	interactionController.connect("on_interact", self, "_on_interact")
+	interactionController.connect("on_approach", self, "_on_player_entered")
+	interactionController.connect("on_leave", self, "_on_player_exited")
 
-func on_player_entered(_body):
-	isAbleToTransition = true
+func _on_player_entered(body):
+	if "is_entering_out" in body && body.is_entering_out == false:
+		interactionPopup.show()
 	
-func on_player_exited(_body):
-	isAbleToTransition = false
+func _on_player_exited():
+	interactionPopup.hide()
 
-func _on_interact(_body):
+func _on_interact(body):
+	interactionPopup.hide()
 	Global.door_name = nextDoorName
+	body.global_position = global_position
 	EventBus.player_entered_door(nextScenePath)

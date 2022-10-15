@@ -53,18 +53,18 @@ margin_bottom = 320.0
 custom_constants/separation = 30
 
 [node name="HeaderLabel" type="Label" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer"]
-margin_left = 230.0
-margin_right = 300.0
+margin_left = 231.0
+margin_right = 299.0
 margin_bottom = 26.0
 size_flags_horizontal = 4
 custom_fonts/font = ExtResource( 3 )
-text = "Пауза"
+text = "pause"
 align = 1
 
 [node name="MenuVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer"]
-margin_left = 202.0
+margin_left = 208.0
 margin_top = 56.0
-margin_right = 328.0
+margin_right = 322.0
 margin_bottom = 135.0
 size_flags_horizontal = 4
 size_flags_vertical = 8
@@ -72,28 +72,28 @@ theme = ExtResource( 2 )
 custom_constants/separation = 15
 
 [node name="OptionButtonsVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer"]
-margin_right = 126.0
+margin_right = 114.0
 margin_bottom = 50.0
 
-[node name="ContinueButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionButtonsVBoxContainer"]
-margin_right = 126.0
+[node name="ExitGameButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionButtonsVBoxContainer"]
+margin_right = 114.0
 margin_bottom = 14.0
-text = "Продолжить"
-
-[node name="OptionsButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionButtonsVBoxContainer"]
-margin_top = 18.0
-margin_right = 126.0
-margin_bottom = 32.0
-text = "Настройки"
+text = "exit_game"
 
 [node name="ExitButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionButtonsVBoxContainer"]
-margin_top = 36.0
-margin_right = 126.0
-margin_bottom = 50.0
-text = "Выход"
+margin_top = 18.0
+margin_right = 114.0
+margin_bottom = 32.0
+text = "return_to_game_menu"
 
-[node name="ExitGameButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer"]
+[node name="OptionsButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionButtonsVBoxContainer"]
+margin_top = 36.0
+margin_right = 114.0
+margin_bottom = 50.0
+text = "options"
+
+[node name="ContinueButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer"]
 margin_top = 65.0
-margin_right = 126.0
+margin_right = 114.0
 margin_bottom = 79.0
-text = "Выйти на рабочий стол"
+text = "continue"

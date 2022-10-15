@@ -34,7 +34,7 @@ shape = SubResource( 3 )
 
 [node name="InteractionPopup" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, -20 )
-labelText = "войти"
+labelText = "enter"
 
 [node name="InteractionController" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 2 )

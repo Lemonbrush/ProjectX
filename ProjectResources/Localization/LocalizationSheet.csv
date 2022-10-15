@@ -1,0 +1,35 @@
+id;ru
+test;Привет из CSV
+play;Играть
+options;Настройки
+about;Об игре
+exit;Выход
+special;Особые
+controls;Управление
+sound;Звук
+delete_all_saves;Удалить все сохранения
+reset_options;Сбросить настройки
+autodelete_all_saves;Автоудаление сохранений
+debug_screen;Экран дебага
+pause;Пауза
+continue;Продолжить
+exit_game;Выйти из игры
+return_to_game_menu;Вернуться в меню
+fps;ФПС
+version;Версия
+language;Язык
+talk;Говорить
+inspect;Осмотреть
+open;Открыть
+enter;Войти
+gate_location_gate_door;"Лишь тот войдет, кто ключ от 
+сердца подберет"
+gate_location_tumbstone_1;"Здесь хранится память
+о былых временах"
+gate_location_tumbstone_2;и парочка конфеток…
+central_hub_fireside_dweller_left_1;"Вообще, у меня сегодня много
+важных дел"
+central_hub_fireside_dweller_left_2;"но я принял трудное волевое
+решение…"
+central_hub_fireside_dweller_left_3;"сегодня я буду греть лапки
+у костерка"

@@ -1,32 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=2 format=2]
 
 [sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 10, 50 )
-
-[sub_resource type="Gradient" id=19]
-offsets = PoolRealArray( 0.0032, 0.7904, 1 )
-colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
-
-[sub_resource type="GradientTexture" id=20]
-gradient = SubResource( 19 )
-
-[sub_resource type="ParticlesMaterial" id=21]
-lifetime_randomness = 0.5
-emission_shape = 2
-emission_box_extents = Vector3( 10, 10, 1 )
-emission_ring_axis = Vector3( 10, 10, 1 )
-flag_disable_z = true
-direction = Vector3( 0, 1, 0 )
-gravity = Vector3( 0, -98, 0 )
-initial_velocity = -10.0
-initial_velocity_random = 1.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-angle = 50.0
-angle_random = 1.0
-scale = 0.5
-scale_random = 1.0
-color_ramp = SubResource( 20 )
 
 [node name="AirBeam" type="Node2D"]
 
@@ -37,10 +12,3 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 0, -50 )
 shape = SubResource( 22 )
-
-[node name="Particles2D" type="Particles2D" parent="."]
-amount = 5
-lifetime = 2.0
-preprocess = 10.0
-randomness = 1.0
-process_material = SubResource( 21 )

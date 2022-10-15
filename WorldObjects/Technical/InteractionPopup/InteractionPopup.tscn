@@ -7,7 +7,6 @@
 
 [node name="InteractionPopup" type="Node2D"]
 script = ExtResource( 1 )
-interaction_controller_path = NodePath("../InteractionController")
 
 [node name="MarginNode" type="Node2D" parent="."]
 
@@ -15,30 +14,30 @@ interaction_controller_path = NodePath("../InteractionController")
 margin_left = -40.0
 margin_top = -40.0
 margin_right = 40.0
+mouse_filter = 2
 size_flags_horizontal = 0
 theme = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginNode/CenterContainer"]
-margin_left = 10.0
+margin_left = 22.0
 margin_top = 13.0
-margin_right = 70.0
+margin_right = 57.0
 margin_bottom = 27.0
+mouse_filter = 2
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="MarginNode/CenterContainer/HBoxContainer"]
 margin_right = 14.0
 margin_bottom = 14.0
+mouse_filter = 2
 texture = ExtResource( 4 )
 stretch_mode = 6
 
 [node name="Label" type="Label" parent="MarginNode/CenterContainer/HBoxContainer"]
 margin_left = 18.0
-margin_right = 60.0
+margin_right = 35.0
 margin_bottom = 13.0
 custom_fonts/font = ExtResource( 3 )
-text = "test text"
+text = "talk"
 
 [node name="Tween" type="Tween" parent="."]
