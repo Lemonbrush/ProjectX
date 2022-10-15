@@ -14,7 +14,6 @@ static func executeCommands(command_lines):
 
 static func execute(command_line: String):
 	var args = command_line.split(" ")
-	
 	if args.size() > 0:
 		var command = args[0]
 		args.remove(0)
@@ -23,6 +22,7 @@ static func execute(command_line: String):
 				var var_name = args[0]
 				var value = str2var(args[1])
 				GameEventConstants.set_constant(var_name, bool(value))
+				
 			"emmit":
 				var signal_name = args[0]
 				if EventBus.has_method(signal_name):
