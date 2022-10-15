@@ -2010,6 +2010,7 @@ texture = ExtResource( 61 )
 
 [node name="PicnicDwellerLeft" parent="Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -1194, 172 )
+dialogId = "lover_boy_dweller"
 watch_player_on_talk = false
 
 [node name="Sprite" parent="Dwellers/PicnicDwellerLeft/Body" index="2"]
@@ -2017,6 +2018,7 @@ texture = ExtResource( 54 )
 
 [node name="PicnicDwellerRight" parent="Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -1161, 172 )
+dialogId = "lovers_girl_dweller"
 watch_player_on_talk = false
 defaultDirection = -1
 

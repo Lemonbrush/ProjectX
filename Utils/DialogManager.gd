@@ -13,12 +13,12 @@ func _init(dialog_id: String):
 		print("Error - %s" % error)
 
 func get_next_dialog(phrase_id = null):
+	execute_commands_if_needed()
+	
 	if phrase_id != null:
 		current_phrase_id = phrase_id
 	
-	execute_commands_if_needed()
-	
-	if phrase_id:
+	if current_dialog.has(phrase_id):
 		return get_validated_phrase(current_dialog[phrase_id])
 	else:
 		var next_phrase_id = get_next_phrase_id()
@@ -30,7 +30,6 @@ func get_next_dialog(phrase_id = null):
 func get_next_dialog_by_option(button_option):
 	for response in current_dialog[current_phrase_id]["responses"]:
 		if response["text"] == button_option:
-			execute_commands_if_needed()
 			return get_next_dialog(response["next"])
 	
 ##### Helper functions
@@ -64,7 +63,7 @@ func is_condition_satisfied(condition):
 		print("There is no such game constant as (", condition_name, ")")
 
 func get_next_phrase_id():
-	if current_phrase_id == null:
+	if !current_dialog.has(current_phrase_id):
 		return
 	
 	if current_dialog[current_phrase_id]["type"] == "condition":
@@ -76,6 +75,9 @@ func get_next_phrase_id():
 	return current_phrase_id
 
 func execute_commands_if_needed():
+	if !current_dialog.has(current_phrase_id):
+		return
+	
 	var current_phrase = current_dialog[current_phrase_id]
 	if current_phrase.has("commands"):
 		var commands = current_phrase["commands"]
