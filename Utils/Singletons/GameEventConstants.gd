@@ -45,6 +45,13 @@ func set_constant(constant_name, value):
 	else:
 		print("Error setting game constant - ", constant_name, " with value ", value)
 
+func get_constant(constant_name):
+	if constants.has(constant_name):
+		return constants[constant_name]
+	else:
+		print("Error getting game constant - ", constant_name)
+		return
+
 func is_cauldron_quest_completed():
 	var is_wish_star_picked_up = GameEventConstants.constants.has("is_wish_star_picked_up") && GameEventConstants.constants["is_wish_star_picked_up"]
 	var is_love_potion_created = GameEventConstants.constants.has("is_love_potion_created") && GameEventConstants.constants["is_love_potion_created"]
