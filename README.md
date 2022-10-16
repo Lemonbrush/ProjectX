@@ -1,6 +1,6 @@
 # Project X
 
-## [🎯 CHANGELOG](https://github.com/Lemonbrush/ProjectX/blob/development/CHANGELOG.md)
+## [🎯 CHANGELOG](https://github.com/Lemonbrush/ProjectX/blob/main/ProjectResources/CHANGELOG.md)
 
 ### Project use hints  
 
