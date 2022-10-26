@@ -1153,7 +1153,7 @@ extents = Vector2( 5.5, 26.5 )
 [sub_resource type="RectangleShape2D" id=72]
 extents = Vector2( 4.5, 10 )
 
-[sub_resource type="RectangleShape2D" id=94]
+[sub_resource type="RectangleShape2D" id=215]
 extents = Vector2( 8, 105 )
 
 [sub_resource type="RectangleShape2D" id=68]
@@ -2887,8 +2887,8 @@ shape = SubResource( 201 )
 position = Vector2( -61, -185 )
 
 [node name="CollisionShape2D" parent="Ladders/Ladder3" index="0"]
-position = Vector2( 0, -18 )
-shape = SubResource( 94 )
+position = Vector2( -1, -18 )
+shape = SubResource( 215 )
 
 [node name="Ladder2" parent="Ladders" instance=ExtResource( 12 )]
 position = Vector2( -877, 230 )
