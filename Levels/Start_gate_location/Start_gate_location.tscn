@@ -24,10 +24,10 @@
 [ext_resource path="res://WorldObjects/Moving_platforms/MovingPlatform.gd" type="Script" id=24]
 [ext_resource path="res://Assets/WorldObjects/Floating_block.png" type="Texture" id=25]
 [ext_resource path="res://WorldObjects/Moving_platforms/Paths/VerticalPath.tres" type="Curve2D" id=26]
-[ext_resource path="res://WorldObjects/Decorative/Tree/Background_trees/BackgroundSmallWideTree.tscn" type="PackedScene" id=27]
-[ext_resource path="res://WorldObjects/Decorative/Tree/Background_trees/BackgroundSmallTree.tscn" type="PackedScene" id=28]
-[ext_resource path="res://WorldObjects/Decorative/Tree/Background_trees/BackgroundTallWideTree.tscn" type="PackedScene" id=29]
-[ext_resource path="res://WorldObjects/Decorative/Tree/Background_trees/BackgroundWideTree.tscn" type="PackedScene" id=30]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Regualr_trees/Background_trees/BackgroundSmallWideTree.tscn" type="PackedScene" id=27]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Regualr_trees/Background_trees/BackgroundSmallTree.tscn" type="PackedScene" id=28]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Regualr_trees/Background_trees/BackgroundTallWideTree.tscn" type="PackedScene" id=29]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Regualr_trees/Background_trees/BackgroundWideTree.tscn" type="PackedScene" id=30]
 [ext_resource path="res://Shaders/GodLightsShader.tres" type="Shader" id=35]
 [ext_resource path="res://Assets/BackgroundGradients/purple_clouds.png" type="Texture" id=36]
 [ext_resource path="res://WorldObjects/Destructables/Vase/Vase.tscn" type="PackedScene" id=37]
@@ -35,10 +35,10 @@
 [ext_resource path="res://Dweller/NpcActions/idle/idle_npc_action.gd" type="Script" id=39]
 [ext_resource path="res://UI/DebugScreen/GameSpecs.tscn" type="PackedScene" id=41]
 [ext_resource path="res://WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=42]
-[ext_resource path="res://WorldObjects/Decorative/Tree/Trees/CurvedTree.tscn" type="PackedScene" id=43]
-[ext_resource path="res://WorldObjects/Decorative/Tree/Trees/BushyTree.tscn" type="PackedScene" id=44]
-[ext_resource path="res://WorldObjects/Decorative/Tree/Trees/TallTree.tscn" type="PackedScene" id=45]
-[ext_resource path="res://WorldObjects/Decorative/Tree/Trees/SquashedTree.tscn" type="PackedScene" id=46]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Regualr_trees/Trees/CurvedTree.tscn" type="PackedScene" id=43]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Regualr_trees/Trees/BushyTree.tscn" type="PackedScene" id=44]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Regualr_trees/Trees/TallTree.tscn" type="PackedScene" id=45]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Regualr_trees/Trees/SquashedTree.tscn" type="PackedScene" id=46]
 
 [sub_resource type="Environment" id=67]
 background_mode = 4
@@ -727,7 +727,7 @@ tracks/0/keys = {
 [sub_resource type="CanvasItemMaterial" id=40]
 light_mode = 1
 
-[sub_resource type="ConvexPolygonShape2D" id=73]
+[sub_resource type="ConvexPolygonShape2D" id=75]
 points = PoolVector2Array( 0, 0, 0, 16, 16, 16, 16, 0 )
 
 [sub_resource type="TileSet" id=39]
@@ -741,14 +741,14 @@ points = PoolVector2Array( 0, 0, 0, 16, 16, 16, 16, 0 )
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 73 )
+0/shape = SubResource( 75 )
 0/shape_one_way = false
 0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 73 ),
+"shape": SubResource( 75 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
