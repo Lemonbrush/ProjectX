@@ -1930,6 +1930,7 @@ shape = SubResource( 202 )
 
 [node name="BranchSign" parent="WorldObjects/Signs" instance=ExtResource( 69 )]
 position = Vector2( 870, 124 )
+texts_array = [ "Осторожно, странный лес впереди" ]
 
 [node name="Sprite" parent="WorldObjects/Signs/BranchSign" index="0"]
 position = Vector2( 3, -4 )
