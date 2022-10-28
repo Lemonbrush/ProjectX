@@ -1,4 +1,4 @@
-[gd_scene load_steps=198 format=2]
+[gd_scene load_steps=213 format=2]
 
 [ext_resource path="res://Assets/Levels/Grand_garden/Grand_garden.png" type="Texture" id=1]
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=2]
@@ -17,6 +17,15 @@
 [ext_resource path="res://Assets/WaterSurface/water_surface3.png" type="Texture" id=15]
 [ext_resource path="res://Assets/WaterSurface/WaterAnim.tres" type="Texture" id=16]
 [ext_resource path="res://WorldObjects/Technical/Ladder/Ladder.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Assets/Levels/Grand_garden/Background_forest/trees_2.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Levels/Grand_garden/Background_forest/trees_1.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Levels/Grand_garden/Background_forest/trees_3.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Levels/Grand_garden/Background_forest/trees_4.png" type="Texture" id=21]
+[ext_resource path="res://Assets/BackgroundGradients/GrandGardenBackgroundGradient.png" type="Texture" id=22]
+[ext_resource path="res://Assets/BackgroundGradients/PinkEdgeGradient.png" type="Texture" id=23]
+[ext_resource path="res://WorldObjects/Technical/Clouds/Clouds.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Assets/BackgroundGradients/BackgroundGradient1.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=26]
 
 [sub_resource type="RectangleShape2D" id=77]
 extents = Vector2( 72.125, 8 )
@@ -592,9 +601,198 @@ points = PoolVector2Array( 0, 0, 0, 16, 16, 16, 16, 0 )
 [sub_resource type="RectangleShape2D" id=76]
 extents = Vector2( 4884.5, 51.5 )
 
+[sub_resource type="CurveTexture" id=7]
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.00285307, 0.248217, 0.774608, 0.997147, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.239024, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 3 )
+
+[sub_resource type="Curve" id=6]
+_data = [ Vector2( 0, 0.840033 ), 0.0, 0.0, 0, 0, Vector2( 0.103806, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.571868 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 6 )
+
+[sub_resource type="ParticlesMaterial" id=253]
+emission_shape = 2
+emission_box_extents = Vector3( 3000, 700, 1 )
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 9 )
+color_ramp = SubResource( 8 )
+anim_offset = 1.0
+anim_offset_random = 1.0
+anim_offset_curve = SubResource( 7 )
+
 [node name="BaseLevel" instance=ExtResource( 3 )]
 
-[node name="Background_world_objects" type="Node2D" parent="." index="3"]
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="." index="2"]
+scroll_limit_end = Vector2( 0, 320 )
+
+[node name="BackgroundSprite" type="Sprite" parent="ParallaxBackground2" index="0"]
+scale = Vector2( 0.573, 0.568384 )
+texture = ExtResource( 25 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ParallaxBackgroundForest" type="ParallaxBackground" parent="." index="3"]
+
+[node name="ParallaxLayerTop" type="ParallaxLayer" parent="ParallaxBackgroundForest" index="0"]
+position = Vector2( -1242, -1200 )
+motion_mirroring = Vector2( 1826, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackgroundForest/ParallaxLayerTop" index="0"]
+position = Vector2( -101, -468 )
+scale = Vector2( 1.82644, 1.81172 )
+texture = ExtResource( 23 )
+centered = false
+
+[node name="ParallaxBackgroundBottom" type="ParallaxLayer" parent="ParallaxBackgroundForest" index="1"]
+position = Vector2( 1234, 692 )
+motion_mirroring = Vector2( 573, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackgroundForest/ParallaxBackgroundBottom" index="0"]
+scale = Vector2( 0.573, 0.568384 )
+texture = ExtResource( 22 )
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackgroundForest" index="2"]
+position = Vector2( -102, -3 )
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 4115, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="trees_3" type="Sprite" parent="ParallaxBackgroundForest/ParallaxLayer3" index="0"]
+texture = ExtResource( 20 )
+
+[node name="ParallaxLayer8" type="ParallaxLayer" parent="ParallaxBackgroundForest" index="3"]
+position = Vector2( 176, 452 )
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 4115, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="trees_3" type="Sprite" parent="ParallaxBackgroundForest/ParallaxLayer8" index="0"]
+position = Vector2( 539, 11 )
+texture = ExtResource( 20 )
+
+[node name="trees_4" type="Sprite" parent="ParallaxBackgroundForest/ParallaxLayer8" index="1"]
+position = Vector2( 776, 65 )
+texture = ExtResource( 20 )
+
+[node name="trees_5" type="Sprite" parent="ParallaxBackgroundForest/ParallaxLayer8" index="2"]
+position = Vector2( 1286, 213 )
+texture = ExtResource( 20 )
+
+[node name="trees_6" type="Sprite" parent="ParallaxBackgroundForest/ParallaxLayer8" index="3"]
+position = Vector2( 1474, 137 )
+texture = ExtResource( 20 )
+
+[node name="trees_7" type="Sprite" parent="ParallaxBackgroundForest/ParallaxLayer8" index="4"]
+position = Vector2( 1230, 126 )
+texture = ExtResource( 20 )
+
+[node name="trees_8" type="Sprite" parent="ParallaxBackgroundForest/ParallaxLayer8" index="5"]
+position = Vector2( -3, 107 )
+texture = ExtResource( 20 )
+
+[node name="trees_9" type="Sprite" parent="ParallaxBackgroundForest/ParallaxLayer8" index="6"]
+position = Vector2( 376, 115 )
+texture = ExtResource( 20 )
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackgroundForest" index="4"]
+position = Vector2( 385, 279 )
+motion_scale = Vector2( 0.7, 1 )
+motion_mirroring = Vector2( 4115, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="trees_4" type="Sprite" parent="ParallaxBackgroundForest/ParallaxLayer4" index="0"]
+position = Vector2( 6, -172 )
+texture = ExtResource( 21 )
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackgroundForest" index="5"]
+position = Vector2( 555, 268 )
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 4115, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="trees_4" type="Sprite" parent="ParallaxBackgroundForest/ParallaxLayer5" index="0"]
+position = Vector2( 6, -172 )
+texture = ExtResource( 21 )
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackgroundForest" index="6"]
+position = Vector2( 339, 239 )
+motion_scale = Vector2( 0.8, 1 )
+motion_mirroring = Vector2( 4115, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="trees_4" type="Sprite" parent="ParallaxBackgroundForest/ParallaxLayer6" index="0"]
+position = Vector2( 6, -172 )
+texture = ExtResource( 21 )
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackgroundForest" index="7"]
+position = Vector2( 110, 294 )
+motion_scale = Vector2( 0.5, 1 )
+motion_mirroring = Vector2( 4115, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="trees_4" type="Sprite" parent="ParallaxBackgroundForest/ParallaxLayer7" index="0"]
+position = Vector2( 6, -172 )
+texture = ExtResource( 21 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackgroundForest" index="8"]
+position = Vector2( 47, -149 )
+motion_scale = Vector2( 0.8, 1 )
+motion_mirroring = Vector2( 4115, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="trees_2" type="Sprite" parent="ParallaxBackgroundForest/ParallaxLayer2" index="0"]
+texture = ExtResource( 18 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackgroundForest" index="9"]
+position = Vector2( -1699, -31 )
+motion_scale = Vector2( 0.9, 1 )
+motion_mirroring = Vector2( 4115, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="trees_1" type="Sprite" parent="ParallaxBackgroundForest/ParallaxLayer" index="0"]
+texture = ExtResource( 19 )
+
+[node name="Camera2D" parent="." index="4"]
+backgroundColor = Color( 0.698039, 0.870588, 1, 1 )
+
+[node name="Background_world_objects" type="Node2D" parent="." index="5"]
 
 [node name="Trees" type="Node2D" parent="Background_world_objects" index="0"]
 
@@ -714,14 +912,14 @@ position = Vector2( 727, -711 )
 [node name="DarkTree4" parent="Background_world_objects/Trees/Grand_tree_top/Foreground_trees" index="11" instance=ExtResource( 13 )]
 position = Vector2( 615, -760 )
 
-[node name="WorldSprite" parent="." index="4"]
+[node name="WorldSprite" parent="." index="6"]
 position = Vector2( 150, -484 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Upper_background_objects" type="Node2D" parent="." index="5"]
+[node name="Upper_background_objects" type="Node2D" parent="." index="7"]
 position = Vector2( 150, -484 )
 
 [node name="Trees" type="Node2D" parent="Upper_background_objects" index="0"]
@@ -733,13 +931,13 @@ position = Vector2( 321, -620 )
 
 [node name="Background_trees" type="Node2D" parent="Upper_background_objects/Trees" index="1"]
 
-[node name="Player" parent="." index="6"]
-position = Vector2( 211, 503 )
+[node name="Player" parent="." index="8"]
+position = Vector2( 167, -1171 )
 
 [node name="Light2D2" parent="Player" index="5"]
 visible = false
 
-[node name="Foreground_world_objects2" type="Node2D" parent="." index="7"]
+[node name="Foreground_world_objects2" type="Node2D" parent="." index="9"]
 
 [node name="Left_tower_side" type="Node2D" parent="Collisions/PassTrough" index="0"]
 visible = false
@@ -3651,7 +3849,107 @@ position = Vector2( 168, -139 )
 position = Vector2( -1, 38 )
 shape = SubResource( 252 )
 
-[node name="WaterSurface" type="Node2D" parent="." index="13"]
+[node name="BottomForestShadow" type="Node2D" parent="Lighting" index="0"]
+visible = false
+
+[node name="Light2D" type="Light2D" parent="Lighting/BottomForestShadow" index="0"]
+position = Vector2( -1099, 612 )
+scale = Vector2( 0.466173, 1.26782 )
+texture = ExtResource( 26 )
+color = Color( 1, 1, 1, 0.403922 )
+energy = 0.7
+mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D3" type="Light2D" parent="Lighting/BottomForestShadow" index="1"]
+position = Vector2( -371, 642 )
+scale = Vector2( 0.466173, 1.26782 )
+texture = ExtResource( 26 )
+color = Color( 1, 1, 1, 0.403922 )
+energy = 0.7
+mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D4" type="Light2D" parent="Lighting/BottomForestShadow" index="2"]
+position = Vector2( 42, 641 )
+scale = Vector2( 0.466173, 1.26782 )
+texture = ExtResource( 26 )
+color = Color( 1, 1, 1, 0.403922 )
+energy = 0.7
+mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D5" type="Light2D" parent="Lighting/BottomForestShadow" index="3"]
+position = Vector2( 358, 634 )
+scale = Vector2( 0.466173, 1.26782 )
+texture = ExtResource( 26 )
+color = Color( 1, 1, 1, 0.403922 )
+energy = 0.7
+mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D6" type="Light2D" parent="Lighting/BottomForestShadow" index="4"]
+position = Vector2( 668, 625 )
+scale = Vector2( 0.466173, 1.26782 )
+texture = ExtResource( 26 )
+color = Color( 1, 1, 1, 0.403922 )
+energy = 0.7
+mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D7" type="Light2D" parent="Lighting/BottomForestShadow" index="5"]
+position = Vector2( 1002, 596 )
+scale = Vector2( 0.466173, 1.26782 )
+texture = ExtResource( 26 )
+color = Color( 1, 1, 1, 0.403922 )
+energy = 0.7
+mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D8" type="Light2D" parent="Lighting/BottomForestShadow" index="6"]
+position = Vector2( 1314, 618 )
+scale = Vector2( 0.466173, 1.26782 )
+texture = ExtResource( 26 )
+color = Color( 1, 1, 1, 0.403922 )
+energy = 0.7
+mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D2" type="Light2D" parent="Lighting/BottomForestShadow" index="7"]
+position = Vector2( -733, 602 )
+scale = Vector2( 0.466173, 1.26782 )
+texture = ExtResource( 26 )
+color = Color( 1, 1, 1, 0.403922 )
+energy = 0.7
+mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TreeHatShadow" type="Light2D" parent="Lighting" index="1"]
+visible = false
+position = Vector2( 223, -914 )
+scale = Vector2( 1.5683, 0.417792 )
+texture = ExtResource( 26 )
+color = Color( 1, 1, 1, 0.403922 )
+energy = 0.7
+mode = 2
+
+[node name="WaterSurface" type="Node2D" parent="." index="15"]
 position = Vector2( 227, 874 )
 
 [node name="WaterSurface" type="TileMap" parent="WaterSurface" index="0"]
@@ -3675,6 +3973,19 @@ collision_mask = 64
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaterSurface/water" index="0"]
 position = Vector2( 1339.5, 220.5 )
 shape = SubResource( 76 )
+
+[node name="Clouds" parent="." index="16" instance=ExtResource( 24 )]
+position = Vector2( 193, -87 )
+z_index = -2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Particles2D" parent="Clouds" index="0"]
+position = Vector2( 15, -493 )
+amount = 800
+lifetime = 50.0
+process_material = SubResource( 253 )
 
 [editable path="Background_world_objects/Trees/Grand_tree_top/Foreground_trees/DarkTree14"]
 [editable path="Background_world_objects/Trees/Grand_tree_top/Foreground_trees/DarkTree14/PassThroughBody"]
@@ -4040,3 +4351,4 @@ shape = SubResource( 76 )
 [editable path="Collisions/PassTrough/Grand_tree_middle/PassThroughBody115"]
 [editable path="Collisions/PassTrough/Grand_tree_middle/PassThroughBody35"]
 [editable path="Ladders/Ladder3"]
+[editable path="Clouds"]
