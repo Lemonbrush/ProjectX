@@ -1,4 +1,4 @@
-[gd_scene load_steps=213 format=2]
+[gd_scene load_steps=222 format=2]
 
 [ext_resource path="res://Assets/Levels/Grand_garden/Grand_garden.png" type="Texture" id=1]
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=2]
@@ -26,6 +26,58 @@
 [ext_resource path="res://WorldObjects/Technical/Clouds/Clouds.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Assets/BackgroundGradients/BackgroundGradient1.png" type="Texture" id=25]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=26]
+[ext_resource path="res://Levels/Grand_garden/Worl_objects/Water_tower/Water_tower.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Resources/Tilesets/AnimatedTextures/Fountains/RegularFountain/RegularFountainMiddle.tres" type="Texture" id=28]
+[ext_resource path="res://Resources/Tilesets/AnimatedTextures/Fountains/RegularFountain/RegularFountainTop.tres" type="Texture" id=29]
+[ext_resource path="res://Resources/Tilesets/AnimatedTextures/Fountains/RegularFountain/RegularFountainBottom.tres" type="Texture" id=30]
+[ext_resource path="res://Resources/Tilesets/SideFountains.tres" type="TileSet" id=31]
+[ext_resource path="res://Resources/Tilesets/SmallFountains.tres" type="TileSet" id=32]
+[ext_resource path="res://Resources/Tilesets/SmallTiledFountain.tres" type="TileSet" id=33]
+[ext_resource path="res://Resources/Tilesets/Fountains.tres" type="TileSet" id=34]
+
+[sub_resource type="TileSet" id=254]
+0/name = "RegularFountainTop.tres 0"
+0/texture = ExtResource( 29 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 32, 32 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "RegularFountainMiddle.tres 1"
+1/texture = ExtResource( 28 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 32, 32 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "RegularFountainBottom.tres 2"
+2/texture = ExtResource( 30 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 32, 32 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=77]
 extents = Vector2( 72.125, 8 )
@@ -919,7 +971,77 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Upper_background_objects" type="Node2D" parent="." index="7"]
+[node name="World_objects" type="Node2D" parent="." index="7"]
+position = Vector2( 150, -484 )
+
+[node name="Water_tower_1" parent="World_objects" index="0" instance=ExtResource( 27 )]
+position = Vector2( -810, 388 )
+
+[node name="Water_tower_2" parent="World_objects" index="1" instance=ExtResource( 27 )]
+position = Vector2( 713, 532 )
+
+[node name="Fountains" type="Node2D" parent="." index="8"]
+
+[node name="Right_tower_activated_fountains" type="Node2D" parent="Fountains" index="0"]
+visible = false
+
+[node name="Fountains" type="TileMap" parent="Fountains/Right_tower_activated_fountains" index="0"]
+position = Vector2( -2, 16 )
+tile_set = SubResource( 254 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( 23135073, 0, 0, 25232225, 1, 0, 27329377, 1, 0, 29426529, 2, 0, 31458159, 1, 0, 33555311, 2, 0, 44041035, 0, 0, 46138187, 2, 0, 48235346, 2, 0, 50332485, 1, 0, 52429637, 1, 0 )
+
+[node name="SideFountains" type="TileMap" parent="Fountains/Right_tower_activated_fountains" index="1"]
+tile_set = ExtResource( 31 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 1441850, 0, 0, 1572922, 1, 0, 1638458, 1, 0, 1703994, 1, 0, 1769530, 1, 0, 1835066, 1, 0, 1900592, 536870912, 0, 1900602, 1, 0, 1966138, 1, 0, 2031664, 536870913, 0, 2031674, 1, 0, 2097200, 536870913, 0, 2162736, 536870913, 0, 2162746, 1, 0, 2228272, 536870913, 0, 2228282, 1, 0, 2293808, 536870913, 0, 2293818, 1, 0, 2359344, 536870913, 0, 2359354, 1, 0, 2424880, 536870913, 0, 2424890, 1, 0, 2490416, 536870913, 0, 2555952, 536870913, 0, 2555962, 1, 0, 2621488, 536870913, 0, 2621498, 1, 0, 2687024, 536870913, 0, 2687034, 1, 0, 2752560, 536870913, 0, 2752570, 1, 0, 2818096, 536870913, 0, 2818106, 1, 0, 2883632, 536870914, 0, 2883642, 1, 0, 2949177, 2, 0, 2949178, 1, 0, 3014714, 1, 0, 3080250, 1, 0, 3145786, 1, 0, 3211322, 1, 0, 3276858, 1, 0, 3342394, 1, 0 )
+
+[node name="SmallTiledFountains" type="TileMap" parent="Fountains/Right_tower_activated_fountains" index="2"]
+tile_set = ExtResource( 33 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 1376306, 536870912, 0, 1376307, 536870912, 0, 1441842, 536870912, 0, 1441843, 536870912, 0, 1507378, 536870912, 0, 1507379, 536870912, 0, 1572914, 536870912, 0, 1572915, 536870913, 0, 1703986, 536870912, 0, 1835058, 536870912, 0, 1900594, 536870912, 0, 1966130, 536870912, 0, 2031666, 536870913, 0, 2359352, 536870912, 0, 2490423, 536870912, 0, 2555959, 536870912, 0, 2621495, 536870912, 0, 2687031, 536870912, 0, 2752567, 536870912, 0, 2818103, 536870912, 0, 2883639, 536870913, 0, 3145785, 536870912, 0, 3211321, 536870912, 0, 3276854, 536870912, 0, 3276857, 536870912, 0, 3342390, 536870912, 0, 3342393, 536870912, 0, 3407926, 536870912, 0, 3407929, 536870912, 0 )
+
+[node name="SmallFountains" type="TileMap" parent="Fountains/Right_tower_activated_fountains" index="3"]
+tile_set = ExtResource( 32 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( 13501218, 536870912, 0, 15205154, 536870913, 0, 16909090, 536870913, 0, 18613026, 536870913, 0, 20316962, 536870914, 0 )
+
+[node name="Left_tower_activated_fountains" type="Node2D" parent="Fountains" index="1"]
+visible = false
+
+[node name="Fountains" type="TileMap" parent="Fountains/Left_tower_activated_fountains" index="0"]
+position = Vector2( -1167, -270 )
+tile_set = ExtResource( 34 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( 21889566, 536870912, 0, 23986718, 536870913, 0, 26083870, 536870914, 0, 31326687, 536870912, 0, 33423839, 536870913, 0, 35520991, 536870914, 0, 37618157, 536870913, 0, 38666733, 536870913, 0, 40763885, 536870913, 0, 42861037, 536870914, 0 )
+
+[node name="SideFountains" type="TileMap" parent="Fountains/Left_tower_activated_fountains" index="1"]
+position = Vector2( -1165, -286 )
+tile_set = ExtResource( 31 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( 30146972, 536870912, 0, 32244124, 536870913, 0, 33423772, 536870914, 0, 35521084, 0, 0, 37618236, 1, 0, 39715388, 1, 0, 41812540, 1, 0, 43909692, 1, 0, 46006844, 1, 0, 47055260, 536870912, 0, 48103996, 1, 0, 49152412, 536870913, 0, 50201148, 1, 0, 51249564, 536870913, 0, 52232764, 1, 0, 52298140, 536870914, 0, 54329916, 1, 0, 55640636, 1, 0, 56492604, 2, 0 )
+
+[node name="SmallTiledFountains" type="TileMap" parent="Fountains/Left_tower_activated_fountains" index="2"]
+position = Vector2( -1165, -286 )
+tile_set = ExtResource( 33 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( 25035198, 0, 0, 26083774, 0, 0, 29229593, 536870912, 0, 30278169, 536870912, 0, 31326745, 536870912, 0, 32309785, 536870912, 0, 32375321, 536870913, 0, 35520937, 536870912, 0, 36569513, 536870912, 0, 37618089, 536870912, 0, 38142377, 536870912, 0, 38732201, 536870913, 0, 44958151, 0, 0, 46006763, 536870912, 0, 46006784, 0, 0, 47055346, 536870912, 0, 48103922, 536870913, 0, 54395293, 536870912, 0, 55443869, 536870912, 0, 56492445, 536870912, 0, 57541021, 536870913, 0, 58589758, 536870912, 0, 59638334, 536870912, 0, 60686907, 0, 0, 61735483, 0, 0, 62784059, 1, 0 )
+
+[node name="SmallFountains" type="TileMap" parent="Fountains/Left_tower_activated_fountains" index="3"]
+position = Vector2( -1165, -286 )
+tile_set = ExtResource( 32 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( 45089295, 536870912, 0, 46793231, 536870913, 0, 48497167, 536870914, 0 )
+
+[node name="Upper_background_objects" type="Node2D" parent="." index="9"]
 position = Vector2( 150, -484 )
 
 [node name="Trees" type="Node2D" parent="Upper_background_objects" index="0"]
@@ -931,13 +1053,13 @@ position = Vector2( 321, -620 )
 
 [node name="Background_trees" type="Node2D" parent="Upper_background_objects/Trees" index="1"]
 
-[node name="Player" parent="." index="8"]
-position = Vector2( 167, -1171 )
+[node name="Player" parent="." index="10"]
+position = Vector2( 796, 0 )
 
 [node name="Light2D2" parent="Player" index="5"]
 visible = false
 
-[node name="Foreground_world_objects2" type="Node2D" parent="." index="9"]
+[node name="Foreground_world_objects2" type="Node2D" parent="." index="11"]
 
 [node name="Left_tower_side" type="Node2D" parent="Collisions/PassTrough" index="0"]
 visible = false
@@ -3949,8 +4071,8 @@ color = Color( 1, 1, 1, 0.403922 )
 energy = 0.7
 mode = 2
 
-[node name="WaterSurface" type="Node2D" parent="." index="15"]
-position = Vector2( 227, 874 )
+[node name="WaterSurface" type="Node2D" parent="." index="17"]
+position = Vector2( 226, 873 )
 
 [node name="WaterSurface" type="TileMap" parent="WaterSurface" index="0"]
 modulate = Color( 1, 1, 1, 0.564706 )
@@ -3974,7 +4096,7 @@ collision_mask = 64
 position = Vector2( 1339.5, 220.5 )
 shape = SubResource( 76 )
 
-[node name="Clouds" parent="." index="16" instance=ExtResource( 24 )]
+[node name="Clouds" parent="." index="18" instance=ExtResource( 24 )]
 position = Vector2( 193, -87 )
 z_index = -2
 __meta__ = {
