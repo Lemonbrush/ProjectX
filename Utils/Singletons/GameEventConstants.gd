@@ -33,7 +33,10 @@ func set_default_constants():
 		lovers_she_has_been_told_a_story = false,
 		lovers_asking_to_tell_a_story = false,
 		lovers_girl_said_yes = false,
-		lover_dweller_said_thank_you = false
+		lover_dweller_said_thank_you = false,
+		left_water_tower_activated = false,
+		right_water_tower_activated = false,
+		grand_garden_water_level = 0
 	}
 	EventBus.game_const_changed()
 

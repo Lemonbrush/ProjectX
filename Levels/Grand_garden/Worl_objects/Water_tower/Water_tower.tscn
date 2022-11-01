@@ -156,6 +156,7 @@ scale_curve = SubResource( 6 )
 color = Color( 0.87451, 0.952941, 1, 1 )
 
 [node name="Water_tower" type="Node2D"]
+pause_mode = 2
 script = ExtResource( 5 )
 
 [node name="Cork" parent="." instance=ExtResource( 2 )]

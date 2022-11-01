@@ -191,6 +191,7 @@ anim_offset = 1.0
 anim_offset_random = 1.0
 
 [node name="Crok_destruction" type="Node2D"]
+pause_mode = 2
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, 3 )
