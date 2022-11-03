@@ -1,4 +1,4 @@
-[gd_scene load_steps=252 format=2]
+[gd_scene load_steps=255 format=2]
 
 [ext_resource path="res://Assets/Levels/Grand_garden/Grand_garden.png" type="Texture" id=1]
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=2]
@@ -219,6 +219,30 @@ tracks/13/keys = {
 "update": 0,
 "values": [ true ]
 }
+tracks/14/type = "value"
+tracks/14/path = NodePath("Upper_background_objects/White_flower_growing/Flower_ladder/CollisionShape2D:disabled")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Upper_background_objects/White_flower_growing/Dirt_particles:emitting")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=270]
 resource_name = "White_flower_grow_cut_scene"
@@ -242,10 +266,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.7, 5.1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.7, 5.1 ),
+"transitions": PoolRealArray( 1e+06, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -47, 0 ), Vector2( -47, -326 ) ]
+"values": [ Vector2( -47, 0 ), Vector2( -47, 0 ), Vector2( -47, -326 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Upper_background_objects/White_flower_growing:visible")
@@ -270,6 +294,30 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Upper_background_objects/White_flower_growing/Flower_ladder/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 5.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Upper_background_objects/White_flower_growing/Dirt_particles:emitting")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.7, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
 }
 
 [sub_resource type="Animation" id=255]
@@ -630,7 +678,28 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=271]
-extents = Vector2( 8, 49 )
+extents = Vector2( 8, 166.5 )
+
+[sub_resource type="Curve" id=272]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.148374, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.896341, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=273]
+curve = SubResource( 272 )
+
+[sub_resource type="ParticlesMaterial" id=274]
+emission_shape = 2
+emission_box_extents = Vector3( 2, 2, 1 )
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 50, 0 )
+initial_velocity = 40.0
+initial_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 3.0
+scale_random = 1.0
+scale_curve = SubResource( 273 )
+color = Color( 0.243137, 0.0392157, 0.164706, 1 )
 
 [sub_resource type="RectangleShape2D" id=77]
 extents = Vector2( 72.125, 8 )
@@ -1720,11 +1789,12 @@ position = Vector2( 145, 1174 )
 texture = ExtResource( 48 )
 
 [node name="Flower_ladder" parent="Upper_background_objects/White_flower_growing" index="1" instance=ExtResource( 17 )]
-position = Vector2( 154, 674 )
+position = Vector2( 99, 690 )
 
 [node name="CollisionShape2D" parent="Upper_background_objects/White_flower_growing/Flower_ladder" index="0"]
-position = Vector2( -1, 38 )
+position = Vector2( -1, 155.5 )
 shape = SubResource( 271 )
+disabled = true
 one_way_collision = false
 
 [node name="Long_body_mask" type="Light2D" parent="Upper_background_objects/White_flower_growing" index="2"]
@@ -1735,6 +1805,12 @@ energy = 0.0
 mode = 3
 range_item_cull_mask = 512
 shadow_item_cull_mask = 0
+
+[node name="Dirt_particles" type="Particles2D" parent="Upper_background_objects/White_flower_growing" index="3"]
+position = Vector2( 99, 1011 )
+emitting = false
+amount = 35
+process_material = SubResource( 274 )
 
 [node name="Player" parent="." index="11"]
 position = Vector2( 252, 501 )
