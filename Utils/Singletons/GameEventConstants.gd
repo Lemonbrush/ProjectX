@@ -36,7 +36,8 @@ func set_default_constants():
 		lover_dweller_said_thank_you = false,
 		left_water_tower_activated = false,
 		right_water_tower_activated = false,
-		grand_garden_water_level = 0
+		grand_garden_water_level = 0.0,
+		white_flower_quest_taken = false
 	}
 	EventBus.game_const_changed()
 

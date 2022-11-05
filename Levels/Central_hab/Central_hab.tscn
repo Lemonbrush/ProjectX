@@ -642,7 +642,7 @@ extents = Vector2( 14.75, 16.625 )
 [sub_resource type="Curve" id=213]
 _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.282238, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.890511, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=214]
+[sub_resource type="CurveTexture" id=216]
 curve = SubResource( 213 )
 
 [sub_resource type="ParticlesMaterial" id=212]
@@ -654,7 +654,7 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 0.1
 scale_random = 1.0
-scale_curve = SubResource( 214 )
+scale_curve = SubResource( 216 )
 
 [sub_resource type="Animation" id=200]
 resource_name = "Idle"

@@ -22,6 +22,11 @@ static func execute(command_line: String):
 				var var_name = args[0]
 				var value = str2var(args[1])
 				GameEventConstants.set_constant(var_name, bool(value))
+			
+			"set_float":
+				var var_name = args[0]
+				var value = str2var(args[1])
+				GameEventConstants.set_constant(var_name, float(value))
 				
 			"emmit":
 				var signal_name = args[0]
