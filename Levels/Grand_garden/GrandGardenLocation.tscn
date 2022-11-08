@@ -1,4 +1,4 @@
-[gd_scene load_steps=262 format=2]
+[gd_scene load_steps=293 format=2]
 
 [ext_resource path="res://Assets/Levels/Grand_garden/Grand_garden.png" type="Texture" id=1]
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=2]
@@ -48,6 +48,13 @@
 [ext_resource path="res://Assets/NPC/Flower_dwellers/Dandy_flower_dweller-Sheet.png" type="Texture" id=46]
 [ext_resource path="res://Assets/effects/Heart.png" type="Texture" id=47]
 [ext_resource path="res://Assets/NPC/Flower_dwellers/White_flower_dweller_long_body.png" type="Texture" id=48]
+[ext_resource path="res://Resources/Tilesets/Decorations.tres" type="TileSet" id=49]
+[ext_resource path="res://Assets/NPC/Flower_dwellers/Red_flower_dweller-Sheet.png" type="Texture" id=50]
+[ext_resource path="res://Assets/NPC/Flower_dwellers/Yellow_flower_dweller-Sheet.png" type="Texture" id=51]
+[ext_resource path="res://Assets/NPC/Flower_dwellers/Magenta_flower_dweller-Sheet.png" type="Texture" id=52]
+[ext_resource path="res://Assets/NPC/Flower_dwellers/Pink_flower_dweller-Sheet.png" type="Texture" id=53]
+[ext_resource path="res://Assets/NPC/Flower_dwellers/Cactus_dweller-Sheet.png" type="Texture" id=54]
+[ext_resource path="res://Assets/NPC/Flower_dwellers/Master_white_flower_dweller-Sheet.png" type="Texture" id=55]
 
 [sub_resource type="Animation" id=257]
 length = 0.001
@@ -583,6 +590,198 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
+[sub_resource type="Animation" id=299]
+resource_name = "Idle"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[sub_resource type="Animation" id=300]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=301]
+resource_name = "Idle"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[sub_resource type="Animation" id=302]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=303]
+resource_name = "Idle"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[sub_resource type="Animation" id=304]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=305]
+resource_name = "Idle"
+length = 1.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
+}
+
+[sub_resource type="Animation" id=306]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=307]
+resource_name = "Idle"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 0 ]
+}
+
+[sub_resource type="Animation" id=308]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=309]
+resource_name = "Idle"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+
+[sub_resource type="Animation" id=310]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
 [sub_resource type="RectangleShape2D" id=271]
 extents = Vector2( 8, 166.5 )
 
@@ -980,14 +1179,50 @@ extents = Vector2( 144, 8 )
 [sub_resource type="RectangleShape2D" id=242]
 extents = Vector2( 512, 8 )
 
-[sub_resource type="RectangleShape2D" id=243]
-extents = Vector2( 312, 8 )
+[sub_resource type="RectangleShape2D" id=286]
+extents = Vector2( 312, 3 )
 
 [sub_resource type="RectangleShape2D" id=244]
 extents = Vector2( 232, 8 )
 
 [sub_resource type="RectangleShape2D" id=245]
 extents = Vector2( 144, 8 )
+
+[sub_resource type="RectangleShape2D" id=287]
+extents = Vector2( 64, 8 )
+
+[sub_resource type="RectangleShape2D" id=288]
+extents = Vector2( 24, 6 )
+
+[sub_resource type="RectangleShape2D" id=289]
+extents = Vector2( 8, 6 )
+
+[sub_resource type="RectangleShape2D" id=290]
+extents = Vector2( 32, 6 )
+
+[sub_resource type="RectangleShape2D" id=291]
+extents = Vector2( 16, 6 )
+
+[sub_resource type="RectangleShape2D" id=292]
+extents = Vector2( 32, 6 )
+
+[sub_resource type="RectangleShape2D" id=293]
+extents = Vector2( 16, 6 )
+
+[sub_resource type="RectangleShape2D" id=294]
+extents = Vector2( 24, 6 )
+
+[sub_resource type="RectangleShape2D" id=295]
+extents = Vector2( 16, 6 )
+
+[sub_resource type="RectangleShape2D" id=296]
+extents = Vector2( 32, 6 )
+
+[sub_resource type="RectangleShape2D" id=297]
+extents = Vector2( 24, 6 )
+
+[sub_resource type="RectangleShape2D" id=298]
+extents = Vector2( 15.5, 6 )
 
 [sub_resource type="RectangleShape2D" id=246]
 extents = Vector2( 40, 8 )
@@ -1577,7 +1812,6 @@ water_tower_number = 1
 [node name="Fountains" type="Node2D" parent="." index="9"]
 
 [node name="Left_tower_activated_fountains" type="Node2D" parent="Fountains" index="0"]
-visible = false
 
 [node name="Fountains" type="TileMap" parent="Fountains/Left_tower_activated_fountains" index="0"]
 position = Vector2( -1167, -270 )
@@ -1744,6 +1978,96 @@ autoplay = "Idle"
 anims/Idle = SubResource( 283 )
 anims/RESET = SubResource( 284 )
 
+[node name="Red_flower_dweller" parent="Upper_background_objects/Dwellers" index="5" instance=ExtResource( 39 )]
+position = Vector2( -137, -1105 )
+collision_layer = 3
+collision_mask = 0
+
+[node name="Sprite" type="Sprite" parent="Upper_background_objects/Dwellers/Red_flower_dweller/Body" index="2"]
+position = Vector2( 0, -12 )
+texture = ExtResource( 50 )
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Upper_background_objects/Dwellers/Red_flower_dweller" index="6"]
+autoplay = "Idle"
+anims/Idle = SubResource( 299 )
+anims/RESET = SubResource( 300 )
+
+[node name="Yellow_flower_dweller" parent="Upper_background_objects/Dwellers" index="6" instance=ExtResource( 39 )]
+position = Vector2( 333, -1155 )
+collision_layer = 3
+collision_mask = 0
+
+[node name="Sprite" type="Sprite" parent="Upper_background_objects/Dwellers/Yellow_flower_dweller/Body" index="2"]
+position = Vector2( 0, -18 )
+texture = ExtResource( 51 )
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Upper_background_objects/Dwellers/Yellow_flower_dweller" index="6"]
+autoplay = "Idle"
+anims/Idle = SubResource( 301 )
+anims/RESET = SubResource( 302 )
+
+[node name="Magenta_flower_dweller" parent="Upper_background_objects/Dwellers" index="7" instance=ExtResource( 39 )]
+position = Vector2( 79, -1088 )
+collision_layer = 3
+collision_mask = 0
+
+[node name="Sprite" type="Sprite" parent="Upper_background_objects/Dwellers/Magenta_flower_dweller/Body" index="2"]
+position = Vector2( 0, -11 )
+texture = ExtResource( 52 )
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Upper_background_objects/Dwellers/Magenta_flower_dweller" index="6"]
+autoplay = "Idle"
+anims/Idle = SubResource( 303 )
+anims/RESET = SubResource( 304 )
+
+[node name="Pink_flower_dweller" parent="Upper_background_objects/Dwellers" index="8" instance=ExtResource( 39 )]
+position = Vector2( 462, -1074 )
+collision_layer = 3
+collision_mask = 0
+
+[node name="Sprite" type="Sprite" parent="Upper_background_objects/Dwellers/Pink_flower_dweller/Body" index="2"]
+position = Vector2( 0, -12 )
+texture = ExtResource( 53 )
+hframes = 13
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Upper_background_objects/Dwellers/Pink_flower_dweller" index="6"]
+autoplay = "Idle"
+anims/Idle = SubResource( 305 )
+anims/RESET = SubResource( 306 )
+
+[node name="Cactus_flower_dweller" parent="Upper_background_objects/Dwellers" index="9" instance=ExtResource( 39 )]
+position = Vector2( 56, -1185 )
+collision_layer = 3
+collision_mask = 0
+
+[node name="Sprite" type="Sprite" parent="Upper_background_objects/Dwellers/Cactus_flower_dweller/Body" index="2"]
+position = Vector2( 0, -12 )
+texture = ExtResource( 54 )
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Upper_background_objects/Dwellers/Cactus_flower_dweller" index="6"]
+autoplay = "Idle"
+anims/Idle = SubResource( 307 )
+anims/RESET = SubResource( 308 )
+
+[node name="Master_white_flower_dweller" parent="Upper_background_objects/Dwellers" index="10" instance=ExtResource( 39 )]
+position = Vector2( 678, -1078 )
+collision_layer = 3
+collision_mask = 0
+
+[node name="Sprite" type="Sprite" parent="Upper_background_objects/Dwellers/Master_white_flower_dweller/Body" index="2"]
+position = Vector2( 0, -12 )
+texture = ExtResource( 55 )
+hframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Upper_background_objects/Dwellers/Master_white_flower_dweller" index="6"]
+autoplay = "Idle"
+anims/Idle = SubResource( 309 )
+anims/RESET = SubResource( 310 )
+
 [node name="White_flower_growing" type="Node2D" parent="Upper_background_objects" index="2"]
 visible = false
 
@@ -1796,8 +2120,16 @@ lifetime = 3.0
 process_material = SubResource( 281 )
 texture = ExtResource( 47 )
 
+[node name="Decorations_tilemap" type="Node2D" parent="Upper_background_objects" index="4"]
+
+[node name="Decorations" type="TileMap" parent="Upper_background_objects/Decorations_tilemap" index="0"]
+position = Vector2( 0, -4 )
+tile_set = ExtResource( 49 )
+cell_size = Vector2( 1, 1 )
+format = 1
+
 [node name="Player" parent="." index="11"]
-position = Vector2( -609, -115 )
+position = Vector2( -134, -1129 )
 
 [node name="Light2D2" parent="Player" index="5"]
 visible = false
@@ -2512,6 +2844,7 @@ shape = SubResource( 82 )
 one_way_collision = true
 
 [node name="Right_tower_side" type="Node2D" parent="Collisions/PassTrough" index="1"]
+visible = false
 
 [node name="PassThroughBody7" parent="Collisions/PassTrough/Right_tower_side" index="0" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( 1103, -308 )
@@ -3699,8 +4032,8 @@ one_way_collision = true
 position = Vector2( 205, -2196 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Garden/PassThroughBody116" index="0"]
-position = Vector2( 26, 1100 )
-shape = SubResource( 243 )
+position = Vector2( 26, 1095 )
+shape = SubResource( 286 )
 one_way_collision = true
 
 [node name="PassThroughBody117" parent="Collisions/PassTrough/Garden" index="2" groups=["passThroughObject"] instance=ExtResource( 2 )]
@@ -3719,7 +4052,119 @@ position = Vector2( -142, 1100 )
 shape = SubResource( 245 )
 one_way_collision = true
 
-[node name="PassThroughBody119" parent="Collisions/PassTrough/Garden" index="4" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody131" parent="Collisions/PassTrough/Garden" index="4" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( 429, -2276 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/Garden/PassThroughBody131" index="0"]
+position = Vector2( -222, 1100 )
+shape = SubResource( 287 )
+one_way_collision = true
+
+[node name="PassThroughBody132" parent="Collisions/PassTrough/Garden" index="5" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( 477, -2292 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/Garden/PassThroughBody132" index="0"]
+position = Vector2( -262, 1098 )
+shape = SubResource( 288 )
+one_way_collision = true
+
+[node name="PassThroughBody133" parent="Collisions/PassTrough/Garden" index="6" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( 301, -2276 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/Garden/PassThroughBody133" index="0"]
+position = Vector2( -246, 1098 )
+shape = SubResource( 289 )
+one_way_collision = true
+
+[node name="PassThroughBody134" parent="Collisions/PassTrough/Garden" index="7" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( 653, -2292 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/Garden/PassThroughBody134" index="0"]
+position = Vector2( -246, 1098 )
+shape = SubResource( 289 )
+one_way_collision = true
+
+[node name="PassThroughBody135" parent="Collisions/PassTrough/Garden" index="8" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( 733, -2276 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/Garden/PassThroughBody135" index="0"]
+position = Vector2( -222, 1098 )
+shape = SubResource( 290 )
+one_way_collision = true
+
+[node name="PassThroughBody136" parent="Collisions/PassTrough/Garden" index="9" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( 573, -2212 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/Garden/PassThroughBody136" index="0"]
+position = Vector2( -238, 1098 )
+shape = SubResource( 291 )
+one_way_collision = true
+
+[node name="PassThroughBody137" parent="Collisions/PassTrough/Garden" index="10" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( 381, -2212 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/Garden/PassThroughBody137" index="0"]
+position = Vector2( -222, 1098 )
+shape = SubResource( 292 )
+one_way_collision = true
+
+[node name="PassThroughBody138" parent="Collisions/PassTrough/Garden" index="11" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( 317, -2180 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/Garden/PassThroughBody138" index="0"]
+position = Vector2( -238, 1098 )
+shape = SubResource( 293 )
+one_way_collision = true
+
+[node name="PassThroughBody139" parent="Collisions/PassTrough/Garden" index="12" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( 93, -2196 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/Garden/PassThroughBody139" index="0"]
+position = Vector2( -230, 1098 )
+shape = SubResource( 294 )
+one_way_collision = true
+
+[node name="PassThroughBody140" parent="Collisions/PassTrough/Garden" index="13" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( 253, -2244 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/Garden/PassThroughBody140" index="0"]
+position = Vector2( -238, 1098 )
+shape = SubResource( 295 )
+one_way_collision = true
+
+[node name="PassThroughBody141" parent="Collisions/PassTrough/Garden" index="14" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( 765, -2228 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/Garden/PassThroughBody141" index="0"]
+position = Vector2( -222, 1098 )
+shape = SubResource( 296 )
+one_way_collision = true
+
+[node name="PassThroughBody142" parent="Collisions/PassTrough/Garden" index="15" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( 605, -2308 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/Garden/PassThroughBody142" index="0"]
+position = Vector2( -230, 1098 )
+shape = SubResource( 297 )
+one_way_collision = true
+
+[node name="PassThroughBody143" parent="Collisions/PassTrough/Garden" index="16" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( 141, -2228 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/Garden/PassThroughBody143" index="0"]
+position = Vector2( -230, 1098 )
+shape = SubResource( 297 )
+one_way_collision = true
+
+[node name="PassThroughBody144" parent="Collisions/PassTrough/Garden" index="17" groups=["passThroughObject"] instance=ExtResource( 2 )]
+position = Vector2( 286, -2260 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/Garden/PassThroughBody144" index="0"]
+position = Vector2( -238.5, 1098 )
+shape = SubResource( 298 )
+one_way_collision = true
+
+[node name="PassThroughBody119" parent="Collisions/PassTrough/Garden" index="18" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -35, -2260 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Garden/PassThroughBody119" index="0"]
@@ -3727,7 +4172,7 @@ position = Vector2( -246, 1100 )
 shape = SubResource( 246 )
 one_way_collision = true
 
-[node name="PassThroughBody120" parent="Collisions/PassTrough/Garden" index="5" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody120" parent="Collisions/PassTrough/Garden" index="19" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -51, -2228 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Garden/PassThroughBody120" index="0"]
@@ -3735,7 +4180,7 @@ position = Vector2( -262, 1100 )
 shape = SubResource( 247 )
 one_way_collision = true
 
-[node name="PassThroughBody121" parent="Collisions/PassTrough/Garden" index="6" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody121" parent="Collisions/PassTrough/Garden" index="20" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -67, -2212 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Garden/PassThroughBody121" index="0"]
@@ -3743,7 +4188,7 @@ position = Vector2( -278, 1100 )
 shape = SubResource( 248 )
 one_way_collision = true
 
-[node name="PassThroughBody122" parent="Collisions/PassTrough/Garden" index="7" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody122" parent="Collisions/PassTrough/Garden" index="21" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -83, -2180 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Garden/PassThroughBody122" index="0"]
@@ -3751,7 +4196,7 @@ position = Vector2( -278, 1100 )
 shape = SubResource( 248 )
 one_way_collision = true
 
-[node name="PassThroughBody123" parent="Collisions/PassTrough/Garden" index="8" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody123" parent="Collisions/PassTrough/Garden" index="22" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -3, -2180 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Garden/PassThroughBody123" index="0"]
@@ -3759,7 +4204,7 @@ position = Vector2( -278, 1100 )
 shape = SubResource( 248 )
 one_way_collision = true
 
-[node name="PassThroughBody124" parent="Collisions/PassTrough/Garden" index="9" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody124" parent="Collisions/PassTrough/Garden" index="23" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -99, -2148 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Garden/PassThroughBody124" index="0"]
@@ -3767,7 +4212,7 @@ position = Vector2( -278, 1100 )
 shape = SubResource( 248 )
 one_way_collision = true
 
-[node name="PassThroughBody125" parent="Collisions/PassTrough/Garden" index="10" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody125" parent="Collisions/PassTrough/Garden" index="24" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -115, -2084 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Garden/PassThroughBody125" index="0"]
@@ -3775,7 +4220,7 @@ position = Vector2( -278, 1100 )
 shape = SubResource( 248 )
 one_way_collision = true
 
-[node name="PassThroughBody126" parent="Collisions/PassTrough/Garden" index="11" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody126" parent="Collisions/PassTrough/Garden" index="25" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( 1117, -2164 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Garden/PassThroughBody126" index="0"]
@@ -3783,7 +4228,7 @@ position = Vector2( -278, 1100 )
 shape = SubResource( 248 )
 one_way_collision = true
 
-[node name="PassThroughBody127" parent="Collisions/PassTrough/Garden" index="12" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody127" parent="Collisions/PassTrough/Garden" index="26" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( 1006, -2180 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Garden/PassThroughBody127" index="0"]
@@ -3791,7 +4236,7 @@ position = Vector2( -254.5, 1100 )
 shape = SubResource( 249 )
 one_way_collision = true
 
-[node name="PassThroughBody128" parent="Collisions/PassTrough/Garden" index="13" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody128" parent="Collisions/PassTrough/Garden" index="27" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( 1069, -2196 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Garden/PassThroughBody128" index="0"]
@@ -3799,7 +4244,7 @@ position = Vector2( -262, 1100 )
 shape = SubResource( 250 )
 one_way_collision = true
 
-[node name="PassThroughBody129" parent="Collisions/PassTrough/Garden" index="14" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody129" parent="Collisions/PassTrough/Garden" index="28" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( 1037, -2212 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Garden/PassThroughBody129" index="0"]
@@ -3807,7 +4252,7 @@ position = Vector2( -262, 1100 )
 shape = SubResource( 250 )
 one_way_collision = true
 
-[node name="PassThroughBody130" parent="Collisions/PassTrough/Garden" index="15" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody130" parent="Collisions/PassTrough/Garden" index="29" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( 1038, -2244 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Garden/PassThroughBody130" index="0"]
@@ -4797,6 +5242,78 @@ color = Color( 1, 1, 1, 0.403922 )
 energy = 0.7
 mode = 2
 
+[node name="Light2D" type="Light2D" parent="Lighting" index="2"]
+position = Vector2( 171, -1319.62 )
+scale = Vector2( 0.494845, 0.335313 )
+texture = ExtResource( 26 )
+color = Color( 1, 1, 1, 0.403922 )
+energy = 0.15
+mode = 2
+
+[node name="Light2D2" type="Light2D" parent="Lighting" index="3"]
+position = Vector2( -57.5, -1233.31 )
+scale = Vector2( 0.279639, 0.321005 )
+texture = ExtResource( 26 )
+color = Color( 1, 1, 1, 0.403922 )
+energy = 0.15
+mode = 2
+
+[node name="Light2D3" type="Light2D" parent="Lighting" index="4"]
+position = Vector2( -176.75, -1152.16 )
+scale = Vector2( 0.221005, 0.216658 )
+texture = ExtResource( 26 )
+color = Color( 1, 1, 1, 0.403922 )
+energy = 0.15
+mode = 2
+
+[node name="Light2D4" type="Light2D" parent="Lighting" index="5"]
+position = Vector2( -149.875, -1196.58 )
+scale = Vector2( 0.128544, 0.2228 )
+texture = ExtResource( 26 )
+color = Color( 1, 1, 1, 0.403922 )
+energy = 0.15
+mode = 2
+
+[node name="Light2D5" type="Light2D" parent="Lighting" index="6"]
+position = Vector2( -246.938, -1108.79 )
+scale = Vector2( 0.105509, 0.124359 )
+texture = ExtResource( 26 )
+color = Color( 1, 1, 1, 0.403922 )
+energy = 0.15
+mode = 2
+
+[node name="Light2D6" type="Light2D" parent="Lighting" index="7"]
+position = Vector2( 467.469, -1236.39 )
+scale = Vector2( 0.19193, 0.239285 )
+texture = ExtResource( 26 )
+color = Color( 1, 1, 1, 0.403922 )
+energy = 0.15
+mode = 2
+
+[node name="Light2D7" type="Light2D" parent="Lighting" index="8"]
+position = Vector2( 588.766, -1159.7 )
+scale = Vector2( 0.211944, 0.262191 )
+texture = ExtResource( 26 )
+color = Color( 1, 1, 1, 0.403922 )
+energy = 0.15
+mode = 2
+
+[node name="Light2D8" type="Light2D" parent="Lighting" index="9"]
+position = Vector2( 689.617, -1124.85 )
+scale = Vector2( 0.169116, 0.206689 )
+texture = ExtResource( 26 )
+color = Color( 1, 1, 1, 0.403922 )
+energy = 0.15
+mode = 2
+
+[node name="Light2D9" type="Light2D" parent="Lighting" index="10"]
+position = Vector2( 361.809, -1281.42 )
+scale = Vector2( 0.133527, 0.140062 )
+texture = ExtResource( 26 )
+color = Color( 1, 1, 1, 0.403922 )
+energy = 0.15
+mode = 2
+
 [node name="WaterSurface" type="Node2D" parent="." index="18"]
 pause_mode = 2
 position = Vector2( 226, 873 )
@@ -4881,6 +5398,18 @@ process_material = SubResource( 253 )
 [editable path="Upper_background_objects/Dwellers/Dandy_dweller/Body/InteractionController"]
 [editable path="Upper_background_objects/Dwellers/Rose_flower_dweller"]
 [editable path="Upper_background_objects/Dwellers/Rose_flower_dweller/Body/InteractionController"]
+[editable path="Upper_background_objects/Dwellers/Red_flower_dweller"]
+[editable path="Upper_background_objects/Dwellers/Red_flower_dweller/Body/InteractionController"]
+[editable path="Upper_background_objects/Dwellers/Yellow_flower_dweller"]
+[editable path="Upper_background_objects/Dwellers/Yellow_flower_dweller/Body/InteractionController"]
+[editable path="Upper_background_objects/Dwellers/Magenta_flower_dweller"]
+[editable path="Upper_background_objects/Dwellers/Magenta_flower_dweller/Body/InteractionController"]
+[editable path="Upper_background_objects/Dwellers/Pink_flower_dweller"]
+[editable path="Upper_background_objects/Dwellers/Pink_flower_dweller/Body/InteractionController"]
+[editable path="Upper_background_objects/Dwellers/Cactus_flower_dweller"]
+[editable path="Upper_background_objects/Dwellers/Cactus_flower_dweller/Body/InteractionController"]
+[editable path="Upper_background_objects/Dwellers/Master_white_flower_dweller"]
+[editable path="Upper_background_objects/Dwellers/Master_white_flower_dweller/Body/InteractionController"]
 [editable path="Upper_background_objects/White_flower_growing/Flower_ladder"]
 [editable path="Collisions/PassTrough/Left_tower_side/PassThroughBody7"]
 [editable path="Collisions/PassTrough/Left_tower_side/PassThroughBody35"]
@@ -5120,6 +5649,20 @@ process_material = SubResource( 253 )
 [editable path="Collisions/PassTrough/Garden/PassThroughBody116"]
 [editable path="Collisions/PassTrough/Garden/PassThroughBody117"]
 [editable path="Collisions/PassTrough/Garden/PassThroughBody118"]
+[editable path="Collisions/PassTrough/Garden/PassThroughBody131"]
+[editable path="Collisions/PassTrough/Garden/PassThroughBody132"]
+[editable path="Collisions/PassTrough/Garden/PassThroughBody133"]
+[editable path="Collisions/PassTrough/Garden/PassThroughBody134"]
+[editable path="Collisions/PassTrough/Garden/PassThroughBody135"]
+[editable path="Collisions/PassTrough/Garden/PassThroughBody136"]
+[editable path="Collisions/PassTrough/Garden/PassThroughBody137"]
+[editable path="Collisions/PassTrough/Garden/PassThroughBody138"]
+[editable path="Collisions/PassTrough/Garden/PassThroughBody139"]
+[editable path="Collisions/PassTrough/Garden/PassThroughBody140"]
+[editable path="Collisions/PassTrough/Garden/PassThroughBody141"]
+[editable path="Collisions/PassTrough/Garden/PassThroughBody142"]
+[editable path="Collisions/PassTrough/Garden/PassThroughBody143"]
+[editable path="Collisions/PassTrough/Garden/PassThroughBody144"]
 [editable path="Collisions/PassTrough/Garden/PassThroughBody119"]
 [editable path="Collisions/PassTrough/Garden/PassThroughBody120"]
 [editable path="Collisions/PassTrough/Garden/PassThroughBody121"]

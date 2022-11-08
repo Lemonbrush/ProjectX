@@ -22,5 +22,6 @@ visible = false
 [node name="CollisionShape2D" parent="PassThroughBody" index="0"]
 position = Vector2( 3, -178 )
 shape = SubResource( 1 )
+disabled = true
 
 [editable path="PassThroughBody"]
