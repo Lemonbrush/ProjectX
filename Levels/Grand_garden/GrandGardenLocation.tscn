@@ -1,4 +1,4 @@
-[gd_scene load_steps=275 format=2]
+[gd_scene load_steps=293 format=2]
 
 [ext_resource path="res://Assets/Levels/Grand_garden/Grand_garden.png" type="Texture" id=1]
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=2]
@@ -49,6 +49,12 @@
 [ext_resource path="res://Assets/effects/Heart.png" type="Texture" id=47]
 [ext_resource path="res://Assets/NPC/Flower_dwellers/White_flower_dweller_long_body.png" type="Texture" id=48]
 [ext_resource path="res://Resources/Tilesets/Decorations.tres" type="TileSet" id=49]
+[ext_resource path="res://Assets/NPC/Flower_dwellers/Red_flower_dweller-Sheet.png" type="Texture" id=50]
+[ext_resource path="res://Assets/NPC/Flower_dwellers/Yellow_flower_dweller-Sheet.png" type="Texture" id=51]
+[ext_resource path="res://Assets/NPC/Flower_dwellers/Magenta_flower_dweller-Sheet.png" type="Texture" id=52]
+[ext_resource path="res://Assets/NPC/Flower_dwellers/Pink_flower_dweller-Sheet.png" type="Texture" id=53]
+[ext_resource path="res://Assets/NPC/Flower_dwellers/Cactus_dweller-Sheet.png" type="Texture" id=54]
+[ext_resource path="res://Assets/NPC/Flower_dwellers/Master_white_flower_dweller-Sheet.png" type="Texture" id=55]
 
 [sub_resource type="Animation" id=257]
 length = 0.001
@@ -570,6 +576,198 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=284]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=299]
+resource_name = "Idle"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[sub_resource type="Animation" id=300]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=301]
+resource_name = "Idle"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[sub_resource type="Animation" id=302]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=303]
+resource_name = "Idle"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[sub_resource type="Animation" id=304]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=305]
+resource_name = "Idle"
+length = 1.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
+}
+
+[sub_resource type="Animation" id=306]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=307]
+resource_name = "Idle"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 0 ]
+}
+
+[sub_resource type="Animation" id=308]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=309]
+resource_name = "Idle"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+
+[sub_resource type="Animation" id=310]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body/Sprite:frame")
@@ -1779,6 +1977,96 @@ z_index = 99
 autoplay = "Idle"
 anims/Idle = SubResource( 283 )
 anims/RESET = SubResource( 284 )
+
+[node name="Red_flower_dweller" parent="Upper_background_objects/Dwellers" index="5" instance=ExtResource( 39 )]
+position = Vector2( -137, -1105 )
+collision_layer = 3
+collision_mask = 0
+
+[node name="Sprite" type="Sprite" parent="Upper_background_objects/Dwellers/Red_flower_dweller/Body" index="2"]
+position = Vector2( 0, -12 )
+texture = ExtResource( 50 )
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Upper_background_objects/Dwellers/Red_flower_dweller" index="6"]
+autoplay = "Idle"
+anims/Idle = SubResource( 299 )
+anims/RESET = SubResource( 300 )
+
+[node name="Yellow_flower_dweller" parent="Upper_background_objects/Dwellers" index="6" instance=ExtResource( 39 )]
+position = Vector2( 333, -1155 )
+collision_layer = 3
+collision_mask = 0
+
+[node name="Sprite" type="Sprite" parent="Upper_background_objects/Dwellers/Yellow_flower_dweller/Body" index="2"]
+position = Vector2( 0, -18 )
+texture = ExtResource( 51 )
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Upper_background_objects/Dwellers/Yellow_flower_dweller" index="6"]
+autoplay = "Idle"
+anims/Idle = SubResource( 301 )
+anims/RESET = SubResource( 302 )
+
+[node name="Magenta_flower_dweller" parent="Upper_background_objects/Dwellers" index="7" instance=ExtResource( 39 )]
+position = Vector2( 79, -1088 )
+collision_layer = 3
+collision_mask = 0
+
+[node name="Sprite" type="Sprite" parent="Upper_background_objects/Dwellers/Magenta_flower_dweller/Body" index="2"]
+position = Vector2( 0, -11 )
+texture = ExtResource( 52 )
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Upper_background_objects/Dwellers/Magenta_flower_dweller" index="6"]
+autoplay = "Idle"
+anims/Idle = SubResource( 303 )
+anims/RESET = SubResource( 304 )
+
+[node name="Pink_flower_dweller" parent="Upper_background_objects/Dwellers" index="8" instance=ExtResource( 39 )]
+position = Vector2( 462, -1074 )
+collision_layer = 3
+collision_mask = 0
+
+[node name="Sprite" type="Sprite" parent="Upper_background_objects/Dwellers/Pink_flower_dweller/Body" index="2"]
+position = Vector2( 0, -12 )
+texture = ExtResource( 53 )
+hframes = 13
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Upper_background_objects/Dwellers/Pink_flower_dweller" index="6"]
+autoplay = "Idle"
+anims/Idle = SubResource( 305 )
+anims/RESET = SubResource( 306 )
+
+[node name="Cactus_flower_dweller" parent="Upper_background_objects/Dwellers" index="9" instance=ExtResource( 39 )]
+position = Vector2( 56, -1185 )
+collision_layer = 3
+collision_mask = 0
+
+[node name="Sprite" type="Sprite" parent="Upper_background_objects/Dwellers/Cactus_flower_dweller/Body" index="2"]
+position = Vector2( 0, -12 )
+texture = ExtResource( 54 )
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Upper_background_objects/Dwellers/Cactus_flower_dweller" index="6"]
+autoplay = "Idle"
+anims/Idle = SubResource( 307 )
+anims/RESET = SubResource( 308 )
+
+[node name="Master_white_flower_dweller" parent="Upper_background_objects/Dwellers" index="10" instance=ExtResource( 39 )]
+position = Vector2( 678, -1078 )
+collision_layer = 3
+collision_mask = 0
+
+[node name="Sprite" type="Sprite" parent="Upper_background_objects/Dwellers/Master_white_flower_dweller/Body" index="2"]
+position = Vector2( 0, -12 )
+texture = ExtResource( 55 )
+hframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Upper_background_objects/Dwellers/Master_white_flower_dweller" index="6"]
+autoplay = "Idle"
+anims/Idle = SubResource( 309 )
+anims/RESET = SubResource( 310 )
 
 [node name="White_flower_growing" type="Node2D" parent="Upper_background_objects" index="2"]
 visible = false
@@ -5110,6 +5398,18 @@ process_material = SubResource( 253 )
 [editable path="Upper_background_objects/Dwellers/Dandy_dweller/Body/InteractionController"]
 [editable path="Upper_background_objects/Dwellers/Rose_flower_dweller"]
 [editable path="Upper_background_objects/Dwellers/Rose_flower_dweller/Body/InteractionController"]
+[editable path="Upper_background_objects/Dwellers/Red_flower_dweller"]
+[editable path="Upper_background_objects/Dwellers/Red_flower_dweller/Body/InteractionController"]
+[editable path="Upper_background_objects/Dwellers/Yellow_flower_dweller"]
+[editable path="Upper_background_objects/Dwellers/Yellow_flower_dweller/Body/InteractionController"]
+[editable path="Upper_background_objects/Dwellers/Magenta_flower_dweller"]
+[editable path="Upper_background_objects/Dwellers/Magenta_flower_dweller/Body/InteractionController"]
+[editable path="Upper_background_objects/Dwellers/Pink_flower_dweller"]
+[editable path="Upper_background_objects/Dwellers/Pink_flower_dweller/Body/InteractionController"]
+[editable path="Upper_background_objects/Dwellers/Cactus_flower_dweller"]
+[editable path="Upper_background_objects/Dwellers/Cactus_flower_dweller/Body/InteractionController"]
+[editable path="Upper_background_objects/Dwellers/Master_white_flower_dweller"]
+[editable path="Upper_background_objects/Dwellers/Master_white_flower_dweller/Body/InteractionController"]
 [editable path="Upper_background_objects/White_flower_growing/Flower_ladder"]
 [editable path="Collisions/PassTrough/Left_tower_side/PassThroughBody7"]
 [editable path="Collisions/PassTrough/Left_tower_side/PassThroughBody35"]
