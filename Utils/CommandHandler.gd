@@ -10,6 +10,7 @@ static func executeCommands(command_lines):
 		return
 	
 	for command_line in command_lines:
+		print(command_line)
 		execute(command_line)
 
 static func execute(command_line: String):
