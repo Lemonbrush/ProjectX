@@ -37,7 +37,9 @@ func set_default_constants():
 		left_water_tower_activated = false,
 		right_water_tower_activated = false,
 		grand_garden_water_level = 0.0,
-		white_flower_quest_taken = false
+		white_flower_quest_taken = false,
+		is_cactus_hugged = false,
+		love_fruit_given = false
 	}
 	EventBus.game_const_changed()
 

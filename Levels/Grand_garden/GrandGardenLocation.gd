@@ -7,6 +7,7 @@ onready var left_water_tower = $World_objects/Water_tower_1
 onready var right_water_tower = $World_objects/Water_tower_2
 onready var left_fountains = $Fountains/Left_tower_activated_fountains
 onready var right_fountains = $Fountains/Right_tower_activated_fountains
+onready var cactusLoveParticles = $Upper_background_objects/Dwellers/Cactus_flower_dweller/LoveParticles
 
 var water_surface_final_phase = 566
 var water_surface_second_phase = 678
@@ -19,6 +20,7 @@ func _ready():
 	right_water_tower.connect("cork_destroyed_on_water_tower", self, "did_destroy_cork_on_water_tower")
 	
 	var _connection = EventBus.connect("show_white_flower_grow_cut_scene", self, "show_white_flower_grow_cut_scene")
+	var _cactus_particles_connection = EventBus.connect("show_cuctus_love_particles", self, "show_cuctus_love_particles")
 	
 	match GameEventConstants.get_constant("grand_garden_water_level"):
 		1: current_water_surface = water_surface_second_phase
@@ -57,3 +59,6 @@ func start_water_surface_tween_to(next_water_surface_level):
 
 func show_white_flower_grow_cut_scene():
 	animationPlayer.play("White_flower_grow_cut_scene")
+	
+func show_cuctus_love_particles():
+	cactusLoveParticles.emitting = true
