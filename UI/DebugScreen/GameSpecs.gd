@@ -6,7 +6,6 @@ onready var gameVersionLabel = $MainMarginContainer/SpecsVBoxContainer/GeneralVB
 onready var game_consts_rich_label = $MainMarginContainer/SpecsVBoxContainer/GameConsts
 
 func _ready():
-	mainMarginContainer.rect_scale = Vector2(0.6, 0.6)
 	gameVersionLabel.text = tr("version") + ": " + FileManager.get_project_version()
 	
 	var _connection = EventBus.connect("debug_screen_visibility_updated", self, "update_margin_visibility")
