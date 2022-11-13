@@ -3065,7 +3065,7 @@ anims/RESET = SubResource( 269 )
 position = Vector2( 234, 240 )
 collision_layer = 3
 collision_mask = 0
-dialogId = "red_flower_dweller"
+dialogId = "lover_red_flower_dweller"
 
 [node name="Sprite" type="Sprite" parent="Upper_background_objects/Dwellers/Rose_flower_dweller/Body" index="2"]
 position = Vector2( 0, -12 )
@@ -3197,7 +3197,6 @@ anims/RESET = SubResource( 310 )
 visible = false
 
 [node name="Growing_flower_body" type="Node2D" parent="Upper_background_objects/White_flower_growing" index="0"]
-visible = false
 
 [node name="Growing_white_flower_sprite" type="Sprite" parent="Upper_background_objects/White_flower_growing/Growing_flower_body" index="0"]
 position = Vector2( 146, 1000 )
