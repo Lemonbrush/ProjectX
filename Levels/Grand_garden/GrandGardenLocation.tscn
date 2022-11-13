@@ -1,4 +1,4 @@
-[gd_scene load_steps=326 format=2]
+[gd_scene load_steps=330 format=2]
 
 [ext_resource path="res://Assets/Levels/Grand_garden/Grand_garden.png" type="Texture" id=1]
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=2]
@@ -63,11 +63,13 @@
 [ext_resource path="res://Assets/WorldObjects/Decorative/Butterlflys/Green_butterfly_animation-Sheet-Sheet.png" type="Texture" id=61]
 [ext_resource path="res://Assets/Levels/Grand_garden/World_objects/Great_flower/Young_flower.png" type="Texture" id=62]
 [ext_resource path="res://Assets/effects/ShineSprincles.png" type="Texture" id=63]
+[ext_resource path="res://Resources/Fonts/Epilepsy Sans/Resource/EpilepsySansBold.tres" type="DynamicFont" id=64]
 [ext_resource path="res://WorldObjects/Technical/InteractionEmitterObject/InteractionEmitterObject.tscn" type="PackedScene" id=65]
+[ext_resource path="res://Assets/effects/White_fade_gradient.png" type="Texture" id=66]
 
 [sub_resource type="Animation" id=312]
 resource_name = "Grand_flower_opening_cut_scene"
-length = 8.0
+length = 15.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Great_flower_sprite:frame")
 tracks/0/interp = 2
@@ -159,7 +161,7 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0, 7.9 ),
+"times": PoolRealArray( 0, 15 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 190, -1571 ), Vector2( 190, -1571 ) ]
@@ -210,7 +212,7 @@ tracks/11/keys = {
 "times": PoolRealArray( 0, 4.8, 5.6 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 197, -1253 ), Vector2( 197, -1253 ), Vector2( 197, -1557 ) ]
+"values": [ Vector2( 197, -1253 ), Vector2( 197, -1253 ), Vector2( 197, -1650 ) ]
 }
 tracks/12/type = "value"
 tracks/12/path = NodePath("Upper_background_objects/Young_flower:visible")
@@ -231,7 +233,7 @@ tracks/13/loop_wrap = true
 tracks/13/imported = false
 tracks/13/enabled = true
 tracks/13/keys = {
-"times": PoolRealArray( 0, 7.9 ),
+"times": PoolRealArray( 0, 15 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -468,6 +470,71 @@ tracks/32/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
+}
+tracks/33/type = "value"
+tracks/33/path = NodePath("Upper_background_objects/Great_flower/Cutscene_label/Light2D10:energy")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/keys = {
+"times": PoolRealArray( 7.1, 10.5, 11.9, 14.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 4.0, 4.0, 0.0 ]
+}
+tracks/34/type = "value"
+tracks/34/path = NodePath("Upper_background_objects/Young_flower/InteractionEmitterObject/InteractionController/Area2D/CollisionShape2D:disabled")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/35/type = "value"
+tracks/35/path = NodePath("Upper_background_objects/Young_flower/Sofa_dirt_particles:emitting")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/keys = {
+"times": PoolRealArray( 0, 2, 2.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/36/type = "value"
+tracks/36/path = NodePath("Upper_background_objects/Young_flower/Flower_dirt_particles:emitting")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/keys = {
+"times": PoolRealArray( 0, 3, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/37/type = "method"
+tracks/37/path = NodePath("Camera2D")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/keys = {
+"times": PoolRealArray( 4.2, 5.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ null, null, null, null ],
+"method": "_screen_shake"
+}, {
+"args": [  ],
+"method": "_stop_screen_shake"
+} ]
 }
 
 [sub_resource type="Animation" id=257]
@@ -915,6 +982,54 @@ tracks/36/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ true ]
+}
+tracks/37/type = "value"
+tracks/37/path = NodePath("Upper_background_objects/Great_flower/Cutscene_label/Light2D10:energy")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/38/type = "value"
+tracks/38/path = NodePath("Upper_background_objects/Young_flower/InteractionEmitterObject/InteractionController/Area2D/CollisionShape2D:disabled")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/39/type = "value"
+tracks/39/path = NodePath("Upper_background_objects/Young_flower/Sofa_dirt_particles:emitting")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/40/type = "value"
+tracks/40/path = NodePath("Upper_background_objects/Young_flower/Flower_dirt_particles:emitting")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=270]
@@ -1776,6 +1891,36 @@ color_ramp = SubResource( 15 )
 anim_speed = 2.0
 anim_speed_random = 1.0
 anim_offset_random = 1.0
+
+[sub_resource type="ParticlesMaterial" id=334]
+emission_shape = 2
+emission_box_extents = Vector3( 5, 2, 1 )
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 50, 0 )
+initial_velocity = 40.0
+initial_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 3.0
+scale_random = 1.0
+scale_curve = SubResource( 273 )
+color = Color( 0.243137, 0.0392157, 0.164706, 1 )
+
+[sub_resource type="ParticlesMaterial" id=335]
+emission_shape = 2
+emission_box_extents = Vector3( 5, 2, 1 )
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 50, 0 )
+initial_velocity = 40.0
+initial_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 3.0
+scale_random = 1.0
+scale_curve = SubResource( 273 )
+color = Color( 0.243137, 0.0392157, 0.164706, 1 )
 
 [sub_resource type="RectangleShape2D" id=77]
 extents = Vector2( 72.125, 8 )
@@ -3112,7 +3257,30 @@ format = 1
 [node name="Great_flower" type="Node2D" parent="Upper_background_objects" index="5"]
 position = Vector2( 40, -720 )
 
-[node name="Flower_body" type="Node2D" parent="Upper_background_objects/Great_flower" index="0"]
+[node name="Cutscene_label" type="Node2D" parent="Upper_background_objects/Great_flower" index="0"]
+position = Vector2( -190, 1204 )
+
+[node name="Light2D10" type="Light2D" parent="Upper_background_objects/Great_flower/Cutscene_label" index="0"]
+position = Vector2( 198, -1681 )
+scale = Vector2( 0.494845, 0.335313 )
+texture = ExtResource( 66 )
+texture_scale = 1.13
+color = Color( 1, 1, 1, 0.427451 )
+energy = 0.0
+mode = 3
+range_item_cull_mask = 256
+
+[node name="Label" type="Label" parent="Upper_background_objects/Great_flower/Cutscene_label" index="1"]
+light_mask = 256
+margin_left = 48.0
+margin_top = -1697.0
+margin_right = 366.0
+margin_bottom = -1671.0
+custom_fonts/font = ExtResource( 64 )
+text = "Мой садик цветет по тебе"
+percent_visible = -0.05
+
+[node name="Flower_body" type="Node2D" parent="Upper_background_objects/Great_flower" index="1"]
 pause_mode = 2
 position = Vector2( 0, 370 )
 
@@ -3339,7 +3507,7 @@ explosiveness = 1.0
 process_material = SubResource( 324 )
 texture = ExtResource( 60 )
 
-[node name="Flower_mask" type="Light2D" parent="Upper_background_objects/Great_flower" index="1"]
+[node name="Flower_mask" type="Light2D" parent="Upper_background_objects/Great_flower" index="2"]
 light_mask = 262144
 position = Vector2( -1, 204 )
 scale = Vector2( 23.1, 99.05 )
@@ -3348,7 +3516,7 @@ energy = 0.0
 mode = 3
 range_item_cull_mask = 262144
 
-[node name="Dirt_particles" type="Particles2D" parent="Upper_background_objects/Great_flower" index="2"]
+[node name="Dirt_particles" type="Particles2D" parent="Upper_background_objects/Great_flower" index="3"]
 position = Vector2( 4, -45 )
 emitting = false
 amount = 200
@@ -3379,6 +3547,18 @@ emitting_arg = "Interacted_with_young_flower"
 
 [node name="InteractionPopup" parent="Upper_background_objects/Young_flower/InteractionEmitterObject" index="1"]
 labelText = "Осмотреть"
+
+[node name="Sofa_dirt_particles" type="Particles2D" parent="Upper_background_objects/Young_flower" index="3"]
+position = Vector2( 3, 28 )
+emitting = false
+amount = 50
+process_material = SubResource( 334 )
+
+[node name="Flower_dirt_particles" type="Particles2D" parent="Upper_background_objects/Young_flower" index="4"]
+position = Vector2( -15, 29 )
+emitting = false
+amount = 50
+process_material = SubResource( 335 )
 
 [node name="Player" parent="." index="11"]
 position = Vector2( 190, -1571 )
@@ -6731,6 +6911,7 @@ process_material = SubResource( 333 )
 [editable path="Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody135"]
 [editable path="Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody136"]
 [editable path="Upper_background_objects/Young_flower/InteractionEmitterObject"]
+[editable path="Upper_background_objects/Young_flower/InteractionEmitterObject/InteractionController"]
 [editable path="Collisions/PassTrough/Left_tower_side/PassThroughBody7"]
 [editable path="Collisions/PassTrough/Left_tower_side/PassThroughBody35"]
 [editable path="Collisions/PassTrough/Left_tower_side/PassThroughBody36"]
