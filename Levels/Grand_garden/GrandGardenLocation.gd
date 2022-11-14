@@ -39,7 +39,7 @@ func _ready():
 		right_fountains.visible = true
 		left_fountains.visible = true
 		
-func did_interact_with_arg(arg):
+func did_interact_with_arg(_arg):
 	animationPlayer.play("Grand_flower_opening_cut_scene")
 
 func did_destroy_cork_on_water_tower(tower_number):
@@ -67,3 +67,6 @@ func show_white_flower_grow_cut_scene():
 	
 func show_cuctus_love_particles():
 	cactusLoveParticles.emitting = true
+
+func set_grand_flower_grown_constant():
+	GameEventConstants.set_constant("grand_flower_did_grow", true)

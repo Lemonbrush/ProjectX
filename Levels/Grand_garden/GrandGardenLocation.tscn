@@ -1,4 +1,4 @@
-[gd_scene load_steps=330 format=2]
+[gd_scene load_steps=331 format=2]
 
 [ext_resource path="res://Assets/Levels/Grand_garden/Grand_garden.png" type="Texture" id=1]
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=2]
@@ -66,6 +66,7 @@
 [ext_resource path="res://Resources/Fonts/Epilepsy Sans/Resource/EpilepsySansBold.tres" type="DynamicFont" id=64]
 [ext_resource path="res://WorldObjects/Technical/InteractionEmitterObject/InteractionEmitterObject.tscn" type="PackedScene" id=65]
 [ext_resource path="res://Assets/effects/White_fade_gradient.png" type="Texture" id=66]
+[ext_resource path="res://WorldObjects/Pick_ups/Items/BlueButterfly/BlueButterflyItem.tscn" type="PackedScene" id=67]
 
 [sub_resource type="Animation" id=312]
 resource_name = "Grand_flower_opening_cut_scene"
@@ -534,6 +535,58 @@ tracks/37/keys = {
 }, {
 "args": [  ],
 "method": "_stop_screen_shake"
+} ]
+}
+tracks/38/type = "value"
+tracks/38/path = NodePath("World_objects/BlueButterflyItem:gravity_scale")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/keys = {
+"times": PoolRealArray( 16 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/39/type = "value"
+tracks/39/path = NodePath("World_objects/BlueButterflyItem:visible")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/keys = {
+"times": PoolRealArray( 0, 15.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/40/type = "method"
+tracks/40/path = NodePath("World_objects/BlueButterflyItem")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/keys = {
+"times": PoolRealArray( 15.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "play_show_animation"
+} ]
+}
+tracks/41/type = "method"
+tracks/41/path = NodePath(".")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/keys = {
+"times": PoolRealArray( 8.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "set_grand_flower_grown_constant"
 } ]
 }
 
@@ -1026,6 +1079,30 @@ tracks/40/loop_wrap = true
 tracks/40/imported = false
 tracks/40/enabled = true
 tracks/40/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/41/type = "value"
+tracks/41/path = NodePath("World_objects/BlueButterflyItem:gravity_scale")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/42/type = "value"
+tracks/42/path = NodePath("World_objects/BlueButterflyItem:visible")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -2911,6 +2988,12 @@ position = Vector2( -810, 388 )
 position = Vector2( 713, 532 )
 water_tower_number = 1
 
+[node name="BlueButterflyItem" parent="World_objects" index="2" instance=ExtResource( 67 )]
+pause_mode = 2
+visible = false
+position = Vector2( 44, -1197 )
+gravity_scale = 0.0
+
 [node name="Fountains" type="Node2D" parent="." index="9"]
 
 [node name="Left_tower_activated_fountains" type="Node2D" parent="Fountains" index="0"]
@@ -3277,7 +3360,6 @@ margin_right = 366.0
 margin_bottom = -1671.0
 custom_fonts/font = ExtResource( 64 )
 text = "Мой садик цветет по тебе"
-percent_visible = -0.05
 
 [node name="Flower_body" type="Node2D" parent="Upper_background_objects/Great_flower" index="1"]
 pause_mode = 2
@@ -3560,7 +3642,7 @@ amount = 50
 process_material = SubResource( 335 )
 
 [node name="Player" parent="." index="11"]
-position = Vector2( 190, -1571 )
+position = Vector2( 208, 528 )
 
 [node name="Light2D2" parent="Player" index="5"]
 visible = false

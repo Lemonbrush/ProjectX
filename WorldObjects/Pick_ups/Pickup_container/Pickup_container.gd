@@ -31,3 +31,7 @@ func pickedUp():
 func play_view_animation(animation_name):
 	if viewScene.has_method("play_animation"):
 		viewScene.play_animation(animation_name)
+
+func play_show_animation():
+	if viewScene.has_method("play_show_animation"):
+		viewScene.play_show_animation()
