@@ -39,7 +39,8 @@ func set_default_constants():
 		grand_garden_water_level = 0.0,
 		white_flower_quest_taken = false,
 		is_cactus_hugged = false,
-		love_fruit_given = false
+		grand_flower_did_grow = false,
+		blue_butterfly_pickedup = false
 	}
 	EventBus.game_const_changed()
 

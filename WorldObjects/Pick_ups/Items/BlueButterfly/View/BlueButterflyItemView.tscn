@@ -1,23 +1,24 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://WorldObjects/Pick_ups/BasicItemView/BasicItemView.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Pickups/Blue_butterfly/Blue_butterfly.png" type="Texture" id=1]
 [ext_resource path="res://Assets/effects/ShineSprincles.png" type="Texture" id=2]
 [ext_resource path="res://Assets/effects/particles.png" type="Texture" id=3]
+[ext_resource path="res://WorldObjects/Pick_ups/BasicItemView/BasicItemView.gd" type="Script" id=4]
 
-[sub_resource type="CanvasItemMaterial" id=10]
+[sub_resource type="CanvasItemMaterial" id=12]
 particles_animation = true
 particles_anim_h_frames = 4
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
-[sub_resource type="Gradient" id=11]
+[sub_resource type="Gradient" id=13]
 offsets = PoolRealArray( 0, 0.35461, 0.562648, 1 )
 colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
 
-[sub_resource type="GradientTexture" id=9]
-gradient = SubResource( 11 )
+[sub_resource type="GradientTexture" id=11]
+gradient = SubResource( 13 )
 
-[sub_resource type="ParticlesMaterial" id=12]
+[sub_resource type="ParticlesMaterial" id=14]
 emission_shape = 1
 emission_sphere_radius = 15.0
 flag_disable_z = true
@@ -26,31 +27,31 @@ gravity = Vector3( 0, 0, 0 )
 initial_velocity_random = 1.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-color_ramp = SubResource( 9 )
+color_ramp = SubResource( 11 )
 anim_speed = 2.0
 anim_speed_random = 1.0
 anim_offset_random = 1.0
 
-[sub_resource type="CanvasItemMaterial" id=14]
+[sub_resource type="CanvasItemMaterial" id=19]
 particles_animation = true
 particles_anim_h_frames = 3
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
-[sub_resource type="Gradient" id=15]
+[sub_resource type="Gradient" id=20]
 offsets = PoolRealArray( 0.00386847, 0.0851064, 0.880077, 1 )
 colors = PoolColorArray( 0, 0, 0, 0, 0.84913, 0.84913, 0.84913, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
 
 [sub_resource type="GradientTexture" id=16]
-gradient = SubResource( 15 )
+gradient = SubResource( 20 )
 
-[sub_resource type="Curve" id=17]
+[sub_resource type="Curve" id=21]
 _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.141593, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.557522, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="CurveTexture" id=18]
-curve = SubResource( 17 )
+curve = SubResource( 21 )
 
-[sub_resource type="ParticlesMaterial" id=19]
+[sub_resource type="ParticlesMaterial" id=22]
 lifetime_randomness = 1.0
 emission_shape = 1
 emission_sphere_radius = 2.0
@@ -69,10 +70,74 @@ scale_random = 1.0
 scale_curve = SubResource( 18 )
 color_ramp = SubResource( 16 )
 
-[sub_resource type="Animation" id=20]
-resource_name = "Show"
+[sub_resource type="Animation" id=15]
+length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Particles2D:visible")
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 5.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Particles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("DustParticles:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "Show"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Particles2D:emitting")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -102,22 +167,22 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:position")
-tracks/3/interp = 2
+tracks/3/path = NodePath("Sprite:frame")
+tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.3, 0.6, 0.8, 0.9, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0.5, 0.5 ), Vector2( 0, -10 ), Vector2( 0, -10 ), Vector2( 0, 0 ), Vector2( 0, -1 ), Vector2( 0, 0 ) ]
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 2, 1, 0 ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("DustParticles:emitting")
@@ -132,36 +197,36 @@ tracks/4/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=24]
 resource_name = "idle"
-length = 2.0
+length = 1.5
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:rotation_degrees")
-tracks/0/interp = 2
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ -5.0, 5.0, -5.0 ]
+"times": PoolRealArray( 0, 0.1, 0.2, 0.5, 0.6, 0.7, 1, 1.1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 0, 1, 2, 0, 1, 2 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Particles2D:visible")
+tracks/1/path = NodePath("Sprite:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"times": PoolRealArray( 0, 0.8, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -5.0, 5.0, -5.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:scale")
+tracks/2/path = NodePath("Particles2D:emitting")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -169,36 +234,41 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"update": 1,
+"values": [ true ]
 }
 
-[node name="LighthouseKeyView" type="Node2D"]
+[node name="BlueButterflyItemView" type="Node2D"]
 pause_mode = 2
-script = ExtResource( 1 )
+z_index = 10
+script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
+rotation = 0.0872665
+texture = ExtResource( 1 )
+hframes = 3
 
 [node name="Particles2D" type="Particles2D" parent="."]
-visible = false
-material = SubResource( 10 )
+material = SubResource( 12 )
 amount = 2
 lifetime = 0.5
 preprocess = 1.0
 randomness = 1.0
-process_material = SubResource( 12 )
+process_material = SubResource( 14 )
 texture = ExtResource( 2 )
 
 [node name="DustParticles" type="Particles2D" parent="."]
-material = SubResource( 14 )
+material = SubResource( 19 )
+emitting = false
 amount = 15
 one_shot = true
 explosiveness = 1.0
 randomness = 1.0
-process_material = SubResource( 19 )
+process_material = SubResource( 22 )
 texture = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"
-anims/Show = SubResource( 20 )
-anims/idle = SubResource( 13 )
+anims/RESET = SubResource( 15 )
+anims/Show = SubResource( 23 )
+anims/idle = SubResource( 24 )
