@@ -1,4 +1,4 @@
-[gd_scene load_steps=453 format=2]
+[gd_scene load_steps=455 format=2]
 
 [ext_resource path="res://Assets/Levels/Grand_garden/Grand_garden.png" type="Texture" id=1]
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=2]
@@ -127,6 +127,8 @@
 [ext_resource path="res://Assets/Decorations/Fountain_animation_sheets/RegularFountainSprites/FountainMiddleSprite/FountainAnimationMiddle12.png" type="Texture" id=125]
 [ext_resource path="res://Assets/Decorations/Fountain_animation_sheets/RegularFountainSprites/FountainMiddleSprite/FountainAnimationMiddle15.png" type="Texture" id=126]
 [ext_resource path="res://Assets/Decorations/Fountain_animation_sheets/RegularFountainSprites/FountainMiddleSprite/FountainAnimationMiddle4.png" type="Texture" id=127]
+[ext_resource path="res://WorldObjects/Destructables/Pot/Pot.tscn" type="PackedScene" id=128]
+[ext_resource path="res://Assets/Levels/Grand_garden/World_objects/Handles.png" type="Texture" id=129]
 
 [sub_resource type="Animation" id=312]
 resource_name = "Grand_flower_opening_cut_scene"
@@ -3782,6 +3784,38 @@ visible = false
 position = Vector2( 44, -1197 )
 gravity_scale = 0.0
 
+[node name="Pots" type="Node2D" parent="World_objects" index="3"]
+
+[node name="Pot" parent="World_objects/Pots" index="0" instance=ExtResource( 128 )]
+position = Vector2( 120, 423 )
+
+[node name="Pot2" parent="World_objects/Pots" index="1" instance=ExtResource( 128 )]
+position = Vector2( 103, 423 )
+
+[node name="Pot3" parent="World_objects/Pots" index="2" instance=ExtResource( 128 )]
+position = Vector2( 86, 423 )
+
+[node name="Pot4" parent="World_objects/Pots" index="3" instance=ExtResource( 128 )]
+position = Vector2( -6, 423 )
+
+[node name="Pot5" parent="World_objects/Pots" index="4" instance=ExtResource( 128 )]
+position = Vector2( 126, 326 )
+
+[node name="Pot6" parent="World_objects/Pots" index="5" instance=ExtResource( 128 )]
+position = Vector2( -1142, 1174 )
+
+[node name="Pot7" parent="World_objects/Pots" index="6" instance=ExtResource( 128 )]
+position = Vector2( -759, 806 )
+
+[node name="Pot8" parent="World_objects/Pots" index="7" instance=ExtResource( 128 )]
+position = Vector2( 1153, 1178 )
+
+[node name="Pot9" parent="World_objects/Pots" index="8" instance=ExtResource( 128 )]
+position = Vector2( 792, 537 )
+
+[node name="Pot10" parent="World_objects/Pots" index="9" instance=ExtResource( 128 )]
+position = Vector2( 808, 537 )
+
 [node name="Fountains" type="Node2D" parent="." index="9"]
 
 [node name="Inactive_fountains" type="Node2D" parent="Fountains" index="0"]
@@ -3829,7 +3863,7 @@ tile_data = PoolIntArray( 23135073, 3, 0, 44041035, 3, 0 )
 tile_set = SubResource( 393 )
 cell_size = Vector2( 1, 1 )
 format = 1
-tile_data = PoolIntArray( 1441850, 0, 0, 1572922, 1, 0, 1638458, 1, 0, 1703994, 1, 0, 1769530, 1, 0, 1835066, 1, 0, 1900592, 536870912, 0, 1900602, 1, 0, 1966138, 1, 0, 2031664, 536870913, 0, 2031674, 1, 0, 2097200, 536870913, 0, 2162736, 536870913, 0, 2162746, 1, 0, 2228272, 536870913, 0, 2228282, 1, 0, 2293808, 536870913, 0, 2293818, 1, 0, 2359344, 536870913, 0, 2359354, 1, 0, 2424880, 536870913, 0, 2424890, 1, 0, 2490416, 536870913, 0, 2555952, 536870913, 0, 2555962, 1, 0, 2621488, 536870913, 0, 2621498, 1, 0, 2687024, 536870913, 0, 2687034, 1, 0, 2752560, 536870913, 0, 2752570, 1, 0, 2818096, 536870913, 0, 2818106, 1, 0, 2883632, 536870914, 0, 2883642, 1, 0, 2949177, 2, 0, 2949178, 1, 0, 3014714, 1, 0, 3080250, 1, 0, 3145786, 1, 0, 3211322, 1, 0, 3276858, 1, 0, 3342394, 1, 0, 23069599, 3, 0, 30409470, 536870915, 0 )
+tile_data = PoolIntArray( 23069599, 3, 0, 30409470, 536870915, 0 )
 
 [node name="SmallTiledFountains" type="TileMap" parent="Fountains/Inactive_fountains/Right_tower_activated_fountains" index="2"]
 tile_set = SubResource( 394 )
@@ -4490,7 +4524,7 @@ amount = 50
 process_material = SubResource( 335 )
 
 [node name="Player" parent="." index="11"]
-position = Vector2( 208, 528 )
+position = Vector2( 221, -22 )
 
 [node name="Light2D2" parent="Player" index="5"]
 visible = false
@@ -4503,6 +4537,10 @@ texture = ExtResource( 68 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Handles" type="Sprite" parent="Foreground_world_objects" index="1"]
+position = Vector2( 207, -102 )
+texture = ExtResource( 129 )
 
 [node name="Left_tower_side" type="Node2D" parent="Collisions/PassTrough" index="0"]
 visible = false

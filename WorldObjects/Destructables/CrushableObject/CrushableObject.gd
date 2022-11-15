@@ -22,7 +22,7 @@ func _process(delta):
 	velocity.y += weight * delta
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
-	if background_object:
+	if !background_object:
 		check_ground()
 	
 func check_ground():
