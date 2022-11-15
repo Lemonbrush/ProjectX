@@ -5,10 +5,14 @@ onready var water_level = $WaterSurface
 onready var animation_player = $AnimationPlayer
 onready var left_water_tower = $World_objects/Water_tower_1
 onready var right_water_tower = $World_objects/Water_tower_2
-onready var left_fountains = $Fountains/Left_tower_activated_fountains
-onready var right_fountains = $Fountains/Right_tower_activated_fountains
 onready var cactusLoveParticles = $Upper_background_objects/Dwellers/Cactus_flower_dweller/LoveParticles
 onready var young_flower_interaction_emitter = $Upper_background_objects/Young_flower/InteractionEmitterObject
+
+onready var left_fountains = $Fountains/Activate_fountains/Left_tower_activated_fountains
+onready var right_fountains = $Fountains/Activate_fountains/Right_tower_activated_fountains
+
+onready var inactive_left_fountains = $Fountains/Inactive_fountains/Left_tower_activated_fountains
+onready var inactive_right_fountains = $Fountains/Inactive_fountains/Right_tower_activated_fountains
 
 var water_surface_final_phase = 566
 var water_surface_second_phase = 678
@@ -30,14 +34,20 @@ func _ready():
 		2: current_water_surface = water_surface_final_phase
 	
 	var active_tower_fountains = GameEventConstants.get_constant("grand_garden_water_level")
-	left_fountains.visible = false
-	right_fountains.visible = false
+	set_all_fountains_active(false)
 	
 	if active_tower_fountains == 1.0:
 		right_fountains.visible = true
+		inactive_right_fountains.visible = false
 	elif active_tower_fountains == 2.0:
-		right_fountains.visible = true
-		left_fountains.visible = true
+		set_all_fountains_active(true)
+
+func set_all_fountains_active(active):
+	right_fountains.visible = active
+	left_fountains.visible = active
+	
+	inactive_left_fountains.visible = !active
+	inactive_right_fountains.visible = !active
 		
 func did_interact_with_arg(_arg):
 	animationPlayer.play("Grand_flower_opening_cut_scene")
