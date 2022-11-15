@@ -4524,7 +4524,7 @@ amount = 50
 process_material = SubResource( 335 )
 
 [node name="Player" parent="." index="11"]
-position = Vector2( 209, 523 )
+position = Vector2( 221, -22 )
 
 [node name="Light2D2" parent="Player" index="5"]
 visible = false

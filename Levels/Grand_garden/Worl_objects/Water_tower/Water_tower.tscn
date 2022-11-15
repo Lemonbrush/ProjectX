@@ -162,6 +162,7 @@ script = ExtResource( 5 )
 [node name="Cork" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, -48 )
 weight = 0
+background_object = true
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -99 )
