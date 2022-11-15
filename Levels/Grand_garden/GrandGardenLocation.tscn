@@ -1,4 +1,4 @@
-[gd_scene load_steps=331 format=2]
+[gd_scene load_steps=383 format=2]
 
 [ext_resource path="res://Assets/Levels/Grand_garden/Grand_garden.png" type="Texture" id=1]
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=2]
@@ -67,6 +67,7 @@
 [ext_resource path="res://WorldObjects/Technical/InteractionEmitterObject/InteractionEmitterObject.tscn" type="PackedScene" id=65]
 [ext_resource path="res://Assets/effects/White_fade_gradient.png" type="Texture" id=66]
 [ext_resource path="res://WorldObjects/Pick_ups/Items/BlueButterfly/BlueButterflyItem.tscn" type="PackedScene" id=67]
+[ext_resource path="res://Assets/Levels/Grand_garden/World_objects/Tree_top_leafs/Top_tree_leafs.png" type="Texture" id=68]
 
 [sub_resource type="Animation" id=312]
 resource_name = "Grand_flower_opening_cut_scene"
@@ -794,7 +795,7 @@ tracks/16/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 197, -1253 ) ]
+"values": [ Vector2( 207, 497 ) ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Upper_background_objects/Young_flower:visible")
@@ -2002,9 +2003,6 @@ color = Color( 0.243137, 0.0392157, 0.164706, 1 )
 [sub_resource type="RectangleShape2D" id=77]
 extents = Vector2( 72.125, 8 )
 
-[sub_resource type="RectangleShape2D" id=83]
-extents = Vector2( 16, 8 )
-
 [sub_resource type="RectangleShape2D" id=84]
 extents = Vector2( 24, 8 )
 
@@ -2563,8 +2561,164 @@ extents = Vector2( 48, 8 )
 [sub_resource type="RectangleShape2D" id=241]
 extents = Vector2( 17, 8 )
 
+[sub_resource type="RectangleShape2D" id=336]
+extents = Vector2( 3, 164 )
+
+[sub_resource type="RectangleShape2D" id=386]
+extents = Vector2( 6.5, 143 )
+
+[sub_resource type="RectangleShape2D" id=372]
+extents = Vector2( 3, 37.5 )
+
+[sub_resource type="RectangleShape2D" id=387]
+extents = Vector2( 3, 13.5 )
+
+[sub_resource type="RectangleShape2D" id=373]
+extents = Vector2( 3, 20.5 )
+
+[sub_resource type="RectangleShape2D" id=375]
+extents = Vector2( 3, 13.5 )
+
+[sub_resource type="RectangleShape2D" id=376]
+extents = Vector2( 3, 19.5 )
+
+[sub_resource type="RectangleShape2D" id=377]
+extents = Vector2( 3, 27.5 )
+
+[sub_resource type="RectangleShape2D" id=374]
+extents = Vector2( 3, 14 )
+
+[sub_resource type="RectangleShape2D" id=337]
+extents = Vector2( 3, 213.5 )
+
+[sub_resource type="RectangleShape2D" id=338]
+extents = Vector2( 3, 181 )
+
+[sub_resource type="RectangleShape2D" id=339]
+extents = Vector2( 3, 132.5 )
+
+[sub_resource type="RectangleShape2D" id=340]
+extents = Vector2( 3, 117.5 )
+
+[sub_resource type="RectangleShape2D" id=341]
+extents = Vector2( 3, 191 )
+
+[sub_resource type="RectangleShape2D" id=342]
+extents = Vector2( 3, 139.5 )
+
+[sub_resource type="RectangleShape2D" id=343]
+extents = Vector2( 3, 107.5 )
+
+[sub_resource type="RectangleShape2D" id=344]
+extents = Vector2( 3, 230 )
+
+[sub_resource type="RectangleShape2D" id=345]
+extents = Vector2( 3, 164 )
+
+[sub_resource type="RectangleShape2D" id=346]
+extents = Vector2( 3, 118.5 )
+
+[sub_resource type="RectangleShape2D" id=347]
+extents = Vector2( 3, 64 )
+
+[sub_resource type="RectangleShape2D" id=348]
+extents = Vector2( 3, 30.5 )
+
+[sub_resource type="RectangleShape2D" id=349]
+extents = Vector2( 3, 38.5 )
+
+[sub_resource type="RectangleShape2D" id=350]
+extents = Vector2( 3, 29 )
+
+[sub_resource type="RectangleShape2D" id=351]
+extents = Vector2( 3, 46 )
+
+[sub_resource type="RectangleShape2D" id=352]
+extents = Vector2( 3, 30.5 )
+
+[sub_resource type="RectangleShape2D" id=353]
+extents = Vector2( 3, 24.5 )
+
+[sub_resource type="RectangleShape2D" id=354]
+extents = Vector2( 3, 54 )
+
+[sub_resource type="RectangleShape2D" id=378]
+extents = Vector2( 3, 37.5 )
+
+[sub_resource type="RectangleShape2D" id=379]
+extents = Vector2( 3, 13 )
+
+[sub_resource type="RectangleShape2D" id=380]
+extents = Vector2( 3, 22 )
+
+[sub_resource type="RectangleShape2D" id=381]
+extents = Vector2( 3, 37.5 )
+
+[sub_resource type="RectangleShape2D" id=382]
+extents = Vector2( 3, 29.5 )
+
+[sub_resource type="RectangleShape2D" id=383]
+extents = Vector2( 3, 22 )
+
+[sub_resource type="RectangleShape2D" id=384]
+extents = Vector2( 3, 13.5 )
+
+[sub_resource type="RectangleShape2D" id=385]
+extents = Vector2( 3, 22 )
+
 [sub_resource type="RectangleShape2D" id=252]
 extents = Vector2( 8, 49 )
+
+[sub_resource type="RectangleShape2D" id=355]
+extents = Vector2( 3, 22.5 )
+
+[sub_resource type="RectangleShape2D" id=356]
+extents = Vector2( 3, 13.5 )
+
+[sub_resource type="RectangleShape2D" id=357]
+extents = Vector2( 3, 29.5 )
+
+[sub_resource type="RectangleShape2D" id=358]
+extents = Vector2( 3, 29.5 )
+
+[sub_resource type="RectangleShape2D" id=359]
+extents = Vector2( 3, 53 )
+
+[sub_resource type="RectangleShape2D" id=360]
+extents = Vector2( 3, 46.5 )
+
+[sub_resource type="RectangleShape2D" id=361]
+extents = Vector2( 3, 37 )
+
+[sub_resource type="RectangleShape2D" id=362]
+extents = Vector2( 3, 77 )
+
+[sub_resource type="RectangleShape2D" id=363]
+extents = Vector2( 3, 30.5 )
+
+[sub_resource type="RectangleShape2D" id=364]
+extents = Vector2( 3, 12.5 )
+
+[sub_resource type="RectangleShape2D" id=365]
+extents = Vector2( 3, 30 )
+
+[sub_resource type="RectangleShape2D" id=366]
+extents = Vector2( 3, 46 )
+
+[sub_resource type="RectangleShape2D" id=367]
+extents = Vector2( 3, 45 )
+
+[sub_resource type="RectangleShape2D" id=368]
+extents = Vector2( 3, 29 )
+
+[sub_resource type="RectangleShape2D" id=369]
+extents = Vector2( 3, 37 )
+
+[sub_resource type="RectangleShape2D" id=370]
+extents = Vector2( 3, 76.5 )
+
+[sub_resource type="RectangleShape2D" id=371]
+extents = Vector2( 3, 12.5 )
 
 [sub_resource type="CanvasItemMaterial" id=74]
 light_mode = 1
@@ -2842,7 +2996,7 @@ __meta__ = {
 texture = ExtResource( 19 )
 
 [node name="Camera2D" parent="." index="4"]
-position = Vector2( 197, -1253 )
+position = Vector2( 207, 497 )
 backgroundColor = Color( 0.698039, 0.870588, 1, 1 )
 
 [node name="Background_world_objects" type="Node2D" parent="." index="5"]
@@ -3027,14 +3181,13 @@ format = 1
 tile_data = PoolIntArray( 45089295, 536870912, 0, 46793231, 536870913, 0, 48497167, 536870914, 0 )
 
 [node name="Right_tower_activated_fountains" type="Node2D" parent="Fountains" index="1"]
-visible = false
 
 [node name="Fountains" type="TileMap" parent="Fountains/Right_tower_activated_fountains" index="0"]
 position = Vector2( -2, 16 )
 tile_set = SubResource( 254 )
 cell_size = Vector2( 1, 1 )
 format = 1
-tile_data = PoolIntArray( 23135073, 0, 0, 25232225, 1, 0, 27329377, 1, 0, 29426529, 2, 0, 31458159, 1, 0, 33555311, 2, 0, 44041035, 0, 0, 46138187, 2, 0, 48235346, 2, 0, 50332485, 1, 0, 52429637, 1, 0 )
+tile_data = PoolIntArray( 23135073, 0, 0, 25232225, 1, 0, 27329377, 1, 0, 29426529, 2, 0, 31458159, 1, 0, 33555311, 2, 0, 44041035, 0, 0, 46138187, 2, 0, 48235346, 2, 0, 50332485, 1, 0, 52429637, 1, 0, 54526789, 1, 0, 56623941, 1, 0, 58721093, 1, 0, 60818245, 1, 0, 62915397, 1, 0, 65012549, 1, 0, 67109701, 1, 0 )
 
 [node name="SideFountains" type="TileMap" parent="Fountains/Right_tower_activated_fountains" index="1"]
 tile_set = ExtResource( 31 )
@@ -3097,7 +3250,7 @@ anims/Idle = SubResource( 260 )
 anims/RESET = SubResource( 261 )
 
 [node name="Blue_flower_dweller" parent="Upper_background_objects/Dwellers" index="1" instance=ExtResource( 39 )]
-position = Vector2( 883, 491 )
+position = Vector2( 909, 496 )
 collision_layer = 3
 collision_mask = 0
 dialogId = "blue_flower_dweller"
@@ -3649,6 +3802,13 @@ visible = false
 
 [node name="Foreground_world_objects" type="Node2D" parent="." index="12"]
 
+[node name="Tree_top_leafs" type="Sprite" parent="Foreground_world_objects" index="0"]
+position = Vector2( 231, -914 )
+texture = ExtResource( 68 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="Left_tower_side" type="Node2D" parent="Collisions/PassTrough" index="0"]
 visible = false
 
@@ -3660,15 +3820,7 @@ position = Vector2( -247.875, 1100 )
 shape = SubResource( 77 )
 one_way_collision = true
 
-[node name="PassThroughBody35" parent="Collisions/PassTrough/Left_tower_side" index="1" groups=["passThroughObject"] instance=ExtResource( 2 )]
-position = Vector2( -81, -324 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody35" index="0"]
-position = Vector2( -304, 1100 )
-shape = SubResource( 83 )
-one_way_collision = true
-
-[node name="PassThroughBody36" parent="Collisions/PassTrough/Left_tower_side" index="2" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody36" parent="Collisions/PassTrough/Left_tower_side" index="1" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -337, -372 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody36" index="0"]
@@ -3676,7 +3828,7 @@ position = Vector2( -296, 1100 )
 shape = SubResource( 84 )
 one_way_collision = true
 
-[node name="PassThroughBody37" parent="Collisions/PassTrough/Left_tower_side" index="3" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody37" parent="Collisions/PassTrough/Left_tower_side" index="2" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -321, -324 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody37" index="0"]
@@ -3684,7 +3836,7 @@ position = Vector2( -304, 1100 )
 shape = SubResource( 85 )
 one_way_collision = true
 
-[node name="PassThroughBody38" parent="Collisions/PassTrough/Left_tower_side" index="4" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody38" parent="Collisions/PassTrough/Left_tower_side" index="3" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -385, -340 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody38" index="0"]
@@ -3692,7 +3844,7 @@ position = Vector2( -312, 1100 )
 shape = SubResource( 86 )
 one_way_collision = true
 
-[node name="PassThroughBody39" parent="Collisions/PassTrough/Left_tower_side" index="5" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody39" parent="Collisions/PassTrough/Left_tower_side" index="4" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -545, -324 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody39" index="0"]
@@ -3700,7 +3852,7 @@ position = Vector2( -296, 1100 )
 shape = SubResource( 87 )
 one_way_collision = true
 
-[node name="PassThroughBody40" parent="Collisions/PassTrough/Left_tower_side" index="6" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody40" parent="Collisions/PassTrough/Left_tower_side" index="5" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -577, -420 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody40" index="0"]
@@ -3708,7 +3860,7 @@ position = Vector2( -264, 1100 )
 shape = SubResource( 88 )
 one_way_collision = true
 
-[node name="PassThroughBody42" parent="Collisions/PassTrough/Left_tower_side" index="7" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody42" parent="Collisions/PassTrough/Left_tower_side" index="6" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -705, -356 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody42" index="0"]
@@ -3716,7 +3868,7 @@ position = Vector2( -296, 1100 )
 shape = SubResource( 90 )
 one_way_collision = true
 
-[node name="PassThroughBody43" parent="Collisions/PassTrough/Left_tower_side" index="8" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody43" parent="Collisions/PassTrough/Left_tower_side" index="7" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -753, -388 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody43" index="0"]
@@ -3724,7 +3876,7 @@ position = Vector2( -304, 1100 )
 shape = SubResource( 91 )
 one_way_collision = true
 
-[node name="PassThroughBody44" parent="Collisions/PassTrough/Left_tower_side" index="9" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody44" parent="Collisions/PassTrough/Left_tower_side" index="8" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -721, -436 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody44" index="0"]
@@ -3732,7 +3884,7 @@ position = Vector2( -304, 1100 )
 shape = SubResource( 91 )
 one_way_collision = true
 
-[node name="PassThroughBody45" parent="Collisions/PassTrough/Left_tower_side" index="10" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody45" parent="Collisions/PassTrough/Left_tower_side" index="9" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -625, -388 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody45" index="0"]
@@ -3740,7 +3892,7 @@ position = Vector2( -304, 1100 )
 shape = SubResource( 91 )
 one_way_collision = true
 
-[node name="PassThroughBody46" parent="Collisions/PassTrough/Left_tower_side" index="11" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody46" parent="Collisions/PassTrough/Left_tower_side" index="10" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -689, -388 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody46" index="0"]
@@ -3748,7 +3900,7 @@ position = Vector2( -296, 1100 )
 shape = SubResource( 92 )
 one_way_collision = true
 
-[node name="PassThroughBody47" parent="Collisions/PassTrough/Left_tower_side" index="12" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody47" parent="Collisions/PassTrough/Left_tower_side" index="11" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -465, -452 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody47" index="0"]
@@ -3756,7 +3908,7 @@ position = Vector2( -208, 1100 )
 shape = SubResource( 93 )
 one_way_collision = true
 
-[node name="PassThroughBody48" parent="Collisions/PassTrough/Left_tower_side" index="13" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody48" parent="Collisions/PassTrough/Left_tower_side" index="12" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -720, -596 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody48" index="0"]
@@ -3764,7 +3916,7 @@ position = Vector2( -304.5, 1100 )
 shape = SubResource( 94 )
 one_way_collision = true
 
-[node name="PassThroughBody49" parent="Collisions/PassTrough/Left_tower_side" index="14" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody49" parent="Collisions/PassTrough/Left_tower_side" index="13" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -609, -596 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody49" index="0"]
@@ -3772,7 +3924,7 @@ position = Vector2( -312, 1100 )
 shape = SubResource( 95 )
 one_way_collision = true
 
-[node name="PassThroughBody50" parent="Collisions/PassTrough/Left_tower_side" index="15" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody50" parent="Collisions/PassTrough/Left_tower_side" index="14" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -625, -676 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody50" index="0"]
@@ -3780,7 +3932,7 @@ position = Vector2( -312, 1100 )
 shape = SubResource( 95 )
 one_way_collision = true
 
-[node name="PassThroughBody51" parent="Collisions/PassTrough/Left_tower_side" index="16" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody51" parent="Collisions/PassTrough/Left_tower_side" index="15" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -705, -612 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody51" index="0"]
@@ -3788,7 +3940,7 @@ position = Vector2( -312, 1100 )
 shape = SubResource( 95 )
 one_way_collision = true
 
-[node name="PassThroughBody52" parent="Collisions/PassTrough/Left_tower_side" index="17" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody52" parent="Collisions/PassTrough/Left_tower_side" index="16" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -625, -564 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody52" index="0"]
@@ -3796,7 +3948,7 @@ position = Vector2( -312, 1100 )
 shape = SubResource( 95 )
 one_way_collision = true
 
-[node name="PassThroughBody53" parent="Collisions/PassTrough/Left_tower_side" index="18" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody53" parent="Collisions/PassTrough/Left_tower_side" index="17" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -737, -740 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody53" index="0"]
@@ -3804,7 +3956,7 @@ position = Vector2( -312, 1100 )
 shape = SubResource( 95 )
 one_way_collision = true
 
-[node name="PassThroughBody54" parent="Collisions/PassTrough/Left_tower_side" index="19" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody54" parent="Collisions/PassTrough/Left_tower_side" index="18" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -721, -692 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody54" index="0"]
@@ -3812,7 +3964,7 @@ position = Vector2( -304, 1100 )
 shape = SubResource( 96 )
 one_way_collision = true
 
-[node name="PassThroughBody55" parent="Collisions/PassTrough/Left_tower_side" index="20" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody55" parent="Collisions/PassTrough/Left_tower_side" index="19" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -737, -660 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody55" index="0"]
@@ -3820,7 +3972,7 @@ position = Vector2( -304, 1100 )
 shape = SubResource( 96 )
 one_way_collision = true
 
-[node name="PassThroughBody56" parent="Collisions/PassTrough/Left_tower_side" index="21" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody56" parent="Collisions/PassTrough/Left_tower_side" index="20" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -625, -644 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody56" index="0"]
@@ -3828,7 +3980,7 @@ position = Vector2( -304, 1100 )
 shape = SubResource( 96 )
 one_way_collision = true
 
-[node name="PassThroughBody57" parent="Collisions/PassTrough/Left_tower_side" index="22" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody57" parent="Collisions/PassTrough/Left_tower_side" index="21" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -689, -708 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody57" index="0"]
@@ -3836,7 +3988,7 @@ position = Vector2( -288, 1100 )
 shape = SubResource( 97 )
 one_way_collision = true
 
-[node name="PassThroughBody88" parent="Collisions/PassTrough/Left_tower_side" index="23" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody88" parent="Collisions/PassTrough/Left_tower_side" index="22" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -624, -836 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody88" index="0"]
@@ -3844,7 +3996,7 @@ position = Vector2( -280.5, 1100 )
 shape = SubResource( 115 )
 one_way_collision = true
 
-[node name="PassThroughBody89" parent="Collisions/PassTrough/Left_tower_side" index="24" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody89" parent="Collisions/PassTrough/Left_tower_side" index="23" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -561, -756 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody89" index="0"]
@@ -3852,7 +4004,7 @@ position = Vector2( -304, 1100 )
 shape = SubResource( 116 )
 one_way_collision = true
 
-[node name="PassThroughBody90" parent="Collisions/PassTrough/Left_tower_side" index="25" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody90" parent="Collisions/PassTrough/Left_tower_side" index="24" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -593, -628 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody90" index="0"]
@@ -3860,7 +4012,7 @@ position = Vector2( -304, 1100 )
 shape = SubResource( 116 )
 one_way_collision = true
 
-[node name="PassThroughBody91" parent="Collisions/PassTrough/Left_tower_side" index="26" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody91" parent="Collisions/PassTrough/Left_tower_side" index="25" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -593, -868 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody91" index="0"]
@@ -3868,7 +4020,7 @@ position = Vector2( -304, 1100 )
 shape = SubResource( 116 )
 one_way_collision = true
 
-[node name="PassThroughBody92" parent="Collisions/PassTrough/Left_tower_side" index="27" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody92" parent="Collisions/PassTrough/Left_tower_side" index="26" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -721, -884 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody92" index="0"]
@@ -3876,7 +4028,7 @@ position = Vector2( -256, 1100 )
 shape = SubResource( 117 )
 one_way_collision = true
 
-[node name="PassThroughBody93" parent="Collisions/PassTrough/Left_tower_side" index="28" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody93" parent="Collisions/PassTrough/Left_tower_side" index="27" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -753, -868 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody93" index="0"]
@@ -3884,7 +4036,7 @@ position = Vector2( -296, 1100 )
 shape = SubResource( 118 )
 one_way_collision = true
 
-[node name="PassThroughBody94" parent="Collisions/PassTrough/Left_tower_side" index="29" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody94" parent="Collisions/PassTrough/Left_tower_side" index="28" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -769, -852 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody94" index="0"]
@@ -3892,7 +4044,7 @@ position = Vector2( -312, 1100 )
 shape = SubResource( 119 )
 one_way_collision = true
 
-[node name="PassThroughBody95" parent="Collisions/PassTrough/Left_tower_side" index="30" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody95" parent="Collisions/PassTrough/Left_tower_side" index="29" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -785, -836 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody95" index="0"]
@@ -3900,7 +4052,7 @@ position = Vector2( -312, 1100 )
 shape = SubResource( 119 )
 one_way_collision = true
 
-[node name="PassThroughBody96" parent="Collisions/PassTrough/Left_tower_side" index="31" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody96" parent="Collisions/PassTrough/Left_tower_side" index="30" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -801, -820 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody96" index="0"]
@@ -3908,7 +4060,7 @@ position = Vector2( -312, 1100 )
 shape = SubResource( 119 )
 one_way_collision = true
 
-[node name="PassThroughBody58" parent="Collisions/PassTrough/Left_tower_side" index="32" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody58" parent="Collisions/PassTrough/Left_tower_side" index="31" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -609, -740 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody58" index="0"]
@@ -3916,7 +4068,7 @@ position = Vector2( -312, 1100 )
 shape = SubResource( 98 )
 one_way_collision = true
 
-[node name="PassThroughBody59" parent="Collisions/PassTrough/Left_tower_side" index="33" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody59" parent="Collisions/PassTrough/Left_tower_side" index="32" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -497, -484 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody59" index="0"]
@@ -3924,7 +4076,7 @@ position = Vector2( -280, 1100 )
 shape = SubResource( 99 )
 one_way_collision = true
 
-[node name="PassThroughBody60" parent="Collisions/PassTrough/Left_tower_side" index="34" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody60" parent="Collisions/PassTrough/Left_tower_side" index="33" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -417, -500 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody60" index="0"]
@@ -3932,7 +4084,7 @@ position = Vector2( -296, 1100 )
 shape = SubResource( 100 )
 one_way_collision = true
 
-[node name="PassThroughBody61" parent="Collisions/PassTrough/Left_tower_side" index="35" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody61" parent="Collisions/PassTrough/Left_tower_side" index="34" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -289, -484 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody61" index="0"]
@@ -3940,7 +4092,7 @@ position = Vector2( -304, 1100 )
 shape = SubResource( 101 )
 one_way_collision = true
 
-[node name="PassThroughBody62" parent="Collisions/PassTrough/Left_tower_side" index="36" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody62" parent="Collisions/PassTrough/Left_tower_side" index="35" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -433, -548 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody62" index="0"]
@@ -3948,7 +4100,7 @@ position = Vector2( -304, 1100 )
 shape = SubResource( 101 )
 one_way_collision = true
 
-[node name="PassThroughBody63" parent="Collisions/PassTrough/Left_tower_side" index="37" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody63" parent="Collisions/PassTrough/Left_tower_side" index="36" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -401, -580 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody63" index="0"]
@@ -3956,7 +4108,7 @@ position = Vector2( -304, 1100 )
 shape = SubResource( 101 )
 one_way_collision = true
 
-[node name="PassThroughBody64" parent="Collisions/PassTrough/Left_tower_side" index="38" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody64" parent="Collisions/PassTrough/Left_tower_side" index="37" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -401, -676 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody64" index="0"]
@@ -3964,7 +4116,7 @@ position = Vector2( -304, 1100 )
 shape = SubResource( 101 )
 one_way_collision = true
 
-[node name="PassThroughBody65" parent="Collisions/PassTrough/Left_tower_side" index="39" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody65" parent="Collisions/PassTrough/Left_tower_side" index="38" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -353, -676 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody65" index="0"]
@@ -3972,7 +4124,7 @@ position = Vector2( -304, 1100 )
 shape = SubResource( 101 )
 one_way_collision = true
 
-[node name="PassThroughBody66" parent="Collisions/PassTrough/Left_tower_side" index="40" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody66" parent="Collisions/PassTrough/Left_tower_side" index="39" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -369, -612 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody66" index="0"]
@@ -3980,7 +4132,7 @@ position = Vector2( -280, 1100 )
 shape = SubResource( 102 )
 one_way_collision = true
 
-[node name="PassThroughBody67" parent="Collisions/PassTrough/Left_tower_side" index="41" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody67" parent="Collisions/PassTrough/Left_tower_side" index="40" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -353, -628 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody67" index="0"]
@@ -3988,7 +4140,7 @@ position = Vector2( -296, 1100 )
 shape = SubResource( 103 )
 one_way_collision = true
 
-[node name="PassThroughBody68" parent="Collisions/PassTrough/Left_tower_side" index="42" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody68" parent="Collisions/PassTrough/Left_tower_side" index="41" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -321, -708 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody68" index="0"]
@@ -3996,7 +4148,7 @@ position = Vector2( -296, 1100 )
 shape = SubResource( 103 )
 one_way_collision = true
 
-[node name="PassThroughBody69" parent="Collisions/PassTrough/Left_tower_side" index="43" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody69" parent="Collisions/PassTrough/Left_tower_side" index="42" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -401, -708 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody69" index="0"]
@@ -4004,7 +4156,7 @@ position = Vector2( -304, 1100 )
 shape = SubResource( 104 )
 one_way_collision = true
 
-[node name="PassThroughBody70" parent="Collisions/PassTrough/Left_tower_side" index="44" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody70" parent="Collisions/PassTrough/Left_tower_side" index="43" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -417, -772 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody70" index="0"]
@@ -4012,7 +4164,7 @@ position = Vector2( -304, 1100 )
 shape = SubResource( 104 )
 one_way_collision = true
 
-[node name="PassThroughBody71" parent="Collisions/PassTrough/Left_tower_side" index="45" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody71" parent="Collisions/PassTrough/Left_tower_side" index="44" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -305, -756 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody71" index="0"]
@@ -4020,7 +4172,7 @@ position = Vector2( -304, 1100 )
 shape = SubResource( 104 )
 one_way_collision = true
 
-[node name="PassThroughBody72" parent="Collisions/PassTrough/Left_tower_side" index="46" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody72" parent="Collisions/PassTrough/Left_tower_side" index="45" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -401, -820 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody72" index="0"]
@@ -4028,7 +4180,7 @@ position = Vector2( -304, 1100 )
 shape = SubResource( 104 )
 one_way_collision = true
 
-[node name="PassThroughBody73" parent="Collisions/PassTrough/Left_tower_side" index="47" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody73" parent="Collisions/PassTrough/Left_tower_side" index="46" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -369, -788 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody73" index="0"]
@@ -4036,7 +4188,7 @@ position = Vector2( -296, 1100 )
 shape = SubResource( 105 )
 one_way_collision = true
 
-[node name="PassThroughBody74" parent="Collisions/PassTrough/Left_tower_side" index="48" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody74" parent="Collisions/PassTrough/Left_tower_side" index="47" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -321, -868 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody74" index="0"]
@@ -4044,7 +4196,7 @@ position = Vector2( -296, 1100 )
 shape = SubResource( 105 )
 one_way_collision = true
 
-[node name="PassThroughBody75" parent="Collisions/PassTrough/Left_tower_side" index="49" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody75" parent="Collisions/PassTrough/Left_tower_side" index="48" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -337, -932 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody75" index="0"]
@@ -4052,7 +4204,7 @@ position = Vector2( -288, 1100 )
 shape = SubResource( 106 )
 one_way_collision = true
 
-[node name="PassThroughBody76" parent="Collisions/PassTrough/Left_tower_side" index="50" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody76" parent="Collisions/PassTrough/Left_tower_side" index="49" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -401, -932 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody76" index="0"]
@@ -4060,7 +4212,7 @@ position = Vector2( -304, 1100 )
 shape = SubResource( 107 )
 one_way_collision = true
 
-[node name="PassThroughBody77" parent="Collisions/PassTrough/Left_tower_side" index="51" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody77" parent="Collisions/PassTrough/Left_tower_side" index="50" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -369, -916 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody77" index="0"]
@@ -4068,7 +4220,7 @@ position = Vector2( -304, 1100 )
 shape = SubResource( 107 )
 one_way_collision = true
 
-[node name="PassThroughBody78" parent="Collisions/PassTrough/Left_tower_side" index="52" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody78" parent="Collisions/PassTrough/Left_tower_side" index="51" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -321, -1044 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody78" index="0"]
@@ -4076,7 +4228,7 @@ position = Vector2( -296, 1100 )
 shape = SubResource( 108 )
 one_way_collision = true
 
-[node name="PassThroughBody79" parent="Collisions/PassTrough/Left_tower_side" index="53" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody79" parent="Collisions/PassTrough/Left_tower_side" index="52" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -401, -1028 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody79" index="0"]
@@ -4084,7 +4236,7 @@ position = Vector2( -280, 1100 )
 shape = SubResource( 109 )
 one_way_collision = true
 
-[node name="PassThroughBody80" parent="Collisions/PassTrough/Left_tower_side" index="54" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody80" parent="Collisions/PassTrough/Left_tower_side" index="53" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -417, -1044 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody80" index="0"]
@@ -4092,7 +4244,7 @@ position = Vector2( -312, 1100 )
 shape = SubResource( 110 )
 one_way_collision = true
 
-[node name="PassThroughBody81" parent="Collisions/PassTrough/Left_tower_side" index="55" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody81" parent="Collisions/PassTrough/Left_tower_side" index="54" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -369, -1108 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody81" index="0"]
@@ -4100,7 +4252,7 @@ position = Vector2( -312, 1100 )
 shape = SubResource( 110 )
 one_way_collision = true
 
-[node name="PassThroughBody82" parent="Collisions/PassTrough/Left_tower_side" index="56" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody82" parent="Collisions/PassTrough/Left_tower_side" index="55" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -401, -1076 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody82" index="0"]
@@ -4108,7 +4260,7 @@ position = Vector2( -296, 1100 )
 shape = SubResource( 111 )
 one_way_collision = true
 
-[node name="PassThroughBody83" parent="Collisions/PassTrough/Left_tower_side" index="57" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody83" parent="Collisions/PassTrough/Left_tower_side" index="56" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -353, -1092 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody83" index="0"]
@@ -4116,7 +4268,7 @@ position = Vector2( -304, 1100 )
 shape = SubResource( 112 )
 one_way_collision = true
 
-[node name="PassThroughBody84" parent="Collisions/PassTrough/Left_tower_side" index="58" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody84" parent="Collisions/PassTrough/Left_tower_side" index="57" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -337, -1124 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody84" index="0"]
@@ -4124,7 +4276,7 @@ position = Vector2( -304, 1100 )
 shape = SubResource( 112 )
 one_way_collision = true
 
-[node name="PassThroughBody85" parent="Collisions/PassTrough/Left_tower_side" index="59" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody85" parent="Collisions/PassTrough/Left_tower_side" index="58" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -401, -1140 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody85" index="0"]
@@ -4132,7 +4284,7 @@ position = Vector2( -304, 1100 )
 shape = SubResource( 112 )
 one_way_collision = true
 
-[node name="PassThroughBody86" parent="Collisions/PassTrough/Left_tower_side" index="60" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody86" parent="Collisions/PassTrough/Left_tower_side" index="59" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -449, -1172 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody86" index="0"]
@@ -4140,7 +4292,7 @@ position = Vector2( -208, 1100 )
 shape = SubResource( 113 )
 one_way_collision = true
 
-[node name="PassThroughBody87" parent="Collisions/PassTrough/Left_tower_side" index="61" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody87" parent="Collisions/PassTrough/Left_tower_side" index="60" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -417, -1188 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody87" index="0"]
@@ -4148,7 +4300,7 @@ position = Vector2( -240, 1100 )
 shape = SubResource( 114 )
 one_way_collision = true
 
-[node name="PassThroughBody8" parent="Collisions/PassTrough/Left_tower_side" index="62" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody8" parent="Collisions/PassTrough/Left_tower_side" index="61" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -241, -340 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody8" index="0"]
@@ -4156,7 +4308,7 @@ position = Vector2( -256, 1100 )
 shape = SubResource( 78 )
 one_way_collision = true
 
-[node name="PassThroughBody9" parent="Collisions/PassTrough/Left_tower_side" index="63" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody9" parent="Collisions/PassTrough/Left_tower_side" index="62" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -241, -372 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody9" index="0"]
@@ -4164,7 +4316,7 @@ position = Vector2( -280, 1100 )
 shape = SubResource( 79 )
 one_way_collision = true
 
-[node name="PassThroughBody10" parent="Collisions/PassTrough/Left_tower_side" index="64" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody10" parent="Collisions/PassTrough/Left_tower_side" index="63" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -433, -324 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody10" index="0"]
@@ -4172,7 +4324,7 @@ position = Vector2( -264, 1100 )
 shape = SubResource( 80 )
 one_way_collision = true
 
-[node name="PassThroughBody11" parent="Collisions/PassTrough/Left_tower_side" index="65" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody11" parent="Collisions/PassTrough/Left_tower_side" index="64" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -369, -308 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody11" index="0"]
@@ -4180,7 +4332,7 @@ position = Vector2( -264, 1100 )
 shape = SubResource( 80 )
 one_way_collision = true
 
-[node name="PassThroughBody12" parent="Collisions/PassTrough/Left_tower_side" index="66" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody12" parent="Collisions/PassTrough/Left_tower_side" index="65" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -385, -356 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody12" index="0"]
@@ -4188,7 +4340,7 @@ position = Vector2( -248, 1100 )
 shape = SubResource( 81 )
 one_way_collision = true
 
-[node name="PassThroughBody13" parent="Collisions/PassTrough/Left_tower_side" index="67" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody13" parent="Collisions/PassTrough/Left_tower_side" index="66" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -305, -404 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody13" index="0"]
@@ -4196,7 +4348,7 @@ position = Vector2( -280, 1100 )
 shape = SubResource( 82 )
 one_way_collision = true
 
-[node name="PassThroughBody14" parent="Collisions/PassTrough/Left_tower_side" index="68" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody14" parent="Collisions/PassTrough/Left_tower_side" index="67" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -337, -388 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody14" index="0"]
@@ -4204,7 +4356,7 @@ position = Vector2( -280, 1100 )
 shape = SubResource( 82 )
 one_way_collision = true
 
-[node name="PassThroughBody15" parent="Collisions/PassTrough/Left_tower_side" index="69" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody15" parent="Collisions/PassTrough/Left_tower_side" index="68" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -481, -340 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody15" index="0"]
@@ -4212,7 +4364,7 @@ position = Vector2( -280, 1100 )
 shape = SubResource( 82 )
 one_way_collision = true
 
-[node name="PassThroughBody17" parent="Collisions/PassTrough/Left_tower_side" index="70" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody17" parent="Collisions/PassTrough/Left_tower_side" index="69" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -689, -404 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody17" index="0"]
@@ -4220,7 +4372,7 @@ position = Vector2( -280, 1100 )
 shape = SubResource( 82 )
 one_way_collision = true
 
-[node name="PassThroughBody18" parent="Collisions/PassTrough/Left_tower_side" index="71" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody18" parent="Collisions/PassTrough/Left_tower_side" index="70" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -561, -436 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody18" index="0"]
@@ -4228,7 +4380,7 @@ position = Vector2( -280, 1100 )
 shape = SubResource( 82 )
 one_way_collision = true
 
-[node name="PassThroughBody19" parent="Collisions/PassTrough/Left_tower_side" index="72" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody19" parent="Collisions/PassTrough/Left_tower_side" index="71" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -497, -500 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody19" index="0"]
@@ -4236,7 +4388,7 @@ position = Vector2( -280, 1100 )
 shape = SubResource( 82 )
 one_way_collision = true
 
-[node name="PassThroughBody20" parent="Collisions/PassTrough/Left_tower_side" index="73" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody20" parent="Collisions/PassTrough/Left_tower_side" index="72" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -513, -532 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody20" index="0"]
@@ -4244,7 +4396,7 @@ position = Vector2( -280, 1100 )
 shape = SubResource( 82 )
 one_way_collision = true
 
-[node name="PassThroughBody21" parent="Collisions/PassTrough/Left_tower_side" index="74" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody21" parent="Collisions/PassTrough/Left_tower_side" index="73" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -433, -516 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody21" index="0"]
@@ -4252,7 +4404,7 @@ position = Vector2( -280, 1100 )
 shape = SubResource( 82 )
 one_way_collision = true
 
-[node name="PassThroughBody22" parent="Collisions/PassTrough/Left_tower_side" index="75" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody22" parent="Collisions/PassTrough/Left_tower_side" index="74" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -417, -532 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody22" index="0"]
@@ -4260,7 +4412,7 @@ position = Vector2( -280, 1100 )
 shape = SubResource( 82 )
 one_way_collision = true
 
-[node name="PassThroughBody23" parent="Collisions/PassTrough/Left_tower_side" index="76" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody23" parent="Collisions/PassTrough/Left_tower_side" index="75" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -321, -548 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody23" index="0"]
@@ -4268,7 +4420,7 @@ position = Vector2( -280, 1100 )
 shape = SubResource( 82 )
 one_way_collision = true
 
-[node name="PassThroughBody24" parent="Collisions/PassTrough/Left_tower_side" index="77" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody24" parent="Collisions/PassTrough/Left_tower_side" index="76" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -353, -484 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody24" index="0"]
@@ -4276,7 +4428,7 @@ position = Vector2( -280, 1100 )
 shape = SubResource( 82 )
 one_way_collision = true
 
-[node name="PassThroughBody25" parent="Collisions/PassTrough/Left_tower_side" index="78" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody25" parent="Collisions/PassTrough/Left_tower_side" index="77" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -369, -468 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody25" index="0"]
@@ -4284,7 +4436,7 @@ position = Vector2( -280, 1100 )
 shape = SubResource( 82 )
 one_way_collision = true
 
-[node name="PassThroughBody26" parent="Collisions/PassTrough/Left_tower_side" index="79" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody26" parent="Collisions/PassTrough/Left_tower_side" index="78" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -401, -644 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody26" index="0"]
@@ -4292,7 +4444,7 @@ position = Vector2( -280, 1100 )
 shape = SubResource( 82 )
 one_way_collision = true
 
-[node name="PassThroughBody27" parent="Collisions/PassTrough/Left_tower_side" index="80" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody27" parent="Collisions/PassTrough/Left_tower_side" index="79" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -369, -724 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody27" index="0"]
@@ -4300,7 +4452,7 @@ position = Vector2( -280, 1100 )
 shape = SubResource( 82 )
 one_way_collision = true
 
-[node name="PassThroughBody28" parent="Collisions/PassTrough/Left_tower_side" index="81" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody28" parent="Collisions/PassTrough/Left_tower_side" index="80" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -369, -836 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody28" index="0"]
@@ -4308,7 +4460,7 @@ position = Vector2( -280, 1100 )
 shape = SubResource( 82 )
 one_way_collision = true
 
-[node name="PassThroughBody29" parent="Collisions/PassTrough/Left_tower_side" index="82" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody29" parent="Collisions/PassTrough/Left_tower_side" index="81" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -449, -836 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody29" index="0"]
@@ -4316,7 +4468,7 @@ position = Vector2( -280, 1100 )
 shape = SubResource( 82 )
 one_way_collision = true
 
-[node name="PassThroughBody30" parent="Collisions/PassTrough/Left_tower_side" index="83" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody30" parent="Collisions/PassTrough/Left_tower_side" index="82" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -305, -900 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody30" index="0"]
@@ -4324,7 +4476,7 @@ position = Vector2( -280, 1100 )
 shape = SubResource( 82 )
 one_way_collision = true
 
-[node name="PassThroughBody31" parent="Collisions/PassTrough/Left_tower_side" index="84" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody31" parent="Collisions/PassTrough/Left_tower_side" index="83" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -433, -964 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody31" index="0"]
@@ -4332,7 +4484,7 @@ position = Vector2( -280, 1100 )
 shape = SubResource( 82 )
 one_way_collision = true
 
-[node name="PassThroughBody32" parent="Collisions/PassTrough/Left_tower_side" index="85" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody32" parent="Collisions/PassTrough/Left_tower_side" index="84" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -417, -996 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody32" index="0"]
@@ -4340,7 +4492,7 @@ position = Vector2( -280, 1100 )
 shape = SubResource( 82 )
 one_way_collision = true
 
-[node name="PassThroughBody33" parent="Collisions/PassTrough/Left_tower_side" index="86" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody33" parent="Collisions/PassTrough/Left_tower_side" index="85" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -305, -1060 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody33" index="0"]
@@ -4348,7 +4500,7 @@ position = Vector2( -280, 1100 )
 shape = SubResource( 82 )
 one_way_collision = true
 
-[node name="PassThroughBody34" parent="Collisions/PassTrough/Left_tower_side" index="87" groups=["passThroughObject"] instance=ExtResource( 2 )]
+[node name="PassThroughBody34" parent="Collisions/PassTrough/Left_tower_side" index="86" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -305, -1124 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/Left_tower_side/PassThroughBody34" index="0"]
@@ -6648,12 +6800,652 @@ position = Vector2( -285, 1100 )
 shape = SubResource( 241 )
 one_way_collision = true
 
-[node name="Ladder3" parent="Ladders" index="0" instance=ExtResource( 17 )]
+[node name="Lians" type="Node2D" parent="Ladders" index="0"]
+
+[node name="Tree_top" type="Node2D" parent="Ladders/Lians" index="0"]
+
+[node name="Ladder4" parent="Ladders/Lians/Tree_top" index="0" instance=ExtResource( 17 )]
+position = Vector2( -248, -852 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder4" index="0"]
+position = Vector2( -1, 152 )
+shape = SubResource( 336 )
+
+[node name="Ladder43" parent="Ladders/Lians/Tree_top" index="1" instance=ExtResource( 17 )]
+position = Vector2( 207, -1062 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder43" index="0"]
+position = Vector2( -0.5, 131 )
+shape = SubResource( 386 )
+
+[node name="Ladder24" parent="Ladders/Lians/Tree_top" index="2" instance=ExtResource( 17 )]
+position = Vector2( 312, -1238 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder24" index="0"]
+position = Vector2( -1, 25.5 )
+shape = SubResource( 372 )
+
+[node name="Ladder44" parent="Ladders/Lians/Tree_top" index="3" instance=ExtResource( 17 )]
+position = Vector2( 248, -662 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder44" index="0"]
+position = Vector2( -1, 25.5 )
+shape = SubResource( 372 )
+
+[node name="Ladder45" parent="Ladders/Lians/Tree_top" index="4" instance=ExtResource( 17 )]
+position = Vector2( 264, -774 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder45" index="0"]
+position = Vector2( -1, 1.5 )
+shape = SubResource( 387 )
+
+[node name="Ladder46" parent="Ladders/Lians/Tree_top" index="5" instance=ExtResource( 17 )]
+position = Vector2( 264, -886 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder46" index="0"]
+position = Vector2( -1, 1.5 )
+shape = SubResource( 387 )
+
+[node name="Ladder47" parent="Ladders/Lians/Tree_top" index="6" instance=ExtResource( 17 )]
+position = Vector2( 136, -902 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder47" index="0"]
+position = Vector2( -1, 1.5 )
+shape = SubResource( 387 )
+
+[node name="Ladder25" parent="Ladders/Lians/Tree_top" index="7" instance=ExtResource( 17 )]
+position = Vector2( 104, -1238 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder25" index="0"]
+position = Vector2( -1, 25.5 )
+shape = SubResource( 372 )
+
+[node name="Ladder26" parent="Ladders/Lians/Tree_top" index="8" instance=ExtResource( 17 )]
+position = Vector2( 136, -1238 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder26" index="0"]
+position = Vector2( -1, 8.5 )
+shape = SubResource( 373 )
+
+[node name="Ladder27" parent="Ladders/Lians/Tree_top" index="9" instance=ExtResource( 17 )]
+position = Vector2( 248, -1238 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder27" index="0"]
+position = Vector2( -1, 8.5 )
+shape = SubResource( 373 )
+
+[node name="Ladder28" parent="Ladders/Lians/Tree_top" index="10" instance=ExtResource( 17 )]
+position = Vector2( 120, -1142 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder28" index="0"]
+position = Vector2( -1, 8.5 )
+shape = SubResource( 373 )
+
+[node name="Ladder32" parent="Ladders/Lians/Tree_top" index="11" instance=ExtResource( 17 )]
+position = Vector2( 72, -1238 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder32" index="0"]
+position = Vector2( -1, 1.5 )
+shape = SubResource( 375 )
+
+[node name="Ladder33" parent="Ladders/Lians/Tree_top" index="12" instance=ExtResource( 17 )]
+position = Vector2( 184, -1238 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder33" index="0"]
+position = Vector2( -1, 1.5 )
+shape = SubResource( 375 )
+
+[node name="Ladder34" parent="Ladders/Lians/Tree_top" index="13" instance=ExtResource( 17 )]
+position = Vector2( 232, -1094 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder34" index="0"]
+position = Vector2( -1, 1.5 )
+shape = SubResource( 375 )
+
+[node name="Ladder35" parent="Ladders/Lians/Tree_top" index="14" instance=ExtResource( 17 )]
+position = Vector2( 488, -1094 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder35" index="0"]
+position = Vector2( -1, 1.5 )
+shape = SubResource( 375 )
+
+[node name="Ladder36" parent="Ladders/Lians/Tree_top" index="15" instance=ExtResource( 17 )]
+position = Vector2( 151, -1062 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder36" index="0"]
+position = Vector2( -1, 7.5 )
+shape = SubResource( 376 )
+
+[node name="Ladder37" parent="Ladders/Lians/Tree_top" index="16" instance=ExtResource( 17 )]
+position = Vector2( 424, -1062 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder37" index="0"]
+position = Vector2( -1, 7.5 )
+shape = SubResource( 376 )
+
+[node name="Ladder38" parent="Ladders/Lians/Tree_top" index="17" instance=ExtResource( 17 )]
+position = Vector2( 663, -1062 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder38" index="0"]
+position = Vector2( -1, 7.5 )
+shape = SubResource( 376 )
+
+[node name="Ladder39" parent="Ladders/Lians/Tree_top" index="18" instance=ExtResource( 17 )]
+position = Vector2( 616, -1062 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder39" index="0"]
+position = Vector2( -1, 15.5 )
+shape = SubResource( 377 )
+
+[node name="Ladder40" parent="Ladders/Lians/Tree_top" index="19" instance=ExtResource( 17 )]
+position = Vector2( 7, -1062 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder40" index="0"]
+position = Vector2( -1, 15.5 )
+shape = SubResource( 377 )
+
+[node name="Ladder41" parent="Ladders/Lians/Tree_top" index="20" instance=ExtResource( 17 )]
+position = Vector2( -120, -1062 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder41" index="0"]
+position = Vector2( -1, 15.5 )
+shape = SubResource( 377 )
+
+[node name="Ladder42" parent="Ladders/Lians/Tree_top" index="21" instance=ExtResource( 17 )]
+position = Vector2( -232, -1062 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder42" index="0"]
+position = Vector2( -1, 15.5 )
+shape = SubResource( 377 )
+
+[node name="Ladder29" parent="Ladders/Lians/Tree_top" index="22" instance=ExtResource( 17 )]
+position = Vector2( 296, -1142 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder29" index="0"]
+position = Vector2( -1, 8.5 )
+shape = SubResource( 373 )
+
+[node name="Ladder30" parent="Ladders/Lians/Tree_top" index="23" instance=ExtResource( 17 )]
+position = Vector2( 440, -1142 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder30" index="0"]
+position = Vector2( -1, 8.5 )
+shape = SubResource( 373 )
+
+[node name="Ladder31" parent="Ladders/Lians/Tree_top" index="24" instance=ExtResource( 17 )]
+position = Vector2( 88, -1143 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder31" index="0"]
+position = Vector2( -1, 2 )
+shape = SubResource( 374 )
+
+[node name="Ladder5" parent="Ladders/Lians/Tree_top" index="25" instance=ExtResource( 17 )]
+position = Vector2( -152, -710 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder5" index="0"]
+position = Vector2( -1, 201.5 )
+shape = SubResource( 337 )
+
+[node name="Ladder6" parent="Ladders/Lians/Tree_top" index="26" instance=ExtResource( 17 )]
+position = Vector2( 472, -694 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder6" index="0"]
+position = Vector2( -1, 169 )
+shape = SubResource( 338 )
+
+[node name="Ladder7" parent="Ladders/Lians/Tree_top" index="27" instance=ExtResource( 17 )]
+position = Vector2( 536, -742 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder7" index="0"]
+position = Vector2( -1, 120.5 )
+shape = SubResource( 339 )
+
+[node name="Ladder8" parent="Ladders/Lians/Tree_top" index="28" instance=ExtResource( 17 )]
+position = Vector2( 664, -789 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder8" index="0"]
+position = Vector2( -1, 105.5 )
+shape = SubResource( 340 )
+
+[node name="Ladder9" parent="Ladders/Lians/Tree_top" index="29" instance=ExtResource( 17 )]
+position = Vector2( -40, -710 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder9" index="0"]
+position = Vector2( -1, 179 )
+shape = SubResource( 341 )
+
+[node name="Ladder10" parent="Ladders/Lians/Tree_top" index="30" instance=ExtResource( 17 )]
+position = Vector2( 40, -630 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder10" index="0"]
+position = Vector2( -1, 127.5 )
+shape = SubResource( 342 )
+
+[node name="Ladder11" parent="Ladders/Lians/Tree_top" index="31" instance=ExtResource( 17 )]
+position = Vector2( 104, -630 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder11" index="0"]
+position = Vector2( -1, 95.5 )
+shape = SubResource( 343 )
+
+[node name="Ladder12" parent="Ladders/Lians/Tree_top" index="32" instance=ExtResource( 17 )]
+position = Vector2( 376, -630 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder12" index="0"]
+position = Vector2( -1, 218 )
+shape = SubResource( 344 )
+
+[node name="Ladder13" parent="Ladders/Lians/Tree_top" index="33" instance=ExtResource( 17 )]
+position = Vector2( 312, -630 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder13" index="0"]
+position = Vector2( -1, 152 )
+shape = SubResource( 345 )
+
+[node name="Ladder14" parent="Ladders/Lians/Tree_top" index="34" instance=ExtResource( 17 )]
+position = Vector2( 200, -598 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder14" index="0"]
+position = Vector2( -1, 106.5 )
+shape = SubResource( 346 )
+
+[node name="Ladder15" parent="Ladders/Lians/Tree_top" index="35" instance=ExtResource( 17 )]
+position = Vector2( 152, -583 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder15" index="0"]
+position = Vector2( -1, 52 )
+shape = SubResource( 347 )
+
+[node name="Ladder16" parent="Ladders/Lians/Tree_top" index="36" instance=ExtResource( 17 )]
+position = Vector2( -56, -806 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder16" index="0"]
+position = Vector2( -1, 18.5 )
+shape = SubResource( 348 )
+
+[node name="Ladder17" parent="Ladders/Lians/Tree_top" index="37" instance=ExtResource( 17 )]
+position = Vector2( 72, -854 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder17" index="0"]
+position = Vector2( -1, 26.5 )
+shape = SubResource( 349 )
+
+[node name="Ladder18" parent="Ladders/Lians/Tree_top" index="38" instance=ExtResource( 17 )]
+position = Vector2( 25, -870 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder18" index="0"]
+position = Vector2( -1, 36 )
+shape = SubResource( 350 )
+
+[node name="Ladder19" parent="Ladders/Lians/Tree_top" index="39" instance=ExtResource( 17 )]
+position = Vector2( 168, -793 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder19" index="0"]
+position = Vector2( -1, 53 )
+shape = SubResource( 351 )
+
+[node name="Ladder20" parent="Ladders/Lians/Tree_top" index="40" instance=ExtResource( 17 )]
+position = Vector2( 568, -857 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder20" index="0"]
+position = Vector2( -1, 37.5 )
+shape = SubResource( 352 )
+
+[node name="Ladder21" parent="Ladders/Lians/Tree_top" index="41" instance=ExtResource( 17 )]
+position = Vector2( 456, -825 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder21" index="0"]
+position = Vector2( -1, 37.5 )
+shape = SubResource( 352 )
+
+[node name="Ladder23" parent="Ladders/Lians/Tree_top" index="42" instance=ExtResource( 17 )]
+position = Vector2( 296, -856 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder23" index="0"]
+position = Vector2( -1, 31.5 )
+shape = SubResource( 353 )
+
+[node name="Ladder22" parent="Ladders/Lians/Tree_top" index="43" instance=ExtResource( 17 )]
+position = Vector2( 344, -873 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_top/Ladder22" index="0"]
+position = Vector2( -1, 61 )
+shape = SubResource( 354 )
+
+[node name="Tree_bottom" type="Node2D" parent="Ladders/Lians" index="1"]
+
+[node name="Ladder4" parent="Ladders/Lians/Tree_bottom" index="0" instance=ExtResource( 17 )]
+position = Vector2( 152, -230 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_bottom/Ladder4" index="0"]
+position = Vector2( -1, 25.5 )
+shape = SubResource( 378 )
+
+[node name="Ladder5" parent="Ladders/Lians/Tree_bottom" index="1" instance=ExtResource( 17 )]
+position = Vector2( 264, -182 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_bottom/Ladder5" index="0"]
+position = Vector2( -1, 1 )
+shape = SubResource( 379 )
+
+[node name="Ladder6" parent="Ladders/Lians/Tree_bottom" index="2" instance=ExtResource( 17 )]
+position = Vector2( -105, 746 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_bottom/Ladder6" index="0"]
+position = Vector2( -1, 10 )
+shape = SubResource( 380 )
+
+[node name="Ladder7" parent="Ladders/Lians/Tree_bottom" index="3" instance=ExtResource( 17 )]
+position = Vector2( -39, 682 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_bottom/Ladder7" index="0"]
+position = Vector2( -1, 10 )
+shape = SubResource( 380 )
+
+[node name="Ladder8" parent="Ladders/Lians/Tree_bottom" index="4" instance=ExtResource( 17 )]
+position = Vector2( -24, 762 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_bottom/Ladder8" index="0"]
+position = Vector2( -1, 25.5 )
+shape = SubResource( 381 )
+
+[node name="Ladder9" parent="Ladders/Lians/Tree_bottom" index="5" instance=ExtResource( 17 )]
+position = Vector2( 152, 650 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_bottom/Ladder9" index="0"]
+position = Vector2( -1, 25.5 )
+shape = SubResource( 381 )
+
+[node name="Ladder10" parent="Ladders/Lians/Tree_bottom" index="6" instance=ExtResource( 17 )]
+position = Vector2( 361, 778 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_bottom/Ladder10" index="0"]
+position = Vector2( -1, 25.5 )
+shape = SubResource( 381 )
+
+[node name="Ladder11" parent="Ladders/Lians/Tree_bottom" index="7" instance=ExtResource( 17 )]
+position = Vector2( 376, 650 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_bottom/Ladder11" index="0"]
+position = Vector2( -1, 25.5 )
+shape = SubResource( 381 )
+
+[node name="Ladder12" parent="Ladders/Lians/Tree_bottom" index="8" instance=ExtResource( 17 )]
+position = Vector2( 280, 778 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_bottom/Ladder12" index="0"]
+position = Vector2( -1, 17.5 )
+shape = SubResource( 382 )
+
+[node name="Ladder13" parent="Ladders/Lians/Tree_bottom" index="9" instance=ExtResource( 17 )]
+position = Vector2( 280, 634 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_bottom/Ladder13" index="0"]
+position = Vector2( -1, 10 )
+shape = SubResource( 383 )
+
+[node name="Ladder14" parent="Ladders/Lians/Tree_bottom" index="10" instance=ExtResource( 17 )]
+position = Vector2( 248, 698 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_bottom/Ladder14" index="0"]
+position = Vector2( -1, 1.5 )
+shape = SubResource( 384 )
+
+[node name="Ladder15" parent="Ladders/Lians/Tree_bottom" index="11" instance=ExtResource( 17 )]
+position = Vector2( 504, 762 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_bottom/Ladder15" index="0"]
+position = Vector2( -1, 1.5 )
+shape = SubResource( 384 )
+
+[node name="Ladder16" parent="Ladders/Lians/Tree_bottom" index="12" instance=ExtResource( 17 )]
+position = Vector2( 536, 762 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_bottom/Ladder16" index="0"]
+position = Vector2( -1, 10 )
+shape = SubResource( 385 )
+
+[node name="Ladder3" parent="Ladders/Lians/Tree_bottom" index="13" instance=ExtResource( 17 )]
 position = Vector2( 168, -139 )
 
-[node name="CollisionShape2D" parent="Ladders/Ladder3" index="0"]
+[node name="CollisionShape2D" parent="Ladders/Lians/Tree_bottom/Ladder3" index="0"]
 position = Vector2( -1, 38 )
 shape = SubResource( 252 )
+
+[node name="Left_tower" type="Node2D" parent="Ladders/Lians" index="2"]
+
+[node name="Ladder18" parent="Ladders/Lians/Left_tower" index="0" instance=ExtResource( 17 )]
+position = Vector2( -600, 535 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Left_tower/Ladder18" index="0"]
+position = Vector2( -1, 29.5 )
+shape = SubResource( 355 )
+
+[node name="Ladder19" parent="Ladders/Lians/Left_tower" index="1" instance=ExtResource( 17 )]
+position = Vector2( -712, 311 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Left_tower/Ladder19" index="0"]
+position = Vector2( -1, 29.5 )
+shape = SubResource( 355 )
+
+[node name="Ladder20" parent="Ladders/Lians/Left_tower" index="2" instance=ExtResource( 17 )]
+position = Vector2( -616, 215 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Left_tower/Ladder20" index="0"]
+position = Vector2( -1, 29.5 )
+shape = SubResource( 355 )
+
+[node name="Ladder21" parent="Ladders/Lians/Left_tower" index="3" instance=ExtResource( 17 )]
+position = Vector2( -584, 23 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Left_tower/Ladder21" index="0"]
+position = Vector2( -1, 29.5 )
+shape = SubResource( 355 )
+
+[node name="Ladder22" parent="Ladders/Lians/Left_tower" index="4" instance=ExtResource( 17 )]
+position = Vector2( -712, -58 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Left_tower/Ladder22" index="0"]
+position = Vector2( -1, 29.5 )
+shape = SubResource( 355 )
+
+[node name="Ladder23" parent="Ladders/Lians/Left_tower" index="5" instance=ExtResource( 17 )]
+position = Vector2( -824, 759 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Left_tower/Ladder23" index="0"]
+position = Vector2( -1, 29.5 )
+shape = SubResource( 355 )
+
+[node name="Ladder24" parent="Ladders/Lians/Left_tower" index="6" instance=ExtResource( 17 )]
+position = Vector2( -536, 743 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Left_tower/Ladder24" index="0"]
+position = Vector2( -1, 29.5 )
+shape = SubResource( 355 )
+
+[node name="Ladder25" parent="Ladders/Lians/Left_tower" index="7" instance=ExtResource( 17 )]
+position = Vector2( -376, 775 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Left_tower/Ladder25" index="0"]
+position = Vector2( -1, 29.5 )
+shape = SubResource( 355 )
+
+[node name="Ladder26" parent="Ladders/Lians/Left_tower" index="8" instance=ExtResource( 17 )]
+position = Vector2( -408, 775 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Left_tower/Ladder26" index="0"]
+position = Vector2( -1, 20.5 )
+shape = SubResource( 356 )
+
+[node name="Ladder27" parent="Ladders/Lians/Left_tower" index="9" instance=ExtResource( 17 )]
+position = Vector2( -648, 775 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Left_tower/Ladder27" index="0"]
+position = Vector2( -1, 36.5 )
+shape = SubResource( 357 )
+
+[node name="Ladder28" parent="Ladders/Lians/Left_tower" index="10" instance=ExtResource( 17 )]
+position = Vector2( -888, 328 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Left_tower/Ladder28" index="0"]
+position = Vector2( -1, 36.5 )
+shape = SubResource( 358 )
+
+[node name="Ladder29" parent="Ladders/Lians/Left_tower" index="11" instance=ExtResource( 17 )]
+position = Vector2( -872, 409 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Left_tower/Ladder29" index="0"]
+position = Vector2( -1, 36.5 )
+shape = SubResource( 358 )
+
+[node name="Ladder30" parent="Ladders/Lians/Left_tower" index="12" instance=ExtResource( 17 )]
+position = Vector2( -1049, 425 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Left_tower/Ladder30" index="0"]
+position = Vector2( -1, 60 )
+shape = SubResource( 359 )
+
+[node name="Ladder31" parent="Ladders/Lians/Left_tower" index="13" instance=ExtResource( 17 )]
+position = Vector2( -1064, 313 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Left_tower/Ladder31" index="0"]
+position = Vector2( -1, 53.5 )
+shape = SubResource( 360 )
+
+[node name="Ladder32" parent="Ladders/Lians/Left_tower" index="14" instance=ExtResource( 17 )]
+position = Vector2( -1032, 297 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Left_tower/Ladder32" index="0"]
+position = Vector2( -1, 44 )
+shape = SubResource( 361 )
+
+[node name="Ladder33" parent="Ladders/Lians/Left_tower" index="15" instance=ExtResource( 17 )]
+position = Vector2( -1000, 313 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Left_tower/Ladder33" index="0"]
+position = Vector2( -1, 84 )
+shape = SubResource( 362 )
+
+[node name="Ladder34" parent="Ladders/Lians/Left_tower" index="16" instance=ExtResource( 17 )]
+position = Vector2( -952, 329 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Left_tower/Ladder34" index="0"]
+position = Vector2( -1, 84 )
+shape = SubResource( 362 )
+
+[node name="Right_tower" type="Node2D" parent="Ladders/Lians" index="3"]
+
+[node name="Ladder18" parent="Ladders/Lians/Right_tower" index="0" instance=ExtResource( 17 )]
+position = Vector2( 920, 614 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Right_tower/Ladder18" index="0"]
+position = Vector2( -1, 37.5 )
+shape = SubResource( 363 )
+
+[node name="Ladder19" parent="Ladders/Lians/Right_tower" index="1" instance=ExtResource( 17 )]
+position = Vector2( 808, 502 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Right_tower/Ladder19" index="0"]
+position = Vector2( -1, 37.5 )
+shape = SubResource( 363 )
+
+[node name="Ladder20" parent="Ladders/Lians/Right_tower" index="2" instance=ExtResource( 17 )]
+position = Vector2( 888, 279 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Right_tower/Ladder20" index="0"]
+position = Vector2( -1, 37.5 )
+shape = SubResource( 363 )
+
+[node name="Ladder21" parent="Ladders/Lians/Right_tower" index="3" instance=ExtResource( 17 )]
+position = Vector2( 824, 119 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Right_tower/Ladder21" index="0"]
+position = Vector2( -1, 37.5 )
+shape = SubResource( 363 )
+
+[node name="Ladder22" parent="Ladders/Lians/Right_tower" index="4" instance=ExtResource( 17 )]
+position = Vector2( 872, 103 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Right_tower/Ladder22" index="0"]
+position = Vector2( -1, 19.5 )
+shape = SubResource( 364 )
+
+[node name="Ladder23" parent="Ladders/Lians/Right_tower" index="5" instance=ExtResource( 17 )]
+position = Vector2( 920, 87 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Right_tower/Ladder23" index="0"]
+position = Vector2( -1, 19.5 )
+shape = SubResource( 364 )
+
+[node name="Ladder24" parent="Ladders/Lians/Right_tower" index="6" instance=ExtResource( 17 )]
+position = Vector2( 1352, 647 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Right_tower/Ladder24" index="0"]
+position = Vector2( -1, 37 )
+shape = SubResource( 365 )
+
+[node name="Ladder25" parent="Ladders/Lians/Right_tower" index="7" instance=ExtResource( 17 )]
+position = Vector2( 1160, 647 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Right_tower/Ladder25" index="0"]
+position = Vector2( -1, 53 )
+shape = SubResource( 366 )
+
+[node name="Ladder26" parent="Ladders/Lians/Right_tower" index="8" instance=ExtResource( 17 )]
+position = Vector2( 1208, 393 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Right_tower/Ladder26" index="0"]
+position = Vector2( -1, 52 )
+shape = SubResource( 367 )
+
+[node name="Ladder27" parent="Ladders/Lians/Right_tower" index="9" instance=ExtResource( 17 )]
+position = Vector2( 1176, 201 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Right_tower/Ladder27" index="0"]
+position = Vector2( -1, 52 )
+shape = SubResource( 367 )
+
+[node name="Ladder28" parent="Ladders/Lians/Right_tower" index="10" instance=ExtResource( 17 )]
+position = Vector2( 1240, 377 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Right_tower/Ladder28" index="0"]
+position = Vector2( -1, 36 )
+shape = SubResource( 368 )
+
+[node name="Ladder29" parent="Ladders/Lians/Right_tower" index="11" instance=ExtResource( 17 )]
+position = Vector2( 1000, 377 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Right_tower/Ladder29" index="0"]
+position = Vector2( -1, 44 )
+shape = SubResource( 369 )
+
+[node name="Ladder30" parent="Ladders/Lians/Right_tower" index="12" instance=ExtResource( 17 )]
+position = Vector2( 968, 281 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Right_tower/Ladder30" index="0"]
+position = Vector2( -1, 44 )
+shape = SubResource( 369 )
+
+[node name="Ladder31" parent="Ladders/Lians/Right_tower" index="13" instance=ExtResource( 17 )]
+position = Vector2( 1112, 169 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Right_tower/Ladder31" index="0"]
+position = Vector2( -1, 44 )
+shape = SubResource( 369 )
+
+[node name="Ladder32" parent="Ladders/Lians/Right_tower" index="14" instance=ExtResource( 17 )]
+position = Vector2( 1032, 185 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Right_tower/Ladder32" index="0"]
+position = Vector2( -1, 83.5 )
+shape = SubResource( 370 )
+
+[node name="Ladder33" parent="Ladders/Lians/Right_tower" index="15" instance=ExtResource( 17 )]
+position = Vector2( 1064, 185 )
+
+[node name="CollisionShape2D" parent="Ladders/Lians/Right_tower/Ladder33" index="0"]
+position = Vector2( -1, 19.5 )
+shape = SubResource( 371 )
 
 [node name="BottomForestShadow" type="Node2D" parent="Lighting" index="0"]
 visible = false
@@ -6994,7 +7786,6 @@ process_material = SubResource( 333 )
 [editable path="Upper_background_objects/Young_flower/InteractionEmitterObject"]
 [editable path="Upper_background_objects/Young_flower/InteractionEmitterObject/InteractionController"]
 [editable path="Collisions/PassTrough/Left_tower_side/PassThroughBody7"]
-[editable path="Collisions/PassTrough/Left_tower_side/PassThroughBody35"]
 [editable path="Collisions/PassTrough/Left_tower_side/PassThroughBody36"]
 [editable path="Collisions/PassTrough/Left_tower_side/PassThroughBody37"]
 [editable path="Collisions/PassTrough/Left_tower_side/PassThroughBody38"]
@@ -7366,7 +8157,97 @@ process_material = SubResource( 333 )
 [editable path="Collisions/PassTrough/Grand_tree_middle/PassThroughBody114"]
 [editable path="Collisions/PassTrough/Grand_tree_middle/PassThroughBody115"]
 [editable path="Collisions/PassTrough/Grand_tree_middle/PassThroughBody35"]
-[editable path="Ladders/Ladder3"]
+[editable path="Ladders/Lians/Tree_top/Ladder4"]
+[editable path="Ladders/Lians/Tree_top/Ladder43"]
+[editable path="Ladders/Lians/Tree_top/Ladder24"]
+[editable path="Ladders/Lians/Tree_top/Ladder44"]
+[editable path="Ladders/Lians/Tree_top/Ladder45"]
+[editable path="Ladders/Lians/Tree_top/Ladder46"]
+[editable path="Ladders/Lians/Tree_top/Ladder47"]
+[editable path="Ladders/Lians/Tree_top/Ladder25"]
+[editable path="Ladders/Lians/Tree_top/Ladder26"]
+[editable path="Ladders/Lians/Tree_top/Ladder27"]
+[editable path="Ladders/Lians/Tree_top/Ladder28"]
+[editable path="Ladders/Lians/Tree_top/Ladder32"]
+[editable path="Ladders/Lians/Tree_top/Ladder33"]
+[editable path="Ladders/Lians/Tree_top/Ladder34"]
+[editable path="Ladders/Lians/Tree_top/Ladder35"]
+[editable path="Ladders/Lians/Tree_top/Ladder36"]
+[editable path="Ladders/Lians/Tree_top/Ladder37"]
+[editable path="Ladders/Lians/Tree_top/Ladder38"]
+[editable path="Ladders/Lians/Tree_top/Ladder39"]
+[editable path="Ladders/Lians/Tree_top/Ladder40"]
+[editable path="Ladders/Lians/Tree_top/Ladder41"]
+[editable path="Ladders/Lians/Tree_top/Ladder42"]
+[editable path="Ladders/Lians/Tree_top/Ladder29"]
+[editable path="Ladders/Lians/Tree_top/Ladder30"]
+[editable path="Ladders/Lians/Tree_top/Ladder31"]
+[editable path="Ladders/Lians/Tree_top/Ladder5"]
+[editable path="Ladders/Lians/Tree_top/Ladder6"]
+[editable path="Ladders/Lians/Tree_top/Ladder7"]
+[editable path="Ladders/Lians/Tree_top/Ladder8"]
+[editable path="Ladders/Lians/Tree_top/Ladder9"]
+[editable path="Ladders/Lians/Tree_top/Ladder10"]
+[editable path="Ladders/Lians/Tree_top/Ladder11"]
+[editable path="Ladders/Lians/Tree_top/Ladder12"]
+[editable path="Ladders/Lians/Tree_top/Ladder13"]
+[editable path="Ladders/Lians/Tree_top/Ladder14"]
+[editable path="Ladders/Lians/Tree_top/Ladder15"]
+[editable path="Ladders/Lians/Tree_top/Ladder16"]
+[editable path="Ladders/Lians/Tree_top/Ladder17"]
+[editable path="Ladders/Lians/Tree_top/Ladder18"]
+[editable path="Ladders/Lians/Tree_top/Ladder19"]
+[editable path="Ladders/Lians/Tree_top/Ladder20"]
+[editable path="Ladders/Lians/Tree_top/Ladder21"]
+[editable path="Ladders/Lians/Tree_top/Ladder23"]
+[editable path="Ladders/Lians/Tree_top/Ladder22"]
+[editable path="Ladders/Lians/Tree_bottom/Ladder4"]
+[editable path="Ladders/Lians/Tree_bottom/Ladder5"]
+[editable path="Ladders/Lians/Tree_bottom/Ladder6"]
+[editable path="Ladders/Lians/Tree_bottom/Ladder7"]
+[editable path="Ladders/Lians/Tree_bottom/Ladder8"]
+[editable path="Ladders/Lians/Tree_bottom/Ladder9"]
+[editable path="Ladders/Lians/Tree_bottom/Ladder10"]
+[editable path="Ladders/Lians/Tree_bottom/Ladder11"]
+[editable path="Ladders/Lians/Tree_bottom/Ladder12"]
+[editable path="Ladders/Lians/Tree_bottom/Ladder13"]
+[editable path="Ladders/Lians/Tree_bottom/Ladder14"]
+[editable path="Ladders/Lians/Tree_bottom/Ladder15"]
+[editable path="Ladders/Lians/Tree_bottom/Ladder16"]
+[editable path="Ladders/Lians/Tree_bottom/Ladder3"]
+[editable path="Ladders/Lians/Left_tower/Ladder18"]
+[editable path="Ladders/Lians/Left_tower/Ladder19"]
+[editable path="Ladders/Lians/Left_tower/Ladder20"]
+[editable path="Ladders/Lians/Left_tower/Ladder21"]
+[editable path="Ladders/Lians/Left_tower/Ladder22"]
+[editable path="Ladders/Lians/Left_tower/Ladder23"]
+[editable path="Ladders/Lians/Left_tower/Ladder24"]
+[editable path="Ladders/Lians/Left_tower/Ladder25"]
+[editable path="Ladders/Lians/Left_tower/Ladder26"]
+[editable path="Ladders/Lians/Left_tower/Ladder27"]
+[editable path="Ladders/Lians/Left_tower/Ladder28"]
+[editable path="Ladders/Lians/Left_tower/Ladder29"]
+[editable path="Ladders/Lians/Left_tower/Ladder30"]
+[editable path="Ladders/Lians/Left_tower/Ladder31"]
+[editable path="Ladders/Lians/Left_tower/Ladder32"]
+[editable path="Ladders/Lians/Left_tower/Ladder33"]
+[editable path="Ladders/Lians/Left_tower/Ladder34"]
+[editable path="Ladders/Lians/Right_tower/Ladder18"]
+[editable path="Ladders/Lians/Right_tower/Ladder19"]
+[editable path="Ladders/Lians/Right_tower/Ladder20"]
+[editable path="Ladders/Lians/Right_tower/Ladder21"]
+[editable path="Ladders/Lians/Right_tower/Ladder22"]
+[editable path="Ladders/Lians/Right_tower/Ladder23"]
+[editable path="Ladders/Lians/Right_tower/Ladder24"]
+[editable path="Ladders/Lians/Right_tower/Ladder25"]
+[editable path="Ladders/Lians/Right_tower/Ladder26"]
+[editable path="Ladders/Lians/Right_tower/Ladder27"]
+[editable path="Ladders/Lians/Right_tower/Ladder28"]
+[editable path="Ladders/Lians/Right_tower/Ladder29"]
+[editable path="Ladders/Lians/Right_tower/Ladder30"]
+[editable path="Ladders/Lians/Right_tower/Ladder31"]
+[editable path="Ladders/Lians/Right_tower/Ladder32"]
+[editable path="Ladders/Lians/Right_tower/Ladder33"]
 [editable path="WaterSurface/Small_log/PassThroughBody7"]
 [editable path="WaterSurface/Long_log2/PassThroughBody7"]
 [editable path="Clouds"]
