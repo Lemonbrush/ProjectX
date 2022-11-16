@@ -30,10 +30,10 @@
 [ext_resource path="res://Resources/Tilesets/AnimatedTextures/Fountains/RegularFountain/RegularFountainMiddle.tres" type="Texture" id=28]
 [ext_resource path="res://Resources/Tilesets/AnimatedTextures/Fountains/RegularFountain/RegularFountainTop.tres" type="Texture" id=29]
 [ext_resource path="res://Resources/Tilesets/AnimatedTextures/Fountains/RegularFountain/RegularFountainBottom.tres" type="Texture" id=30]
-[ext_resource path="res://Resources/Tilesets/SideFountains.tres" type="TileSet" id=31]
-[ext_resource path="res://Resources/Tilesets/SmallFountains.tres" type="TileSet" id=32]
-[ext_resource path="res://Resources/Tilesets/SmallTiledFountain.tres" type="TileSet" id=33]
-[ext_resource path="res://Resources/Tilesets/Fountains.tres" type="TileSet" id=34]
+[ext_resource path="res://Resources/Tilesets/Resources/Fountains/SideFountains.tres" type="TileSet" id=31]
+[ext_resource path="res://Resources/Tilesets/Resources/Fountains/SmallFountains.tres" type="TileSet" id=32]
+[ext_resource path="res://Resources/Tilesets/Resources/Fountains/SmallTiledFountain.tres" type="TileSet" id=33]
+[ext_resource path="res://Resources/Tilesets/Resources/Fountains/Fountains.tres" type="TileSet" id=34]
 [ext_resource path="res://Levels/Grand_garden/GrandGardenLocation.gd" type="Script" id=35]
 [ext_resource path="res://Assets/Levels/Grand_garden/World_objects/Logs/Long_log.png" type="Texture" id=36]
 [ext_resource path="res://Assets/Levels/Grand_garden/World_objects/Logs/Small_log.png" type="Texture" id=37]
@@ -48,7 +48,7 @@
 [ext_resource path="res://Assets/NPC/Flower_dwellers/Dandy_flower_dweller-Sheet.png" type="Texture" id=46]
 [ext_resource path="res://Assets/effects/Heart.png" type="Texture" id=47]
 [ext_resource path="res://Assets/NPC/Flower_dwellers/White_flower_dweller_long_body.png" type="Texture" id=48]
-[ext_resource path="res://Resources/Tilesets/Decorations.tres" type="TileSet" id=49]
+[ext_resource path="res://Resources/Tilesets/Resources/Decorations/Decorations.tres" type="TileSet" id=49]
 [ext_resource path="res://Assets/NPC/Flower_dwellers/Red_flower_dweller-Sheet.png" type="Texture" id=50]
 [ext_resource path="res://Assets/NPC/Flower_dwellers/Yellow_flower_dweller-Sheet.png" type="Texture" id=51]
 [ext_resource path="res://Assets/NPC/Flower_dwellers/Magenta_flower_dweller-Sheet.png" type="Texture" id=52]
@@ -4524,7 +4524,7 @@ amount = 50
 process_material = SubResource( 335 )
 
 [node name="Player" parent="." index="11"]
-position = Vector2( 221, -22 )
+position = Vector2( 208, 506 )
 
 [node name="Light2D2" parent="Player" index="5"]
 visible = false
