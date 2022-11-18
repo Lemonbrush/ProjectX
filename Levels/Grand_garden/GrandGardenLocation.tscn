@@ -3493,14 +3493,11 @@ __meta__ = {
 [node name="Background_sprites" type="Node2D" parent="." index="3"]
 
 [node name="Top_gradient_background" type="Sprite" parent="Background_sprites" index="0"]
-position = Vector2( -2573, -2116 )
-scale = Vector2( 5.612, 2.41918 )
-z_index = -1
+position = Vector2( -2335, -1814 )
+scale = Vector2( 4.553, 1.8508 )
+z_index = -2
 texture = ExtResource( 23 )
 centered = false
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Forest_backgrounds" type="Node2D" parent="Background_sprites" index="1"]
 
