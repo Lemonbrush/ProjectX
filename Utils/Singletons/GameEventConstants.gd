@@ -9,6 +9,7 @@ func set_default_constants():
 		is_lighthouse_key_available = false,
 		is_banana_item_picked_up = false,
 		is_red_band_dweller_get_banana = false,
+		banana_quest_taken = false,
 		is_love_potion_last_ingredient_pickedup = false,
 		is_love_potion_created = false,
 		is_cauldron_dweller_spoken = false,

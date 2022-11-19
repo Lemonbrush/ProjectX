@@ -1582,7 +1582,7 @@ position = Vector2( 487, -65 )
 position = Vector2( 411, -39 )
 
 [node name="TallTree3" parent="Trees/GateTrees" instance=ExtResource( 37 )]
-position = Vector2( 592, -45 )
+position = Vector2( 594, -66 )
 
 [node name="BushyTree" parent="Trees/GateTrees" instance=ExtResource( 39 )]
 position = Vector2( 202, -98 )
@@ -1938,8 +1938,10 @@ position = Vector2( -6.25, -6.375 )
 shape = SubResource( 202 )
 
 [node name="BranchSign" parent="WorldObjects/Signs" instance=ExtResource( 69 )]
-position = Vector2( 870, 124 )
-texts_array = [ "Осторожно, странный лес впереди" ]
+position = Vector2( 610, -31 )
+texts_array = [ "Внимание!
+Дальше прохода нет!", "Впереди секретный проход
+Он мой! Я его нашел!", "И вообще там ничего нет" ]
 
 [node name="Sprite" parent="WorldObjects/Signs/BranchSign" index="0"]
 position = Vector2( 3, -4 )
