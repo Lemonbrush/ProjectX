@@ -654,7 +654,7 @@ extents = Vector2( 7, 7 )
 [sub_resource type="RectangleShape2D" id=44]
 extents = Vector2( 7.5, 42.5 )
 
-[sub_resource type="RectangleShape2D" id=43]
+[sub_resource type="RectangleShape2D" id=76]
 extents = Vector2( 10, 76 )
 
 [sub_resource type="RectangleShape2D" id=48]
@@ -1302,9 +1302,13 @@ shape = SubResource( 44 )
 [node name="AirBlowers" parent="." instance=ExtResource( 17 )]
 position = Vector2( 84, -355 )
 
+[node name="Area2D" parent="AirBlowers" index="0"]
+visible = false
+
 [node name="CollisionShape2D" parent="AirBlowers/Area2D" index="0"]
 position = Vector2( 0, -68 )
-shape = SubResource( 43 )
+shape = SubResource( 76 )
+disabled = true
 
 [node name="Collectables" type="Node" parent="."]
 

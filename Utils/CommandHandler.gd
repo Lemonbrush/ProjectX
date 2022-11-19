@@ -10,10 +10,11 @@ static func executeCommands(command_lines):
 		return
 	
 	for command_line in command_lines:
-		print(command_line)
 		execute(command_line)
 
 static func execute(command_line: String):
+	print("Command executed [", command_line, "]")
+	
 	var args = command_line.split(" ")
 	if args.size() > 0:
 		var command = args[0]
