@@ -7,5 +7,6 @@
 [node name="HeartKeyItem" instance=ExtResource( 2 )]
 script = ExtResource( 1 )
 itemScene = ExtResource( 3 )
+toggleGameConstant = "heart_key_picked_up"
 
 [node name="UnpickableTimer" type="Timer" parent="." index="2"]
