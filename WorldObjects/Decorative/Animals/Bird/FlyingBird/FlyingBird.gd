@@ -12,7 +12,7 @@ func _ready():
 	var fly_destination = Vector2(destination_x, position.y - 500)
 	scale.x = sign(destination_x)
 	
-	flyTween.interpolate_property(self, "position", position, fly_destination, 15, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+	flyTween.interpolate_property(self, "position", position, fly_destination, 10, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
 	flyTween.start()
 
 func screen_exited():
