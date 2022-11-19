@@ -30,8 +30,10 @@ func _ready():
 	var _young_flower_interaction_emitter_connection = young_flower_interaction_emitter.connect("interacted_with_arg", self, "did_interact_with_arg")
 	
 	match GameEventConstants.get_constant("grand_garden_water_level"):
-		1: current_water_surface = water_surface_second_phase
-		2: current_water_surface = water_surface_final_phase
+		1.0: current_water_surface = water_surface_second_phase
+		2.0: current_water_surface = water_surface_final_phase
+	
+	print(current_water_surface)
 	
 	var active_tower_fountains = GameEventConstants.get_constant("grand_garden_water_level")
 	set_all_fountains_active(false)

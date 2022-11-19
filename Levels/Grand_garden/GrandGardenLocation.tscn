@@ -3736,152 +3736,142 @@ scale = Vector2( -1, 1 )
 position = Vector2( 609, 548 )
 scale = Vector2( -1, 1 )
 
-[node name="Bird10" parent="World_objects/Birds" index="7" instance=ExtResource( 20 )]
-position = Vector2( -208, 1156 )
-scale = Vector2( -1, 1 )
-
-[node name="Bird11" parent="World_objects/Birds" index="8" instance=ExtResource( 20 )]
-position = Vector2( -672, 1204 )
-
-[node name="Bird12" parent="World_objects/Birds" index="9" instance=ExtResource( 20 )]
-position = Vector2( -911, 1236 )
-
-[node name="Bird13" parent="World_objects/Birds" index="10" instance=ExtResource( 20 )]
+[node name="Bird13" parent="World_objects/Birds" index="7" instance=ExtResource( 20 )]
 position = Vector2( -1070, 980 )
 
-[node name="Bird14" parent="World_objects/Birds" index="11" instance=ExtResource( 20 )]
+[node name="Bird14" parent="World_objects/Birds" index="8" instance=ExtResource( 20 )]
 position = Vector2( -1006, 756 )
 
-[node name="Bird15" parent="World_objects/Birds" index="12" instance=ExtResource( 20 )]
+[node name="Bird15" parent="World_objects/Birds" index="9" instance=ExtResource( 20 )]
 position = Vector2( -1075, 692 )
 
-[node name="Bird16" parent="World_objects/Birds" index="13" instance=ExtResource( 20 )]
+[node name="Bird16" parent="World_objects/Birds" index="10" instance=ExtResource( 20 )]
 position = Vector2( -1214, 708 )
 
-[node name="Bird17" parent="World_objects/Birds" index="14" instance=ExtResource( 20 )]
+[node name="Bird17" parent="World_objects/Birds" index="11" instance=ExtResource( 20 )]
 position = Vector2( -1144, 692 )
 scale = Vector2( -1, 1 )
 
-[node name="Bird18" parent="World_objects/Birds" index="15" instance=ExtResource( 20 )]
+[node name="Bird18" parent="World_objects/Birds" index="12" instance=ExtResource( 20 )]
 position = Vector2( -796, 189 )
 scale = Vector2( -1, 1 )
 
-[node name="Bird19" parent="World_objects/Birds" index="16" instance=ExtResource( 20 )]
+[node name="Bird19" parent="World_objects/Birds" index="13" instance=ExtResource( 20 )]
 position = Vector2( -47, 516 )
 scale = Vector2( -1, 1 )
 
-[node name="Bird20" parent="World_objects/Birds" index="17" instance=ExtResource( 20 )]
+[node name="Bird20" parent="World_objects/Birds" index="14" instance=ExtResource( 20 )]
 position = Vector2( -161, 596 )
 scale = Vector2( -1, 1 )
 
-[node name="Bird21" parent="World_objects/Birds" index="18" instance=ExtResource( 20 )]
+[node name="Bird21" parent="World_objects/Birds" index="15" instance=ExtResource( 20 )]
 position = Vector2( 268, 468 )
 scale = Vector2( -1, 1 )
 
-[node name="Bird22" parent="World_objects/Birds" index="19" instance=ExtResource( 20 )]
+[node name="Bird22" parent="World_objects/Birds" index="16" instance=ExtResource( 20 )]
 position = Vector2( 189, 452 )
 
-[node name="Bird23" parent="World_objects/Birds" index="20" instance=ExtResource( 20 )]
+[node name="Bird23" parent="World_objects/Birds" index="17" instance=ExtResource( 20 )]
 position = Vector2( 227, 468 )
 
-[node name="Bird24" parent="World_objects/Birds" index="21" instance=ExtResource( 20 )]
+[node name="Bird24" parent="World_objects/Birds" index="18" instance=ExtResource( 20 )]
 position = Vector2( -146, 292 )
 
-[node name="Bird25" parent="World_objects/Birds" index="22" instance=ExtResource( 20 )]
+[node name="Bird25" parent="World_objects/Birds" index="19" instance=ExtResource( 20 )]
 position = Vector2( -110, 276 )
 scale = Vector2( -1, 1 )
 
-[node name="Bird26" parent="World_objects/Birds" index="23" instance=ExtResource( 20 )]
+[node name="Bird26" parent="World_objects/Birds" index="20" instance=ExtResource( 20 )]
 position = Vector2( 184, 148 )
 
-[node name="Bird27" parent="World_objects/Birds" index="24" instance=ExtResource( 20 )]
+[node name="Bird27" parent="World_objects/Birds" index="21" instance=ExtResource( 20 )]
 position = Vector2( 38, 132 )
 
-[node name="Bird28" parent="World_objects/Birds" index="25" instance=ExtResource( 20 )]
+[node name="Bird28" parent="World_objects/Birds" index="22" instance=ExtResource( 20 )]
 position = Vector2( 96, 164 )
 scale = Vector2( -1, 1 )
 
-[node name="Bird29" parent="World_objects/Birds" index="26" instance=ExtResource( 20 )]
+[node name="Bird29" parent="World_objects/Birds" index="23" instance=ExtResource( 20 )]
 position = Vector2( -159, 52 )
 scale = Vector2( -1, 1 )
 
-[node name="Bird30" parent="World_objects/Birds" index="27" instance=ExtResource( 20 )]
+[node name="Bird30" parent="World_objects/Birds" index="24" instance=ExtResource( 20 )]
 position = Vector2( -79, 36 )
 scale = Vector2( -1, 1 )
 
-[node name="Bird31" parent="World_objects/Birds" index="28" instance=ExtResource( 20 )]
+[node name="Bird31" parent="World_objects/Birds" index="25" instance=ExtResource( 20 )]
 position = Vector2( 131, -188 )
 scale = Vector2( -1, 1 )
 
-[node name="Bird32" parent="World_objects/Birds" index="29" instance=ExtResource( 20 )]
+[node name="Bird32" parent="World_objects/Birds" index="26" instance=ExtResource( 20 )]
 position = Vector2( -44, -220 )
 
-[node name="Bird33" parent="World_objects/Birds" index="30" instance=ExtResource( 20 )]
+[node name="Bird33" parent="World_objects/Birds" index="27" instance=ExtResource( 20 )]
 position = Vector2( 304, -220 )
 
-[node name="Bird34" parent="World_objects/Birds" index="31" instance=ExtResource( 20 )]
+[node name="Bird34" parent="World_objects/Birds" index="28" instance=ExtResource( 20 )]
 position = Vector2( 356, -332 )
 
-[node name="Bird35" parent="World_objects/Birds" index="32" instance=ExtResource( 20 )]
+[node name="Bird35" parent="World_objects/Birds" index="29" instance=ExtResource( 20 )]
 position = Vector2( 404, -268 )
 
-[node name="Bird36" parent="World_objects/Birds" index="33" instance=ExtResource( 20 )]
+[node name="Bird36" parent="World_objects/Birds" index="30" instance=ExtResource( 20 )]
 position = Vector2( -80, -188 )
 scale = Vector2( -1, 1 )
 
-[node name="Bird37" parent="World_objects/Birds" index="34" instance=ExtResource( 20 )]
+[node name="Bird37" parent="World_objects/Birds" index="31" instance=ExtResource( 20 )]
 position = Vector2( -281, -236 )
 scale = Vector2( -1, 1 )
 
-[node name="Bird38" parent="World_objects/Birds" index="35" instance=ExtResource( 20 )]
+[node name="Bird38" parent="World_objects/Birds" index="32" instance=ExtResource( 20 )]
 position = Vector2( -305, -332 )
 scale = Vector2( -1, 1 )
 
-[node name="Bird39" parent="World_objects/Birds" index="36" instance=ExtResource( 20 )]
+[node name="Bird39" parent="World_objects/Birds" index="33" instance=ExtResource( 20 )]
 position = Vector2( 96, -325 )
 
-[node name="Bird40" parent="World_objects/Birds" index="37" instance=ExtResource( 20 )]
+[node name="Bird40" parent="World_objects/Birds" index="34" instance=ExtResource( 20 )]
 position = Vector2( -233, -652 )
 
-[node name="Bird41" parent="World_objects/Birds" index="38" instance=ExtResource( 20 )]
+[node name="Bird41" parent="World_objects/Birds" index="35" instance=ExtResource( 20 )]
 position = Vector2( 222, -732 )
 
-[node name="Bird42" parent="World_objects/Birds" index="39" instance=ExtResource( 20 )]
+[node name="Bird42" parent="World_objects/Birds" index="36" instance=ExtResource( 20 )]
 position = Vector2( 650, -668 )
 
-[node name="Bird43" parent="World_objects/Birds" index="40" instance=ExtResource( 20 )]
+[node name="Bird43" parent="World_objects/Birds" index="37" instance=ExtResource( 20 )]
 position = Vector2( -424, -684 )
 scale = Vector2( -1, 1 )
 
-[node name="Bird44" parent="World_objects/Birds" index="41" instance=ExtResource( 20 )]
+[node name="Bird44" parent="World_objects/Birds" index="38" instance=ExtResource( 20 )]
 position = Vector2( -72, -993 )
 
-[node name="Bird45" parent="World_objects/Birds" index="42" instance=ExtResource( 20 )]
+[node name="Bird45" parent="World_objects/Birds" index="39" instance=ExtResource( 20 )]
 position = Vector2( -116, -993 )
 scale = Vector2( -1, 1 )
 
-[node name="Bird46" parent="World_objects/Birds" index="43" instance=ExtResource( 20 )]
+[node name="Bird46" parent="World_objects/Birds" index="40" instance=ExtResource( 20 )]
 position = Vector2( -149, -956 )
 scale = Vector2( -1, 1 )
 
-[node name="Bird47" parent="World_objects/Birds" index="44" instance=ExtResource( 20 )]
+[node name="Bird47" parent="World_objects/Birds" index="41" instance=ExtResource( 20 )]
 position = Vector2( -217, -956 )
 
-[node name="Bird48" parent="World_objects/Birds" index="45" instance=ExtResource( 20 )]
+[node name="Bird48" parent="World_objects/Birds" index="42" instance=ExtResource( 20 )]
 position = Vector2( -265, -956 )
 scale = Vector2( -1, 1 )
 
-[node name="Bird49" parent="World_objects/Birds" index="46" instance=ExtResource( 20 )]
+[node name="Bird49" parent="World_objects/Birds" index="43" instance=ExtResource( 20 )]
 position = Vector2( 157, -989 )
 scale = Vector2( -1, 1 )
 
-[node name="Bird50" parent="World_objects/Birds" index="47" instance=ExtResource( 20 )]
+[node name="Bird50" parent="World_objects/Birds" index="44" instance=ExtResource( 20 )]
 position = Vector2( 250, -978 )
 
-[node name="Bird51" parent="World_objects/Birds" index="48" instance=ExtResource( 20 )]
+[node name="Bird51" parent="World_objects/Birds" index="45" instance=ExtResource( 20 )]
 position = Vector2( 328, -956 )
 
-[node name="Bird52" parent="World_objects/Birds" index="49" instance=ExtResource( 20 )]
+[node name="Bird52" parent="World_objects/Birds" index="46" instance=ExtResource( 20 )]
 position = Vector2( 337, -978 )
 scale = Vector2( -1, 1 )
 
@@ -4643,6 +4633,7 @@ position = Vector2( 321, -620 )
 z_index = 1
 
 [node name="Left_tower_side" type="Node2D" parent="Collisions/PassTrough" index="0"]
+visible = false
 
 [node name="PassThroughBody7" parent="Collisions/PassTrough/Left_tower_side" index="0" groups=["passThroughObject"] instance=ExtResource( 2 )]
 position = Vector2( -161, -308 )
