@@ -1,0 +1,90 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://WorldObjects/Decorative/Animals/Bird/FlyingBird/FlyingBird.gd" type="Script" id=1]
+[ext_resource path="res://Assets/WorldObjects/Decorative/Birds/Bird_animation-Sheet.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Fly"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 48, 49, 50, 51 ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 19 ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "TakeOff"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 64, 65, 66, 67, 68 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "Fly", -1, 1.0, false ],
+"method": "play"
+} ]
+}
+
+[node name="FlyingBird" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -8 )
+z_index = 1
+texture = ExtResource( 2 )
+hframes = 16
+vframes = 5
+frame = 19
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "TakeOff"
+anims/Fly = SubResource( 2 )
+anims/RESET = SubResource( 3 )
+anims/TakeOff = SubResource( 1 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+visible = false
+position = Vector2( 0.5, -6.5 )
+scale = Vector2( 0.65, 0.65 )
