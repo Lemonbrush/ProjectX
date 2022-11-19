@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://WorldObjects/Decorative/Animals/Bird/FlyingBird/FlyingBird.gd" type="Script" id=1]
 [ext_resource path="res://Assets/WorldObjects/Decorative/Birds/Bird_animation-Sheet.png" type="Texture" id=2]
@@ -20,6 +20,48 @@ tracks/0/keys = {
 "values": [ 48, 49, 50, 51 ]
 }
 
+[sub_resource type="Animation" id=4]
+resource_name = "Hide"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 48, 49, 50, 51 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
 [sub_resource type="Animation" id=3]
 length = 0.001
 tracks/0/type = "value"
@@ -33,6 +75,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 19 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=1]
@@ -79,12 +133,11 @@ frame = 19
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "TakeOff"
 anims/Fly = SubResource( 2 )
+anims/Hide = SubResource( 4 )
 anims/RESET = SubResource( 3 )
 anims/TakeOff = SubResource( 1 )
 
 [node name="Tween" type="Tween" parent="."]
-
-[node name="TweenAlpha" type="Tween" parent="."]
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 visible = false
