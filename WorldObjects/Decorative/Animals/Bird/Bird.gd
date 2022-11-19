@@ -21,7 +21,7 @@ func bird_did_spooken(_body):
 	collisionShape.set_deferred("disabled", true)
 	
 	var flyingBirdInstance = flyingBirdScene.instance()
-	flyingBirdInstance.global_position = global_position
+	flyingBirdInstance.position = position
 	get_parent().add_child_below_node(self, flyingBirdInstance)
 
 func squick():
