@@ -33,8 +33,6 @@ func _ready():
 		1.0: current_water_surface = water_surface_second_phase
 		2.0: current_water_surface = water_surface_final_phase
 	
-	print(current_water_surface)
-	
 	var active_tower_fountains = GameEventConstants.get_constant("grand_garden_water_level")
 	set_all_fountains_active(false)
 	

@@ -543,7 +543,7 @@ tracks/33/keys = {
 "times": PoolRealArray( 8.1, 11.5, 12.9, 15.1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 4.0, 4.0, 0.0 ]
+"values": [ 0.0, 1.5, 1.5, 0.0 ]
 }
 tracks/34/type = "value"
 tracks/34/path = NodePath("Upper_background_objects/Young_flower/InteractionEmitterObject/InteractionController/Area2D/CollisionShape2D:disabled")
@@ -8496,7 +8496,7 @@ position = Vector2( 226, 873 )
 pause_mode = 2
 
 [node name="WaterSurface" type="TileMap" parent="WaterSurface" index="1"]
-modulate = Color( 1, 1, 1, 0.564706 )
+modulate = Color( 1, 1, 1, 0.8 )
 material = SubResource( 74 )
 position = Vector2( -3, -57 )
 z_index = 10
