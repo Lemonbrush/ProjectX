@@ -30,6 +30,7 @@ shape = SubResource( 1 )
 
 [node name="InteractionPopup" parent="." instance=ExtResource( 5 )]
 position = Vector2( 0, -15 )
+z_index = 100
 labelText = "talk"
 
 [node name="Body" type="Node2D" parent="."]
@@ -47,6 +48,7 @@ shape = SubResource( 2 )
 
 [node name="DialogTextBoxController" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, -30 )
+z_index = 100
 interaction_controller_path = NodePath("../Body/InteractionController")
 
 [editable path="Body/InteractionController"]

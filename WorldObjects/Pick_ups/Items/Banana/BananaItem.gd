@@ -1,6 +1,6 @@
 extends PickupContainer
 
-export(float) var pickup_wait_time = 0
+export(float) var pickup_wait_time = 0.0
 
 onready var hazardArea = $HazardArea
 onready var hazardCollisionShape = $HazardArea/CollisionShape2D

@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/Levels/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=3]
-[ext_resource path="res://WorldObjects/Decorative/Tree/Background_trees/BackgroundSmallTree.tscn" type="PackedScene" id=4]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Regualr_trees/Background_trees/BackgroundSmallTree.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=6]
 [ext_resource path="res://WorldObjects/Technical/Camera2D/Camera2D.tscn" type="PackedScene" id=7]
@@ -16,7 +16,7 @@
 [ext_resource path="res://Assets/BackgroundGradients/BackgroundGradient1.png" type="Texture" id=14]
 [ext_resource path="res://WorldObjects/Technical/Clouds/Clouds.tscn" type="PackedScene" id=15]
 [ext_resource path="res://WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=16]
-[ext_resource path="res://WorldObjects/Decorative/Tree/Background_trees/BackgroundTallWideTree.tscn" type="PackedScene" id=17]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Regualr_trees/Background_trees/BackgroundTallWideTree.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Dweller/Simple_dweller/Dweller.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Dweller/NpcActions/idle/idle_npc_action.tres" type="Resource" id=19]
 [ext_resource path="res://Assets/BackgroundGradients/Blue_clouds.png" type="Texture" id=20]
@@ -28,20 +28,20 @@
 [ext_resource path="res://WorldObjects/Destructables/Barrel/Barrel.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Dweller/Cooker_dweller/CookerDweller.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Assets/effects/particles.png" type="Texture" id=28]
-[ext_resource path="res://Resources/Tilemaps/Fountains.tres" type="TileSet" id=29]
-[ext_resource path="res://Resources/Tilemaps/SmallFountains.tres" type="TileSet" id=30]
+[ext_resource path="res://Resources/Tilesets/Resources/Fountains/Fountains.tres" type="TileSet" id=29]
+[ext_resource path="res://Resources/Tilesets/Resources/Fountains/SmallFountains.tres" type="TileSet" id=30]
 [ext_resource path="res://Levels/Central_hab/World_objects/Bonfire.tscn" type="PackedScene" id=31]
 [ext_resource path="res://Levels/Central_hab/World_objects/WishShrine.tscn" type="PackedScene" id=32]
 [ext_resource path="res://WorldObjects/Moving_platforms/MovingPlatform.gd" type="Script" id=33]
 [ext_resource path="res://Assets/WorldObjects/Floating_block.png" type="Texture" id=34]
 [ext_resource path="res://WorldObjects/Moving_platforms/Paths/VerticalPath.tres" type="Curve2D" id=35]
 [ext_resource path="res://UI/DebugScreen/GameSpecs.tscn" type="PackedScene" id=36]
-[ext_resource path="res://WorldObjects/Decorative/Tree/Trees/TallTree.tscn" type="PackedScene" id=37]
-[ext_resource path="res://WorldObjects/Decorative/Tree/Background_trees/BackgroundSmallWideTree.tscn" type="PackedScene" id=38]
-[ext_resource path="res://WorldObjects/Decorative/Tree/Trees/BushyTree.tscn" type="PackedScene" id=39]
-[ext_resource path="res://WorldObjects/Decorative/Tree/Trees/SquashedTree.tscn" type="PackedScene" id=40]
-[ext_resource path="res://WorldObjects/Decorative/Tree/Trees/CurvedTree.tscn" type="PackedScene" id=41]
-[ext_resource path="res://WorldObjects/Decorative/Tree/Background_trees/BackgroundWideTree.tscn" type="PackedScene" id=42]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Regualr_trees/Trees/TallTree.tscn" type="PackedScene" id=37]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Regualr_trees/Background_trees/BackgroundSmallWideTree.tscn" type="PackedScene" id=38]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Regualr_trees/Trees/BushyTree.tscn" type="PackedScene" id=39]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Regualr_trees/Trees/SquashedTree.tscn" type="PackedScene" id=40]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Regualr_trees/Trees/CurvedTree.tscn" type="PackedScene" id=41]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Regualr_trees/Background_trees/BackgroundWideTree.tscn" type="PackedScene" id=42]
 [ext_resource path="res://Assets/NPC/OldDwellerSpriteSheet-Sheet.png" type="Texture" id=43]
 [ext_resource path="res://Assets/NPC/RedBandDweller-Sheet.png" type="Texture" id=44]
 [ext_resource path="res://Assets/NPC/GreenBandDweller-Sheet.png" type="Texture" id=45]
@@ -642,7 +642,7 @@ extents = Vector2( 14.75, 16.625 )
 [sub_resource type="Curve" id=213]
 _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.282238, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.890511, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=214]
+[sub_resource type="CurveTexture" id=216]
 curve = SubResource( 213 )
 
 [sub_resource type="ParticlesMaterial" id=212]
@@ -654,7 +654,7 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 0.1
 scale_random = 1.0
-scale_curve = SubResource( 214 )
+scale_curve = SubResource( 216 )
 
 [sub_resource type="Animation" id=200]
 resource_name = "Idle"
@@ -1153,7 +1153,7 @@ extents = Vector2( 5.5, 26.5 )
 [sub_resource type="RectangleShape2D" id=72]
 extents = Vector2( 4.5, 10 )
 
-[sub_resource type="RectangleShape2D" id=94]
+[sub_resource type="RectangleShape2D" id=215]
 extents = Vector2( 8, 105 )
 
 [sub_resource type="RectangleShape2D" id=68]
@@ -1582,7 +1582,7 @@ position = Vector2( 487, -65 )
 position = Vector2( 411, -39 )
 
 [node name="TallTree3" parent="Trees/GateTrees" instance=ExtResource( 37 )]
-position = Vector2( 592, -45 )
+position = Vector2( 594, -66 )
 
 [node name="BushyTree" parent="Trees/GateTrees" instance=ExtResource( 39 )]
 position = Vector2( 202, -98 )
@@ -1706,6 +1706,15 @@ texture = ExtResource( 68 )
 
 [node name="Doors" type="Node2D" parent="."]
 position = Vector2( -140, -191 )
+
+[node name="GrandGardenDoor" parent="Doors" instance=ExtResource( 16 )]
+position = Vector2( 1074, 299 )
+nextScenePath = "res://Levels/Grand_garden/GrandGardenLocation.tscn"
+nextDoorName = "GrandGardenDoor"
+
+[node name="GatesBackground" parent="Doors/GrandGardenDoor" index="1"]
+margin_top = -33.0
+margin_right = 7.0
 
 [node name="MillDoorBottom" parent="Doors" instance=ExtResource( 16 )]
 position = Vector2( -777, 395 )
@@ -1929,7 +1938,10 @@ position = Vector2( -6.25, -6.375 )
 shape = SubResource( 202 )
 
 [node name="BranchSign" parent="WorldObjects/Signs" instance=ExtResource( 69 )]
-position = Vector2( 870, 124 )
+position = Vector2( 610, -31 )
+texts_array = [ "Внимание!
+Дальше прохода нет!", "Впереди секретный проход
+Он мой! Я его нашел!", "И вообще там ничего нет" ]
 
 [node name="Sprite" parent="WorldObjects/Signs/BranchSign" index="0"]
 position = Vector2( 3, -4 )
@@ -2887,8 +2899,8 @@ shape = SubResource( 201 )
 position = Vector2( -61, -185 )
 
 [node name="CollisionShape2D" parent="Ladders/Ladder3" index="0"]
-position = Vector2( 0, -18 )
-shape = SubResource( 94 )
+position = Vector2( -1, -18 )
+shape = SubResource( 215 )
 
 [node name="Ladder2" parent="Ladders" instance=ExtResource( 12 )]
 position = Vector2( -877, 230 )
@@ -3346,6 +3358,8 @@ shape = SubResource( 155 )
 [editable path="Trees/GateTrees/BushyTree/PassThroughBody"]
 [editable path="Trees/GateTrees/SquashedTree"]
 [editable path="Trees/GateTrees/SquashedTree/PassThroughBody"]
+[editable path="Doors/GrandGardenDoor"]
+[editable path="Doors/GrandGardenDoor/InteractionController"]
 [editable path="Doors/Shed_door"]
 [editable path="Doors/Shed_door/InteractionController"]
 [editable path="Doors/Gates_2"]

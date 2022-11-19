@@ -5,10 +5,12 @@ var constants: Dictionary
 func set_default_constants():
 	constants = {
 		is_player_talked_to_shore_dweller = false,
+		heart_key_picked_up = false,
 		is_start_gate_open = false,
 		is_lighthouse_key_available = false,
 		is_banana_item_picked_up = false,
 		is_red_band_dweller_get_banana = false,
+		banana_quest_taken = false,
 		is_love_potion_last_ingredient_pickedup = false,
 		is_love_potion_created = false,
 		is_cauldron_dweller_spoken = false,
@@ -33,7 +35,14 @@ func set_default_constants():
 		lovers_she_has_been_told_a_story = false,
 		lovers_asking_to_tell_a_story = false,
 		lovers_girl_said_yes = false,
-		lover_dweller_said_thank_you = false
+		lover_dweller_said_thank_you = false,
+		left_water_tower_activated = false,
+		right_water_tower_activated = false,
+		grand_garden_water_level = 0.0,
+		white_flower_quest_taken = false,
+		is_cactus_hugged = false,
+		grand_flower_did_grow = false,
+		blue_butterfly_pickedup = false
 	}
 	EventBus.game_const_changed()
 

@@ -3,6 +3,7 @@ class_name Barrel
 
 export (PackedScene) var crashAnimationScene
 export (int) var weight = 600
+export (bool) var background_object = false
 export (PackedScene) var innerItemScene
 
 onready var hazard_area 			= $HazardArea
@@ -20,7 +21,9 @@ func _ready():
 func _process(delta):
 	velocity.y += weight * delta
 	velocity = move_and_slide(velocity, Vector2.UP)
-	check_ground()
+	
+	if !background_object:
+		check_ground()
 	
 func check_ground():
 	for ray in ray_array:
@@ -29,13 +32,14 @@ func check_ground():
 			destruct()
 
 func destruct(_area = null):
-	var crashAnimationSceneInstance = crashAnimationScene.instance()
-	get_tree().get_current_scene().add_child(crashAnimationSceneInstance)
-	crashAnimationSceneInstance.global_position = global_position
+	if crashAnimationScene != null:
+		var crashAnimationSceneInstance = crashAnimationScene.instance()
+		get_tree().get_current_scene().add_child(crashAnimationSceneInstance)
+		crashAnimationSceneInstance.global_position = global_position
 	
-	drop_item()
+		drop_item()
 	
-	velocity = Vector2.ZERO
+		velocity = Vector2.ZERO
 	queue_free()
 	
 func drop_item():

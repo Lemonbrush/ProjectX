@@ -191,7 +191,6 @@ texture = ExtResource( 2 )
 
 [node name="DustParticles" type="Particles2D" parent="."]
 material = SubResource( 14 )
-emitting = false
 amount = 15
 one_shot = true
 explosiveness = 1.0
