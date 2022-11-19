@@ -84,6 +84,8 @@ anims/TakeOff = SubResource( 1 )
 
 [node name="Tween" type="Tween" parent="."]
 
+[node name="TweenAlpha" type="Tween" parent="."]
+
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 visible = false
 position = Vector2( 0.5, -6.5 )
