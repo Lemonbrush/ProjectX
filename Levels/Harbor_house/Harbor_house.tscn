@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=2]
@@ -27,6 +27,10 @@
 [ext_resource path="res://WorldObjects/Decorative/Tree/Regualr_trees/Background_trees/BackgroundTallWideTree.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Assets/effects/particles.png" type="Texture" id=26]
 [ext_resource path="res://Resources/Tilesets/Resources/Water surface/WaterSurface.tres" type="TileSet" id=27]
+[ext_resource path="res://Assets/effects/White_fade_gradient.png" type="Texture" id=28]
+[ext_resource path="res://Resources/Tilesets/Resources/Water surface/WaterSurfaceNarrow.tres" type="TileSet" id=29]
+[ext_resource path="res://WorldObjects/Decorative/Animals/Bird/Bird.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Levels/Central_hab/World_objects/Bonfire.tscn" type="PackedScene" id=31]
 
 [sub_resource type="Animation" id=38]
 resource_name = "Gate_opening_cut_scene"
@@ -246,13 +250,17 @@ position = Vector2( 784, -852 )
 position = Vector2( 342, -844 )
 
 [node name="TallTree12" parent="Background_world_objects/Decorations/Trees" instance=ExtResource( 20 )]
-position = Vector2( -315, -861 )
+position = Vector2( -303, -844 )
 
 [node name="TallTree8" parent="Background_world_objects/Decorations/Trees" instance=ExtResource( 20 )]
 position = Vector2( 557, -880 )
 
 [node name="CurvedTree2" parent="Background_world_objects/Decorations/Trees" instance=ExtResource( 23 )]
 position = Vector2( 400, -879 )
+
+[node name="CurvedTree5" parent="Background_world_objects/Decorations/Trees" instance=ExtResource( 23 )]
+position = Vector2( -340, -879 )
+scale = Vector2( -1, 1 )
 
 [node name="CurvedTree3" parent="Background_world_objects/Decorations/Trees" instance=ExtResource( 23 )]
 position = Vector2( 519, -859 )
@@ -274,9 +282,6 @@ position = Vector2( -503, -879 )
 
 [node name="TallTree5" parent="Background_world_objects/Decorations/Trees" instance=ExtResource( 20 )]
 position = Vector2( -425, -851 )
-
-[node name="TallTree6" parent="Background_world_objects/Decorations/Trees" instance=ExtResource( 20 )]
-position = Vector2( -341, -877 )
 
 [node name="BackgroundSmallWideTree2" parent="Background_world_objects/Decorations/Trees" instance=ExtResource( 18 )]
 position = Vector2( -131, -1068 )
@@ -346,6 +351,27 @@ z_index = -1
 
 [node name="Trees" type="Node2D" parent="CreatorHouseIsland/Background_world_objects/Decorations"]
 
+[node name="BackgroundWideTree" parent="CreatorHouseIsland/Background_world_objects/Decorations/Trees" instance=ExtResource( 21 )]
+position = Vector2( 403, -216 )
+
+[node name="BackgroundWideTree2" parent="CreatorHouseIsland/Background_world_objects/Decorations/Trees" instance=ExtResource( 21 )]
+position = Vector2( 255, -238 )
+
+[node name="BackgroundWideTree3" parent="CreatorHouseIsland/Background_world_objects/Decorations/Trees" instance=ExtResource( 21 )]
+position = Vector2( 514, -192 )
+
+[node name="BackgroundWideTree4" parent="CreatorHouseIsland/Background_world_objects/Decorations/Trees" instance=ExtResource( 21 )]
+position = Vector2( 622, -219 )
+
+[node name="BackgroundWideTree5" parent="CreatorHouseIsland/Background_world_objects/Decorations/Trees" instance=ExtResource( 21 )]
+position = Vector2( 736, -284 )
+
+[node name="BackgroundWideTree6" parent="CreatorHouseIsland/Background_world_objects/Decorations/Trees" instance=ExtResource( 21 )]
+position = Vector2( 801, -267 )
+
+[node name="BackgroundTallWideTree" parent="CreatorHouseIsland/Background_world_objects/Decorations/Trees" instance=ExtResource( 25 )]
+position = Vector2( 936, -209 )
+
 [node name="Creator_house_island_sprite" type="Sprite" parent="CreatorHouseIsland"]
 
 [node name="Middle_world_objects" type="Node2D" parent="CreatorHouseIsland"]
@@ -360,30 +386,102 @@ position = Vector2( -106, -572 )
 [node name="SquashedTree2" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Trees" instance=ExtResource( 22 )]
 position = Vector2( -743, -383 )
 
-[node name="Decorations" type="TileMap" parent="CreatorHouseIsland/Middle_world_objects/Decorations"]
+[node name="Tilemaps" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Decorations"]
+
+[node name="Decorations" type="TileMap" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Tilemaps"]
 tile_set = ExtResource( 14 )
 cell_size = Vector2( 1, 1 )
 format = 1
-tile_data = PoolIntArray( -63766380, 536870933, 0, -63766365, 29, 0, -63766346, 40, 0, -63766330, 536870941, 0, -63766316, 536870935, 0, -40894538, 63, 0, -40697871, 77, 0, -40435693, 61, 0, -40370142, 64, 0, -40108029, 63, 0, -39845984, 65, 0, -39452803, 75, 0, -39387256, 62, 0, -39124954, 76, 0, -38862929, 78, 0, -38469774, 2, 0, -38469728, 536870953, 0, -38469698, 23, 0, -38469647, 26, 0, -38535162, 24, 0, -38535135, 29, 0, -38535108, 24, 0, -38535082, 7, 0, -38535056, 21, 0, -38535032, 31, 0, -38535010, 7, 0, -38534992, 27, 0, -38534946, 9, 0, -38534928, 21, 0, -28704216, 536870974, 0, -28246382, 536870989, 0, -27721121, 536870977, 0, -27655812, 536870975, 0, -27524821, 536870988, 0, -27459283, 536870987, 0, -27197003, 536870977, 0, -27131497, 536870975, 0, -27065619, 536870989, 0, -26803755, 536870990, 0, -26344969, 536870975, 0, -26084046, 536870913, 0, -26084029, 536870915, 0, -26084013, 536870953, 0, -26083988, 536870941, 0, -26083969, 536870934, 0, -26083890, 536870941, 0, -26083880, 536870936, 0, -26083864, 536870914, 0, -26083825, 536871020, 0, -26083808, 536870935, 0, -26083791, 536871019, 0, -26083773, 536870941, 0, -26083754, 536870936, 0, -26083733, 536870937, 0, -26083706, 536871004, 0, -26083690, 536870932, 0, -26083669, 536870918, 0, -26083635, 536870926, 0, -26083603, 536870936, 0, -26083602, 536871012, 0, -26083586, 536871008, 0, -26083564, 536870941, 0, -26083508, 536870934, 0, -26083488, 536870918, 0, -26083426, 536870933, 0, -26083382, 536870941, 0, -26083359, 536870932, 0, -26148825, 536870933, 0, -26148798, 536870918, 0, -26148759, 536870939, 0, -26148725, 536870934, 0, -26148707, 536870925, 0, -26148648, 536870936, 0, -26148589, 536870932, 0, -26148564, 536870925, 0, -26148537, 536870933, 0, -26148512, 536870938, 0, -26148493, 536871010, 0, -26148469, 536870932, 0, -26148451, 536870943, 0, -26148403, 536870927, 0, -26148369, 536870933, 0, -26148333, 536870928, 0, -26148300, 536870938, 0, -26148279, 536870934, 0, -26148257, 536870943, 0, -26148229, 536871012, 0, -26148207, 536871007, 0, -26148161, 536870932, 0, -26148131, 536870920, 0, -26148077, 536870940, 0, -26148059, 536870936, 0, -24969777, 536870972, 0 )
+tile_data = PoolIntArray( -63766380, 536870933, 0, -63766365, 29, 0, -63766346, 40, 0, -63766330, 536870941, 0, -63766316, 536870935, 0, -40894538, 63, 0, -40697871, 77, 0, -40435693, 61, 0, -40370142, 64, 0, -40108029, 63, 0, -39845984, 65, 0, -39452803, 75, 0, -39387256, 62, 0, -39124954, 76, 0, -38862929, 78, 0, -38469774, 2, 0, -38469728, 536870953, 0, -38469698, 23, 0, -38469647, 26, 0, -38535162, 24, 0, -38535135, 29, 0, -38535108, 24, 0, -38535082, 7, 0, -38535056, 21, 0, -38535032, 31, 0, -38535010, 7, 0, -38534992, 27, 0, -38534946, 9, 0, -38534928, 21, 0, -31390679, 536870987, 0, -28704216, 536870974, 0, -28441547, 536870989, 0, -27721121, 536870977, 0, -27655812, 536870975, 0, -27524821, 536870988, 0, -27459283, 536870987, 0, -27197003, 536870977, 0, -27131497, 536870975, 0, -27130939, 536870988, 0, -27065619, 536870989, 0, -26803755, 536870990, 0, -26476955, 536870989, 0, -26344969, 536870975, 0, -26084046, 536870913, 0, -26084029, 536870915, 0, -26084013, 536870953, 0, -26083988, 536870941, 0, -26083969, 536870934, 0, -26083890, 536870941, 0, -26083880, 536870936, 0, -26083864, 536870914, 0, -26083825, 536871020, 0, -26083808, 536870935, 0, -26083791, 536871019, 0, -26083773, 536870941, 0, -26083754, 536870936, 0, -26083744, 32, 0, -26083669, 536870918, 0, -26083635, 536870926, 0, -26083603, 536870936, 0, -26083602, 536871012, 0, -26083586, 536871008, 0, -26083564, 536870941, 0, -26083508, 536870934, 0, -26083488, 536870918, 0, -26083426, 536870933, 0, -26083382, 536870941, 0, -26083359, 536870932, 0, -26148825, 536870933, 0, -26148798, 536870918, 0, -26148759, 536870939, 0, -26148725, 536870934, 0, -26148707, 536870925, 0, -26148648, 536870936, 0, -26148589, 536870932, 0, -26148564, 536870925, 0, -26148537, 536870933, 0, -26148512, 536870938, 0, -26148493, 536871010, 0, -26148469, 536870932, 0, -26148451, 536870943, 0, -26148403, 536870927, 0, -26148369, 536870933, 0, -26148333, 536870928, 0, -26148300, 536870938, 0, -26148279, 536870934, 0, -26148257, 536870943, 0, -26148229, 536871012, 0, -26148207, 536871007, 0, -26148161, 536870932, 0, -26148131, 536870920, 0, -26148077, 536870940, 0, -26148059, 536870936, 0, -26147952, 536870932, 0, -26147934, 536870917, 0, -26147914, 536870939, 0, -26147896, 536870947, 0, -26147862, 536870943, 0, -26147842, 536870932, 0, -26147820, 536870941, 0, -26147788, 536870943, 0, -26147763, 536870933, 0, -24969777, 536870972, 0, -25033656, 536870971, 0, -24968295, 536870969, 0, -24968229, 536870972, 0, -24968143, 536870970, 0, -24116149, 536870979, 0, -22938178, 536870985, 0, -23002812, 536870982, 0, -23002209, 536870985, 0, -23002064, 536870984, 0, -22477938, 536870980, 0, -22019040, 67, 0, -21889648, 536870983, 0, -21953587, 536870983, 0, -20840911, 536870985, 0, -20905971, 536870984, 0, -20905872, 536870942, 0, -20905841, 536870928, 0, -19792486, 536870986, 0, -19792449, 536870982, 0, -19792412, 536870984, 0, -19792186, 536870984, 0, -19792131, 536870986, 0, -18743945, 536870984, 0, -18743731, 536870982, 0, -18743494, 536870983, 0, -18743349, 536870984, 0, -17695203, 536870985, 0, -16711629, 536870985, 0, -16711507, 536870926, 0, -12516400, 536870986, 0, -11403913, 536870986, 0, -11403619, 536870984, 0, -11403417, 536870982, 0, -11468163, 536870984, 0, -10420141, 536870984, 0, -10419408, 536870984, 0, -9371372, 536870984, 0, -8258053, 536870984, 0, -8322999, 536870985, 0, -6160677, 536870983, 0, -5177301, 536870985, 0 )
+
+[node name="FountainsTileMap" type="TileMap" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Tilemaps"]
+light_mask = 32
+tile_set = ExtResource( 13 )
+cell_size = Vector2( 1, 1 )
+occluder_light_mask = 32
+format = 1
+tile_data = PoolIntArray( -21889122, 536870912, 0, -19791970, 536870913, 0, -17694818, 536870914, 0, -15597680, 536870917, 0, -15597652, 536870920, 0, -13893716, 536870920, 0, -13500528, 536870917, 0, -12189780, 536870920, 0, -11403376, 536870917, 0, -10485844, 536870920, 0, -9306224, 536870917, 0, -8781908, 536870920, 0, -7274608, 536870917, 0, -7077972, 536870920, 0, -5374036, 536870920, 0, -5177456, 536870917, 0, -3670100, 536870920, 0, -3145840, 536870917, 0, -1966164, 536870920, 0, -1048688, 536870917, 0, -262228, 536870920, 0, 1048464, 536870917, 0, 1441708, 536870920, 0, 3145616, 536870917, 0, 3145644, 536870920, 0, 4849580, 536870920, 0, 5242768, 536870917, 0 )
+
+[node name="Birds" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Decorations"]
+
+[node name="Bird" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Birds" instance=ExtResource( 30 )]
+position = Vector2( -539, -463 )
+
+[node name="Bird2" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Birds" instance=ExtResource( 30 )]
+position = Vector2( -559, -461 )
+
+[node name="Bird4" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Birds" instance=ExtResource( 30 )]
+position = Vector2( 6, -604 )
+
+[node name="Bird5" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Birds" instance=ExtResource( 30 )]
+position = Vector2( 303, -577 )
+
+[node name="Bird6" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Birds" instance=ExtResource( 30 )]
+position = Vector2( 258, -480 )
+
+[node name="Bird8" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Birds" instance=ExtResource( 30 )]
+position = Vector2( 473, -463 )
+
+[node name="Bird9" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Birds" instance=ExtResource( 30 )]
+position = Vector2( 630, -496 )
+
+[node name="Bird11" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Birds" instance=ExtResource( 30 )]
+position = Vector2( 591, -374 )
+
+[node name="Bird12" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Birds" instance=ExtResource( 30 )]
+position = Vector2( 427, -374 )
+scale = Vector2( -1, 1 )
+
+[node name="Bird10" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Birds" instance=ExtResource( 30 )]
+position = Vector2( 674, -472 )
+scale = Vector2( -1, 1 )
+
+[node name="Bird7" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Birds" instance=ExtResource( 30 )]
+position = Vector2( 35, -480 )
+scale = Vector2( -1, 1 )
+
+[node name="Bird3" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Birds" instance=ExtResource( 30 )]
+position = Vector2( -143, -572 )
+scale = Vector2( -1, 1 )
+
+[node name="Bonfire" parent="CreatorHouseIsland/Middle_world_objects/Decorations" instance=ExtResource( 31 )]
+position = Vector2( 318, -239 )
 
 [node name="Foreground_world_objects" type="Node2D" parent="CreatorHouseIsland"]
+z_index = 1
 
 [node name="Decorations" type="Node2D" parent="CreatorHouseIsland/Foreground_world_objects"]
 
 [node name="Lake_water" type="Node2D" parent="CreatorHouseIsland/Foreground_world_objects/Decorations"]
 
-[node name="Lake_water_tilemap" type="TileMap" parent="CreatorHouseIsland/Foreground_world_objects/Decorations/Lake_water"]
-tile_set = ExtResource( 27 )
+[node name="Lake_water_narrow_tilemap" type="TileMap" parent="CreatorHouseIsland/Foreground_world_objects/Decorations/Lake_water"]
+tile_set = ExtResource( 29 )
 cell_size = Vector2( 1, 1 )
 format = 1
+tile_data = PoolIntArray( -24706690, 536870912, 0, -24706674, 536870912, 0, -24706658, 536870912, 0, -24706642, 536870912, 0, -24706626, 536870912, 0, -24706610, 536870912, 0, -24706594, 536870912, 0, -24706578, 536870912, 0, -24706562, 536870912, 0, -24706546, 536870912, 0, -24706530, 536870912, 0, -24706514, 536870912, 0, -24706498, 536870912, 0, -24706482, 536870912, 0, -24706466, 536870912, 0, -24706450, 536870912, 0, -24706434, 536870912, 0, -24706418, 536870912, 0, -24706402, 536870912, 0, -24706386, 536870912, 0, -24706370, 536870912, 0, -15269506, 536870912, 0, -15269490, 536870912, 0, -15269474, 536870912, 0, -15269458, 536870912, 0, -15269442, 536870912, 0, -15269426, 536870912, 0, -15269410, 536870912, 0, -15269394, 536870912, 0, -15269378, 536870912, 0, -15269362, 536870912, 0, -15269346, 536870912, 0, -15269330, 536870912, 0, -15269314, 536870912, 0, -15269298, 536870912, 0, -15269282, 536870912, 0, -15269266, 536870912, 0, -15269250, 536870912, 0, -15269234, 536870912, 0, -15269218, 536870912, 0, -15269202, 536870912, 0, -15269186, 536870912, 0, -15269170, 536870912, 0 )
 
 [node name="Lake_fountains" type="TileMap" parent="CreatorHouseIsland/Foreground_world_objects/Decorations/Lake_water"]
 tile_set = ExtResource( 13 )
 cell_size = Vector2( 1, 1 )
 format = 1
-tile_data = PoolIntArray( -23002711, 536870913, 0, -23002690, 536870913, 0, -23002669, 536870913, 0, -23002648, 536870913, 0, -23002594, 536870920, 0, -23002553, 536870913, 0, -23002532, 536870913, 0, -23002473, 536870913, 0, -21298658, 536870920, 0, -20905559, 536870913, 0, -20905538, 536870913, 0, -20905517, 536870913, 0, -20905496, 536870913, 0, -20905401, 536870913, 0, -20905380, 536870913, 0, -20905321, 536870913, 0, -19594722, 536870920, 0, -18808407, 536870913, 0, -18808386, 536870913, 0, -18808365, 536870913, 0, -18808344, 536870913, 0, -18808249, 536870913, 0, -18808228, 536870913, 0, -18808169, 536870913, 0, -17890786, 536870920, 0 )
+tile_data = PoolIntArray( -23658071, 536870913, 0, -23658050, 536870913, 0, -23658029, 536870913, 0, -23658008, 536870913, 0, -23657967, 11, 0, -23657911, 536870913, 0, -23657890, 536870913, 0, -23657863, 536870917, 0, -23657833, 536870913, 0, -23264882, 8, 0, -23264738, 536870920, 0, -22609391, 11, 0, -21692018, 8, 0, -21691874, 536870920, 0, -21560919, 536870913, 0, -21560898, 536870913, 0, -21560877, 536870913, 0, -21560856, 536870913, 0, -21560815, 11, 0, -21560759, 536870913, 0, -21560738, 536870913, 0, -21560711, 536870917, 0, -21560681, 536870913, 0, -20512239, 11, 0, -20119154, 8, 0, -20119010, 536870920, 0, -19463767, 536870913, 0, -19463746, 536870913, 0, -19463725, 536870913, 0, -19463704, 536870913, 0, -19463663, 11, 0, -19463607, 536870913, 0, -19463586, 536870913, 0, -19463559, 536870917, 0, -19463529, 536870913, 0, -18546290, 8, 0, -18546146, 536870920, 0, -18415087, 11, 0, -17366615, 536870914, 0, -17366594, 536870914, 0, -17366573, 536870914, 0, -17366552, 536870914, 0, -17366511, 11, 0, -17366455, 536870914, 0, -17366434, 536870914, 0, -17366407, 536870918, 0, -17366377, 536870914, 0, -16973426, 7, 0, -16973282, 536870919, 0, -16317935, 10, 0 )
+
+[node name="Lake_water__tilemap" type="TileMap" parent="CreatorHouseIsland/Foreground_world_objects/Decorations/Lake_water"]
+tile_set = ExtResource( 27 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -24051314, 536870913, 0, -24051298, 536870913, 0, -24051282, 536870913, 0, -24051266, 536870913, 0, -24051250, 536870913, 0, -24051234, 536870913, 0, -24051218, 536870913, 0, -24051202, 536870913, 0, -24051186, 536870913, 0, -24051170, 536870913, 0, -24051154, 536870913, 0, -24051138, 536870913, 0, -24051122, 536870913, 0, -24051106, 536870913, 0, -24051090, 536870913, 0, -24051074, 536870913, 0, -24051058, 536870913, 0, -24051042, 536870913, 0, -24051026, 536870913, 0, -14614114, 536870913, 0, -14614098, 536870913, 0, -14614082, 536870913, 0, -14614066, 536870913, 0, -14614050, 536870913, 0, -14614034, 536870913, 0, -14614018, 536870913, 0, -14614002, 536870913, 0, -14613986, 536870913, 0, -14613970, 536870913, 0, -14613954, 536870913, 0, -14613938, 536870913, 0, -14613922, 536870913, 0, -14613906, 536870913, 0, -14613890, 536870913, 0, -14613874, 536870913, 0, -13565538, 536870913, 0, -13565522, 536870913, 0, -13565506, 536870913, 0, -13565490, 536870913, 0, -13565474, 536870913, 0, -13565458, 536870913, 0, -13565442, 536870913, 0, -13565426, 536870913, 0, -13565410, 536870913, 0, -13565394, 536870913, 0, -13565378, 536870913, 0, -13565362, 536870913, 0, -13565346, 536870913, 0, -13565330, 536870913, 0, -13565314, 536870913, 0, -13565298, 536870913, 0 )
+
+[node name="FountainsTileMap" type="TileMap" parent="CreatorHouseIsland/Foreground_world_objects/Decorations"]
+light_mask = 32
+tile_set = ExtResource( 13 )
+cell_size = Vector2( 1, 1 )
+occluder_light_mask = 32
+format = 1
+tile_data = PoolIntArray( -22937980, 536870921, 0, -21954338, 536870912, 0, -21299580, 536870920, 0, -19857186, 536870913, 0, -19661180, 536870920, 0, -18088316, 536870920, 0, -17760034, 536870913, 0, -16449916, 536870920, 0, -15662882, 536870913, 0, -14877052, 536870920, 0, -14484178, 536870916, 0, -14482450, 4, 0, -13500978, 536870912, 0, -13500610, 536870912, 0, -13565842, 536870921, 0, -13565730, 536870913, 0, -13565187, 9, 0, -13304188, 536870920, 0, -12516878, 1, 0, -12516803, 8, 0, -12387026, 536870917, 0, -12385298, 5, 0, -11796860, 536870920, 0, -11861906, 536870920, 0, -11861251, 8, 0, -11403826, 536870913, 0, -11403458, 536870913, 0, -11468578, 536870913, 0, -10943939, 8, 0, -10419726, 1, 0, -10289874, 536870917, 0, -10223996, 536870920, 0, -10288146, 5, 0, -10157970, 536870920, 0, -10157315, 8, 0, -9306674, 536870913, 0, -9306306, 536870913, 0, -9371426, 536870913, 0, -9305539, 8, 0, -8651132, 536870920, 0, -8454034, 536870920, 0, -8453379, 8, 0, -8322574, 1, 0, -8192722, 536870917, 0, -8190994, 5, 0, -7667139, 8, 0, -7209522, 536870913, 0, -7209154, 536870913, 0, -7274274, 536870913, 0, -7078268, 536870920, 0, -6750098, 536870920, 0, -6749443, 8, 0, -6161106, 536870917, 0, -6225422, 1, 0, -6159378, 5, 0, -6028739, 8, 0, -5439868, 536870920, 0, -5112370, 536870913, 0, -5112002, 536870913, 0, -5177122, 536870913, 0, -5046162, 536870920, 0, -5045507, 8, 0, -4390339, 8, 0, -4063954, 536870917, 0, -4128270, 1, 0, -4062226, 5, 0, -3801468, 536870920, 0, -3342226, 536870920, 0, -3341571, 8, 0, -3015218, 536870913, 0, -3014850, 536870913, 0, -3079970, 536870913, 0, -2751939, 8, 0, -2163068, 536870920, 0, -1966802, 536870917, 0, -2031118, 1, 0, -1965074, 5, 0, -1638290, 536870920, 0, -1637635, 8, 0, -1244611, 8, 0, -1179075, 8, 0, -918066, 536870913, 0, -917698, 536870913, 0, -982818, 536870913, 0, -524668, 536870920, 0, 64814, 536870917, 0, 765, 8, 0, 65646, 536870920, 0, 66034, 1, 0, 132078, 5, 0, 459325, 8, 0, 1113732, 536870920, 0, 1179086, 536870913, 0, 1179454, 536870913, 0, 1114334, 536870913, 0, 1704701, 8, 0, 1769582, 536870920, 0, 2161966, 536870917, 0, 2163186, 1, 0, 2163261, 8, 0, 2229230, 5, 0, 2752132, 536870920, 0, 3276238, 536870913, 0, 3276606, 536870913, 0, 3211486, 536870913, 0, 3408637, 8, 0, 3473518, 536870920, 0, 3867197, 8, 0, 4193582, 536870917, 0, 4260338, 1, 0, 4390532, 536870920, 0, 4326382, 5, 0, 5112573, 8, 0, 5177454, 536870920, 0, 5373390, 536870913, 0, 5373758, 536870913, 0, 5308638, 536870913, 0, 5571133, 8, 0, 6094468, 536870920, 0, 6225198, 536870917, 0, 6357490, 1, 0, 6423534, 5, 0, 6553516, 536870920, 0, 6881390, 536870920, 0, 7339920, 536870917, 0, 7275069, 8, 0, 7470910, 536870913, 0, 7405790, 536870913, 0, 7798404, 536870920, 0, 8257452, 536870920, 0, 8192498, 1, 0, 8585326, 536870920, 0 )
 
 [node name="Collisions" type="Node2D" parent="CreatorHouseIsland"]
+visible = false
 
 [node name="Solid" type="Node2D" parent="CreatorHouseIsland/Collisions"]
 
@@ -586,21 +684,62 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Light2D_ex8" type="Light2D" parent="CreatorHouseIsland/Lighting"]
-position = Vector2( -594, -308.5 )
-scale = Vector2( 0.0592784, 0.403888 )
+[node name="Well_bottom_shadow" type="Light2D" parent="CreatorHouseIsland/Lighting"]
+position = Vector2( -594, -310 )
+scale = Vector2( 0.0592784, 0.604752 )
 texture = ExtResource( 2 )
+texture_scale = 0.7
 color = Color( 1, 1, 1, 0.431373 )
 energy = 0.7
 mode = 2
 
-[node name="Light2D_ex9" type="Light2D" parent="CreatorHouseIsland/Lighting"]
-position = Vector2( -149.5, -265.625 )
-scale = Vector2( 1.46778, 0.178726 )
+[node name="Cave_darkness" type="Light2D" parent="CreatorHouseIsland/Lighting"]
+position = Vector2( -69, -299 )
+scale = Vector2( 2.16127, 0.215983 )
 texture = ExtResource( 2 )
 color = Color( 1, 1, 1, 0.431373 )
 energy = 0.7
 mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D" type="Light2D" parent="CreatorHouseIsland/Lighting"]
+visible = false
+position = Vector2( -528, -272 )
+scale = Vector2( 0.126238, 0.106436 )
+texture = ExtResource( 28 )
+energy = 0.7
+
+[node name="Light2D2" type="Light2D" parent="CreatorHouseIsland/Lighting"]
+visible = false
+position = Vector2( -202, -278 )
+scale = Vector2( 0.126238, 0.106436 )
+texture = ExtResource( 28 )
+energy = 0.7
+
+[node name="Light2D3" type="Light2D" parent="CreatorHouseIsland/Lighting"]
+visible = false
+position = Vector2( -44, -268 )
+scale = Vector2( 0.126238, 0.106436 )
+texture = ExtResource( 28 )
+energy = 0.7
+
+[node name="Light2D4" type="Light2D" parent="CreatorHouseIsland/Lighting"]
+position = Vector2( 219, -276 )
+scale = Vector2( 0.126238, 0.106436 )
+texture = ExtResource( 28 )
+energy = 0.7
+
+[node name="Fountains_bottom_cut_mack" type="Light2D" parent="CreatorHouseIsland"]
+position = Vector2( 105, -272.5 )
+scale = Vector2( 3.43069, 1.06559 )
+texture = ExtResource( 28 )
+mode = 3
+range_item_cull_mask = 32
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="GuardianIsland" type="Node2D" parent="."]
 position = Vector2( 92, -181 )
