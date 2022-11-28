@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=2]
@@ -42,11 +42,6 @@ length = 4.0
 
 [sub_resource type="Animation" id=39]
 resource_name = "open_transition"
-
-[sub_resource type="Environment" id=40]
-background_mode = 4
-glow_enabled = true
-glow_hdr_threshold = 1.5
 
 [sub_resource type="CanvasItemMaterial" id=170]
 particles_animation = true
@@ -196,9 +191,6 @@ pause_mode = 2
 autoplay = "open_transition"
 anims/Gate_opening_cut_scene = SubResource( 38 )
 anims/open_transition = SubResource( 39 )
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 40 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 3 )]
 
@@ -1079,7 +1071,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 4 )]
-position = Vector2( 864, -941 )
+position = Vector2( -614, -933 )
 
 [node name="Light2D2" type="Light2D" parent="Player"]
 visible = false

@@ -6,6 +6,4 @@
 modulate = Color( 0.67451, 0.580392, 0.580392, 1 )
 collision_layer = 16
 collision_mask = 16
-collision/safe_margin = 0.1
-weight = 500
 background_object = true
