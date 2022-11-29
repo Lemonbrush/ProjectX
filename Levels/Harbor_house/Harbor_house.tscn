@@ -336,6 +336,7 @@ process_material = SubResource( 172 )
 texture = ExtResource( 26 )
 
 [node name="World_skin" type="Sprite" parent="."]
+light_mask = 8193
 position = Vector2( -20, -688 )
 texture = ExtResource( 6 )
 __meta__ = {
@@ -688,20 +689,24 @@ z_index = 1
 [node name="Decorations" type="Node2D" parent="CreatorHouseIsland/Foreground_world_objects"]
 
 [node name="Lake_water" type="Node2D" parent="CreatorHouseIsland/Foreground_world_objects/Decorations"]
+light_mask = 0
 
 [node name="Lake_water_narrow_tilemap" type="TileMap" parent="CreatorHouseIsland/Foreground_world_objects/Decorations/Lake_water"]
+light_mask = 0
 tile_set = ExtResource( 29 )
 cell_size = Vector2( 1, 1 )
 format = 1
 tile_data = PoolIntArray( -24706690, 536870912, 0, -24706674, 536870912, 0, -24706658, 536870912, 0, -24706642, 536870912, 0, -24706626, 536870912, 0, -24706610, 536870912, 0, -24706594, 536870912, 0, -24706578, 536870912, 0, -24706562, 536870912, 0, -24706546, 536870912, 0, -24706530, 536870912, 0, -24706514, 536870912, 0, -24706498, 536870912, 0, -24706482, 536870912, 0, -24706466, 536870912, 0, -24706450, 536870912, 0, -24706434, 536870912, 0, -24706418, 536870912, 0, -24706402, 536870912, 0, -24706386, 536870912, 0, -24706370, 536870912, 0, -15269506, 536870912, 0, -15269490, 536870912, 0, -15269474, 536870912, 0, -15269458, 536870912, 0, -15269442, 536870912, 0, -15269426, 536870912, 0, -15269410, 536870912, 0, -15269394, 536870912, 0, -15269378, 536870912, 0, -15269362, 536870912, 0, -15269346, 536870912, 0, -15269330, 536870912, 0, -15269314, 536870912, 0, -15269298, 536870912, 0, -15269282, 536870912, 0, -15269266, 536870912, 0, -15269250, 536870912, 0, -15269234, 536870912, 0, -15269218, 536870912, 0, -15269202, 536870912, 0, -15269186, 536870912, 0, -15269170, 536870912, 0 )
 
 [node name="Lake_fountains" type="TileMap" parent="CreatorHouseIsland/Foreground_world_objects/Decorations/Lake_water"]
+light_mask = 0
 tile_set = ExtResource( 13 )
 cell_size = Vector2( 1, 1 )
 format = 1
 tile_data = PoolIntArray( -23658071, 536870913, 0, -23658050, 536870913, 0, -23658029, 536870913, 0, -23658008, 536870913, 0, -23657967, 11, 0, -23657911, 536870913, 0, -23657890, 536870913, 0, -23657863, 536870917, 0, -23657833, 536870913, 0, -23264882, 8, 0, -23264738, 536870920, 0, -22609391, 11, 0, -21692018, 8, 0, -21691874, 536870920, 0, -21560919, 536870913, 0, -21560898, 536870913, 0, -21560877, 536870913, 0, -21560856, 536870913, 0, -21560815, 11, 0, -21560759, 536870913, 0, -21560738, 536870913, 0, -21560711, 536870917, 0, -21560681, 536870913, 0, -20512239, 11, 0, -20119154, 8, 0, -20119010, 536870920, 0, -19463767, 536870913, 0, -19463746, 536870913, 0, -19463725, 536870913, 0, -19463704, 536870913, 0, -19463663, 11, 0, -19463607, 536870913, 0, -19463586, 536870913, 0, -19463559, 536870917, 0, -19463529, 536870913, 0, -18546290, 8, 0, -18546146, 536870920, 0, -18415087, 11, 0, -17366615, 536870914, 0, -17366594, 536870914, 0, -17366573, 536870914, 0, -17366552, 536870914, 0, -17366511, 11, 0, -17366455, 536870914, 0, -17366434, 536870914, 0, -17366407, 536870918, 0, -17366377, 536870914, 0, -16973426, 7, 0, -16973282, 536870919, 0, -16317935, 10, 0 )
 
 [node name="Lake_water__tilemap" type="TileMap" parent="CreatorHouseIsland/Foreground_world_objects/Decorations/Lake_water"]
+light_mask = 0
 tile_set = ExtResource( 27 )
 cell_size = Vector2( 1, 1 )
 format = 1
@@ -938,9 +943,15 @@ texture = ExtResource( 2 )
 color = Color( 1, 1, 1, 0.431373 )
 energy = 0.8
 mode = 2
-__meta__ = {
-"_edit_lock_": true
-}
+
+[node name="Cave_darkness2" type="Light2D" parent="CreatorHouseIsland/Lighting"]
+position = Vector2( 588, -307 )
+scale = Vector2( 0.71134, 0.215983 )
+texture = ExtResource( 2 )
+color = Color( 1, 1, 1, 0.431373 )
+energy = 0.8
+mode = 2
+range_item_cull_mask = 8192
 
 [node name="Torches" type="Node2D" parent="CreatorHouseIsland/Lighting"]
 
