@@ -944,7 +944,7 @@ color = Color( 1, 1, 1, 0.431373 )
 energy = 0.8
 mode = 2
 
-[node name="Cave_darkness2" type="Light2D" parent="CreatorHouseIsland/Lighting"]
+[node name="Waterfall_cave_darkness" type="Light2D" parent="CreatorHouseIsland/Lighting"]
 position = Vector2( 588, -307 )
 scale = Vector2( 0.71134, 0.215983 )
 texture = ExtResource( 2 )
@@ -952,6 +952,9 @@ color = Color( 1, 1, 1, 0.431373 )
 energy = 0.8
 mode = 2
 range_item_cull_mask = 8192
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Torches" type="Node2D" parent="CreatorHouseIsland/Lighting"]
 
