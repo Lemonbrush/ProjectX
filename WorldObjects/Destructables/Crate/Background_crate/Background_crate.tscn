@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://WorldObjects/Destructables/Crate/Crate.tscn" type="PackedScene" id=1]
+
+[node name="Crate" instance=ExtResource( 1 )]
+collision_layer = 16
+collision_mask = 18
+background_object = true
+
+[node name="Sprite" parent="." index="4"]
+modulate = Color( 0.67451, 0.580392, 0.580392, 1 )
