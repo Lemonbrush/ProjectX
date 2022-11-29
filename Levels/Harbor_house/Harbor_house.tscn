@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=2]
+[gd_scene load_steps=72 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=2]
@@ -36,7 +36,10 @@
 [ext_resource path="res://WorldObjects/Destructables/Crate/Crate.tscn" type="PackedScene" id=34]
 [ext_resource path="res://WorldObjects/Destructables/Crate/Background_crate/Background_crate.tscn" type="PackedScene" id=35]
 [ext_resource path="res://WorldObjects/Decorative/Torch/Torch.tscn" type="PackedScene" id=36]
-[ext_resource path="res://WorldObjects/Destructables/CrushableObject/CrushableObject.gd" type="Script" id=37]
+[ext_resource path="res://WorldObjects/Destructables/Vase/Background_vase/Background_vase.tscn" type="PackedScene" id=37]
+[ext_resource path="res://WorldObjects/Destructables/Barrel/Barrel.tscn" type="PackedScene" id=38]
+[ext_resource path="res://WorldObjects/Destructables/Pot/Pot.tscn" type="PackedScene" id=39]
+[ext_resource path="res://WorldObjects/Destructables/Pot/Background_pot/Background_pot.tscn" type="PackedScene" id=40]
 
 [sub_resource type="Animation" id=38]
 resource_name = "Gate_opening_cut_scene"
@@ -452,190 +455,232 @@ position = Vector2( 318, -239 )
 
 [node name="Destructables" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects"]
 
-[node name="Vases" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Destructables"]
-position = Vector2( -275, -1 )
-
-[node name="Vase" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases" instance=ExtResource( 33 )]
-position = Vector2( -456, -247 )
-moving_platform_apply_velocity_on_leave = 0
-script = ExtResource( 37 )
-
-[node name="Vase4" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases" instance=ExtResource( 33 )]
-position = Vector2( 1224, -390 )
-moving_platform_apply_velocity_on_leave = 0
-script = ExtResource( 37 )
-
-[node name="Vase5" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases" instance=ExtResource( 33 )]
-position = Vector2( 538, -870 )
-moving_platform_apply_velocity_on_leave = 0
-script = ExtResource( 37 )
-
-[node name="Vase2" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases" instance=ExtResource( 33 )]
-position = Vector2( -441, -247 )
-moving_platform_apply_velocity_on_leave = 0
-script = ExtResource( 37 )
-
-[node name="Vase3" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases" instance=ExtResource( 33 )]
-position = Vector2( -426, -247 )
-moving_platform_apply_velocity_on_leave = 0
-script = ExtResource( 37 )
-
 [node name="Crates" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Destructables"]
 
 [node name="Background_crates" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates"]
 
 [node name="Crate" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( -450, -249 )
-script = ExtResource( 37 )
 
 [node name="Crate2" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( -433, -249 )
-script = ExtResource( 37 )
 
 [node name="Crate3" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( -416, -249 )
-script = ExtResource( 37 )
 
 [node name="Crate4" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( -199, -249 )
-script = ExtResource( 37 )
 
 [node name="Crate5" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( -197, -266 )
-script = ExtResource( 37 )
 
 [node name="Crate6" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 162, -249 )
-script = ExtResource( 37 )
 
 [node name="Crate7" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 144, -249 )
-script = ExtResource( 37 )
 
 [node name="Crate8" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 161, -266 )
-script = ExtResource( 37 )
 
 [node name="Crate9" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 162, -283 )
-script = ExtResource( 37 )
 
 [node name="Crate10" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 791, -249 )
-script = ExtResource( 37 )
 
 [node name="Crate11" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 774, -249 )
-script = ExtResource( 37 )
 
 [node name="Crate12" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 773, -266 )
-script = ExtResource( 37 )
 
 [node name="Crate13" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 756, -250 )
-script = ExtResource( 37 )
 
 [node name="Crate14" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 935, -247 )
-script = ExtResource( 37 )
 
 [node name="Crate15" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 951, -247 )
-script = ExtResource( 37 )
 
 [node name="Crate16" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 967, -247 )
-script = ExtResource( 37 )
 
 [node name="Crate17" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 983, -247 )
-script = ExtResource( 37 )
 
 [node name="Crate18" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 999, -247 )
-script = ExtResource( 37 )
 
 [node name="Crate19" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 1015, -247 )
-script = ExtResource( 37 )
 
 [node name="Crate28" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 1031, -247 )
-script = ExtResource( 37 )
 
 [node name="Crate29" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 1032, -263 )
-script = ExtResource( 37 )
 
 [node name="Crate30" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 971, -264 )
-script = ExtResource( 37 )
 
 [node name="Crate20" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 998, -264 )
-script = ExtResource( 37 )
 
 [node name="Crate31" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
-position = Vector2( 963, -281 )
-script = ExtResource( 37 )
+position = Vector2( 959, -281 )
 
 [node name="Crate32" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 998, -281 )
-script = ExtResource( 37 )
 
 [node name="Crate21" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 952, -264 )
-script = ExtResource( 37 )
 
 [node name="Crate22" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 935, -264 )
-script = ExtResource( 37 )
 
 [node name="Crate23" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( -636, -248 )
-script = ExtResource( 37 )
 
 [node name="Crate25" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( -651, -264 )
-script = ExtResource( 37 )
+
+[node name="Crate33" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+position = Vector2( -669, -248 )
+
+[node name="Crate34" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+position = Vector2( -667, -264 )
+
+[node name="Crate35" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+position = Vector2( -685, -248 )
+
+[node name="Crate36" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+position = Vector2( -683, -265 )
 
 [node name="Crate26" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( -614, -248 )
-script = ExtResource( 37 )
 
 [node name="Crate27" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( -635, -264 )
-script = ExtResource( 37 )
+
+[node name="Crate37" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+position = Vector2( -667, -281 )
 
 [node name="Crate24" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( -652, -248 )
-script = ExtResource( 37 )
 
-[node name="Crate" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates" instance=ExtResource( 34 )]
+[node name="Foreground_crates" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates"]
+
+[node name="Crate" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Foreground_crates" instance=ExtResource( 34 )]
 position = Vector2( -668, -248 )
 
-[node name="Crate2" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates" instance=ExtResource( 34 )]
+[node name="Crate2" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Foreground_crates" instance=ExtResource( 34 )]
 position = Vector2( -684, -248 )
 
-[node name="Crate3" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates" instance=ExtResource( 34 )]
-position = Vector2( -667, -264 )
-
-[node name="Crate4" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates" instance=ExtResource( 34 )]
-position = Vector2( -667, -280 )
-
-[node name="Crate5" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates" instance=ExtResource( 34 )]
+[node name="Crate5" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Foreground_crates" instance=ExtResource( 34 )]
 position = Vector2( -684, -265 )
 
-[node name="Crate6" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates" instance=ExtResource( 34 )]
+[node name="Crate6" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Foreground_crates" instance=ExtResource( 34 )]
 position = Vector2( -683, -281 )
 
-[node name="Crate7" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates" instance=ExtResource( 34 )]
+[node name="Crate7" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Foreground_crates" instance=ExtResource( 34 )]
 position = Vector2( -700, -265 )
 
 [node name="Barrels" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Destructables"]
 
+[node name="Background_barrels" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Barrels"]
+
+[node name="Foreground_barrels" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Barrels"]
+
+[node name="Barrel" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Barrels/Foreground_barrels" instance=ExtResource( 38 )]
+position = Vector2( -717, -267 )
+
+[node name="Barrel2" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Barrels/Foreground_barrels" instance=ExtResource( 38 )]
+position = Vector2( -708, -284 )
+
+[node name="Barrel3" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Barrels/Foreground_barrels" instance=ExtResource( 38 )]
+position = Vector2( -667, -265 )
+
 [node name="Pots" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Destructables"]
+
+[node name="Background_pots" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Pots"]
+
+[node name="Background_pot" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Pots/Background_pots" instance=ExtResource( 40 )]
+position = Vector2( 1030, -281 )
+
+[node name="Background_pot3" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Pots/Background_pots" instance=ExtResource( 40 )]
+position = Vector2( 140, -580 )
+
+[node name="Background_pot2" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Pots/Background_pots" instance=ExtResource( 40 )]
+position = Vector2( 974, -282 )
+
+[node name="Foreground_pots" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Pots"]
+
+[node name="Pot" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Pots/Foreground_pots" instance=ExtResource( 39 )]
+position = Vector2( -662, -282 )
+
+[node name="Vases" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Destructables"]
+position = Vector2( -275, -1 )
+
+[node name="Background_vases" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases"]
+
+[node name="Background_vase" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
+position = Vector2( -166, -266 )
+
+[node name="Background_vase2" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
+position = Vector2( -369, -281 )
+
+[node name="Background_vase8" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
+position = Vector2( -447, -247 )
+
+[node name="Background_vase9" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
+position = Vector2( -432, -247 )
+
+[node name="Background_vase3" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
+position = Vector2( 94, -248 )
+
+[node name="Background_vase11" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
+position = Vector2( 328, -579 )
+
+[node name="Background_vase12" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
+position = Vector2( 344, -579 )
+
+[node name="Background_vase13" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
+position = Vector2( 360, -579 )
+
+[node name="Background_vase4" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
+position = Vector2( 1085, -249 )
+
+[node name="Background_vase5" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
+position = Vector2( 1184, -249 )
+
+[node name="Background_vase10" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
+position = Vector2( 1225, -390 )
+
+[node name="Background_vase6" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
+position = Vector2( 1290, -268 )
+
+[node name="Background_vase7" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
+position = Vector2( 1217, -283 )
+
+[node name="Foreground_vases" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases"]
+
+[node name="Vase" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
+position = Vector2( -456, -247 )
+moving_platform_apply_velocity_on_leave = 0
+
+[node name="Vase5" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
+position = Vector2( 538, -870 )
+moving_platform_apply_velocity_on_leave = 0
+
+[node name="Vase2" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
+position = Vector2( -441, -247 )
+moving_platform_apply_velocity_on_leave = 0
+
+[node name="Vase3" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
+position = Vector2( -426, -247 )
+moving_platform_apply_velocity_on_leave = 0
 
 [node name="Foreground_world_objects" type="Node2D" parent="CreatorHouseIsland"]
 z_index = 1
@@ -882,6 +927,9 @@ texture_scale = 0.7
 color = Color( 1, 1, 1, 0.431373 )
 energy = 0.7
 mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Cave_darkness" type="Light2D" parent="CreatorHouseIsland/Lighting"]
 position = Vector2( -191.286, -299 )
@@ -894,23 +942,43 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Torch" parent="CreatorHouseIsland/Lighting" instance=ExtResource( 36 )]
+[node name="Torches" type="Node2D" parent="CreatorHouseIsland/Lighting"]
+
+[node name="Torch" parent="CreatorHouseIsland/Lighting/Torches" instance=ExtResource( 36 )]
 position = Vector2( -457, -270 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Torch2" parent="CreatorHouseIsland/Lighting" instance=ExtResource( 36 )]
+[node name="Torch2" parent="CreatorHouseIsland/Lighting/Torches" instance=ExtResource( 36 )]
 position = Vector2( -170, -266 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Torch3" parent="CreatorHouseIsland/Lighting" instance=ExtResource( 36 )]
+[node name="Torch3" parent="CreatorHouseIsland/Lighting/Torches" instance=ExtResource( 36 )]
 position = Vector2( 118, -264 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Torch4" parent="CreatorHouseIsland/Lighting" instance=ExtResource( 36 )]
+[node name="Torch4" parent="CreatorHouseIsland/Lighting/Torches" instance=ExtResource( 36 )]
 position = Vector2( 742, -268 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Torch5" parent="CreatorHouseIsland/Lighting" instance=ExtResource( 36 )]
-position = Vector2( 922, -262 )
+[node name="Torch5" parent="CreatorHouseIsland/Lighting/Torches" instance=ExtResource( 36 )]
+position = Vector2( 920, -273 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Torch6" parent="CreatorHouseIsland/Lighting" instance=ExtResource( 36 )]
-position = Vector2( 1042, -262 )
+[node name="Torch6" parent="CreatorHouseIsland/Lighting/Torches" instance=ExtResource( 36 )]
+position = Vector2( 1044, -274 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Fountains_bottom_cut_mack" type="Light2D" parent="CreatorHouseIsland"]
 position = Vector2( 105, -272.5 )
@@ -1106,7 +1174,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 4 )]
-position = Vector2( -614, -933 )
+position = Vector2( 868, -954 )
 
 [node name="Light2D2" type="Light2D" parent="Player"]
 visible = false
