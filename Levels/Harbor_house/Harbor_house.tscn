@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=2]
+[gd_scene load_steps=78 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=2]
@@ -38,7 +38,10 @@
 [ext_resource path="res://WorldObjects/Decorative/Torch/Torch.tscn" type="PackedScene" id=36]
 [ext_resource path="res://WorldObjects/Destructables/Vase/Background_vase/Background_vase.tscn" type="PackedScene" id=37]
 [ext_resource path="res://WorldObjects/Destructables/Barrel/Barrel.tscn" type="PackedScene" id=38]
+[ext_resource path="res://Assets/Levels/Harbor_house/Creators_island.png" type="Texture" id=39]
 [ext_resource path="res://WorldObjects/Destructables/Pot/Background_pot/Background_pot.tscn" type="PackedScene" id=40]
+[ext_resource path="res://Assets/Levels/Harbor_house/second_floor_handles.png" type="Texture" id=41]
+[ext_resource path="res://Assets/Levels/Harbor_house/top_floor_handles.png" type="Texture" id=42]
 
 [sub_resource type="Animation" id=38]
 resource_name = "Gate_opening_cut_scene"
@@ -84,14 +87,26 @@ extents = Vector2( 848, 8 )
 [sub_resource type="RectangleShape2D" id=175]
 extents = Vector2( 912, 8 )
 
+[sub_resource type="RectangleShape2D" id=186]
+extents = Vector2( 56.75, 8 )
+
+[sub_resource type="RectangleShape2D" id=187]
+extents = Vector2( 23.75, 3.5 )
+
+[sub_resource type="RectangleShape2D" id=189]
+extents = Vector2( 89.5, 1 )
+
+[sub_resource type="RectangleShape2D" id=190]
+extents = Vector2( 1.5, 2.5 )
+
+[sub_resource type="RectangleShape2D" id=188]
+extents = Vector2( 1.25, 2.5 )
+
 [sub_resource type="RectangleShape2D" id=176]
 extents = Vector2( 257.5, 3.5 )
 
 [sub_resource type="RectangleShape2D" id=177]
-extents = Vector2( 228, 3.5 )
-
-[sub_resource type="RectangleShape2D" id=178]
-extents = Vector2( 89.5, 2 )
+extents = Vector2( 203.5, 3.5 )
 
 [sub_resource type="RectangleShape2D" id=179]
 extents = Vector2( 45, 2 )
@@ -234,7 +249,7 @@ __meta__ = {
 }
 
 [node name="CreatorHouseIsland" type="Node2D" parent="."]
-position = Vector2( -20, -688 )
+position = Vector2( -15, -847 )
 
 [node name="VisibilityChecker" parent="CreatorHouseIsland" instance=ExtResource( 32 )]
 visible = false
@@ -380,6 +395,11 @@ process_material = SubResource( 172 )
 texture = ExtResource( 26 )
 
 [node name="Creator_house_island_sprite" type="Sprite" parent="CreatorHouseIsland"]
+position = Vector2( 191, -594 )
+texture = ExtResource( 39 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Middle_world_objects" type="Node2D" parent="CreatorHouseIsland"]
 
@@ -548,25 +568,22 @@ position = Vector2( -636, -248 )
 position = Vector2( -651, -264 )
 
 [node name="Crate33" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
-position = Vector2( -669, -248 )
+position = Vector2( -700, -282 )
 
 [node name="Crate34" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
-position = Vector2( -667, -264 )
-
-[node name="Crate35" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
-position = Vector2( -685, -248 )
+position = Vector2( -667, -282 )
 
 [node name="Crate36" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( -683, -265 )
 
 [node name="Crate26" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
-position = Vector2( -614, -248 )
+position = Vector2( -620, -248 )
 
 [node name="Crate27" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( -635, -264 )
 
 [node name="Crate37" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
-position = Vector2( -667, -281 )
+position = Vector2( -667, -265 )
 
 [node name="Crate24" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( -652, -248 )
@@ -577,7 +594,7 @@ position = Vector2( -652, -248 )
 position = Vector2( -668, -248 )
 
 [node name="Crate2" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Foreground_crates" instance=ExtResource( 34 )]
-position = Vector2( -684, -248 )
+position = Vector2( -685, -248 )
 
 [node name="Crate5" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Foreground_crates" instance=ExtResource( 34 )]
 position = Vector2( -684, -265 )
@@ -598,10 +615,10 @@ position = Vector2( -700, -265 )
 position = Vector2( -717, -267 )
 
 [node name="Barrel2" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Barrels/Foreground_barrels" instance=ExtResource( 38 )]
-position = Vector2( -708, -284 )
+position = Vector2( -718, -284 )
 
 [node name="Barrel3" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Barrels/Foreground_barrels" instance=ExtResource( 38 )]
-position = Vector2( -667, -265 )
+position = Vector2( -732, -269 )
 
 [node name="Pots" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables"]
 
@@ -627,13 +644,7 @@ position = Vector2( -275, -1 )
 position = Vector2( -166, -266 )
 
 [node name="Background_vase2" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
-position = Vector2( -375, -281 )
-
-[node name="Background_vase8" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
-position = Vector2( -447, -247 )
-
-[node name="Background_vase9" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
-position = Vector2( -432, -247 )
+position = Vector2( -377, -280 )
 
 [node name="Background_vase3" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
 position = Vector2( 94, -248 )
@@ -669,7 +680,7 @@ position = Vector2( -456, -247 )
 moving_platform_apply_velocity_on_leave = 0
 
 [node name="Vase5" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
-position = Vector2( 538, -870 )
+position = Vector2( 537, -870 )
 moving_platform_apply_velocity_on_leave = 0
 
 [node name="Vase2" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
@@ -715,10 +726,27 @@ tile_set = ExtResource( 13 )
 cell_size = Vector2( 1, 1 )
 occluder_light_mask = 32
 format = 1
-tile_data = PoolIntArray( -22937980, 536870921, 0, -21954338, 536870912, 0, -21299580, 536870920, 0, -19857186, 536870913, 0, -19661180, 536870920, 0, -18088316, 536870920, 0, -17760034, 536870913, 0, -16449916, 536870920, 0, -15662882, 536870913, 0, -14877052, 536870920, 0, -14484178, 536870916, 0, -14482450, 4, 0, -13500978, 536870912, 0, -13500610, 536870912, 0, -13565842, 536870921, 0, -13565730, 536870913, 0, -13565187, 9, 0, -13304188, 536870920, 0, -12516878, 1, 0, -12516803, 8, 0, -12387026, 536870917, 0, -12385298, 5, 0, -11796860, 536870920, 0, -11861906, 536870920, 0, -11861251, 8, 0, -11403826, 536870913, 0, -11403458, 536870913, 0, -11468578, 536870913, 0, -10943939, 8, 0, -10419726, 1, 0, -10289874, 536870917, 0, -10223996, 536870920, 0, -10288146, 5, 0, -10157970, 536870920, 0, -10157315, 8, 0, -9306674, 536870913, 0, -9306306, 536870913, 0, -9371426, 536870913, 0, -9305539, 8, 0, -8651132, 536870920, 0, -8454034, 536870920, 0, -8453379, 8, 0, -8322574, 1, 0, -8192722, 536870917, 0, -8190994, 5, 0, -7667139, 8, 0, -7209522, 536870913, 0, -7209154, 536870913, 0, -7274274, 536870913, 0, -7078268, 536870920, 0, -6750098, 536870920, 0, -6749443, 8, 0, -6161106, 536870917, 0, -6225422, 1, 0, -6159378, 5, 0, -6028739, 8, 0, -5439868, 536870920, 0, -5112370, 536870913, 0, -5112002, 536870913, 0, -5177122, 536870913, 0, -5046162, 536870920, 0, -5045507, 8, 0, -4390339, 8, 0, -4063954, 536870917, 0, -4128270, 1, 0, -4062226, 5, 0, -3801468, 536870920, 0, -3342226, 536870920, 0, -3341571, 8, 0, -3015218, 536870913, 0, -3014850, 536870913, 0, -3079970, 536870913, 0, -2751939, 8, 0, -2163068, 536870920, 0, -1966802, 536870917, 0, -2031118, 1, 0, -1965074, 5, 0, -1638290, 536870920, 0, -1637635, 8, 0, -1244611, 8, 0, -1179075, 8, 0, -918066, 536870913, 0, -917698, 536870913, 0, -982818, 536870913, 0, -524668, 536870920, 0, 64814, 536870917, 0, 765, 8, 0, 65646, 536870920, 0, 66034, 1, 0, 132078, 5, 0, 459325, 8, 0, 1113732, 536870920, 0, 1179086, 536870913, 0, 1179454, 536870913, 0, 1114334, 536870913, 0, 1704701, 8, 0, 1769582, 536870920, 0, 2161966, 536870917, 0, 2163186, 1, 0, 2163261, 8, 0, 2229230, 5, 0, 2752132, 536870920, 0, 3276238, 536870913, 0, 3276606, 536870913, 0, 3211486, 536870913, 0, 3408637, 8, 0, 3473518, 536870920, 0, 3867197, 8, 0, 4193582, 536870917, 0, 4260338, 1, 0, 4390532, 536870920, 0, 4326382, 5, 0, 5112573, 8, 0, 5177454, 536870920, 0, 5373390, 536870913, 0, 5373758, 536870913, 0, 5308638, 536870913, 0, 5571133, 8, 0, 6094468, 536870920, 0, 6225198, 536870917, 0, 6357490, 1, 0, 6423534, 5, 0, 6553516, 536870920, 0, 6881390, 536870920, 0, 7339920, 536870917, 0, 7275069, 8, 0, 7470910, 536870913, 0, 7405790, 536870913, 0, 7798404, 536870920, 0, 8257452, 536870920, 0, 8192498, 1, 0, 8585326, 536870920, 0 )
+tile_data = PoolIntArray( -22937980, 536870921, 0, -21954338, 536870912, 0, -21299580, 536870920, 0, -19857186, 536870913, 0, -19661180, 536870920, 0, -18088316, 536870920, 0, -17760034, 536870913, 0, -16449916, 536870920, 0, -15662882, 536870913, 0, -14877052, 536870920, 0, -14549596, 8, 0, -14484178, 536870916, 0, -14482450, 4, 0, -13500978, 536870912, 0, -13500610, 536870912, 0, -13565842, 536870921, 0, -13565730, 536870913, 0, -13565187, 9, 0, -13304188, 536870920, 0, -12976732, 8, 0, -12516878, 1, 0, -12516803, 8, 0, -12387026, 536870917, 0, -12385298, 5, 0, -11796860, 536870920, 0, -11861906, 536870920, 0, -11861251, 8, 0, -11403868, 8, 0, -11403826, 536870913, 0, -11403458, 536870913, 0, -11468578, 536870913, 0, -10943939, 8, 0, -10419726, 1, 0, -10289874, 536870917, 0, -10223996, 536870920, 0, -10288146, 5, 0, -10157970, 536870920, 0, -10157315, 8, 0, -9831004, 8, 0, -9306674, 536870913, 0, -9306306, 536870913, 0, -9371426, 536870913, 0, -9305539, 8, 0, -8651132, 536870920, 0, -8454034, 536870920, 0, -8453379, 8, 0, -8323676, 8, 0, -8322574, 1, 0, -8192722, 536870917, 0, -8190994, 5, 0, -7667139, 8, 0, -7209522, 536870913, 0, -7209154, 536870913, 0, -7274274, 536870913, 0, -7078268, 536870920, 0, -6750812, 8, 0, -6750098, 536870920, 0, -6749443, 8, 0, -6161106, 536870917, 0, -6225422, 1, 0, -6159378, 5, 0, -6028739, 8, 0, -5439868, 536870920, 0, -5177948, 8, 0, -5112370, 536870913, 0, -5112002, 536870913, 0, -5177122, 536870913, 0, -5046162, 536870920, 0, -5045507, 8, 0, -4390339, 8, 0, -4063954, 536870917, 0, -4128270, 1, 0, -4062226, 5, 0, -3801468, 536870920, 0, -3605084, 8, 0, -3342226, 536870920, 0, -3341571, 8, 0, -3015218, 536870913, 0, -3014850, 536870913, 0, -3079970, 536870913, 0, -2751939, 8, 0, -2163068, 536870920, 0, -2032220, 8, 0, -1966802, 536870917, 0, -2031118, 1, 0, -1965074, 5, 0, -1638290, 536870920, 0, -1637635, 8, 0, -1244611, 8, 0, -1179075, 8, 0, -918066, 536870913, 0, -917698, 536870913, 0, -982818, 536870913, 0, -524668, 536870920, 0, -459356, 8, 0, 64814, 536870917, 0, 765, 8, 0, 65646, 536870920, 0, 66034, 1, 0, 132078, 5, 0, 459325, 8, 0, 1113508, 8, 0, 1113732, 536870920, 0, 1179086, 536870913, 0, 1179454, 536870913, 0, 1114334, 536870913, 0, 1704701, 8, 0, 1769582, 536870920, 0, 2161966, 536870917, 0, 2163186, 1, 0, 2163261, 8, 0, 2229230, 5, 0, 2686372, 8, 0, 2752132, 536870920, 0, 3276238, 536870913, 0, 3276606, 536870913, 0, 3211486, 536870913, 0, 3408637, 8, 0, 3473518, 536870920, 0, 3867197, 8, 0, 4193582, 536870917, 0, 4259236, 8, 0, 4260338, 1, 0, 4390532, 536870920, 0, 4326382, 5, 0, 5112573, 8, 0, 5177454, 536870920, 0, 5373390, 536870913, 0, 5373758, 536870913, 0, 5308638, 536870913, 0, 5571133, 8, 0, 5832100, 8, 0, 6094468, 536870920, 0, 6225198, 536870917, 0, 6357490, 1, 0, 6423534, 5, 0, 6553516, 536870920, 0, 6881390, 536870920, 0, 7339920, 536870917, 0, 7275069, 8, 0, 7470910, 536870913, 0, 7405790, 536870913, 0, 7798404, 536870920, 0, 8257452, 536870920, 0, 8192498, 1, 0, 8585326, 536870920, 0 )
+
+[node name="Well_water" type="Node2D" parent="CreatorHouseIsland/Foreground_world_objects/Decorations"]
+
+[node name="WellWaterTilemap" type="TileMap" parent="CreatorHouseIsland/Foreground_world_objects/Decorations/Well_water"]
+tile_set = ExtResource( 29 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -15204963, 0, 0, -15204947, 0, 0 )
+
+[node name="Handles" type="Node2D" parent="CreatorHouseIsland/Foreground_world_objects"]
+
+[node name="Second_floor_handles" type="Sprite" parent="CreatorHouseIsland/Foreground_world_objects/Handles"]
+position = Vector2( 284, -574 )
+texture = ExtResource( 41 )
+
+[node name="Top_floor_handles" type="Sprite" parent="CreatorHouseIsland/Foreground_world_objects/Handles"]
+position = Vector2( 186, -864 )
+texture = ExtResource( 42 )
 
 [node name="Collisions" type="Node2D" parent="CreatorHouseIsland"]
-visible = false
 
 [node name="Solid" type="Node2D" parent="CreatorHouseIsland/Collisions"]
 
@@ -749,6 +777,60 @@ collision_mask = 17
 position = Vector2( 768, -8 )
 shape = SubResource( 175 )
 
+[node name="PassThroughBody21" parent="CreatorHouseIsland/Collisions/Solid" instance=ExtResource( 11 )]
+position = Vector2( 1204, -208 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="CreatorHouseIsland/Collisions/Solid/PassThroughBody21" index="0"]
+position = Vector2( -79.75, -7 )
+shape = SubResource( 186 )
+
+[node name="PassThroughBody22" parent="CreatorHouseIsland/Collisions/Solid" instance=ExtResource( 11 )]
+position = Vector2( 395, -557 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="CreatorHouseIsland/Collisions/Solid/PassThroughBody22" index="0"]
+position = Vector2( -112.75, -11.5 )
+shape = SubResource( 187 )
+
+[node name="PassThroughBody24" parent="CreatorHouseIsland/Collisions/Solid" instance=ExtResource( 11 )]
+position = Vector2( 232, -847 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="CreatorHouseIsland/Collisions/Solid/PassThroughBody24" index="0"]
+position = Vector2( -46.5, -14 )
+shape = SubResource( 189 )
+
+[node name="PassThroughBody25" parent="CreatorHouseIsland/Collisions/Solid" instance=ExtResource( 11 )]
+position = Vector2( 232, -847 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="CreatorHouseIsland/Collisions/Solid/PassThroughBody25" index="0"]
+position = Vector2( -130.5, -17.5 )
+shape = SubResource( 190 )
+
+[node name="PassThroughBody26" parent="CreatorHouseIsland/Collisions/Solid" instance=ExtResource( 11 )]
+position = Vector2( 400, -847 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="CreatorHouseIsland/Collisions/Solid/PassThroughBody26" index="0"]
+position = Vector2( -130.5, -17.5 )
+shape = SubResource( 190 )
+
+[node name="PassThroughBody23" parent="CreatorHouseIsland/Collisions/Solid" instance=ExtResource( 11 )]
+position = Vector2( 439, -564 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="CreatorHouseIsland/Collisions/Solid/PassThroughBody23" index="0"]
+position = Vector2( -135.25, -10.5 )
+shape = SubResource( 188 )
+
 [node name="PassThrough" type="Node2D" parent="CreatorHouseIsland/Collisions"]
 
 [node name="PassThroughBody5" parent="CreatorHouseIsland/Collisions/PassThrough" groups=["passThroughObject"] instance=ExtResource( 11 )]
@@ -763,16 +845,8 @@ one_way_collision = true
 position = Vector2( -244, -577 )
 
 [node name="CollisionShape2D" parent="CreatorHouseIsland/Collisions/PassThrough/PassThroughBody6" index="0"]
-position = Vector2( 323, 8.5 )
+position = Vector2( 298.5, 8.5 )
 shape = SubResource( 177 )
-one_way_collision = true
-
-[node name="PassThroughBody7" parent="CreatorHouseIsland/Collisions/PassThrough" groups=["passThroughObject"] instance=ExtResource( 11 )]
-position = Vector2( 189, -859 )
-
-[node name="CollisionShape2D" parent="CreatorHouseIsland/Collisions/PassThrough/PassThroughBody7" index="0"]
-position = Vector2( -2.5, -1 )
-shape = SubResource( 178 )
 one_way_collision = true
 
 [node name="PassThroughBody8" parent="CreatorHouseIsland/Collisions/PassThrough" groups=["passThroughObject"] instance=ExtResource( 11 )]
@@ -1173,7 +1247,7 @@ position = Vector2( 0, 347 )
 position = Vector2( -59, 356 )
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 4 )]
-position = Vector2( 849, -1146 )
+position = Vector2( -436, -170 )
 
 [node name="Light2D2" type="Light2D" parent="Player"]
 visible = false
@@ -1233,9 +1307,14 @@ margin_bottom = 344.0
 [editable path="CreatorHouseIsland/Collisions/Solid/PassThroughBody18"]
 [editable path="CreatorHouseIsland/Collisions/Solid/PassThroughBody19"]
 [editable path="CreatorHouseIsland/Collisions/Solid/PassThroughBody20"]
+[editable path="CreatorHouseIsland/Collisions/Solid/PassThroughBody21"]
+[editable path="CreatorHouseIsland/Collisions/Solid/PassThroughBody22"]
+[editable path="CreatorHouseIsland/Collisions/Solid/PassThroughBody24"]
+[editable path="CreatorHouseIsland/Collisions/Solid/PassThroughBody25"]
+[editable path="CreatorHouseIsland/Collisions/Solid/PassThroughBody26"]
+[editable path="CreatorHouseIsland/Collisions/Solid/PassThroughBody23"]
 [editable path="CreatorHouseIsland/Collisions/PassThrough/PassThroughBody5"]
 [editable path="CreatorHouseIsland/Collisions/PassThrough/PassThroughBody6"]
-[editable path="CreatorHouseIsland/Collisions/PassThrough/PassThroughBody7"]
 [editable path="CreatorHouseIsland/Collisions/PassThrough/PassThroughBody8"]
 [editable path="CreatorHouseIsland/Collisions/PassThrough/PassThroughBody9"]
 [editable path="CreatorHouseIsland/Collisions/PassThrough/PassThroughBody10"]
