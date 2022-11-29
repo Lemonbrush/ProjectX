@@ -399,7 +399,7 @@ position = Vector2( -743, -383 )
 tile_set = ExtResource( 14 )
 cell_size = Vector2( 1, 1 )
 format = 1
-tile_data = PoolIntArray( -64356140, 77, 0, -63766380, 536870933, 0, -63766365, 29, 0, -63766346, 40, 0, -63766330, 536870941, 0, -63766316, 536870935, 0, -62717805, 57, 0, -62717761, 59, 0, -62717734, 58, 0, -62652247, 60, 0, -40894538, 63, 0, -40697871, 77, 0, -40435693, 61, 0, -40370142, 64, 0, -40108029, 63, 0, -39845984, 65, 0, -39452803, 75, 0, -39387256, 62, 0, -39124954, 76, 0, -38862929, 78, 0, -38469774, 2, 0, -38469728, 536870953, 0, -38469698, 23, 0, -38469647, 26, 0, -38535162, 24, 0, -38535135, 29, 0, -38535108, 24, 0, -38535082, 7, 0, -38535056, 21, 0, -38535032, 31, 0, -38535010, 7, 0, -38534992, 27, 0, -38534946, 9, 0, -38534928, 21, 0, -31390679, 536870987, 0, -28704216, 536870974, 0, -28441547, 536870989, 0, -27721121, 536870977, 0, -27655812, 536870975, 0, -27524821, 536870988, 0, -27459283, 536870987, 0, -27197003, 536870977, 0, -27131497, 536870975, 0, -27130939, 536870988, 0, -27065619, 536870989, 0, -26803755, 536870990, 0, -26476955, 536870989, 0, -26344969, 536870975, 0, -26084046, 536870913, 0, -26084029, 536870915, 0, -26084013, 536870953, 0, -26083988, 536870941, 0, -26083969, 536870934, 0, -26083890, 536870941, 0, -26083880, 536870936, 0, -26083864, 536870914, 0, -26083825, 536871020, 0, -26083808, 536870935, 0, -26083791, 536871019, 0, -26083773, 536870941, 0, -26083754, 536870936, 0, -26083744, 32, 0, -26083669, 536870918, 0, -26083635, 536870926, 0, -26083603, 536870936, 0, -26083602, 536871012, 0, -26083586, 536871008, 0, -26083564, 536870941, 0, -26083508, 536870934, 0, -26083488, 536870918, 0, -26083426, 536870933, 0, -26083382, 536870941, 0, -26083359, 536870932, 0, -26148825, 536870933, 0, -26148798, 536870918, 0, -26148759, 536870939, 0, -26148725, 536870934, 0, -26148707, 536870925, 0, -26148648, 536870936, 0, -26148589, 536870932, 0, -26148564, 536870925, 0, -26148537, 536870933, 0, -26148512, 536870938, 0, -26148493, 536871010, 0, -26148469, 536870932, 0, -26148451, 536870943, 0, -26148403, 536870927, 0, -26148369, 536870933, 0, -26148333, 536870928, 0, -26148300, 536870938, 0, -26148279, 536870934, 0, -26148257, 536870943, 0, -26148229, 536871012, 0, -26148207, 536871007, 0, -26148161, 536870932, 0, -26148131, 536870920, 0, -26148077, 536870940, 0, -26148059, 536870936, 0, -26147952, 536870932, 0, -26147934, 536870917, 0, -26147914, 536870939, 0, -26147896, 536870947, 0, -26147862, 536870943, 0, -26147842, 536870932, 0, -26147820, 536870941, 0, -26147788, 536870943, 0, -26147763, 536870933, 0, -24969777, 536870972, 0, -25033656, 536870971, 0, -24968295, 536870969, 0, -24968229, 536870972, 0, -24968143, 536870970, 0, -24116149, 536870979, 0, -22938178, 536870985, 0, -22938065, 112, 0, -23002812, 536870982, 0, -23002209, 536870985, 0, -23002064, 536870984, 0, -22806400, 536871025, 0, -22805437, 536871024, 0, -22477938, 536870980, 0, -22019040, 67, 0, -21889648, 536870983, 0, -21953587, 536870983, 0, -21495059, 536871023, 0, -21168145, 113, 0, -20840911, 536870985, 0, -20905971, 536870984, 0, -20905872, 536870942, 0, -20905841, 536870928, 0, -20775120, 536871024, 0, -19792486, 536870986, 0, -19792449, 536870982, 0, -19792412, 536870984, 0, -19792186, 536870984, 0, -19792131, 536870986, 0, -18743945, 536870984, 0, -18743731, 536870982, 0, -18743494, 536870983, 0, -18743349, 536870984, 0, -17826443, 536871023, 0, -17695203, 536870985, 0, -16711629, 536870985, 0, -16711507, 536870926, 0, -12516400, 536870986, 0, -11403913, 536870986, 0, -11403619, 536870984, 0, -11403417, 536870982, 0, -11468163, 536870984, 0, -11272867, 536871025, 0, -10420141, 536870984, 0, -10419408, 536870984, 0, -10419265, 536871025, 0, -9371372, 536870984, 0, -8258053, 536870984, 0, -8322999, 536870985, 0, -6160677, 536870983, 0, -5177301, 536870985, 0 )
+tile_data = PoolIntArray( -64356140, 77, 0, -63766380, 536870933, 0, -63766365, 29, 0, -63766346, 40, 0, -63766330, 536870941, 0, -63766316, 536870935, 0, -62717805, 57, 0, -62717761, 59, 0, -62717734, 58, 0, -62652247, 60, 0, -40894538, 63, 0, -40697871, 77, 0, -40435693, 61, 0, -40370142, 64, 0, -40108029, 63, 0, -39845984, 65, 0, -39452803, 75, 0, -39387256, 62, 0, -39124954, 76, 0, -38862929, 78, 0, -38469774, 2, 0, -38469728, 536870953, 0, -38469698, 23, 0, -38469647, 26, 0, -38535162, 24, 0, -38535135, 29, 0, -38535108, 24, 0, -38535082, 7, 0, -38535056, 21, 0, -38535032, 31, 0, -38535010, 7, 0, -38534992, 27, 0, -38534946, 9, 0, -38534928, 21, 0, -31390679, 536870987, 0, -28704216, 536870974, 0, -28441547, 536870989, 0, -27721121, 536870977, 0, -27655812, 536870975, 0, -27524821, 536870988, 0, -27459283, 536870987, 0, -27197003, 536870977, 0, -27131497, 536870975, 0, -27130939, 536870988, 0, -27065619, 536870989, 0, -26803755, 536870990, 0, -26476955, 536870989, 0, -26344969, 536870975, 0, -26084046, 536870913, 0, -26084029, 536870915, 0, -26084013, 536870953, 0, -26083988, 536870941, 0, -26083969, 536870934, 0, -26083890, 536870941, 0, -26083880, 536870936, 0, -26083864, 536870914, 0, -26083825, 536871020, 0, -26083808, 536870935, 0, -26083791, 536871019, 0, -26083773, 536870941, 0, -26083754, 536870936, 0, -26083744, 32, 0, -26083669, 536870918, 0, -26083635, 536870926, 0, -26083603, 536870936, 0, -26083602, 536871012, 0, -26083586, 536871008, 0, -26083564, 536870941, 0, -26083508, 536870934, 0, -26083488, 536870918, 0, -26083426, 536870933, 0, -26083382, 536870941, 0, -26083359, 536870932, 0, -26148825, 536870933, 0, -26148798, 536870918, 0, -26148759, 536870939, 0, -26148725, 536870934, 0, -26148707, 536870925, 0, -26148648, 536870936, 0, -26148589, 536870932, 0, -26148564, 536870925, 0, -26148537, 536870933, 0, -26148512, 536870938, 0, -26148493, 536871010, 0, -26148469, 536870932, 0, -26148451, 536870943, 0, -26148403, 536870927, 0, -26148369, 536870933, 0, -26148333, 536870928, 0, -26148300, 536870938, 0, -26148279, 536870934, 0, -26148257, 536870943, 0, -26148229, 536871012, 0, -26148207, 536871007, 0, -26148161, 536870932, 0, -26148131, 536870920, 0, -26148077, 536870940, 0, -26148059, 536870936, 0, -26147952, 536870932, 0, -26147934, 536870917, 0, -26147914, 536870939, 0, -26147896, 536870947, 0, -26147862, 536870943, 0, -26147842, 536870932, 0, -26147820, 536870941, 0, -26147788, 536870943, 0, -26147763, 536870933, 0, -24969777, 536870972, 0, -25033656, 536870971, 0, -24968295, 536870969, 0, -24968229, 536870972, 0, -24968143, 536870970, 0, -24116149, 536870979, 0, -22938178, 536870985, 0, -22938065, 112, 0, -23002812, 536870982, 0, -23002209, 536870985, 0, -23002064, 536870984, 0, -22806400, 536871025, 0, -22805437, 536871024, 0, -22477938, 536870980, 0, -22019040, 67, 0, -21889648, 536870983, 0, -21953587, 536870983, 0, -21495059, 536871023, 0, -21168145, 113, 0, -20840911, 536870985, 0, -20905971, 536870984, 0, -20905872, 536870942, 0, -20905841, 536870928, 0, -20775120, 536871024, 0, -19792486, 536870986, 0, -19792449, 536870982, 0, -19792412, 536870984, 0, -19792186, 536870984, 0, -19792131, 536870986, 0, -18743945, 536870984, 0, -18743731, 536870982, 0, -18743494, 536870983, 0, -18743349, 536870984, 0, -17826443, 536871023, 0, -17695203, 536870985, 0, -16646893, 2, 0, -16646872, 22, 0, -16646854, 3, 0, -16646831, 24, 0, -16646803, 26, 0, -16646777, 24, 0, -16646698, 5, 0, -16646660, 20, 0, -16646618, 29, 0, -16646558, 23, 0, -16646546, 24, 0, -16646505, 26, 0, -16646479, 24, 0, -16646448, 12, 0, -16646393, 32, 0, -16646371, 23, 0, -16646356, 22, 0, -16646314, 24, 0, -16646273, 28, 0, -16646262, 31, 0, -16646212, 23, 0, -16646188, 24, 0, -16711668, 22, 0, -16711629, 536870985, 0, -16711613, 24, 0, -16711594, 3, 0, -16711576, 21, 0, -16711507, 536870926, 0, -16711491, 536870938, 0, -16711480, 45, 0, -16711470, 536870926, 0, -16711305, 24, 0, -16711264, 536870943, 0, -16711165, 536870934, 0, -16711112, 536870941, 0, -16711056, 536870936, 0, -16711028, 536870934, 0, -16710979, 9, 0, -16710951, 16, 0, -16710932, 22, 0, -16710872, 24, 0, -16710843, 27, 0, -16710824, 20, 0, -16710794, 9, 0, -16710767, 22, 0, -16710749, 24, 0, -16710707, 20, 0, -16710643, 24, 0, -12516400, 536870986, 0, -11403913, 536870986, 0, -11403619, 536870984, 0, -11403417, 536870982, 0, -11468163, 536870984, 0, -11272867, 536871025, 0, -10420141, 536870984, 0, -10419408, 536870984, 0, -10419265, 536871025, 0, -9371372, 536870984, 0, -8258053, 536870984, 0, -8322999, 536870985, 0, -6160677, 536870983, 0, -5177301, 536870985, 0 )
 
 [node name="FountainsTileMap" type="TileMap" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Tilemaps"]
 light_mask = 32
@@ -454,232 +454,232 @@ scale = Vector2( -1, 1 )
 [node name="Bonfire" parent="CreatorHouseIsland/Middle_world_objects/Decorations" instance=ExtResource( 31 )]
 position = Vector2( 318, -239 )
 
-[node name="Destructables" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects"]
+[node name="Destructables" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Decorations"]
 
-[node name="Crates" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Destructables"]
+[node name="Crates" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables"]
 
-[node name="Background_crates" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates"]
+[node name="Background_crates" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates"]
 
-[node name="Crate" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( -450, -249 )
 
-[node name="Crate2" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate2" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( -433, -249 )
 
-[node name="Crate3" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate3" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( -416, -249 )
 
-[node name="Crate4" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate4" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( -199, -249 )
 
-[node name="Crate5" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate5" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( -197, -266 )
 
-[node name="Crate6" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate6" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 162, -249 )
 
-[node name="Crate7" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate7" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 144, -249 )
 
-[node name="Crate8" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate8" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 161, -266 )
 
-[node name="Crate9" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate9" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 162, -283 )
 
-[node name="Crate10" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate10" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 791, -249 )
 
-[node name="Crate11" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate11" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 774, -249 )
 
-[node name="Crate12" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate12" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 773, -266 )
 
-[node name="Crate13" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate13" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 756, -250 )
 
-[node name="Crate14" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate14" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 935, -247 )
 
-[node name="Crate15" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate15" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 951, -247 )
 
-[node name="Crate16" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate16" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 967, -247 )
 
-[node name="Crate17" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate17" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 983, -247 )
 
-[node name="Crate18" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate18" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 999, -247 )
 
-[node name="Crate19" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate19" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 1015, -247 )
 
-[node name="Crate28" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate28" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 1031, -247 )
 
-[node name="Crate29" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate29" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 1032, -263 )
 
-[node name="Crate30" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate30" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 971, -264 )
 
-[node name="Crate20" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate20" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 998, -264 )
 
-[node name="Crate31" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate31" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 959, -281 )
 
-[node name="Crate32" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate32" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 998, -281 )
 
-[node name="Crate21" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate21" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 952, -264 )
 
-[node name="Crate22" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate22" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( 935, -264 )
 
-[node name="Crate23" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate23" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( -636, -248 )
 
-[node name="Crate25" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate25" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( -651, -264 )
 
-[node name="Crate33" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate33" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( -669, -248 )
 
-[node name="Crate34" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate34" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( -667, -264 )
 
-[node name="Crate35" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate35" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( -685, -248 )
 
-[node name="Crate36" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate36" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( -683, -265 )
 
-[node name="Crate26" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate26" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( -614, -248 )
 
-[node name="Crate27" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate27" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( -635, -264 )
 
-[node name="Crate37" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate37" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( -667, -281 )
 
-[node name="Crate24" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
+[node name="Crate24" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Background_crates" instance=ExtResource( 35 )]
 position = Vector2( -652, -248 )
 
-[node name="Foreground_crates" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates"]
+[node name="Foreground_crates" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates"]
 
-[node name="Crate" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Foreground_crates" instance=ExtResource( 34 )]
+[node name="Crate" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Foreground_crates" instance=ExtResource( 34 )]
 position = Vector2( -668, -248 )
 
-[node name="Crate2" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Foreground_crates" instance=ExtResource( 34 )]
+[node name="Crate2" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Foreground_crates" instance=ExtResource( 34 )]
 position = Vector2( -684, -248 )
 
-[node name="Crate5" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Foreground_crates" instance=ExtResource( 34 )]
+[node name="Crate5" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Foreground_crates" instance=ExtResource( 34 )]
 position = Vector2( -684, -265 )
 
-[node name="Crate6" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Foreground_crates" instance=ExtResource( 34 )]
+[node name="Crate6" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Foreground_crates" instance=ExtResource( 34 )]
 position = Vector2( -683, -281 )
 
-[node name="Crate7" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Crates/Foreground_crates" instance=ExtResource( 34 )]
+[node name="Crate7" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Crates/Foreground_crates" instance=ExtResource( 34 )]
 position = Vector2( -700, -265 )
 
-[node name="Barrels" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Destructables"]
+[node name="Barrels" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables"]
 
-[node name="Background_barrels" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Barrels"]
+[node name="Background_barrels" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Barrels"]
 
-[node name="Foreground_barrels" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Barrels"]
+[node name="Foreground_barrels" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Barrels"]
 
-[node name="Barrel" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Barrels/Foreground_barrels" instance=ExtResource( 38 )]
+[node name="Barrel" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Barrels/Foreground_barrels" instance=ExtResource( 38 )]
 position = Vector2( -717, -267 )
 
-[node name="Barrel2" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Barrels/Foreground_barrels" instance=ExtResource( 38 )]
+[node name="Barrel2" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Barrels/Foreground_barrels" instance=ExtResource( 38 )]
 position = Vector2( -708, -284 )
 
-[node name="Barrel3" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Barrels/Foreground_barrels" instance=ExtResource( 38 )]
+[node name="Barrel3" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Barrels/Foreground_barrels" instance=ExtResource( 38 )]
 position = Vector2( -667, -265 )
 
-[node name="Pots" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Destructables"]
+[node name="Pots" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables"]
 
-[node name="Background_pots" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Pots"]
+[node name="Background_pots" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Pots"]
 
-[node name="Background_pot" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Pots/Background_pots" instance=ExtResource( 40 )]
+[node name="Background_pot" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Pots/Background_pots" instance=ExtResource( 40 )]
 position = Vector2( 1030, -281 )
 
-[node name="Background_pot3" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Pots/Background_pots" instance=ExtResource( 40 )]
+[node name="Background_pot3" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Pots/Background_pots" instance=ExtResource( 40 )]
 position = Vector2( 140, -580 )
 
-[node name="Background_pot2" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Pots/Background_pots" instance=ExtResource( 40 )]
+[node name="Background_pot2" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Pots/Background_pots" instance=ExtResource( 40 )]
 position = Vector2( 974, -282 )
 
-[node name="Foreground_pots" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Pots"]
+[node name="Foreground_pots" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Pots"]
 
-[node name="Pot" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Pots/Foreground_pots" instance=ExtResource( 39 )]
+[node name="Pot" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Pots/Foreground_pots" instance=ExtResource( 39 )]
 position = Vector2( -662, -282 )
 
-[node name="Vases" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Destructables"]
+[node name="Vases" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables"]
 position = Vector2( -275, -1 )
 
-[node name="Background_vases" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases"]
+[node name="Background_vases" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Vases"]
 
-[node name="Background_vase" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
+[node name="Background_vase" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
 position = Vector2( -166, -266 )
 
-[node name="Background_vase2" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
+[node name="Background_vase2" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
 position = Vector2( -369, -281 )
 
-[node name="Background_vase8" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
+[node name="Background_vase8" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
 position = Vector2( -447, -247 )
 
-[node name="Background_vase9" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
+[node name="Background_vase9" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
 position = Vector2( -432, -247 )
 
-[node name="Background_vase3" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
+[node name="Background_vase3" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
 position = Vector2( 94, -248 )
 
-[node name="Background_vase11" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
+[node name="Background_vase11" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
 position = Vector2( 328, -579 )
 
-[node name="Background_vase12" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
+[node name="Background_vase12" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
 position = Vector2( 344, -579 )
 
-[node name="Background_vase13" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
+[node name="Background_vase13" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
 position = Vector2( 360, -579 )
 
-[node name="Background_vase4" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
+[node name="Background_vase4" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
 position = Vector2( 1085, -249 )
 
-[node name="Background_vase5" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
+[node name="Background_vase5" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
 position = Vector2( 1184, -249 )
 
-[node name="Background_vase10" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
+[node name="Background_vase10" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
 position = Vector2( 1225, -390 )
 
-[node name="Background_vase6" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
+[node name="Background_vase6" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
 position = Vector2( 1290, -268 )
 
-[node name="Background_vase7" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
+[node name="Background_vase7" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
 position = Vector2( 1217, -283 )
 
-[node name="Foreground_vases" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases"]
+[node name="Foreground_vases" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Vases"]
 
-[node name="Vase" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
+[node name="Vase" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
 position = Vector2( -456, -247 )
 moving_platform_apply_velocity_on_leave = 0
 
-[node name="Vase5" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
+[node name="Vase5" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
 position = Vector2( 538, -870 )
 moving_platform_apply_velocity_on_leave = 0
 
-[node name="Vase2" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
+[node name="Vase2" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
 position = Vector2( -441, -247 )
 moving_platform_apply_velocity_on_leave = 0
 
-[node name="Vase3" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
+[node name="Vase3" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
 position = Vector2( -426, -247 )
 moving_platform_apply_velocity_on_leave = 0
 
