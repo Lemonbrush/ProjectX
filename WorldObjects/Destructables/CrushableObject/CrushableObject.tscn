@@ -8,6 +8,7 @@
 extents = Vector2( 8, 8 )
 
 [node name="CrushableObject" type="KinematicBody2D"]
+moving_platform_apply_velocity_on_leave = 1
 script = ExtResource( 1 )
 
 [node name="VisibilityChecker" parent="." instance=ExtResource( 3 )]
