@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=2]
+[gd_scene load_steps=81 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=2]
@@ -44,6 +44,7 @@
 [ext_resource path="res://Assets/Levels/Harbor_house/top_floor_handles.png" type="Texture" id=42]
 [ext_resource path="res://Assets/Levels/Harbor_house/Guardian_island.png" type="Texture" id=43]
 [ext_resource path="res://Levels/Harbor_house/GuardianIsland.gd" type="Script" id=44]
+[ext_resource path="res://Levels/Harbor_house/World_objects/Guardian_statue/Guardian_statue.tscn" type="PackedScene" id=45]
 
 [sub_resource type="Animation" id=38]
 resource_name = "Gate_opening_cut_scene"
@@ -51,6 +52,9 @@ length = 4.0
 
 [sub_resource type="Animation" id=39]
 resource_name = "open_transition"
+
+[sub_resource type="RectangleShape2D" id=48]
+extents = Vector2( 440.5, 8 )
 
 [sub_resource type="CanvasItemMaterial" id=170]
 particles_animation = true
@@ -152,9 +156,6 @@ extents = Vector2( 2, 87.5 )
 [sub_resource type="RectangleShape2D" id=83]
 extents = Vector2( 2, 108.5 )
 
-[sub_resource type="RectangleShape2D" id=48]
-extents = Vector2( 440.5, 8 )
-
 [sub_resource type="ConvexPolygonShape2D" id=73]
 points = PoolVector2Array( 0, 0, 0, 16, 16, 16, 16, 0 )
 
@@ -235,20 +236,66 @@ position = Vector2( 324, -20 )
 scale = Vector2( 0.725426, 0.725426 )
 texture = ExtResource( 17 )
 
-[node name="Background_world_objects" type="Node2D" parent="."]
+[node name="Harbor_world_objects" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background_world_objects" type="Node2D" parent="Harbor_world_objects"]
 position = Vector2( -20, -192 )
 
-[node name="Decorations" type="Node2D" parent="Background_world_objects"]
+[node name="Decorations" type="Node2D" parent="Harbor_world_objects/Background_world_objects"]
 
-[node name="Trees" type="Node2D" parent="Background_world_objects/Decorations"]
+[node name="Trees" type="Node2D" parent="Harbor_world_objects/Background_world_objects/Decorations"]
 
-[node name="World_skin" type="Sprite" parent="."]
+[node name="World_skin" type="Sprite" parent="Harbor_world_objects"]
 light_mask = 8193
 position = Vector2( -526, -192 )
 texture = ExtResource( 6 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Middle_world_objects" type="Node2D" parent="Harbor_world_objects"]
+position = Vector2( -20, -192 )
+
+[node name="Decorations" type="Node2D" parent="Harbor_world_objects/Middle_world_objects"]
+
+[node name="DecorationsTileMap" type="TileMap" parent="Harbor_world_objects/Middle_world_objects/Decorations"]
+tile_set = ExtResource( 14 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="Harbor_house_door" parent="Harbor_world_objects/Middle_world_objects" instance=ExtResource( 9 )]
+position = Vector2( -504, 81 )
+nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
+nextDoorName = "Shed_door"
+
+[node name="Foreground_world_objects" type="Node2D" parent="Harbor_world_objects"]
+position = Vector2( -20, -192 )
+
+[node name="Collisions" type="Node2D" parent="Harbor_world_objects"]
+visible = false
+position = Vector2( -48, 367 )
+
+[node name="PassTrough" type="Node2D" parent="Harbor_world_objects/Collisions"]
+
+[node name="Solid" type="Node2D" parent="Harbor_world_objects/Collisions"]
+
+[node name="PassThroughBody_ex" parent="Harbor_world_objects/Collisions/Solid" instance=ExtResource( 11 )]
+position = Vector2( -630, -462 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Harbor_world_objects/Collisions/Solid/PassThroughBody_ex" index="0"]
+position = Vector2( 424.5, -8 )
+shape = SubResource( 48 )
+
+[node name="Ladders" type="Node2D" parent="Harbor_world_objects/Collisions"]
+position = Vector2( 48, -20 )
+
+[node name="AirBlowers" type="Node2D" parent="Harbor_world_objects/Collisions"]
+position = Vector2( -11, -11 )
 
 [node name="CreatorHouseIsland" type="Node2D" parent="."]
 position = Vector2( -1023, -701 )
@@ -1089,8 +1136,11 @@ script = ExtResource( 44 )
 
 [node name="Background_world_objects" type="Node2D" parent="GuardianIsland"]
 
+[node name="Guardian_statue" parent="GuardianIsland/Background_world_objects" instance=ExtResource( 45 )]
+position = Vector2( 395, -239 )
+
 [node name="GuardianIslandSprite" type="Sprite" parent="GuardianIsland"]
-position = Vector2( 390, -173 )
+position = Vector2( 390, -70 )
 texture = ExtResource( 43 )
 
 [node name="World_objects" type="Node2D" parent="GuardianIsland"]
@@ -1220,51 +1270,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="World_objects" type="Node2D" parent="."]
-position = Vector2( -20, -192 )
-
-[node name="Decorations" type="Node2D" parent="World_objects"]
-
-[node name="DecorationsTileMap" type="TileMap" parent="World_objects/Decorations"]
-tile_set = ExtResource( 14 )
-cell_size = Vector2( 16, 16 )
-format = 1
-
-[node name="Harbor_house_door" parent="World_objects" instance=ExtResource( 9 )]
-position = Vector2( -504, 81 )
-nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
-nextDoorName = "Shed_door"
-
-[node name="Foreground_world_objects" type="Node2D" parent="."]
-position = Vector2( -20, -192 )
-
-[node name="Destructables" type="Node" parent="."]
-
-[node name="Barrels" type="Node" parent="Destructables"]
-
-[node name="Collisions" type="Node2D" parent="."]
-visible = false
-position = Vector2( -48, 367 )
-
-[node name="PassTrough" type="Node2D" parent="Collisions"]
-
-[node name="Solid" type="Node2D" parent="Collisions"]
-
-[node name="PassThroughBody_ex" parent="Collisions/Solid" instance=ExtResource( 11 )]
-position = Vector2( -630, -462 )
-collision_layer = 17
-collision_mask = 17
-
-[node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody_ex" index="0"]
-position = Vector2( 424.5, -8 )
-shape = SubResource( 48 )
-
-[node name="Ladders" type="Node2D" parent="."]
-position = Vector2( 0, 347 )
-
-[node name="AirBlowers" type="Node2D" parent="."]
-position = Vector2( -59, 356 )
-
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 4 )]
 position = Vector2( -409, -163 )
 
@@ -1275,14 +1280,13 @@ scale = Vector2( 0.143938, 0.197316 )
 texture = ExtResource( 5 )
 energy = 0.7
 
-[node name="Collectables" type="Node" parent="."]
-
-[node name="Lighting" type="Node" parent="."]
-
 [node name="WaterSurface" type="Node2D" parent="."]
 pause_mode = 2
 position = Vector2( 329, -48 )
 z_index = 10
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="WaterSurface" type="TileMap" parent="WaterSurface"]
 modulate = Color( 1, 1, 1, 0.8 )
@@ -1313,6 +1317,7 @@ margin_right = 5296.0
 margin_bottom = 344.0
 
 [editable path="Camera2D/Clouds"]
+[editable path="Harbor_world_objects/Collisions/Solid/PassThroughBody_ex"]
 [editable path="CreatorHouseIsland/Collisions/Solid/PassThroughBody18"]
 [editable path="CreatorHouseIsland/Collisions/Solid/PassThroughBody19"]
 [editable path="CreatorHouseIsland/Collisions/Solid/PassThroughBody20"]
@@ -1343,4 +1348,3 @@ margin_bottom = 344.0
 [editable path="GuardianIsland/Ladders/Ladder43"]
 [editable path="GuardianIsland/Ladders/Ladder44"]
 [editable path="GuardianIsland/Ladders/Ladder45"]
-[editable path="Collisions/Solid/PassThroughBody_ex"]
