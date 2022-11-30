@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=2]
+[gd_scene load_steps=80 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=2]
@@ -42,6 +42,8 @@
 [ext_resource path="res://WorldObjects/Destructables/Pot/Background_pot/Background_pot.tscn" type="PackedScene" id=40]
 [ext_resource path="res://Assets/Levels/Harbor_house/second_floor_handles.png" type="Texture" id=41]
 [ext_resource path="res://Assets/Levels/Harbor_house/top_floor_handles.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Levels/Harbor_house/Guardian_island.png" type="Texture" id=43]
+[ext_resource path="res://Levels/Harbor_house/GuardianIsland.gd" type="Script" id=44]
 
 [sub_resource type="Animation" id=38]
 resource_name = "Gate_opening_cut_scene"
@@ -242,14 +244,17 @@ position = Vector2( -20, -192 )
 
 [node name="World_skin" type="Sprite" parent="."]
 light_mask = 8193
-position = Vector2( -20, -688 )
+position = Vector2( -526, -192 )
 texture = ExtResource( 6 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CreatorHouseIsland" type="Node2D" parent="."]
-position = Vector2( -15, -847 )
+position = Vector2( -1023, -701 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="VisibilityChecker" parent="CreatorHouseIsland" instance=ExtResource( 32 )]
 visible = false
@@ -1079,11 +1084,14 @@ __meta__ = {
 }
 
 [node name="GuardianIsland" type="Node2D" parent="."]
-position = Vector2( 92, -181 )
+position = Vector2( 103, -180 )
+script = ExtResource( 44 )
 
 [node name="Background_world_objects" type="Node2D" parent="GuardianIsland"]
 
 [node name="GuardianIslandSprite" type="Sprite" parent="GuardianIsland"]
+position = Vector2( 390, -173 )
+texture = ExtResource( 43 )
 
 [node name="World_objects" type="Node2D" parent="GuardianIsland"]
 
@@ -1201,6 +1209,17 @@ shape = SubResource( 83 )
 
 [node name="Lighting" type="Node2D" parent="GuardianIsland"]
 
+[node name="Light2D_ex" type="Light2D" parent="GuardianIsland/Lighting"]
+position = Vector2( 393.5, -68 )
+scale = Vector2( 0.885309, 0.544276 )
+texture = ExtResource( 2 )
+color = Color( 1, 1, 1, 0.431373 )
+energy = 0.7
+mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="World_objects" type="Node2D" parent="."]
 position = Vector2( -20, -192 )
 
@@ -1247,7 +1266,7 @@ position = Vector2( 0, 347 )
 position = Vector2( -59, 356 )
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 4 )]
-position = Vector2( -436, -170 )
+position = Vector2( -409, -163 )
 
 [node name="Light2D2" type="Light2D" parent="Player"]
 visible = false
@@ -1259,17 +1278,6 @@ energy = 0.7
 [node name="Collectables" type="Node" parent="."]
 
 [node name="Lighting" type="Node" parent="."]
-
-[node name="Light2D_ex" type="Light2D" parent="Lighting"]
-position = Vector2( 350, -197 )
-scale = Vector2( 0.899484, 0.734341 )
-texture = ExtResource( 2 )
-color = Color( 1, 1, 1, 0.431373 )
-energy = 0.7
-mode = 2
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="WaterSurface" type="Node2D" parent="."]
 pause_mode = 2
@@ -1304,6 +1312,7 @@ margin_top = -25.0
 margin_right = 5296.0
 margin_bottom = 344.0
 
+[editable path="Camera2D/Clouds"]
 [editable path="CreatorHouseIsland/Collisions/Solid/PassThroughBody18"]
 [editable path="CreatorHouseIsland/Collisions/Solid/PassThroughBody19"]
 [editable path="CreatorHouseIsland/Collisions/Solid/PassThroughBody20"]
