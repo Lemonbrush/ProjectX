@@ -1,9 +1,9 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/Levels/Harbor_house/World_objects/Guardian_statue-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Assets/effects/particles.png" type="Texture" id=2]
 [ext_resource path="res://Assets/effects/ShineParticles.png" type="Texture" id=3]
-[ext_resource path="res://Levels/Harbor_house/World_objects/Guardian_statue/Guardian_statue.gd" type="Script" id=4]
+[ext_resource path="res://WorldObjects/Technical/DialogController/DialogController.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Act"
@@ -172,8 +172,10 @@ anim_speed_random = 1.0
 anim_offset = 1.0
 anim_offset_random = 1.0
 
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 81, 10 )
+
 [node name="Guardian_statue" type="Node2D"]
-script = ExtResource( 4 )
 
 [node name="Guardian_statue_sprite" type="Sprite" parent="."]
 position = Vector2( -1, -104 )
@@ -210,3 +212,19 @@ explosiveness = 1.0
 randomness = 1.0
 process_material = SubResource( 29 )
 texture = ExtResource( 3 )
+
+[node name="DialogController" parent="." instance=ExtResource( 5 )]
+dialogId = "guardian_statue_dialog"
+interaction_popup_label_text = "Осмотреть"
+
+[node name="InteractionPopup" parent="DialogController" index="0"]
+position = Vector2( 0, -22 )
+
+[node name="CollisionShape2D" parent="DialogController/InteractionController/Area2D" index="0"]
+shape = SubResource( 30 )
+
+[node name="DialogTextBoxController" parent="DialogController" index="2"]
+position = Vector2( 65, -31 )
+
+[editable path="DialogController"]
+[editable path="DialogController/InteractionController"]

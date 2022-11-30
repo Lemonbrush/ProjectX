@@ -1134,6 +1134,8 @@ __meta__ = {
 position = Vector2( 103, -180 )
 script = ExtResource( 44 )
 
+[node name="IslandLiftTween" type="Tween" parent="GuardianIsland"]
+
 [node name="Background_world_objects" type="Node2D" parent="GuardianIsland"]
 
 [node name="Guardian_statue" parent="GuardianIsland/Background_world_objects" instance=ExtResource( 45 )]
@@ -1271,7 +1273,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 4 )]
-position = Vector2( -409, -163 )
+position = Vector2( 330, -502 )
 
 [node name="Light2D2" type="Light2D" parent="Player"]
 visible = false
