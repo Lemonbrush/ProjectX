@@ -11,9 +11,9 @@ func _ready():
 	var _lift_down_connection = EventBus.connect("guardian_statue_lift_down", self, "guardian_statue_lift_down") 
 
 func guardian_statue_lift_up():
-	tween.interpolate_property(self, "position", position, topPosition, 10, Tween.TRANS_SINE, Tween.EASE_IN)
+	tween.interpolate_property(self, "position", position, topPosition, 15, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
 	tween.start()
 
 func guardian_statue_lift_down():
-	tween.interpolate_property(self, "position", position, bottomPosition, 10, Tween.TRANS_SINE, Tween.EASE_IN)
+	tween.interpolate_property(self, "position", position, bottomPosition, 15, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
 	tween.start()

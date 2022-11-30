@@ -135,12 +135,6 @@ extents = Vector2( 285, 2 )
 [sub_resource type="RectangleShape2D" id=185]
 extents = Vector2( 3, 85.5 )
 
-[sub_resource type="RectangleShape2D" id=77]
-extents = Vector2( 32.0625, 8 )
-
-[sub_resource type="RectangleShape2D" id=78]
-extents = Vector2( 16.0625, 8 )
-
 [sub_resource type="RectangleShape2D" id=79]
 extents = Vector2( 280.062, 8 )
 
@@ -149,6 +143,12 @@ extents = Vector2( 192, 8 )
 
 [sub_resource type="RectangleShape2D" id=81]
 extents = Vector2( 112, 8 )
+
+[sub_resource type="RectangleShape2D" id=77]
+extents = Vector2( 32.0625, 8 )
+
+[sub_resource type="RectangleShape2D" id=78]
+extents = Vector2( 16.0625, 8 )
 
 [sub_resource type="RectangleShape2D" id=82]
 extents = Vector2( 2, 87.5 )
@@ -1121,8 +1121,8 @@ __meta__ = {
 }
 
 [node name="Fountains_bottom_cut_mack" type="Light2D" parent="CreatorHouseIsland"]
-position = Vector2( 105, -272.5 )
-scale = Vector2( 3.43069, 1.06559 )
+position = Vector2( 235.501, -272.999 )
+scale = Vector2( 3.75371, 1.06435 )
 texture = ExtResource( 28 )
 mode = 3
 range_item_cull_mask = 32
@@ -1130,9 +1130,24 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="GuardianIsland" type="Node2D" parent="."]
+[node name="GuardianIsland" type="KinematicBody2D" parent="."]
 position = Vector2( 103, -180 )
 script = ExtResource( 44 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GuardianIsland"]
+position = Vector2( 390, -199 )
+shape = SubResource( 79 )
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="GuardianIsland"]
+position = Vector2( 398, -215 )
+shape = SubResource( 80 )
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="GuardianIsland"]
+position = Vector2( 398, -231 )
+shape = SubResource( 81 )
+one_way_collision = true
 
 [node name="IslandLiftTween" type="Tween" parent="GuardianIsland"]
 
@@ -1208,30 +1223,6 @@ position = Vector2( 308, -168 )
 [node name="CollisionShape2D" parent="GuardianIsland/Collisions/PassThrough/PassThroughBody11" index="0"]
 position = Vector2( -54.0625, 1 )
 shape = SubResource( 78 )
-one_way_collision = true
-
-[node name="PassThroughBody12" parent="GuardianIsland/Collisions/PassThrough" groups=["passThroughObject"] instance=ExtResource( 11 )]
-position = Vector2( 180, -200 )
-
-[node name="CollisionShape2D" parent="GuardianIsland/Collisions/PassThrough/PassThroughBody12" index="0"]
-position = Vector2( 209.938, 1 )
-shape = SubResource( 79 )
-one_way_collision = true
-
-[node name="PassThroughBody13" parent="GuardianIsland/Collisions/PassThrough" groups=["passThroughObject"] instance=ExtResource( 11 )]
-position = Vector2( 177, -216 )
-
-[node name="CollisionShape2D" parent="GuardianIsland/Collisions/PassThrough/PassThroughBody13" index="0"]
-position = Vector2( 221, 1 )
-shape = SubResource( 80 )
-one_way_collision = true
-
-[node name="PassThroughBody14" parent="GuardianIsland/Collisions/PassThrough" groups=["passThroughObject"] instance=ExtResource( 11 )]
-position = Vector2( 176, -232 )
-
-[node name="CollisionShape2D" parent="GuardianIsland/Collisions/PassThrough/PassThroughBody14" index="0"]
-position = Vector2( 222, 1 )
-shape = SubResource( 81 )
 one_way_collision = true
 
 [node name="Solid" type="Node2D" parent="GuardianIsland/Collisions"]
@@ -1344,9 +1335,6 @@ margin_bottom = 344.0
 [editable path="GuardianIsland/Collisions/PassThrough/PassThroughBody9"]
 [editable path="GuardianIsland/Collisions/PassThrough/PassThroughBody10"]
 [editable path="GuardianIsland/Collisions/PassThrough/PassThroughBody11"]
-[editable path="GuardianIsland/Collisions/PassThrough/PassThroughBody12"]
-[editable path="GuardianIsland/Collisions/PassThrough/PassThroughBody13"]
-[editable path="GuardianIsland/Collisions/PassThrough/PassThroughBody14"]
 [editable path="GuardianIsland/Ladders/Ladder43"]
 [editable path="GuardianIsland/Ladders/Ladder44"]
 [editable path="GuardianIsland/Ladders/Ladder45"]
