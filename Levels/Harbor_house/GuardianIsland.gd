@@ -2,6 +2,7 @@ extends Node2D
 
 onready var tween = $IslandLiftTween
 onready var guardianStatue = $Background_world_objects/Guardian_statue
+onready var bottomGuardianLiftNotifier = $BottomGuardianLiftNotifierArea2D
 
 var topPosition = Vector2(103, -724)
 var middlePosition = Vector2(103, -180)

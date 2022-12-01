@@ -21,5 +21,5 @@ func on_leave():
 func on_npc_approach(_body):
 	interactionPopup.show()
 
-func on_npc_interact(interactedBody):
+func on_npc_interact(_interactedBody):
 	interactionPopup.hide()

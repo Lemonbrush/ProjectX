@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=2]
+[gd_scene load_steps=83 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=2]
@@ -150,11 +150,17 @@ extents = Vector2( 32.0625, 8 )
 [sub_resource type="RectangleShape2D" id=78]
 extents = Vector2( 16.0625, 8 )
 
-[sub_resource type="RectangleShape2D" id=82]
-extents = Vector2( 2, 87.5 )
+[sub_resource type="RectangleShape2D" id=191]
+extents = Vector2( 2, 91.5 )
 
-[sub_resource type="RectangleShape2D" id=83]
-extents = Vector2( 2, 108.5 )
+[sub_resource type="RectangleShape2D" id=82]
+extents = Vector2( 2, 90 )
+
+[sub_resource type="RectangleShape2D" id=192]
+extents = Vector2( 2, 116.25 )
+
+[sub_resource type="RectangleShape2D" id=193]
+extents = Vector2( 191.5, 10 )
 
 [sub_resource type="ConvexPolygonShape2D" id=73]
 points = PoolVector2Array( 0, 0, 0, 16, 16, 16, 16, 0 )
@@ -1157,8 +1163,11 @@ one_way_collision = true
 position = Vector2( 395, -239 )
 
 [node name="GuardianIslandSprite" type="Sprite" parent="GuardianIsland"]
-position = Vector2( 390, -70 )
+position = Vector2( 390, -71 )
 texture = ExtResource( 43 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="World_objects" type="Node2D" parent="GuardianIsland"]
 
@@ -1233,22 +1242,22 @@ one_way_collision = true
 position = Vector2( 166, -40 )
 
 [node name="CollisionShape2D" parent="GuardianIsland/Ladders/Ladder43" index="0"]
-position = Vector2( 0, 0.5 )
-shape = SubResource( 82 )
+position = Vector2( 0, 7.5 )
+shape = SubResource( 191 )
 
 [node name="Ladder44" parent="GuardianIsland/Ladders" instance=ExtResource( 7 )]
 position = Vector2( 390, 6 )
 
 [node name="CollisionShape2D" parent="GuardianIsland/Ladders/Ladder44" index="0"]
-position = Vector2( 0, 0.5 )
+position = Vector2( 0, -2 )
 shape = SubResource( 82 )
 
 [node name="Ladder45" parent="GuardianIsland/Ladders" instance=ExtResource( 7 )]
 position = Vector2( 598, -73 )
 
 [node name="CollisionShape2D" parent="GuardianIsland/Ladders/Ladder45" index="0"]
-position = Vector2( 0, 21.5 )
-shape = SubResource( 83 )
+position = Vector2( 0, 22.25 )
+shape = SubResource( 192 )
 
 [node name="Lighting" type="Node2D" parent="GuardianIsland"]
 
@@ -1262,6 +1271,14 @@ mode = 2
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="BottomGuardianLiftNotifierArea2D" type="Area2D" parent="GuardianIsland"]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GuardianIsland/BottomGuardianLiftNotifierArea2D"]
+position = Vector2( -108.5, 54 )
+shape = SubResource( 193 )
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 4 )]
 position = Vector2( 330, -502 )
