@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=2]
+[gd_scene load_steps=82 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=2]
@@ -158,9 +158,6 @@ extents = Vector2( 2, 90 )
 
 [sub_resource type="RectangleShape2D" id=192]
 extents = Vector2( 2, 116.25 )
-
-[sub_resource type="RectangleShape2D" id=193]
-extents = Vector2( 191.5, 10 )
 
 [sub_resource type="ConvexPolygonShape2D" id=73]
 points = PoolVector2Array( 0, 0, 0, 16, 16, 16, 16, 0 )
@@ -780,11 +777,15 @@ tile_data = PoolIntArray( -24051314, 536870913, 0, -24051298, 536870913, 0, -240
 
 [node name="FountainsTileMap" type="TileMap" parent="CreatorHouseIsland/Foreground_world_objects/Decorations"]
 light_mask = 32
+position = Vector2( -1, 0 )
 tile_set = ExtResource( 13 )
 cell_size = Vector2( 1, 1 )
 occluder_light_mask = 32
 format = 1
 tile_data = PoolIntArray( -22937980, 536870921, 0, -21954338, 536870912, 0, -21299580, 536870920, 0, -19857186, 536870913, 0, -19661180, 536870920, 0, -18088316, 536870920, 0, -17760034, 536870913, 0, -16449916, 536870920, 0, -15662882, 536870913, 0, -14877052, 536870920, 0, -14549596, 8, 0, -14484178, 536870916, 0, -14482450, 4, 0, -13500978, 536870912, 0, -13500610, 536870912, 0, -13565842, 536870921, 0, -13565730, 536870913, 0, -13565187, 9, 0, -13304188, 536870920, 0, -12976732, 8, 0, -12516878, 1, 0, -12516803, 8, 0, -12387026, 536870917, 0, -12385298, 5, 0, -11796860, 536870920, 0, -11861906, 536870920, 0, -11861251, 8, 0, -11403868, 8, 0, -11403826, 536870913, 0, -11403458, 536870913, 0, -11468578, 536870913, 0, -10943939, 8, 0, -10419726, 1, 0, -10289874, 536870917, 0, -10223996, 536870920, 0, -10288146, 5, 0, -10157970, 536870920, 0, -10157315, 8, 0, -9831004, 8, 0, -9306674, 536870913, 0, -9306306, 536870913, 0, -9371426, 536870913, 0, -9305539, 8, 0, -8651132, 536870920, 0, -8454034, 536870920, 0, -8453379, 8, 0, -8323676, 8, 0, -8322574, 1, 0, -8192722, 536870917, 0, -8190994, 5, 0, -7667139, 8, 0, -7209522, 536870913, 0, -7209154, 536870913, 0, -7274274, 536870913, 0, -7078268, 536870920, 0, -6750812, 8, 0, -6750098, 536870920, 0, -6749443, 8, 0, -6161106, 536870917, 0, -6225422, 1, 0, -6159378, 5, 0, -6028739, 8, 0, -5439868, 536870920, 0, -5177948, 8, 0, -5112370, 536870913, 0, -5112002, 536870913, 0, -5177122, 536870913, 0, -5046162, 536870920, 0, -5045507, 8, 0, -4390339, 8, 0, -4063954, 536870917, 0, -4128270, 1, 0, -4062226, 5, 0, -3801468, 536870920, 0, -3605084, 8, 0, -3342226, 536870920, 0, -3341571, 8, 0, -3015218, 536870913, 0, -3014850, 536870913, 0, -3079970, 536870913, 0, -2751939, 8, 0, -2163068, 536870920, 0, -2032220, 8, 0, -1966802, 536870917, 0, -2031118, 1, 0, -1965074, 5, 0, -1638290, 536870920, 0, -1637635, 8, 0, -1244611, 8, 0, -1179075, 8, 0, -918066, 536870913, 0, -917698, 536870913, 0, -982818, 536870913, 0, -524668, 536870920, 0, -459356, 8, 0, 64814, 536870917, 0, 765, 8, 0, 65646, 536870920, 0, 66034, 1, 0, 132078, 5, 0, 459325, 8, 0, 1113508, 8, 0, 1113732, 536870920, 0, 1179086, 536870913, 0, 1179454, 536870913, 0, 1114334, 536870913, 0, 1704701, 8, 0, 1769582, 536870920, 0, 2161966, 536870917, 0, 2163186, 1, 0, 2163261, 8, 0, 2229230, 5, 0, 2686372, 8, 0, 2752132, 536870920, 0, 3276238, 536870913, 0, 3276606, 536870913, 0, 3211486, 536870913, 0, 3408637, 8, 0, 3473518, 536870920, 0, 3867197, 8, 0, 4193582, 536870917, 0, 4259236, 8, 0, 4260338, 1, 0, 4390532, 536870920, 0, 4326382, 5, 0, 5112573, 8, 0, 5177454, 536870920, 0, 5373390, 536870913, 0, 5373758, 536870913, 0, 5308638, 536870913, 0, 5571133, 8, 0, 5832100, 8, 0, 6094468, 536870920, 0, 6225198, 536870917, 0, 6357490, 1, 0, 6423534, 5, 0, 6553516, 536870920, 0, 6881390, 536870920, 0, 7339920, 536870917, 0, 7275069, 8, 0, 7470910, 536870913, 0, 7405790, 536870913, 0, 7798404, 536870920, 0, 8257452, 536870920, 0, 8192498, 1, 0, 8585326, 536870920, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Well_water" type="Node2D" parent="CreatorHouseIsland/Foreground_world_objects/Decorations"]
 
@@ -969,7 +970,7 @@ one_way_collision = true
 position = Vector2( -593, -301 )
 
 [node name="CollisionShape2D" parent="CreatorHouseIsland/Collisions/Ladders/WellLadder" index="0"]
-position = Vector2( -2, -27 )
+position = Vector2( -3, -27 )
 shape = SubResource( 185 )
 
 [node name="Lighting" type="Node2D" parent="CreatorHouseIsland"]
@@ -1155,6 +1156,9 @@ position = Vector2( 398, -231 )
 shape = SubResource( 81 )
 one_way_collision = true
 
+[node name="LiftWaitTimer" type="Timer" parent="GuardianIsland"]
+wait_time = 15.0
+
 [node name="IslandLiftTween" type="Tween" parent="GuardianIsland"]
 
 [node name="Background_world_objects" type="Node2D" parent="GuardianIsland"]
@@ -1271,14 +1275,6 @@ mode = 2
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="BottomGuardianLiftNotifierArea2D" type="Area2D" parent="GuardianIsland"]
-collision_layer = 32
-collision_mask = 32
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GuardianIsland/BottomGuardianLiftNotifierArea2D"]
-position = Vector2( -108.5, 54 )
-shape = SubResource( 193 )
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 4 )]
 position = Vector2( 330, -502 )
