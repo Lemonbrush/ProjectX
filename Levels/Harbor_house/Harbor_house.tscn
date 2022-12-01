@@ -967,10 +967,10 @@ one_way_collision = true
 [node name="Ladders" type="Node2D" parent="CreatorHouseIsland/Collisions"]
 
 [node name="WellLadder" parent="CreatorHouseIsland/Collisions/Ladders" instance=ExtResource( 7 )]
-position = Vector2( -593, -301 )
+position = Vector2( -596, -301 )
 
 [node name="CollisionShape2D" parent="CreatorHouseIsland/Collisions/Ladders/WellLadder" index="0"]
-position = Vector2( -3, -27 )
+position = Vector2( 0, -27 )
 shape = SubResource( 185 )
 
 [node name="Lighting" type="Node2D" parent="CreatorHouseIsland"]
