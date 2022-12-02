@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=2]
+[gd_scene load_steps=91 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=2]
@@ -45,6 +45,8 @@
 [ext_resource path="res://Assets/Levels/Harbor_house/Guardian_island.png" type="Texture" id=43]
 [ext_resource path="res://Levels/Harbor_house/GuardianIsland.gd" type="Script" id=44]
 [ext_resource path="res://Levels/Harbor_house/World_objects/Guardian_statue/Guardian_statue.tscn" type="PackedScene" id=45]
+[ext_resource path="res://Assets/effects/WhiteSquare.png" type="Texture" id=46]
+[ext_resource path="res://Assets/Levels/Harbor_house/Bridge_logs.png" type="Texture" id=47]
 
 [sub_resource type="Animation" id=38]
 resource_name = "Gate_opening_cut_scene"
@@ -52,9 +54,6 @@ length = 4.0
 
 [sub_resource type="Animation" id=39]
 resource_name = "open_transition"
-
-[sub_resource type="RectangleShape2D" id=48]
-extents = Vector2( 440.5, 8 )
 
 [sub_resource type="CanvasItemMaterial" id=170]
 particles_animation = true
@@ -68,6 +67,57 @@ colors = PoolColorArray( 0, 0, 0, 0, 0.972656, 0.972656, 0.972656, 1, 1, 1, 1, 1
 
 [sub_resource type="GradientTexture" id=169]
 gradient = SubResource( 171 )
+
+[sub_resource type="ParticlesMaterial" id=194]
+emission_shape = 2
+emission_box_extents = Vector3( 10, 1, 1 )
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 10.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 20.0
+angular_velocity = 120.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 2.0
+color_ramp = SubResource( 169 )
+
+[sub_resource type="Gradient" id=195]
+offsets = PoolRealArray( 0.00294118, 0.147059, 0.467647, 0.835294, 0.997059, 1 )
+colors = PoolColorArray( 0.964844, 0.650645, 0.206024, 1, 0.792969, 0.359628, 0.0117353, 1, 0.78125, 0.251676, 0.0677194, 1, 1, 1, 1, 0.694117, 1, 1, 1, 0.541176, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=102]
+gradient = SubResource( 195 )
+
+[sub_resource type="Curve" id=196]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.21134, 0.354712 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0393969 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=103]
+curve = SubResource( 196 )
+
+[sub_resource type="ParticlesMaterial" id=197]
+emission_shape = 2
+emission_box_extents = Vector3( 7, 2, 1 )
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 10.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 0.03
+angular_velocity = 250.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 4.0
+linear_accel_random = 1.0
+angle = 360.0
+angle_random = 1.0
+scale = 1.5
+scale_curve = SubResource( 103 )
+color_ramp = SubResource( 102 )
+
+[sub_resource type="RectangleShape2D" id=48]
+extents = Vector2( 440.5, 8 )
 
 [sub_resource type="ParticlesMaterial" id=172]
 emission_shape = 2
@@ -243,16 +293,67 @@ scale = Vector2( 0.725426, 0.725426 )
 texture = ExtResource( 17 )
 
 [node name="Harbor_world_objects" type="Node2D" parent="."]
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Background_world_objects" type="Node2D" parent="Harbor_world_objects"]
 position = Vector2( -20, -192 )
 
+[node name="Trees" type="Node2D" parent="Harbor_world_objects/Background_world_objects"]
+
+[node name="Background_trees" type="Node2D" parent="Harbor_world_objects/Background_world_objects/Trees"]
+
+[node name="BackgroundTallWideTree" parent="Harbor_world_objects/Background_world_objects/Trees/Background_trees" instance=ExtResource( 25 )]
+position = Vector2( -393, -28 )
+
+[node name="BackgroundSmallTree" parent="Harbor_world_objects/Background_world_objects/Trees/Background_trees" instance=ExtResource( 19 )]
+position = Vector2( -399, -44 )
+
+[node name="BackgroundSmallTree3" parent="Harbor_world_objects/Background_world_objects/Trees/Background_trees" instance=ExtResource( 19 )]
+position = Vector2( -506, -1 )
+
+[node name="BackgroundSmallTree2" parent="Harbor_world_objects/Background_world_objects/Trees/Background_trees" instance=ExtResource( 19 )]
+position = Vector2( -486, 7 )
+
+[node name="BackgroundWideTree" parent="Harbor_world_objects/Background_world_objects/Trees/Background_trees" instance=ExtResource( 21 )]
+position = Vector2( -577, 67 )
+
+[node name="BackgroundWideTree2" parent="Harbor_world_objects/Background_world_objects/Trees/Background_trees" instance=ExtResource( 21 )]
+position = Vector2( -519, 38 )
+
+[node name="BackgroundWideTree3" parent="Harbor_world_objects/Background_world_objects/Trees/Background_trees" instance=ExtResource( 21 )]
+position = Vector2( -352, 59 )
+
+[node name="Light_trees" type="Node2D" parent="Harbor_world_objects/Background_world_objects/Trees"]
+
+[node name="CurvedTree" parent="Harbor_world_objects/Background_world_objects/Trees/Light_trees" instance=ExtResource( 23 )]
+position = Vector2( -355, -15 )
+
+[node name="CurvedTree2" parent="Harbor_world_objects/Background_world_objects/Trees/Light_trees" instance=ExtResource( 23 )]
+position = Vector2( -224, 84 )
+scale = Vector2( -1, 1 )
+
+[node name="TallTree" parent="Harbor_world_objects/Background_world_objects/Trees/Light_trees" instance=ExtResource( 20 )]
+position = Vector2( -414, -49 )
+
+[node name="SquashedTree" parent="Harbor_world_objects/Background_world_objects/Trees/Light_trees" instance=ExtResource( 22 )]
+position = Vector2( -600, 49 )
+
 [node name="Decorations" type="Node2D" parent="Harbor_world_objects/Background_world_objects"]
 
-[node name="Trees" type="Node2D" parent="Harbor_world_objects/Background_world_objects/Decorations"]
+[node name="TopChimneySteam" type="Particles2D" parent="Harbor_world_objects/Background_world_objects/Decorations"]
+material = SubResource( 170 )
+position = Vector2( -536, -88 )
+amount = 50
+lifetime = 5.0
+preprocess = 15.0
+randomness = 1.0
+process_material = SubResource( 194 )
+texture = ExtResource( 26 )
+
+[node name="DecorationsTileMap" type="TileMap" parent="Harbor_world_objects/Background_world_objects/Decorations"]
+tile_set = ExtResource( 14 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -2818426, 77, 0, -2031977, 33, 0, -1966456, 41, 0, -1900927, 40, 0 )
 
 [node name="World_skin" type="Sprite" parent="Harbor_world_objects"]
 light_mask = 8193
@@ -269,16 +370,57 @@ position = Vector2( -20, -192 )
 
 [node name="DecorationsTileMap" type="TileMap" parent="Harbor_world_objects/Middle_world_objects/Decorations"]
 tile_set = ExtResource( 14 )
-cell_size = Vector2( 16, 16 )
+cell_size = Vector2( 1, 1 )
 format = 1
+tile_data = PoolIntArray( -3473794, 536870975, 0, -3408221, 536870976, 0, -3342703, 536870974, 0, -2883936, 536870975, 0, -1966624, 20, 0, -1966568, 27, 0, -1966510, 20, 0, -1966479, 22, 0, -918071, 103, 0, -918029, 57, 0, -917949, 57, 0, -852513, 59, 0, -852369, 58, 0, 130511, 536870971, 0, 130528, 536870969, 0, 130544, 536871025, 0, 130638, 72, 0, 130679, 103, 0, 130721, 23, 0, 1179287, 31, 0, 1179318, 21, 0, 1244837, 536870972, 0, 2227643, 32, 0, 2227709, 70, 0, 2227877, 22, 0, 2424224, 536870977, 0, 2489743, 536870975, 0, 3210679, 14, 0, 3211048, 536870977, 0, 3276179, 21, 0, 3276251, 95, 0, 3276372, 95, 0, 3276391, 96, 0, 3276423, 29, 0, 3276442, 536870969, 0, 3276478, 536870971, 0, 3276519, 32, 0, 3473159, 536870974, 0, 4324726, 11, 0, 4324761, 31, 0, 4324774, 536870971, 0, 4324792, 21, 0, 4324824, 21, 0, 4324944, 21, 0, 4325013, 21, 0, 4325076, 26, 0, 4325128, 22, 0, 4325144, 29, 0, 4325164, 3, 0, 4325171, 21, 0, 4325180, 2, 0, 5373289, 536870969, 0, 5373622, 536870972, 0, 5439219, 536870970, 0, 6356750, 112, 0, 6421852, 113, 0, 6421926, 72, 0, 6422166, 71, 0 )
 
-[node name="Harbor_house_door" parent="Harbor_world_objects/Middle_world_objects" instance=ExtResource( 9 )]
-position = Vector2( -504, 81 )
+[node name="FireParticles2D" type="Particles2D" parent="Harbor_world_objects/Middle_world_objects/Decorations"]
+position = Vector2( -517, -21 )
+amount = 40
+randomness = 1.0
+process_material = SubResource( 197 )
+texture = ExtResource( 46 )
+
+[node name="Doors" type="Node2D" parent="Harbor_world_objects/Middle_world_objects"]
+
+[node name="Harbor_house_door" parent="Harbor_world_objects/Middle_world_objects/Doors" instance=ExtResource( 9 )]
+position = Vector2( -445, -15 )
 nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "Shed_door"
 
+[node name="Water_pound" type="Node2D" parent="Harbor_world_objects/Middle_world_objects"]
+
+[node name="FountainTileMap" type="TileMap" parent="Harbor_world_objects/Middle_world_objects/Water_pound"]
+tile_set = ExtResource( 13 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( 130612, 9, 0, 1179150, 0, 0, 1834548, 8, 0, 2686478, 2, 0, 3014196, 7, 0, 5766646, 6, 0, 5832200, 11, 0, 6159912, 7, 0, 6880776, 10, 0 )
+
+[node name="WaterPoundBodyTileMap" type="TileMap" parent="Harbor_world_objects/Middle_world_objects/Water_pound"]
+tile_set = ExtResource( 29 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( 5373438, 1, 0, 5373454, 1, 0, 5373470, 1, 0, 5373486, 1, 0 )
+
+[node name="WaterPoundTileMap" type="TileMap" parent="Harbor_world_objects/Middle_world_objects/Water_pound"]
+tile_set = ExtResource( 29 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( 4718062, 0, 0, 4718078, 0, 0, 4718094, 0, 0, 4718110, 0, 0, 4718126, 0, 0, 4718142, 0, 0, 5766654, 0, 0, 5766670, 0, 0, 5766686, 0, 0, 5766702, 0, 0 )
+
+[node name="Trees" type="Node2D" parent="Harbor_world_objects/Middle_world_objects"]
+
+[node name="Light_trees" type="Node2D" parent="Harbor_world_objects/Middle_world_objects/Trees"]
+
+[node name="Background_trees" type="Node2D" parent="Harbor_world_objects/Middle_world_objects/Trees"]
+
 [node name="Foreground_world_objects" type="Node2D" parent="Harbor_world_objects"]
 position = Vector2( -20, -192 )
+z_index = 1
+
+[node name="BridgeLogsSprite" type="Sprite" parent="Harbor_world_objects/Foreground_world_objects"]
+position = Vector2( 6, 259 )
+texture = ExtResource( 47 )
 
 [node name="Collisions" type="Node2D" parent="Harbor_world_objects"]
 visible = false
@@ -1143,6 +1285,9 @@ __meta__ = {
 [node name="GuardianIsland" type="KinematicBody2D" parent="."]
 position = Vector2( 103, -180 )
 script = ExtResource( 44 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GuardianIsland"]
 position = Vector2( 390, -199 )
@@ -1171,6 +1316,11 @@ shape = SubResource( 193 )
 wait_time = 15.0
 
 [node name="IslandLiftTween" type="Tween" parent="GuardianIsland"]
+
+[node name="VisibilityChecker" parent="GuardianIsland" instance=ExtResource( 32 )]
+visible = false
+position = Vector2( 392, 258 )
+scale = Vector2( 31.7, 72.5 )
 
 [node name="Background_world_objects" type="Node2D" parent="GuardianIsland"]
 
@@ -1373,7 +1523,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 4 )]
-position = Vector2( 330, -502 )
+position = Vector2( -419, -116 )
 
 [node name="Light2D2" type="Light2D" parent="Player"]
 visible = false
