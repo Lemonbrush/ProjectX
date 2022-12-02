@@ -1174,6 +1174,55 @@ wait_time = 15.0
 
 [node name="Background_world_objects" type="Node2D" parent="GuardianIsland"]
 
+[node name="Decorations" type="Node2D" parent="GuardianIsland/Background_world_objects"]
+
+[node name="Trees" type="Node2D" parent="GuardianIsland/Background_world_objects/Decorations"]
+
+[node name="Dark_trees" type="Node2D" parent="GuardianIsland/Background_world_objects/Decorations/Trees"]
+
+[node name="BackgroundWideTree" parent="GuardianIsland/Background_world_objects/Decorations/Trees/Dark_trees" instance=ExtResource( 21 )]
+position = Vector2( 307, -224 )
+
+[node name="BackgroundWideTree2" parent="GuardianIsland/Background_world_objects/Decorations/Trees/Dark_trees" instance=ExtResource( 21 )]
+position = Vector2( 498, -222 )
+
+[node name="BackgroundSmallTree" parent="GuardianIsland/Background_world_objects/Decorations/Trees/Dark_trees" instance=ExtResource( 19 )]
+position = Vector2( 583, -177 )
+
+[node name="BackgroundTallWideTree" parent="GuardianIsland/Background_world_objects/Decorations/Trees/Dark_trees" instance=ExtResource( 25 )]
+position = Vector2( 212, -180 )
+
+[node name="Light_trees" type="Node2D" parent="GuardianIsland/Background_world_objects/Decorations/Trees"]
+
+[node name="TallTree3" parent="GuardianIsland/Background_world_objects/Decorations/Trees/Light_trees" instance=ExtResource( 20 )]
+position = Vector2( 356, -257 )
+
+[node name="BushyTree" parent="GuardianIsland/Background_world_objects/Decorations/Trees/Light_trees" instance=ExtResource( 24 )]
+position = Vector2( 465, -239 )
+
+[node name="BushyTree2" parent="GuardianIsland/Background_world_objects/Decorations/Trees/Light_trees" instance=ExtResource( 24 )]
+position = Vector2( 105, -202 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+
+[node name="CurvedTree" parent="GuardianIsland/Background_world_objects/Decorations/Trees/Light_trees" instance=ExtResource( 23 )]
+position = Vector2( 428, -237 )
+
+[node name="CurvedTree3" parent="GuardianIsland/Background_world_objects/Decorations/Trees/Light_trees" instance=ExtResource( 23 )]
+position = Vector2( 239, -223 )
+
+[node name="CurvedTree2" parent="GuardianIsland/Background_world_objects/Decorations/Trees/Light_trees" instance=ExtResource( 23 )]
+position = Vector2( 666, -207 )
+
+[node name="SquashedTree" parent="GuardianIsland/Background_world_objects/Decorations/Trees/Light_trees" instance=ExtResource( 22 )]
+position = Vector2( 349, -238 )
+
+[node name="TallTree" parent="GuardianIsland/Background_world_objects/Decorations/Trees/Light_trees" instance=ExtResource( 20 )]
+position = Vector2( 168, -199 )
+
+[node name="TallTree2" parent="GuardianIsland/Background_world_objects/Decorations/Trees/Light_trees" instance=ExtResource( 20 )]
+position = Vector2( 604, -187 )
+
 [node name="Guardian_statue" parent="GuardianIsland/Background_world_objects" instance=ExtResource( 45 )]
 position = Vector2( 395, -239 )
 
@@ -1194,6 +1243,34 @@ cell_size = Vector2( 1, 1 )
 format = 1
 tile_data = PoolIntArray( -12648370, 536870916, 0, -12516706, 4, 0, -11271906, 9, 0, -10157460, 9, 0, -9371426, 0, 0, -9371124, 0, 0, -6028866, 9, 0 )
 
+[node name="DecorationsTileMap" type="TileMap" parent="GuardianIsland/World_objects/Decorations"]
+tile_set = ExtResource( 14 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -21560989, 78, 0, -19529299, 75, 0, -18153126, 77, 0, -18021967, 63, 0, -17956446, 64, 0, -17104427, 64, 0, -17039113, 64, 0, -16908073, 63, 0, -16711394, 24, 0, -16711360, 29, 0, -16711319, 536870953, 0, -16711302, 20, 0, -16711282, 23, 0, -16711264, 40, 0, -16711243, 536870933, 0, -16711210, 8, 0, -16580273, 63, 0, -15662896, 2, 0, -15662881, 4, 0, -15662874, 21, 0, -15662843, 21, 0, -15662787, 15, 0, -15662761, 536870933, 0, -15662733, 536870917, 0, -15662704, 536870941, 0, -15662683, 536870935, 0, -15662656, 31, 0, -15662622, 59, 0, -15662584, 536870938, 0, -15662536, 536870936, 0, -15597265, 60, 0, -15597135, 57, 0, -14614417, 24, 0, -14614395, 31, 0, -14614364, 5, 0, -14614340, 21, 0, -14614293, 23, 0, -14614276, 10, 0, -14614215, 22, 0, -14614183, 16, 0, -14614162, 6, 0, -14614133, 24, 0, -14614066, 536870935, 0, -14613987, 536870934, 0, -14613954, 536870943, 0, -14613918, 536870935, 0, -14613900, 536870941, 0, -14613874, 24, 0, -13565756, 57, 0, -13565663, 59, 0, -13565388, 59, 0, -13500001, 58, 0, -13499917, 57, 0, -13499778, 57, 0, -12517156, 72, 0, -12517125, 24, 0, -12517091, 74, 0, -12516962, 74, 0, -12516918, 24, 0, -12516768, 73, 0, -12385953, 536871025, 0, -12320612, 113, 0, -12320255, 536871023, 0, -12320148, 536871024, 0, -11468560, 60, 0, -11468448, 31, 0, -10354575, 66, 0, -10354034, 68, 0, -9764460, 77, 0, -9371281, 73, 0, -9371248, 29, 0, -9371232, 22, 0, -8322808, 72, 0, -8322668, 58, 0, -8322605, 23, 0, -8322586, 3, 0, -8322567, 2, 0, -7274082, 74, 0, -7274029, 58, 0, -7274009, 57, 0, -7273923, 74, 0, -6356736, 113, 0, -6225314, 72, 0, -5897731, 536871025, 0, -5111633, 67, 0, -4193755, 536870978, 0, -4128450, 72, 0, -4128348, 74, 0, -3079830, 73, 0 )
+
+[node name="Birds" type="Node2D" parent="GuardianIsland/World_objects/Decorations"]
+
+[node name="Bird" parent="GuardianIsland/World_objects/Decorations/Birds" instance=ExtResource( 30 )]
+position = Vector2( 395, -445 )
+
+[node name="Bird2" parent="GuardianIsland/World_objects/Decorations/Birds" instance=ExtResource( 30 )]
+position = Vector2( 484, -304 )
+
+[node name="Bird3" parent="GuardianIsland/World_objects/Decorations/Birds" instance=ExtResource( 30 )]
+position = Vector2( 268, -320 )
+
+[node name="Bird4" parent="GuardianIsland/World_objects/Decorations/Birds" instance=ExtResource( 30 )]
+position = Vector2( 97, -267 )
+scale = Vector2( -1, 1 )
+
+[node name="Bird5" parent="GuardianIsland/World_objects/Decorations/Birds" instance=ExtResource( 30 )]
+position = Vector2( 687, -320 )
+
+[node name="Bird6" parent="GuardianIsland/World_objects/Decorations/Birds" instance=ExtResource( 30 )]
+position = Vector2( 337, -327 )
+scale = Vector2( -1, 1 )
+
 [node name="Foreground_objects" type="Node2D" parent="GuardianIsland"]
 z_index = 1
 
@@ -1204,6 +1281,14 @@ tile_set = ExtResource( 13 )
 cell_size = Vector2( 1, 1 )
 format = 1
 tile_data = PoolIntArray( -10551218, 536870917, 0, -10419554, 5, 0, -9633506, 8, 0, -8454066, 536870917, 0, -8453524, 8, 0, -8322402, 5, 0, -7995106, 8, 0, -7274274, 1, 0, -7273972, 1, 0, -6749588, 8, 0, -6356914, 536870917, 0, -6356706, 8, 0, -6225250, 5, 0, -5177122, 1, 0, -5176820, 1, 0, -5045652, 8, 0, -4718306, 8, 0, -4324930, 8, 0, -4259762, 536870917, 0, -4128098, 5, 0, -3341716, 8, 0, -3079970, 1, 0, -3079906, 8, 0, -3079668, 1, 0, -2620994, 8, 0, -2162610, 536870917, 0, -2030946, 5, 0, -1637780, 8, 0, -1441506, 8, 0, -982818, 1, 0, -982516, 1, 0, -917058, 8, 0, -65458, 536870917, 0, 66156, 8, 0, 66206, 5, 0, 196894, 8, 0, 721342, 8, 0, 1114334, 1, 0, 1114636, 1, 0, 1770092, 8, 0, 1835294, 8, 0, 2031694, 536870917, 0, 2163358, 5, 0, 2359742, 8, 0, 3211486, 1, 0, 3211788, 1, 0, 3473694, 8, 0, 3474028, 8, 0, 3998142, 8, 0, 4128846, 536870917, 0, 4260510, 5, 0, 5112094, 8, 0, 5177964, 8, 0, 5308638, 1, 0, 5308940, 1, 0, 5636542, 8, 0, 6225998, 536870917, 0, 6357662, 5, 0, 6750494, 8, 0, 6881900, 8, 0, 7274942, 8, 0, 7405790, 1, 0, 7406092, 1, 0, 8323150, 536870917, 0, 8388894, 8, 0, 8454814, 5, 0, 8585836, 8, 0, 8913342, 8, 0, 9502942, 1, 0, 9503244, 1, 0, 10027294, 8, 0, 10289772, 8, 0, 10420302, 536870917, 0, 10551742, 8, 0, 10551966, 5, 0, 11600094, 1, 0, 11600396, 1, 0, 11665694, 8, 0, 11993708, 8, 0, 12190142, 8, 0, 12517454, 536870917, 0, 12649118, 5, 0, 13304094, 8, 0, 13697246, 1, 0, 13697548, 1, 0, 13697644, 8, 0, 13894078, 8, 0, 14614606, 536870917, 0, 14746270, 5, 0, 14942494, 8, 0, 15401580, 8, 0, 15598014, 8, 0, 15794398, 1, 0, 15794700, 1, 0, 16646430, 8, 0, 16711758, 536870917, 0, 16843422, 5, 0, 17039980, 8, 0, 17301950, 8, 0, 17891550, 1, 0, 17891852, 1, 0, 18350366, 8, 0, 18743916, 8, 0, 18808910, 536870917, 0, 18940574, 5, 0, 19005886, 8, 0, 19988702, 1, 0, 19989004, 1, 0, 20054302, 8, 0, 20447852, 8, 0, 20709822, 8, 0, 20906062, 536870917, 0, 21037726, 5, 0, 21758238, 8, 0, 22085854, 1, 0, 22086156, 1, 0, 22151788, 8, 0, 22413758, 8, 0, 23003214, 536870917, 0, 23134878, 5, 0, 23462174, 8, 0, 23855724, 8, 0, 24117694, 8, 0, 24183006, 1, 0, 24183308, 1, 0, 25034830, 536870917, 0, 25166110, 8, 0, 25232030, 5, 0, 25559660, 8, 0, 25821630, 8, 0, 26280158, 1, 0, 26280460, 1, 0, 26870046, 8, 0, 27131982, 536870917, 0, 27263596, 8, 0, 27329182, 5, 0, 27525566, 8, 0, 28377310, 1, 0, 28377612, 1, 0, 28573982, 8, 0, 28967532, 8, 0, 29229134, 536870917, 0, 29229502, 8, 0, 29426334, 5, 0, 30277918, 8, 0, 30474462, 1, 0, 30474764, 1, 0, 30671468, 8, 0, 30933438, 8, 0, 31326286, 536870917, 0, 31523486, 5, 0, 31981854, 8, 0, 32375404, 8, 0, 32571614, 1, 0, 32571916, 1, 0, 32637374, 8, 0, 33423438, 536870917, 0, 33620638, 5, 0, 33685790, 8, 0, 34079340, 8, 0, 34341310, 8, 0, 34668766, 1, 0, 34669068, 1, 0, 35389726, 8, 0, 35520590, 536870917, 0, 35717790, 5, 0, 35783276, 8, 0, 35979710, 8, 0, 36765918, 1, 0, 36766220, 1, 0, 37093662, 8, 0, 37487212, 8, 0, 37617742, 536870917, 0, 37683646, 8, 0, 37814942, 5, 0, 38797598, 8, 0, 38863070, 1, 0, 38863372, 1, 0, 39191148, 8, 0, 39387582, 8, 0, 39714894, 536870917, 0, 39912094, 5, 0, 40501534, 8, 0, 40895084, 8, 0, 40960222, 1, 0, 40960524, 1, 0, 41091518, 8, 0, 41812046, 536870917, 0, 42009246, 5, 0, 42205470, 8, 0, 42599020, 8, 0, 42729918, 8, 0, 43057374, 1, 0, 43057676, 1, 0, 43909198, 536870917, 0, 43909406, 8, 0, 44106398, 5, 0, 44302956, 8, 0, 44368318, 8, 0, 45154526, 1, 0, 45154828, 1, 0, 45613342, 8, 0, 46006350, 536870917, 0, 46006892, 8, 0, 46072254, 8, 0, 46203550, 5, 0, 47251678, 1, 0, 47251980, 1, 0, 47317278, 8, 0, 47710828, 8, 0, 47776190, 8, 0, 48103502, 536870917, 0, 48300702, 5, 0, 49021214, 8, 0, 49348830, 1, 0, 49349132, 1, 0, 49414764, 8, 0, 49480126, 8, 0, 50200654, 536870917, 0, 50397854, 5, 0, 50725150, 8, 0, 51118526, 8, 0, 51118700, 8, 0, 51445982, 1, 0, 51446284, 1, 0, 52495006, 5, 0, 52822462, 8, 0, 52822636, 8, 0, 53543134, 1, 0, 53543436, 1, 0, 54526572, 8, 0, 54592158, 5, 0, 55640588, 1, 0, 56230508, 8, 0, 56689310, 5, 0 )
+
+[node name="Trees" type="Node2D" parent="GuardianIsland/Foreground_objects/Decorations"]
+
+[node name="TallTree" parent="GuardianIsland/Foreground_objects/Decorations/Trees" instance=ExtResource( 20 )]
+position = Vector2( 542, -207 )
+
+[node name="TallTree2" parent="GuardianIsland/Foreground_objects/Decorations/Trees" instance=ExtResource( 20 )]
+position = Vector2( 281, -207 )
 
 [node name="Collisions" type="Node2D" parent="GuardianIsland"]
 
@@ -1323,6 +1408,15 @@ collision_layer = 64
 collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaterSurface/water"]
+position = Vector2( 1339.5, 220.5 )
+shape = SubResource( 75 )
+
+[node name="water2" type="Area2D" parent="WaterSurface"]
+position = Vector2( -622, 74 )
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterSurface/water2"]
 position = Vector2( 1339.5, 220.5 )
 shape = SubResource( 75 )
 
