@@ -1,9 +1,10 @@
-[gd_scene load_steps=90 format=2]
+[gd_scene load_steps=104 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=2]
 [ext_resource path="res://WorldObjects/Technical/Camera2D/Camera2D.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://WorldObjects/AbstractScenes/AbstractAirBlower.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Levels/Harbor_house.png" type="Texture" id=6]
 [ext_resource path="res://WorldObjects/Technical/Ladder/Ladder.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/WaterSurface/WaterAnim.tres" type="Texture" id=8]
@@ -115,8 +116,47 @@ scale = 1.5
 scale_curve = SubResource( 103 )
 color_ramp = SubResource( 102 )
 
+[sub_resource type="RectangleShape2D" id=200]
+extents = Vector2( 48.0312, 8 )
+
+[sub_resource type="RectangleShape2D" id=201]
+extents = Vector2( 16.0312, 8 )
+
+[sub_resource type="RectangleShape2D" id=202]
+extents = Vector2( 8.03125, 8 )
+
+[sub_resource type="RectangleShape2D" id=203]
+extents = Vector2( 104.031, 8 )
+
+[sub_resource type="RectangleShape2D" id=204]
+extents = Vector2( 88.0312, 8 )
+
+[sub_resource type="RectangleShape2D" id=205]
+extents = Vector2( 48.0312, 8 )
+
+[sub_resource type="RectangleShape2D" id=206]
+extents = Vector2( 32.0312, 8 )
+
+[sub_resource type="RectangleShape2D" id=207]
+extents = Vector2( 16.0312, 8 )
+
+[sub_resource type="RectangleShape2D" id=208]
+extents = Vector2( 54.0312, 3 )
+
+[sub_resource type="RectangleShape2D" id=209]
+extents = Vector2( 16.5312, 3.5 )
+
+[sub_resource type="RectangleShape2D" id=210]
+extents = Vector2( 33.5312, 3.5 )
+
 [sub_resource type="RectangleShape2D" id=48]
-extents = Vector2( 440.5, 8 )
+extents = Vector2( 328.5, 8 )
+
+[sub_resource type="RectangleShape2D" id=198]
+extents = Vector2( 80, 8 )
+
+[sub_resource type="RectangleShape2D" id=199]
+extents = Vector2( 32, 8 )
 
 [sub_resource type="ParticlesMaterial" id=172]
 emission_shape = 2
@@ -405,7 +445,7 @@ tile_data = PoolIntArray( 5373438, 1, 0, 5373454, 1, 0, 5373470, 1, 0, 5373486, 
 tile_set = ExtResource( 29 )
 cell_size = Vector2( 1, 1 )
 format = 1
-tile_data = PoolIntArray( 4718062, 0, 0, 4718078, 0, 0, 4718094, 0, 0, 4718110, 0, 0, 4718126, 0, 0, 4718142, 0, 0, 5766654, 0, 0, 5766670, 0, 0, 5766686, 0, 0, 5766702, 0, 0 )
+tile_data = PoolIntArray( 4718062, 0, 0, 4718078, 0, 0, 4718094, 0, 0, 4718110, 0, 0, 4718126, 0, 0, 4718142, 0, 0 )
 
 [node name="Trees" type="Node2D" parent="Harbor_world_objects/Middle_world_objects"]
 
@@ -417,6 +457,9 @@ tile_data = PoolIntArray( 4718062, 0, 0, 4718078, 0, 0, 4718094, 0, 0, 4718110, 
 
 [node name="Bird" parent="Harbor_world_objects/Middle_world_objects/Birds" instance=ExtResource( 30 )]
 position = Vector2( -573, -40 )
+
+[node name="Bird7" parent="Harbor_world_objects/Middle_world_objects/Birds" instance=ExtResource( 30 )]
+position = Vector2( -483, 90 )
 
 [node name="Bird3" parent="Harbor_world_objects/Middle_world_objects/Birds" instance=ExtResource( 30 )]
 position = Vector2( -334, -44 )
@@ -442,11 +485,114 @@ z_index = 1
 position = Vector2( 6, 259 )
 texture = ExtResource( 47 )
 
+[node name="Decorations" type="Node2D" parent="Harbor_world_objects/Foreground_world_objects"]
+
+[node name="PoundForegroundWaterTileMap" type="TileMap" parent="Harbor_world_objects/Foreground_world_objects/Decorations"]
+tile_set = ExtResource( 29 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( 5766654, 536870912, 0, 5766670, 536870912, 0, 5766686, 536870912, 0, 5766702, 536870912, 0 )
+
 [node name="Collisions" type="Node2D" parent="Harbor_world_objects"]
-visible = false
 position = Vector2( -48, 367 )
 
 [node name="PassTrough" type="Node2D" parent="Harbor_world_objects/Collisions"]
+
+[node name="PassThroughBody11" parent="Harbor_world_objects/Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 11 )]
+position = Vector2( -549, -485 )
+
+[node name="CollisionShape2D" parent="Harbor_world_objects/Collisions/PassTrough/PassThroughBody11" index="0"]
+position = Vector2( -1.03125, -1 )
+shape = SubResource( 200 )
+one_way_collision = true
+
+[node name="PassThroughBody12" parent="Harbor_world_objects/Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 11 )]
+position = Vector2( -517, -501 )
+
+[node name="CollisionShape2D" parent="Harbor_world_objects/Collisions/PassTrough/PassThroughBody12" index="0"]
+position = Vector2( -33.0312, -1 )
+shape = SubResource( 201 )
+one_way_collision = true
+
+[node name="PassThroughBody13" parent="Harbor_world_objects/Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 11 )]
+position = Vector2( -485, -549 )
+
+[node name="CollisionShape2D" parent="Harbor_world_objects/Collisions/PassTrough/PassThroughBody13" index="0"]
+position = Vector2( -41.0312, -1 )
+shape = SubResource( 202 )
+one_way_collision = true
+
+[node name="PassThroughBody14" parent="Harbor_world_objects/Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 11 )]
+position = Vector2( -469, -565 )
+
+[node name="CollisionShape2D" parent="Harbor_world_objects/Collisions/PassTrough/PassThroughBody14" index="0"]
+position = Vector2( 54.9688, -1 )
+shape = SubResource( 203 )
+one_way_collision = true
+
+[node name="PassThroughBody15" parent="Harbor_world_objects/Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 11 )]
+position = Vector2( -357, -485 )
+
+[node name="CollisionShape2D" parent="Harbor_world_objects/Collisions/PassTrough/PassThroughBody15" index="0"]
+position = Vector2( 38.9688, -1 )
+shape = SubResource( 204 )
+one_way_collision = true
+
+[node name="PassThroughBody16" parent="Harbor_world_objects/Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 11 )]
+position = Vector2( -309, -501 )
+
+[node name="CollisionShape2D" parent="Harbor_world_objects/Collisions/PassTrough/PassThroughBody16" index="0"]
+position = Vector2( -1.03125, -1 )
+shape = SubResource( 205 )
+one_way_collision = true
+
+[node name="PassThroughBody17" parent="Harbor_world_objects/Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 11 )]
+position = Vector2( -309, -533 )
+
+[node name="CollisionShape2D" parent="Harbor_world_objects/Collisions/PassTrough/PassThroughBody17" index="0"]
+position = Vector2( -17.0312, -1 )
+shape = SubResource( 206 )
+one_way_collision = true
+
+[node name="PassThroughBody18" parent="Harbor_world_objects/Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 11 )]
+position = Vector2( -293, -517 )
+
+[node name="CollisionShape2D" parent="Harbor_world_objects/Collisions/PassTrough/PassThroughBody18" index="0"]
+position = Vector2( -17.0312, -1 )
+shape = SubResource( 206 )
+one_way_collision = true
+
+[node name="PassThroughBody19" parent="Harbor_world_objects/Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 11 )]
+position = Vector2( -293, -549 )
+
+[node name="CollisionShape2D" parent="Harbor_world_objects/Collisions/PassTrough/PassThroughBody19" index="0"]
+position = Vector2( -33.0312, -1 )
+shape = SubResource( 207 )
+one_way_collision = true
+
+[node name="PassThroughBody20" parent="Harbor_world_objects/Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 11 )]
+position = Vector2( -408, -634 )
+
+[node name="CollisionShape2D" parent="Harbor_world_objects/Collisions/PassTrough/PassThroughBody20" index="0"]
+position = Vector2( 4.96875, -6 )
+shape = SubResource( 208 )
+one_way_collision = true
+
+[node name="PassThroughBody21" parent="Harbor_world_objects/Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 11 )]
+position = Vector2( -456, -589 )
+
+[node name="CollisionShape2D" parent="Harbor_world_objects/Collisions/PassTrough/PassThroughBody21" index="0"]
+position = Vector2( -32.5312, -5.5 )
+shape = SubResource( 209 )
+one_way_collision = true
+
+[node name="PassThroughBody22" parent="Harbor_world_objects/Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 11 )]
+position = Vector2( -475, -620 )
+
+[node name="CollisionShape2D" parent="Harbor_world_objects/Collisions/PassTrough/PassThroughBody22" index="0"]
+position = Vector2( -15, -4 )
+shape = SubResource( 210 )
+one_way_collision = true
 
 [node name="Solid" type="Node2D" parent="Harbor_world_objects/Collisions"]
 
@@ -456,14 +602,35 @@ collision_layer = 17
 collision_mask = 17
 
 [node name="CollisionShape2D" parent="Harbor_world_objects/Collisions/Solid/PassThroughBody_ex" index="0"]
-position = Vector2( 424.5, -8 )
+position = Vector2( 536.5, -8 )
 shape = SubResource( 48 )
+
+[node name="PassThroughBody_ex2" parent="Harbor_world_objects/Collisions/Solid" instance=ExtResource( 11 )]
+position = Vector2( -1351, -462 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Harbor_world_objects/Collisions/Solid/PassThroughBody_ex2" index="0"]
+position = Vector2( 785, -8 )
+shape = SubResource( 198 )
+
+[node name="PassThroughBody_ex3" parent="Harbor_world_objects/Collisions/Solid" instance=ExtResource( 11 )]
+position = Vector2( -1191, -446 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Harbor_world_objects/Collisions/Solid/PassThroughBody_ex3" index="0"]
+position = Vector2( 737, -8 )
+shape = SubResource( 199 )
 
 [node name="Ladders" type="Node2D" parent="Harbor_world_objects/Collisions"]
 position = Vector2( 48, -20 )
 
 [node name="AirBlowers" type="Node2D" parent="Harbor_world_objects/Collisions"]
 position = Vector2( -11, -11 )
+
+[node name="AirBeam" parent="Harbor_world_objects/Collisions/AirBlowers" instance=ExtResource( 5 )]
+position = Vector2( -497, -639 )
 
 [node name="CreatorHouseIsland" type="Node2D" parent="."]
 position = Vector2( -1023, -701 )
@@ -1328,6 +1495,7 @@ one_way_collision = true
 position = Vector2( 395, -248 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GuardianIsland/CameraFocusArea2D"]
+visible = false
 position = Vector2( -5, -88.5 )
 shape = SubResource( 193 )
 
@@ -1590,7 +1758,21 @@ margin_right = 5296.0
 margin_bottom = 344.0
 
 [editable path="Camera2D/Clouds"]
+[editable path="Harbor_world_objects/Collisions/PassTrough/PassThroughBody11"]
+[editable path="Harbor_world_objects/Collisions/PassTrough/PassThroughBody12"]
+[editable path="Harbor_world_objects/Collisions/PassTrough/PassThroughBody13"]
+[editable path="Harbor_world_objects/Collisions/PassTrough/PassThroughBody14"]
+[editable path="Harbor_world_objects/Collisions/PassTrough/PassThroughBody15"]
+[editable path="Harbor_world_objects/Collisions/PassTrough/PassThroughBody16"]
+[editable path="Harbor_world_objects/Collisions/PassTrough/PassThroughBody17"]
+[editable path="Harbor_world_objects/Collisions/PassTrough/PassThroughBody18"]
+[editable path="Harbor_world_objects/Collisions/PassTrough/PassThroughBody19"]
+[editable path="Harbor_world_objects/Collisions/PassTrough/PassThroughBody20"]
+[editable path="Harbor_world_objects/Collisions/PassTrough/PassThroughBody21"]
+[editable path="Harbor_world_objects/Collisions/PassTrough/PassThroughBody22"]
 [editable path="Harbor_world_objects/Collisions/Solid/PassThroughBody_ex"]
+[editable path="Harbor_world_objects/Collisions/Solid/PassThroughBody_ex2"]
+[editable path="Harbor_world_objects/Collisions/Solid/PassThroughBody_ex3"]
 [editable path="CreatorHouseIsland/Collisions/Solid/PassThroughBody18"]
 [editable path="CreatorHouseIsland/Collisions/Solid/PassThroughBody19"]
 [editable path="CreatorHouseIsland/Collisions/Solid/PassThroughBody20"]
