@@ -333,6 +333,11 @@ texture = ExtResource( 17 )
 
 [node name="Harbor_world_objects" type="Node2D" parent="."]
 
+[node name="VisibilityChecker" parent="Harbor_world_objects" instance=ExtResource( 32 )]
+visible = false
+position = Vector2( -262, -164.5 )
+scale = Vector2( 47.6, 24.65 )
+
 [node name="Background_world_objects" type="Node2D" parent="Harbor_world_objects"]
 position = Vector2( -20, -192 )
 
