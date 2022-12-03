@@ -36,8 +36,10 @@ func lift_island_down():
 		tween.interpolate_property(self, "position", position, bottomPosition, 15, Tween.TRANS_LINEAR, Tween.TRANS_LINEAR)
 		tween.start()
 
-func camera_focus_area_entered(_body):
-	EventBus.camera_focuse_animation(Vector2(1.5, 1.5), 1)
+func camera_focus_area_entered(body):
+	if body.get_name() == "Player":
+		EventBus.camera_focuse_animation(Vector2(1.5, 1.5), 1)
 
-func camera_focus_area_exited(_body):
-	EventBus.camera_focuse_animation(Vector2(1, 1), 1)
+func camera_focus_area_exited(body):
+	if body.get_name() == "Player":
+		EventBus.camera_focuse_animation(Vector2(1, 1), 1)
