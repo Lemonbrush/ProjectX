@@ -399,6 +399,12 @@ cell_size = Vector2( 1, 1 )
 format = 1
 tile_data = PoolIntArray( -2818426, 77, 0, -2031977, 33, 0, -1966456, 41, 0, -1900927, 40, 0 )
 
+[node name="BridgeLogsSprite" type="Sprite" parent="Harbor_world_objects/Background_world_objects"]
+modulate = Color( 0.505882, 0.313726, 0.313726, 1 )
+position = Vector2( 29, 259 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 47 )
+
 [node name="World_skin" type="Sprite" parent="Harbor_world_objects"]
 light_mask = 8193
 position = Vector2( -526, -192 )
@@ -482,6 +488,13 @@ position = Vector2( 5, 78 )
 position = Vector2( -479, -86 )
 scale = Vector2( -1, 1 )
 
+[node name="Destructables" type="Node2D" parent="Harbor_world_objects/Middle_world_objects"]
+
+[node name="Vases" type="Node2D" parent="Harbor_world_objects/Middle_world_objects/Destructables"]
+
+[node name="Vase" parent="Harbor_world_objects/Middle_world_objects/Destructables/Vases" instance=ExtResource( 33 )]
+position = Vector2( -581, 40 )
+
 [node name="Foreground_world_objects" type="Node2D" parent="Harbor_world_objects"]
 position = Vector2( -20, -192 )
 z_index = 1
@@ -499,6 +512,7 @@ format = 1
 tile_data = PoolIntArray( 5766654, 536870912, 0, 5766670, 536870912, 0, 5766686, 536870912, 0, 5766702, 536870912, 0 )
 
 [node name="Collisions" type="Node2D" parent="Harbor_world_objects"]
+visible = false
 position = Vector2( -48, 367 )
 
 [node name="PassTrough" type="Node2D" parent="Harbor_world_objects/Collisions"]
