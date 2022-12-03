@@ -409,9 +409,9 @@ position = Vector2( 29, 259 )
 scale = Vector2( -1, 1 )
 texture = ExtResource( 47 )
 
-[node name="World_skin" type="Sprite" parent="Harbor_world_objects"]
+[node name="Harbor_house_sprite" type="Sprite" parent="Harbor_world_objects"]
 light_mask = 8193
-position = Vector2( -526, -192 )
+position = Vector2( -252, -13 )
 texture = ExtResource( 6 )
 __meta__ = {
 "_edit_lock_": true
