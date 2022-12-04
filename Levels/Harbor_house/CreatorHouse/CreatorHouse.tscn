@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://Assets/Levels/Harbor_house/Rooms/Creator_house_rooms.png" type="Texture" id=1]
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Assets/BackgroundGradients/Blue_clouds.png" type="Texture" id=7]
 [ext_resource path="res://WorldObjects/Technical/Ladder/Ladder.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Resources/Tilesets/Resources/Decorations/Decorations.tres" type="TileSet" id=9]
+[ext_resource path="res://Assets/effects/WhiteSquare.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=11]
 
 [sub_resource type="CurveTexture" id=102]
 
@@ -47,6 +49,72 @@ extents = Vector2( 5, 18.5 )
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.5, 25.5 )
 
+[sub_resource type="Gradient" id=152]
+offsets = PoolRealArray( 0.00294118, 0.147059, 0.467647, 0.835294, 0.997059, 1 )
+colors = PoolColorArray( 0.964844, 0.650645, 0.206024, 1, 0.792969, 0.359628, 0.0117353, 1, 0.78125, 0.251676, 0.0677194, 1, 1, 1, 1, 0.694117, 1, 1, 1, 0.541176, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=96]
+gradient = SubResource( 152 )
+
+[sub_resource type="Curve" id=153]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.21134, 0.354712 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0393969 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=98]
+curve = SubResource( 153 )
+
+[sub_resource type="ParticlesMaterial" id=154]
+emission_shape = 2
+emission_box_extents = Vector3( 3, 2, 1 )
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 10.0
+gravity = Vector3( -10, 0, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 0.03
+angular_velocity = 10.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 4.0
+linear_accel_random = 1.0
+angle = 360.0
+angle_random = 1.0
+scale = 1.5
+scale_curve = SubResource( 98 )
+color_ramp = SubResource( 96 )
+
+[sub_resource type="Gradient" id=155]
+offsets = PoolRealArray( 0.00294118, 0.147059, 0.467647, 0.835294, 0.997059, 1 )
+colors = PoolColorArray( 0.964844, 0.650645, 0.206024, 1, 0.792969, 0.359628, 0.0117353, 1, 0.78125, 0.251676, 0.0677194, 1, 1, 1, 1, 0.694117, 1, 1, 1, 0.541176, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=115]
+gradient = SubResource( 155 )
+
+[sub_resource type="Curve" id=156]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.21134, 0.354712 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0393969 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=116]
+curve = SubResource( 156 )
+
+[sub_resource type="ParticlesMaterial" id=157]
+emission_shape = 2
+emission_box_extents = Vector3( 3, 2, 1 )
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 10.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 0.03
+angular_velocity = 250.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 4.0
+linear_accel_random = 1.0
+angle = 360.0
+angle_random = 1.0
+scale = 1.5
+scale_curve = SubResource( 116 )
+color_ramp = SubResource( 115 )
+
 [sub_resource type="RectangleShape2D" id=108]
 extents = Vector2( 8.25, 1.5 )
 
@@ -71,10 +139,10 @@ extents = Vector2( 20, 1.5 )
 [sub_resource type="RectangleShape2D" id=114]
 extents = Vector2( 18, 1.5 )
 
-[sub_resource type="RectangleShape2D" id=115]
+[sub_resource type="RectangleShape2D" id=158]
 extents = Vector2( 16, 1.5 )
 
-[sub_resource type="RectangleShape2D" id=116]
+[sub_resource type="RectangleShape2D" id=159]
 extents = Vector2( 14, 1.5 )
 
 [sub_resource type="RectangleShape2D" id=149]
@@ -218,7 +286,7 @@ process_material = SubResource( 107 )
 tile_set = ExtResource( 9 )
 cell_size = Vector2( 1, 1 )
 format = 1
-tile_data = PoolIntArray( -15990672, 39, 0, -15925132, 29, 0, -15925120, 40, 0 )
+tile_data = PoolIntArray( -15990672, 39, 0, -15925132, 29, 0, -15925120, 40, 0, 9633938, 23, 0, 20905834, 536870936, 0, 20905857, 536870941, 0, 20840459, 20, 0, 20840480, 31, 0 )
 
 [node name="WorldSprite" parent="." index="5"]
 texture = ExtResource( 1 )
@@ -260,6 +328,7 @@ position = Vector2( -2.5, -24 )
 scale = Vector2( 1.25, 2.4 )
 
 [node name="GatesBackground" parent="Middle_world_decorations/Doors/CreatorHouseTopFloorDoor" index="1"]
+visible = false
 margin_left = -14.0
 margin_top = -47.0
 margin_right = 9.0
@@ -284,6 +353,7 @@ position = Vector2( -2, -23.5 )
 scale = Vector2( 1, 2.35 )
 
 [node name="GatesBackground" parent="Middle_world_decorations/Doors/CreatorHouseThirdFloorDoor" index="1"]
+visible = false
 margin_left = -11.0
 margin_top = -46.0
 margin_right = 7.0
@@ -308,6 +378,7 @@ position = Vector2( 0.499996, -26 )
 scale = Vector2( 1.25, 2.6 )
 
 [node name="GatesBackground" parent="Middle_world_decorations/Doors/CreatorHouseFirstFloorDoorOne" index="1"]
+visible = false
 margin_left = -11.0
 margin_top = -51.0
 margin_right = 12.0
@@ -332,6 +403,7 @@ position = Vector2( 0.499996, -26 )
 scale = Vector2( 1.25, 2.6 )
 
 [node name="GatesBackground" parent="Middle_world_decorations/Doors/CreatorHouseFirstFloorDoorTwo" index="1"]
+visible = false
 margin_left = -11.0
 margin_top = -51.0
 margin_right = 12.0
@@ -346,6 +418,43 @@ shape = SubResource( 1 )
 [node name="InteractionPopup" parent="Middle_world_decorations/Doors/CreatorHouseFirstFloorDoorTwo" index="3"]
 position = Vector2( 1, -42 )
 
+[node name="fire" type="Particles2D" parent="Middle_world_decorations" index="1"]
+position = Vector2( 159, -218 )
+amount = 3
+randomness = 1.0
+process_material = SubResource( 154 )
+texture = ExtResource( 10 )
+
+[node name="Lamp_fires" type="Node2D" parent="Middle_world_decorations" index="2"]
+
+[node name="fire" type="Particles2D" parent="Middle_world_decorations/Lamp_fires" index="0"]
+position = Vector2( -223, 274 )
+amount = 20
+randomness = 1.0
+process_material = SubResource( 157 )
+texture = ExtResource( 10 )
+
+[node name="fire3" type="Particles2D" parent="Middle_world_decorations/Lamp_fires" index="1"]
+position = Vector2( -93, 275 )
+amount = 20
+randomness = 1.0
+process_material = SubResource( 157 )
+texture = ExtResource( 10 )
+
+[node name="fire5" type="Particles2D" parent="Middle_world_decorations/Lamp_fires" index="2"]
+position = Vector2( 33, 274 )
+amount = 20
+randomness = 1.0
+process_material = SubResource( 157 )
+texture = ExtResource( 10 )
+
+[node name="fire6" type="Particles2D" parent="Middle_world_decorations/Lamp_fires" index="3"]
+position = Vector2( 131, 274 )
+amount = 20
+randomness = 1.0
+process_material = SubResource( 157 )
+texture = ExtResource( 10 )
+
 [node name="Foreground_world_decorations" type="Node2D" parent="." index="7"]
 
 [node name="Player" parent="." index="8"]
@@ -355,6 +464,9 @@ z_index = 1
 [node name="Light2D2" parent="Player" index="5"]
 position = Vector2( -1, 10 )
 enabled = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Collisions" parent="." index="9"]
 visible = false
@@ -556,7 +668,7 @@ position = Vector2( 140, 7 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody84" index="0"]
 position = Vector2( -12, -0.5 )
-shape = SubResource( 115 )
+shape = SubResource( 158 )
 one_way_collision = true
 
 [node name="PassThroughBody85" parent="Collisions/PassTrough" index="25" groups=["passThroughObject"] instance=ExtResource( 4 )]
@@ -564,7 +676,7 @@ position = Vector2( 142, -7 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody85" index="0"]
 position = Vector2( -14, -0.5 )
-shape = SubResource( 116 )
+shape = SubResource( 159 )
 one_way_collision = true
 
 [node name="PassThroughBody86" parent="Collisions/PassTrough" index="26" groups=["passThroughObject"] instance=ExtResource( 4 )]
@@ -992,6 +1104,30 @@ position = Vector2( 90, -221 )
 [node name="CollisionShape2D" parent="Collisions/Ladders/Ladder3" index="0"]
 position = Vector2( 0, 47 )
 shape = SubResource( 148 )
+
+[node name="Light2D4" type="Light2D" parent="Lighting" index="0"]
+position = Vector2( -222, 280 )
+scale = Vector2( 0.0538967, 0.037664 )
+texture = ExtResource( 11 )
+energy = 0.7
+
+[node name="Light2D6" type="Light2D" parent="Lighting" index="1"]
+position = Vector2( -94, 282 )
+scale = Vector2( 0.0538967, 0.037664 )
+texture = ExtResource( 11 )
+energy = 0.7
+
+[node name="Light2D8" type="Light2D" parent="Lighting" index="2"]
+position = Vector2( 33, 281 )
+scale = Vector2( 0.0538967, 0.037664 )
+texture = ExtResource( 11 )
+energy = 0.7
+
+[node name="Light2D9" type="Light2D" parent="Lighting" index="3"]
+position = Vector2( 131, 281 )
+scale = Vector2( 0.0538967, 0.037664 )
+texture = ExtResource( 11 )
+energy = 0.7
 
 [editable path="Camera2D/Clouds2"]
 [editable path="Middle_world_decorations/Doors/CreatorHouseTopWindowDoor"]
