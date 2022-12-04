@@ -261,7 +261,7 @@ texture = ExtResource( 6 )
 centered = false
 
 [node name="CloudsSprite" type="Sprite" parent="ParallaxBackground" index="1"]
-position = Vector2( 380, 3 )
+position = Vector2( 380, 95 )
 scale = Vector2( 0.77, 0.77 )
 texture = ExtResource( 7 )
 
@@ -290,6 +290,9 @@ tile_data = PoolIntArray( -15990672, 39, 0, -15925132, 29, 0, -15925120, 40, 0, 
 
 [node name="WorldSprite" parent="." index="5"]
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Middle_world_decorations" type="Node2D" parent="." index="6"]
 
@@ -434,21 +437,35 @@ randomness = 1.0
 process_material = SubResource( 157 )
 texture = ExtResource( 10 )
 
-[node name="fire3" type="Particles2D" parent="Middle_world_decorations/Lamp_fires" index="1"]
+[node name="fire2" type="Particles2D" parent="Middle_world_decorations/Lamp_fires" index="1"]
+position = Vector2( 34, 98 )
+amount = 20
+randomness = 1.0
+process_material = SubResource( 157 )
+texture = ExtResource( 10 )
+
+[node name="fire4" type="Particles2D" parent="Middle_world_decorations/Lamp_fires" index="2"]
+position = Vector2( 129, -298 )
+amount = 20
+randomness = 1.0
+process_material = SubResource( 157 )
+texture = ExtResource( 10 )
+
+[node name="fire3" type="Particles2D" parent="Middle_world_decorations/Lamp_fires" index="3"]
 position = Vector2( -93, 275 )
 amount = 20
 randomness = 1.0
 process_material = SubResource( 157 )
 texture = ExtResource( 10 )
 
-[node name="fire5" type="Particles2D" parent="Middle_world_decorations/Lamp_fires" index="2"]
+[node name="fire5" type="Particles2D" parent="Middle_world_decorations/Lamp_fires" index="4"]
 position = Vector2( 33, 274 )
 amount = 20
 randomness = 1.0
 process_material = SubResource( 157 )
 texture = ExtResource( 10 )
 
-[node name="fire6" type="Particles2D" parent="Middle_world_decorations/Lamp_fires" index="3"]
+[node name="fire6" type="Particles2D" parent="Middle_world_decorations/Lamp_fires" index="5"]
 position = Vector2( 131, 274 )
 amount = 20
 randomness = 1.0
@@ -1110,24 +1127,63 @@ position = Vector2( -222, 280 )
 scale = Vector2( 0.0538967, 0.037664 )
 texture = ExtResource( 11 )
 energy = 0.7
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Light2D6" type="Light2D" parent="Lighting" index="1"]
 position = Vector2( -94, 282 )
 scale = Vector2( 0.0538967, 0.037664 )
 texture = ExtResource( 11 )
 energy = 0.7
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Light2D8" type="Light2D" parent="Lighting" index="2"]
+[node name="Light2D7" type="Light2D" parent="Lighting" index="2"]
+position = Vector2( 34, 100 )
+scale = Vector2( 0.0538967, 0.037664 )
+texture = ExtResource( 11 )
+energy = 0.7
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D10" type="Light2D" parent="Lighting" index="3"]
+position = Vector2( 129, -296 )
+scale = Vector2( 0.0538967, 0.037664 )
+texture = ExtResource( 11 )
+energy = 0.7
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D11" type="Light2D" parent="Lighting" index="4"]
+position = Vector2( 158, -218 )
+scale = Vector2( 0.0538967, 0.037664 )
+texture = ExtResource( 11 )
+energy = 0.7
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Light2D8" type="Light2D" parent="Lighting" index="5"]
 position = Vector2( 33, 281 )
 scale = Vector2( 0.0538967, 0.037664 )
 texture = ExtResource( 11 )
 energy = 0.7
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Light2D9" type="Light2D" parent="Lighting" index="3"]
+[node name="Light2D9" type="Light2D" parent="Lighting" index="6"]
 position = Vector2( 131, 281 )
 scale = Vector2( 0.0538967, 0.037664 )
 texture = ExtResource( 11 )
 energy = 0.7
+__meta__ = {
+"_edit_lock_": true
+}
 
 [editable path="Camera2D/Clouds2"]
 [editable path="Middle_world_decorations/Doors/CreatorHouseTopWindowDoor"]
