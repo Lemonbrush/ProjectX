@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=2]
+[gd_scene load_steps=108 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=2]
@@ -173,6 +173,18 @@ orbit_velocity_random = 0.0
 scale = 2.0
 color_ramp = SubResource( 169 )
 
+[sub_resource type="RectangleShape2D" id=214]
+extents = Vector2( 5, 23 )
+
+[sub_resource type="RectangleShape2D" id=213]
+extents = Vector2( 3.5, 25.5 )
+
+[sub_resource type="RectangleShape2D" id=211]
+extents = Vector2( 3.5, 25.5 )
+
+[sub_resource type="RectangleShape2D" id=212]
+extents = Vector2( 3.5, 25.5 )
+
 [sub_resource type="RectangleShape2D" id=173]
 extents = Vector2( 64, 8 )
 
@@ -332,6 +344,7 @@ scale = Vector2( 0.725426, 0.725426 )
 texture = ExtResource( 17 )
 
 [node name="Harbor_world_objects" type="Node2D" parent="."]
+position = Vector2( -9, 0 )
 
 [node name="VisibilityChecker" parent="Harbor_world_objects" instance=ExtResource( 32 )]
 visible = false
@@ -405,9 +418,9 @@ position = Vector2( 29, 259 )
 scale = Vector2( -1, 1 )
 texture = ExtResource( 47 )
 
-[node name="World_skin" type="Sprite" parent="Harbor_world_objects"]
+[node name="Harbor_house_sprite" type="Sprite" parent="Harbor_world_objects"]
 light_mask = 8193
-position = Vector2( -526, -192 )
+position = Vector2( -252, -13 )
 texture = ExtResource( 6 )
 __meta__ = {
 "_edit_lock_": true
@@ -840,6 +853,20 @@ tile_data = PoolIntArray( -21889122, 536870912, 0, -19791970, 536870913, 0, -176
 [node name="Bird" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Birds" instance=ExtResource( 30 )]
 position = Vector2( -539, -463 )
 
+[node name="Bird13" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Birds" instance=ExtResource( 30 )]
+position = Vector2( 230, -957 )
+
+[node name="Bird14" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Birds" instance=ExtResource( 30 )]
+position = Vector2( 133, -941 )
+scale = Vector2( -1, 1 )
+
+[node name="Bird15" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Birds" instance=ExtResource( 30 )]
+position = Vector2( 302, -942 )
+
+[node name="Bird16" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Birds" instance=ExtResource( 30 )]
+position = Vector2( 157, -1052 )
+scale = Vector2( -1, 1 )
+
 [node name="Bird2" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Birds" instance=ExtResource( 30 )]
 position = Vector2( -559, -461 )
 
@@ -1096,6 +1123,144 @@ moving_platform_apply_velocity_on_leave = 0
 [node name="Vase3" parent="CreatorHouseIsland/Middle_world_objects/Decorations/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
 position = Vector2( -426, -247 )
 moving_platform_apply_velocity_on_leave = 0
+
+[node name="Doors" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects"]
+
+[node name="CreatorHouseTopWindowDoor" parent="CreatorHouseIsland/Middle_world_objects/Doors" instance=ExtResource( 9 )]
+position = Vector2( 190, -957 )
+nextScenePath = "res://Levels/Harbor_house/CreatorHouse/CreatorHouse.tscn"
+nextDoorName = "CreatorHouseTopWindowDoor"
+
+[node name="VisibilityChecker" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseTopWindowDoor" index="0"]
+position = Vector2( -2.5, -24 )
+scale = Vector2( 1.25, 2.4 )
+
+[node name="GatesBackground" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseTopWindowDoor" index="1"]
+visible = false
+margin_left = -14.0
+margin_top = -47.0
+margin_right = 9.0
+
+[node name="CollisionShape2D" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseTopWindowDoor/InteractionController/Area2D" index="0"]
+position = Vector2( -2, -13 )
+shape = SubResource( 214 )
+
+[node name="InteractionPopup" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseTopWindowDoor" index="3"]
+position = Vector2( -1, -39 )
+
+[node name="CreatorHouseTopFloorDoor" parent="CreatorHouseIsland/Middle_world_objects/Doors" instance=ExtResource( 9 )]
+position = Vector2( 191, -862 )
+nextScenePath = "res://Levels/Harbor_house/CreatorHouse/CreatorHouse.tscn"
+nextDoorName = "CreatorHouseTopFloorDoor"
+
+[node name="VisibilityChecker" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseTopFloorDoor" index="0"]
+position = Vector2( -2.5, -24 )
+scale = Vector2( 1.25, 2.4 )
+
+[node name="GatesBackground" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseTopFloorDoor" index="1"]
+margin_left = -14.0
+margin_top = -47.0
+margin_right = 9.0
+
+[node name="Area2D" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseTopFloorDoor/InteractionController" index="0"]
+visible = false
+
+[node name="CollisionShape2D" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseTopFloorDoor/InteractionController/Area2D" index="0"]
+position = Vector2( 0.5, -15.5 )
+shape = SubResource( 213 )
+
+[node name="InteractionPopup" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseTopFloorDoor" index="3"]
+position = Vector2( -1, -39 )
+
+[node name="CreatorHouseFirstFloorDoorOne" parent="CreatorHouseIsland/Middle_world_objects/Doors" instance=ExtResource( 9 )]
+position = Vector2( -73, -390 )
+nextScenePath = "res://Levels/Harbor_house/CreatorHouse/CreatorHouse.tscn"
+nextDoorName = "CreatorHouseFirstFloorDoorOne"
+
+[node name="VisibilityChecker" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseFirstFloorDoorOne" index="0"]
+position = Vector2( 0.499996, -26 )
+scale = Vector2( 1.25, 2.6 )
+
+[node name="GatesBackground" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseFirstFloorDoorOne" index="1"]
+margin_left = -11.0
+margin_top = -51.0
+margin_right = 12.0
+
+[node name="Area2D" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseFirstFloorDoorOne/InteractionController" index="0"]
+visible = false
+
+[node name="CollisionShape2D" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseFirstFloorDoorOne/InteractionController/Area2D" index="0"]
+position = Vector2( 0.5, -15.5 )
+shape = SubResource( 211 )
+
+[node name="InteractionPopup" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseFirstFloorDoorOne" index="3"]
+position = Vector2( 1, -42 )
+
+[node name="TextureRect" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseFirstFloorDoorOne/InteractionPopup/MarginNode/CenterContainer/HBoxContainer" index="0"]
+light_mask = 0
+
+[node name="Label" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseFirstFloorDoorOne/InteractionPopup/MarginNode/CenterContainer/HBoxContainer" index="1"]
+light_mask = 0
+
+[node name="CreatorHouseFirstFloorDoorTwo" parent="CreatorHouseIsland/Middle_world_objects/Doors" instance=ExtResource( 9 )]
+position = Vector2( 91, -390 )
+nextScenePath = "res://Levels/Harbor_house/CreatorHouse/CreatorHouse.tscn"
+nextDoorName = "CreatorHouseFirstFloorDoorTwo"
+
+[node name="VisibilityChecker" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseFirstFloorDoorTwo" index="0"]
+position = Vector2( 0.499996, -26 )
+scale = Vector2( 1.25, 2.6 )
+
+[node name="GatesBackground" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseFirstFloorDoorTwo" index="1"]
+margin_left = -11.0
+margin_top = -51.0
+margin_right = 12.0
+
+[node name="Area2D" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseFirstFloorDoorTwo/InteractionController" index="0"]
+visible = false
+
+[node name="CollisionShape2D" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseFirstFloorDoorTwo/InteractionController/Area2D" index="0"]
+position = Vector2( 0.5, -15.5 )
+shape = SubResource( 211 )
+
+[node name="InteractionPopup" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseFirstFloorDoorTwo" index="3"]
+position = Vector2( 1, -42 )
+
+[node name="TextureRect" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseFirstFloorDoorTwo/InteractionPopup/MarginNode/CenterContainer/HBoxContainer" index="0"]
+light_mask = 0
+
+[node name="Label" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseFirstFloorDoorTwo/InteractionPopup/MarginNode/CenterContainer/HBoxContainer" index="1"]
+light_mask = 0
+
+[node name="CreatorHouseThirdFloorDoor" parent="CreatorHouseIsland/Middle_world_objects/Doors" instance=ExtResource( 9 )]
+position = Vector2( 210, -572 )
+nextScenePath = "res://Levels/Harbor_house/CreatorHouse/CreatorHouse.tscn"
+nextDoorName = "CreatorHouseThirdFloorDoor"
+
+[node name="VisibilityChecker" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseThirdFloorDoor" index="0"]
+position = Vector2( -2, -23.5 )
+scale = Vector2( 1, 2.35 )
+
+[node name="GatesBackground" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseThirdFloorDoor" index="1"]
+margin_left = -11.0
+margin_top = -46.0
+margin_right = 7.0
+
+[node name="Area2D" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseThirdFloorDoor/InteractionController" index="0"]
+visible = false
+
+[node name="CollisionShape2D" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseThirdFloorDoor/InteractionController/Area2D" index="0"]
+position = Vector2( 0.5, -15.5 )
+shape = SubResource( 212 )
+
+[node name="InteractionPopup" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseThirdFloorDoor" index="3"]
+position = Vector2( -1, -39 )
+
+[node name="TextureRect" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseThirdFloorDoor/InteractionPopup/MarginNode/CenterContainer/HBoxContainer" index="0"]
+light_mask = 0
+
+[node name="Label" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseThirdFloorDoor/InteractionPopup/MarginNode/CenterContainer/HBoxContainer" index="1"]
+light_mask = 0
 
 [node name="Foreground_world_objects" type="Node2D" parent="CreatorHouseIsland"]
 z_index = 1
@@ -1729,7 +1894,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 4 )]
-position = Vector2( -419, -116 )
+position = Vector2( -683, -1139 )
 
 [node name="WaterSurface" type="Node2D" parent="."]
 pause_mode = 2
@@ -1792,6 +1957,19 @@ margin_bottom = 344.0
 [editable path="Harbor_world_objects/Collisions/Solid/PassThroughBody_ex"]
 [editable path="Harbor_world_objects/Collisions/Solid/PassThroughBody_ex2"]
 [editable path="Harbor_world_objects/Collisions/Solid/PassThroughBody_ex3"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseTopWindowDoor"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseTopWindowDoor/InteractionController"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseTopFloorDoor"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseTopFloorDoor/InteractionController"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseFirstFloorDoorOne"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseFirstFloorDoorOne/InteractionController"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseFirstFloorDoorOne/InteractionPopup"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseFirstFloorDoorTwo"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseFirstFloorDoorTwo/InteractionController"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseFirstFloorDoorTwo/InteractionPopup"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseThirdFloorDoor"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseThirdFloorDoor/InteractionController"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseThirdFloorDoor/InteractionPopup"]
 [editable path="CreatorHouseIsland/Collisions/Solid/PassThroughBody18"]
 [editable path="CreatorHouseIsland/Collisions/Solid/PassThroughBody19"]
 [editable path="CreatorHouseIsland/Collisions/Solid/PassThroughBody20"]
