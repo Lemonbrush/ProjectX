@@ -1262,6 +1262,11 @@ light_mask = 0
 [node name="Label" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseThirdFloorDoor/InteractionPopup/MarginNode/CenterContainer/HBoxContainer" index="1"]
 light_mask = 0
 
+[node name="DwellersHouseDoor" parent="CreatorHouseIsland/Middle_world_objects/Doors" instance=ExtResource( 9 )]
+position = Vector2( -267, -239 )
+nextScenePath = "res://Levels/Harbor_house/Dwellers_house/Dwellers_house.tscn"
+nextDoorName = "DwellersHouseDoor"
+
 [node name="Foreground_world_objects" type="Node2D" parent="CreatorHouseIsland"]
 z_index = 1
 
