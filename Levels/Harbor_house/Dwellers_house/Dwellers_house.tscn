@@ -22,7 +22,7 @@ extents = Vector2( 13, 0.5 )
 extents = Vector2( 92, 3.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 133.5, 3.5 )
+extents = Vector2( 120.5, 3.5 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 3.5, 44 )
@@ -34,7 +34,7 @@ extents = Vector2( 3.5, 37.5 )
 extents = Vector2( 3.5, 29 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 221, 3.5 )
+extents = Vector2( 208, 3.5 )
 
 [node name="Dwellers_house" instance=ExtResource( 1 )]
 
@@ -101,6 +101,9 @@ collision_mask = 3
 [node name="Crate" parent="Middle_world_objects/Desctructable_objects/Crates" index="7" instance=ExtResource( 7 )]
 position = Vector2( 27, -7 )
 
+[node name="Crate9" parent="Middle_world_objects/Desctructable_objects/Crates" index="8" instance=ExtResource( 7 )]
+position = Vector2( 75, 28 )
+
 [node name="Barrels" type="Node2D" parent="Middle_world_objects/Desctructable_objects" index="1"]
 
 [node name="Barrel" parent="Middle_world_objects/Desctructable_objects/Barrels" index="0" instance=ExtResource( 6 )]
@@ -111,6 +114,9 @@ position = Vector2( 78, -45 )
 
 [node name="Background_barrel" parent="Middle_world_objects/Desctructable_objects/Barrels" index="2" instance=ExtResource( 8 )]
 position = Vector2( 65, -29 )
+
+[node name="Background_barrel2" parent="Middle_world_objects/Desctructable_objects/Barrels" index="3" instance=ExtResource( 8 )]
+position = Vector2( 59, 27 )
 
 [node name="Player" parent="." index="6"]
 position = Vector2( 119, 29 )
@@ -161,7 +167,7 @@ collision_layer = 17
 collision_mask = 17
 
 [node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody20" index="0"]
-position = Vector2( 54.5, 0.5 )
+position = Vector2( 41.5, 0.5 )
 shape = SubResource( 2 )
 
 [node name="PassThroughBody21" parent="Collisions/Solid" index="2" instance=ExtResource( 4 )]
@@ -170,7 +176,7 @@ collision_layer = 17
 collision_mask = 17
 
 [node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody21" index="0"]
-position = Vector2( 0.5, 11 )
+position = Vector2( -25.5, 11 )
 shape = SubResource( 3 )
 
 [node name="PassThroughBody22" parent="Collisions/Solid" index="3" instance=ExtResource( 4 )]
@@ -206,7 +212,7 @@ collision_layer = 17
 collision_mask = 17
 
 [node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody19" index="0"]
-position = Vector2( 142, 0.5 )
+position = Vector2( 129, 0.5 )
 shape = SubResource( 6 )
 
 [node name="Ladders" type="Node2D" parent="Collisions" index="2"]
