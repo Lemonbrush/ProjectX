@@ -9,3 +9,6 @@ background_object = true
 
 [node name="Sprite" parent="." index="4"]
 modulate = Color( 0.67451, 0.580392, 0.580392, 1 )
+
+[node name="CollisionShape2D" parent="." index="5"]
+visible = true
