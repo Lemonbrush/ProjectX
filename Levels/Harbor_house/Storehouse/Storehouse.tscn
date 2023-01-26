@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Assets/Levels/Harbor_house/Rooms/Dwellers_second_house_sprite.png" type="Texture" id=1]
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://WorldObjects/Destructables/Barrel/Barrel.tscn" type="PackedScene" id=9]
 [ext_resource path="res://WorldObjects/Destructables/Barrel/Background_barrel/Background_barrel.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/Levels/Harbor_house/World_objects/Meat_ropes.png" type="Texture" id=11]
+[ext_resource path="res://WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=12]
 
 [sub_resource type="CurveTexture" id=7]
 
@@ -42,6 +43,9 @@ color_ramp = SubResource( 8 )
 anim_offset = 1.0
 anim_offset_random = 1.0
 anim_offset_curve = SubResource( 7 )
+
+[sub_resource type="RectangleShape2D" id=131]
+extents = Vector2( 3, 15 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 22.5, 1 )
@@ -213,6 +217,18 @@ position = Vector2( 143, -30 )
 
 [node name="Barrel3" parent="Middle_world_objects/Barrels" index="2" instance=ExtResource( 9 )]
 position = Vector2( 130, -15 )
+
+[node name="KitchenDwellersHouseDoor" parent="Middle_world_objects" index="3" instance=ExtResource( 12 )]
+position = Vector2( 54, -5 )
+nextScenePath = "res://Levels/Harbor_house/Harbor_house.tscn"
+nextDoorName = "KitchenDwellersHouseDoor"
+
+[node name="GatesBackground" parent="Middle_world_objects/KitchenDwellersHouseDoor" index="1"]
+margin_bottom = -2.0
+
+[node name="CollisionShape2D" parent="Middle_world_objects/KitchenDwellersHouseDoor/InteractionController/Area2D" index="0"]
+position = Vector2( 0, -7 )
+shape = SubResource( 131 )
 
 [node name="Collisions" parent="." index="7"]
 visible = false
@@ -461,6 +477,8 @@ position = Vector2( 127, -30 )
 position = Vector2( 116, -15 )
 
 [editable path="Camera2D/Clouds"]
+[editable path="Middle_world_objects/KitchenDwellersHouseDoor"]
+[editable path="Middle_world_objects/KitchenDwellersHouseDoor/InteractionController"]
 [editable path="Collisions/PassTrough/PassThroughBody14"]
 [editable path="Collisions/PassTrough/PassThroughBody15"]
 [editable path="Collisions/PassTrough/PassThroughBody16"]

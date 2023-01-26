@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=2]
+[gd_scene load_steps=109 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=2]
@@ -184,6 +184,9 @@ extents = Vector2( 3.5, 25.5 )
 
 [sub_resource type="RectangleShape2D" id=212]
 extents = Vector2( 3.5, 25.5 )
+
+[sub_resource type="RectangleShape2D" id=215]
+extents = Vector2( 3, 16 )
 
 [sub_resource type="RectangleShape2D" id=173]
 extents = Vector2( 64, 8 )
@@ -666,9 +669,6 @@ position = Vector2( -497, -639 )
 
 [node name="CreatorHouseIsland" type="Node2D" parent="."]
 position = Vector2( -1023, -701 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="VisibilityChecker" parent="CreatorHouseIsland" instance=ExtResource( 32 )]
 visible = false
@@ -1266,6 +1266,14 @@ light_mask = 0
 position = Vector2( -267, -239 )
 nextScenePath = "res://Levels/Harbor_house/Dwellers_house/Dwellers_house.tscn"
 nextDoorName = "DwellersHouseDoor"
+
+[node name="KitchenDwellersHouseDoor" parent="CreatorHouseIsland/Middle_world_objects/Doors" instance=ExtResource( 9 )]
+position = Vector2( -11, -239 )
+nextScenePath = "res://Levels/Harbor_house/Storehouse/Storehouse.tscn"
+nextDoorName = "KitchenDwellersHouseDoor"
+
+[node name="CollisionShape2D" parent="CreatorHouseIsland/Middle_world_objects/Doors/KitchenDwellersHouseDoor/InteractionController/Area2D" index="0"]
+shape = SubResource( 215 )
 
 [node name="Foreground_world_objects" type="Node2D" parent="CreatorHouseIsland"]
 z_index = 1
@@ -1975,6 +1983,8 @@ margin_bottom = 344.0
 [editable path="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseThirdFloorDoor"]
 [editable path="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseThirdFloorDoor/InteractionController"]
 [editable path="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseThirdFloorDoor/InteractionPopup"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Doors/KitchenDwellersHouseDoor"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Doors/KitchenDwellersHouseDoor/InteractionController"]
 [editable path="CreatorHouseIsland/Collisions/Solid/PassThroughBody18"]
 [editable path="CreatorHouseIsland/Collisions/Solid/PassThroughBody19"]
 [editable path="CreatorHouseIsland/Collisions/Solid/PassThroughBody20"]
