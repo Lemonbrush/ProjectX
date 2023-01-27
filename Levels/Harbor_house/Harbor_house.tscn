@@ -154,38 +154,6 @@ scale = 1.5
 scale_curve = SubResource( 103 )
 color_ramp = SubResource( 102 )
 
-[sub_resource type="Animation" id=216]
-resource_name = "Idle"
-length = 1.3
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Body/Body:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
-}
-
-[sub_resource type="Animation" id=217]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Body/Body:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
-
 [sub_resource type="Resource" id=223]
 resource_local_to_scene = true
 script = ExtResource( 52 )
@@ -257,6 +225,38 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 13, 14, 15, 16, 17, 18 ]
+}
+
+[sub_resource type="Animation" id=216]
+resource_name = "Idle"
+length = 1.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
+}
+
+[sub_resource type="Animation" id=217]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
 }
 
 [sub_resource type="RectangleShape2D" id=200]
@@ -340,10 +340,10 @@ extents = Vector2( 848, 8 )
 [sub_resource type="RectangleShape2D" id=175]
 extents = Vector2( 912, 8 )
 
-[sub_resource type="RectangleShape2D" id=186]
+[sub_resource type="RectangleShape2D" id=230]
 extents = Vector2( 56.75, 8 )
 
-[sub_resource type="RectangleShape2D" id=187]
+[sub_resource type="RectangleShape2D" id=231]
 extents = Vector2( 23.75, 3.5 )
 
 [sub_resource type="RectangleShape2D" id=189]
@@ -458,7 +458,7 @@ shader_param/blur_amount = 3.162
 shader_param/mix_amount = 0.33
 shader_param/color_over = Color( 0, 0, 0, 1 )
 
-[node name="Harbor_house" type="Node"]
+[node name="Harbor_house" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -665,9 +665,31 @@ scale = Vector2( -1, 1 )
 position = Vector2( -581, 40 )
 
 [node name="Dwellers" type="Node2D" parent="Harbor_world_objects/Middle_world_objects"]
+position = Vector2( 29, 192 )
+
+[node name="FisherWifeDweller" parent="Harbor_world_objects/Middle_world_objects/Dwellers" instance=ExtResource( 49 )]
+position = Vector2( 172, -113 )
+collision_layer = 3
+collision_mask = 0
+actions = [ SubResource( 223 ), SubResource( 224 ), SubResource( 225 ), SubResource( 226 ) ]
+defaultDirection = -1
+
+[node name="Sprite" type="Sprite" parent="Harbor_world_objects/Middle_world_objects/Dwellers/FisherWifeDweller/Body" index="0"]
+position = Vector2( -1, -16 )
+texture = ExtResource( 51 )
+hframes = 13
+vframes = 4
+
+[node name="InteractionController" parent="Harbor_world_objects/Middle_world_objects/Dwellers/FisherWifeDweller/Body" index="2"]
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Harbor_world_objects/Middle_world_objects/Dwellers/FisherWifeDweller"]
+anims/Idle = SubResource( 220 )
+anims/RESET = SubResource( 221 )
+anims/Walk = SubResource( 222 )
 
 [node name="FisherDweller" parent="Harbor_world_objects/Middle_world_objects/Dwellers" instance=ExtResource( 49 )]
-position = Vector2( -663, 81 )
+position = Vector2( -693, -111 )
 collision_layer = 3
 collision_mask = 0
 watch_player_on_talk = false
@@ -689,26 +711,6 @@ visible = false
 autoplay = "Idle"
 anims/Idle = SubResource( 216 )
 anims/RESET = SubResource( 217 )
-
-[node name="FisherWifeDweller" parent="Harbor_world_objects/Middle_world_objects/Dwellers" instance=ExtResource( 49 )]
-position = Vector2( 184, 77 )
-collision_layer = 3
-collision_mask = 0
-actions = [ SubResource( 223 ), SubResource( 224 ), SubResource( 225 ), SubResource( 226 ) ]
-
-[node name="Sprite" type="Sprite" parent="Harbor_world_objects/Middle_world_objects/Dwellers/FisherWifeDweller/Body" index="0"]
-position = Vector2( 2, -16 )
-texture = ExtResource( 51 )
-hframes = 13
-vframes = 4
-
-[node name="VisibilityChecker" parent="Harbor_world_objects/Middle_world_objects/Dwellers/FisherWifeDweller/Body" index="1"]
-visible = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Harbor_world_objects/Middle_world_objects/Dwellers/FisherWifeDweller"]
-anims/Idle = SubResource( 220 )
-anims/RESET = SubResource( 221 )
-anims/Walk = SubResource( 222 )
 
 [node name="Foreground_world_objects" type="Node2D" parent="Harbor_world_objects"]
 position = Vector2( -20, -192 )
@@ -1571,7 +1573,7 @@ collision_mask = 17
 
 [node name="CollisionShape2D" parent="CreatorHouseIsland/Collisions/Solid/PassThroughBody21" index="0"]
 position = Vector2( -79.75, -7 )
-shape = SubResource( 186 )
+shape = SubResource( 230 )
 
 [node name="PassThroughBody22" parent="CreatorHouseIsland/Collisions/Solid" instance=ExtResource( 11 )]
 position = Vector2( 395, -557 )
@@ -1580,7 +1582,7 @@ collision_mask = 17
 
 [node name="CollisionShape2D" parent="CreatorHouseIsland/Collisions/Solid/PassThroughBody22" index="0"]
 position = Vector2( -112.75, -11.5 )
-shape = SubResource( 187 )
+shape = SubResource( 231 )
 
 [node name="PassThroughBody24" parent="CreatorHouseIsland/Collisions/Solid" instance=ExtResource( 11 )]
 position = Vector2( 232, -847 )
@@ -2154,10 +2156,10 @@ margin_right = 5296.0
 margin_bottom = 344.0
 
 [editable path="Camera2D/Clouds"]
-[editable path="Harbor_world_objects/Middle_world_objects/Dwellers/FisherDweller"]
-[editable path="Harbor_world_objects/Middle_world_objects/Dwellers/FisherDweller/Body/InteractionController"]
 [editable path="Harbor_world_objects/Middle_world_objects/Dwellers/FisherWifeDweller"]
 [editable path="Harbor_world_objects/Middle_world_objects/Dwellers/FisherWifeDweller/Body/InteractionController"]
+[editable path="Harbor_world_objects/Middle_world_objects/Dwellers/FisherDweller"]
+[editable path="Harbor_world_objects/Middle_world_objects/Dwellers/FisherDweller/Body/InteractionController"]
 [editable path="Harbor_world_objects/Collisions/PassTrough/PassThroughBody11"]
 [editable path="Harbor_world_objects/Collisions/PassTrough/PassThroughBody12"]
 [editable path="Harbor_world_objects/Collisions/PassTrough/PassThroughBody13"]
