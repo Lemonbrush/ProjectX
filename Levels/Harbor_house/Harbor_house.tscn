@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=2]
+[gd_scene load_steps=126 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=2]
@@ -50,6 +50,9 @@
 [ext_resource path="res://Assets/NPC/FisherDwellerSprite-Sheet.png" type="Texture" id=48]
 [ext_resource path="res://Dweller/Abstract_dweller/AbstractDweller.tscn" type="PackedScene" id=49]
 [ext_resource path="res://Assets/Levels/Harbor_house/World_objects/Fishing_rod-Sheet.png" type="Texture" id=50]
+[ext_resource path="res://Assets/NPC/FisherWifeDwellerSprite-Sheet.png" type="Texture" id=51]
+[ext_resource path="res://Dweller/NpcActions/idle/idle_npc_action.gd" type="Script" id=52]
+[ext_resource path="res://Dweller/NpcActions/walk/Walk_npc_action.gd" type="Script" id=53]
 
 [sub_resource type="Animation" id=38]
 resource_name = "Gate_opening_cut_scene"
@@ -181,6 +184,79 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0 ]
+}
+
+[sub_resource type="Resource" id=223]
+resource_local_to_scene = true
+script = ExtResource( 52 )
+wait_time = 3.0
+is_infinite = false
+
+[sub_resource type="Resource" id=224]
+resource_local_to_scene = true
+script = ExtResource( 53 )
+move_speed = 20
+target_x_position = -400
+
+[sub_resource type="Resource" id=225]
+resource_local_to_scene = true
+script = ExtResource( 52 )
+wait_time = 3.0
+is_infinite = false
+
+[sub_resource type="Resource" id=226]
+resource_local_to_scene = true
+script = ExtResource( 53 )
+move_speed = 20
+target_x_position = 150
+
+[sub_resource type="Animation" id=220]
+resource_name = "Idle"
+length = 1.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
+}
+
+[sub_resource type="Animation" id=221]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=222]
+resource_name = "Walk"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 13, 14, 15, 16, 17, 18 ]
 }
 
 [sub_resource type="RectangleShape2D" id=200]
@@ -613,6 +689,26 @@ visible = false
 autoplay = "Idle"
 anims/Idle = SubResource( 216 )
 anims/RESET = SubResource( 217 )
+
+[node name="FisherWifeDweller" parent="Harbor_world_objects/Middle_world_objects/Dwellers" instance=ExtResource( 49 )]
+position = Vector2( 184, 77 )
+collision_layer = 3
+collision_mask = 0
+actions = [ SubResource( 223 ), SubResource( 224 ), SubResource( 225 ), SubResource( 226 ) ]
+
+[node name="Sprite" type="Sprite" parent="Harbor_world_objects/Middle_world_objects/Dwellers/FisherWifeDweller/Body" index="0"]
+position = Vector2( 2, -16 )
+texture = ExtResource( 51 )
+hframes = 13
+vframes = 4
+
+[node name="VisibilityChecker" parent="Harbor_world_objects/Middle_world_objects/Dwellers/FisherWifeDweller/Body" index="1"]
+visible = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Harbor_world_objects/Middle_world_objects/Dwellers/FisherWifeDweller"]
+anims/Idle = SubResource( 220 )
+anims/RESET = SubResource( 221 )
+anims/Walk = SubResource( 222 )
 
 [node name="Foreground_world_objects" type="Node2D" parent="Harbor_world_objects"]
 position = Vector2( -20, -192 )
@@ -2062,6 +2158,8 @@ margin_bottom = 344.0
 [editable path="Camera2D/Clouds"]
 [editable path="Harbor_world_objects/Middle_world_objects/Dwellers/FisherDweller"]
 [editable path="Harbor_world_objects/Middle_world_objects/Dwellers/FisherDweller/Body/InteractionController"]
+[editable path="Harbor_world_objects/Middle_world_objects/Dwellers/FisherWifeDweller"]
+[editable path="Harbor_world_objects/Middle_world_objects/Dwellers/FisherWifeDweller/Body/InteractionController"]
 [editable path="Harbor_world_objects/Collisions/PassTrough/PassThroughBody11"]
 [editable path="Harbor_world_objects/Collisions/PassTrough/PassThroughBody12"]
 [editable path="Harbor_world_objects/Collisions/PassTrough/PassThroughBody13"]
