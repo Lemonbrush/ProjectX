@@ -2176,8 +2176,6 @@ anims/Walk = SubResource( 209 )
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 5 )]
 position = Vector2( 54, -58 )
 z_index = 2
-collision_layer = 131
-collision_mask = 108
 
 [node name="Light2D2" type="Light2D" parent="Player"]
 visible = false
