@@ -1945,12 +1945,6 @@ anims/Walk = SubResource( 252 )
 position = Vector2( -662, -940 )
 actions = [ SubResource( 261 ), SubResource( 262 ), SubResource( 263 ), SubResource( 264 ) ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CreatorHouseIsland/Middle_world_objects/Dwellers/FlatHatDweller"]
-autoplay = "Idle"
-anims/Idle = SubResource( 265 )
-anims/RESET = SubResource( 266 )
-anims/Walk = SubResource( 267 )
-
 [node name="Sprite" type="Sprite" parent="CreatorHouseIsland/Middle_world_objects/Dwellers/FlatHatDweller/Body" index="0"]
 position = Vector2( 0, -16 )
 texture = ExtResource( 60 )
@@ -1959,6 +1953,12 @@ vframes = 4
 
 [node name="InteractionController" parent="CreatorHouseIsland/Middle_world_objects/Dwellers/FlatHatDweller/Body" index="2"]
 visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CreatorHouseIsland/Middle_world_objects/Dwellers/FlatHatDweller"]
+autoplay = "Idle"
+anims/Idle = SubResource( 265 )
+anims/RESET = SubResource( 266 )
+anims/Walk = SubResource( 267 )
 
 [node name="chain2" type="Sprite" parent="CreatorHouseIsland/Middle_world_objects"]
 modulate = Color( 0.505882, 0.505882, 0.505882, 1 )
