@@ -1,4 +1,4 @@
-[gd_scene load_steps=161 format=2]
+[gd_scene load_steps=169 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=2]
@@ -59,6 +59,7 @@
 [ext_resource path="res://Assets/NPC/MaskDwellerSprite-Sheet.png" type="Texture" id=57]
 [ext_resource path="res://Assets/NPC/ConeDwellerSprite-Sheet.png" type="Texture" id=58]
 [ext_resource path="res://Assets/Levels/Harbor_house/World_objects/Swimming_dweller.png" type="Texture" id=59]
+[ext_resource path="res://Assets/NPC/FlatHatDwellerSprite-Sheet.png" type="Texture" id=60]
 
 [sub_resource type="Animation" id=38]
 resource_name = "Gate_opening_cut_scene"
@@ -596,6 +597,79 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=252]
+resource_name = "Walk"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 13, 14, 15, 16, 17, 18 ]
+}
+
+[sub_resource type="Resource" id=261]
+resource_local_to_scene = true
+script = ExtResource( 52 )
+wait_time = 10.0
+is_infinite = false
+
+[sub_resource type="Resource" id=262]
+resource_local_to_scene = true
+script = ExtResource( 53 )
+move_speed = 30
+target_x_position = -660
+
+[sub_resource type="Resource" id=263]
+resource_local_to_scene = true
+script = ExtResource( 52 )
+wait_time = 10.0
+is_infinite = false
+
+[sub_resource type="Resource" id=264]
+resource_local_to_scene = true
+script = ExtResource( 53 )
+move_speed = 30
+target_x_position = -750
+
+[sub_resource type="Animation" id=265]
+resource_name = "Idle"
+length = 1.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
+}
+
+[sub_resource type="Animation" id=266]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=267]
 resource_name = "Walk"
 length = 0.6
 loop = true
@@ -1867,6 +1941,25 @@ anims/Idle = SubResource( 250 )
 anims/RESET = SubResource( 251 )
 anims/Walk = SubResource( 252 )
 
+[node name="FlatHatDweller" parent="CreatorHouseIsland/Middle_world_objects/Dwellers" instance=ExtResource( 49 )]
+position = Vector2( -662, -940 )
+actions = [ SubResource( 261 ), SubResource( 262 ), SubResource( 263 ), SubResource( 264 ) ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CreatorHouseIsland/Middle_world_objects/Dwellers/FlatHatDweller"]
+autoplay = "Idle"
+anims/Idle = SubResource( 265 )
+anims/RESET = SubResource( 266 )
+anims/Walk = SubResource( 267 )
+
+[node name="Sprite" type="Sprite" parent="CreatorHouseIsland/Middle_world_objects/Dwellers/FlatHatDweller/Body" index="0"]
+position = Vector2( 0, -16 )
+texture = ExtResource( 60 )
+hframes = 13
+vframes = 4
+
+[node name="InteractionController" parent="CreatorHouseIsland/Middle_world_objects/Dwellers/FlatHatDweller/Body" index="2"]
+visible = false
+
 [node name="chain2" type="Sprite" parent="CreatorHouseIsland/Middle_world_objects"]
 modulate = Color( 0.505882, 0.505882, 0.505882, 1 )
 position = Vector2( 1090, -258 )
@@ -2609,6 +2702,8 @@ margin_bottom = 344.0
 [editable path="CreatorHouseIsland/Middle_world_objects/Dwellers/MaskDweller/Body/InteractionController"]
 [editable path="CreatorHouseIsland/Middle_world_objects/Dwellers/ConeDweller"]
 [editable path="CreatorHouseIsland/Middle_world_objects/Dwellers/ConeDweller/Body/InteractionController"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Dwellers/FlatHatDweller"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Dwellers/FlatHatDweller/Body/InteractionController"]
 [editable path="CreatorHouseIsland/Collisions/Solid/PassThroughBody18"]
 [editable path="CreatorHouseIsland/Collisions/Solid/PassThroughBody19"]
 [editable path="CreatorHouseIsland/Collisions/Solid/PassThroughBody20"]
