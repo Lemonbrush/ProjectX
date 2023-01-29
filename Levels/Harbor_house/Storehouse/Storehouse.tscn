@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://Assets/Levels/Harbor_house/Rooms/Dwellers_second_house_sprite.png" type="Texture" id=1]
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
@@ -13,6 +13,10 @@
 [ext_resource path="res://Assets/Levels/Harbor_house/World_objects/Meat_ropes.png" type="Texture" id=11]
 [ext_resource path="res://WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/Levels/Harbor_house/World_objects/Animated_meat-Sheet.png" type="Texture" id=13]
+[ext_resource path="res://Assets/NPC/CookingDweller-Sheet.png" type="Texture" id=14]
+[ext_resource path="res://Dweller/Abstract_dweller/AbstractDweller.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/effects/particles.png" type="Texture" id=16]
+[ext_resource path="res://Assets/NPC/CookingNeedyDweller-Sheet.png" type="Texture" id=17]
 
 [sub_resource type="CurveTexture" id=7]
 
@@ -78,6 +82,95 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2 ]
+}
+
+[sub_resource type="CanvasItemMaterial" id=136]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id=137]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.154489, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.864301, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=138]
+curve = SubResource( 137 )
+
+[sub_resource type="ParticlesMaterial" id=139]
+emission_shape = 1
+emission_sphere_radius = 2.0
+flag_disable_z = true
+gravity = Vector3( 5, -10, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.5
+scale_random = 1.0
+scale_curve = SubResource( 138 )
+anim_speed = 1.0
+anim_speed_random = 1.0
+
+[sub_resource type="Animation" id=134]
+resource_name = "Idle"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
+}
+
+[sub_resource type="Animation" id=135]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=140]
+resource_name = "Idle"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=141]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
 }
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -273,6 +366,54 @@ hframes = 3
 autoplay = "animation"
 anims/RESET = SubResource( 132 )
 anims/animation = SubResource( 133 )
+
+[node name="CookingDwellerParticles" type="Particles2D" parent="Middle_world_objects" index="5"]
+material = SubResource( 136 )
+position = Vector2( -78, -17 )
+amount = 4
+lifetime = 2.0
+process_material = SubResource( 139 )
+texture = ExtResource( 16 )
+
+[node name="Dwellers" type="Node2D" parent="Middle_world_objects" index="6"]
+
+[node name="CookingDweller" parent="Middle_world_objects/Dwellers" index="0" instance=ExtResource( 15 )]
+position = Vector2( -81, -7 )
+collision_layer = 3
+collision_mask = 0
+watch_player_on_talk = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Middle_world_objects/Dwellers/CookingDweller" index="0"]
+autoplay = "Idle"
+anims/Idle = SubResource( 134 )
+anims/RESET = SubResource( 135 )
+
+[node name="Sprite" type="Sprite" parent="Middle_world_objects/Dwellers/CookingDweller/Body" index="0"]
+position = Vector2( 0, -11 )
+texture = ExtResource( 14 )
+hframes = 6
+
+[node name="InteractionController" parent="Middle_world_objects/Dwellers/CookingDweller/Body" index="2"]
+visible = false
+
+[node name="NeedyDweller" parent="Middle_world_objects/Dwellers" index="1" instance=ExtResource( 15 )]
+position = Vector2( -106, -7 )
+collision_layer = 3
+collision_mask = 0
+watch_player_on_talk = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Middle_world_objects/Dwellers/NeedyDweller" index="0"]
+autoplay = "Idle"
+anims/Idle = SubResource( 140 )
+anims/RESET = SubResource( 141 )
+
+[node name="Sprite" type="Sprite" parent="Middle_world_objects/Dwellers/NeedyDweller/Body" index="0"]
+position = Vector2( 0, -13 )
+texture = ExtResource( 17 )
+hframes = 4
+
+[node name="InteractionController" parent="Middle_world_objects/Dwellers/NeedyDweller/Body" index="2"]
+visible = false
 
 [node name="Collisions" parent="." index="7"]
 visible = false
@@ -523,6 +664,10 @@ position = Vector2( 116, -15 )
 [editable path="Camera2D/Clouds"]
 [editable path="Middle_world_objects/KitchenDwellersHouseDoor"]
 [editable path="Middle_world_objects/KitchenDwellersHouseDoor/InteractionController"]
+[editable path="Middle_world_objects/Dwellers/CookingDweller"]
+[editable path="Middle_world_objects/Dwellers/CookingDweller/Body/InteractionController"]
+[editable path="Middle_world_objects/Dwellers/NeedyDweller"]
+[editable path="Middle_world_objects/Dwellers/NeedyDweller/Body/InteractionController"]
 [editable path="Collisions/PassTrough/PassThroughBody14"]
 [editable path="Collisions/PassTrough/PassThroughBody15"]
 [editable path="Collisions/PassTrough/PassThroughBody16"]

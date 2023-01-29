@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Levels/Harbor_house/Rooms/Dwellers_house_sprite.png" type="Texture" id=2]
@@ -17,6 +17,9 @@
 [ext_resource path="res://WorldObjects/Destructables/Pot/Pot.tscn" type="PackedScene" id=15]
 [ext_resource path="res://WorldObjects/Destructables/Vase/Background_vase/Background_vase.tscn" type="PackedScene" id=16]
 [ext_resource path="res://WorldObjects/Technical/Clouds/Clouds.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Assets/effects/sleepingLetter.png" type="Texture" id=18]
+[ext_resource path="res://Assets/NPC/HarborHouseDormSittingDwellerSprite-Sheet.png" type="Texture" id=19]
+[ext_resource path="res://Dweller/Abstract_dweller/AbstractDweller.tscn" type="PackedScene" id=20]
 
 [sub_resource type="CurveTexture" id=126]
 
@@ -81,6 +84,61 @@ angle_random = 1.0
 scale = 1.5
 scale_curve = SubResource( 130 )
 color_ramp = SubResource( 129 )
+
+[sub_resource type="Gradient" id=131]
+offsets = PoolRealArray( 0, 0.0951276, 0.953596, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=132]
+gradient = SubResource( 131 )
+
+[sub_resource type="Curve" id=133]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.164927, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.329854, 0.872769 ), 0.0, 0.0, 0, 0, Vector2( 0.924843, 0.877273 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=134]
+curve = SubResource( 133 )
+
+[sub_resource type="ParticlesMaterial" id=135]
+flag_disable_z = true
+gravity = Vector3( 10, -10, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.5
+scale_random = 1.0
+scale_curve = SubResource( 134 )
+color_ramp = SubResource( 132 )
+
+[sub_resource type="Animation" id=136]
+resource_name = "Idle"
+length = 1.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
+}
+
+[sub_resource type="Animation" id=137]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
 
 [sub_resource type="RectangleShape2D" id=121]
 extents = Vector2( 31.5, 1 )
@@ -265,6 +323,34 @@ amount = 20
 randomness = 1.0
 process_material = SubResource( 119 )
 texture = ExtResource( 12 )
+
+[node name="SleepingLetters" type="Particles2D" parent="Middle_world_objects" index="3"]
+position = Vector2( -195, -13 )
+amount = 3
+lifetime = 2.0
+process_material = SubResource( 135 )
+texture = ExtResource( 18 )
+
+[node name="Dwellers" type="Node2D" parent="Middle_world_objects" index="4"]
+
+[node name="AbstractDweller" parent="Middle_world_objects/Dwellers" index="0" instance=ExtResource( 20 )]
+position = Vector2( -126, 23 )
+collision_layer = 3
+collision_mask = 0
+watch_player_on_talk = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Middle_world_objects/Dwellers/AbstractDweller" index="0"]
+autoplay = "Idle"
+anims/Idle = SubResource( 136 )
+anims/RESET = SubResource( 137 )
+
+[node name="Sprite" type="Sprite" parent="Middle_world_objects/Dwellers/AbstractDweller/Body" index="0"]
+position = Vector2( 0, -12 )
+texture = ExtResource( 19 )
+hframes = 13
+
+[node name="InteractionController" parent="Middle_world_objects/Dwellers/AbstractDweller/Body" index="2"]
+visible = false
 
 [node name="Player" parent="." index="7"]
 position = Vector2( 119, 29 )
@@ -475,6 +561,8 @@ __meta__ = {
 }
 
 [editable path="Camera2D/Clouds"]
+[editable path="Middle_world_objects/Dwellers/AbstractDweller"]
+[editable path="Middle_world_objects/Dwellers/AbstractDweller/Body/InteractionController"]
 [editable path="Collisions/PassTrough/PassThroughBody14"]
 [editable path="Collisions/PassTrough/PassThroughBody17"]
 [editable path="Collisions/PassTrough/PassThroughBody18"]

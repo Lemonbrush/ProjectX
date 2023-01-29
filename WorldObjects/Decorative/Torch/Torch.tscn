@@ -91,4 +91,4 @@ light_mask = 16385
 position = Vector2( -1.42109e-14, -8 )
 scale = Vector2( 0.126238, 0.106436 )
 texture = ExtResource( 2 )
-energy = 0.6
+energy = 0.5
