@@ -1,4 +1,4 @@
-[gd_scene load_steps=129 format=2]
+[gd_scene load_steps=130 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=2]
@@ -54,6 +54,7 @@
 [ext_resource path="res://Dweller/NpcActions/idle/idle_npc_action.gd" type="Script" id=52]
 [ext_resource path="res://Dweller/NpcActions/walk/Walk_npc_action.gd" type="Script" id=53]
 [ext_resource path="res://Assets/NPC/WelcomingDwellerSprite-Sheet.png" type="Texture" id=54]
+[ext_resource path="res://Assets/Levels/Harbor_house/chain.png" type="Texture" id=55]
 
 [sub_resource type="Animation" id=38]
 resource_name = "Gate_opening_cut_scene"
@@ -1531,6 +1532,11 @@ nextDoorName = "KitchenDwellersHouseDoor"
 [node name="CollisionShape2D" parent="CreatorHouseIsland/Middle_world_objects/Doors/KitchenDwellersHouseDoor/InteractionController/Area2D" index="0"]
 shape = SubResource( 215 )
 
+[node name="chain2" type="Sprite" parent="CreatorHouseIsland/Middle_world_objects"]
+modulate = Color( 0.505882, 0.505882, 0.505882, 1 )
+position = Vector2( 1090, -258 )
+texture = ExtResource( 55 )
+
 [node name="Foreground_world_objects" type="Node2D" parent="CreatorHouseIsland"]
 z_index = 1
 
@@ -1579,6 +1585,10 @@ tile_set = ExtResource( 29 )
 cell_size = Vector2( 1, 1 )
 format = 1
 tile_data = PoolIntArray( -15204963, 0, 0, -15204947, 0, 0 )
+
+[node name="chain" type="Sprite" parent="CreatorHouseIsland/Foreground_world_objects/Decorations"]
+position = Vector2( 1101, -258 )
+texture = ExtResource( 55 )
 
 [node name="Handles" type="Node2D" parent="CreatorHouseIsland/Foreground_world_objects"]
 
