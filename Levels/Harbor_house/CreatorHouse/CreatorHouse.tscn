@@ -587,7 +587,7 @@ innerItemScene = ExtResource( 15 )
 [node name="Foreground_world_decorations" type="Node2D" parent="." index="7"]
 
 [node name="Player" parent="." index="8"]
-position = Vector2( 145, 160 )
+position = Vector2( -130, 337 )
 z_index = 1
 collision_mask = 108
 
