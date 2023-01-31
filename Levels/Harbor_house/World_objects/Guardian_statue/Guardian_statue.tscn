@@ -217,6 +217,7 @@ process_material = SubResource( 29 )
 texture = ExtResource( 3 )
 
 [node name="DialogController" parent="." instance=ExtResource( 5 )]
+position = Vector2( 0, -165 )
 dialogId = "guardian_statue_dialog"
 interaction_popup_label_text = "Осмотреть"
 
@@ -227,7 +228,7 @@ position = Vector2( 0, -22 )
 shape = SubResource( 30 )
 
 [node name="DialogTextBoxController" parent="DialogController" index="2"]
-position = Vector2( 65, -31 )
+position = Vector2( 31, -3 )
 
 [editable path="DialogController"]
 [editable path="DialogController/InteractionController"]
