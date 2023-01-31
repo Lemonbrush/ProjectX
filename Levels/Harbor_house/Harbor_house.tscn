@@ -1,4 +1,4 @@
-[gd_scene load_steps=169 format=2]
+[gd_scene load_steps=173 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=2]
@@ -802,8 +802,20 @@ extents = Vector2( 192, 8 )
 [sub_resource type="RectangleShape2D" id=81]
 extents = Vector2( 112, 8 )
 
-[sub_resource type="RectangleShape2D" id=193]
-extents = Vector2( 280, 125.5 )
+[sub_resource type="RectangleShape2D" id=272]
+extents = Vector2( 315.5, 125.5 )
+
+[sub_resource type="RectangleShape2D" id=269]
+extents = Vector2( 14, 4 )
+
+[sub_resource type="RectangleShape2D" id=270]
+extents = Vector2( 13.25, 4 )
+
+[sub_resource type="RectangleShape2D" id=271]
+extents = Vector2( 22, 4 )
+
+[sub_resource type="RectangleShape2D" id=268]
+extents = Vector2( 12, 10 )
 
 [sub_resource type="RectangleShape2D" id=77]
 extents = Vector2( 32.0625, 8 )
@@ -2394,12 +2406,12 @@ shape = SubResource( 81 )
 one_way_collision = true
 
 [node name="CameraFocusArea2D" type="Area2D" parent="GuardianIsland"]
+visible = false
 position = Vector2( 395, -248 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GuardianIsland/CameraFocusArea2D"]
-visible = false
-position = Vector2( -5, -88.5 )
-shape = SubResource( 193 )
+position = Vector2( -2.5, -88.5 )
+shape = SubResource( 272 )
 
 [node name="LiftWaitTimer" type="Timer" parent="GuardianIsland"]
 wait_time = 15.0
@@ -2416,6 +2428,15 @@ scale = Vector2( 31.7, 72.5 )
 [node name="Decorations" type="Node2D" parent="GuardianIsland/Background_world_objects"]
 
 [node name="Trees" type="Node2D" parent="GuardianIsland/Background_world_objects/Decorations"]
+
+[node name="TallTree3" parent="GuardianIsland/Background_world_objects/Decorations/Trees" instance=ExtResource( 20 )]
+position = Vector2( 499, -231 )
+
+[node name="TallTree4" parent="GuardianIsland/Background_world_objects/Decorations/Trees" instance=ExtResource( 20 )]
+position = Vector2( 313, -268 )
+
+[node name="TallTree5" parent="GuardianIsland/Background_world_objects/Decorations/Trees" instance=ExtResource( 20 )]
+position = Vector2( 263, -254 )
 
 [node name="Dark_trees" type="Node2D" parent="GuardianIsland/Background_world_objects/Decorations/Trees"]
 
@@ -2434,10 +2455,14 @@ position = Vector2( 212, -180 )
 [node name="Light_trees" type="Node2D" parent="GuardianIsland/Background_world_objects/Decorations/Trees"]
 
 [node name="TallTree3" parent="GuardianIsland/Background_world_objects/Decorations/Trees/Light_trees" instance=ExtResource( 20 )]
-position = Vector2( 356, -257 )
+position = Vector2( 352, -291 )
 
 [node name="BushyTree" parent="GuardianIsland/Background_world_objects/Decorations/Trees/Light_trees" instance=ExtResource( 24 )]
 position = Vector2( 465, -239 )
+
+[node name="CollisionShape2D" parent="GuardianIsland/Background_world_objects/Decorations/Trees/Light_trees/BushyTree/PassThroughBody" index="0"]
+position = Vector2( 13, 45 )
+shape = SubResource( 269 )
 
 [node name="BushyTree2" parent="GuardianIsland/Background_world_objects/Decorations/Trees/Light_trees" instance=ExtResource( 24 )]
 position = Vector2( 105, -202 )
@@ -2447,23 +2472,49 @@ scale = Vector2( 1, -1 )
 [node name="CurvedTree" parent="GuardianIsland/Background_world_objects/Decorations/Trees/Light_trees" instance=ExtResource( 23 )]
 position = Vector2( 428, -237 )
 
+[node name="CollisionShape2D" parent="GuardianIsland/Background_world_objects/Decorations/Trees/Light_trees/CurvedTree/PassThroughBody" index="0"]
+position = Vector2( 21.25, -3 )
+shape = SubResource( 270 )
+
 [node name="CurvedTree3" parent="GuardianIsland/Background_world_objects/Decorations/Trees/Light_trees" instance=ExtResource( 23 )]
 position = Vector2( 239, -223 )
 
+[node name="CurvedTree4" parent="GuardianIsland/Background_world_objects/Decorations/Trees/Light_trees" instance=ExtResource( 23 )]
+position = Vector2( 579, -249 )
+
 [node name="CurvedTree2" parent="GuardianIsland/Background_world_objects/Decorations/Trees/Light_trees" instance=ExtResource( 23 )]
-position = Vector2( 666, -207 )
+position = Vector2( 671, -189 )
 
 [node name="SquashedTree" parent="GuardianIsland/Background_world_objects/Decorations/Trees/Light_trees" instance=ExtResource( 22 )]
 position = Vector2( 349, -238 )
+
+[node name="CollisionShape2D" parent="GuardianIsland/Background_world_objects/Decorations/Trees/Light_trees/SquashedTree/PassThroughBody" index="0"]
+position = Vector2( -9, 21 )
+shape = SubResource( 271 )
 
 [node name="TallTree" parent="GuardianIsland/Background_world_objects/Decorations/Trees/Light_trees" instance=ExtResource( 20 )]
 position = Vector2( 168, -199 )
 
 [node name="TallTree2" parent="GuardianIsland/Background_world_objects/Decorations/Trees/Light_trees" instance=ExtResource( 20 )]
-position = Vector2( 604, -187 )
+position = Vector2( 573, -138 )
+
+[node name="BushyTree3" parent="GuardianIsland/Background_world_objects/Decorations/Trees/Light_trees" instance=ExtResource( 24 )]
+position = Vector2( 627, -207 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
 
 [node name="Guardian_statue" parent="GuardianIsland/Background_world_objects" instance=ExtResource( 45 )]
 position = Vector2( 395, -239 )
+
+[node name="InteractionPopup" parent="GuardianIsland/Background_world_objects/Guardian_statue/DialogController" index="0"]
+position = Vector2( -42, -22 )
+
+[node name="CollisionShape2D" parent="GuardianIsland/Background_world_objects/Guardian_statue/DialogController/InteractionController/Area2D" index="0"]
+position = Vector2( -33, -5 )
+shape = SubResource( 268 )
+
+[node name="DialogTextBoxController" parent="GuardianIsland/Background_world_objects/Guardian_statue/DialogController" index="2"]
+position = Vector2( 55, -2 )
 
 [node name="GuardianIslandSprite" type="Sprite" parent="GuardianIsland"]
 position = Vector2( 390, -71 )
@@ -2493,6 +2544,9 @@ tile_data = PoolIntArray( -21560989, 78, 0, -19529299, 75, 0, -18153126, 77, 0, 
 [node name="Bird" parent="GuardianIsland/World_objects/Decorations/Birds" instance=ExtResource( 30 )]
 position = Vector2( 395, -445 )
 
+[node name="Bird7" parent="GuardianIsland/World_objects/Decorations/Birds" instance=ExtResource( 30 )]
+position = Vector2( 554, -362 )
+
 [node name="Bird2" parent="GuardianIsland/World_objects/Decorations/Birds" instance=ExtResource( 30 )]
 position = Vector2( 484, -304 )
 
@@ -2504,7 +2558,7 @@ position = Vector2( 97, -267 )
 scale = Vector2( -1, 1 )
 
 [node name="Bird5" parent="GuardianIsland/World_objects/Decorations/Birds" instance=ExtResource( 30 )]
-position = Vector2( 687, -320 )
+position = Vector2( 654, -302 )
 
 [node name="Bird6" parent="GuardianIsland/World_objects/Decorations/Birds" instance=ExtResource( 30 )]
 position = Vector2( 337, -327 )
@@ -2612,7 +2666,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 4 )]
-position = Vector2( -903, -961 )
+position = Vector2( -474, -208 )
 
 [node name="WaterSurface" type="Node2D" parent="."]
 pause_mode = 2
@@ -2723,6 +2777,15 @@ margin_bottom = 344.0
 [editable path="CreatorHouseIsland/Collisions/PassThrough/PassThroughBody13"]
 [editable path="CreatorHouseIsland/Collisions/PassThrough/PassThroughBody14"]
 [editable path="CreatorHouseIsland/Collisions/Ladders/WellLadder"]
+[editable path="GuardianIsland/Background_world_objects/Decorations/Trees/Light_trees/BushyTree"]
+[editable path="GuardianIsland/Background_world_objects/Decorations/Trees/Light_trees/BushyTree/PassThroughBody"]
+[editable path="GuardianIsland/Background_world_objects/Decorations/Trees/Light_trees/CurvedTree"]
+[editable path="GuardianIsland/Background_world_objects/Decorations/Trees/Light_trees/CurvedTree/PassThroughBody"]
+[editable path="GuardianIsland/Background_world_objects/Decorations/Trees/Light_trees/SquashedTree"]
+[editable path="GuardianIsland/Background_world_objects/Decorations/Trees/Light_trees/SquashedTree/PassThroughBody"]
+[editable path="GuardianIsland/Background_world_objects/Guardian_statue"]
+[editable path="GuardianIsland/Background_world_objects/Guardian_statue/DialogController"]
+[editable path="GuardianIsland/Background_world_objects/Guardian_statue/DialogController/InteractionController"]
 [editable path="GuardianIsland/Collisions/PassThrough/PassThroughBody7"]
 [editable path="GuardianIsland/Collisions/PassThrough/PassThroughBody8"]
 [editable path="GuardianIsland/Collisions/PassThrough/PassThroughBody9"]
