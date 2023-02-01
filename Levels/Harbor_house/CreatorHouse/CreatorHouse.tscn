@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=2]
+[gd_scene load_steps=108 format=2]
 
 [ext_resource path="res://Assets/Levels/Harbor_house/Rooms/Creator_house_rooms.png" type="Texture" id=1]
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
@@ -15,6 +15,111 @@
 [ext_resource path="res://WorldObjects/Destructables/Crate/Background_crate/Background_crate.tscn" type="PackedScene" id=13]
 [ext_resource path="res://WorldObjects/Interactables/OpenableContainers/Chest/Chest.tscn" type="PackedScene" id=14]
 [ext_resource path="res://WorldObjects/Pick_ups/Items/Heart_jur/HeartJurItem.tscn" type="PackedScene" id=15]
+[ext_resource path="res://WorldObjects/Technical/AbstractDialogInteractionObject/AbstractDialogInteractionObject.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Levels/Harbor_house/CreatorHouse/CreatorHouse.gd" type="Script" id=17]
+[ext_resource path="res://WorldObjects/Pick_ups/Items/ArtistBrush/ArtistBrushItem.tscn" type="PackedScene" id=18]
+
+[sub_resource type="Animation" id=189]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Middle_world_decorations/ArtistBrushItem:gravity_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Middle_world_decorations/ArtistBrushItem:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Middle_world_decorations/ArtistBrushItem/PickupArea2D/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Middle_world_decorations/ArtistBrushItem:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -142, 201 ) ]
+}
+
+[sub_resource type="Animation" id=188]
+resource_name = "creator_house_desk_scene"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Middle_world_decorations/ArtistBrushItem:gravity_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 2.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Middle_world_decorations/ArtistBrushItem:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Middle_world_decorations/ArtistBrushItem/PickupArea2D/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Middle_world_decorations/ArtistBrushItem:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -142, 201 ), Vector2( -142, 201 ), Vector2( -142, 195 ) ]
+}
 
 [sub_resource type="CurveTexture" id=102]
 
@@ -327,6 +432,7 @@ extents = Vector2( 8, 63.5 )
 extents = Vector2( 8, 41 )
 
 [node name="CreatorHouse" instance=ExtResource( 2 )]
+script = ExtResource( 17 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="1"]
 scroll_limit_end = Vector2( 0, 320 )
@@ -343,6 +449,11 @@ centered = false
 position = Vector2( 380, 95 )
 scale = Vector2( 0.77, 0.77 )
 texture = ExtResource( 7 )
+
+[node name="AnimationPlayer" parent="." index="2"]
+autoplay = "RESET"
+anims/RESET = SubResource( 189 )
+anims/creator_house_desk_scene = SubResource( 188 )
 
 [node name="Camera2D" parent="." index="3"]
 zoom = Vector2( 0.7, 0.7 )
@@ -375,7 +486,14 @@ __meta__ = {
 
 [node name="Middle_world_decorations" type="Node2D" parent="." index="6"]
 
-[node name="Doors" type="Node2D" parent="Middle_world_decorations" index="0"]
+[node name="Interaction_hints" type="Node2D" parent="Middle_world_decorations" index="0"]
+
+[node name="AbstractDialogInteractionObject" parent="Middle_world_decorations/Interaction_hints" index="0" instance=ExtResource( 16 )]
+position = Vector2( -142, 249 )
+dialogId = "creator_house_desk_dialog"
+label_text = "Осмотреть"
+
+[node name="Doors" type="Node2D" parent="Middle_world_decorations" index="1"]
 
 [node name="CreatorHouseTopWindowDoor" parent="Middle_world_decorations/Doors" index="0" instance=ExtResource( 3 )]
 position = Vector2( 132, -228 )
@@ -500,14 +618,14 @@ shape = SubResource( 1 )
 [node name="InteractionPopup" parent="Middle_world_decorations/Doors/CreatorHouseFirstFloorDoorTwo" index="3"]
 position = Vector2( 1, -42 )
 
-[node name="fire" type="Particles2D" parent="Middle_world_decorations" index="1"]
+[node name="fire" type="Particles2D" parent="Middle_world_decorations" index="2"]
 position = Vector2( 159, -218 )
 amount = 3
 randomness = 1.0
 process_material = SubResource( 154 )
 texture = ExtResource( 10 )
 
-[node name="Lamp_fires" type="Node2D" parent="Middle_world_decorations" index="2"]
+[node name="Lamp_fires" type="Node2D" parent="Middle_world_decorations" index="3"]
 
 [node name="fire" type="Particles2D" parent="Middle_world_decorations/Lamp_fires" index="0"]
 position = Vector2( -223, 274 )
@@ -558,7 +676,7 @@ randomness = 1.0
 process_material = SubResource( 157 )
 texture = ExtResource( 10 )
 
-[node name="Destructables" type="Node2D" parent="Middle_world_decorations" index="3"]
+[node name="Destructables" type="Node2D" parent="Middle_world_decorations" index="4"]
 
 [node name="Crate" type="Node2D" parent="Middle_world_decorations/Destructables" index="0"]
 
@@ -580,14 +698,22 @@ position = Vector2( 125, -100 )
 [node name="Crate6" parent="Middle_world_decorations/Destructables/Crate" index="5" instance=ExtResource( 13 )]
 position = Vector2( 125, -116 )
 
-[node name="Chest" parent="Middle_world_decorations" index="4" instance=ExtResource( 14 )]
+[node name="Chest" parent="Middle_world_decorations" index="5" instance=ExtResource( 14 )]
 position = Vector2( 183, 166 )
 innerItemScene = ExtResource( 15 )
+
+[node name="ArtistBrushItem" parent="Middle_world_decorations" index="6" instance=ExtResource( 18 )]
+visible = false
+position = Vector2( -142, 201 )
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" parent="Middle_world_decorations/ArtistBrushItem/PickupArea2D" index="0"]
+disabled = true
 
 [node name="Foreground_world_decorations" type="Node2D" parent="." index="7"]
 
 [node name="Player" parent="." index="8"]
-position = Vector2( -130, 337 )
+position = Vector2( -94, 245 )
 z_index = 1
 collision_mask = 108
 
@@ -1528,6 +1654,7 @@ __meta__ = {
 [editable path="Middle_world_decorations/Doors/CreatorHouseFirstFloorDoorOne/InteractionController"]
 [editable path="Middle_world_decorations/Doors/CreatorHouseFirstFloorDoorTwo"]
 [editable path="Middle_world_decorations/Doors/CreatorHouseFirstFloorDoorTwo/InteractionController"]
+[editable path="Middle_world_decorations/ArtistBrushItem"]
 [editable path="Collisions/PassTrough/PassThroughBody60"]
 [editable path="Collisions/PassTrough/PassThroughBody90"]
 [editable path="Collisions/PassTrough/PassThroughBody91"]
