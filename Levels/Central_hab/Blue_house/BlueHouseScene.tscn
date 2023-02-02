@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://Assets/Levels/Rooms/BlueHouse/Blue_house_interior.png" type="Texture" id=1]
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
@@ -12,7 +12,7 @@
 [ext_resource path="res://Levels/Central_hab/Blue_house/BlueHouseScene.gd" type="Script" id=10]
 [ext_resource path="res://Assets/effects/particles.png" type="Texture" id=11]
 [ext_resource path="res://Assets/effects/ShineSprincles.png" type="Texture" id=12]
-[ext_resource path="res://WorldObjects/Pick_ups/Items/ArtistBrush/ArtistBrushItem.tscn" type="PackedScene" id=13]
+[ext_resource path="res://WorldObjects/Pick_ups/Items/RedThred/RedThredItem.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Animation" id=123]
 length = 0.001
@@ -27,6 +27,54 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0.6, 0.6 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("RedThredItem:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("RedThredItem/PickupArea2D/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ArtistParticles:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ArtShineParticles:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=133]
@@ -61,7 +109,7 @@ tracks/1/keys = {
 } ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("ArtistBrushItem/PickupArea2D/CollisionShape2D:disabled")
+tracks/2/path = NodePath("RedThredItem:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -70,10 +118,10 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ false, true ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("ArtistBrushItem:visible")
+tracks/3/path = NodePath("RedThredItem/PickupArea2D/CollisionShape2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -82,10 +130,10 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ false, true ]
+"values": [ true, false ]
 }
 tracks/4/type = "method"
-tracks/4/path = NodePath("ArtistBrushItem")
+tracks/4/path = NodePath("RedThredItem")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -94,48 +142,9 @@ tracks/4/keys = {
 "times": PoolRealArray( 0.4 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [ "play_show_animation" ],
-"method": "play_view_animation"
+"args": [  ],
+"method": "play_show_animation"
 } ]
-}
-
-[sub_resource type="Animation" id=132]
-resource_name = "idle"
-tracks/0/type = "value"
-tracks/0/path = NodePath("ArtShineParticles:emitting")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("ArtistParticles:emitting")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Camera2D:zoom")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0.6, 0.6 ) ]
 }
 
 [sub_resource type="Animation" id=122]
@@ -423,7 +432,7 @@ _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.240876, 1 ), 0.0, 0.0, 0, 
 [sub_resource type="CurveTexture" id=128]
 curve = SubResource( 127 )
 
-[sub_resource type="ParticlesMaterial" id=129]
+[sub_resource type="ParticlesMaterial" id=134]
 emission_shape = 1
 emission_sphere_radius = 3.0
 flag_disable_z = true
@@ -493,10 +502,9 @@ script = ExtResource( 10 )
 dynamic_camera = false
 
 [node name="AnimationPlayer" parent="." index="1"]
-autoplay = "idle"
+autoplay = "RESET"
 anims/RESET = SubResource( 123 )
 anims/artist_brush_gift_scene = SubResource( 133 )
-anims/idle = SubResource( 132 )
 anims/place_artwork_cut_scene = SubResource( 122 )
 
 [node name="Camera2D" parent="." index="2"]
@@ -697,8 +705,6 @@ shape = SubResource( 6 )
 
 [node name="ArtistDweller" parent="." index="12" instance=ExtResource( 7 )]
 position = Vector2( 18, 61 )
-collision_layer = 3
-collision_mask = 0
 dialogId = "artist_dweller"
 watch_player_on_talk = false
 
@@ -723,16 +729,17 @@ pause_mode = 2
 material = SubResource( 124 )
 position = Vector2( 10, 51 )
 emitting = false
-amount = 20
+amount = 30
 one_shot = true
 explosiveness = 1.0
-process_material = SubResource( 129 )
+process_material = SubResource( 134 )
 texture = ExtResource( 11 )
 
 [node name="ArtShineParticles" type="Particles2D" parent="." index="14"]
 pause_mode = 2
 material = SubResource( 130 )
 position = Vector2( -7, 15 )
+z_index = 100
 emitting = false
 amount = 5
 process_material = SubResource( 131 )
@@ -746,11 +753,12 @@ randomness = 1.0
 process_material = SubResource( 101 )
 texture = ExtResource( 4 )
 
-[node name="ArtistBrushItem" parent="." index="16" instance=ExtResource( 13 )]
+[node name="RedThredItem" parent="." index="16" instance=ExtResource( 13 )]
 visible = false
-position = Vector2( -8, 53 )
+position = Vector2( -12, 51 )
+use_player_pick_up_scale_animation = false
 
-[node name="CollisionShape2D" parent="ArtistBrushItem/PickupArea2D" index="0"]
+[node name="CollisionShape2D" parent="RedThredItem/PickupArea2D" index="0"]
 disabled = true
 
 [editable path="Camera2D/Clouds2"]
@@ -775,4 +783,4 @@ disabled = true
 [editable path="Collisions/Solid/PassThroughBody4"]
 [editable path="ArtistDweller"]
 [editable path="ArtistDweller/Body/InteractionController"]
-[editable path="ArtistBrushItem"]
+[editable path="RedThredItem"]
