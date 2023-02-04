@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=2]
+[gd_scene load_steps=110 format=2]
 
 [ext_resource path="res://Assets/Levels/Harbor_house/Rooms/Creator_house_rooms.png" type="Texture" id=1]
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
@@ -19,6 +19,14 @@
 [ext_resource path="res://Levels/Harbor_house/CreatorHouse/CreatorHouse.gd" type="Script" id=17]
 [ext_resource path="res://WorldObjects/Pick_ups/Items/ArtistBrush/ArtistBrushItem.tscn" type="PackedScene" id=18]
 [ext_resource path="res://WorldObjects/Sign/Sign.tscn" type="PackedScene" id=19]
+
+[sub_resource type="Environment" id=190]
+background_mode = 4
+ambient_light_energy = 0.0
+glow_enabled = true
+glow_hdr_threshold = 1.5
+adjustment_enabled = true
+adjustment_saturation = 1.3
 
 [sub_resource type="Animation" id=189]
 length = 0.001
@@ -435,7 +443,10 @@ extents = Vector2( 8, 41 )
 [node name="CreatorHouse" instance=ExtResource( 2 )]
 script = ExtResource( 17 )
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="1"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
+environment = SubResource( 190 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="2"]
 scroll_limit_end = Vector2( 0, 320 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
@@ -451,12 +462,13 @@ position = Vector2( 380, 95 )
 scale = Vector2( 0.77, 0.77 )
 texture = ExtResource( 7 )
 
-[node name="AnimationPlayer" parent="." index="2"]
+[node name="AnimationPlayer" parent="." index="3"]
 autoplay = "RESET"
 anims/RESET = SubResource( 189 )
 anims/creator_house_desk_scene = SubResource( 188 )
 
-[node name="Camera2D" parent="." index="3"]
+[node name="Camera2D" parent="." index="4"]
+position = Vector2( -131, 320 )
 zoom = Vector2( 0.7, 0.7 )
 backgroundColor = Color( 0.768627, 0.898039, 1, 1 )
 
@@ -469,7 +481,7 @@ amount = 100
 lifetime = 10.0
 process_material = SubResource( 107 )
 
-[node name="Background_world_objects" type="Node2D" parent="." index="4"]
+[node name="Background_world_objects" type="Node2D" parent="." index="5"]
 
 [node name="Decorations" type="Node2D" parent="Background_world_objects" index="0"]
 
@@ -479,13 +491,13 @@ cell_size = Vector2( 1, 1 )
 format = 1
 tile_data = PoolIntArray( -15990672, 39, 0, -15925132, 29, 0, -15925120, 40, 0, 9633938, 23, 0, 20905834, 536870936, 0, 20905857, 536870941, 0, 20840459, 20, 0, 20840480, 31, 0 )
 
-[node name="WorldSprite" parent="." index="5"]
+[node name="WorldSprite" parent="." index="6"]
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Middle_world_decorations" type="Node2D" parent="." index="6"]
+[node name="Middle_world_decorations" type="Node2D" parent="." index="7"]
 
 [node name="Interaction_hints" type="Node2D" parent="Middle_world_decorations" index="0"]
 
@@ -803,9 +815,9 @@ texts_array = [ "Коллекция манги, диван, плед,
 [node name="Sprite" parent="Middle_world_decorations/Inspection_points/Top_couch_sign" index="0"]
 visible = false
 
-[node name="Foreground_world_decorations" type="Node2D" parent="." index="7"]
+[node name="Foreground_world_decorations" type="Node2D" parent="." index="8"]
 
-[node name="Player" parent="." index="8"]
+[node name="Player" parent="." index="9"]
 position = Vector2( -132, 332 )
 z_index = 1
 collision_mask = 108
@@ -817,7 +829,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Collisions" parent="." index="9"]
+[node name="Collisions" parent="." index="10"]
 visible = false
 
 [node name="PassThroughBody60" parent="Collisions/PassTrough" index="0" groups=["passThroughObject"] instance=ExtResource( 4 )]
