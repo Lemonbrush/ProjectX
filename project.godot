@@ -119,6 +119,7 @@ _global_script_class_icons={
 config/name="Kissies"
 run/main_scene="res://UI/GameMenu/GameMenu.tscn"
 config/use_custom_user_dir=true
+run/delta_sync_after_draw=true
 config/icon="res://icon.png"
 
 [autoload]
@@ -129,6 +130,10 @@ LevelManager="*res://Utils/Singletons/LevelManager.gd"
 EventBus="*res://Utils/Singletons/EventBus.gd"
 SettingsManager="*res://Utils/Singletons/SettingsManager/SettingsManager.gd"
 GameEventConstants="*res://Utils/Singletons/GameEventConstants.gd"
+
+[debug]
+
+settings/fps/force_fps=300
 
 [display]
 
@@ -251,6 +256,11 @@ locale_filter=[ 0, [ "ru" ] ]
 [rendering]
 
 2d/snapping/use_gpu_pixel_snap=true
+gles3/shaders/shader_compilation_mode=2
+gles3/shaders/shader_compilation_mode.mobile=2
+gles3/shaders/shader_compilation_mode.web=2
+gles3/shaders/shader_cache_size_mb=4096
 quality/subsurface_scattering/quality=2
+quality/depth/hdr=false
 environment/default_environment="res://default_env.tres"
 quality/dynamic_fonts/use_oversampling=false
