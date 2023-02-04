@@ -1093,6 +1093,7 @@ position = Vector2( 29, 192 )
 
 [node name="FisherWifeDweller" parent="Harbor_world_objects/Middle_world_objects/Dwellers" instance=ExtResource( 49 )]
 position = Vector2( 172, -113 )
+dialogId = "fisher_wife_dweller"
 actions = [ SubResource( 223 ), SubResource( 224 ), SubResource( 225 ), SubResource( 226 ) ]
 defaultDirection = -1
 
@@ -1112,6 +1113,7 @@ anims/Walk = SubResource( 222 )
 
 [node name="FisherDweller" parent="Harbor_world_objects/Middle_world_objects/Dwellers" instance=ExtResource( 49 )]
 position = Vector2( -693, -111 )
+dialogId = "harbor_house_fisher_dweller"
 watch_player_on_talk = false
 defaultDirection = -1
 
