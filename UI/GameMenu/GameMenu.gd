@@ -4,10 +4,12 @@ onready var play_button = $MainMenuMarginContainer/VBoxContainer/PlayButton
 onready var options_button = $MainMenuMarginContainer/VBoxContainer/OptionsButton
 onready var exit_button = $MainMenuMarginContainer/VBoxContainer/ExitButton
 onready var version_label = $RightMarginContainer/VersionLabel
+onready var about_button = $MainMenuMarginContainer/VBoxContainer/AboutButton
 
 onready var mainMenuMarginContainer = $MainMenuMarginContainer
 
 var optionsMenuScene = preload("res://UI/OptionsMenu/OptionsMenu.tscn")
+var changelogMenuScene = preload("res://UI/DevelopmentLogMenu/DevelopmentLogMenu.tscn")
 
 func _ready():
 	Global.is_game_loaded = false
@@ -15,6 +17,7 @@ func _ready():
 	play_button.connect("pressed", self, "on_play_pressed")
 	exit_button.connect("pressed", self, "on_exit_pressed")
 	options_button.connect("pressed", self, "on_options_pressed")
+	about_button.connect("pressed", self, "on_changelog_pressed")
 	version_label.text = FileManager.get_project_version()
 	
 func on_play_pressed():
@@ -27,6 +30,12 @@ func on_options_pressed():
 	var optionsMenuInstance = optionsMenuScene.instance()
 	get_tree().root.add_child(optionsMenuInstance)
 	optionsMenuInstance.connect("back_pressed", self, "on_options_back_pressed")
+	mainMenuMarginContainer.visible = false
+	
+func on_changelog_pressed():
+	var changelogMenuSceneInstance = changelogMenuScene.instance()
+	get_tree().root.add_child(changelogMenuSceneInstance)
+	changelogMenuSceneInstance.connect("back_pressed", self, "on_options_back_pressed")
 	mainMenuMarginContainer.visible = false
 
 func on_options_back_pressed():
