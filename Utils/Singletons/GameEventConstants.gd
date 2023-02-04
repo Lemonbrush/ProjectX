@@ -46,7 +46,8 @@ func set_default_constants():
 		guardian_statue_satisfied = false,
 		redThredItem_picked_up = false,
 		is_creator_house_desk_inspected = false,
-		artist_gifted_the_thread = false
+		artist_gifted_the_thread = false,
+		did_speak_to_creator_house_welcomer = false
 	}
 	EventBus.game_const_changed()
 

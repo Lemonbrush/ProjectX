@@ -1916,6 +1916,7 @@ position = Vector2( 1023, 701 )
 
 [node name="WelcomingDweller" parent="CreatorHouseIsland/Middle_world_objects/Dwellers" instance=ExtResource( 49 )]
 position = Vector2( 106, -924 )
+dialogId = "creator_house_welcomer_dweller"
 
 [node name="Sprite" type="Sprite" parent="CreatorHouseIsland/Middle_world_objects/Dwellers/WelcomingDweller/Body" index="0"]
 position = Vector2( -1, -16 )
@@ -1933,6 +1934,7 @@ anims/RESET = SubResource( 233 )
 
 [node name="BandanaAndGlassesDweller" parent="CreatorHouseIsland/Middle_world_objects/Dwellers" instance=ExtResource( 49 )]
 position = Vector2( -1590, -940 )
+dialogId = "harbor_house_mask_and_glasses_dweller"
 actions = [ SubResource( 237 ), SubResource( 238 ), SubResource( 239 ), SubResource( 240 ) ]
 
 [node name="Sprite" type="Sprite" parent="CreatorHouseIsland/Middle_world_objects/Dwellers/BandanaAndGlassesDweller/Body" index="0"]
@@ -1951,6 +1953,7 @@ anims/Walk = SubResource( 236 )
 
 [node name="MaskDweller" parent="CreatorHouseIsland/Middle_world_objects/Dwellers" instance=ExtResource( 49 )]
 position = Vector2( -975, -940 )
+dialogId = "harbor_house_lazy_worker_dweller"
 actions = [ SubResource( 241 ), SubResource( 242 ), SubResource( 243 ), SubResource( 244 ), SubResource( 245 ), SubResource( 246 ) ]
 
 [node name="Sprite" type="Sprite" parent="CreatorHouseIsland/Middle_world_objects/Dwellers/MaskDweller/Body" index="0"]
@@ -1970,6 +1973,7 @@ anims/Walk = SubResource( 249 )
 
 [node name="ConeDweller" parent="CreatorHouseIsland/Middle_world_objects/Dwellers" instance=ExtResource( 49 )]
 position = Vector2( -1413, -940 )
+dialogId = "harbor_house_cone_dweller"
 actions = [ SubResource( 253 ), SubResource( 254 ), SubResource( 255 ), SubResource( 256 ), SubResource( 257 ), SubResource( 258 ) ]
 
 [node name="Sprite" type="Sprite" parent="CreatorHouseIsland/Middle_world_objects/Dwellers/ConeDweller/Body" index="0"]
@@ -1989,6 +1993,7 @@ anims/Walk = SubResource( 252 )
 
 [node name="FlatHatDweller" parent="CreatorHouseIsland/Middle_world_objects/Dwellers" instance=ExtResource( 49 )]
 position = Vector2( -662, -940 )
+dialogId = "harbor_house_extra_worker_dweller"
 actions = [ SubResource( 261 ), SubResource( 262 ), SubResource( 263 ), SubResource( 264 ) ]
 
 [node name="Sprite" type="Sprite" parent="CreatorHouseIsland/Middle_world_objects/Dwellers/FlatHatDweller/Body" index="0"]
@@ -2700,7 +2705,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 4 )]
-position = Vector2( -474, -208 )
+position = Vector2( 150, -969 )
 
 [node name="WaterSurface" type="Node2D" parent="."]
 pause_mode = 2
