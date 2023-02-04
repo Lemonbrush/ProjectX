@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=2]
+[gd_scene load_steps=109 format=2]
 
 [ext_resource path="res://Assets/Levels/Harbor_house/Rooms/Creator_house_rooms.png" type="Texture" id=1]
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://WorldObjects/Technical/AbstractDialogInteractionObject/AbstractDialogInteractionObject.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Levels/Harbor_house/CreatorHouse/CreatorHouse.gd" type="Script" id=17]
 [ext_resource path="res://WorldObjects/Pick_ups/Items/ArtistBrush/ArtistBrushItem.tscn" type="PackedScene" id=18]
+[ext_resource path="res://WorldObjects/Sign/Sign.tscn" type="PackedScene" id=19]
 
 [sub_resource type="Animation" id=189]
 length = 0.001
@@ -710,10 +711,102 @@ gravity_scale = 0.0
 [node name="CollisionShape2D" parent="Middle_world_decorations/ArtistBrushItem/PickupArea2D" index="0"]
 disabled = true
 
+[node name="Inspection_points" type="Node2D" parent="Middle_world_decorations" index="7"]
+
+[node name="Couch_sign" parent="Middle_world_decorations/Inspection_points" index="0" instance=ExtResource( 19 )]
+position = Vector2( -209, 339 )
+texts_array = [ "Видно, что здесь сидела чья-то попка" ]
+
+[node name="Sprite" parent="Middle_world_decorations/Inspection_points/Couch_sign" index="0"]
+visible = false
+
+[node name="Bottom_table_sign" parent="Middle_world_decorations/Inspection_points" index="1" instance=ExtResource( 19 )]
+position = Vector2( -51, 339 )
+texts_array = [ "Какой низкий стол. Наверно здесь
+очень атмосферно кушать", "Хм, он рассчитан на двоих" ]
+
+[node name="Sprite" parent="Middle_world_decorations/Inspection_points/Bottom_table_sign" index="0"]
+visible = false
+
+[node name="Calligraphy_books_sign" parent="Middle_world_decorations/Inspection_points" index="2" instance=ExtResource( 19 )]
+position = Vector2( -93, 249 )
+texts_array = [ "Этот шкаф полностью забит
+книгами по каллиграфии", "Некоторые из них еще даже
+не распечатаны" ]
+
+[node name="Sprite" parent="Middle_world_decorations/Inspection_points/Calligraphy_books_sign" index="0"]
+visible = false
+
+[node name="Top_art_books_sign" parent="Middle_world_decorations/Inspection_points" index="3" instance=ExtResource( 19 )]
+position = Vector2( -171, 212 )
+texts_array = [ "На антрисоли много книг
+по типографии" ]
+
+[node name="Sprite" parent="Middle_world_decorations/Inspection_points/Top_art_books_sign" index="0"]
+visible = false
+
+[node name="Work_room_snacks_sign" parent="Middle_world_decorations/Inspection_points" index="4" instance=ExtResource( 19 )]
+position = Vector2( -10, 249 )
+texts_array = [ "Чипсики. Кажется эту тарелку
+недавно обновили" ]
+
+[node name="Sprite" parent="Middle_world_decorations/Inspection_points/Work_room_snacks_sign" index="0"]
+visible = false
+
+[node name="Under_stairs_seat_sign" parent="Middle_world_decorations/Inspection_points" index="5" instance=ExtResource( 19 )]
+position = Vector2( 169, 249 )
+texts_array = [ "Отдельное место для рассматривания
+альбомов со старыми фотографиями", "Удобно" ]
+
+[node name="Sprite" parent="Middle_world_decorations/Inspection_points/Under_stairs_seat_sign" index="0"]
+visible = false
+
+[node name="Old_photos_album_sign" parent="Middle_world_decorations/Inspection_points" index="6" instance=ExtResource( 19 )]
+position = Vector2( 149, 219 )
+texts_array = [ "Ого, здесь собрание альбомов
+с фотографиями с поларойда", "Милые фотографии" ]
+
+[node name="Sprite" parent="Middle_world_decorations/Inspection_points/Old_photos_album_sign" index="0"]
+visible = false
+
+[node name="Girl_art_sign" parent="Middle_world_decorations/Inspection_points" index="7" instance=ExtResource( 19 )]
+position = Vector2( 15, 159 )
+texts_array = [ "Хммм... эта принцесса кого-то
+мне напоминает" ]
+
+[node name="Sprite" parent="Middle_world_decorations/Inspection_points/Girl_art_sign" index="0"]
+visible = false
+
+[node name="Kitchen_sign" parent="Middle_world_decorations/Inspection_points" index="8" instance=ExtResource( 19 )]
+position = Vector2( 42, 73 )
+texts_array = [ "На кухне нет холодильника
+и плиты", "Похоже киси-работники просто
+приносят всю еду сразу готовой" ]
+
+[node name="Sprite" parent="Middle_world_decorations/Inspection_points/Kitchen_sign" index="0"]
+visible = false
+
+[node name="Blue_sky_seat_sign" parent="Middle_world_decorations/Inspection_points" index="9" instance=ExtResource( 19 )]
+position = Vector2( 108, -9 )
+texts_array = [ "Кажется котятки-работники недавно
+прыгали на этом кресле" ]
+
+[node name="Sprite" parent="Middle_world_decorations/Inspection_points/Blue_sky_seat_sign" index="0"]
+visible = false
+
+[node name="Top_couch_sign" parent="Middle_world_decorations/Inspection_points" index="10" instance=ExtResource( 19 )]
+position = Vector2( 115, -212 )
+texts_array = [ "Коллекция манги, диван, плед,
+широкое окношко с цветочками
+и камин?", "Это особая комната" ]
+
+[node name="Sprite" parent="Middle_world_decorations/Inspection_points/Top_couch_sign" index="0"]
+visible = false
+
 [node name="Foreground_world_decorations" type="Node2D" parent="." index="7"]
 
 [node name="Player" parent="." index="8"]
-position = Vector2( -94, 245 )
+position = Vector2( -132, 332 )
 z_index = 1
 collision_mask = 108
 
@@ -1655,6 +1748,28 @@ __meta__ = {
 [editable path="Middle_world_decorations/Doors/CreatorHouseFirstFloorDoorTwo"]
 [editable path="Middle_world_decorations/Doors/CreatorHouseFirstFloorDoorTwo/InteractionController"]
 [editable path="Middle_world_decorations/ArtistBrushItem"]
+[editable path="Middle_world_decorations/Inspection_points/Couch_sign"]
+[editable path="Middle_world_decorations/Inspection_points/Couch_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Bottom_table_sign"]
+[editable path="Middle_world_decorations/Inspection_points/Bottom_table_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Calligraphy_books_sign"]
+[editable path="Middle_world_decorations/Inspection_points/Calligraphy_books_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Top_art_books_sign"]
+[editable path="Middle_world_decorations/Inspection_points/Top_art_books_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Work_room_snacks_sign"]
+[editable path="Middle_world_decorations/Inspection_points/Work_room_snacks_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Under_stairs_seat_sign"]
+[editable path="Middle_world_decorations/Inspection_points/Under_stairs_seat_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Old_photos_album_sign"]
+[editable path="Middle_world_decorations/Inspection_points/Old_photos_album_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Girl_art_sign"]
+[editable path="Middle_world_decorations/Inspection_points/Girl_art_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Kitchen_sign"]
+[editable path="Middle_world_decorations/Inspection_points/Kitchen_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Blue_sky_seat_sign"]
+[editable path="Middle_world_decorations/Inspection_points/Blue_sky_seat_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Top_couch_sign"]
+[editable path="Middle_world_decorations/Inspection_points/Top_couch_sign/InteractionController"]
 [editable path="Collisions/PassTrough/PassThroughBody60"]
 [editable path="Collisions/PassTrough/PassThroughBody90"]
 [editable path="Collisions/PassTrough/PassThroughBody91"]
