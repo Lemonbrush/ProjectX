@@ -336,6 +336,7 @@ texture = ExtResource( 18 )
 
 [node name="AbstractDweller" parent="Middle_world_objects/Dwellers" index="0" instance=ExtResource( 20 )]
 position = Vector2( -126, 23 )
+dialogId = "harbor_house_sleepy_girl_dweller"
 watch_player_on_talk = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Middle_world_objects/Dwellers/AbstractDweller" index="0"]

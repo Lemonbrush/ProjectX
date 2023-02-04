@@ -142,7 +142,6 @@ func on_npc_interact(interactedBody):
 		currentState = TalkNpcAction.new()
 		
 		if watch_player_on_talk:
-			print("interacted body x - ", interactedBody.position.x, "position x - ", position.x)
 			body.scale.x = 1 if interactedBody.position.x > position.x else -1
 
 ### Acting
