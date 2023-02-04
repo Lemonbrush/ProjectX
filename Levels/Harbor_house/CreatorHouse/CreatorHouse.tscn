@@ -468,6 +468,7 @@ anims/RESET = SubResource( 189 )
 anims/creator_house_desk_scene = SubResource( 188 )
 
 [node name="Camera2D" parent="." index="4"]
+position = Vector2( -131, 320 )
 zoom = Vector2( 0.7, 0.7 )
 backgroundColor = Color( 0.768627, 0.898039, 1, 1 )
 

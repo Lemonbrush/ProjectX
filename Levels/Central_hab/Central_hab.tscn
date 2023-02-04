@@ -1952,7 +1952,7 @@ process_material = SubResource( 212 )
 texture = ExtResource( 73 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 7 )]
-position = Vector2( -94, -260 )
+position = Vector2( 54, -71 )
 
 [node name="Clouds" parent="Camera2D" instance=ExtResource( 15 )]
 position = Vector2( -2, 2 )
