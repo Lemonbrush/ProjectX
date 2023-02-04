@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Levels/Harbor_house/Rooms/Dwellers_house_sprite.png" type="Texture" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Assets/effects/sleepingLetter.png" type="Texture" id=18]
 [ext_resource path="res://Assets/NPC/HarborHouseDormSittingDwellerSprite-Sheet.png" type="Texture" id=19]
 [ext_resource path="res://Dweller/Abstract_dweller/AbstractDweller.tscn" type="PackedScene" id=20]
+[ext_resource path="res://WorldObjects/Sign/Sign.tscn" type="PackedScene" id=21]
 
 [sub_resource type="CurveTexture" id=126]
 
@@ -335,8 +336,6 @@ texture = ExtResource( 18 )
 
 [node name="AbstractDweller" parent="Middle_world_objects/Dwellers" index="0" instance=ExtResource( 20 )]
 position = Vector2( -126, 23 )
-collision_layer = 3
-collision_mask = 0
 watch_player_on_talk = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Middle_world_objects/Dwellers/AbstractDweller" index="0"]
@@ -350,6 +349,13 @@ texture = ExtResource( 19 )
 hframes = 13
 
 [node name="InteractionController" parent="Middle_world_objects/Dwellers/AbstractDweller/Body" index="2"]
+visible = false
+
+[node name="Sleeping_dweller_sign" parent="Middle_world_objects" index="5" instance=ExtResource( 21 )]
+position = Vector2( -193, 0 )
+texts_array = [ "Ми-ми-ми...", "Сосисочки...", "Много сосисочек...", "Много сосисочек падает с неба" ]
+
+[node name="Sprite" parent="Middle_world_objects/Sleeping_dweller_sign" index="0"]
 visible = false
 
 [node name="Player" parent="." index="7"]
@@ -563,6 +569,8 @@ __meta__ = {
 [editable path="Camera2D/Clouds"]
 [editable path="Middle_world_objects/Dwellers/AbstractDweller"]
 [editable path="Middle_world_objects/Dwellers/AbstractDweller/Body/InteractionController"]
+[editable path="Middle_world_objects/Sleeping_dweller_sign"]
+[editable path="Middle_world_objects/Sleeping_dweller_sign/InteractionController"]
 [editable path="Collisions/PassTrough/PassThroughBody14"]
 [editable path="Collisions/PassTrough/PassThroughBody17"]
 [editable path="Collisions/PassTrough/PassThroughBody18"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=173 format=2]
+[gd_scene load_steps=174 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=2]
@@ -60,6 +60,7 @@
 [ext_resource path="res://Assets/NPC/ConeDwellerSprite-Sheet.png" type="Texture" id=58]
 [ext_resource path="res://Assets/Levels/Harbor_house/World_objects/Swimming_dweller.png" type="Texture" id=59]
 [ext_resource path="res://Assets/NPC/FlatHatDwellerSprite-Sheet.png" type="Texture" id=60]
+[ext_resource path="res://WorldObjects/Sign/Sign.tscn" type="PackedScene" id=61]
 
 [sub_resource type="Animation" id=38]
 resource_name = "Gate_opening_cut_scene"
@@ -1442,6 +1443,37 @@ __meta__ = {
 
 [node name="Middle_world_objects" type="Node2D" parent="CreatorHouseIsland"]
 
+[node name="Inspection_points" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects"]
+
+[node name="Always_bloom_forest_sign" parent="CreatorHouseIsland/Middle_world_objects/Inspection_points" instance=ExtResource( 61 )]
+position = Vector2( 544, -383 )
+texts_array = [ "Маленький лесок с вечно цветущими
+яблонями и озеро. А это удобно" ]
+
+[node name="Sprite" parent="CreatorHouseIsland/Middle_world_objects/Inspection_points/Always_bloom_forest_sign" index="0"]
+visible = false
+
+[node name="Flowers_sign" parent="CreatorHouseIsland/Middle_world_objects/Inspection_points" instance=ExtResource( 61 )]
+position = Vector2( 1027, -383 )
+texts_array = [ "Котятки потрудились на славу" ]
+
+[node name="Flowers_bench_sign" parent="CreatorHouseIsland/Middle_world_objects/Inspection_points" instance=ExtResource( 61 )]
+position = Vector2( 1094, -383 )
+texts_array = [ "Похоже кто-то любит сидеть здесь
+и просто любоваться цветочками" ]
+
+[node name="Sprite" parent="CreatorHouseIsland/Middle_world_objects/Inspection_points/Flowers_bench_sign" index="0"]
+visible = false
+
+[node name="Sushi_sign" parent="CreatorHouseIsland/Middle_world_objects/Inspection_points" instance=ExtResource( 61 )]
+position = Vector2( -363, -383 )
+texts_array = [ "Кто-то устроил пикник", "В этой корзинке находится
+бесконечный источник вечно
+свежих роллов", "*завидует*" ]
+
+[node name="Sprite" parent="CreatorHouseIsland/Middle_world_objects/Inspection_points/Sushi_sign" index="0"]
+visible = false
+
 [node name="Decorations" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects"]
 
 [node name="Trees" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects/Decorations"]
@@ -2733,6 +2765,12 @@ margin_bottom = 344.0
 [editable path="Harbor_world_objects/Collisions/Solid/PassThroughBody_ex"]
 [editable path="Harbor_world_objects/Collisions/Solid/PassThroughBody_ex2"]
 [editable path="Harbor_world_objects/Collisions/Solid/PassThroughBody_ex3"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Always_bloom_forest_sign"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Always_bloom_forest_sign/InteractionController"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Flowers_bench_sign"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Flowers_bench_sign/InteractionController"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Sushi_sign"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Sushi_sign/InteractionController"]
 [editable path="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseTopWindowDoor"]
 [editable path="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseTopWindowDoor/InteractionController"]
 [editable path="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseTopFloorDoor"]
