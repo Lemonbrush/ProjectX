@@ -45,7 +45,8 @@ func set_default_constants():
 		blue_butterfly_pickedup = false,
 		guardian_statue_satisfied = false,
 		redThredItem_picked_up = false,
-		is_creator_house_desk_inspected = false
+		is_creator_house_desk_inspected = false,
+		artist_gifted_the_thread = false
 	}
 	EventBus.game_const_changed()
 
