@@ -379,8 +379,7 @@ texture = ExtResource( 16 )
 
 [node name="CookingDweller" parent="Middle_world_objects/Dwellers" index="0" instance=ExtResource( 15 )]
 position = Vector2( -81, -7 )
-collision_layer = 3
-collision_mask = 0
+dialogId = "harbor_house_cooker_dweller"
 watch_player_on_talk = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Middle_world_objects/Dwellers/CookingDweller" index="0"]
@@ -398,8 +397,7 @@ visible = false
 
 [node name="NeedyDweller" parent="Middle_world_objects/Dwellers" index="1" instance=ExtResource( 15 )]
 position = Vector2( -106, -7 )
-collision_layer = 3
-collision_mask = 0
+dialogId = "harbor_house_needy_dweller"
 watch_player_on_talk = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Middle_world_objects/Dwellers/NeedyDweller" index="0"]
