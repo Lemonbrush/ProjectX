@@ -4,46 +4,89 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased] - Central hub update
+## [1.4.0 Alpha] - 2022-11-20 - Grand garden location update
 ### Added
-- add npc kitten dwellers
-- add game version on the main screen
+- Added decorations
+- Added birds
+- Added Grand garden location hints on the Central hub location
+- Added butterfly item
+- Added water towers quest
+- Added flower dwellers
 
+## [1.3.1 Alpha] - 2022-10-15 - Hotfix
+### Removed
+- Removed save files
+### Fixed
+- Fixed export paths
+- Corrected player position
+- Cleaned up project
+
+## [1.3.0 Alpha] - 2022-10-15 - Central hub location update
+### Added
+- Added central hub location
+- Added lighthouse location
+- Added blue house location
+- Added yellow house location
+- Added green house location
+- Added mill location
+- Added pink house location
+- Added dialog system
+- Added central hub dwellers
+- Added art quest
+- Added cauldron quest
+- Added banana quest
+- Added animated waterfalls
+- Added locked doors
+- Added decorative signs
+- Added respawn logic
+- Added game version on the main screen
+- Added localization base feature
 ### Changed
-- tune player movement
+- Tuned player movement
+- Added fps optimization
+- Added camera optimization 
+- Optimized npc dwellers
+### Removed
+- Removed trees'particles
+### Fixed
+- Fixed door entering animation
+- Fixed gates' door flickering in start gate location
+- Fixed ladder jump bug
+- Fixed air blowers logic
+- Fixed door interaction popup appearance
 
 ## [1.2.1 Alpha] - 2022-06-21 - Hotfix
 ### Fixed
-- fixed game save system 
+- Fixed game save system 
 
 ## [1.2.0 Alpha] - 2022-06-21 - Heart gate location update
 ### Added
-- add destructable items such as barrels and vases
-- add door entering animation
-- add screen shakes
-- add decorative elements to the first level
-- add trees
-- add heart key item
-- add animated background to the heart gate level
-- add object containers such as barrels and chests
-- add moving platforms
-- add player fail logic
+- Added destructable items such as barrels and vases
+- Added door entering animation
+- Added screen shakes
+- Added decorative elements to the first level
+- Added trees
+- Added heart key item
+- Added animated background to the heart gate level
+- Added object containers such as barrels and chests
+- Added moving platforms
+- Added player fail logic
 
 ### Changed
-- change heart gate level and brush its elements
-- improved game save system
+- Changed heart gate level and brush its elements
+- Improved game save system
 
 ### Deprecated
-- the book element is yet to be removed
-- old game save system
+- The book element is yet to be removed
+- Deprecated old game save system
 
 ## [0.1.0 Alpha] - 2022-05-29 - Core mechanics
 ### Added
-- core mechanics
-- add game save system
-- add basic character logic
-- add 2 basic worlds and ability to move between them
-- add air blowing mechanic
+- Added core mechanics
+- Added game save system
+- Added basic character logic
+- Added 2 basic worlds and ability to move between them
+- Added air blowing mechanic
 
 ---
 
