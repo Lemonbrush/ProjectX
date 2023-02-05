@@ -20,6 +20,7 @@ func _ready():
 	
 func _process(delta):
 	velocity.y += weight * delta
+	velocity.x = 0
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
 	if !background_object:

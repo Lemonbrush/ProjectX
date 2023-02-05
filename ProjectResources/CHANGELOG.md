@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.0 Alpha] - 2023-2-5 - Harbour house location update
+### Added 
+- Harbour house location 
+- Changelog screen
+- Optimization
+### Changed
+- Artist quest
+- Central hub Harbour house location entrance sprite
+### Fixed
+- Fixed player and camera position in some locations
+
 ## [1.4.0 Alpha] - 2022-11-20 - Grand garden location update
 ### Added
 - Added decorations

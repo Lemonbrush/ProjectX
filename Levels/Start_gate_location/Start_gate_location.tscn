@@ -801,6 +801,7 @@ anims/Gate_opening_cut_scene = SubResource( 35 )
 anims/open_transition = SubResource( 34 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 7 )]
+position = Vector2( -672, -335 )
 backgroundColor = Color( 0.403922, 0.596078, 0.741176, 1 )
 
 [node name="Stars" parent="Camera2D" instance=ExtResource( 15 )]
@@ -1300,6 +1301,7 @@ position = Vector2( -0.5, -55.5 )
 shape = SubResource( 44 )
 
 [node name="AirBlowers" parent="." instance=ExtResource( 17 )]
+visible = false
 position = Vector2( 84, -355 )
 
 [node name="Area2D" parent="AirBlowers" index="0"]
@@ -1422,7 +1424,6 @@ anims/RESET = SubResource( 59 )
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 5 )]
 modulate = Color( 0.631373, 0.631373, 0.631373, 1 )
 position = Vector2( -675, -83 )
-collision_layer = 131
 collision_mask = 124
 
 [node name="Light2D2" type="Light2D" parent="Player"]

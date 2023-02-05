@@ -1,4 +1,4 @@
-[gd_scene load_steps=213 format=2]
+[gd_scene load_steps=215 format=2]
 
 [ext_resource path="res://Assets/Levels/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -74,6 +74,7 @@
 [ext_resource path="res://Dweller/Abstract_dweller/AbstractDweller.tscn" type="PackedScene" id=72]
 [ext_resource path="res://Assets/effects/Heart.png" type="Texture" id=73]
 [ext_resource path="res://WorldObjects/Pick_ups/Items/LighthouseKey/LighthouseKeyItem.tscn" type="PackedScene" id=74]
+[ext_resource path="res://Resources/Tilesets/Resources/Decorations/Decorations.tres" type="TileSet" id=75]
 
 [sub_resource type="Environment" id=30]
 background_mode = 4
@@ -1066,8 +1067,8 @@ extents = Vector2( 13, 2 )
 [sub_resource type="RectangleShape2D" id=79]
 extents = Vector2( 70.5, 2 )
 
-[sub_resource type="RectangleShape2D" id=80]
-extents = Vector2( 28, 2 )
+[sub_resource type="RectangleShape2D" id=217]
+extents = Vector2( 32.5, 2 )
 
 [sub_resource type="RectangleShape2D" id=81]
 extents = Vector2( 35.5, 2 )
@@ -1126,6 +1127,9 @@ extents = Vector2( 95.5, 5 )
 [sub_resource type="RectangleShape2D" id=211]
 extents = Vector2( 648, 8 )
 
+[sub_resource type="RectangleShape2D" id=219]
+extents = Vector2( 2, 4 )
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 67, 8 )
 
@@ -1135,8 +1139,8 @@ extents = Vector2( 2, 2 )
 [sub_resource type="RectangleShape2D" id=164]
 extents = Vector2( 64, 54 )
 
-[sub_resource type="RectangleShape2D" id=132]
-extents = Vector2( 568.5, 8 )
+[sub_resource type="RectangleShape2D" id=218]
+extents = Vector2( 592.5, 8 )
 
 [sub_resource type="RectangleShape2D" id=93]
 extents = Vector2( 175.75, 8 )
@@ -1653,6 +1657,12 @@ cell_size = Vector2( 26, 26 )
 format = 1
 tile_data = PoolIntArray( -524331, 1, 0, -524326, 1, 0, -458795, 1, 0, -458790, 1, 0, -393259, 1, 0, -393254, 1, 0, -327723, 1, 0, -327718, 1, 0, -262187, 1, 0, -262182, 1, 0, -196651, 1, 0, -196646, 1, 0, -131115, 1, 0, -131110, 1, 0, -65579, 1, 0, -65574, 1, 0, -43, 1, 0, -38, 1, 0, 65493, 1, 0, 65498, 1, 0, 524248, 1, 0, 589779, 0, 0, 589784, 1, 0, 655315, 1, 0, 655320, 1, 0, 720856, 1, 0, 786392, 1, 0, 786418, 1, 0, 851928, 1, 0, 851954, 1, 0, 917464, 1, 0, 917490, 1, 0, 983000, 1, 0, 983026, 1, 0, 1048536, 1, 0, 1048562, 1, 0, 1114072, 1, 0, 1114098, 1, 0, 1179608, 1, 0, 1179634, 1, 0, 1245144, 1, 0, 1245170, 1, 0, 1310680, 1, 0, 1310706, 1, 0, 1376216, 1, 0, 1376242, 1, 0, 1441752, 1, 0, 1441778, 1, 0, 1507288, 1, 0, 1507314, 1, 0, 1572824, 1, 0, 1572850, 1, 0, 1638360, 1, 0, 1638386, 1, 0, 1703896, 1, 0, 1703922, 1, 0, 1769432, 1, 0, 1769458, 1, 0, 1834968, 1, 0, 1834994, 1, 0, 1900504, 1, 0, 1900530, 1, 0, 1966040, 1, 0, 1966066, 1, 0, 2031576, 1, 0, 2031602, 1, 0, 2097112, 1, 0, 2097138, 1, 0, 2162648, 1, 0, 2162674, 1, 0, 2228184, 1, 0, 2228210, 1, 0, 2293720, 1, 0, 2293746, 1, 0, 2359256, 1, 0, 2359282, 1, 0, 2424792, 1, 0, 2424818, 1, 0, 2490328, 1, 0, 2490354, 1, 0, 2555864, 1, 0, 2555890, 1, 0, 2621400, 1, 0, 2621426, 1, 0, 2686962, 1, 0, 2752498, 1, 0 )
 
+[node name="Decorations" type="TileMap" parent="DecorationsBackground"]
+tile_set = ExtResource( 75 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( 21626759, 536870990, 0, 23920393, 536871014, 0, 23920409, 536871003, 0, 23920468, 536871009, 0, 23920484, 536871011, 0, 23920507, 536871014, 0, 26410763, 113, 0, 27393882, 536871023, 0, 30146368, 536871024, 0 )
+
 [node name="WorldSprite" type="Sprite" parent="."]
 position = Vector2( -186, -244 )
 texture = ExtResource( 1 )
@@ -1684,6 +1694,7 @@ format = 1
 tile_data = PoolIntArray( -18809983, 2, 0, -18809954, 16, 0, -18809893, 12, 0, -18809801, 29, 0, -18809756, 21, 0, -18809716, 27, 0, -16711802, 17, 0, -16711765, 9, 0, -16711720, 14, 0, -16777189, 27, 0, -16777148, 28, 0, -16777000, 29, 0, -7274854, 6, 0, -7274835, 1, 0, -6226207, 27, 0, -5177729, 29, 0, -4849026, 17, 0, -4849011, 18, 0, -4848979, 3, 0, -4848962, 24, 0, -4848944, 14, 0, -4130151, 3, 0, -4130135, 1, 0, -4130118, 2, 0, -4130100, 12, 0, -3081694, 16, 0, -3081657, 20, 0, -3081628, 28, 0, -3081605, 24, 0, -3081555, 21, 0, -3081533, 25, 0, -3081512, 13, 0, -3081485, 21, 0, -3081412, 29, 0, -3081393, 27, 0, -3080277, 17, 0, -3080216, 8, 0, -3145711, 24, 0, -3145581, 2, 0, -3145566, 1, 0, -3144920, 9, 0, -3144901, 10, 0, -2817442, 20, 0, -2031720, 23, 0, -2097053, 21, 0, -2096945, 21, 0, -984167, 3, 0, -984150, 4, 0, -984133, 2, 0, -984108, 12, 0, -984001, 27, 0, -983900, 21, 0, -983883, 20, 0, -983638, 16, 0, -983606, 7, 0, -983555, 24, 0, -983531, 14, 0, -983505, 22, 0, -983489, 20, 0, -983444, 27, 0, -983428, 29, 0, -983392, 24, 0, -983367, 25, 0, -983344, 6, 0, -983299, 16, 0, -983267, 1, 0, -983249, 2, 0, -983232, 3, 0, -983210, 2, 0, -983179, 29, 0, -983157, 12, 0, -983140, 22, 0, -983118, 3, 0, -983101, 4, 0, -983069, 13, 0, -1048554, 1, 0, -1048520, 21, 0, -1048502, 22, 0, -1048468, 16, 0, -1048444, 20, 0, -1048420, 14, 0, -1048402, 22, 0, -1048376, 13, 0, -1048342, 22, 0, -1048324, 23, 0, -1048298, 29, 0, -1048280, 20, 0, -1048196, 12, 0, -1047999, 21, 0, -1047820, 13, 0, 5243660, 4, 0, 6292358, 29, 0, 7340851, 16, 0, 7340873, 24, 0, 7340900, 20, 0, 10550161, 21, 0, 10550181, 29, 0, 10550208, 26, 0, 10550231, 7, 0, 11533349, 22, 0, 12647429, 12, 0, 12647504, 20, 0, 12647584, 2, 0, 13695981, 15, 0, 19987528, 20, 0, 19987557, 5, 0, 19987579, 17, 0, 19987614, 2, 0, 21036585, 6, 0, 23133237, 27, 0, 23133263, 16, 0, 23133296, 24, 0, 23133352, 13, 0, 23133749, 22, 0, 23133836, 21, 0, 23133863, 29, 0, 24181489, 2, 0, 24181504, 4, 0, 24181531, 22, 0, 24181573, 20, 0, 24181590, 14, 0, 24181631, 9, 0, 24181683, 20, 0, 24181705, 7, 0, 24181804, 20, 0, 24181883, 12, 0, 24181957, 21, 0, 24181977, 1, 0, 24182006, 20, 0, 24182073, 20, 0, 24182089, 12, 0, 24182175, 20, 0, 24182285, 13, 0, 24182309, 27, 0, 24182332, 12, 0, 24182394, 1, 0, 24182410, 2, 0, 24182447, 20, 0, 24182505, 18, 0 )
 
 [node name="Fountains" type="TileMap" parent="Decorations"]
+z_index = 100
 tile_set = ExtResource( 29 )
 cell_size = Vector2( 32, 32 )
 format = 1
@@ -1703,6 +1714,12 @@ self_modulate = Color( 0.564706, 0.560784, 0.560784, 1 )
 position = Vector2( -723, -5 )
 scale = Vector2( 0.9, 0.9 )
 texture = ExtResource( 68 )
+
+[node name="Advanced_decorations" type="TileMap" parent="Decorations"]
+tile_set = ExtResource( 75 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( 27328292, 536870985, 0 )
 
 [node name="Doors" type="Node2D" parent="."]
 position = Vector2( -140, -191 )
@@ -1752,7 +1769,7 @@ nextScenePath = "res://Levels/Central_hab/Pink_house/PinkHouse.tscn"
 nextDoorName = "PinkHouseDoor"
 
 [node name="Shed_door" parent="Doors" instance=ExtResource( 16 )]
-position = Vector2( -62, 571 )
+position = Vector2( -56, 571 )
 nextScenePath = "res://Levels/Harbor_house/Harbor_house.tscn"
 nextDoorName = "Harbor_house_door"
 
@@ -1795,33 +1812,6 @@ keyGameConstant = "is_lighthouse_key_available"
 
 [node name="Barrel" parent="WorldObjects/Barrel" instance=ExtResource( 26 )]
 position = Vector2( -874, 144 )
-
-[node name="Barrel13" parent="WorldObjects/Barrel" instance=ExtResource( 26 )]
-position = Vector2( -239, 367 )
-
-[node name="Barrel14" parent="WorldObjects/Barrel" instance=ExtResource( 26 )]
-position = Vector2( -240, 350 )
-
-[node name="Barrel15" parent="WorldObjects/Barrel" instance=ExtResource( 26 )]
-position = Vector2( -257, 371 )
-
-[node name="Barrel16" parent="WorldObjects/Barrel" instance=ExtResource( 26 )]
-position = Vector2( -240, 332 )
-
-[node name="Barrel18" parent="WorldObjects/Barrel" instance=ExtResource( 26 )]
-position = Vector2( -257, 356 )
-
-[node name="Barrel23" parent="WorldObjects/Barrel" instance=ExtResource( 26 )]
-position = Vector2( -221, 371 )
-
-[node name="Barrel26" parent="WorldObjects/Barrel" instance=ExtResource( 26 )]
-position = Vector2( -195, 371 )
-
-[node name="Barrel24" parent="WorldObjects/Barrel" instance=ExtResource( 26 )]
-position = Vector2( -222, 353 )
-
-[node name="Barrel25" parent="WorldObjects/Barrel" instance=ExtResource( 26 )]
-position = Vector2( -178, 371 )
 
 [node name="Barrel2" parent="WorldObjects/Barrel" instance=ExtResource( 26 )]
 position = Vector2( -982, 171 )
@@ -1962,7 +1952,7 @@ process_material = SubResource( 212 )
 texture = ExtResource( 73 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 7 )]
-position = Vector2( -94, -260 )
+position = Vector2( 54, -71 )
 
 [node name="Clouds" parent="Camera2D" instance=ExtResource( 15 )]
 position = Vector2( -2, 2 )
@@ -2025,6 +2015,9 @@ texture = ExtResource( 46 )
 
 [node name="ForestOlderDweller" parent="Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -585, -5 )
+__meta__ = {
+"_edit_lock_": true
+}
 dialogId = "old_dweller"
 actions = [ SubResource( 172 ), SubResource( 173 ), SubResource( 172 ), SubResource( 174 ) ]
 
@@ -2139,6 +2132,9 @@ texture = ExtResource( 61 )
 
 [node name="DwellerPeasant" parent="Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -291, 380 )
+__meta__ = {
+"_edit_lock_": true
+}
 dialogId = "wealthy_dweller"
 actions = [ SubResource( 186 ), SubResource( 187 ) ]
 
@@ -2158,8 +2154,6 @@ z_index = 99
 
 [node name="MysticDweller" parent="Dwellers" instance=ExtResource( 72 )]
 position = Vector2( -23, -768 )
-collision_layer = 3
-collision_mask = 0
 actions = [ SubResource( 205 ), SubResource( 206 ), SubResource( 203 ), SubResource( 204 ) ]
 
 [node name="Sprite" type="Sprite" parent="Dwellers/MysticDweller/Body" index="2"]
@@ -2176,8 +2170,6 @@ anims/Walk = SubResource( 209 )
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 5 )]
 position = Vector2( 54, -58 )
 z_index = 2
-collision_layer = 131
-collision_mask = 108
 
 [node name="Light2D2" type="Light2D" parent="Player"]
 visible = false
@@ -2488,11 +2480,11 @@ shape = SubResource( 79 )
 one_way_collision = true
 
 [node name="PassThroughBody54" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
-position = Vector2( -414, 266 )
+position = Vector2( -415, 252 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody54" index="0"]
-position = Vector2( 209, -2 )
-shape = SubResource( 80 )
+position = Vector2( 214, -2 )
+shape = SubResource( 217 )
 one_way_collision = true
 
 [node name="PassThroughBody55" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
@@ -2722,6 +2714,14 @@ collision_mask = 17
 position = Vector2( 632, -8 )
 shape = SubResource( 211 )
 
+[node name="PassThroughBody21" parent="Collisions/Solid" instance=ExtResource( 6 )]
+position = Vector2( -120, 314 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody21" index="0"]
+shape = SubResource( 219 )
+
 [node name="PassThroughBody" parent="Collisions/Solid" instance=ExtResource( 6 )]
 position = Vector2( -613, -50 )
 collision_layer = 17
@@ -2782,8 +2782,8 @@ collision_layer = 17
 collision_mask = 17
 
 [node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody13" index="0"]
-position = Vector2( 552.5, -8 )
-shape = SubResource( 132 )
+position = Vector2( 576.5, -8 )
+shape = SubResource( 218 )
 
 [node name="PassThroughBody12" parent="Collisions/Solid" instance=ExtResource( 6 )]
 position = Vector2( -1509, -84 )
@@ -3001,8 +3001,8 @@ __meta__ = {
 }
 
 [node name="Light2D9" type="Light2D" parent="Lighting"]
-position = Vector2( -758, 409.187 )
-scale = Vector2( 1.52513, 0.324782 )
+position = Vector2( -698.875, 410.687 )
+scale = Vector2( 1.67751, 0.318302 )
 texture = ExtResource( 3 )
 color = Color( 1, 1, 1, 0.431373 )
 energy = 0.7
@@ -3468,6 +3468,7 @@ shape = SubResource( 155 )
 [editable path="Collisions/PassTrough/PassThroughBody12"]
 [editable path="Collisions/PassTrough/PassThroughBody10"]
 [editable path="Collisions/Solid/PassThroughBody18"]
+[editable path="Collisions/Solid/PassThroughBody21"]
 [editable path="Collisions/Solid/PassThroughBody"]
 [editable path="Collisions/Solid/PassThroughBody2"]
 [editable path="Collisions/Solid/PassThroughBody15"]

@@ -39,16 +39,16 @@ scale = Vector2( 0.143938, 0.197316 )
 texture = ExtResource( 5 )
 energy = 0.7
 
-[node name="Collisions" type="Node" parent="."]
+[node name="Collisions" type="Node2D" parent="."]
 
-[node name="PassTrough" type="Node" parent="Collisions"]
+[node name="PassTrough" type="Node2D" parent="Collisions"]
 
-[node name="Solid" type="Node" parent="Collisions"]
+[node name="Solid" type="Node2D" parent="Collisions"]
 
-[node name="Ladders" type="Node" parent="."]
+[node name="Ladders" type="Node2D" parent="."]
 
 [node name="Doors" type="Node2D" parent="."]
 
-[node name="Lighting" type="Node" parent="."]
+[node name="Lighting" type="Node2D" parent="."]
 
-[node name="AirBlowers" type="Node" parent="."]
+[node name="AirBlowers" type="Node2D" parent="."]

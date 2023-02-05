@@ -15,6 +15,8 @@ func show(new_text = null):
 		labelText = new_text
 		label.text = new_text
 	
+	label.text = labelText
+	
 	if modulate.a != 1.0:
 		marginNode.position.y = 10
 		tween.stop(self)
@@ -28,3 +30,6 @@ func hide():
 		tween.interpolate_property(self, 'modulate:a', get_modulate().a, 0.0, 0.25, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0)
 		tween.interpolate_property(marginNode, 'position:y', marginNode.position.y, -10, 0.25, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0)
 		tween.start()
+
+func set_label_text(label_text):
+	labelText = label_text

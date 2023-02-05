@@ -27,6 +27,10 @@ signal show_lovers_cut_scene()
 signal show_white_flower_grow_cut_scene()
 signal show_cuctus_love_particles()
 
+signal guardian_statue_lift_up()
+signal guardian_statue_lift_down()
+signal show_creator_house_desk_scene()
+
 func start_shake_screen(duration = 0.2, frequency = 16, amplitude = 2, infinity = true):
 	emit_signal("start_shake_screen", duration, frequency, amplitude, infinity)
 
@@ -80,3 +84,12 @@ func show_white_flower_grow_cut_scene():
 
 func show_cuctus_love_particles():
 	emit_signal("show_cuctus_love_particles")
+
+func guardian_statue_lift_up():
+	emit_signal("guardian_statue_lift_up")
+	
+func guardian_statue_lift_down():
+	emit_signal("guardian_statue_lift_down")
+
+func show_creator_house_desk_scene():
+	emit_signal("show_creator_house_desk_scene")

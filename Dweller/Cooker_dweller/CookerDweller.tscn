@@ -546,7 +546,6 @@ position = Vector2( 20, -77 )
 [node name="Heart" type="Sprite" parent="Jur"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0, 1 )
-rotation = -6.24178e-08
 texture = ExtResource( 10 )
 
 [node name="Jur" type="Sprite" parent="Jur"]

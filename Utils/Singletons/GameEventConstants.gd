@@ -42,7 +42,12 @@ func set_default_constants():
 		white_flower_quest_taken = false,
 		is_cactus_hugged = false,
 		grand_flower_did_grow = false,
-		blue_butterfly_pickedup = false
+		blue_butterfly_pickedup = false,
+		guardian_statue_satisfied = false,
+		redThredItem_picked_up = false,
+		is_creator_house_desk_inspected = false,
+		artist_gifted_the_thread = false,
+		did_speak_to_creator_house_welcomer = false
 	}
 	EventBus.game_const_changed()
 
