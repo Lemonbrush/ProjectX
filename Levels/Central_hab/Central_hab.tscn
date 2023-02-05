@@ -1806,6 +1806,14 @@ nextScenePath = "res://Levels/Central_hab/LightHouse/LightgHouse.tscn"
 nextDoorName = "LightHouseBottomDoor"
 keyGameConstant = "is_lighthouse_key_available"
 
+[node name="Wish_star_dangeon_door" parent="Doors" instance=ExtResource( 16 )]
+position = Vector2( -871, -85 )
+nextScenePath = "res://Levels/Wish_star_dangeon/Wish_star_dangeon.tscn"
+nextDoorName = "Centeal_hub_door"
+
+[node name="GatesBackground" parent="Doors/Wish_star_dangeon_door" index="1"]
+visible = false
+
 [node name="WorldObjects" type="Node2D" parent="."]
 
 [node name="Barrel" type="Node2D" parent="WorldObjects"]
@@ -3365,6 +3373,8 @@ shape = SubResource( 155 )
 [editable path="Doors/Gates_2"]
 [editable path="Doors/LightHouseTopDoor"]
 [editable path="Doors/LightHouseTopDoor/InteractionController"]
+[editable path="Doors/Wish_star_dangeon_door"]
+[editable path="Doors/Wish_star_dangeon_door/InteractionController"]
 [editable path="WorldObjects/Signs/StoneSign"]
 [editable path="WorldObjects/Signs/StoneSign/InteractionController"]
 [editable path="WorldObjects/Signs/BranchSign"]
