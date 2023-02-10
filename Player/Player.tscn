@@ -370,6 +370,7 @@ script = ExtResource( 13 )
 script = ExtResource( 14 )
 
 [node name="BodyCollisionShape" type="CollisionShape2D" parent="." groups=["player"]]
+visible = false
 position = Vector2( 0, -8 )
 shape = SubResource( 1 )
 
@@ -408,10 +409,12 @@ collision_layer = 64
 collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body/HazardArea"]
+visible = false
 position = Vector2( 0, -8 )
 shape = SubResource( 12 )
 
 [node name="AttackArea" type="Area2D" parent="Body"]
+visible = false
 position = Vector2( 16, -10 )
 collision_layer = 0
 collision_mask = 144

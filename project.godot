@@ -44,6 +44,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://WorldObjects/Technical/InteractionController/InteractionController.gd"
 }, {
+"base": "Position2D",
+"class": "LightSource",
+"language": "GDScript",
+"path": "res://WorldObjects/Technical/Lighting/LightSource/LightSource.gd"
+}, {
 "base": "Resource",
 "class": "NpcAction",
 "language": "GDScript",
@@ -102,6 +107,7 @@ _global_script_class_icons={
 "DialogManager": "",
 "IdleNpcAction": "",
 "InteractionController": "",
+"LightSource": "",
 "NpcAction": "",
 "OpenableContainerOpenSceneObject": "",
 "PickupContainer": "",
@@ -261,6 +267,6 @@ gles3/shaders/shader_compilation_mode.mobile=2
 gles3/shaders/shader_compilation_mode.web=2
 gles3/shaders/shader_cache_size_mb=4096
 quality/subsurface_scattering/quality=2
-quality/depth/hdr=false
+quality/voxel_cone_tracing/high_quality=true
 environment/default_environment="res://default_env.tres"
 quality/dynamic_fonts/use_oversampling=false
