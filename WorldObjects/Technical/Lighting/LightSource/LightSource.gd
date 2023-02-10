@@ -6,7 +6,7 @@ export var radius := 64
 export(int) var minRadius := 32
 export var maxRadius:= 64
 export var animating := true
-export(float) var animationTime := 5
+export(float) var animationTime := 5.0
 export (float, 0.0, 1.0, 0.05) var strength := 1.0
 
 onready var tween_values = [minRadius, maxRadius]

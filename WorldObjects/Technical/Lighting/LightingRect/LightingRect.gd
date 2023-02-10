@@ -9,7 +9,7 @@ func _ready():
 #	show()
 	image.create(128, 2, false, Image.FORMAT_RGBAH)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	_update_texture()
 	var t = Transform2D(0, Vector2())
 	var camera = get_node_or_null(camera_path)

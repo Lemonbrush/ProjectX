@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://WorldObjects/Technical/Lighting/LightSource/LightSource.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/BackgroundGradients/Blue_clouds.png" type="Texture" id=7]
 [ext_resource path="res://Assets/BackgroundGradients/BackgroundGradient1.png" type="Texture" id=8]
+[ext_resource path="res://WorldObjects/Interactables/E_Interactables/Torch/ActivatableTorch.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 192, 8 )
@@ -53,17 +54,10 @@ backgroundColor = Color( 0.176471, 0.152941, 0.25098, 1 )
 position = Vector2( 523, 377 )
 texture = ExtResource( 4 )
 
-[node name="LightSource" parent="." index="6" instance=ExtResource( 6 )]
-position = Vector2( -144, -44 )
-color = Color( 0.968627, 0.952941, 0.933333, 1 )
-radius = 200
-minRadius = 100
-maxRadius = 130
-animationTime = 1.0
-
-[node name="Player" parent="." index="7"]
+[node name="Player" parent="." index="6"]
 light_mask = 0
 position = Vector2( 55, -6 )
+collision_layer = 163
 
 [node name="Light2D2" parent="Player" index="5"]
 visible = false
@@ -87,10 +81,22 @@ collision_mask = 17
 position = Vector2( -8, -11 )
 shape = SubResource( 1 )
 
-[node name="World_objects" type="Node2D" parent="." index="13"]
+[node name="World_objects" type="Node2D" parent="." index="12"]
 
 [node name="Centeal_hub_door" parent="World_objects" index="0" instance=ExtResource( 3 )]
 nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "Wish_star_dangeon_door"
+
+[node name="ActivatableTorch" parent="." index="13" instance=ExtResource( 9 )]
+position = Vector2( -96, -16 )
+
+[node name="ActivatableTorch2" parent="." index="14" instance=ExtResource( 9 )]
+position = Vector2( -191, -16 )
+
+[node name="ActivatableTorch3" parent="." index="15" instance=ExtResource( 9 )]
+position = Vector2( 79, -13 )
+
+[node name="ActivatableTorch4" parent="." index="16" instance=ExtResource( 9 )]
+position = Vector2( 32, -13 )
 
 [editable path="Collisions/Solid/PassThroughBody18"]
