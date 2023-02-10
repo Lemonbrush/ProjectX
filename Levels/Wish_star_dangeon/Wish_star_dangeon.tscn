@@ -56,7 +56,10 @@ texture = ExtResource( 4 )
 [node name="LightSource" parent="." index="6" instance=ExtResource( 6 )]
 position = Vector2( -144, -44 )
 color = Color( 0.968627, 0.952941, 0.933333, 1 )
-radius = 120
+radius = 200
+minRadius = 100
+maxRadius = 130
+animationTime = 1.0
 
 [node name="Player" parent="." index="7"]
 light_mask = 0
@@ -69,6 +72,7 @@ visible = false
 position = Vector2( 0, -7 )
 color = Color( 1, 1, 1, 1 )
 radius = 100
+animating = false
 strength = 0.2
 
 [node name="Solid" parent="Collisions" index="1"]

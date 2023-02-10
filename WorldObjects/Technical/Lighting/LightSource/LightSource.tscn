@@ -4,3 +4,5 @@
 
 [node name="LightSource" type="Position2D" groups=["lights"]]
 script = ExtResource( 1 )
+
+[node name="Tween" type="Tween" parent="."]
