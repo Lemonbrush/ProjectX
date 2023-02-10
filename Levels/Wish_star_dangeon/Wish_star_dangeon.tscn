@@ -1,19 +1,77 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Levels/Wish_star_dangeon/Wish_star_dangeon.png" type="Texture" id=4]
+[ext_resource path="res://WorldObjects/Technical/Lighting/LightingRect/LightingRect.tscn" type="PackedScene" id=5]
+[ext_resource path="res://WorldObjects/Technical/Lighting/LightSource/LightSource.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/BackgroundGradients/Blue_clouds.png" type="Texture" id=7]
+[ext_resource path="res://Assets/BackgroundGradients/BackgroundGradient1.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 184, 8 )
+extents = Vector2( 192, 8 )
 
 [node name="Wish_star_dangeon" instance=ExtResource( 2 )]
 
-[node name="Player" parent="." index="4"]
-position = Vector2( 0, -4 )
-z_index = 1
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
+
+[node name="LightingRect" parent="CanvasLayer" index="0" instance=ExtResource( 5 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
+camera_path = NodePath("../../Camera2D")
+
+[node name="GameSpecs" parent="." index="1"]
+visible = false
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="2"]
+visible = false
+scroll_limit_end = Vector2( 0, 320 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
+light_mask = 3
+motion_mirroring = Vector2( 530, 0 )
+
+[node name="BackgroundSprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
+light_mask = 3
+scale = Vector2( 0.573, 0.568384 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="CloudsSprite" type="Sprite" parent="ParallaxBackground" index="1"]
+light_mask = 3
+position = Vector2( 380, 3 )
+scale = Vector2( 0.77, 0.77 )
+texture = ExtResource( 7 )
+
+[node name="Camera2D" parent="." index="4"]
+backgroundColor = Color( 0.176471, 0.152941, 0.25098, 1 )
+
+[node name="WorldSprite" parent="." index="5"]
+position = Vector2( 523, 377 )
+texture = ExtResource( 4 )
+
+[node name="LightSource" parent="." index="6" instance=ExtResource( 6 )]
+position = Vector2( -144, -44 )
+color = Color( 0.968627, 0.952941, 0.933333, 1 )
+radius = 120
+
+[node name="Player" parent="." index="7"]
+light_mask = 0
+position = Vector2( 55, -6 )
 
 [node name="Light2D2" parent="Player" index="5"]
+visible = false
+
+[node name="LightSource" parent="Player" index="6" instance=ExtResource( 6 )]
+position = Vector2( 0, -7 )
+color = Color( 1, 1, 1, 1 )
+radius = 100
+strength = 0.2
+
+[node name="Solid" parent="Collisions" index="1"]
 visible = false
 
 [node name="PassThroughBody18" parent="Collisions/Solid" index="0" instance=ExtResource( 1 )]
@@ -22,10 +80,10 @@ collision_layer = 17
 collision_mask = 17
 
 [node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody18" index="0"]
-position = Vector2( 0, -11 )
+position = Vector2( -8, -11 )
 shape = SubResource( 1 )
 
-[node name="World_objects" type="Node2D" parent="." index="10"]
+[node name="World_objects" type="Node2D" parent="." index="13"]
 
 [node name="Centeal_hub_door" parent="World_objects" index="0" instance=ExtResource( 3 )]
 nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
