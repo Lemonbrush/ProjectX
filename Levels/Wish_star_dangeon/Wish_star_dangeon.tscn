@@ -57,6 +57,7 @@ texture = ExtResource( 4 )
 [node name="Player" parent="." index="6"]
 light_mask = 0
 position = Vector2( 55, -6 )
+z_index = 1
 collision_layer = 163
 
 [node name="Light2D2" parent="Player" index="5"]
