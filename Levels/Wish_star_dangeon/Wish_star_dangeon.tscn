@@ -6,12 +6,14 @@
 [ext_resource path="res://Assets/Levels/Wish_star_dangeon/Wish_star_dangeon.png" type="Texture" id=4]
 [ext_resource path="res://WorldObjects/Technical/Lighting/LightingRect/LightingRect.tscn" type="PackedScene" id=5]
 [ext_resource path="res://WorldObjects/Technical/Lighting/LightSource/LightSource.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/BackgroundGradients/Blue_clouds.png" type="Texture" id=7]
-[ext_resource path="res://Assets/BackgroundGradients/BackgroundGradient1.png" type="Texture" id=8]
+[ext_resource path="res://bab0fcb7eccb9ad9f67aa0010d25ede7.png" type="Texture" id=7]
 [ext_resource path="res://WorldObjects/Interactables/E_Interactables/Torch/ActivatableTorch.tscn" type="PackedScene" id=9]
 
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 64, 8 )
+
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 192, 8 )
+extents = Vector2( 224, 8 )
 
 [node name="Wish_star_dangeon" instance=ExtResource( 2 )]
 
@@ -28,30 +30,19 @@ camera_path = NodePath("../../Camera2D")
 visible = false
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="2"]
-visible = false
-scroll_limit_end = Vector2( 0, 320 )
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
+[node name="BackgroundSprite" type="Sprite" parent="ParallaxBackground" index="0"]
 light_mask = 3
-motion_mirroring = Vector2( 530, 0 )
-
-[node name="BackgroundSprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
-light_mask = 3
-scale = Vector2( 0.573, 0.568384 )
-texture = ExtResource( 8 )
-centered = false
-
-[node name="CloudsSprite" type="Sprite" parent="ParallaxBackground" index="1"]
-light_mask = 3
-position = Vector2( 380, 3 )
-scale = Vector2( 0.77, 0.77 )
+position = Vector2( 0, 1.90735e-06 )
+scale = Vector2( 0.647214, 0.642 )
 texture = ExtResource( 7 )
+centered = false
 
 [node name="Camera2D" parent="." index="4"]
 backgroundColor = Color( 0.176471, 0.152941, 0.25098, 1 )
 
 [node name="WorldSprite" parent="." index="5"]
-position = Vector2( 523, 377 )
+position = Vector2( 90, 360 )
 texture = ExtResource( 4 )
 
 [node name="Player" parent="." index="6"]
@@ -70,29 +61,35 @@ radius = 100
 animating = false
 strength = 0.2
 
-[node name="Solid" parent="Collisions" index="1"]
-visible = false
+[node name="PassThroughBody5" parent="Collisions/PassTrough" index="0" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( -202, -10 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody5" index="0"]
+position = Vector2( 2, -1 )
+shape = SubResource( 2 )
+one_way_collision = true
 
 [node name="PassThroughBody18" parent="Collisions/Solid" index="0" instance=ExtResource( 1 )]
-position = Vector2( 0, 19 )
+position = Vector2( -32, 16 )
 collision_layer = 17
 collision_mask = 17
 
 [node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody18" index="0"]
-position = Vector2( -8, -11 )
+position = Vector2( -40, -11 )
 shape = SubResource( 1 )
 
 [node name="World_objects" type="Node2D" parent="." index="12"]
 
 [node name="Centeal_hub_door" parent="World_objects" index="0" instance=ExtResource( 3 )]
+position = Vector2( -1, -3 )
 nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "Wish_star_dangeon_door"
 
 [node name="ActivatableTorch" parent="." index="13" instance=ExtResource( 9 )]
-position = Vector2( -96, -16 )
+position = Vector2( -151, -25 )
 
 [node name="ActivatableTorch2" parent="." index="14" instance=ExtResource( 9 )]
-position = Vector2( -191, -16 )
+position = Vector2( -253, -25 )
 
 [node name="ActivatableTorch3" parent="." index="15" instance=ExtResource( 9 )]
 position = Vector2( 79, -13 )
@@ -100,4 +97,5 @@ position = Vector2( 79, -13 )
 [node name="ActivatableTorch4" parent="." index="16" instance=ExtResource( 9 )]
 position = Vector2( 32, -13 )
 
+[editable path="Collisions/PassTrough/PassThroughBody5"]
 [editable path="Collisions/Solid/PassThroughBody18"]
