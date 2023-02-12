@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
@@ -6,8 +6,48 @@
 [ext_resource path="res://Assets/Levels/Wish_star_dangeon/Wish_star_dangeon.png" type="Texture" id=4]
 [ext_resource path="res://WorldObjects/Technical/Lighting/LightingRect/LightingRect.tscn" type="PackedScene" id=5]
 [ext_resource path="res://WorldObjects/Technical/Lighting/LightSource/LightSource.tscn" type="PackedScene" id=6]
-[ext_resource path="res://bab0fcb7eccb9ad9f67aa0010d25ede7.png" type="Texture" id=7]
+[ext_resource path="res://Assets/BackgroundGradients/Cave_background.png" type="Texture" id=7]
+[ext_resource path="res://WorldObjects/Technical/Stars/Stars.tscn" type="PackedScene" id=8]
 [ext_resource path="res://WorldObjects/Interactables/E_Interactables/Torch/ActivatableTorch.tscn" type="PackedScene" id=9]
+
+[sub_resource type="Environment" id=3]
+background_mode = 4
+ambient_light_energy = 0.0
+glow_enabled = true
+glow_hdr_threshold = 1.5
+adjustment_enabled = true
+adjustment_saturation = 1.3
+
+[sub_resource type="CurveTexture" id=7]
+
+[sub_resource type="Gradient" id=10]
+offsets = PoolRealArray( 0, 0.00285307, 0.248217, 0.774608, 0.997147, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.239024, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 10 )
+
+[sub_resource type="Curve" id=6]
+_data = [ Vector2( 0, 0.840033 ), 0.0, 0.0, 0, 0, Vector2( 0.103806, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.571868 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 6 )
+
+[sub_resource type="ParticlesMaterial" id=11]
+emission_shape = 2
+emission_box_extents = Vector3( 500, 500, 1 )
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 2.0
+scale_random = 1.0
+scale_curve = SubResource( 9 )
+color_ramp = SubResource( 8 )
+anim_offset = 1.0
+anim_offset_random = 1.0
+anim_offset_curve = SubResource( 7 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 64, 8 )
@@ -17,7 +57,10 @@ extents = Vector2( 224, 8 )
 
 [node name="Wish_star_dangeon" instance=ExtResource( 2 )]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
+environment = SubResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="1"]
 
 [node name="LightingRect" parent="CanvasLayer" index="0" instance=ExtResource( 5 )]
 anchor_right = 1.0
@@ -26,26 +69,32 @@ margin_right = 0.0
 margin_bottom = 0.0
 camera_path = NodePath("../../Camera2D")
 
-[node name="GameSpecs" parent="." index="1"]
+[node name="GameSpecs" parent="." index="2"]
 visible = false
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="2"]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="3"]
 
 [node name="BackgroundSprite" type="Sprite" parent="ParallaxBackground" index="0"]
 light_mask = 3
-position = Vector2( 0, 1.90735e-06 )
-scale = Vector2( 0.647214, 0.642 )
+position = Vector2( -29, -7 )
+scale = Vector2( 0.289576, 0.28133 )
 texture = ExtResource( 7 )
 centered = false
 
-[node name="Camera2D" parent="." index="4"]
+[node name="Camera2D" parent="." index="5"]
 backgroundColor = Color( 0.176471, 0.152941, 0.25098, 1 )
 
-[node name="WorldSprite" parent="." index="5"]
+[node name="Stars" parent="Camera2D" index="2" instance=ExtResource( 8 )]
+position = Vector2( 0, 1 )
+
+[node name="Particles2D" parent="Camera2D/Stars" index="0"]
+process_material = SubResource( 11 )
+
+[node name="WorldSprite" parent="." index="6"]
 position = Vector2( 90, 360 )
 texture = ExtResource( 4 )
 
-[node name="Player" parent="." index="6"]
+[node name="Player" parent="." index="7"]
 light_mask = 0
 position = Vector2( 55, -6 )
 z_index = 1
@@ -78,24 +127,25 @@ collision_mask = 17
 position = Vector2( -40, -11 )
 shape = SubResource( 1 )
 
-[node name="World_objects" type="Node2D" parent="." index="12"]
+[node name="World_objects" type="Node2D" parent="." index="13"]
 
 [node name="Centeal_hub_door" parent="World_objects" index="0" instance=ExtResource( 3 )]
 position = Vector2( -1, -3 )
 nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "Wish_star_dangeon_door"
 
-[node name="ActivatableTorch" parent="." index="13" instance=ExtResource( 9 )]
+[node name="ActivatableTorch" parent="." index="14" instance=ExtResource( 9 )]
 position = Vector2( -151, -25 )
 
-[node name="ActivatableTorch2" parent="." index="14" instance=ExtResource( 9 )]
+[node name="ActivatableTorch2" parent="." index="15" instance=ExtResource( 9 )]
 position = Vector2( -253, -25 )
 
-[node name="ActivatableTorch3" parent="." index="15" instance=ExtResource( 9 )]
+[node name="ActivatableTorch3" parent="." index="16" instance=ExtResource( 9 )]
 position = Vector2( 79, -13 )
 
-[node name="ActivatableTorch4" parent="." index="16" instance=ExtResource( 9 )]
+[node name="ActivatableTorch4" parent="." index="17" instance=ExtResource( 9 )]
 position = Vector2( 32, -13 )
 
+[editable path="Camera2D/Stars"]
 [editable path="Collisions/PassTrough/PassThroughBody5"]
 [editable path="Collisions/Solid/PassThroughBody18"]
