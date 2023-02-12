@@ -7,6 +7,7 @@ onready var interaction_conteroller = $InteractionController
 onready var fire_particles = $FireParticles
 onready var light_source = $LightSource
 onready var ignite_particles = $IgniteParticles
+onready var ignite_light_particles = $IgniteLightParticles
 
 func _ready():
 	fire_particles.emitting = is_torch_activated
@@ -24,6 +25,7 @@ func on_interact(_body):
 	if !is_torch_activated:
 		ignite_particles.emitting = true
 		fire_particles.emitting = true
+		ignite_light_particles.emitting = true
 		light_source.strength = true
 		is_torch_activated = true
 		interaction_popup.hide()
