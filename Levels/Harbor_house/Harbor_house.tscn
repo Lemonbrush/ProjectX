@@ -841,7 +841,7 @@ extents = Vector2( 2, 90 )
 [sub_resource type="RectangleShape2D" id=192]
 extents = Vector2( 2, 116.25 )
 
-[sub_resource type="ConvexPolygonShape2D" id=73]
+[sub_resource type="ConvexPolygonShape2D" id=274]
 points = PoolVector2Array( 0, 0, 0, 16, 16, 16, 16, 0 )
 
 [sub_resource type="TileSet" id=74]
@@ -855,14 +855,14 @@ points = PoolVector2Array( 0, 0, 0, 16, 16, 16, 16, 0 )
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 73 )
+0/shape = SubResource( 274 )
 0/shape_one_way = false
 0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 73 ),
+"shape": SubResource( 274 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
