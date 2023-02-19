@@ -531,7 +531,6 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatform/Platform" index="2"]
 shape = SubResource( 27 )
-one_way_collision = true
 
 [node name="Path2D" type="Path2D" parent="MovingPlatform" index="1"]
 position = Vector2( -104, 0 )
