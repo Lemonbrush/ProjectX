@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://UI/GameMenu/GameMenu.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Themes/MainTheme.tres" type="Theme" id=2]
@@ -412,6 +412,157 @@ tracks/1/keys = {
 "values": [ Vector2( 408.625, 159.557 ) ]
 }
 
+[sub_resource type="Animation" id=35]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Letter_i/Sprite:material:shader_param/amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 40 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Letter_k/Sprite:material:shader_param/amount")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 40 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Letter_o/Sprite:material:shader_param/amount")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 40 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Letter_m/Sprite:material:shader_param/amount")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 40 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Letter_b/Sprite:material:shader_param/amount")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 40 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Letter_t/Sprite:material:shader_param/amount")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 60 ]
+}
+
+[sub_resource type="Animation" id=36]
+resource_name = "Show_logo"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Letter_i/Sprite:material:shader_param/amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6, 0.8, 1, 1.2, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 10, 5, 20, 30, 40 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Letter_k/Sprite:material:shader_param/amount")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.6, 0.8, 1, 1.2, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 5, 10, 20, 30, 40 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Letter_o/Sprite:material:shader_param/amount")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.6, 0.8, 1, 1.2, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 5, 10, 20, 30, 40 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Letter_m/Sprite:material:shader_param/amount")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.6, 0.8, 1, 1.2, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 5, 10, 20, 30, 40 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Letter_b/Sprite:material:shader_param/amount")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.6, 0.8, 1, 1.2, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 5, 10, 20, 30, 40 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Letter_t/Sprite:material:shader_param/amount")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.6, 0.8, 1, 1.2, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 5, 10, 20, 30, 60 ]
+}
+
 [sub_resource type="CurveTexture" id=13]
 
 [sub_resource type="Gradient" id=3]
@@ -569,6 +720,8 @@ position = Vector2( 4, -1.00003 )
 scale = Vector2( 0.218573, 0.218573 )
 texture = ExtResource( 6 )
 
+[node name="Sprite" type="Sprite" parent="Logo/Letter_t/Sprite"]
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Logo/Letter_t"]
 autoplay = "Animate"
 anims/Animate = SubResource( 17 )
@@ -638,6 +791,11 @@ texture = ExtResource( 11 )
 autoplay = "Animation"
 anims/Animation = SubResource( 27 )
 anims/RESET = SubResource( 28 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Logo"]
+autoplay = "Show_logo"
+anims/RESET = SubResource( 35 )
+anims/Show_logo = SubResource( 36 )
 
 [node name="Stars" parent="." instance=ExtResource( 8 )]
 
