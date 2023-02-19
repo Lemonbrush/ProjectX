@@ -1,13 +1,19 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://UI/GameMenu/GameMenu.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Themes/MainTheme.tres" type="Theme" id=2]
 [ext_resource path="res://Assets/Clouds/CloudsTransparentBottom.png" type="Texture" id=3]
 [ext_resource path="res://Resources/Fonts/Epilepsy Sans/Resource/EpilepsySans.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Origins/Assets/Game logo/Kissies_logo.png" type="Texture" id=5]
-[ext_resource path="res://Shaders/PixelateShader.tres" type="Shader" id=6]
+[ext_resource path="res://Assets/KissiesLogo/Letters/T.png" type="Texture" id=6]
 [ext_resource path="res://Origins/Assets/Game logo/Kissies_logo_background.png" type="Texture" id=7]
 [ext_resource path="res://WorldObjects/Technical/Stars/Stars.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/KissiesLogo/Letters/k.png" type="Texture" id=9]
+[ext_resource path="res://Assets/KissiesLogo/Letters/b.png" type="Texture" id=10]
+[ext_resource path="res://Assets/KissiesLogo/Letters/i.png" type="Texture" id=11]
+[ext_resource path="res://Assets/KissiesLogo/Letters/m.png" type="Texture" id=12]
+[ext_resource path="res://Assets/KissiesLogo/Letters/o.png" type="Texture" id=13]
+[ext_resource path="res://Shaders/PixelateShader.tres" type="Shader" id=14]
 
 [sub_resource type="CanvasItemMaterial" id=8]
 particles_animation = true
@@ -46,9 +52,365 @@ anim_offset = 1.0
 anim_offset_random = 1.0
 anim_offset_curve = SubResource( 2 )
 
-[sub_resource type="ShaderMaterial" id=12]
-shader = ExtResource( 6 )
-shader_param/amount = 700
+[sub_resource type="ShaderMaterial" id=29]
+shader = ExtResource( 14 )
+shader_param/amount = 60
+
+[sub_resource type="Animation" id=17]
+resource_name = "Animate"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 5.0, -5.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 4, -1.00003 ), Vector2( 4, -5 ) ]
+}
+
+[sub_resource type="Animation" id=18]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 4, -1.00003 ) ]
+}
+
+[sub_resource type="ShaderMaterial" id=30]
+shader = ExtResource( 14 )
+shader_param/amount = 40
+
+[sub_resource type="Animation" id=19]
+resource_name = "Animation"
+length = 6.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -5.0, 5.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 164.985, 161.459 ), Vector2( 164.985, 157.459 ) ]
+}
+
+[sub_resource type="Animation" id=20]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 164.985, 161.459 ) ]
+}
+
+[sub_resource type="ShaderMaterial" id=31]
+shader = ExtResource( 14 )
+shader_param/amount = 40
+
+[sub_resource type="Animation" id=21]
+resource_name = "Animation"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -3.0, 3.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 227.38, 148.375 ), Vector2( 227.38, 143.375 ) ]
+}
+
+[sub_resource type="Animation" id=22]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 227.38, 148.375 ) ]
+}
+
+[sub_resource type="ShaderMaterial" id=32]
+shader = ExtResource( 14 )
+shader_param/amount = 40
+
+[sub_resource type="Animation" id=23]
+resource_name = "Animation"
+length = 6.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -5.0, 5.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 291, 160 ), Vector2( 291, 156 ) ]
+}
+
+[sub_resource type="Animation" id=24]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 291, 160 ) ]
+}
+
+[sub_resource type="ShaderMaterial" id=33]
+shader = ExtResource( 14 )
+shader_param/amount = 40
+
+[sub_resource type="Animation" id=25]
+resource_name = "Animation"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -5.0, 5.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 351, 140 ), Vector2( 351, 135 ) ]
+}
+
+[sub_resource type="Animation" id=26]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 351, 140 ) ]
+}
+
+[sub_resource type="ShaderMaterial" id=34]
+shader = ExtResource( 14 )
+shader_param/amount = 40
+
+[sub_resource type="Animation" id=27]
+resource_name = "Animation"
+length = 6.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 3.0, -3.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 408.625, 159.557 ), Vector2( 408.625, 155.557 ) ]
+}
+
+[sub_resource type="Animation" id=28]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 408.625, 159.557 ) ]
+}
 
 [sub_resource type="CurveTexture" id=13]
 
@@ -191,10 +553,91 @@ size_flags_vertical = 8
 custom_fonts/font = ExtResource( 4 )
 text = "Version"
 
-[node name="Logo" type="Sprite" parent="."]
-material = SubResource( 12 )
-position = Vector2( 266, 145 )
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( 266, 146 )
 texture = ExtResource( 5 )
+
+[node name="Logo" type="Node2D" parent="."]
+
+[node name="Letter_t" type="Node2D" parent="Logo"]
+position = Vector2( 121, 142 )
+
+[node name="Sprite" type="Sprite" parent="Logo/Letter_t"]
+material = SubResource( 29 )
+position = Vector2( 4, -1.00003 )
+scale = Vector2( 0.218573, 0.218573 )
+texture = ExtResource( 6 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Logo/Letter_t"]
+autoplay = "Animate"
+anims/Animate = SubResource( 17 )
+anims/RESET = SubResource( 18 )
+
+[node name="Letter_b" type="Node2D" parent="Logo"]
+
+[node name="Sprite" type="Sprite" parent="Logo/Letter_b"]
+material = SubResource( 30 )
+position = Vector2( 164.985, 161.459 )
+scale = Vector2( 0.21943, 0.21943 )
+texture = ExtResource( 10 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Logo/Letter_b"]
+autoplay = "Animation"
+anims/Animation = SubResource( 19 )
+anims/RESET = SubResource( 20 )
+
+[node name="Letter_m" type="Node2D" parent="Logo"]
+
+[node name="Sprite" type="Sprite" parent="Logo/Letter_m"]
+material = SubResource( 31 )
+position = Vector2( 227.38, 148.375 )
+scale = Vector2( 0.220439, 0.220439 )
+texture = ExtResource( 12 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Logo/Letter_m"]
+autoplay = "Animation"
+anims/Animation = SubResource( 21 )
+anims/RESET = SubResource( 22 )
+
+[node name="Letter_o" type="Node2D" parent="Logo"]
+
+[node name="Sprite" type="Sprite" parent="Logo/Letter_o"]
+material = SubResource( 32 )
+position = Vector2( 291, 160 )
+scale = Vector2( 0.21603, 0.21603 )
+texture = ExtResource( 13 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Logo/Letter_o"]
+autoplay = "Animation"
+anims/Animation = SubResource( 23 )
+anims/RESET = SubResource( 24 )
+
+[node name="Letter_k" type="Node2D" parent="Logo"]
+
+[node name="Sprite" type="Sprite" parent="Logo/Letter_k"]
+material = SubResource( 33 )
+position = Vector2( 351, 140 )
+scale = Vector2( 0.216811, 0.216811 )
+texture = ExtResource( 9 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Logo/Letter_k"]
+autoplay = "Animation"
+anims/Animation = SubResource( 25 )
+anims/RESET = SubResource( 26 )
+
+[node name="Letter_i" type="Node2D" parent="Logo"]
+
+[node name="Sprite" type="Sprite" parent="Logo/Letter_i"]
+material = SubResource( 34 )
+position = Vector2( 408.625, 159.557 )
+scale = Vector2( 0.217262, 0.217262 )
+texture = ExtResource( 11 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Logo/Letter_i"]
+autoplay = "Animation"
+anims/Animation = SubResource( 27 )
+anims/RESET = SubResource( 28 )
 
 [node name="Stars" parent="." instance=ExtResource( 8 )]
 
