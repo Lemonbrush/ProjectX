@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
@@ -20,6 +20,8 @@
 [ext_resource path="res://WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=18]
 [ext_resource path="res://WorldObjects/Moving_platforms/Paths/HorizontalPath.tres" type="Curve2D" id=19]
 [ext_resource path="res://Resources/Tilesets/Resources/Decorations/Decorations.tres" type="TileSet" id=20]
+[ext_resource path="res://Assets/Levels/Wish_star_dangeon/World_objects/moving_platform_1_tile.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Levels/Wish_star_dangeon/World_objects/moving_platform_2_tile_vertical.png" type="Texture" id=22]
 
 [sub_resource type="Environment" id=3]
 background_mode = 4
@@ -143,6 +145,145 @@ tracks/0/keys = {
 "values": [ 0.0 ]
 }
 
+[sub_resource type="RectangleShape2D" id=48]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="Animation" id=78]
+resource_name = "Loop"
+length = 7.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=79]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Curve2D" id=87]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 104, 0, 0, 0, 0, 0, 104, 23 )
+}
+
+[sub_resource type="Animation" id=80]
+resource_name = "Loop"
+length = 17.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=81]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=82]
+resource_name = "Loop"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=83]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="RectangleShape2D" id=84]
+extents = Vector2( 8, 16 )
+
+[sub_resource type="Animation" id=85]
+resource_name = "Loop"
+length = 15.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 7.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=86]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
 [sub_resource type="ConvexPolygonShape2D" id=73]
 points = PoolVector2Array( 0, 0, 0, 16, 16, 16, 16, 0 )
 
@@ -234,7 +375,7 @@ process_material = SubResource( 11 )
 tile_set = ExtResource( 11 )
 cell_size = Vector2( 1, 1 )
 format = 1
-tile_data = PoolIntArray( -20185433, 8, 0, -18547033, 8, 0, -16974151, 1, 0, -16908633, 8, 0, -15270233, 8, 0, -14876999, 1, 0, -13631833, 8, 0, -12779847, 1, 0, -11993433, 8, 0, -10748210, 1, 0, -10682695, 1, 0, -10355033, 8, 0, -9765144, 11, 0, -9699383, 1, 0, -9634057, 8, 0, -9568344, 536870920, 0, -9633470, 536870920, 0, -9633430, 536870913, 0, -8716633, 8, 0, -8716594, 1, 0, -8716568, 11, 0, -8585543, 1, 0, -8584671, 8, 0, -7995657, 8, 0, -7929944, 536870920, 0, -7995070, 536870920, 0, -7667992, 11, 0, -7602231, 1, 0, -7536278, 536870913, 0, -7078233, 8, 0, -6946271, 8, 0, -6684978, 1, 0, -6619416, 11, 0, -6488391, 1, 0, -6357257, 8, 0, -6291544, 536870920, 0, -6356670, 536870920, 0, -5570840, 11, 0, -5505079, 1, 0, -5439833, 8, 0, -5439126, 536870913, 0, -5307871, 8, 0, -4718857, 8, 0, -4653144, 536870920, 0, -4718270, 536870920, 0, -4587826, 1, 0, -4522264, 11, 0, -4391239, 1, 0, -3801433, 8, 0, -3669471, 8, 0, -3473688, 11, 0, -3407927, 1, 0, -3341974, 536870913, 0, -3080457, 8, 0, -3080280, 536870920, 0, -3145406, 536870920, 0, -2490674, 1, 0, -2425112, 11, 0, -2294087, 1, 0, -2163033, 8, 0, -1834686, 536870920, 0, -1442057, 8, 0, -1441880, 536870920, 0, -1376536, 11, 0, -1310775, 1, 0, -1375934, 536870920, 0, -1244822, 536870913, 0, -524633, 8, 0, -393522, 1, 0, -327960, 11, 0, -196935, 1, 0, 130984, 536870920, 0, 196343, 8, 0, 196930, 536870920, 0, 327625, 1, 0, 328226, 8, 0, 720616, 11, 0, 655722, 536870913, 0, 1113767, 8, 0, 1703630, 1, 0, 1769192, 11, 0, 1769384, 536870920, 0, 1834743, 8, 0, 1900217, 1, 0, 1900866, 536870920, 0, 1966626, 8, 0, 2424777, 1, 0, 2752167, 8, 0, 2687338, 536870913, 0, 2817768, 11, 0, 3407784, 536870920, 0, 3473143, 8, 0, 3539266, 536870920, 0, 3605026, 8, 0, 3800782, 1, 0, 3866344, 11, 0, 3997369, 1, 0, 4390567, 8, 0, 4521929, 1, 0, 4784490, 536870913, 0, 4914920, 11, 0, 5046184, 536870920, 0, 5111543, 8, 0, 5177666, 536870920, 0, 5243426, 8, 0, 5897934, 1, 0, 5963496, 11, 0, 6028967, 8, 0, 6094521, 1, 0, 6553545, 1, 0, 6619048, 536870920, 0, 6749943, 8, 0, 6816066, 536870920, 0, 6816290, 8, 0, 6881642, 536870913, 0, 7012072, 11, 0, 7667367, 8, 0, 7995086, 1, 0, 8060648, 11, 0, 8191673, 1, 0, 8257448, 536870920, 0, 8388343, 8, 0, 8389154, 8, 0, 8454466, 536870920, 0, 8650697, 1, 0, 8978794, 536870913, 0, 9109224, 11, 0, 9305767, 8, 0, 9895848, 536870920, 0, 10026743, 8, 0, 10092238, 1, 0, 10027554, 8, 0, 10157800, 11, 0, 10092866, 536870920, 0, 10288825, 1, 0, 10747849, 1, 0, 10944167, 8, 0, 11075946, 536870913, 0, 11206376, 11, 0, 11534248, 536870920, 0, 11665143, 8, 0, 11665954, 8, 0, 11731266, 536870920, 0, 12189390, 1, 0, 12254952, 11, 0, 12385977, 1, 0, 12321457, 536870920, 0, 12582567, 8, 0, 12845001, 1, 0, 13172648, 536870920, 0, 13173098, 536870913, 0, 13303528, 11, 0, 13303543, 8, 0, 13304354, 8, 0, 13369666, 536870920, 0, 13959857, 536870920, 0, 14220967, 8, 0, 14286542, 1, 0, 14352104, 11, 0, 14483129, 1, 0, 14811048, 536870920, 0, 14941943, 8, 0, 14942153, 1, 0, 14942754, 8, 0, 15008066, 536870920, 0, 15270250, 536870913, 0, 15400680, 11, 0, 15598257, 536870920, 0, 15859367, 8, 0, 16383694, 1, 0, 16449256, 11, 0, 16449448, 536870920, 0, 16580281, 1, 0, 16580343, 8, 0, 16581154, 8, 0, 16646466, 536870920, 0, 17039305, 1, 0, 17236657, 536870920, 0, 17367402, 536870913, 0, 17497767, 8, 0, 17497832, 11, 0, 18087848, 536870920, 0, 18218743, 8, 0, 18219554, 8, 0, 18284866, 536870920, 0, 18480846, 1, 0, 18546408, 11, 0, 18677433, 1, 0, 18875057, 536870920, 0, 19136167, 8, 0, 19136457, 1, 0, 19464554, 536870913, 0, 19594984, 11, 0, 19726248, 536870920, 0, 19857143, 8, 0, 19857954, 8, 0, 19923266, 536870920, 0, 20577998, 1, 0, 20513457, 536870920, 0, 20643560, 11, 0, 20774567, 8, 0, 20774585, 1, 0, 21233609, 1, 0, 21364648, 536870920, 0, 21495543, 8, 0, 21496354, 8, 0, 21561666, 536870920, 0, 21561706, 536870913, 0, 21692136, 11, 0, 22151857, 536870920, 0, 22412967, 8, 0, 22675150, 1, 0, 22740712, 11, 0, 22871737, 1, 0, 23003048, 536870920, 0, 23133943, 8, 0, 23134754, 8, 0, 23200066, 536870920, 0, 23330761, 1, 0, 23658858, 536870913, 0, 23789288, 11, 0, 23790257, 536870920, 0, 24051367, 8, 0, 24641448, 536870920, 0, 24772302, 1, 0, 24772343, 8, 0, 24837864, 11, 0, 24773154, 8, 0, 24838466, 536870920, 0, 24968889, 1, 0, 25427913, 1, 0, 25428657, 536870920, 0, 25689767, 8, 0, 25756010, 536870913, 0, 25886440, 11, 0, 26279848, 536870920, 0, 26410743, 8, 0, 26411554, 8, 0, 26476866, 536870920, 0, 26869454, 1, 0, 26935016, 11, 0, 27066041, 1, 0, 27067057, 536870920, 0, 27328167, 8, 0, 27525065, 1, 0, 27918248, 536870920, 0, 27853162, 536870913, 0, 27983592, 11, 0, 28049143, 8, 0, 28049954, 8, 0, 28115266, 536870920, 0, 28705457, 536870920, 0, 28966567, 8, 0, 28966606, 1, 0, 29032168, 11, 0, 29163193, 1, 0, 29556648, 536870920, 0, 29622217, 1, 0, 29687543, 8, 0, 29688354, 8, 0, 29753666, 536870920, 0, 29950314, 536870913, 0 )
+tile_data = PoolIntArray( -20185433, 8, 0, -18547033, 8, 0, -16974151, 1, 0, -16908633, 8, 0, -15270233, 8, 0, -14876999, 1, 0, -13631833, 8, 0, -12779847, 1, 0, -11993433, 8, 0, -10748210, 1, 0, -10682695, 1, 0, -10355033, 8, 0, -9765144, 11, 0, -9699383, 1, 0, -9634057, 8, 0, -9568344, 536870920, 0, -9633470, 536870920, 0, -9633430, 536870913, 0, -8716633, 8, 0, -8716594, 1, 0, -8716568, 11, 0, -8585543, 1, 0, -8584671, 8, 0, -7995657, 8, 0, -7929944, 536870920, 0, -7995070, 536870920, 0, -7667992, 11, 0, -7602231, 1, 0, -7536278, 536870913, 0, -7078233, 8, 0, -6946271, 8, 0, -6684978, 1, 0, -6619416, 11, 0, -6488391, 1, 0, -6357257, 8, 0, -6291544, 536870920, 0, -6356670, 536870920, 0, -5570840, 11, 0, -5505079, 1, 0, -5439833, 8, 0, -5439126, 536870913, 0, -5307871, 8, 0, -4718857, 8, 0, -4653144, 536870920, 0, -4718270, 536870920, 0, -4587826, 1, 0, -4522264, 11, 0, -4391239, 1, 0, -3801433, 8, 0, -3669471, 8, 0, -3473688, 11, 0, -3407927, 1, 0, -3341974, 536870913, 0, -3080457, 8, 0, -3080280, 536870920, 0, -3145406, 536870920, 0, -2490674, 1, 0, -2425112, 11, 0, -2294087, 1, 0, -2163033, 8, 0, -1834686, 536870920, 0, -1442057, 8, 0, -1441880, 536870920, 0, -1376536, 11, 0, -1310775, 1, 0, -1375934, 536870920, 0, -1244822, 536870913, 0, -524633, 8, 0, -393522, 1, 0, -327960, 11, 0, -196935, 1, 0, 130984, 536870920, 0, 196343, 8, 0, 196930, 536870920, 0, 327625, 1, 0, 328226, 8, 0, 720616, 11, 0, 655722, 536870913, 0, 1113767, 8, 0, 1703630, 1, 0, 1769192, 11, 0, 1769384, 536870920, 0, 1834743, 8, 0, 1900217, 1, 0, 1900866, 536870920, 0, 1966626, 8, 0, 2424777, 1, 0, 2752167, 8, 0, 2687338, 536870913, 0, 2817768, 11, 0, 3407784, 536870920, 0, 3473143, 8, 0, 3539266, 536870920, 0, 3605026, 8, 0, 3800782, 1, 0, 3866344, 11, 0, 3997369, 1, 0, 4390567, 8, 0, 4521929, 1, 0, 4784490, 536870913, 0, 4914920, 11, 0, 5046184, 536870920, 0, 5111543, 8, 0, 5177666, 536870920, 0, 5243426, 8, 0, 5897934, 1, 0, 5963496, 11, 0, 6028967, 8, 0, 6094521, 1, 0, 6553545, 1, 0, 6619048, 536870920, 0, 6749943, 8, 0, 6816066, 536870920, 0, 6816290, 8, 0, 6881642, 536870913, 0, 7012072, 11, 0, 7667367, 8, 0, 7995086, 1, 0, 8060648, 11, 0, 8191673, 1, 0, 8257448, 536870920, 0, 8388343, 8, 0, 8389154, 8, 0, 8454466, 536870920, 0, 8650697, 1, 0, 8978794, 536870913, 0, 9109224, 11, 0, 9305767, 8, 0, 9895848, 536870920, 0, 10026743, 8, 0, 10092238, 1, 0, 10027554, 8, 0, 10157800, 11, 0, 10092866, 536870920, 0, 10288825, 1, 0, 10747849, 1, 0, 10944167, 8, 0, 11075946, 536870913, 0, 11206376, 11, 0, 11534248, 536870920, 0, 11665143, 8, 0, 11665954, 8, 0, 11731266, 536870920, 0, 12189390, 1, 0, 12254952, 11, 0, 12385977, 1, 0, 12321457, 536870920, 0, 12582567, 8, 0, 12845001, 1, 0, 13172648, 536870920, 0, 13173098, 536870913, 0, 13303528, 11, 0, 13303543, 8, 0, 13304354, 8, 0, 13369666, 536870920, 0, 13959857, 536870920, 0, 14220967, 8, 0, 14286542, 1, 0, 14352104, 11, 0, 14483129, 1, 0, 14811048, 536870920, 0, 14941943, 8, 0, 14942153, 1, 0, 14942754, 8, 0, 15008066, 536870920, 0, 15270250, 536870913, 0, 15400680, 11, 0, 15598257, 536870920, 0, 15859367, 8, 0, 16383694, 1, 0, 16449256, 11, 0, 16449448, 536870920, 0, 16580281, 1, 0, 16580343, 8, 0, 16581154, 8, 0, 16646466, 536870920, 0, 17039305, 1, 0, 17236657, 536870920, 0, 17367402, 536870913, 0, 17497767, 8, 0, 17497832, 11, 0, 18087848, 536870920, 0, 18218743, 8, 0, 18219554, 8, 0, 18284866, 536870920, 0, 18480846, 1, 0, 18546408, 11, 0, 18677433, 1, 0, 18875057, 536870920, 0, 19136167, 8, 0, 19136457, 1, 0, 19464554, 536870913, 0, 19594984, 11, 0, 19726248, 536870920, 0, 19857143, 8, 0, 19857954, 8, 0, 19923266, 536870920, 0, 20577998, 1, 0, 20513457, 536870920, 0, 20643560, 11, 0, 20774567, 8, 0, 20774585, 1, 0, 21233609, 1, 0, 21364648, 536870920, 0, 21495543, 8, 0, 21496354, 8, 0, 21561666, 536870920, 0, 21561706, 536870913, 0, 21692136, 11, 0, 22151857, 536870920, 0, 22412967, 8, 0, 22675150, 1, 0, 22740712, 11, 0, 22871737, 1, 0, 23003048, 536870920, 0, 23133943, 8, 0, 23134754, 8, 0, 23200066, 536870920, 0, 23330761, 1, 0, 23658858, 536870913, 0, 23789288, 11, 0, 23790257, 536870920, 0, 24051367, 8, 0, 24641448, 536870920, 0, 24772302, 1, 0, 24772343, 8, 0, 24837864, 11, 0, 24773154, 8, 0, 24838466, 536870920, 0, 24968889, 1, 0, 25427913, 1, 0, 25428657, 536870920, 0, 25689767, 8, 0, 25756010, 536870913, 0, 25886440, 11, 0, 26279848, 536870920, 0, 26410743, 8, 0, 26411554, 8, 0, 26476866, 536870920, 0, 26869454, 1, 0, 26935016, 11, 0, 27066041, 1, 0, 27067057, 536870920, 0, 27328167, 8, 0, 27525065, 1, 0, 27918248, 536870920, 0, 27853162, 536870913, 0, 27983592, 11, 0, 28049143, 8, 0, 28049954, 8, 0, 28115266, 536870920, 0, 28705457, 536870920, 0, 28966567, 8, 0, 28966606, 1, 0, 29032168, 11, 0, 29163193, 1, 0, 29556648, 536870920, 0, 29622217, 1, 0, 29687543, 8, 0, 29688354, 8, 0, 29753666, 536870920, 0, 29950314, 536870913, 0, 30539431, 8, 0, 31063758, 1, 0, 31260345, 1, 0, 31260407, 8, 0, 31260584, 536870920, 0, 31261218, 8, 0, 31392066, 536870920, 0, 32112295, 8, 0, 32047466, 536870913, 0, 32833271, 8, 0, 32834082, 8, 0, 33030466, 536870920, 0, 33160910, 1, 0, 33357497, 1, 0, 33685159, 8, 0, 34144618, 536870913, 0, 34471671, 8, 0, 34406946, 8, 0, 34668866, 536870920, 0, 35258023, 8, 0, 35258062, 1, 0, 35454649, 1, 0, 36044535, 8, 0, 35979810, 8, 0, 36241770, 536870913, 0, 36307266, 536870920, 0, 36830887, 8, 0, 37355214, 1, 0, 37551801, 1, 0, 37552674, 8, 0, 37682935, 8, 0, 37945666, 536870920, 0, 38403751, 8, 0, 38338922, 536870913, 0, 39125538, 8, 0, 39255799, 8, 0, 39452366, 1, 0, 39648953, 1, 0, 39584066, 536870920, 0, 39976615, 8, 0, 40436074, 536870913, 0, 40698402, 8, 0, 40828663, 8, 0, 41222466, 536870920, 0, 41549479, 8, 0, 41549518, 1, 0, 41746105, 1, 0, 42271266, 8, 0, 42401527, 8, 0, 42533226, 536870913, 0, 42795330, 536870920, 0, 43122343, 8, 0, 43844130, 8, 0, 43974391, 8, 0, 44433730, 536870920, 0, 44630378, 536870913, 0, 45416994, 8, 0, 45547255, 8, 0, 46006594, 536870920, 0, 46727530, 536870913, 0, 46989858, 8, 0, 47120119, 8, 0, 47579458, 536870920, 0, 48692983, 8, 0 )
 
 [node name="WorldSprite" parent="." index="7"]
 position = Vector2( 1031, -392 )
@@ -269,7 +410,7 @@ z_index = 1
 tile_set = ExtResource( 11 )
 cell_size = Vector2( 1, 1 )
 format = 1
-tile_data = PoolIntArray( -13827407, 536870920, 0, -12779330, 536870913, 0, -12189007, 536870920, 0, -10682178, 536870913, 0, -10550607, 536870920, 0, -8912207, 536870920, 0, -8585026, 536870913, 0, -7273807, 536870920, 0, -6487874, 536870913, 0, -5635407, 536870920, 0, -4390722, 536870913, 0, -3997007, 536870920, 0, -2358607, 536870920, 0, -2293570, 536870913, 0, -720207, 536870920, 0, -196418, 536870913, 0, 918193, 536870920, 0, 1900734, 536870913, 0, 2556593, 536870920, 0, 3997886, 536870913, 0, 4194993, 536870920, 0, 5833393, 536870920, 0, 6095038, 536870913, 0, 7471793, 536870920, 0, 8192190, 536870913, 0, 9110193, 536870920, 0, 10289342, 536870913, 0, 10683057, 536870920, 0, 12321457, 536870920, 0, 12386494, 536870913, 0, 13959857, 536870920, 0, 14483646, 536870913, 0, 15598257, 536870920, 0, 16580798, 536870913, 0, 17236657, 536870920, 0, 18677950, 536870913, 0, 18875057, 536870920, 0, 20513457, 536870920, 0, 20775102, 536870913, 0, 22151857, 536870920, 0, 22872254, 536870913, 0, 23790257, 536870920, 0, 24969406, 536870913, 0, 25428657, 536870920, 0, 27066558, 536870913, 0, 27067057, 536870920, 0, 28705457, 536870920, 0, 29163710, 536870913, 0 )
+tile_data = PoolIntArray( -13827407, 536870920, 0, -12779330, 536870913, 0, -12189007, 536870920, 0, -10682178, 536870913, 0, -10550607, 536870920, 0, -8912207, 536870920, 0, -8585026, 536870913, 0, -7273807, 536870920, 0, -6487874, 536870913, 0, -5635407, 536870920, 0, -4390722, 536870913, 0, -3997007, 536870920, 0, -2358607, 536870920, 0, -2293570, 536870913, 0, -720207, 536870920, 0, -196418, 536870913, 0, 918193, 536870920, 0, 1900734, 536870913, 0, 2556593, 536870920, 0, 3997886, 536870913, 0, 4194993, 536870920, 0, 5833393, 536870920, 0, 6095038, 536870913, 0, 7471793, 536870920, 0, 8192190, 536870913, 0, 9110193, 536870920, 0, 10289342, 536870913, 0, 10683057, 536870920, 0, 12321457, 536870920, 0, 12386494, 536870913, 0, 13959857, 536870920, 0, 14483646, 536870913, 0, 15598257, 536870920, 0, 16580798, 536870913, 0, 17236657, 536870920, 0, 18677950, 536870913, 0, 18875057, 536870920, 0, 20513457, 536870920, 0, 20775102, 536870913, 0, 22151857, 536870920, 0, 22872254, 536870913, 0, 23790257, 536870920, 0, 24969406, 536870913, 0, 25428657, 536870920, 0, 27066558, 536870913, 0, 27067057, 536870920, 0, 28705457, 536870920, 0, 29163710, 536870913, 0, 31260862, 536870913, 0, 33358014, 536870913, 0, 35455166, 536870913, 0, 37552318, 536870913, 0, 39649470, 536870913, 0, 41746622, 536870913, 0, 43843774, 536870913, 0, 45940926, 536870913, 0, 48038078, 536870913, 0 )
 
 [node name="Collisions" parent="." index="11"]
 visible = false
@@ -525,43 +666,200 @@ position = Vector2( 643, -9 )
 [node name="Wide_torch10" parent="World_objects/Torches/Hall_flag_3" index="1" instance=ExtResource( 10 )]
 position = Vector2( 562, -9 )
 
-[node name="MovingPlatform" type="Node2D" parent="." index="17"]
+[node name="Moving_platforms" type="Node2D" parent="." index="17"]
+
+[node name="Star_entrance" type="Node2D" parent="Moving_platforms" index="0"]
+
+[node name="Moving_platform_near_star_entrance" type="Node2D" parent="Moving_platforms/Star_entrance" index="0"]
 position = Vector2( -347, 453 )
 script = ExtResource( 13 )
 
-[node name="Platform" type="KinematicBody2D" parent="MovingPlatform" index="0"]
+[node name="Platform" type="KinematicBody2D" parent="Moving_platforms/Star_entrance/Moving_platform_near_star_entrance" index="0"]
 collision_layer = 3
 motion/sync_to_physics = true
 
-[node name="VisibilityChecker" parent="MovingPlatform/Platform" index="0" instance=ExtResource( 18 )]
+[node name="VisibilityChecker" parent="Moving_platforms/Star_entrance/Moving_platform_near_star_entrance/Platform" index="0" instance=ExtResource( 18 )]
 position = Vector2( 3.8147e-06, 0 )
 scale = Vector2( 3.4, 1 )
 
-[node name="Sprite" type="Sprite" parent="MovingPlatform/Platform" index="1"]
+[node name="Sprite" type="Sprite" parent="Moving_platforms/Star_entrance/Moving_platform_near_star_entrance/Platform" index="1"]
 texture = ExtResource( 14 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatform/Platform" index="2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Moving_platforms/Star_entrance/Moving_platform_near_star_entrance/Platform" index="2"]
 shape = SubResource( 27 )
 
-[node name="Path2D" type="Path2D" parent="MovingPlatform" index="1"]
+[node name="Path2D" type="Path2D" parent="Moving_platforms/Star_entrance/Moving_platform_near_star_entrance" index="1"]
 position = Vector2( -104, 0 )
 curve = ExtResource( 19 )
 
-[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatform/Path2D" index="0"]
+[node name="PathFollow2D" type="PathFollow2D" parent="Moving_platforms/Star_entrance/Moving_platform_near_star_entrance/Path2D" index="0"]
 position = Vector2( 104, 0 )
 rotation = 3.14159
 rotate = false
 loop = false
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MovingPlatform/Path2D/PathFollow2D" index="0"]
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Moving_platforms/Star_entrance/Moving_platform_near_star_entrance/Path2D/PathFollow2D" index="0"]
 rotation = -3.14159
 remote_path = NodePath("../../../Platform")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatform" index="2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Moving_platforms/Star_entrance/Moving_platform_near_star_entrance" index="2"]
 autoplay = "Loop"
 playback_process_mode = 0
 anims/Loop = SubResource( 50 )
 anims/RESET = SubResource( 51 )
+
+[node name="MovingPlatform" type="Node2D" parent="Moving_platforms/Star_entrance" index="1"]
+position = Vector2( -111, 309 )
+script = ExtResource( 13 )
+
+[node name="Platform" type="KinematicBody2D" parent="Moving_platforms/Star_entrance/MovingPlatform" index="0"]
+position = Vector2( 104, 0 )
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="Moving_platforms/Star_entrance/MovingPlatform/Platform" index="0" instance=ExtResource( 18 )]
+position = Vector2( -0.255653, 0 )
+
+[node name="Sprite" type="Sprite" parent="Moving_platforms/Star_entrance/MovingPlatform/Platform" index="1"]
+texture = ExtResource( 21 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Moving_platforms/Star_entrance/MovingPlatform/Platform" index="2"]
+shape = SubResource( 48 )
+one_way_collision = true
+
+[node name="Path2D" type="Path2D" parent="Moving_platforms/Star_entrance/MovingPlatform" index="1"]
+curve = ExtResource( 19 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Moving_platforms/Star_entrance/MovingPlatform/Path2D" index="0"]
+position = Vector2( 104, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Moving_platforms/Star_entrance/MovingPlatform/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Moving_platforms/Star_entrance/MovingPlatform" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 78 )
+anims/RESET = SubResource( 79 )
+
+[node name="MovingPlatform2" type="Node2D" parent="Moving_platforms/Star_entrance" index="2"]
+position = Vector2( 49, 421 )
+script = ExtResource( 13 )
+
+[node name="Platform" type="KinematicBody2D" parent="Moving_platforms/Star_entrance/MovingPlatform2" index="0"]
+position = Vector2( 104, 0 )
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="Moving_platforms/Star_entrance/MovingPlatform2/Platform" index="0" instance=ExtResource( 18 )]
+position = Vector2( -0.255653, 0 )
+
+[node name="Sprite" type="Sprite" parent="Moving_platforms/Star_entrance/MovingPlatform2/Platform" index="1"]
+texture = ExtResource( 21 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Moving_platforms/Star_entrance/MovingPlatform2/Platform" index="2"]
+shape = SubResource( 48 )
+one_way_collision = true
+
+[node name="Path2D" type="Path2D" parent="Moving_platforms/Star_entrance/MovingPlatform2" index="1"]
+curve = SubResource( 87 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Moving_platforms/Star_entrance/MovingPlatform2/Path2D" index="0"]
+position = Vector2( 104, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Moving_platforms/Star_entrance/MovingPlatform2/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Moving_platforms/Star_entrance/MovingPlatform2" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 80 )
+anims/RESET = SubResource( 81 )
+
+[node name="MovingPlatform3" type="Node2D" parent="Moving_platforms/Star_entrance" index="3"]
+position = Vector2( -127, 389 )
+script = ExtResource( 13 )
+
+[node name="Platform" type="KinematicBody2D" parent="Moving_platforms/Star_entrance/MovingPlatform3" index="0"]
+position = Vector2( 104, 0 )
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="Moving_platforms/Star_entrance/MovingPlatform3/Platform" index="0" instance=ExtResource( 18 )]
+position = Vector2( -0.255653, 0 )
+
+[node name="Sprite" type="Sprite" parent="Moving_platforms/Star_entrance/MovingPlatform3/Platform" index="1"]
+texture = ExtResource( 21 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Moving_platforms/Star_entrance/MovingPlatform3/Platform" index="2"]
+shape = SubResource( 48 )
+one_way_collision = true
+
+[node name="Path2D" type="Path2D" parent="Moving_platforms/Star_entrance/MovingPlatform3" index="1"]
+curve = ExtResource( 19 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Moving_platforms/Star_entrance/MovingPlatform3/Path2D" index="0"]
+position = Vector2( 104, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Moving_platforms/Star_entrance/MovingPlatform3/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Moving_platforms/Star_entrance/MovingPlatform3" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 82 )
+anims/RESET = SubResource( 83 )
+
+[node name="MovingPlatform4" type="Node2D" parent="Moving_platforms/Star_entrance" index="4"]
+position = Vector2( 33, 357 )
+script = ExtResource( 13 )
+
+[node name="Platform" type="KinematicBody2D" parent="Moving_platforms/Star_entrance/MovingPlatform4" index="0"]
+position = Vector2( 104, 0 )
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="Moving_platforms/Star_entrance/MovingPlatform4/Platform" index="0" instance=ExtResource( 18 )]
+position = Vector2( -0.255653, -9.53674e-07 )
+scale = Vector2( 1, 1.7 )
+
+[node name="Sprite" type="Sprite" parent="Moving_platforms/Star_entrance/MovingPlatform4/Platform" index="1"]
+texture = ExtResource( 22 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Moving_platforms/Star_entrance/MovingPlatform4/Platform" index="2"]
+shape = SubResource( 84 )
+one_way_collision = true
+
+[node name="Path2D" type="Path2D" parent="Moving_platforms/Star_entrance/MovingPlatform4" index="1"]
+curve = ExtResource( 19 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Moving_platforms/Star_entrance/MovingPlatform4/Path2D" index="0"]
+position = Vector2( 104, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Moving_platforms/Star_entrance/MovingPlatform4/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Moving_platforms/Star_entrance/MovingPlatform4" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 85 )
+anims/RESET = SubResource( 86 )
 
 [node name="WaterSurface" type="Node2D" parent="." index="18"]
 pause_mode = 2
