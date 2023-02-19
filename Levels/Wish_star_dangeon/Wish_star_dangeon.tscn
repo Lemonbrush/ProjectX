@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=73 format=2]
 
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://Resources/Tilesets/Resources/Decorations/Decorations.tres" type="TileSet" id=20]
 [ext_resource path="res://Assets/Levels/Wish_star_dangeon/World_objects/moving_platform_1_tile.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Levels/Wish_star_dangeon/World_objects/moving_platform_2_tile_vertical.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Levels/Wish_star_dangeon/World_objects/moving_platform_2_tile.png" type="Texture" id=23]
 
 [sub_resource type="Environment" id=3]
 background_mode = 4
@@ -112,6 +113,11 @@ extents = Vector2( 8, 273.25 )
 
 [sub_resource type="RectangleShape2D" id=27]
 extents = Vector2( 32, 8 )
+
+[sub_resource type="Curve2D" id=94]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 104, 0, 0, 0, 0, 0, 402, 0 )
+}
 
 [sub_resource type="Animation" id=50]
 resource_name = "Loop"
@@ -270,6 +276,81 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=86]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="RectangleShape2D" id=88]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="Animation" id=89]
+resource_name = "Loop"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=90]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="RectangleShape2D" id=91]
+extents = Vector2( 16, 8 )
+
+[sub_resource type="Curve2D" id=95]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 104, 0, 0, 0, 0, 0, 104, 47 )
+}
+
+[sub_resource type="Animation" id=92]
+resource_name = "Loop"
+length = 15.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 7.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=93]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
@@ -690,7 +771,7 @@ shape = SubResource( 27 )
 
 [node name="Path2D" type="Path2D" parent="Moving_platforms/Star_entrance/Moving_platform_near_star_entrance" index="1"]
 position = Vector2( -104, 0 )
-curve = ExtResource( 19 )
+curve = SubResource( 94 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Moving_platforms/Star_entrance/Moving_platform_near_star_entrance/Path2D" index="0"]
 position = Vector2( 104, 0 )
@@ -860,6 +941,85 @@ autoplay = "Loop"
 playback_process_mode = 0
 anims/Loop = SubResource( 85 )
 anims/RESET = SubResource( 86 )
+
+[node name="Left_tree" type="Node2D" parent="Moving_platforms" index="1"]
+
+[node name="MovingPlatform" type="Node2D" parent="Moving_platforms/Left_tree" index="0"]
+position = Vector2( -639, 293 )
+script = ExtResource( 13 )
+
+[node name="Platform" type="KinematicBody2D" parent="Moving_platforms/Left_tree/MovingPlatform" index="0"]
+position = Vector2( 104, 0 )
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="Moving_platforms/Left_tree/MovingPlatform/Platform" index="0" instance=ExtResource( 18 )]
+position = Vector2( -0.255653, 0 )
+
+[node name="Sprite" type="Sprite" parent="Moving_platforms/Left_tree/MovingPlatform/Platform" index="1"]
+texture = ExtResource( 21 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Moving_platforms/Left_tree/MovingPlatform/Platform" index="2"]
+shape = SubResource( 88 )
+one_way_collision = true
+
+[node name="Path2D" type="Path2D" parent="Moving_platforms/Left_tree/MovingPlatform" index="1"]
+curve = ExtResource( 19 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Moving_platforms/Left_tree/MovingPlatform/Path2D" index="0"]
+position = Vector2( 104, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Moving_platforms/Left_tree/MovingPlatform/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Moving_platforms/Left_tree/MovingPlatform" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 89 )
+anims/RESET = SubResource( 90 )
+
+[node name="MovingPlatform2" type="Node2D" parent="Moving_platforms/Left_tree" index="1"]
+position = Vector2( -455, 213 )
+script = ExtResource( 13 )
+
+[node name="Platform" type="KinematicBody2D" parent="Moving_platforms/Left_tree/MovingPlatform2" index="0"]
+position = Vector2( 104, 0 )
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="Moving_platforms/Left_tree/MovingPlatform2/Platform" index="0" instance=ExtResource( 18 )]
+position = Vector2( -1.90735e-06, 0 )
+scale = Vector2( 1.8, 1 )
+
+[node name="Sprite" type="Sprite" parent="Moving_platforms/Left_tree/MovingPlatform2/Platform" index="1"]
+texture = ExtResource( 23 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Moving_platforms/Left_tree/MovingPlatform2/Platform" index="2"]
+shape = SubResource( 91 )
+one_way_collision = true
+
+[node name="Path2D" type="Path2D" parent="Moving_platforms/Left_tree/MovingPlatform2" index="1"]
+curve = SubResource( 95 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Moving_platforms/Left_tree/MovingPlatform2/Path2D" index="0"]
+position = Vector2( 104, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Moving_platforms/Left_tree/MovingPlatform2/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Moving_platforms/Left_tree/MovingPlatform2" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 92 )
+anims/RESET = SubResource( 93 )
 
 [node name="WaterSurface" type="Node2D" parent="." index="18"]
 pause_mode = 2
