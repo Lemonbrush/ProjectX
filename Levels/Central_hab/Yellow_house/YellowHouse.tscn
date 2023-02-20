@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Levels/Rooms/YellowHouse/YellowHouse.png" type="Texture" id=2]
@@ -7,6 +7,14 @@
 [ext_resource path="res://WorldObjects/Technical/Clouds/Clouds.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Dweller/Simple_dweller/Dweller.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/NPC/SittingAndReadingDwellerSprite-Sheet.png" type="Texture" id=7]
+
+[sub_resource type="Environment" id=25]
+background_mode = 4
+ambient_light_energy = 0.0
+glow_enabled = true
+glow_hdr_threshold = 1.5
+adjustment_enabled = true
+adjustment_saturation = 1.3
 
 [sub_resource type="CurveTexture" id=7]
 
@@ -125,7 +133,10 @@ tracks/0/keys = {
 [node name="YellowHouse" instance=ExtResource( 1 )]
 dynamic_camera = false
 
-[node name="Camera2D" parent="." index="2"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
+environment = SubResource( 25 )
+
+[node name="Camera2D" parent="." index="3"]
 position = Vector2( 3, 19 )
 zoom = Vector2( 0.6, 0.6 )
 
@@ -138,10 +149,10 @@ amount = 100
 lifetime = 10.0
 process_material = SubResource( 19 )
 
-[node name="WorldSprite" parent="." index="3"]
+[node name="WorldSprite" parent="." index="4"]
 texture = ExtResource( 2 )
 
-[node name="Player" parent="." index="4"]
+[node name="Player" parent="." index="5"]
 position = Vector2( 25, 83 )
 z_index = 2
 
@@ -324,7 +335,7 @@ position = Vector2( 3, 83 )
 nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "YellowHouseBottomDoor"
 
-[node name="Dweller" parent="." index="10" instance=ExtResource( 6 )]
+[node name="Dweller" parent="." index="11" instance=ExtResource( 6 )]
 position = Vector2( -14, 21 )
 dialogId = "reading_dweller"
 watch_player_on_talk = false
