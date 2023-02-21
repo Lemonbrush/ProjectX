@@ -54,6 +54,7 @@ func load_game():
 		LevelManager.transition_to_scene(packedScene)
 
 func delete_save():
+	save_file_resource = Save_file_resource.new()
 	var dir = Directory.new()
 	dir.remove(save_path)
 	GameEventConstants.set_default_constants()

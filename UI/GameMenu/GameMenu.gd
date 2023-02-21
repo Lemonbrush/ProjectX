@@ -1,13 +1,13 @@
-extends CanvasLayer
+extends Node2D
 
-onready var play_button = $MainMenuMarginContainer/VBoxContainer/PlayButton
-onready var options_button = $MainMenuMarginContainer/VBoxContainer/OptionsButton
-onready var exit_button = $MainMenuMarginContainer/VBoxContainer/ExitButton
-onready var version_label = $RightMarginContainer/VersionLabel
-onready var about_button = $MainMenuMarginContainer/VBoxContainer/AboutButton
+onready var play_button = $CanvasLayer/MainMenuMarginContainer/VBoxContainer/PlayButton
+onready var options_button = $CanvasLayer/MainMenuMarginContainer/VBoxContainer/OptionsButton
+onready var exit_button = $CanvasLayer/MainMenuMarginContainer/VBoxContainer/ExitButton
+onready var version_label = $CanvasLayer/RightMarginContainer/VersionLabel
+onready var about_button = $CanvasLayer/MainMenuMarginContainer/VBoxContainer/AboutButton
 
-onready var mainMenuMarginContainer = $MainMenuMarginContainer
-onready var logo_animation_player = $Logo/AnimationPlayer
+onready var mainMenuMarginContainer = $CanvasLayer/MainMenuMarginContainer
+onready var logo_animation_player = $AnimationPlayer
 
 var optionsMenuScene = preload("res://UI/OptionsMenu/OptionsMenu.tscn")
 var changelogMenuScene = preload("res://UI/DevelopmentLogMenu/DevelopmentLogMenu.tscn")
@@ -22,7 +22,7 @@ func _ready():
 	version_label.text = FileManager.get_project_version()
 	
 func on_play_pressed():
-	logo_animation_player.play("Hide_logo")
+	logo_animation_player.play("Play")
 	
 func load_game():
 	FileManager.load_game()
