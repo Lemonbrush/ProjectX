@@ -47,10 +47,10 @@ func load_game():
 		var lastVisitedSceneName = save_file_resource.lastVisitedSceneName
 		var lastVisitedScene = save_file_resource.savedLevelScenes[lastVisitedSceneName]
 		GameEventConstants.constants = save_file_resource.gameLogicVariables
-		var _changedScene = get_tree().change_scene_to(lastVisitedScene)
+		LevelManager.transition_to_scene(lastVisitedScene)
 	else:
 		delete_save()
-		var _scene = get_tree().change_scene("res://Levels/Start_gate_location/Start_gate_location.tscn")
+		LevelManager.transition_to_level("res://Levels/Start_gate_location/Start_gate_location.tscn")
 
 func delete_save():
 	var dir = Directory.new()
