@@ -424,7 +424,6 @@ shader_param/color_over = Color( 0, 0, 0, 1 )
 environment = SubResource( 3 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="1"]
-visible = false
 
 [node name="LightingRect" parent="CanvasLayer" index="0" instance=ExtResource( 5 )]
 anchor_right = 1.0
