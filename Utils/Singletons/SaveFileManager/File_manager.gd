@@ -50,7 +50,8 @@ func load_game():
 		LevelManager.transition_to_scene(lastVisitedScene)
 	else:
 		delete_save()
-		LevelManager.transition_to_level("res://Levels/Start_gate_location/Start_gate_location.tscn")
+		var packedScene = load("res://Levels/Start_gate_location/Start_gate_location.tscn")
+		LevelManager.transition_to_scene(packedScene)
 
 func delete_save():
 	var dir = Directory.new()
