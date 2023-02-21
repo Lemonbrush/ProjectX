@@ -7,6 +7,7 @@ onready var version_label = $RightMarginContainer/VersionLabel
 onready var about_button = $MainMenuMarginContainer/VBoxContainer/AboutButton
 
 onready var mainMenuMarginContainer = $MainMenuMarginContainer
+onready var logo_animation_player = $Logo/AnimationPlayer
 
 var optionsMenuScene = preload("res://UI/OptionsMenu/OptionsMenu.tscn")
 var changelogMenuScene = preload("res://UI/DevelopmentLogMenu/DevelopmentLogMenu.tscn")
@@ -21,6 +22,9 @@ func _ready():
 	version_label.text = FileManager.get_project_version()
 	
 func on_play_pressed():
+	logo_animation_player.play("Hide_logo")
+	
+func load_game():
 	FileManager.load_game()
 	
 func on_exit_pressed():
