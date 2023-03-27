@@ -1908,7 +1908,7 @@ texture = ExtResource( 28 )
 
 [node name="MillSign" parent="WorldObjects/Signs" instance=ExtResource( 69 )]
 position = Vector2( -829, -4 )
-texts_array = [ "Кисельск", "Население 21 ксися " ]
+texts_array = [ "Кисельск", "Население 21 кися " ]
 
 [node name="LoversSign" parent="WorldObjects/Signs" instance=ExtResource( 69 )]
 position = Vector2( -1075, 170 )
