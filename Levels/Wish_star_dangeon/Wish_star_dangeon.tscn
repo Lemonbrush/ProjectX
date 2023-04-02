@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=2]
+[gd_scene load_steps=80 format=2]
 
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
@@ -27,6 +27,9 @@
 [ext_resource path="res://Assets/Levels/Wish_star_dangeon/World_objects/moving_platform_3.png" type="Texture" id=25]
 [ext_resource path="res://Assets/Levels/Wish_star_dangeon/World_objects/moving_platform_1.png" type="Texture" id=26]
 [ext_resource path="res://Assets/Levels/Wish_star_dangeon/World_objects/moving_platform_4.png" type="Texture" id=27]
+[ext_resource path="res://WorldObjects/Interactables/OpenableContainers/Chest/Chest.tscn" type="PackedScene" id=28]
+[ext_resource path="res://WorldObjects/Pick_ups/Items/LeftSideHeart/LeftSideHeartItem.tscn" type="PackedScene" id=29]
+[ext_resource path="res://WorldObjects/Pick_ups/Items/RightSideHeart/RightSideHeartItem.tscn" type="PackedScene" id=30]
 
 [sub_resource type="Environment" id=3]
 background_mode = 4
@@ -432,9 +435,6 @@ margin_right = 0.0
 margin_bottom = 0.0
 camera_path = NodePath("../../Camera2D")
 
-[node name="GameSpecs" parent="." index="2"]
-visible = false
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="3"]
 
 [node name="BackgroundSprite" type="Sprite" parent="ParallaxBackground" index="0"]
@@ -718,6 +718,16 @@ position = Vector2( 643, -9 )
 
 [node name="Wide_torch10" parent="World_objects/Torches/Hall_flag_3" index="1" instance=ExtResource( 10 )]
 position = Vector2( 562, -9 )
+
+[node name="Chests" type="Node2D" parent="World_objects" index="2"]
+
+[node name="ChestOne" parent="World_objects/Chests" index="0" instance=ExtResource( 28 )]
+position = Vector2( -161, -3 )
+innerItemScene = ExtResource( 29 )
+
+[node name="ChestTwo" parent="World_objects/Chests" index="1" instance=ExtResource( 28 )]
+position = Vector2( 1837, -3 )
+innerItemScene = ExtResource( 30 )
 
 [node name="Moving_platforms" type="Node2D" parent="." index="17"]
 

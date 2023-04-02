@@ -47,7 +47,9 @@ func set_default_constants():
 		redThredItem_picked_up = false,
 		is_creator_house_desk_inspected = false,
 		artist_gifted_the_thread = false,
-		did_speak_to_creator_house_welcomer = false
+		did_speak_to_creator_house_welcomer = false,
+		left_side_heart_picked_up = false,
+		right_side_heart_picked_up = false
 	}
 	EventBus.game_const_changed()
 
