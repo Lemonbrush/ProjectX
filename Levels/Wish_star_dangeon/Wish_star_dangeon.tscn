@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=2]
+[gd_scene load_steps=82 format=2]
 
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
@@ -76,11 +76,17 @@ extents = Vector2( 48, 8 )
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 40, 8 )
 
-[sub_resource type="RectangleShape2D" id=15]
-extents = Vector2( 8, 8 )
+[sub_resource type="RectangleShape2D" id=96]
+extents = Vector2( 16, 8 )
 
 [sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 16, 8 )
+
+[sub_resource type="RectangleShape2D" id=97]
+extents = Vector2( 32, 8 )
+
+[sub_resource type="RectangleShape2D" id=98]
+extents = Vector2( 8, 8 )
 
 [sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 288.5, 8 )
@@ -516,8 +522,8 @@ one_way_collision = true
 position = Vector2( 1599, 230 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody7" index="0"]
-position = Vector2( -54, -1 )
-shape = SubResource( 15 )
+position = Vector2( -46, -1 )
+shape = SubResource( 96 )
 one_way_collision = true
 
 [node name="PassThroughBody8" parent="Collisions/PassTrough" index="3" groups=["passThroughObject"] instance=ExtResource( 1 )]
@@ -528,7 +534,47 @@ position = Vector2( -8, 0 )
 shape = SubResource( 16 )
 one_way_collision = true
 
-[node name="PassThroughBody9" parent="Collisions/PassTrough" index="4" groups=["passThroughObject"] instance=ExtResource( 1 )]
+[node name="PassThroughBody15" parent="Collisions/PassTrough" index="4" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 1481, 181 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody15" index="0"]
+position = Vector2( -8, 0 )
+shape = SubResource( 16 )
+one_way_collision = true
+
+[node name="PassThroughBody16" parent="Collisions/PassTrough" index="5" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 1577, 181 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody16" index="0"]
+position = Vector2( -8, 0 )
+shape = SubResource( 16 )
+one_way_collision = true
+
+[node name="PassThroughBody17" parent="Collisions/PassTrough" index="6" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 1449, 85 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody17" index="0"]
+position = Vector2( 8, 0 )
+shape = SubResource( 97 )
+one_way_collision = true
+
+[node name="PassThroughBody18" parent="Collisions/PassTrough" index="7" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 1449, 133 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody18" index="0"]
+position = Vector2( -16, 0 )
+shape = SubResource( 98 )
+one_way_collision = true
+
+[node name="PassThroughBody23" parent="Collisions/PassTrough" index="8" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 1577, 85 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody23" index="0"]
+position = Vector2( -16, 0 )
+shape = SubResource( 98 )
+one_way_collision = true
+
+[node name="PassThroughBody9" parent="Collisions/PassTrough" index="9" groups=["passThroughObject"] instance=ExtResource( 1 )]
 position = Vector2( 1545, 165 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody9" index="0"]
@@ -536,7 +582,7 @@ position = Vector2( -8, 0 )
 shape = SubResource( 16 )
 one_way_collision = true
 
-[node name="PassThroughBody10" parent="Collisions/PassTrough" index="5" groups=["passThroughObject"] instance=ExtResource( 1 )]
+[node name="PassThroughBody10" parent="Collisions/PassTrough" index="10" groups=["passThroughObject"] instance=ExtResource( 1 )]
 position = Vector2( 1513, 133 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody10" index="0"]
@@ -544,7 +590,7 @@ position = Vector2( -8, 0 )
 shape = SubResource( 16 )
 one_way_collision = true
 
-[node name="PassThroughBody11" parent="Collisions/PassTrough" index="6" groups=["passThroughObject"] instance=ExtResource( 1 )]
+[node name="PassThroughBody11" parent="Collisions/PassTrough" index="11" groups=["passThroughObject"] instance=ExtResource( 1 )]
 position = Vector2( 1545, 101 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody11" index="0"]
@@ -552,7 +598,7 @@ position = Vector2( -8, 0 )
 shape = SubResource( 16 )
 one_way_collision = true
 
-[node name="PassThroughBody12" parent="Collisions/PassTrough" index="7" groups=["passThroughObject"] instance=ExtResource( 1 )]
+[node name="PassThroughBody12" parent="Collisions/PassTrough" index="12" groups=["passThroughObject"] instance=ExtResource( 1 )]
 position = Vector2( 1529, 69 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody12" index="0"]
@@ -560,7 +606,7 @@ position = Vector2( -8, 0 )
 shape = SubResource( 16 )
 one_way_collision = true
 
-[node name="PassThroughBody13" parent="Collisions/PassTrough" index="8" groups=["passThroughObject"] instance=ExtResource( 1 )]
+[node name="PassThroughBody13" parent="Collisions/PassTrough" index="13" groups=["passThroughObject"] instance=ExtResource( 1 )]
 position = Vector2( 1497, 37 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody13" index="0"]
@@ -568,7 +614,7 @@ position = Vector2( -8, 0 )
 shape = SubResource( 16 )
 one_way_collision = true
 
-[node name="PassThroughBody14" parent="Collisions/PassTrough" index="9" groups=["passThroughObject"] instance=ExtResource( 1 )]
+[node name="PassThroughBody14" parent="Collisions/PassTrough" index="14" groups=["passThroughObject"] instance=ExtResource( 1 )]
 position = Vector2( 1368, 5 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody14" index="0"]
@@ -576,7 +622,7 @@ position = Vector2( 264.5, 0 )
 shape = SubResource( 17 )
 one_way_collision = true
 
-[node name="PassThroughBody19" parent="Collisions/PassTrough" index="10" groups=["passThroughObject"] instance=ExtResource( 1 )]
+[node name="PassThroughBody19" parent="Collisions/PassTrough" index="15" groups=["passThroughObject"] instance=ExtResource( 1 )]
 position = Vector2( 1065, 5 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody19" index="0"]
@@ -584,7 +630,7 @@ position = Vector2( -8, 0 )
 shape = SubResource( 19 )
 one_way_collision = true
 
-[node name="PassThroughBody20" parent="Collisions/PassTrough" index="11" groups=["passThroughObject"] instance=ExtResource( 1 )]
+[node name="PassThroughBody20" parent="Collisions/PassTrough" index="16" groups=["passThroughObject"] instance=ExtResource( 1 )]
 position = Vector2( -455, -91 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody20" index="0"]
@@ -592,7 +638,7 @@ position = Vector2( 16, 0 )
 shape = SubResource( 20 )
 one_way_collision = true
 
-[node name="PassThroughBody21" parent="Collisions/PassTrough" index="12" groups=["passThroughObject"] instance=ExtResource( 1 )]
+[node name="PassThroughBody21" parent="Collisions/PassTrough" index="17" groups=["passThroughObject"] instance=ExtResource( 1 )]
 position = Vector2( -487, 101 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody21" index="0"]
@@ -600,7 +646,7 @@ position = Vector2( 48, 0 )
 shape = SubResource( 21 )
 one_way_collision = true
 
-[node name="PassThroughBody22" parent="Collisions/PassTrough" index="13" groups=["passThroughObject"] instance=ExtResource( 1 )]
+[node name="PassThroughBody22" parent="Collisions/PassTrough" index="18" groups=["passThroughObject"] instance=ExtResource( 1 )]
 position = Vector2( -471, 261 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody22" index="0"]
@@ -1105,6 +1151,11 @@ margin_bottom = 344.0
 [editable path="Collisions/PassTrough/PassThroughBody6"]
 [editable path="Collisions/PassTrough/PassThroughBody7"]
 [editable path="Collisions/PassTrough/PassThroughBody8"]
+[editable path="Collisions/PassTrough/PassThroughBody15"]
+[editable path="Collisions/PassTrough/PassThroughBody16"]
+[editable path="Collisions/PassTrough/PassThroughBody17"]
+[editable path="Collisions/PassTrough/PassThroughBody18"]
+[editable path="Collisions/PassTrough/PassThroughBody23"]
 [editable path="Collisions/PassTrough/PassThroughBody9"]
 [editable path="Collisions/PassTrough/PassThroughBody10"]
 [editable path="Collisions/PassTrough/PassThroughBody11"]
