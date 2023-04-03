@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=2]
+[gd_scene load_steps=85 format=2]
 
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
@@ -30,6 +30,7 @@
 [ext_resource path="res://WorldObjects/Interactables/OpenableContainers/Chest/Chest.tscn" type="PackedScene" id=28]
 [ext_resource path="res://WorldObjects/Pick_ups/Items/LeftSideHeart/LeftSideHeartItem.tscn" type="PackedScene" id=29]
 [ext_resource path="res://WorldObjects/Pick_ups/Items/RightSideHeart/RightSideHeartItem.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Levels/Wish_star_dangeon/Wish_star_dangeon.gd" type="Script" id=31]
 
 [sub_resource type="Environment" id=3]
 background_mode = 4
@@ -38,6 +39,75 @@ glow_enabled = true
 glow_hdr_threshold = 1.5
 adjustment_enabled = true
 adjustment_saturation = 1.3
+
+[sub_resource type="Animation" id=99]
+resource_name = "First_torch_ignite_cutscene"
+length = 5.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Moving_platforms/Interactive_platforms:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1, 4.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 905, 13 ), Vector2( 905, 13 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Moving_platforms/Interactive_platforms/Interactive_platform_1/Wide_torch")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 2.8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "activate"
+} ]
+}
+
+[sub_resource type="Animation" id=100]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Moving_platforms/Interactive_platforms:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -120 ) ]
+}
 
 [sub_resource type="CurveTexture" id=7]
 
@@ -428,6 +498,7 @@ shader_param/mix_amount = 0.33
 shader_param/color_over = Color( 0, 0, 0, 1 )
 
 [node name="Wish_star_dangeon" instance=ExtResource( 2 )]
+script = ExtResource( 31 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
 environment = SubResource( 3 )
@@ -449,6 +520,11 @@ position = Vector2( -29, -7 )
 scale = Vector2( 0.289576, 0.28133 )
 texture = ExtResource( 7 )
 centered = false
+
+[node name="AnimationPlayer" parent="." index="4"]
+autoplay = "RESET"
+anims/First_torch_ignite_cutscene = SubResource( 99 )
+anims/RESET = SubResource( 100 )
 
 [node name="Camera2D" parent="." index="5"]
 backgroundColor = Color( 0.176471, 0.152941, 0.25098, 1 )
@@ -765,6 +841,40 @@ position = Vector2( 643, -9 )
 [node name="Wide_torch10" parent="World_objects/Torches/Hall_flag_3" index="1" instance=ExtResource( 10 )]
 position = Vector2( 562, -9 )
 
+[node name="Right_island_wide_torch" parent="World_objects/Torches" index="7" instance=ExtResource( 10 )]
+position = Vector2( 1344, 247 )
+is_torch_activated = true
+
+[node name="Wide_torch" parent="World_objects/Torches" index="8" instance=ExtResource( 10 )]
+position = Vector2( 1390, -9 )
+
+[node name="Wide_torch2" parent="World_objects/Torches" index="9" instance=ExtResource( 10 )]
+position = Vector2( 1474, -9 )
+
+[node name="Wide_torch5" parent="World_objects/Torches" index="10" instance=ExtResource( 10 )]
+position = Vector2( 1555, -9 )
+
+[node name="Wide_torch6" parent="World_objects/Torches" index="11" instance=ExtResource( 10 )]
+position = Vector2( 1630, -9 )
+
+[node name="Wide_torch7" parent="World_objects/Torches" index="12" instance=ExtResource( 10 )]
+position = Vector2( 1795, -9 )
+
+[node name="Wide_torch8" parent="World_objects/Torches" index="13" instance=ExtResource( 10 )]
+position = Vector2( 1873, -9 )
+
+[node name="Wide_torch9" parent="World_objects/Torches" index="14" instance=ExtResource( 10 )]
+position = Vector2( 1520, 55 )
+
+[node name="Wide_torch10" parent="World_objects/Torches" index="15" instance=ExtResource( 10 )]
+position = Vector2( 1675, 247 )
+
+[node name="Wide_torch11" parent="World_objects/Torches" index="16" instance=ExtResource( 10 )]
+position = Vector2( 1519, 247 )
+
+[node name="Wide_torch12" parent="World_objects/Torches" index="17" instance=ExtResource( 10 )]
+position = Vector2( 1537, 151 )
+
 [node name="Chests" type="Node2D" parent="World_objects" index="2"]
 
 [node name="ChestOne" parent="World_objects/Chests" index="0" instance=ExtResource( 28 )]
@@ -1050,6 +1160,7 @@ anims/Loop = SubResource( 92 )
 anims/RESET = SubResource( 93 )
 
 [node name="Interactive_platforms" type="Node2D" parent="Moving_platforms" index="2"]
+visible = false
 
 [node name="Interactive_platform_1" type="Node2D" parent="Moving_platforms/Interactive_platforms" index="0"]
 position = Vector2( -1, -45 )
@@ -1064,8 +1175,11 @@ position = Vector2( 906, 66 )
 [node name="CollisionShape2D" parent="Moving_platforms/Interactive_platforms/Interactive_platform_1/PassThroughBody15" index="0"]
 shape = SubResource( 18 )
 
+[node name="Wide_torch" parent="Moving_platforms/Interactive_platforms/Interactive_platform_1" index="2" instance=ExtResource( 10 )]
+position = Vector2( 906, 52 )
+
 [node name="Interactive_platform_2" type="Node2D" parent="Moving_platforms/Interactive_platforms" index="1"]
-position = Vector2( 95, -29 )
+position = Vector2( 119, -17 )
 
 [node name="Sprite" type="Sprite" parent="Moving_platforms/Interactive_platforms/Interactive_platform_2" index="0"]
 position = Vector2( 906, 74 )
@@ -1077,8 +1191,11 @@ position = Vector2( 906, 66 )
 [node name="CollisionShape2D" parent="Moving_platforms/Interactive_platforms/Interactive_platform_2/PassThroughBody15" index="0"]
 shape = SubResource( 18 )
 
+[node name="Wide_torch" parent="Moving_platforms/Interactive_platforms/Interactive_platform_2" index="2" instance=ExtResource( 10 )]
+position = Vector2( 906, 52 )
+
 [node name="Interactive_platform_3" type="Node2D" parent="Moving_platforms/Interactive_platforms" index="2"]
-position = Vector2( 207, 19 )
+position = Vector2( 220, 31 )
 
 [node name="Sprite" type="Sprite" parent="Moving_platforms/Interactive_platforms/Interactive_platform_3" index="0"]
 position = Vector2( 906, 74 )
@@ -1090,8 +1207,11 @@ position = Vector2( 906, 66 )
 [node name="CollisionShape2D" parent="Moving_platforms/Interactive_platforms/Interactive_platform_3/PassThroughBody15" index="0"]
 shape = SubResource( 18 )
 
+[node name="Wide_torch" parent="Moving_platforms/Interactive_platforms/Interactive_platform_3" index="2" instance=ExtResource( 10 )]
+position = Vector2( 906, 52 )
+
 [node name="Interactive_platform_4" type="Node2D" parent="Moving_platforms/Interactive_platforms" index="3"]
-position = Vector2( 319, 99 )
+position = Vector2( 325, 85 )
 
 [node name="Sprite" type="Sprite" parent="Moving_platforms/Interactive_platforms/Interactive_platform_4" index="0"]
 position = Vector2( 906, 74 )
@@ -1102,6 +1222,9 @@ position = Vector2( 906, 66 )
 
 [node name="CollisionShape2D" parent="Moving_platforms/Interactive_platforms/Interactive_platform_4/PassThroughBody15" index="0"]
 shape = SubResource( 18 )
+
+[node name="Wide_torch" parent="Moving_platforms/Interactive_platforms/Interactive_platform_4" index="2" instance=ExtResource( 10 )]
+position = Vector2( 906, 52 )
 
 [node name="WaterSurface" type="Node2D" parent="." index="18"]
 pause_mode = 2

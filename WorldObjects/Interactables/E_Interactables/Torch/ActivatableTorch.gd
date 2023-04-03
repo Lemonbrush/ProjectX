@@ -23,12 +23,15 @@ func on_approach(_body):
 
 func on_interact(_body):
 	if !is_torch_activated:
-		ignite_particles.emitting = true
-		fire_particles.emitting = true
-		ignite_light_particles.emitting = true
-		light_source.strength = true
-		is_torch_activated = true
-		interaction_popup.hide()
+		activate()
+
+func activate():
+	ignite_particles.emitting = true
+	fire_particles.emitting = true
+	ignite_light_particles.emitting = true
+	light_source.strength = true
+	is_torch_activated = true
+	interaction_popup.hide()
 
 func on_leave():
 	interaction_popup.hide()
