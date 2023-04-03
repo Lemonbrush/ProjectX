@@ -6,3 +6,6 @@ func _ready():
 func _on_item_collected(item_name):
 	if item_name == "LeftSideHeartItem":
 		animationPlayer.queue("First_torch_ignite_cutscene")
+		
+	if item_name == "RightSideHeartItem":
+		animationPlayer.queue("Platforms_lift_cutscene")
