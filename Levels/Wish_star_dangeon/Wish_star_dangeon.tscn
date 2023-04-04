@@ -132,7 +132,7 @@ tracks/6/keys = {
 
 [sub_resource type="Animation" id=101]
 resource_name = "Platforms_lift_cutscene"
-length = 7.5
+length = 8.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera2D:position")
 tracks/0/interp = 1
@@ -140,7 +140,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 1, 3.5, 4.5, 6.5 ),
+"times": PoolRealArray( 1, 4.1, 5.1, 7.1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1057, 10 ), Vector2( 1057, 10 ), Vector2( -357, 54 ), Vector2( -357, 54 ) ]
@@ -152,7 +152,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1.7, 2.7 ),
+"times": PoolRealArray( 1.7, 3.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -1, -45 ), Vector2( -1, -61 ) ]
@@ -164,7 +164,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 1.7, 2.5 ),
+"times": PoolRealArray( 1.9, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 119, -17 ), Vector2( 119, -61 ) ]
@@ -176,7 +176,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 1.7, 2.9 ),
+"times": PoolRealArray( 1.4, 3.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 220, 31 ), Vector2( 220, -61 ) ]
@@ -188,7 +188,7 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 1.7, 2.6 ),
+"times": PoolRealArray( 1.7, 3.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 325, 85 ), Vector2( 325, -61 ) ]
@@ -200,7 +200,7 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 5.5 ),
+"times": PoolRealArray( 6.1 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -1101,6 +1101,27 @@ position = Vector2( 1537, 151 )
 [node name="Left_island_wide_torch" parent="World_objects/Torches" index="18" instance=ExtResource( 10 )]
 position = Vector2( -403, 87 )
 
+[node name="Left_island_wide_torch2" parent="World_objects/Torches" index="19" instance=ExtResource( 10 )]
+position = Vector2( -458, -105 )
+
+[node name="Left_island_wide_torch3" parent="World_objects/Torches" index="20" instance=ExtResource( 10 )]
+position = Vector2( -494, 87 )
+
+[node name="Left_island_wide_torch4" parent="World_objects/Torches" index="21" instance=ExtResource( 10 )]
+position = Vector2( -419, 247 )
+
+[node name="Left_island_wide_torch5" parent="World_objects/Torches" index="22" instance=ExtResource( 10 )]
+position = Vector2( -487, 439 )
+
+[node name="Left_island_wide_torch6" parent="World_objects/Torches" index="23" instance=ExtResource( 10 )]
+position = Vector2( -395, 439 )
+
+[node name="Left_island_wide_torch7" parent="World_objects/Torches" index="24" instance=ExtResource( 10 )]
+position = Vector2( 14, 439 )
+
+[node name="Left_island_wide_torch8" parent="World_objects/Torches" index="25" instance=ExtResource( 10 )]
+position = Vector2( 98, 439 )
+
 [node name="Chests" type="Node2D" parent="World_objects" index="2"]
 
 [node name="ChestOne" parent="World_objects/Chests" index="0" instance=ExtResource( 28 )]
@@ -1132,6 +1153,10 @@ texture = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Moving_platforms/Star_entrance/Moving_platform_near_star_entrance/Platform" index="2"]
 shape = SubResource( 27 )
+
+[node name="Torch" parent="Moving_platforms/Star_entrance/Moving_platform_near_star_entrance/Platform" index="3" instance=ExtResource( 10 )]
+position = Vector2( 0, -14 )
+is_torch_activated = true
 
 [node name="Path2D" type="Path2D" parent="Moving_platforms/Star_entrance/Moving_platform_near_star_entrance" index="1"]
 position = Vector2( -104, 0 )
