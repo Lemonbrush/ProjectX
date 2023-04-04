@@ -81,6 +81,54 @@ tracks/2/keys = {
 "method": "activate"
 } ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("Moving_platforms/Interactive_platforms/Interactive_platform_4/PassThroughBody15/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Moving_platforms/Interactive_platforms/Interactive_platform_3/PassThroughBody15/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Moving_platforms/Interactive_platforms/Interactive_platform_2/PassThroughBody15/CollisionShape2D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Moving_platforms/Interactive_platforms/Interactive_platform_1/PassThroughBody15/CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=101]
 resource_name = "Platforms_lift_cutscene"
@@ -233,6 +281,54 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 325, 85 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Moving_platforms/Interactive_platforms/Interactive_platform_1/PassThroughBody15/CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Moving_platforms/Interactive_platforms/Interactive_platform_2/PassThroughBody15/CollisionShape2D:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Moving_platforms/Interactive_platforms/Interactive_platform_3/PassThroughBody15/CollisionShape2D:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Moving_platforms/Interactive_platforms/Interactive_platform_4/PassThroughBody15/CollisionShape2D:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="CurveTexture" id=7]
@@ -1304,6 +1400,7 @@ position = Vector2( 906, 66 )
 
 [node name="CollisionShape2D" parent="Moving_platforms/Interactive_platforms/Interactive_platform_1/PassThroughBody15" index="0"]
 shape = SubResource( 18 )
+disabled = true
 
 [node name="Wide_torch" parent="Moving_platforms/Interactive_platforms/Interactive_platform_1" index="2" instance=ExtResource( 10 )]
 position = Vector2( 906, 52 )
@@ -1320,6 +1417,7 @@ position = Vector2( 906, 66 )
 
 [node name="CollisionShape2D" parent="Moving_platforms/Interactive_platforms/Interactive_platform_2/PassThroughBody15" index="0"]
 shape = SubResource( 18 )
+disabled = true
 
 [node name="Wide_torch" parent="Moving_platforms/Interactive_platforms/Interactive_platform_2" index="2" instance=ExtResource( 10 )]
 position = Vector2( 906, 52 )
@@ -1336,6 +1434,7 @@ position = Vector2( 906, 66 )
 
 [node name="CollisionShape2D" parent="Moving_platforms/Interactive_platforms/Interactive_platform_3/PassThroughBody15" index="0"]
 shape = SubResource( 18 )
+disabled = true
 
 [node name="Wide_torch" parent="Moving_platforms/Interactive_platforms/Interactive_platform_3" index="2" instance=ExtResource( 10 )]
 position = Vector2( 906, 52 )
@@ -1352,6 +1451,7 @@ position = Vector2( 906, 66 )
 
 [node name="CollisionShape2D" parent="Moving_platforms/Interactive_platforms/Interactive_platform_4/PassThroughBody15" index="0"]
 shape = SubResource( 18 )
+disabled = true
 
 [node name="Wide_torch" parent="Moving_platforms/Interactive_platforms/Interactive_platform_4" index="2" instance=ExtResource( 10 )]
 position = Vector2( 906, 52 )
