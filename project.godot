@@ -136,6 +136,7 @@ LevelManager="*res://Utils/Singletons/LevelManager.gd"
 EventBus="*res://Utils/Singletons/EventBus.gd"
 SettingsManager="*res://Utils/Singletons/SettingsManager/SettingsManager.gd"
 GameEventConstants="*res://Utils/Singletons/GameEventConstants.gd"
+ParticlesCache="*res://Utils/Singletons/ParticlesCache.gd"
 
 [debug]
 
