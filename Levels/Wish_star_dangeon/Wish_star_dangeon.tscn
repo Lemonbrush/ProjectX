@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=2]
+[gd_scene load_steps=88 format=2]
 
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
@@ -415,6 +415,9 @@ extents = Vector2( 1.5, 3.5 )
 
 [sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 8, 273.25 )
+
+[sub_resource type="RectangleShape2D" id=103]
+extents = Vector2( 3, 8 )
 
 [sub_resource type="RectangleShape2D" id=27]
 extents = Vector2( 32, 8 )
@@ -1024,23 +1027,39 @@ position = Vector2( -439, 10 )
 position = Vector2( 0, 161 )
 shape = SubResource( 26 )
 
-[node name="World_objects" type="Node2D" parent="." index="16"]
-
-[node name="Centeal_hub_door" parent="World_objects" index="0" instance=ExtResource( 3 )]
+[node name="Centeal_hub_door" parent="Doors" index="0" instance=ExtResource( 3 )]
 position = Vector2( 57, -3 )
 nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "Wish_star_dangeon_door"
 
-[node name="VisibilityChecker" parent="World_objects/Centeal_hub_door" index="0"]
+[node name="VisibilityChecker" parent="Doors/Centeal_hub_door" index="0"]
 visible = false
 
-[node name="GatesBackground" parent="World_objects/Centeal_hub_door" index="1"]
+[node name="GatesBackground" parent="Doors/Centeal_hub_door" index="1"]
 visible = false
 
-[node name="InteractionController" parent="World_objects/Centeal_hub_door" index="2"]
+[node name="InteractionController" parent="Doors/Centeal_hub_door" index="2"]
 visible = false
 
-[node name="Torches" type="Node2D" parent="World_objects" index="1"]
+[node name="Heart_lake_door" parent="Doors" index="1" instance=ExtResource( 3 )]
+position = Vector2( 57, 445 )
+nextScenePath = "res://Levels/Wish_star_dangeon/Heart_lake/HeartLake.tscn"
+
+[node name="VisibilityChecker" parent="Doors/Heart_lake_door" index="0"]
+visible = false
+position = Vector2( 0, -57.5 )
+scale = Vector2( 1, 5.75 )
+
+[node name="GatesBackground" parent="Doors/Heart_lake_door" index="1"]
+visible = false
+
+[node name="CollisionShape2D" parent="Doors/Heart_lake_door/InteractionController/Area2D" index="0"]
+position = Vector2( 0, 2 )
+shape = SubResource( 103 )
+
+[node name="World_objects" type="Node2D" parent="." index="16"]
+
+[node name="Torches" type="Node2D" parent="World_objects" index="0"]
 
 [node name="Wide_torch3" parent="World_objects/Torches" index="0" instance=ExtResource( 10 )]
 position = Vector2( -119, -9 )
@@ -1141,7 +1160,7 @@ position = Vector2( 14, 439 )
 [node name="Left_island_wide_torch8" parent="World_objects/Torches" index="25" instance=ExtResource( 10 )]
 position = Vector2( 98, 439 )
 
-[node name="Chests" type="Node2D" parent="World_objects" index="2"]
+[node name="Chests" type="Node2D" parent="World_objects" index="1"]
 
 [node name="ChestOne" parent="World_objects/Chests" index="0" instance=ExtResource( 28 )]
 position = Vector2( -161, -3 )
@@ -1571,8 +1590,10 @@ margin_bottom = 344.0
 [editable path="Collisions/Solid/PassThroughBody20"]
 [editable path="Collisions/Solid/PassThroughBody19"]
 [editable path="Ladders/WellLadder"]
-[editable path="World_objects/Centeal_hub_door"]
-[editable path="World_objects/Centeal_hub_door/InteractionController"]
+[editable path="Doors/Centeal_hub_door"]
+[editable path="Doors/Centeal_hub_door/InteractionController"]
+[editable path="Doors/Heart_lake_door"]
+[editable path="Doors/Heart_lake_door/InteractionController"]
 [editable path="Moving_platforms/Interactive_platforms/Interactive_platform_1/PassThroughBody15"]
 [editable path="Moving_platforms/Interactive_platforms/Interactive_platform_2/PassThroughBody15"]
 [editable path="Moving_platforms/Interactive_platforms/Interactive_platform_3/PassThroughBody15"]
