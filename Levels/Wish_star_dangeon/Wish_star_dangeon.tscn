@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=2]
+[gd_scene load_steps=89 format=2]
 
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
@@ -31,6 +31,7 @@
 [ext_resource path="res://WorldObjects/Pick_ups/Items/LeftSideHeart/LeftSideHeartItem.tscn" type="PackedScene" id=29]
 [ext_resource path="res://WorldObjects/Pick_ups/Items/RightSideHeart/RightSideHeartItem.tscn" type="PackedScene" id=30]
 [ext_resource path="res://Levels/Wish_star_dangeon/Wish_star_dangeon.gd" type="Script" id=31]
+[ext_resource path="res://WorldObjects/Sign/Sign.tscn" type="PackedScene" id=32]
 
 [sub_resource type="Environment" id=3]
 background_mode = 4
@@ -1170,6 +1171,68 @@ innerItemScene = ExtResource( 29 )
 position = Vector2( 1837, -3 )
 innerItemScene = ExtResource( 30 )
 
+[node name="Flag_captions" type="Node2D" parent="World_objects" index="2"]
+
+[node name="Sign_1" parent="World_objects/Flag_captions" index="0" instance=ExtResource( 32 )]
+position = Vector2( 281, -3 )
+texts_array = [ "ЛЕГЕНДА О КИСЕЛЯЧЬЕМ ЦАРСТВЕ", "Эта история о первом котике,
+с которого все началось", "Давным-давно, когда цветочки
+не танцевали, бабочки не пархали,
+а котики не грелись на солнышке,
+был только он", "Мы не знаем кто он был.
+Да это и не важно, ведь с него
+все началось. Хотя нет...", "Все началось когда он встретил ее.
+Первую кису" ]
+
+[node name="Sprite" parent="World_objects/Flag_captions/Sign_1" index="0"]
+visible = false
+
+[node name="Sign_2" parent="World_objects/Flag_captions" index="1" instance=ExtResource( 32 )]
+position = Vector2( 440, -3 )
+texts_array = [ "Каждый раз, когда она улыбалась,
+вырастал цветочек. Каждый вздох
+появлялась бабочка", "И каждое мгновение, проведенное
+с ней было как зефирка. А зефирка
+становилась облачком", "Это было волнительно, но однажды
+он украл ее первый поцелуй взамен
+на тьмок", "И тогда произошел Бум!" ]
+
+[node name="Sprite" parent="World_objects/Flag_captions/Sign_2" index="0"]
+visible = false
+
+[node name="Sign_3" parent="World_objects/Flag_captions" index="2" instance=ExtResource( 32 )]
+position = Vector2( 601, -3 )
+texts_array = [ "Тьмок за тьмоком, обнимак за обнимаком", "Они стали одним целым..." ]
+
+[node name="Sprite" parent="World_objects/Flag_captions/Sign_3" index="0"]
+visible = false
+
+[node name="Sign_4" parent="World_objects/Flag_captions" index="3" instance=ExtResource( 32 )]
+position = Vector2( 1432, -3 )
+texts_array = [ "В каждом из нас есть место, которое
+предназначено только для него.
+Тайный остров, о котором никто не знает", "Туда не так просто попасть. Хотя бывает так,
+что два мира сталкиваются друг с друугом,
+и уже не понять чьи бабочки здесь пархают", "Они становятся родными. Им здесь всегда
+найдется место" ]
+
+[node name="Sprite" parent="World_objects/Flag_captions/Sign_4" index="0"]
+visible = false
+
+[node name="Sign_5" parent="World_objects/Flag_captions" index="4" instance=ExtResource( 32 )]
+position = Vector2( 1592, -3 )
+texts_array = [ "Так появились мы - котята", "Мы наполняем смыслом этот мир,
+сохраняем память о нем и поддерживаем", "Внутри каждого котика есть свой мир
+со своими котятами. Когда один котик
+встречает другого, в его мире происходят
+изменения", "Если они любят друг друга, то и котики
+счастливы. С каждым новым впечатлением
+появляется новый котик, деревня котиков,
+острова котиков..." ]
+
+[node name="Sprite" parent="World_objects/Flag_captions/Sign_5" index="0"]
+visible = false
+
 [node name="Moving_platforms" type="Node2D" parent="." index="17"]
 
 [node name="Star_entrance" type="Node2D" parent="Moving_platforms" index="0"]
@@ -1594,6 +1657,16 @@ margin_bottom = 344.0
 [editable path="Doors/Centeal_hub_door/InteractionController"]
 [editable path="Doors/Heart_lake_door"]
 [editable path="Doors/Heart_lake_door/InteractionController"]
+[editable path="World_objects/Flag_captions/Sign_1"]
+[editable path="World_objects/Flag_captions/Sign_1/InteractionController"]
+[editable path="World_objects/Flag_captions/Sign_2"]
+[editable path="World_objects/Flag_captions/Sign_2/InteractionController"]
+[editable path="World_objects/Flag_captions/Sign_3"]
+[editable path="World_objects/Flag_captions/Sign_3/InteractionController"]
+[editable path="World_objects/Flag_captions/Sign_4"]
+[editable path="World_objects/Flag_captions/Sign_4/InteractionController"]
+[editable path="World_objects/Flag_captions/Sign_5"]
+[editable path="World_objects/Flag_captions/Sign_5/InteractionController"]
 [editable path="Moving_platforms/Interactive_platforms/Interactive_platform_1/PassThroughBody15"]
 [editable path="Moving_platforms/Interactive_platforms/Interactive_platform_2/PassThroughBody15"]
 [editable path="Moving_platforms/Interactive_platforms/Interactive_platform_3/PassThroughBody15"]
