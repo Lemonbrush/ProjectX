@@ -140,7 +140,7 @@ ParticlesCache="*res://Utils/Singletons/ParticlesCache.gd"
 
 [debug]
 
-settings/fps/force_fps=300
+settings/fps/force_fps=60
 
 [display]
 
