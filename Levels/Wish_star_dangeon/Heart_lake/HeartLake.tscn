@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://Resources/Tilesets/Resources/Fountains/Fountains.tres" type="TileSet" id=11]
 [ext_resource path="res://WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Resources/Tilesets/Resources/Decorations/Decorations.tres" type="TileSet" id=13]
+[ext_resource path="res://Assets/Levels/Wish_star_dangeon/World_objects/Door.png" type="Texture" id=14]
+[ext_resource path="res://WorldObjects/Interactables/E_Interactables/Torch/Wide_torch.tscn" type="PackedScene" id=15]
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 24, 8 )
@@ -130,6 +132,29 @@ tile_set = ExtResource( 13 )
 cell_size = Vector2( 1, 1 )
 format = 1
 tile_data = PoolIntArray( -14221441, 75, 0, -13238375, 536870987, 0, -13107206, 536870987, 0, -12910596, 75, 0, -12583029, 536870913, 0, -12517511, 536870947, 0, -12517500, 23, 0, -12517481, 31, 0, -12517458, 536870935, 0, -12517437, 536870938, 0, -12517419, 536870943, 0, -12517394, 536870936, 0, -12582912, 31, 0, -12582900, 536870916, 0, -12582888, 20, 0, -12582884, 536870945, 0, -11468929, 57, 0, -11534325, 59, 0, -10420326, 73, 0, -10420321, 27, 0, -10420303, 23, 0, -10420243, 73, 0, -9371777, 60, 0, -9371766, 113, 0, -9371743, 58, 0, -9371675, 33, 0, -9371661, 31, 0, -9437176, 536870926, 0, -9437160, 58, 0, -8323163, 73, 0, -8323162, 73, 0, -8388606, 57, 0, -7274585, 34, 0, -7274565, 35, 0, -7274482, 112, 0, -6226035, 57, 0, -6226004, 59, 0, -5177400, 72, 0, -5177377, 31, 0, -5177353, 35, 0, -5242873, 33, 0, -4128832, 20, 0, -4128821, 536870926, 0, -3669759, 75, 0, -3146132, 75, 0, -3080260, 57, 0, -2556096, 536870987, 0, -2228129, 536870987, 0, -2031745, 24, 0, -2031727, 31, 0, -2031668, 74, 0, -2031628, 4, 0, -2097148, 2, 0, -2097132, 31, 0, -2097116, 27, 0, -2097103, 23, 0, -1769496, 75, 0, -1703570, 536870987, 0, -1507843, 75, 0, -1376627, 536870987, 0, -1441591, 75, 0, -983731, 31, 0, -983692, 536870943, 0, -983669, 26, 0, -983641, 22, 0, -983623, 31, 0, -983595, 20, 0, -983572, 33, 0, -983556, 27, 0, -983525, 34, 0, -983509, 22, 0, -983491, 35, 0, -983456, 34, 0, -983424, 23, 0, -983397, 35, 0, -983355, 536870943, 0, -983337, 31, 0, -983323, 33, 0, -983277, 536870943, 0, -983254, 23, 0, -983238, 536870946, 0, -983221, 536870943, 0, -983201, 536870947, 0, -983174, 31, 0, -983164, 60, 0, -983135, 34, 0, -983118, 20, 0, -983110, 536870926, 0, -983098, 31, 0, -983084, 27, 0, -983069, 33, 0, -983046, 31, 0, -1048544, 35, 0, -1048529, 60, 0, -1048513, 27, 0, -1048491, 536870945, 0, -1048469, 31, 0, -1048431, 35, 0, -1048393, 23, 0, -1048371, 21, 0, -1048355, 536870946, 0, -1048339, 31, 0, -1048322, 23, 0, -1048295, 536870945, 0, -1048268, 21, 0, -1048255, 27, 0, -1048232, 536870946, 0, -1048212, 31, 0, -1048196, 21, 0, -1048184, 33, 0, -1048166, 23, 0, -1048126, 34, 0, -1048109, 31, 0, -1048094, 23, 0, -1048074, 35, 0, -1048053, 27, 0, -1048030, 31, 0, -1047994, 21, 0, 65125, 60, 0, 65206, 60, 0, 65380, 59, 0, 65443, 59, 0, 65476, 60, 0, 11, 57, 0, 153, 57, 0, 220, 57, 0, 280, 60, 0, 1114527, 58, 0, 1114563, 60, 0, 2162231, 60, 0, 2162276, 59, 0, 2162421, 58, 0, 2097154, 60, 0, 2097181, 58, 0, 2097238, 57, 0, 2097324, 60, 0, 2097438, 57, 0, 2097509, 58, 0, 2227832, 58, 0, 2227876, 58, 0, 2227930, 59, 0, 2227990, 59, 0, 2228029, 58, 0, 2228099, 58, 0, 2162739, 60, 0, 2162889, 58, 0, 2163008, 57, 0, 2163078, 59, 0 )
+
+[node name="BackEntrance" type="Node2D" parent="Main_world_objects" index="2"]
+
+[node name="Sprite" type="Sprite" parent="Main_world_objects/BackEntrance" index="0"]
+position = Vector2( 691, -64 )
+texture = ExtResource( 14 )
+
+[node name="BackDoor" parent="Main_world_objects/BackEntrance" index="1" instance=ExtResource( 10 )]
+position = Vector2( 691, 0 )
+nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
+nextDoorName = "Wish_star_dangeon_door"
+
+[node name="VisibilityChecker" parent="Main_world_objects/BackEntrance/BackDoor" index="0"]
+visible = false
+
+[node name="GatesBackground" parent="Main_world_objects/BackEntrance/BackDoor" index="1"]
+visible = false
+
+[node name="Wide_torch" parent="Main_world_objects/BackEntrance" index="2" instance=ExtResource( 15 )]
+position = Vector2( 659, -6 )
+
+[node name="Wide_torch2" parent="Main_world_objects/BackEntrance" index="3" instance=ExtResource( 15 )]
+position = Vector2( 724, -6 )
 
 [node name="Background_world_objects" type="Node2D" parent="." index="8"]
 z_index = -1
@@ -346,6 +371,8 @@ minRadius = 450
 maxRadius = 450
 animating = false
 
+[editable path="Main_world_objects/BackEntrance/BackDoor"]
+[editable path="Main_world_objects/BackEntrance/BackDoor/InteractionController"]
 [editable path="Collisions/PassTrough/PassThroughBody21"]
 [editable path="Collisions/PassTrough/PassThroughBody22"]
 [editable path="Collisions/PassTrough/PassThroughBody23"]
