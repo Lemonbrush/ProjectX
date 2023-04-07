@@ -1,25 +1,365 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Levels/Wish_star_dangeon/Heart_assembling_lake/Heart_assembling_lake.png" type="Texture" id=3]
+[ext_resource path="res://Assets/BackgroundGradients/Cave_background.png" type="Texture" id=4]
+[ext_resource path="res://WorldObjects/Technical/Lighting/LightingRect/LightingRect.tscn" type="PackedScene" id=5]
+[ext_resource path="res://WorldObjects/Technical/Lighting/LightSource/LightSource.tscn" type="PackedScene" id=6]
+[ext_resource path="res://WorldObjects/Technical/Stars/Stars.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Resources/Tilesets/Resources/Water surface/WaterSurface.tres" type="TileSet" id=8]
+[ext_resource path="res://Resources/Tilesets/Resources/Water surface/WaterSurfaceNarrow.tres" type="TileSet" id=9]
+[ext_resource path="res://WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Resources/Tilesets/Resources/Fountains/Fountains.tres" type="TileSet" id=11]
+[ext_resource path="res://WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Resources/Tilesets/Resources/Decorations/Decorations.tres" type="TileSet" id=13]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 72, 8 )
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 24, 8 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 48, 8 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 32, 8 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 32, 8 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 32, 8 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 24, 8 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 16, 8 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 88, 8 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 816, 8 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 8, 40 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 8, 24 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 8, 48 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 8, 120 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 8, 152 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 4884.5, 51.5 )
 
 [node name="HeartLake" instance=ExtResource( 1 )]
 
-[node name="Player" parent="." index="4"]
-position = Vector2( 0, -15 )
+[node name="LightingCanvasLayer" type="CanvasLayer" parent="." index="1"]
+
+[node name="LightingRect" parent="LightingCanvasLayer" index="0" instance=ExtResource( 5 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
+camera_path = NodePath("../../Camera2D")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="2"]
+
+[node name="BackgroundSprite" type="Sprite" parent="ParallaxBackground" index="0"]
+light_mask = 3
+position = Vector2( -29, -7 )
+scale = Vector2( 0.289576, 0.28133 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Camera2D" parent="." index="4"]
+position = Vector2( -701, -55 )
+
+[node name="Clouds" parent="Camera2D" index="2" instance=ExtResource( 7 )]
+
+[node name="Foreground_world_objects" type="Node2D" parent="." index="5"]
+z_index = 1
+
+[node name="LakeWater" type="Node2D" parent="Foreground_world_objects" index="0"]
+modulate = Color( 1, 1, 1, 0.839216 )
+
+[node name="NarrowLakeWaterTileMap" type="TileMap" parent="Foreground_world_objects/LakeWater" index="0"]
+tile_set = ExtResource( 9 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( 458219, 0, 0, 458235, 0, 0, 458251, 0, 0, 458267, 0, 0, 458283, 0, 0, 458299, 0, 0, 458315, 0, 0, 458331, 0, 0, 458347, 0, 0, 458363, 0, 0, 458379, 0, 0, 458395, 0, 0, 458411, 0, 0, 458427, 0, 0, 458443, 0, 0, 458459, 0, 0, 458475, 0, 0, 458491, 0, 0, 458507, 0, 0, 458523, 0, 0, 458539, 0, 0, 458555, 0, 0, 458571, 0, 0, 458587, 0, 0, 458603, 0, 0, 458619, 0, 0, 458635, 0, 0, 458651, 0, 0, 458667, 0, 0, 458683, 0, 0, 458699, 0, 0, 458715, 0, 0, 458731, 0, 0, 458747, 0, 0, 393227, 0, 0, 393243, 0, 0, 393259, 0, 0, 393275, 0, 0, 393291, 0, 0, 393307, 0, 0, 393323, 0, 0, 393339, 0, 0, 393355, 0, 0, 393371, 0, 0, 393387, 0, 0, 393403, 0, 0, 393419, 0, 0, 393435, 0, 0, 393451, 0, 0, 393467, 0, 0, 393483, 0, 0, 393499, 0, 0, 393515, 0, 0, 393531, 0, 0, 393547, 0, 0, 393563, 0, 0, 393579, 0, 0, 393595, 0, 0, 393611, 0, 0, 393627, 0, 0, 393643, 0, 0, 393659, 0, 0, 393675, 0, 0 )
+
+[node name="WaterBlocksTileMap" type="TileMap" parent="Foreground_world_objects/LakeWater" index="1"]
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( 1113643, 1, 0, 1113659, 1, 0, 1113675, 1, 0, 1113691, 1, 0, 1113707, 1, 0, 1113723, 1, 0, 1113739, 1, 0, 1113755, 1, 0, 1113771, 1, 0, 1113787, 1, 0, 1113803, 1, 0, 1113819, 1, 0, 1113835, 1, 0, 1113851, 1, 0, 1113867, 1, 0, 1113883, 1, 0, 1113899, 1, 0, 1113915, 1, 0, 1113931, 1, 0, 1113947, 1, 0, 1113963, 1, 0, 1113979, 1, 0, 1113995, 1, 0, 1114011, 1, 0, 1114027, 1, 0, 1114043, 1, 0, 1114059, 1, 0, 1114075, 1, 0, 1114091, 1, 0, 1114107, 1, 0, 1048587, 1, 0, 1048603, 1, 0, 1048619, 1, 0, 1048635, 1, 0, 1048651, 1, 0, 1048667, 1, 0, 1048683, 1, 0, 1048699, 1, 0, 1048715, 1, 0, 1048731, 1, 0, 1048747, 1, 0, 1048763, 1, 0, 1048779, 1, 0, 1048795, 1, 0, 1048811, 1, 0, 1048827, 1, 0, 1048843, 1, 0, 1048859, 1, 0, 1048875, 1, 0, 1048891, 1, 0, 1048907, 1, 0, 1048923, 1, 0, 1048939, 1, 0, 1048955, 1, 0, 1048971, 1, 0 )
+
+[node name="BottomLakeFountainsTilemap" type="TileMap" parent="Foreground_world_objects" index="1"]
+tile_set = ExtResource( 11 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( 1113620, 11, 0, 1049001, 8, 0, 2162196, 11, 0, 2162253, 1, 0, 2162280, 8, 0, 2162304, 1, 0, 2162346, 1, 0, 2162373, 11, 0, 2162426, 8, 0, 2162515, 1, 0, 2162542, 11, 0, 2162576, 8, 0, 2162613, 1, 0, 2162641, 11, 0, 2162655, 1, 0, 2097210, 536870920, 0, 2097273, 1, 0, 2097301, 11, 0, 2097379, 536870923, 0, 2097420, 8, 0, 2097442, 1, 0, 2097484, 536870920, 0, 2687401, 8, 0, 3210772, 11, 0, 3210949, 11, 0, 3211118, 11, 0, 3211217, 11, 0, 3145877, 11, 0, 3145955, 536870923, 0, 3669608, 8, 0, 3670284, 8, 0, 3800826, 8, 0, 3800976, 8, 0, 3735610, 536870920, 0, 3735884, 536870920, 0, 4193989, 11, 0, 4194158, 11, 0, 4259348, 11, 0, 4259405, 1, 0, 4259456, 1, 0, 4259498, 1, 0, 4259667, 1, 0, 4259765, 1, 0, 4259793, 11, 0, 4259807, 1, 0, 4194425, 1, 0, 4194453, 11, 0, 4194531, 536870923, 0, 4194594, 1, 0, 4260265, 8, 0, 5242472, 8, 0, 5242565, 11, 0, 5242734, 11, 0, 5307924, 11, 0, 5308369, 11, 0, 5243029, 11, 0, 5243107, 536870923, 0, 5243148, 8, 0, 5373690, 8, 0, 5439376, 8, 0, 5374010, 536870920, 0, 5374284, 536870920, 0, 5898665, 8, 0, 6291141, 11, 0, 6291310, 11, 0, 6356500, 11, 0, 6356557, 1, 0, 6356608, 1, 0, 6356650, 1, 0, 6356819, 1, 0, 6356917, 1, 0, 6356945, 11, 0, 6356959, 1, 0, 6291577, 1, 0, 6291605, 11, 0, 6291683, 536870923, 0, 6291746, 1, 0, 6880872, 8, 0, 6881548, 8, 0, 7012090, 8, 0, 7077776, 8, 0, 7012410, 536870920, 0, 7012684, 536870920, 0, 7339717, 11, 0, 7339886, 11, 0, 7405076, 11, 0, 7405521, 11, 0, 7340181, 11, 0, 7340259, 536870923, 0, 7537065, 8, 0, 8388293, 11, 0, 8388462, 11, 0, 8453652, 11, 0, 8453709, 1, 0, 8453760, 1, 0, 8453802, 1, 0, 8453971, 1, 0, 8454069, 1, 0, 8454097, 11, 0, 8454111, 1, 0, 8388729, 1, 0, 8388757, 11, 0, 8388835, 536870923, 0, 8388898, 1, 0, 8519272, 8, 0, 8454412, 8, 0, 8650490, 8, 0, 8716176, 8, 0, 8650810, 536870920, 0, 8651084, 536870920, 0, 9175465, 8, 0, 9436869, 11, 0, 9437038, 11, 0, 9502228, 11, 0, 9502673, 11, 0, 9437333, 11, 0, 9437411, 536870923, 0, 10157672, 8, 0, 10092812, 8, 0, 10288890, 8, 0, 10289210, 536870920, 0, 10289484, 536870920, 0, 10485445, 11, 0, 10485614, 11, 0, 10550804, 11, 0, 10550861, 1, 0, 10550912, 1, 0, 10550954, 1, 0, 10485881, 1, 0, 10485909, 11, 0, 10485987, 536870923, 0, 10486050, 1, 0, 10813865, 8, 0, 11534021, 11, 0, 11599380, 11, 0, 11534485, 11, 0, 11534563, 536870923, 0, 11796072, 8, 0, 11731212, 8, 0, 11927884, 536870920, 0, 12648013, 1, 0, 12648064, 1, 0, 12648106, 1, 0, 13434472, 8, 0 )
+
+[node name="VisibilityChecker" parent="Foreground_world_objects/BottomLakeFountainsTilemap" index="0" instance=ExtResource( 12 )]
+visible = false
+position = Vector2( 24, 130.5 )
+scale = Vector2( 53.2, 11.95 )
+
+[node name="TopFountainsTileMap" type="TileMap" parent="Foreground_world_objects" index="2"]
+tile_set = ExtResource( 11 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -44827185, 11, 0, -44237038, 8, 0, -44171767, 8, 0, -44236540, 8, 0, -43975095, 1, 0, -44040064, 11, 0, -44040038, 1, 0, -43974260, 11, 0, -43778609, 11, 0, -42991488, 11, 0, -42925684, 11, 0, -42730033, 11, 0, -42598638, 8, 0, -42663676, 8, 0, -42533367, 8, 0, -41877943, 1, 0, -41942912, 11, 0, -41942886, 1, 0, -41942644, 11, 0, -41681457, 11, 0, -41025276, 8, 0, -40894967, 8, 0, -40894702, 8, 0, -40894336, 11, 0, -40894068, 11, 0, -40632881, 11, 0, -39780791, 1, 0, -39845760, 11, 0, -39845734, 1, 0, -39845492, 11, 0, -39584305, 11, 0, -39322103, 8, 0, -39386876, 8, 0, -39256302, 8, 0, -38797184, 11, 0, -38796916, 11, 0, -38535729, 11, 0, -37683703, 8, 0, -37683639, 1, 0, -37748608, 11, 0, -37748582, 1, 0, -37748476, 8, 0, -37748340, 11, 0, -37617902, 8, 0, -37487153, 11, 0, -36700032, 11, 0, -36699764, 11, 0, -36438577, 11, 0, -36045303, 8, 0, -36110076, 8, 0, -35979502, 8, 0, -35586487, 1, 0, -35651456, 11, 0, -35651430, 1, 0, -35651188, 11, 0, -35390001, 11, 0, -34602880, 11, 0, -34602612, 11, 0, -34406903, 8, 0, -34406638, 8, 0, -34471676, 8, 0, -34341425, 11, 0, -33489335, 1, 0, -33554304, 11, 0, -33554278, 1, 0, -33554036, 11, 0, -33292849, 11, 0, -32768503, 8, 0, -32768238, 8, 0, -32833276, 8, 0, -32505728, 11, 0, -32505460, 11, 0, -32244273, 11, 0, -31392183, 1, 0, -31457152, 11, 0, -31457126, 1, 0, -31456884, 11, 0, -31195697, 11, 0, -31130103, 8, 0, -31129838, 8, 0, -31194876, 8, 0, -30408576, 11, 0, -30408308, 11, 0, -30147121, 11, 0, -29491703, 8, 0, -29491438, 8, 0, -29556476, 8, 0, -29295031, 1, 0, -29360000, 11, 0, -29359974, 1, 0, -29359732, 11, 0, -29098545, 11, 0, -28311424, 11, 0, -28311156, 11, 0, -28049969, 11, 0, -27853303, 8, 0, -27853038, 8, 0, -27918076, 8, 0, -27197879, 1, 0, -27262848, 11, 0, -27262822, 1, 0, -27262580, 11, 0, -27001393, 11, 0, -26214903, 8, 0, -26214638, 8, 0, -26279676, 8, 0, -26214272, 11, 0, -26214004, 11, 0, -26018353, 11, 0, -25100727, 1, 0, -25165696, 11, 0, -25165670, 1, 0, -25165428, 11, 0, -24969777, 11, 0, -24576503, 8, 0, -24576238, 8, 0, -24641276, 8, 0, -24117120, 11, 0, -24116852, 11, 0, -23921201, 11, 0, -23003575, 1, 0, -23068544, 11, 0, -23068518, 1, 0, -23068276, 11, 0, -22938103, 8, 0, -22937838, 8, 0, -23002876, 8, 0, -22872625, 11, 0, -22019968, 11, 0, -22019700, 11, 0, -21824049, 11, 0, -21299703, 8, 0, -21299438, 8, 0, -21364476, 8, 0, -20906423, 1, 0, -20971392, 11, 0, -20971366, 1, 0, -20971124, 11, 0, -20841009, 11, 0, -19922816, 11, 0, -19922548, 11, 0, -19792433, 11, 0, -19661303, 8, 0, -19661038, 8, 0, -19726076, 8, 0, -18809271, 1, 0, -18874240, 11, 0, -18874214, 1, 0, -18873972, 11, 0, -18743857, 11, 0, -18022903, 8, 0, -18022638, 8, 0, -18087676, 8, 0, -17760817, 11, 0, -17825664, 11, 0, -17825396, 11, 0, -16712241, 11, 0, -16712119, 1, 0, -16777088, 11, 0, -16777062, 1, 0, -16776820, 11, 0, -16384503, 8, 0, -16384238, 8, 0, -16449276, 8, 0, -15663665, 11, 0, -15728512, 11, 0, -15728244, 11, 0, -14746103, 8, 0, -14745838, 8, 0, -14810876, 8, 0, -14615089, 11, 0, -14614967, 1, 0, -14679936, 11, 0, -14679910, 1, 0, -14679668, 11, 0, -13566513, 11, 0, -13631360, 11, 0, -13631092, 11, 0, -13107703, 8, 0, -13107438, 8, 0, -13172476, 8, 0, -12517937, 11, 0, -12517815, 1, 0, -12582784, 11, 0, -12582758, 1, 0, -12582516, 11, 0, -11534574, 8, 0, -11469361, 11, 0, -11469303, 8, 0, -11534208, 11, 0, -11534076, 8, 0, -11533940, 11, 0, -10420785, 11, 0, -10420663, 1, 0, -10485632, 11, 0, -10485606, 1, 0, -10485364, 11, 0, -9896174, 8, 0, -9830903, 8, 0, -9895676, 8, 0, -9372209, 11, 0, -9437056, 11, 0, -9436788, 11, 0, -8323633, 11, 0, -8323511, 1, 0, -8388480, 11, 0, -8388454, 1, 0, -8388212, 11, 0, -8257774, 8, 0, -8192503, 8, 0, -8257276, 8, 0, -7275057, 11, 0, -7339904, 11, 0, -7339636, 11, 0, -6619374, 8, 0, -6554103, 8, 0, -6618876, 8, 0, -6226481, 11, 0, -6226359, 1, 0, -6291328, 11, 0, -6291302, 1, 0, -6291060, 11, 0, -5177905, 11, 0, -5242752, 11, 0, -5242484, 11, 0, -4980974, 8, 0, -4915703, 8, 0, -4980476, 8, 0, -4129329, 11, 0, -4129207, 1, 0, -4194176, 11, 0, -4194150, 1, 0, -4193908, 11, 0, -3342574, 8, 0, -3277303, 8, 0, -3342076, 8, 0, -3080753, 11, 0, -3145600, 11, 0, -3145332, 11, 0, -2032177, 11, 0, -2032055, 2, 0, -2097024, 11, 0, -2096998, 2, 0, -2096756, 11, 0, -1638903, 7, 0, -1638638, 7, 0, -1703676, 7, 0, -983601, 10, 0, -1048448, 10, 0, -1048180, 10, 0 )
+
+[node name="Main_world_objects" type="Node2D" parent="." index="6"]
+
+[node name="WorldSprite" type="Sprite" parent="Main_world_objects" index="0"]
+position = Vector2( -57, -485 )
+texture = ExtResource( 3 )
+
+[node name="DecorationsTileMap" type="TileMap" parent="Main_world_objects" index="1"]
+tile_set = ExtResource( 13 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -14221441, 75, 0, -13238375, 536870987, 0, -13107206, 536870987, 0, -12910596, 75, 0, -12583029, 536870913, 0, -12517511, 536870947, 0, -12517500, 23, 0, -12517481, 31, 0, -12517458, 536870935, 0, -12517437, 536870938, 0, -12517419, 536870943, 0, -12517394, 536870936, 0, -12582912, 31, 0, -12582900, 536870916, 0, -12582888, 20, 0, -12582884, 536870945, 0, -11468929, 57, 0, -11534325, 59, 0, -10420326, 73, 0, -10420321, 27, 0, -10420303, 23, 0, -10420243, 73, 0, -9371777, 60, 0, -9371766, 113, 0, -9371743, 58, 0, -9371675, 33, 0, -9371661, 31, 0, -9437176, 536870926, 0, -9437160, 58, 0, -8323163, 73, 0, -8323162, 73, 0, -8388606, 57, 0, -7274585, 34, 0, -7274565, 35, 0, -7274482, 112, 0, -6226035, 57, 0, -6226004, 59, 0, -5177400, 72, 0, -5177377, 31, 0, -5177353, 35, 0, -5242873, 33, 0, -4128832, 20, 0, -4128821, 536870926, 0, -3669759, 75, 0, -3146132, 75, 0, -3080260, 57, 0, -2556096, 536870987, 0, -2228129, 536870987, 0, -2031745, 24, 0, -2031727, 31, 0, -2031668, 74, 0, -2031628, 4, 0, -2097148, 2, 0, -2097132, 31, 0, -2097116, 27, 0, -2097103, 23, 0, -1769496, 75, 0, -1703570, 536870987, 0, -1507843, 75, 0, -1376627, 536870987, 0, -1441591, 75, 0, -983731, 31, 0, -983692, 536870943, 0, -983669, 26, 0, -983641, 22, 0, -983623, 31, 0, -983595, 20, 0, -983572, 33, 0, -983556, 27, 0, -983525, 34, 0, -983509, 22, 0, -983491, 35, 0, -983456, 34, 0, -983424, 23, 0, -983397, 35, 0, -983355, 536870943, 0, -983337, 31, 0, -983323, 33, 0, -983277, 536870943, 0, -983254, 23, 0, -983238, 536870946, 0, -983221, 536870943, 0, -983201, 536870947, 0, -983174, 31, 0, -983164, 60, 0, -983135, 34, 0, -983118, 20, 0, -983110, 536870926, 0, -983098, 31, 0, -983084, 27, 0, -983069, 33, 0, -983046, 31, 0, -1048544, 35, 0, -1048529, 60, 0, -1048513, 27, 0, -1048491, 536870945, 0, -1048469, 31, 0, -1048431, 35, 0, -1048393, 23, 0, -1048371, 21, 0, -1048355, 536870946, 0, -1048339, 31, 0, -1048322, 23, 0, -1048295, 536870945, 0, -1048268, 21, 0, -1048255, 27, 0, -1048232, 536870946, 0, -1048212, 31, 0, -1048196, 21, 0, -1048184, 33, 0, -1048166, 23, 0, -1048126, 34, 0, -1048109, 31, 0, -1048094, 23, 0, -1048074, 35, 0, -1048053, 27, 0, -1048030, 31, 0, -1047994, 21, 0, 65125, 60, 0, 65206, 60, 0, 65380, 59, 0, 65443, 59, 0, 65476, 60, 0, 11, 57, 0, 153, 57, 0, 220, 57, 0, 280, 60, 0, 1114527, 58, 0, 1114563, 60, 0, 2162231, 60, 0, 2162276, 59, 0, 2162421, 58, 0, 2097154, 60, 0, 2097181, 58, 0, 2097238, 57, 0, 2097324, 60, 0, 2097438, 57, 0, 2097509, 58, 0, 2227832, 58, 0, 2227876, 58, 0, 2227930, 59, 0, 2227990, 59, 0, 2228029, 58, 0, 2228099, 58, 0, 2162739, 60, 0, 2162889, 58, 0, 2163008, 57, 0, 2163078, 59, 0 )
+
+[node name="Background_world_objects" type="Node2D" parent="." index="8"]
+z_index = -1
+
+[node name="TopFountainsTileMap" type="TileMap" parent="Background_world_objects" index="0"]
+modulate = Color( 0.658824, 0.658824, 0.658824, 1 )
+position = Vector2( 166, 0 )
+tile_set = ExtResource( 11 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -44827185, 11, 0, -44171767, 8, 0, -44236540, 8, 0, -43975095, 1, 0, -44040064, 11, 0, -44040038, 1, 0, -43974260, 11, 0, -43778609, 11, 0, -42991488, 11, 0, -42925684, 11, 0, -42730033, 11, 0, -42663676, 8, 0, -42533367, 8, 0, -41877943, 1, 0, -41942912, 11, 0, -41942886, 1, 0, -41942644, 11, 0, -41681457, 11, 0, -41025276, 8, 0, -40894967, 8, 0, -40894336, 11, 0, -40894068, 11, 0, -40632881, 11, 0, -39780791, 1, 0, -39845760, 11, 0, -39845734, 1, 0, -39845492, 11, 0, -39584305, 11, 0, -39322103, 8, 0, -39386876, 8, 0, -38797184, 11, 0, -38796916, 11, 0, -38535729, 11, 0, -37683703, 8, 0, -37683639, 1, 0, -37748608, 11, 0, -37748582, 1, 0, -37748476, 8, 0, -37748340, 11, 0, -37487153, 11, 0, -36700032, 11, 0, -36699764, 11, 0, -36438577, 11, 0, -36045303, 8, 0, -36110076, 8, 0, -35586487, 1, 0, -35651456, 11, 0, -35651430, 1, 0, -35651188, 11, 0, -35390001, 11, 0, -34602880, 11, 0, -34602612, 11, 0, -34406903, 8, 0, -34471676, 8, 0, -34341425, 11, 0, -33489335, 1, 0, -33554304, 11, 0, -33554278, 1, 0, -33554036, 11, 0, -33292849, 11, 0, -32768503, 8, 0, -32833276, 8, 0, -32505728, 11, 0, -32505460, 11, 0, -32244273, 11, 0, -31392183, 1, 0, -31457152, 11, 0, -31457126, 1, 0, -31456884, 11, 0, -31195697, 11, 0, -31130103, 8, 0, -31194876, 8, 0, -30408576, 11, 0, -30408308, 11, 0, -30147121, 11, 0, -29491703, 8, 0, -29556476, 8, 0, -29295031, 1, 0, -29360000, 11, 0, -29359974, 1, 0, -29359732, 11, 0, -29098545, 11, 0, -28311424, 11, 0, -28311156, 11, 0, -28049969, 11, 0, -27853303, 8, 0, -27918076, 8, 0, -27197879, 1, 0, -27262848, 11, 0, -27262822, 1, 0, -27262580, 11, 0, -27001393, 11, 0, -26214903, 8, 0, -26279676, 8, 0, -26214272, 11, 0, -26214004, 11, 0, -26018353, 11, 0, -25100727, 1, 0, -25165696, 11, 0, -25165670, 1, 0, -25165428, 11, 0, -24969777, 11, 0, -24576503, 8, 0, -24641276, 8, 0, -24117120, 11, 0, -24116852, 11, 0, -23921201, 11, 0, -23003575, 1, 0, -23068544, 11, 0, -23068518, 1, 0, -23068276, 11, 0, -22938103, 8, 0, -23002876, 8, 0, -22872625, 11, 0, -22019968, 11, 0, -22019700, 11, 0, -21824049, 11, 0, -21299703, 8, 0, -21364476, 8, 0, -20906423, 1, 0, -20971392, 11, 0, -20971366, 1, 0, -20971124, 11, 0, -20841009, 11, 0, -19922816, 11, 0, -19922548, 11, 0, -19792433, 11, 0, -19661303, 8, 0, -19726076, 8, 0, -18809271, 1, 0, -18874240, 11, 0, -18874214, 1, 0, -18873972, 11, 0, -18743857, 11, 0, -18022903, 8, 0, -18087676, 8, 0, -17760817, 11, 0, -17825664, 11, 0, -17825396, 11, 0, -16712241, 11, 0, -16712119, 1, 0, -16777088, 11, 0, -16777062, 1, 0, -16776820, 11, 0, -16384503, 8, 0, -16449276, 8, 0, -15663665, 11, 0, -15728512, 11, 0, -15728244, 11, 0, -14746103, 8, 0, -14810876, 8, 0, -14615089, 11, 0, -14614967, 1, 0, -14679936, 11, 0, -14679910, 1, 0, -14679668, 11, 0, -13566513, 11, 0, -13631360, 11, 0, -13631092, 11, 0, -13107703, 8, 0, -13172476, 8, 0, -12517937, 11, 0, -12517815, 1, 0, -12582784, 11, 0, -12582758, 1, 0, -12582516, 11, 0, -11469361, 11, 0, -11469303, 8, 0, -11534208, 11, 0, -11534076, 8, 0, -11533940, 11, 0, -10420785, 11, 0, -10420663, 1, 0, -10485632, 11, 0, -10485606, 1, 0, -10485364, 11, 0, -9830903, 8, 0, -9895676, 8, 0, -9372209, 11, 0, -9437056, 11, 0, -9436788, 11, 0, -8323633, 11, 0, -8323511, 1, 0, -8388480, 11, 0, -8388454, 1, 0, -8388212, 11, 0, -8192503, 8, 0, -8257276, 8, 0, -7340197, 536870920, 0, -7275057, 11, 0, -7339904, 11, 0, -7339636, 11, 0, -6554103, 8, 0, -6618876, 8, 0, -6226481, 11, 0, -6226359, 1, 0, -6291328, 11, 0, -6291302, 1, 0, -6291060, 11, 0, -5701797, 536870920, 0, -5439760, 8, 0, -5177905, 11, 0, -5242752, 11, 0, -5242484, 11, 0, -4915703, 8, 0, -4980476, 8, 0, -4129329, 11, 0, -4129207, 1, 0, -4194176, 11, 0, -4194150, 1, 0, -4193908, 11, 0, -3866896, 8, 0, -3277303, 8, 0, -3342076, 8, 0, -3080753, 11, 0, -3145600, 11, 0, -3145332, 11, 0, -2228496, 8, 0, -2032177, 11, 0, -2032055, 2, 0, -2097024, 11, 0, -2096998, 2, 0, -2096756, 11, 0, -1638903, 7, 0, -1703676, 7, 0, -983601, 10, 0, -1048448, 10, 0, -1048180, 10, 0 )
+
+[node name="Player" parent="." index="9"]
+position = Vector2( -700, -19 )
 
 [node name="Light2D2" parent="Player" index="5"]
 visible = false
 
+[node name="LightSource" parent="Player" index="6" instance=ExtResource( 6 )]
+position = Vector2( 0, -7 )
+color = Color( 0.623529, 0.815686, 0.988235, 1 )
+radius = 60
+minRadius = 25
+maxRadius = 25
+animating = false
+strength = 0.2
+
+[node name="Collisions" parent="." index="10"]
+visible = false
+
 [node name="PassThroughBody21" parent="Collisions/PassTrough" index="0" instance=ExtResource( 2 )]
-position = Vector2( 0, 8 )
+position = Vector2( -61, -8 )
 collision_layer = 17
 collision_mask = 17
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody21" index="0"]
-shape = SubResource( 1 )
+position = Vector2( -48, 0 )
+shape = SubResource( 4 )
+one_way_collision = true
+
+[node name="PassThroughBody22" parent="Collisions/PassTrough" index="1" instance=ExtResource( 2 )]
+position = Vector2( 51, -8 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody22" index="0"]
+position = Vector2( -24, 0 )
+shape = SubResource( 5 )
+one_way_collision = true
+
+[node name="PassThroughBody23" parent="Collisions/PassTrough" index="2" instance=ExtResource( 2 )]
+position = Vector2( -29, -88 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody23" index="0"]
+position = Vector2( -40, 0 )
+shape = SubResource( 6 )
+one_way_collision = true
+
+[node name="PassThroughBody24" parent="Collisions/PassTrough" index="3" instance=ExtResource( 2 )]
+position = Vector2( 35, -120 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody24" index="0"]
+position = Vector2( -40, 0 )
+shape = SubResource( 7 )
+one_way_collision = true
+
+[node name="PassThroughBody25" parent="Collisions/PassTrough" index="4" instance=ExtResource( 2 )]
+position = Vector2( 35, -56 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody25" index="0"]
+position = Vector2( -40, 0 )
+shape = SubResource( 8 )
+one_way_collision = true
+
+[node name="PassThroughBody26" parent="Collisions/PassTrough" index="5" instance=ExtResource( 2 )]
+position = Vector2( -29, -136 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody26" index="0"]
+position = Vector2( -48, 0 )
+shape = SubResource( 9 )
+one_way_collision = true
+
+[node name="PassThroughBody27" parent="Collisions/PassTrough" index="6" instance=ExtResource( 2 )]
+position = Vector2( -53, -40 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody27" index="0"]
+shape = SubResource( 10 )
+one_way_collision = true
+
+[node name="PassThroughBody28" parent="Collisions/PassTrough" index="7" instance=ExtResource( 2 )]
+position = Vector2( -45, -168 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody28" index="0"]
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="PassThroughBody18" parent="Collisions/Solid" index="0" instance=ExtResource( 2 )]
+position = Vector2( -614, 19 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody18" index="0"]
+position = Vector2( 593, -11 )
+shape = SubResource( 2 )
+
+[node name="PassThroughBody19" parent="Collisions/Solid" index="1" instance=ExtResource( 2 )]
+position = Vector2( -862, -67 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody19" index="0"]
+position = Vector2( 1, -5 )
+shape = SubResource( 12 )
+
+[node name="PassThroughBody20" parent="Collisions/Solid" index="2" instance=ExtResource( 2 )]
+position = Vector2( -846, 13 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody20" index="0"]
+position = Vector2( 1, -21 )
+shape = SubResource( 13 )
+
+[node name="PassThroughBody22" parent="Collisions/Solid" index="3" instance=ExtResource( 2 )]
+position = Vector2( 802, -3 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody22" index="0"]
+position = Vector2( 1, -45 )
+shape = SubResource( 14 )
+
+[node name="PassThroughBody23" parent="Collisions/Solid" index="4" instance=ExtResource( 2 )]
+position = Vector2( 818, -99 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody23" index="0"]
+position = Vector2( 1, -45 )
+shape = SubResource( 14 )
+
+[node name="PassThroughBody24" parent="Collisions/Solid" index="5" instance=ExtResource( 2 )]
+position = Vector2( 834, -195 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody24" index="0"]
+position = Vector2( 1, -117 )
+shape = SubResource( 15 )
+
+[node name="PassThroughBody21" parent="Collisions/Solid" index="6" instance=ExtResource( 2 )]
+position = Vector2( -878, -115 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody21" index="0"]
+position = Vector2( 1, -149 )
+shape = SubResource( 16 )
+
+[node name="Bottom_hazard_area" type="Area2D" parent="Collisions" index="2"]
+visible = false
+position = Vector2( -1052, 406 )
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/Bottom_hazard_area" index="0"]
+position = Vector2( 1339.5, 220.5 )
+shape = SubResource( 3 )
+
+[node name="Wish_star_dangeon_door" parent="Doors" index="0" instance=ExtResource( 10 )]
+position = Vector2( -733, 0 )
+nextScenePath = "res://Levels/Wish_star_dangeon/Wish_star_dangeon.tscn"
+nextDoorName = "Heart_lake_door"
+
+[node name="VisibilityChecker" parent="Doors/Wish_star_dangeon_door" index="0"]
+visible = false
+
+[node name="GatesBackground" parent="Doors/Wish_star_dangeon_door" index="1"]
+visible = false
+
+[node name="LightSource" parent="Lighting" index="0" instance=ExtResource( 6 )]
+position = Vector2( -245, -40 )
+color = Color( 0.564706, 0.741176, 0.988235, 1 )
+radius = 500
+minRadius = 450
+maxRadius = 450
+animating = false
+
+[node name="LightSource2" parent="Lighting" index="1" instance=ExtResource( 6 )]
+position = Vector2( 132, -40 )
+color = Color( 0.564706, 0.741176, 0.988235, 1 )
+radius = 500
+minRadius = 450
+maxRadius = 450
+animating = false
+
+[node name="LightSource3" parent="Lighting" index="2" instance=ExtResource( 6 )]
+position = Vector2( -45, -232 )
+color = Color( 0.564706, 0.741176, 0.988235, 1 )
+radius = 300
+minRadius = 450
+maxRadius = 450
+animating = false
 
 [editable path="Collisions/PassTrough/PassThroughBody21"]
+[editable path="Collisions/PassTrough/PassThroughBody22"]
+[editable path="Collisions/PassTrough/PassThroughBody23"]
+[editable path="Collisions/PassTrough/PassThroughBody24"]
+[editable path="Collisions/PassTrough/PassThroughBody25"]
+[editable path="Collisions/PassTrough/PassThroughBody26"]
+[editable path="Collisions/PassTrough/PassThroughBody27"]
+[editable path="Collisions/PassTrough/PassThroughBody28"]
+[editable path="Collisions/Solid/PassThroughBody18"]
+[editable path="Collisions/Solid/PassThroughBody19"]
+[editable path="Collisions/Solid/PassThroughBody20"]
+[editable path="Collisions/Solid/PassThroughBody22"]
+[editable path="Collisions/Solid/PassThroughBody23"]
+[editable path="Collisions/Solid/PassThroughBody24"]
+[editable path="Collisions/Solid/PassThroughBody21"]
+[editable path="Doors/Wish_star_dangeon_door"]
+[editable path="Doors/Wish_star_dangeon_door/InteractionController"]
