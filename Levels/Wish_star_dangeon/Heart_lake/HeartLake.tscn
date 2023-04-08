@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Assets/Levels/Wish_star_dangeon/World_objects/Door.png" type="Texture" id=14]
 [ext_resource path="res://WorldObjects/Interactables/E_Interactables/Torch/Wide_torch.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Dweller/Mystic_dweller/MysticDweller.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Levels/Wish_star_dangeon/Heart_lake/HeartLake.gd" type="Script" id=17]
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 24, 8 )
@@ -63,9 +64,9 @@ extents = Vector2( 8, 152 )
 extents = Vector2( 4884.5, 51.5 )
 
 [node name="HeartLake" instance=ExtResource( 1 )]
+script = ExtResource( 17 )
 
 [node name="LightingCanvasLayer" type="CanvasLayer" parent="." index="1"]
-visible = false
 
 [node name="LightingRect" parent="LightingCanvasLayer" index="0" instance=ExtResource( 5 )]
 anchor_right = 1.0
@@ -167,6 +168,7 @@ position = Vector2( 724, -6 )
 
 [node name="MysticDweller" parent="Main_world_objects" index="3" instance=ExtResource( 16 )]
 position = Vector2( -36, -176 )
+dialogId = "mystic_dweller_heart_assembler"
 defaultDirection = -1
 
 [node name="Body" parent="Main_world_objects/MysticDweller" index="5"]

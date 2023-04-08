@@ -31,6 +31,8 @@ signal guardian_statue_lift_up()
 signal guardian_statue_lift_down()
 signal show_creator_house_desk_scene()
 
+signal show_heart_assembling_cutscene()
+
 func start_shake_screen(duration = 0.2, frequency = 16, amplitude = 2, infinity = true):
 	emit_signal("start_shake_screen", duration, frequency, amplitude, infinity)
 
@@ -94,3 +96,6 @@ func guardian_statue_lift_down():
 
 func show_creator_house_desk_scene():
 	emit_signal("show_creator_house_desk_scene")
+
+func show_heart_assembling_cutscene():
+	emit_signal("show_heart_assembling_cutscene")
