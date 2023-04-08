@@ -177,7 +177,10 @@ func set_animation_with_state(state):
 		State.WALKING:
 			animationPlayer.play("Walk")
 		State.TALKING:
-			animationPlayer.play("Idle")
+			if animationPlayer.has_animation("Talking"):
+				animationPlayer.play("Talking")
+			else:
+				animationPlayer.play("Idle")
 		State.ACTING:
 			animationPlayer.play("Act")
 		State.CUSTOME:

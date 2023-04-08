@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Resources/Tilesets/Resources/Decorations/Decorations.tres" type="TileSet" id=13]
 [ext_resource path="res://Assets/Levels/Wish_star_dangeon/World_objects/Door.png" type="Texture" id=14]
 [ext_resource path="res://WorldObjects/Interactables/E_Interactables/Torch/Wide_torch.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Dweller/Mystic_dweller/MysticDweller.tscn" type="PackedScene" id=16]
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 24, 8 )
@@ -163,6 +164,13 @@ position = Vector2( 659, -6 )
 
 [node name="Wide_torch2" parent="Main_world_objects/BackEntrance" index="3" instance=ExtResource( 15 )]
 position = Vector2( 724, -6 )
+
+[node name="MysticDweller" parent="Main_world_objects" index="3" instance=ExtResource( 16 )]
+position = Vector2( -36, -176 )
+defaultDirection = -1
+
+[node name="Body" parent="Main_world_objects/MysticDweller" index="5"]
+scale = Vector2( -1, 1 )
 
 [node name="Background_world_objects" type="Node2D" parent="." index="8"]
 z_index = -1
@@ -381,6 +389,8 @@ animating = false
 
 [editable path="Main_world_objects/BackEntrance/BackDoor"]
 [editable path="Main_world_objects/BackEntrance/BackDoor/InteractionController"]
+[editable path="Main_world_objects/MysticDweller"]
+[editable path="Main_world_objects/MysticDweller/Body/InteractionController"]
 [editable path="Collisions/PassTrough/PassThroughBody21"]
 [editable path="Collisions/PassTrough/PassThroughBody22"]
 [editable path="Collisions/PassTrough/PassThroughBody23"]
