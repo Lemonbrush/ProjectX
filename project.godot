@@ -270,6 +270,5 @@ gles3/shaders/shader_cache_size_mb=4096
 quality/subsurface_scattering/quality=2
 quality/voxel_cone_tracing/high_quality=true
 quality/filters/msaa=2
-quality/filters/use_fxaa=true
 environment/default_environment="res://default_env.tres"
 quality/dynamic_fonts/use_oversampling=false
