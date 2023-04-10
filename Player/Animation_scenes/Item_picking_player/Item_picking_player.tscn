@@ -166,7 +166,7 @@ texture = ExtResource( 1 )
 position = Vector2( 7.00001, -16 )
 texture = ExtResource( 2 )
 hframes = 19
-vframes = 13
+vframes = 12
 frame = 190
 
 [node name="ItemPosition" type="Position2D" parent="."]
