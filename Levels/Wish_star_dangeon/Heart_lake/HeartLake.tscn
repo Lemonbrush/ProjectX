@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=2]
@@ -19,6 +19,8 @@
 [ext_resource path="res://Levels/Wish_star_dangeon/Heart_lake/HeartLake.gd" type="Script" id=17]
 [ext_resource path="res://Assets/Pickups/RightHalfHeart/RightHalfHeartItem-Sheet.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Pickups/LeftHalfHeart/LeftHalfHeartItem-Sheet.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Pickups/SoulStar/SoulStar-Sheet.png" type="Texture" id=20]
+[ext_resource path="res://Resources/Particles/Crush_particles/Crush_dust/CrushDustProcessMaterial.tres" type="Material" id=21]
 
 [sub_resource type="Animation" id=17]
 resource_name = "Heart_assembling_cutscene"
@@ -42,10 +44,130 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 191 ]
+"values": [ 209, 210, 211 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Main_world_objects/CutsceneObjects/LeftSideHeart:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 3.1, 3.3, 3.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Main_world_objects/CutsceneObjects/LeftSideHeart:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 3.1, 3.7, 4.3, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -53, -271 ), Vector2( -94, -294 ), Vector2( -108, -325 ), Vector2( -108, -328 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Main_world_objects/CutsceneObjects/LeftSideHeart:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 3.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Main_world_objects/CutsceneObjects/RightSideHeart:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 2.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Main_world_objects/CutsceneObjects/RightSideHeart:position")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 2.9, 3.5, 4.1, 4.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -53, -271 ), Vector2( -11, -294 ), Vector2( 3, -325 ), Vector2( 3, -328 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Main_world_objects/CutsceneObjects/RightSideHeart:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 2.9, 3.1, 3.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Main_world_objects/CutsceneObjects/SoulStarSprite:position")
+tracks/8/interp = 2
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 4.6, 5.1, 5.9, 6.7, 7.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -53, -270 ), Vector2( -37, -271 ), Vector2( -16, -286 ), Vector2( -54, -328 ), Vector2( -54, -328 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Main_world_objects/CutsceneObjects/SoulStarSprite:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 4.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Main_world_objects/CutsceneObjects/SoulStarSprite:scale")
+tracks/10/interp = 2
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 4.6, 4.7, 4.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Main_world_objects/CutsceneObjects/SoulStarSprite/LightSource:strength")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 4.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
 }
 
 [sub_resource type="Animation" id=18]
@@ -73,6 +195,126 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 76 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Main_world_objects/CutsceneObjects/LeftSideHeart:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Main_world_objects/CutsceneObjects/LeftSideHeart:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -53, -271 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Main_world_objects/CutsceneObjects/LeftSideHeart:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Main_world_objects/CutsceneObjects/RightSideHeart:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Main_world_objects/CutsceneObjects/RightSideHeart:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -53, -271 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Main_world_objects/CutsceneObjects/RightSideHeart:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Main_world_objects/CutsceneObjects/SoulStarSprite:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -53, -270 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Main_world_objects/CutsceneObjects/SoulStarSprite:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Main_world_objects/CutsceneObjects/SoulStarSprite:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Main_world_objects/CutsceneObjects/SoulStarSprite/LightSource:strength")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
 }
 
 [sub_resource type="Animation" id=19]
@@ -123,8 +365,65 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 0, 1, 2 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.05, 1.05 ) ]
+}
 
 [sub_resource type="Animation" id=22]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "Animate"
+length = 0.5
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+
+[sub_resource type="Animation" id=24]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -300,10 +599,13 @@ defaultDirection = -1
 [node name="Body" parent="Main_world_objects/MysticDweller" index="5"]
 scale = Vector2( -1, 1 )
 
+[node name="Area2D" parent="Main_world_objects/MysticDweller/Body/InteractionController" index="0"]
+visible = false
+
 [node name="CutsceneObjects" type="Node2D" parent="Main_world_objects" index="4"]
 
 [node name="RightSideHeart" type="Sprite" parent="Main_world_objects/CutsceneObjects" index="0"]
-position = Vector2( -20, -245 )
+position = Vector2( -53, -271 )
 texture = ExtResource( 18 )
 hframes = 4
 
@@ -313,7 +615,7 @@ anims/Anim = SubResource( 19 )
 anims/RESET = SubResource( 20 )
 
 [node name="LeftSideHeart" type="Sprite" parent="Main_world_objects/CutsceneObjects" index="1"]
-position = Vector2( -71, -247 )
+position = Vector2( -53, -271 )
 texture = ExtResource( 19 )
 hframes = 3
 
@@ -321,6 +623,27 @@ hframes = 3
 autoplay = "Anim"
 anims/Anim = SubResource( 21 )
 anims/RESET = SubResource( 22 )
+
+[node name="SoulStarSprite" type="Sprite" parent="Main_world_objects/CutsceneObjects" index="2"]
+position = Vector2( -53, -270 )
+scale = Vector2( 1e-05, 1e-05 )
+texture = ExtResource( 20 )
+hframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Main_world_objects/CutsceneObjects/SoulStarSprite" index="0"]
+autoplay = "Animate"
+anims/Animate = SubResource( 23 )
+anims/RESET = SubResource( 24 )
+
+[node name="Particles2D" type="Particles2D" parent="Main_world_objects/CutsceneObjects/SoulStarSprite" index="1"]
+process_material = ExtResource( 21 )
+
+[node name="LightSource" parent="Main_world_objects/CutsceneObjects/SoulStarSprite" index="2" instance=ExtResource( 6 )]
+color = Color( 0.564706, 0.741176, 0.988235, 1 )
+radius = 300
+minRadius = 450
+maxRadius = 450
+animating = false
 
 [node name="Background_world_objects" type="Node2D" parent="." index="8"]
 z_index = -1
@@ -530,7 +853,7 @@ maxRadius = 450
 animating = false
 
 [node name="LightSource3" parent="Lighting" index="2" instance=ExtResource( 6 )]
-position = Vector2( -45, -232 )
+position = Vector2( -42, -174 )
 color = Color( 0.564706, 0.741176, 0.988235, 1 )
 radius = 300
 minRadius = 450
