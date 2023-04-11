@@ -246,6 +246,61 @@ tracks/17/keys = {
 "update": 0,
 "values": [ Vector2( -56, -305 ), Vector2( -56, -305 ) ]
 }
+tracks/18/type = "value"
+tracks/18/path = NodePath("Main_world_objects/MysticDweller:is_player_interaction_active")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0, 17 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/19/type = "method"
+tracks/19/path = NodePath("Main_world_objects/MysticDweller")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "hide_popup"
+} ]
+}
+tracks/20/type = "method"
+tracks/20/path = NodePath("Main_world_objects/MysticDweller/Body/InteractionController")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0, 17 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ true ],
+"method": "disabled"
+}, {
+"args": [ false ],
+"method": "disabled"
+} ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Main_world_objects/MysticDweller/Body/InteractionController:action_type")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 17 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
 [sub_resource type="Animation" id=18]
 length = 0.001
@@ -464,6 +519,30 @@ tracks/17/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -40, -201 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Main_world_objects/MysticDweller:is_player_interaction_active")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Main_world_objects/MysticDweller/Body/InteractionController:action_type")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
 }
 
 [sub_resource type="Animation" id=23]
