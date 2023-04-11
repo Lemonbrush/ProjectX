@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=2]
@@ -19,12 +19,17 @@
 [ext_resource path="res://Levels/Wish_star_dangeon/Heart_lake/HeartLake.gd" type="Script" id=17]
 [ext_resource path="res://Assets/Pickups/RightHalfHeart/RightHalfHeartItem-Sheet.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Pickups/LeftHalfHeart/LeftHalfHeartItem-Sheet.png" type="Texture" id=19]
-[ext_resource path="res://Assets/Pickups/SoulStar/SoulStar-Sheet.png" type="Texture" id=20]
+[ext_resource path="res://WorldObjects/Pick_ups/Items/AssembledHeart/AssembledHeartItem.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Resources/Particles/Crush_particles/Crush_dust/CrushDustProcessMaterial.tres" type="Material" id=21]
+[ext_resource path="res://Assets/effects/particles.png" type="Texture" id=22]
+[ext_resource path="res://Assets/effects/ShineSprincles.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Pickups/SoulStar/SoulStar-Sheet.png" type="Texture" id=24]
+[ext_resource path="res://Resources/Particles/Cutscene_particles/Shine_appear_particles/ShineAppearProcessMaterial.tres" type="Material" id=25]
+[ext_resource path="res://Resources/Particles/Cutscene_particles/Dust_appear_particles/DustAppearParticles.tres" type="Material" id=26]
 
 [sub_resource type="Animation" id=17]
 resource_name = "Heart_assembling_cutscene"
-length = 10.0
+length = 17.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Player:position")
 tracks/0/interp = 2
@@ -32,10 +37,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1.8, 2.925 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 1.8, 10, 13.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -55, -175 ), Vector2( -54.064, -257.368 ), Vector2( -54, -263 ) ]
+"values": [ Vector2( -55, -175 ), Vector2( -54.064, -257.368 ), Vector2( -54, -263 ), Vector2( -54, -176 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Player/Body/Sprite:frame")
@@ -68,10 +73,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 3.1, 3.7, 4.3, 5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 3.1, 3.7, 4.3, 6.4, 7.5, 8.4, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -53, -271 ), Vector2( -94, -294 ), Vector2( -108, -325 ), Vector2( -108, -328 ) ]
+"values": [ Vector2( -53, -271 ), Vector2( -94, -294 ), Vector2( -108, -325 ), Vector2( -108, -328 ), Vector2( -108, -327 ), Vector2( -108, -327 ), Vector2( -55, -327 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("Main_world_objects/CutsceneObjects/LeftSideHeart:visible")
@@ -80,10 +85,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 3.1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 3.1, 9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ false, true ]
+"values": [ false, true, false ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Main_world_objects/CutsceneObjects/RightSideHeart:visible")
@@ -92,10 +97,10 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 2.9 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 2.9, 9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ false, true ]
+"values": [ false, true, false ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("Main_world_objects/CutsceneObjects/RightSideHeart:position")
@@ -104,10 +109,10 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 2.9, 3.5, 4.1, 4.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 2.9, 3.5, 4.1, 6.2, 7.4, 8.4, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -53, -271 ), Vector2( -11, -294 ), Vector2( 3, -325 ), Vector2( 3, -328 ) ]
+"values": [ Vector2( -53, -271 ), Vector2( -11, -294 ), Vector2( 3, -325 ), Vector2( 3, -328 ), Vector2( 3, -327 ), Vector2( 3, -327 ), Vector2( -55, -327 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("Main_world_objects/CutsceneObjects/RightSideHeart:scale")
@@ -128,10 +133,10 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 4.6, 5.1, 5.9, 6.7, 7.1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 6, 6.8, 7.9, 8.7, 9.1, 9.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -53, -270 ), Vector2( -37, -271 ), Vector2( -16, -286 ), Vector2( -54, -328 ), Vector2( -54, -328 ) ]
+"values": [ Vector2( -53, -277 ), Vector2( -37, -271 ), Vector2( -16, -286 ), Vector2( -54, -328 ), Vector2( -54, -328 ), Vector2( -54, -327 ) ]
 }
 tracks/9/type = "value"
 tracks/9/path = NodePath("Main_world_objects/CutsceneObjects/SoulStarSprite:visible")
@@ -140,10 +145,10 @@ tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 0, 4.6 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 6, 9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ false, true ]
+"values": [ false, true, false ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("Main_world_objects/CutsceneObjects/SoulStarSprite:scale")
@@ -152,7 +157,7 @@ tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 4.6, 4.7, 4.8 ),
+"times": PoolRealArray( 6, 6.1, 6.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
@@ -164,10 +169,82 @@ tracks/11/loop_wrap = true
 tracks/11/imported = false
 tracks/11/enabled = true
 tracks/11/keys = {
-"times": PoolRealArray( 0, 4.6 ),
+"times": PoolRealArray( 0, 6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 1.0 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Main_world_objects/CutsceneObjects/DustParticles2D:emitting")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0.6, 9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Main_world_objects/CutsceneObjects/ShineParticles2D:emitting")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0.6, 8.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Main_world_objects/CutsceneObjects/AssembledHeartItem/PickupArea2D/CollisionShape2D:disabled")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 13.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Main_world_objects/CutsceneObjects/AssembledHeartItem:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 9, 13.7, 17 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -54, -328 ), Vector2( -54, -328 ), Vector2( -54, -200 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Main_world_objects/CutsceneObjects/AssembledHeartItem:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Camera2D:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 11 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -56, -305 ), Vector2( -56, -305 ) ]
 }
 
 [sub_resource type="Animation" id=18]
@@ -242,7 +319,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ true ]
+"values": [ false ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("Main_world_objects/CutsceneObjects/RightSideHeart:position")
@@ -314,7 +391,112 @@ tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 1.0 ]
+"values": [ 0.0 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Main_world_objects/CutsceneObjects/DustParticles2D:emitting")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Main_world_objects/CutsceneObjects/ShineParticles2D:emitting")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Main_world_objects/CutsceneObjects/AssembledHeartItem/PickupArea2D/CollisionShape2D:disabled")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Main_world_objects/CutsceneObjects/AssembledHeartItem:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -54, -328 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Main_world_objects/CutsceneObjects/AssembledHeartItem:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Camera2D:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -40, -201 ) ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "Animate"
+length = 0.5
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+
+[sub_resource type="Animation" id=24]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
 }
 
 [sub_resource type="Animation" id=19]
@@ -405,38 +587,17 @@ tracks/1/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=23]
-resource_name = "Animate"
-length = 0.5
-loop = true
-step = 0.05
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4 ]
-}
+[sub_resource type="CanvasItemMaterial" id=32]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
 
-[sub_resource type="Animation" id=24]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
+[sub_resource type="CanvasItemMaterial" id=36]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = false
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 24, 8 )
@@ -506,11 +667,12 @@ texture = ExtResource( 4 )
 centered = false
 
 [node name="AnimationPlayer" parent="." index="3"]
+autoplay = "RESET"
 anims/Heart_assembling_cutscene = SubResource( 17 )
 anims/RESET = SubResource( 18 )
 
 [node name="Camera2D" parent="." index="4"]
-position = Vector2( -701, -55 )
+position = Vector2( -40, -201 )
 
 [node name="Clouds" parent="Camera2D" index="2" instance=ExtResource( 7 )]
 
@@ -604,30 +766,17 @@ visible = false
 
 [node name="CutsceneObjects" type="Node2D" parent="Main_world_objects" index="4"]
 
-[node name="RightSideHeart" type="Sprite" parent="Main_world_objects/CutsceneObjects" index="0"]
-position = Vector2( -53, -271 )
-texture = ExtResource( 18 )
-hframes = 4
+[node name="AssembledHeartItem" parent="Main_world_objects/CutsceneObjects" index="0" instance=ExtResource( 20 )]
+visible = false
+position = Vector2( -54, -328 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Main_world_objects/CutsceneObjects/RightSideHeart" index="0"]
-autoplay = "Anim"
-anims/Anim = SubResource( 19 )
-anims/RESET = SubResource( 20 )
+[node name="CollisionShape2D" parent="Main_world_objects/CutsceneObjects/AssembledHeartItem/PickupArea2D" index="0"]
+disabled = true
 
-[node name="LeftSideHeart" type="Sprite" parent="Main_world_objects/CutsceneObjects" index="1"]
-position = Vector2( -53, -271 )
-texture = ExtResource( 19 )
-hframes = 3
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Main_world_objects/CutsceneObjects/LeftSideHeart" index="0"]
-autoplay = "Anim"
-anims/Anim = SubResource( 21 )
-anims/RESET = SubResource( 22 )
-
-[node name="SoulStarSprite" type="Sprite" parent="Main_world_objects/CutsceneObjects" index="2"]
+[node name="SoulStarSprite" type="Sprite" parent="Main_world_objects/CutsceneObjects" index="1"]
 position = Vector2( -53, -270 )
 scale = Vector2( 1e-05, 1e-05 )
-texture = ExtResource( 20 )
+texture = ExtResource( 24 )
 hframes = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Main_world_objects/CutsceneObjects/SoulStarSprite" index="0"]
@@ -644,6 +793,48 @@ radius = 300
 minRadius = 450
 maxRadius = 450
 animating = false
+strength = 0.0
+
+[node name="RightSideHeart" type="Sprite" parent="Main_world_objects/CutsceneObjects" index="2"]
+visible = false
+position = Vector2( -53, -271 )
+texture = ExtResource( 18 )
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Main_world_objects/CutsceneObjects/RightSideHeart" index="0"]
+autoplay = "Anim"
+anims/Anim = SubResource( 19 )
+anims/RESET = SubResource( 20 )
+
+[node name="LeftSideHeart" type="Sprite" parent="Main_world_objects/CutsceneObjects" index="3"]
+position = Vector2( -53, -271 )
+texture = ExtResource( 19 )
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Main_world_objects/CutsceneObjects/LeftSideHeart" index="0"]
+autoplay = "Anim"
+anims/Anim = SubResource( 21 )
+anims/RESET = SubResource( 22 )
+
+[node name="DustParticles2D" type="Particles2D" parent="Main_world_objects/CutsceneObjects" index="4"]
+material = SubResource( 32 )
+position = Vector2( -54, -328 )
+emitting = false
+amount = 40
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+process_material = ExtResource( 26 )
+texture = ExtResource( 22 )
+
+[node name="ShineParticles2D" type="Particles2D" parent="Main_world_objects/CutsceneObjects" index="5"]
+material = SubResource( 36 )
+position = Vector2( -54, -328 )
+emitting = false
+one_shot = true
+randomness = 1.0
+process_material = ExtResource( 25 )
+texture = ExtResource( 23 )
 
 [node name="Background_world_objects" type="Node2D" parent="." index="8"]
 z_index = -1
@@ -864,6 +1055,7 @@ animating = false
 [editable path="Main_world_objects/BackEntrance/BackDoor/InteractionController"]
 [editable path="Main_world_objects/MysticDweller"]
 [editable path="Main_world_objects/MysticDweller/Body/InteractionController"]
+[editable path="Main_world_objects/CutsceneObjects/AssembledHeartItem"]
 [editable path="Player"]
 [editable path="Collisions/PassTrough/PassThroughBody21"]
 [editable path="Collisions/PassTrough/PassThroughBody22"]

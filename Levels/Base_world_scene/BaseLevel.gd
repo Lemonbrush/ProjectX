@@ -54,3 +54,8 @@ func player_animation_mode_change(isPlayerAnimating):
 	else:
 		 animationPlayer.pause_mode = Node.PAUSE_MODE_PROCESS
 	
+func pause_level():
+	get_tree().paused = true 
+	
+func unpouse_level():
+	get_tree().paused = false
