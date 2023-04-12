@@ -163,108 +163,96 @@ tracks/10/keys = {
 "values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Main_world_objects/CutsceneObjects/SoulStarSprite/LightSource:strength")
+tracks/11/path = NodePath("Main_world_objects/CutsceneObjects/DustParticles2D:emitting")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
 tracks/11/enabled = true
 tracks/11/keys = {
-"times": PoolRealArray( 0, 6 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 1.0 ]
-}
-tracks/12/type = "value"
-tracks/12/path = NodePath("Main_world_objects/CutsceneObjects/DustParticles2D:emitting")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/keys = {
 "times": PoolRealArray( 0.6, 10.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
 }
-tracks/13/type = "value"
-tracks/13/path = NodePath("Main_world_objects/CutsceneObjects/ShineParticles2D:emitting")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/keys = {
+tracks/12/type = "value"
+tracks/12/path = NodePath("Main_world_objects/CutsceneObjects/ShineParticles2D:emitting")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
 "times": PoolRealArray( 0.6, 10.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
 }
-tracks/14/type = "value"
-tracks/14/path = NodePath("Main_world_objects/CutsceneObjects/AssembledHeartItem/PickupArea2D/CollisionShape2D:disabled")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/keys = {
+tracks/13/type = "value"
+tracks/13/path = NodePath("Main_world_objects/CutsceneObjects/AssembledHeartItem/PickupArea2D/CollisionShape2D:disabled")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
 "times": PoolRealArray( 0, 13.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
 }
-tracks/15/type = "value"
-tracks/15/path = NodePath("Main_world_objects/CutsceneObjects/AssembledHeartItem:position")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/keys = {
+tracks/14/type = "value"
+tracks/14/path = NodePath("Main_world_objects/CutsceneObjects/AssembledHeartItem:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
 "times": PoolRealArray( 10.3, 13.7, 17 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -54, -328 ), Vector2( -54, -328 ), Vector2( -54, -200 ) ]
 }
-tracks/16/type = "value"
-tracks/16/path = NodePath("Main_world_objects/CutsceneObjects/AssembledHeartItem:visible")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/keys = {
+tracks/15/type = "value"
+tracks/15/path = NodePath("Main_world_objects/CutsceneObjects/AssembledHeartItem:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
 "times": PoolRealArray( 0, 10.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
 }
-tracks/17/type = "value"
-tracks/17/path = NodePath("Camera2D:position")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/keys = {
+tracks/16/type = "value"
+tracks/16/path = NodePath("Camera2D:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
 "times": PoolRealArray( 0, 11 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -56, -305 ), Vector2( -56, -305 ) ]
 }
-tracks/18/type = "value"
-tracks/18/path = NodePath("Main_world_objects/MysticDweller:is_player_interaction_active")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/keys = {
+tracks/17/type = "value"
+tracks/17/path = NodePath("Main_world_objects/MysticDweller:is_player_interaction_active")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
 "times": PoolRealArray( 0, 17 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
 }
-tracks/19/type = "method"
-tracks/19/path = NodePath("Main_world_objects/MysticDweller")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/keys = {
+tracks/18/type = "method"
+tracks/18/path = NodePath("Main_world_objects/MysticDweller")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -272,13 +260,13 @@ tracks/19/keys = {
 "method": "hide_popup"
 } ]
 }
-tracks/20/type = "method"
-tracks/20/path = NodePath("Main_world_objects/MysticDweller/Body/InteractionController")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/keys = {
+tracks/19/type = "method"
+tracks/19/path = NodePath("Main_world_objects/MysticDweller/Body/InteractionController")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
 "times": PoolRealArray( 0, 17 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
@@ -289,25 +277,25 @@ tracks/20/keys = {
 "method": "disabled"
 } ]
 }
-tracks/21/type = "value"
-tracks/21/path = NodePath("Main_world_objects/MysticDweller/Body/InteractionController:action_type")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/keys = {
+tracks/20/type = "value"
+tracks/20/path = NodePath("Main_world_objects/MysticDweller/Body/InteractionController:action_type")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
 "times": PoolRealArray( 17 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 0 ]
 }
-tracks/22/type = "method"
-tracks/22/path = NodePath(".")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/keys = {
+tracks/21/type = "method"
+tracks/21/path = NodePath(".")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
 "times": PoolRealArray( 0, 17.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
@@ -454,7 +442,7 @@ tracks/10/keys = {
 "values": [ Vector2( 1e-05, 1e-05 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Main_world_objects/CutsceneObjects/SoulStarSprite/LightSource:strength")
+tracks/11/path = NodePath("Main_world_objects/CutsceneObjects/DustParticles2D:emitting")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -463,10 +451,10 @@ tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ false ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Main_world_objects/CutsceneObjects/DustParticles2D:emitting")
+tracks/12/path = NodePath("Main_world_objects/CutsceneObjects/ShineParticles2D:emitting")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -478,7 +466,7 @@ tracks/12/keys = {
 "values": [ false ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Main_world_objects/CutsceneObjects/ShineParticles2D:emitting")
+tracks/13/path = NodePath("Main_world_objects/CutsceneObjects/AssembledHeartItem/PickupArea2D/CollisionShape2D:disabled")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -487,10 +475,10 @@ tracks/13/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ true ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Main_world_objects/CutsceneObjects/AssembledHeartItem/PickupArea2D/CollisionShape2D:disabled")
+tracks/14/path = NodePath("Main_world_objects/CutsceneObjects/AssembledHeartItem:position")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -499,10 +487,10 @@ tracks/14/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ true ]
+"values": [ Vector2( -54, -328 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Main_world_objects/CutsceneObjects/AssembledHeartItem:position")
+tracks/15/path = NodePath("Main_world_objects/CutsceneObjects/AssembledHeartItem:visible")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/imported = false
@@ -511,10 +499,10 @@ tracks/15/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -54, -328 ) ]
+"values": [ false ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Main_world_objects/CutsceneObjects/AssembledHeartItem:visible")
+tracks/16/path = NodePath("Camera2D:position")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/imported = false
@@ -523,10 +511,10 @@ tracks/16/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ Vector2( -40, -201 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Camera2D:position")
+tracks/17/path = NodePath("Main_world_objects/MysticDweller:is_player_interaction_active")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/imported = false
@@ -535,27 +523,15 @@ tracks/17/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -40, -201 ) ]
+"values": [ true ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Main_world_objects/MysticDweller:is_player_interaction_active")
+tracks/18/path = NodePath("Main_world_objects/MysticDweller/Body/InteractionController:action_type")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/imported = false
 tracks/18/enabled = true
 tracks/18/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ true ]
-}
-tracks/19/type = "value"
-tracks/19/path = NodePath("Main_world_objects/MysticDweller/Body/InteractionController:action_type")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -862,6 +838,7 @@ scale = Vector2( -1, 1 )
 visible = false
 
 [node name="CutsceneObjects" type="Node2D" parent="Main_world_objects" index="4"]
+pause_mode = 2
 
 [node name="AssembledHeartItem" parent="Main_world_objects/CutsceneObjects" index="0" instance=ExtResource( 20 )]
 pause_mode = 2
@@ -885,14 +862,6 @@ anims/RESET = SubResource( 24 )
 
 [node name="Particles2D" type="Particles2D" parent="Main_world_objects/CutsceneObjects/SoulStarSprite" index="1"]
 process_material = ExtResource( 21 )
-
-[node name="LightSource" parent="Main_world_objects/CutsceneObjects/SoulStarSprite" index="2" instance=ExtResource( 6 )]
-color = Color( 0.564706, 0.741176, 0.988235, 1 )
-radius = 300
-minRadius = 450
-maxRadius = 450
-animating = false
-strength = 0.0
 
 [node name="RightSideHeart" type="Sprite" parent="Main_world_objects/CutsceneObjects" index="2"]
 pause_mode = 2
@@ -1147,12 +1116,21 @@ maxRadius = 450
 animating = false
 
 [node name="LightSource3" parent="Lighting" index="2" instance=ExtResource( 6 )]
-position = Vector2( -42, -174 )
+position = Vector2( -56, -305 )
 color = Color( 0.564706, 0.741176, 0.988235, 1 )
 radius = 300
 minRadius = 450
 maxRadius = 450
 animating = false
+
+[node name="LightSource4" parent="Lighting" index="3" instance=ExtResource( 6 )]
+position = Vector2( -46, -196 )
+color = Color( 0.564706, 0.741176, 0.988235, 1 )
+radius = 300
+minRadius = 450
+maxRadius = 450
+animating = false
+strength = 0.9
 
 [editable path="Main_world_objects/BackEntrance/BackDoor"]
 [editable path="Main_world_objects/BackEntrance/BackDoor/InteractionController"]
