@@ -49,10 +49,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.3, 9.3, 13.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 209, 210, 211 ]
+"values": [ 209, 210, 211, 21, 1 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Main_world_objects/CutsceneObjects/LeftSideHeart:scale")
@@ -300,6 +300,23 @@ tracks/21/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 0 ]
+}
+tracks/22/type = "method"
+tracks/22/path = NodePath(".")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0, 17.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "pause_level"
+}, {
+"args": [  ],
+"method": "unpouse_level"
+} ]
 }
 
 [sub_resource type="Animation" id=18]
@@ -833,6 +850,7 @@ position = Vector2( 659, -6 )
 position = Vector2( 724, -6 )
 
 [node name="MysticDweller" parent="Main_world_objects" index="3" instance=ExtResource( 16 )]
+pause_mode = 2
 position = Vector2( -36, -176 )
 dialogId = "mystic_dweller_heart_assembler"
 defaultDirection = -1
@@ -846,6 +864,7 @@ visible = false
 [node name="CutsceneObjects" type="Node2D" parent="Main_world_objects" index="4"]
 
 [node name="AssembledHeartItem" parent="Main_world_objects/CutsceneObjects" index="0" instance=ExtResource( 20 )]
+pause_mode = 2
 visible = false
 position = Vector2( -54, -328 )
 
@@ -853,6 +872,7 @@ position = Vector2( -54, -328 )
 disabled = true
 
 [node name="SoulStarSprite" type="Sprite" parent="Main_world_objects/CutsceneObjects" index="1"]
+pause_mode = 2
 position = Vector2( -53, -270 )
 scale = Vector2( 1e-05, 1e-05 )
 texture = ExtResource( 24 )
@@ -875,6 +895,7 @@ animating = false
 strength = 0.0
 
 [node name="RightSideHeart" type="Sprite" parent="Main_world_objects/CutsceneObjects" index="2"]
+pause_mode = 2
 visible = false
 position = Vector2( -53, -271 )
 texture = ExtResource( 18 )
@@ -886,6 +907,7 @@ anims/Anim = SubResource( 19 )
 anims/RESET = SubResource( 20 )
 
 [node name="LeftSideHeart" type="Sprite" parent="Main_world_objects/CutsceneObjects" index="3"]
+pause_mode = 2
 position = Vector2( -53, -271 )
 texture = ExtResource( 19 )
 hframes = 3
@@ -896,6 +918,7 @@ anims/Anim = SubResource( 21 )
 anims/RESET = SubResource( 22 )
 
 [node name="DustParticles2D" type="Particles2D" parent="Main_world_objects/CutsceneObjects" index="4"]
+pause_mode = 2
 material = SubResource( 32 )
 position = Vector2( -54, -328 )
 emitting = false
@@ -907,6 +930,7 @@ process_material = ExtResource( 26 )
 texture = ExtResource( 22 )
 
 [node name="ShineParticles2D" type="Particles2D" parent="Main_world_objects/CutsceneObjects" index="5"]
+pause_mode = 2
 material = SubResource( 36 )
 position = Vector2( -54, -328 )
 emitting = false
