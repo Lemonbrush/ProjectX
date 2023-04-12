@@ -39,6 +39,9 @@ func _on_leave(_body):
 	action_type = 0
 	Global.active_interaction_controller = null
 	emit_signal("on_leave")
-	
+
+func force_leave():
+	emit_signal("on_leave")
+
 func disabled(isDisabled):
 	collisionShape.disabled = isDisabled

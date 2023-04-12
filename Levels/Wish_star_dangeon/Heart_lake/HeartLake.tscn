@@ -253,7 +253,7 @@ tracks/18/loop_wrap = true
 tracks/18/imported = false
 tracks/18/enabled = true
 tracks/18/keys = {
-"times": PoolRealArray( 0.1 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -304,6 +304,32 @@ tracks/21/keys = {
 }, {
 "args": [  ],
 "method": "unpouse_level"
+} ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Main_world_objects/MysticDweller/DialogTextBoxController:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0, 17 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/23/type = "method"
+tracks/23/path = NodePath("Main_world_objects/MysticDweller/Body/InteractionController")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "force_leave"
 } ]
 }
 
@@ -536,6 +562,18 @@ tracks/18/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0 ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Main_world_objects/MysticDweller/DialogTextBoxController:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=23]
@@ -827,7 +865,7 @@ position = Vector2( 724, -6 )
 
 [node name="MysticDweller" parent="Main_world_objects" index="3" instance=ExtResource( 16 )]
 pause_mode = 2
-position = Vector2( -36, -176 )
+position = Vector2( -21, -176 )
 dialogId = "mystic_dweller_heart_assembler"
 defaultDirection = -1
 
