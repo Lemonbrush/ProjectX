@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=2]
@@ -16,6 +16,885 @@
 [ext_resource path="res://Assets/Levels/Wish_star_dangeon/World_objects/Door.png" type="Texture" id=14]
 [ext_resource path="res://WorldObjects/Interactables/E_Interactables/Torch/Wide_torch.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Dweller/Mystic_dweller/MysticDweller.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Levels/Wish_star_dangeon/Heart_lake/HeartLake.gd" type="Script" id=17]
+[ext_resource path="res://Assets/Pickups/RightHalfHeart/RightHalfHeartItem-Sheet.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Pickups/LeftHalfHeart/LeftHalfHeartItem-Sheet.png" type="Texture" id=19]
+[ext_resource path="res://WorldObjects/Pick_ups/Items/AssembledHeart/AssembledHeartItem.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Resources/Particles/Crush_particles/Crush_dust/CrushDustProcessMaterial.tres" type="Material" id=21]
+[ext_resource path="res://Assets/effects/particles.png" type="Texture" id=22]
+[ext_resource path="res://Assets/effects/ShineSprincles.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Pickups/SoulStar/SoulStar-Sheet.png" type="Texture" id=24]
+[ext_resource path="res://Resources/Particles/Cutscene_particles/Shine_appear_particles/ShineAppearProcessMaterial.tres" type="Material" id=25]
+[ext_resource path="res://Resources/Particles/Cutscene_particles/Dust_appear_particles/DustAppearParticles.tres" type="Material" id=26]
+
+[sub_resource type="Animation" id=17]
+resource_name = "Heart_assembling_cutscene"
+length = 17.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.6, 11.6, 13.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -55, -175 ), Vector2( -54.064, -257.368 ), Vector2( -54, -263 ), Vector2( -54, -176 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Player/Body/Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.3, 10.9, 13.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 209, 210, 211, 21, 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Main_world_objects/CutsceneObjects/LeftSideHeart:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 3.1, 3.3, 3.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Main_world_objects/CutsceneObjects/LeftSideHeart:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 3.1, 3.7, 4.3, 6.4, 7.5, 8.7, 10.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -53, -271 ), Vector2( -94, -294 ), Vector2( -108, -325 ), Vector2( -108, -328 ), Vector2( -108, -327 ), Vector2( -108, -327 ), Vector2( -55, -327 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Main_world_objects/CutsceneObjects/LeftSideHeart:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 3.1, 10.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Main_world_objects/CutsceneObjects/RightSideHeart:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 2.9, 10.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Main_world_objects/CutsceneObjects/RightSideHeart:position")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 2.9, 3.5, 4.1, 6.2, 7.4, 8.7, 10.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -53, -271 ), Vector2( -11, -294 ), Vector2( 3, -325 ), Vector2( 3, -328 ), Vector2( 3, -327 ), Vector2( 3, -327 ), Vector2( -55, -327 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Main_world_objects/CutsceneObjects/RightSideHeart:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 2.9, 3.1, 3.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Main_world_objects/CutsceneObjects/SoulStarSprite:position")
+tracks/8/interp = 2
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 6, 6.8, 7.9, 8.7, 10.3, 10.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -53, -277 ), Vector2( -37, -278 ), Vector2( -16, -286 ), Vector2( -54, -328 ), Vector2( -54, -328 ), Vector2( -54, -327 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Main_world_objects/CutsceneObjects/SoulStarSprite:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 6, 10.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Main_world_objects/CutsceneObjects/SoulStarSprite:scale")
+tracks/10/interp = 2
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 6, 6.1, 6.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Main_world_objects/CutsceneObjects/DustParticles2D:emitting")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0.6, 10.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Main_world_objects/CutsceneObjects/ShineParticles2D:emitting")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0.6, 10.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Main_world_objects/CutsceneObjects/AssembledHeartItem/PickupArea2D/CollisionShape2D:disabled")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 13.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Main_world_objects/CutsceneObjects/AssembledHeartItem:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 10.3, 13.7, 17 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -54, -328 ), Vector2( -54, -328 ), Vector2( -54, -200 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Main_world_objects/CutsceneObjects/AssembledHeartItem:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 10.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Camera2D:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 11 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -56, -305 ), Vector2( -56, -305 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Main_world_objects/MysticDweller:is_player_interaction_active")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 17 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/18/type = "method"
+tracks/18/path = NodePath("Main_world_objects/MysticDweller")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "hide_popup"
+} ]
+}
+tracks/19/type = "method"
+tracks/19/path = NodePath("Main_world_objects/MysticDweller/Body/InteractionController")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0, 17 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ true ],
+"method": "disabled"
+}, {
+"args": [ false ],
+"method": "disabled"
+} ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Main_world_objects/MysticDweller/Body/InteractionController:action_type")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 17 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/21/type = "method"
+tracks/21/path = NodePath("Player")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0, 17 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "pause_level"
+}, {
+"args": [  ],
+"method": "unpouse_level"
+} ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Main_world_objects/MysticDweller/DialogTextBoxController:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0, 17 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/23/type = "method"
+tracks/23/path = NodePath("Main_world_objects/MysticDweller/Body/InteractionController")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "force_leave"
+} ]
+}
+
+[sub_resource type="Animation" id=37]
+resource_name = "Mystic_dweller_disappearance_cutscene"
+length = 7.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("Player")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "pause_level"
+}, {
+"args": [  ],
+"method": "unpouse_level"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.4, 2.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -19, -199 ), Vector2( -19, -199 ), Vector2( 691, -34 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Main_world_objects/MysticDweller/Body/InteractionController")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "force_leave"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Main_world_objects/MysticDweller/Body/InteractionController")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ true ],
+"method": "disabled"
+} ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("Main_world_objects/MysticDweller/AnimationPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1.025 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "Hiding", -1, 1.0, false ],
+"method": "play"
+} ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("Main_world_objects/BackEntrance/Wide_torch")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 5.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "activate"
+} ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath("Main_world_objects/BackEntrance/Wide_torch2")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 5.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "activate"
+} ]
+}
+
+[sub_resource type="Animation" id=18]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -55, -175 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Player/Body/Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 76 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Main_world_objects/CutsceneObjects/LeftSideHeart:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Main_world_objects/CutsceneObjects/LeftSideHeart:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -53, -271 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Main_world_objects/CutsceneObjects/LeftSideHeart:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Main_world_objects/CutsceneObjects/RightSideHeart:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Main_world_objects/CutsceneObjects/RightSideHeart:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -53, -271 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Main_world_objects/CutsceneObjects/RightSideHeart:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Main_world_objects/CutsceneObjects/SoulStarSprite:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -53, -270 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Main_world_objects/CutsceneObjects/SoulStarSprite:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Main_world_objects/CutsceneObjects/SoulStarSprite:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Main_world_objects/CutsceneObjects/DustParticles2D:emitting")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Main_world_objects/CutsceneObjects/ShineParticles2D:emitting")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Main_world_objects/CutsceneObjects/AssembledHeartItem/PickupArea2D/CollisionShape2D:disabled")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Main_world_objects/CutsceneObjects/AssembledHeartItem:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -54, -328 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Main_world_objects/CutsceneObjects/AssembledHeartItem:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Camera2D:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -40, -201 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Main_world_objects/MysticDweller:is_player_interaction_active")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Main_world_objects/MysticDweller/Body/InteractionController:action_type")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Main_world_objects/MysticDweller/DialogTextBoxController:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Main_world_objects/MysticDweller/Body/Sprite:frame")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 52 ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Main_world_objects/BackEntrance/Wide_torch:is_torch_activated")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Main_world_objects/BackEntrance/Wide_torch2:is_torch_activated")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Main_world_objects/DustParticles2D:emitting")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("Main_world_objects/MysticDweller:visible")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("Main_world_objects/MysticDweller/Body/InteractionController/Area2D/CollisionShape2D:disabled")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("Main_world_objects/MysticDweller:custom_animations_behavior")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "Animate"
+length = 0.5
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+
+[sub_resource type="Animation" id=24]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "Anim"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=20]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "Anim"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.05, 1.05 ) ]
+}
+
+[sub_resource type="Animation" id=22]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="CanvasItemMaterial" id=32]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="CanvasItemMaterial" id=36]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = false
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 24, 8 )
@@ -63,15 +942,17 @@ extents = Vector2( 8, 152 )
 extents = Vector2( 4884.5, 51.5 )
 
 [node name="HeartLake" instance=ExtResource( 1 )]
+script = ExtResource( 17 )
 
-[node name="LightingCanvasLayer" type="CanvasLayer" parent="." index="1"]
-visible = false
+[node name="LightingCanvasLayer" type="CanvasLayer" parent="." index="0"]
+pause_mode = 2
 
 [node name="LightingRect" parent="LightingCanvasLayer" index="0" instance=ExtResource( 5 )]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 0.0
 margin_bottom = 0.0
+mouse_filter = 1
 camera_path = NodePath("../../Camera2D")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="2"]
@@ -83,8 +964,14 @@ scale = Vector2( 0.289576, 0.28133 )
 texture = ExtResource( 4 )
 centered = false
 
+[node name="AnimationPlayer" parent="." index="3"]
+autoplay = "RESET"
+anims/Heart_assembling_cutscene = SubResource( 17 )
+anims/Mystic_dweller_disappearance_cutscene = SubResource( 37 )
+anims/RESET = SubResource( 18 )
+
 [node name="Camera2D" parent="." index="4"]
-position = Vector2( -701, -55 )
+position = Vector2( -40, -201 )
 
 [node name="Clouds" parent="Camera2D" index="2" instance=ExtResource( 7 )]
 
@@ -160,17 +1047,107 @@ visible = false
 visible = false
 
 [node name="Wide_torch" parent="Main_world_objects/BackEntrance" index="2" instance=ExtResource( 15 )]
+pause_mode = 2
 position = Vector2( 659, -6 )
 
 [node name="Wide_torch2" parent="Main_world_objects/BackEntrance" index="3" instance=ExtResource( 15 )]
+pause_mode = 2
 position = Vector2( 724, -6 )
 
 [node name="MysticDweller" parent="Main_world_objects" index="3" instance=ExtResource( 16 )]
-position = Vector2( -36, -176 )
+pause_mode = 2
+position = Vector2( -21, -176 )
+dialogId = "mystic_dweller_heart_assembler"
 defaultDirection = -1
 
 [node name="Body" parent="Main_world_objects/MysticDweller" index="5"]
 scale = Vector2( -1, 1 )
+
+[node name="Area2D" parent="Main_world_objects/MysticDweller/Body/InteractionController" index="0"]
+visible = false
+
+[node name="CutsceneObjects" type="Node2D" parent="Main_world_objects" index="4"]
+pause_mode = 2
+
+[node name="AssembledHeartItem" parent="Main_world_objects/CutsceneObjects" index="0" instance=ExtResource( 20 )]
+pause_mode = 2
+visible = false
+position = Vector2( -54, -328 )
+
+[node name="CollisionShape2D" parent="Main_world_objects/CutsceneObjects/AssembledHeartItem/PickupArea2D" index="0"]
+disabled = true
+
+[node name="SoulStarSprite" type="Sprite" parent="Main_world_objects/CutsceneObjects" index="1"]
+pause_mode = 2
+position = Vector2( -53, -270 )
+scale = Vector2( 1e-05, 1e-05 )
+texture = ExtResource( 24 )
+hframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Main_world_objects/CutsceneObjects/SoulStarSprite" index="0"]
+autoplay = "Animate"
+anims/Animate = SubResource( 23 )
+anims/RESET = SubResource( 24 )
+
+[node name="Particles2D" type="Particles2D" parent="Main_world_objects/CutsceneObjects/SoulStarSprite" index="1"]
+process_material = ExtResource( 21 )
+
+[node name="RightSideHeart" type="Sprite" parent="Main_world_objects/CutsceneObjects" index="2"]
+pause_mode = 2
+visible = false
+position = Vector2( -53, -271 )
+texture = ExtResource( 18 )
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Main_world_objects/CutsceneObjects/RightSideHeart" index="0"]
+autoplay = "Anim"
+anims/Anim = SubResource( 19 )
+anims/RESET = SubResource( 20 )
+
+[node name="LeftSideHeart" type="Sprite" parent="Main_world_objects/CutsceneObjects" index="3"]
+pause_mode = 2
+position = Vector2( -53, -271 )
+texture = ExtResource( 19 )
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Main_world_objects/CutsceneObjects/LeftSideHeart" index="0"]
+autoplay = "Anim"
+anims/Anim = SubResource( 21 )
+anims/RESET = SubResource( 22 )
+
+[node name="DustParticles2D" type="Particles2D" parent="Main_world_objects/CutsceneObjects" index="4"]
+pause_mode = 2
+material = SubResource( 32 )
+position = Vector2( -54, -328 )
+emitting = false
+amount = 40
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+process_material = ExtResource( 26 )
+texture = ExtResource( 22 )
+
+[node name="ShineParticles2D" type="Particles2D" parent="Main_world_objects/CutsceneObjects" index="5"]
+pause_mode = 2
+material = SubResource( 36 )
+position = Vector2( -54, -328 )
+emitting = false
+one_shot = true
+randomness = 1.0
+process_material = ExtResource( 25 )
+texture = ExtResource( 23 )
+
+[node name="DustParticles2D" type="Particles2D" parent="Main_world_objects" index="5"]
+pause_mode = 2
+material = SubResource( 32 )
+position = Vector2( -21, -178 )
+emitting = false
+amount = 40
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+process_material = ExtResource( 26 )
+texture = ExtResource( 22 )
 
 [node name="Background_world_objects" type="Node2D" parent="." index="8"]
 z_index = -1
@@ -184,7 +1161,7 @@ format = 1
 tile_data = PoolIntArray( -44827185, 11, 0, -44171767, 8, 0, -44236540, 8, 0, -43975095, 1, 0, -44040064, 11, 0, -44040038, 1, 0, -43974260, 11, 0, -43778609, 11, 0, -42991488, 11, 0, -42925684, 11, 0, -42730033, 11, 0, -42663676, 8, 0, -42533367, 8, 0, -41877943, 1, 0, -41942912, 11, 0, -41942886, 1, 0, -41942644, 11, 0, -41681457, 11, 0, -41025276, 8, 0, -40894967, 8, 0, -40894336, 11, 0, -40894068, 11, 0, -40632881, 11, 0, -39780791, 1, 0, -39845760, 11, 0, -39845734, 1, 0, -39845492, 11, 0, -39584305, 11, 0, -39322103, 8, 0, -39386876, 8, 0, -38797184, 11, 0, -38796916, 11, 0, -38535729, 11, 0, -37683703, 8, 0, -37683639, 1, 0, -37748608, 11, 0, -37748582, 1, 0, -37748476, 8, 0, -37748340, 11, 0, -37487153, 11, 0, -36700032, 11, 0, -36699764, 11, 0, -36438577, 11, 0, -36045303, 8, 0, -36110076, 8, 0, -35586487, 1, 0, -35651456, 11, 0, -35651430, 1, 0, -35651188, 11, 0, -35390001, 11, 0, -34602880, 11, 0, -34602612, 11, 0, -34406903, 8, 0, -34471676, 8, 0, -34341425, 11, 0, -33489335, 1, 0, -33554304, 11, 0, -33554278, 1, 0, -33554036, 11, 0, -33292849, 11, 0, -32768503, 8, 0, -32833276, 8, 0, -32505728, 11, 0, -32505460, 11, 0, -32244273, 11, 0, -31392183, 1, 0, -31457152, 11, 0, -31457126, 1, 0, -31456884, 11, 0, -31195697, 11, 0, -31130103, 8, 0, -31194876, 8, 0, -30408576, 11, 0, -30408308, 11, 0, -30147121, 11, 0, -29491703, 8, 0, -29556476, 8, 0, -29295031, 1, 0, -29360000, 11, 0, -29359974, 1, 0, -29359732, 11, 0, -29098545, 11, 0, -28311424, 11, 0, -28311156, 11, 0, -28049969, 11, 0, -27853303, 8, 0, -27918076, 8, 0, -27197879, 1, 0, -27262848, 11, 0, -27262822, 1, 0, -27262580, 11, 0, -27001393, 11, 0, -26214903, 8, 0, -26279676, 8, 0, -26214272, 11, 0, -26214004, 11, 0, -26018353, 11, 0, -25100727, 1, 0, -25165696, 11, 0, -25165670, 1, 0, -25165428, 11, 0, -24969777, 11, 0, -24576503, 8, 0, -24641276, 8, 0, -24117120, 11, 0, -24116852, 11, 0, -23921201, 11, 0, -23003575, 1, 0, -23068544, 11, 0, -23068518, 1, 0, -23068276, 11, 0, -22938103, 8, 0, -23002876, 8, 0, -22872625, 11, 0, -22019968, 11, 0, -22019700, 11, 0, -21824049, 11, 0, -21299703, 8, 0, -21364476, 8, 0, -20906423, 1, 0, -20971392, 11, 0, -20971366, 1, 0, -20971124, 11, 0, -20841009, 11, 0, -19922816, 11, 0, -19922548, 11, 0, -19792433, 11, 0, -19661303, 8, 0, -19726076, 8, 0, -18809271, 1, 0, -18874240, 11, 0, -18874214, 1, 0, -18873972, 11, 0, -18743857, 11, 0, -18022903, 8, 0, -18087676, 8, 0, -17760817, 11, 0, -17825664, 11, 0, -17825396, 11, 0, -16712241, 11, 0, -16712119, 1, 0, -16777088, 11, 0, -16777062, 1, 0, -16776820, 11, 0, -16384503, 8, 0, -16449276, 8, 0, -15663665, 11, 0, -15728512, 11, 0, -15728244, 11, 0, -14746103, 8, 0, -14810876, 8, 0, -14615089, 11, 0, -14614967, 1, 0, -14679936, 11, 0, -14679910, 1, 0, -14679668, 11, 0, -13566513, 11, 0, -13631360, 11, 0, -13631092, 11, 0, -13107703, 8, 0, -13172476, 8, 0, -12517937, 11, 0, -12517815, 1, 0, -12582784, 11, 0, -12582758, 1, 0, -12582516, 11, 0, -11469361, 11, 0, -11469303, 8, 0, -11534208, 11, 0, -11534076, 8, 0, -11533940, 11, 0, -10420785, 11, 0, -10420663, 1, 0, -10485632, 11, 0, -10485606, 1, 0, -10485364, 11, 0, -9830903, 8, 0, -9895676, 8, 0, -9372209, 11, 0, -9437056, 11, 0, -9436788, 11, 0, -8323633, 11, 0, -8323511, 1, 0, -8388480, 11, 0, -8388454, 1, 0, -8388212, 11, 0, -8192503, 8, 0, -8257276, 8, 0, -7340197, 536870920, 0, -7275057, 11, 0, -7339904, 11, 0, -7339636, 11, 0, -6554103, 8, 0, -6618876, 8, 0, -6226481, 11, 0, -6226359, 1, 0, -6291328, 11, 0, -6291302, 1, 0, -6291060, 11, 0, -5701797, 536870920, 0, -5439760, 8, 0, -5177905, 11, 0, -5242752, 11, 0, -5242484, 11, 0, -4915703, 8, 0, -4980476, 8, 0, -4129329, 11, 0, -4129207, 1, 0, -4194176, 11, 0, -4194150, 1, 0, -4193908, 11, 0, -3866896, 8, 0, -3277303, 8, 0, -3342076, 8, 0, -3080753, 11, 0, -3145600, 11, 0, -3145332, 11, 0, -2228496, 8, 0, -2032177, 11, 0, -2032055, 2, 0, -2097024, 11, 0, -2096998, 2, 0, -2096756, 11, 0, -1638903, 7, 0, -1703676, 7, 0, -983601, 10, 0, -1048448, 10, 0, -1048180, 10, 0 )
 
 [node name="Player" parent="." index="9"]
-position = Vector2( -700, -19 )
+position = Vector2( -55, -175 )
 
 [node name="Light2D2" parent="Player" index="5"]
 visible = false
@@ -380,17 +1357,28 @@ maxRadius = 450
 animating = false
 
 [node name="LightSource3" parent="Lighting" index="2" instance=ExtResource( 6 )]
-position = Vector2( -45, -232 )
+position = Vector2( -56, -305 )
 color = Color( 0.564706, 0.741176, 0.988235, 1 )
 radius = 300
 minRadius = 450
 maxRadius = 450
 animating = false
 
+[node name="LightSource4" parent="Lighting" index="3" instance=ExtResource( 6 )]
+position = Vector2( -46, -196 )
+color = Color( 0.564706, 0.741176, 0.988235, 1 )
+radius = 300
+minRadius = 450
+maxRadius = 450
+animating = false
+strength = 0.9
+
 [editable path="Main_world_objects/BackEntrance/BackDoor"]
 [editable path="Main_world_objects/BackEntrance/BackDoor/InteractionController"]
 [editable path="Main_world_objects/MysticDweller"]
 [editable path="Main_world_objects/MysticDweller/Body/InteractionController"]
+[editable path="Main_world_objects/CutsceneObjects/AssembledHeartItem"]
+[editable path="Player"]
 [editable path="Collisions/PassTrough/PassThroughBody21"]
 [editable path="Collisions/PassTrough/PassThroughBody22"]
 [editable path="Collisions/PassTrough/PassThroughBody23"]

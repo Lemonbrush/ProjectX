@@ -380,7 +380,7 @@ shape = SubResource( 1 )
 position = Vector2( 8, -16 )
 texture = ExtResource( 1 )
 hframes = 19
-vframes = 13
+vframes = 12
 frame = 76
 
 [node name="GroundRay1" type="RayCast2D" parent="Body"]

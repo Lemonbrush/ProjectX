@@ -49,7 +49,9 @@ func set_default_constants():
 		artist_gifted_the_thread = false,
 		did_speak_to_creator_house_welcomer = false,
 		left_side_heart_picked_up = false,
-		right_side_heart_picked_up = false
+		right_side_heart_picked_up = false,
+		assembled_heart_picked_uo = false,
+		did_trigger_heart_assembling_cutscene = false
 	}
 	EventBus.game_const_changed()
 
