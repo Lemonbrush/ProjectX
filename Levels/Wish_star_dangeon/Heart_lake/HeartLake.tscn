@@ -393,53 +393,47 @@ tracks/3/keys = {
 "method": "disabled"
 } ]
 }
-tracks/4/type = "value"
-tracks/4/path = NodePath("Main_world_objects/MysticDweller/Body/Sprite:frame")
+tracks/4/type = "method"
+tracks/4/path = NodePath("Main_world_objects/MysticDweller/AnimationPlayer")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 52, 53, 54, 55, 56, 57, 58, 59 ]
+"times": PoolRealArray( 1.025 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "Hiding", -1, 1.0, false ],
+"method": "play"
+} ]
 }
-tracks/5/type = "value"
-tracks/5/path = NodePath("Main_world_objects/BackEntrance/Wide_torch:is_torch_activated")
+tracks/5/type = "method"
+tracks/5/path = NodePath("Main_world_objects/BackEntrance/Wide_torch")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 3.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
+"times": PoolRealArray( 5.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "activate"
+} ]
 }
-tracks/6/type = "value"
-tracks/6/path = NodePath("Main_world_objects/BackEntrance/Wide_torch2:is_torch_activated")
+tracks/6/type = "method"
+tracks/6/path = NodePath("Main_world_objects/BackEntrance/Wide_torch2")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 3.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("Main_world_objects/DustParticles2D:emitting")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 1.5 ),
+"times": PoolRealArray( 5.5 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"values": [ {
+"args": [  ],
+"method": "activate"
+} ]
 }
 
 [sub_resource type="Animation" id=18]
@@ -732,6 +726,42 @@ tracks/23/keys = {
 "update": 0,
 "values": [ false ]
 }
+tracks/24/type = "value"
+tracks/24/path = NodePath("Main_world_objects/MysticDweller:visible")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("Main_world_objects/MysticDweller/Body/InteractionController/Area2D/CollisionShape2D:disabled")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("Main_world_objects/MysticDweller:custom_animations_behavior")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=23]
 resource_name = "Animate"
@@ -915,6 +945,7 @@ extents = Vector2( 4884.5, 51.5 )
 script = ExtResource( 17 )
 
 [node name="LightingCanvasLayer" type="CanvasLayer" parent="." index="0"]
+pause_mode = 2
 
 [node name="LightingRect" parent="LightingCanvasLayer" index="0" instance=ExtResource( 5 )]
 anchor_right = 1.0
@@ -1016,9 +1047,11 @@ visible = false
 visible = false
 
 [node name="Wide_torch" parent="Main_world_objects/BackEntrance" index="2" instance=ExtResource( 15 )]
+pause_mode = 2
 position = Vector2( 659, -6 )
 
 [node name="Wide_torch2" parent="Main_world_objects/BackEntrance" index="3" instance=ExtResource( 15 )]
+pause_mode = 2
 position = Vector2( 724, -6 )
 
 [node name="MysticDweller" parent="Main_world_objects" index="3" instance=ExtResource( 16 )]

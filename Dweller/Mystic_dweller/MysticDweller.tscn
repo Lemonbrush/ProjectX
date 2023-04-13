@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/effects/particles.png" type="Texture" id=1]
-[ext_resource path="res://Resources/Particles/Crush_particles/Crush_dust/CrushDustProcessMaterial.tres" type="Material" id=2]
+[ext_resource path="res://Resources/Particles/Cutscene_particles/Dust_appear_particles/DustAppearParticles.tres" type="Material" id=2]
 [ext_resource path="res://Assets/NPC/mysticDweller-Sheet.png" type="Texture" id=3]
 [ext_resource path="res://Dweller/Abstract_dweller/AbstractDweller.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Hiding"
-length = 0.8
+length = 2.0
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -22,16 +22,30 @@ tracks/0/keys = {
 "values": [ 53, 54, 55, 56, 58, 59 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../HideDustParticles2D:emitting")
+tracks/1/path = NodePath("../DustParticles2D:emitting")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.5 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.0125, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false, true ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -66,7 +80,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../HideDustParticles2D:emitting")
+tracks/1/path = NodePath("../DustParticles2D:emitting")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -112,7 +126,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ]
 }
 
-[sub_resource type="CanvasItemMaterial" id=5]
+[sub_resource type="CanvasItemMaterial" id=7]
 particles_animation = true
 particles_anim_h_frames = 3
 particles_anim_v_frames = 1
@@ -135,10 +149,11 @@ texture = ExtResource( 3 )
 hframes = 26
 vframes = 4
 
-[node name="HideDustParticles2D" type="Particles2D" parent="." index="7"]
-material = SubResource( 5 )
+[node name="DustParticles2D" type="Particles2D" parent="." index="7"]
+pause_mode = 2
+material = SubResource( 7 )
 emitting = false
-lifetime = 2.0
+amount = 40
 one_shot = true
 explosiveness = 1.0
 randomness = 1.0
