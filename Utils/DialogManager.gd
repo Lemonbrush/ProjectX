@@ -75,7 +75,7 @@ func get_next_phrase_id():
 	return current_phrase_id
 
 func execute_commands_if_needed():
-	if !current_dialog.has(current_phrase_id):
+	if current_dialog == null || !current_dialog.has(current_phrase_id):
 		return
 	
 	var current_phrase = current_dialog[current_phrase_id]

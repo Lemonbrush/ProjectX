@@ -21,6 +21,8 @@ func _ready():
 	about_button.connect("pressed", self, "on_changelog_pressed")
 	version_label.text = FileManager.get_project_version()
 	
+	play_button.grab_focus()
+	
 func on_play_pressed():
 	logo_animation_player.play("Play")
 	

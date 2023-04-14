@@ -972,6 +972,7 @@ custom_constants/separation = 5
 [node name="PlayButton" type="Button" parent="CanvasLayer/MainMenuMarginContainer/VBoxContainer"]
 margin_right = 42.0
 margin_bottom = 14.0
+focus_neighbour_top = NodePath("../ExitButton")
 text = "play"
 align = 0
 
@@ -993,6 +994,7 @@ align = 0
 margin_top = 57.0
 margin_right = 42.0
 margin_bottom = 71.0
+focus_neighbour_bottom = NodePath("../PlayButton")
 text = "exit"
 align = 0
 
