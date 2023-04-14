@@ -1304,7 +1304,7 @@ visible = false
 [node name="Heart_lake_door" parent="Doors" index="1" instance=ExtResource( 3 )]
 position = Vector2( 57, 445 )
 nextScenePath = "res://Levels/Wish_star_dangeon/Heart_lake/HeartLake.tscn"
-nextDoorName = "Wish_star_dangeon_door"
+nextDoorName = "Wish_star_dangeon_enter_door"
 
 [node name="VisibilityChecker" parent="Doors/Heart_lake_door" index="0"]
 visible = false
