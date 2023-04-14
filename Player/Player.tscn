@@ -59,10 +59,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 210, 211, 212, 213, 214, 215, 216, 217, 218 ]
+"values": [ 228, 229, 230, 231, 232, 233, 234, 235, 236, 237 ]
 }
 
 [sub_resource type="Animation" id=21]
@@ -78,7 +78,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 228, 229, 230, 231, 232, 233, 234, 235, 236 ]
+"values": [ 247, 248, 249, 250, 251, 252, 253, 254, 255 ]
 }
 
 [sub_resource type="Animation" id=14]
@@ -233,30 +233,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=3]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Body/Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Body/Sprite:frame_coords")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 4 ) ]
-}
 
 [sub_resource type="Animation" id=4]
 resource_name = "Run"
@@ -316,7 +292,6 @@ script = ExtResource( 3 )
 one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "Door_entering"
 anims/Attack = SubResource( 16 )
 anims/Door_entering = SubResource( 20 )
 anims/Door_entering_out = SubResource( 21 )
@@ -380,7 +355,7 @@ shape = SubResource( 1 )
 position = Vector2( 8, -16 )
 texture = ExtResource( 1 )
 hframes = 19
-vframes = 12
+vframes = 14
 frame = 76
 
 [node name="GroundRay1" type="RayCast2D" parent="Body"]
