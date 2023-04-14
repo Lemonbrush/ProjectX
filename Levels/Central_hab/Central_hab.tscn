@@ -1920,6 +1920,10 @@ texts_array = [ " Ми!" ]
 
 [node name="StoneSign" parent="WorldObjects/Signs" instance=ExtResource( 69 )]
 position = Vector2( -1091, -276 )
+texts_array = [ "Добрый путник, если ты это читаешь, значит
+ты проделал долгий путь в поисках истины
+Впереди тебя ждет вход в потайной зал,
+где ты все узнаешь. " ]
 
 [node name="Sprite" parent="WorldObjects/Signs/StoneSign" index="0"]
 position = Vector2( 0, -20 )
