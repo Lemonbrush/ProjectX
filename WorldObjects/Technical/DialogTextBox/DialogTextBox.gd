@@ -27,8 +27,10 @@ func show_text(text, button_options = null):
 	remove_buttons()
 	buttonsContainer.visible = button_options != null
 	cursor.disable_cursor()
+	cursor.is_focused = false
 	if button_options:
 		cursor.activate_cursor()
+		cursor.is_focused = true
 		setup_buttons(button_options)
 		
 	buttonHint.modulate.a = 0.0

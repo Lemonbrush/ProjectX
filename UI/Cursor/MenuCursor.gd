@@ -1,4 +1,4 @@
-extends TextureRect
+extends Control
 
 export var menu_parent_path: NodePath
 export var cursor_offset: Vector2

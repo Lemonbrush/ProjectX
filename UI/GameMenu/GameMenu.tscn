@@ -967,8 +967,10 @@ anims/RESET = SubResource( 39 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MenuCursor" parent="CanvasLayer" instance=ExtResource( 5 )]
-margin_top = -22.0
-margin_bottom = -15.0
+margin_left = 75.0
+margin_top = 213.0
+margin_right = 81.0
+margin_bottom = 220.0
 menu_parent_path = NodePath("../MainMenuMarginContainer/VBoxContainer")
 
 [node name="BackImageMarginContainer" type="MarginContainer" parent="CanvasLayer"]
