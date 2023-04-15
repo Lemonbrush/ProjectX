@@ -126,6 +126,5 @@ align = 0
 
 [node name="MenuCursor" parent="." instance=ExtResource( 5 )]
 margin_top = -11.0
-margin_right = 6.0
 margin_bottom = -4.0
 menu_parent_path = NodePath("../MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer")

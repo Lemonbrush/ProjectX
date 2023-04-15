@@ -93,6 +93,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( 0, 250 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("CanvasLayer/MenuCursor:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=39]
 length = 0.001
@@ -115,6 +127,18 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CanvasLayer/MenuCursor:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -943,9 +967,8 @@ anims/RESET = SubResource( 39 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MenuCursor" parent="CanvasLayer" instance=ExtResource( 5 )]
-margin_left = 25.0
-margin_right = 31.0
-margin_bottom = 7.0
+margin_top = -22.0
+margin_bottom = -15.0
 menu_parent_path = NodePath("../MainMenuMarginContainer/VBoxContainer")
 
 [node name="BackImageMarginContainer" type="MarginContainer" parent="CanvasLayer"]
