@@ -8,3 +8,4 @@ margin_right = 9.0
 margin_bottom = 10.0
 texture = ExtResource( 2 )
 script = ExtResource( 1 )
+cursor_offset = Vector2( 10, 0 )

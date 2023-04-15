@@ -6,7 +6,8 @@ onready var exit_button = $CanvasLayer/MainMenuMarginContainer/VBoxContainer/Exi
 onready var version_label = $CanvasLayer/RightMarginContainer/VersionLabel
 onready var about_button = $CanvasLayer/MainMenuMarginContainer/VBoxContainer/AboutButton
 
-onready var mainMenuMarginContainer = $CanvasLayer/MainMenuMarginContainer
+onready var menu_cursor = $CanvasLayer/MenuCursor
+onready var mainMenuCanvasLayer = $CanvasLayer
 onready var logo_animation_player = $AnimationPlayer
 
 var optionsMenuScene = preload("res://UI/OptionsMenu/OptionsMenu.tscn")
@@ -34,13 +35,16 @@ func on_options_pressed():
 	var optionsMenuInstance = optionsMenuScene.instance()
 	get_tree().root.add_child(optionsMenuInstance)
 	optionsMenuInstance.connect("back_pressed", self, "on_options_back_pressed")
-	mainMenuMarginContainer.visible = false
+	mainMenuCanvasLayer.visible = false
+	menu_cursor.is_active = false
 	
 func on_changelog_pressed():
 	var changelogMenuSceneInstance = changelogMenuScene.instance()
 	get_tree().root.add_child(changelogMenuSceneInstance)
 	changelogMenuSceneInstance.connect("back_pressed", self, "on_options_back_pressed")
-	mainMenuMarginContainer.visible = false
+	mainMenuCanvasLayer.visible = false
+	menu_cursor.is_active = false
 
 func on_options_back_pressed():
-	mainMenuMarginContainer.visible = true
+	mainMenuCanvasLayer.visible = true
+	menu_cursor.is_active = true

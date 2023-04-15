@@ -942,6 +942,12 @@ anims/RESET = SubResource( 39 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="MenuCursor" parent="CanvasLayer" instance=ExtResource( 5 )]
+margin_left = 25.0
+margin_right = 31.0
+margin_bottom = 7.0
+menu_parent_path = NodePath("../MainMenuMarginContainer/VBoxContainer")
+
 [node name="BackImageMarginContainer" type="MarginContainer" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1020,10 +1026,6 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 custom_fonts/font = ExtResource( 4 )
 text = "Version"
-
-[node name="MenuCursor" parent="CanvasLayer" instance=ExtResource( 5 )]
-menu_parent_path = NodePath("../MainMenuMarginContainer/VBoxContainer")
-cursor_offset = Vector2( 10, 0 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

@@ -2,12 +2,16 @@ extends TextureRect
 
 export var menu_parent_path: NodePath
 export var cursor_offset: Vector2
+export var is_active = true
 
 onready var menu_parent = get_node(menu_parent_path)
 
 var cursor_index = 0
 
 func _process(delta):
+	if !is_active:
+		return
+
 	var input = Vector2.ZERO
 	
 	if Input.is_action_just_pressed("up"):
