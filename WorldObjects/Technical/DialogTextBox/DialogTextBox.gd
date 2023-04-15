@@ -11,6 +11,7 @@ onready var label = $MarginNode/PanelContainer/MarginContainer/VBoxContainer/Lab
 onready var marginNode = $MarginNode
 onready var buttonHint = $MarginNode/PanelContainer/ButtonHint
 onready var buttonsContainer = $MarginNode/PanelContainer/MarginContainer/VBoxContainer/ButtonsContainer
+onready var cursor = $MarginNode/MenuCursor
 
 var animated_button_scene_path = preload("res://UI/Animated_dialog_button/AnimatedDialogButton.tscn")
 var float_animation_direction_up = false
@@ -25,7 +26,9 @@ func _ready():
 func show_text(text, button_options = null):
 	remove_buttons()
 	buttonsContainer.visible = button_options != null
+	cursor.disable_cursor()
 	if button_options:
+		cursor.activate_cursor()
 		setup_buttons(button_options)
 		
 	buttonHint.modulate.a = 0.0

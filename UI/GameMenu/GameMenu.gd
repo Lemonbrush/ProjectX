@@ -36,15 +36,18 @@ func on_options_pressed():
 	get_tree().root.add_child(optionsMenuInstance)
 	optionsMenuInstance.connect("back_pressed", self, "on_options_back_pressed")
 	mainMenuCanvasLayer.visible = false
-	menu_cursor.is_active = false
+	menu_cursor.disable_cursor()
+	menu_cursor.is_focused = false
 	
 func on_changelog_pressed():
+	mainMenuCanvasLayer.visible = false
 	var changelogMenuSceneInstance = changelogMenuScene.instance()
 	get_tree().root.add_child(changelogMenuSceneInstance)
 	changelogMenuSceneInstance.connect("back_pressed", self, "on_options_back_pressed")
-	mainMenuCanvasLayer.visible = false
-	menu_cursor.is_active = false
+	menu_cursor.disable_cursor()
+	menu_cursor.is_focused = false
 
 func on_options_back_pressed():
 	mainMenuCanvasLayer.visible = true
-	menu_cursor.is_active = true
+	menu_cursor.activate_cursor()
+	menu_cursor.is_focused = true

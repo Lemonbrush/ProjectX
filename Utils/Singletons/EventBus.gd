@@ -1,5 +1,6 @@
 extends Node
 
+signal did_update_cursor_setting()
 signal cameraFocuseAnimation(zoom, time)
 signal playerAnimationModeChange(isPlayerAnimating)
 signal player_picked_up_item(item_name)
@@ -103,3 +104,6 @@ func show_heart_assembling_cutscene():
 
 func show_mystic_dweller_heart_assembler_disappear_cutscene():
 	emit_signal("show_mystic_dweller_heart_assembler_disappear_cutscene")
+
+func did_update_cursor_setting():
+	emit_signal("did_update_cursor_setting")

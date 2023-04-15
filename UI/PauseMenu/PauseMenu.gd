@@ -45,10 +45,10 @@ func on_options_pressed():
 	add_child(optionsMenuInstance)
 	optionsMenuInstance.connect("back_pressed", self, "on_options_back_pressed")
 	marginContainer.visible = false
-	menuCursor.visible = false
-	menuCursor.is_active = false
+	menuCursor.disable_cursor()
+	menuCursor.is_focused = false
 
 func on_options_back_pressed():
 	marginContainer.visible = true
-	menuCursor.visible = true
-	menuCursor.is_active = true
+	menuCursor.activate_cursor()
+	menuCursor.is_focused = true

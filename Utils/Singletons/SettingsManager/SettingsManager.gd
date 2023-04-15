@@ -32,6 +32,10 @@ func has_settings_file():
 	
 ################### Update properties functions ##################
 
+func update_cursor_active_option():
+	settings.is_cursor_active = !settings.is_cursor_active
+	save_settings()
+
 func update_debug_screen_option():
 	settings.is_debug_screen_active = !settings.is_debug_screen_active
 	save_settings()

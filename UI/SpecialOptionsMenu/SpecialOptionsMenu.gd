@@ -9,7 +9,9 @@ onready var deleteSettingsDataButton = $MainMarginContainer/MarginContainer/Cont
 onready var resetGameConstantsButton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/ResetGameConstantsButton
 onready var deleteAllSavesByDefaultRadiobutton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/DeleteAllSavesAlwaysCheckBoxContainer/DeleteAllSavesAlwaysCheckBox
 onready var activateDebugScreenRadiobutton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/ActivateDebugScreenCheckBoxContainer/ActivateDebugScreenCheckBox
+onready var menuCursorCheckbox = $MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/MenuCursorCheckBoxContainer/CursorCheckBox
 onready var gameConstsEditorButton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/GameConstsEditorButton
+onready var cursor = $MenuCursor
 
 var gameConstsEditorMenu = load("res://UI/GameConstsEditor/GameConstsEditor.tscn")
 
@@ -19,6 +21,7 @@ func _ready():
 	deleteAllSavesByDefaultRadiobutton.connect("pressed", self, "on_delete_all_saves_by_default_radiobutton_checked")
 	deleteSettingsDataButton.connect("pressed", self, "on_delete_settings_data_pressed")
 	activateDebugScreenRadiobutton.connect("pressed", self, "on_debug_screen_radiobutton_pressed")
+	menuCursorCheckbox.connect("pressed", self, "on_active_cursor_checkbox_pressed")
 	resetGameConstantsButton.connect("pressed", self, "on_reset_game_constants_pressed")
 	
 	gameConstsEditorButton.connect("pressed", self, "on_special_options_pressed") 
@@ -38,6 +41,7 @@ func setup_ui():
 	deleteAllSavesButton.disabled = !FileManager.has_any_save_file()
 	deleteAllSavesByDefaultRadiobutton.pressed = SettingsManager.settings.should_delete_all_saves_on_start_session
 	activateDebugScreenRadiobutton.pressed = SettingsManager.settings.is_debug_screen_active
+	menuCursorCheckbox.pressed = SettingsManager.settings.is_cursor_active
 
 func on_quit_pressed():
 	queue_free()
@@ -59,14 +63,22 @@ func on_debug_screen_radiobutton_pressed():
 	SettingsManager.update_debug_screen_option()
 	EventBus.debug_screen_visibility_updated()
 
+func on_active_cursor_checkbox_pressed():
+	SettingsManager.update_cursor_active_option()
+	EventBus.did_update_cursor_setting()
+
 func on_special_options_pressed():
 	var gameConstsEditorMenuInstance = gameConstsEditorMenu.instance()
 	get_tree().root.add_child(gameConstsEditorMenuInstance)
 	gameConstsEditorMenuInstance.connect("back_pressed", self, "on_options_back_pressed")
 	mainMarginContainer.visible = false
+	cursor.disable_cursor()
+	cursor.is_focused = false
 
 func on_options_back_pressed():
 	mainMarginContainer.visible = true
+	cursor.activate_cursor()
+	cursor.is_focused = true
 
 func on_reset_game_constants_pressed():
 	GameEventConstants.set_default_constants()

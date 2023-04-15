@@ -26,10 +26,10 @@ func on_special_options_pressed():
 	get_tree().root.add_child(specialOptionsMenuSceneInstance)
 	specialOptionsMenuSceneInstance.connect("back_pressed", self, "on_options_back_pressed")
 	mainMarginContainer.visible = false
-	menuCursor.visible = false
-	menuCursor.is_active = false
+	menuCursor.disable_cursor()
+	menuCursor.is_focused = false
 
 func on_options_back_pressed():
 	mainMarginContainer.visible = true
-	menuCursor.is_active = true
-	menuCursor.visible = true
+	menuCursor.activate_cursor()
+	menuCursor.is_focused = true
