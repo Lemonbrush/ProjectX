@@ -1,11 +1,12 @@
 extends CanvasLayer
 
 onready var continueButton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/ContinueButton
-onready var optionsButton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionButtonsVBoxContainer/OptionsButton
-onready var exitButton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionButtonsVBoxContainer/ExitButton
-onready var exitGameButton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionButtonsVBoxContainer/ExitGameButton
+onready var optionsButton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionsButton
+onready var exitButton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/ExitButton
+onready var exitGameButton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/ExitGameButton
 
 onready var marginContainer = $MainMarginContainer
+onready var menuCursor = $MenuCursor
 
 var optionsMenuScene = preload("res://UI/OptionsMenu/OptionsMenu.tscn")
 
@@ -44,6 +45,10 @@ func on_options_pressed():
 	add_child(optionsMenuInstance)
 	optionsMenuInstance.connect("back_pressed", self, "on_options_back_pressed")
 	marginContainer.visible = false
+	menuCursor.disable_cursor()
+	menuCursor.is_focused = false
 
 func on_options_back_pressed():
 	marginContainer.visible = true
+	menuCursor.activate_cursor()
+	menuCursor.is_focused = true

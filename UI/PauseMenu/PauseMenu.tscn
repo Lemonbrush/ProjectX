@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://UI/PauseMenu/PauseMenu.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Themes/MainTheme.tres" type="Theme" id=2]
 [ext_resource path="res://Resources/Fonts/Epilepsy Sans/Resource/EpilepsySansBold.tres" type="DynamicFont" id=3]
+[ext_resource path="res://UI/Cursor/MenuCursor.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "appear"
@@ -18,7 +19,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 0.0823529, 0.0823529, 0.0823529, 0 ), Color( 0.0823529, 0.0823529, 0.0823529, 0.309804 ) ]
+"values": [ Color( 0.0823529, 0.0823529, 0.0823529, 0 ), Color( 0.0941176, 0.0784314, 0.168627, 0.509804 ) ]
 }
 
 [node name="PauseMenu" type="CanvasLayer"]
@@ -32,68 +33,71 @@ anims/appear = SubResource( 1 )
 [node name="MainMarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ColorRect" type="ColorRect" parent="MainMarginContainer"]
 margin_right = 530.0
 margin_bottom = 320.0
-color = Color( 0.0941176, 0.0784314, 0.168627, 0.368627 )
+color = Color( 0.0823529, 0.0823529, 0.0823529, 0.509804 )
 
 [node name="MarginContainer" type="MarginContainer" parent="MainMarginContainer"]
 margin_right = 530.0
 margin_bottom = 320.0
 custom_constants/margin_top = 60
+custom_constants/margin_left = 25
 
 [node name="ContentVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer"]
+margin_left = 25.0
 margin_top = 60.0
 margin_right = 530.0
 margin_bottom = 320.0
 custom_constants/separation = 30
 
 [node name="HeaderLabel" type="Label" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer"]
-margin_left = 231.0
-margin_right = 299.0
+margin_right = 68.0
 margin_bottom = 26.0
-size_flags_horizontal = 4
+size_flags_horizontal = 0
+size_flags_vertical = 0
 custom_fonts/font = ExtResource( 3 )
 text = "pause"
 align = 1
 
 [node name="MenuVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer"]
-margin_left = 208.0
 margin_top = 56.0
-margin_right = 322.0
-margin_bottom = 135.0
-size_flags_horizontal = 4
-size_flags_vertical = 8
-theme = ExtResource( 2 )
-custom_constants/separation = 15
-
-[node name="OptionButtonsVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer"]
 margin_right = 114.0
-margin_bottom = 50.0
+margin_bottom = 142.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource( 2 )
+custom_constants/separation = 10
 
-[node name="ExitGameButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionButtonsVBoxContainer"]
+[node name="ExitGameButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer"]
 margin_right = 114.0
 margin_bottom = 14.0
 text = "exit_game"
+align = 0
 
-[node name="ExitButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionButtonsVBoxContainer"]
-margin_top = 18.0
+[node name="ExitButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer"]
+margin_top = 24.0
 margin_right = 114.0
-margin_bottom = 32.0
+margin_bottom = 38.0
 text = "return_to_game_menu"
+align = 0
 
-[node name="OptionsButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionButtonsVBoxContainer"]
-margin_top = 36.0
+[node name="OptionsButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer"]
+margin_top = 48.0
 margin_right = 114.0
-margin_bottom = 50.0
+margin_bottom = 62.0
 text = "options"
+align = 0
 
 [node name="ContinueButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer"]
-margin_top = 65.0
+margin_top = 72.0
 margin_right = 114.0
-margin_bottom = 79.0
+margin_bottom = 86.0
 text = "continue"
+align = 0
+
+[node name="MenuCursor" parent="." instance=ExtResource( 4 )]
+margin_top = -17.0
+margin_bottom = -10.0
+menu_parent_path = NodePath("../MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer")

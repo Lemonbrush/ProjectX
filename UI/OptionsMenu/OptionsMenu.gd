@@ -1,10 +1,11 @@
 extends CanvasLayer
 signal back_pressed
 
-onready var quitButton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/ExitButton
-onready var specialOptionsButton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionButtonsVBoxContainer/SpecialOptionButton
+onready var quitButton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer/ExitButton
+onready var specialOptionsButton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer/SpecialOptionButton
 
 onready var mainMarginContainer = $MainMarginContainer
+onready var menuCursor = $MenuCursor
 
 var specialOptionsMenuScene = preload("res://UI/SpecialOptionsMenu/SpecialOptionsMenu.tscn")
 
@@ -25,6 +26,10 @@ func on_special_options_pressed():
 	get_tree().root.add_child(specialOptionsMenuSceneInstance)
 	specialOptionsMenuSceneInstance.connect("back_pressed", self, "on_options_back_pressed")
 	mainMarginContainer.visible = false
+	menuCursor.disable_cursor()
+	menuCursor.is_focused = false
 
 func on_options_back_pressed():
 	mainMarginContainer.visible = true
+	menuCursor.activate_cursor()
+	menuCursor.is_focused = true
