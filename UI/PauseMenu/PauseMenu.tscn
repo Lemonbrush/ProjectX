@@ -64,11 +64,10 @@ align = 1
 [node name="MenuVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer"]
 margin_top = 56.0
 margin_right = 114.0
-margin_bottom = 142.0
+margin_bottom = 124.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource( 2 )
-custom_constants/separation = 10
 
 [node name="ExitGameButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer"]
 margin_right = 114.0
@@ -79,27 +78,27 @@ text = "exit_game"
 align = 0
 
 [node name="ExitButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer"]
-margin_top = 24.0
+margin_top = 18.0
 margin_right = 114.0
-margin_bottom = 38.0
+margin_bottom = 32.0
 focus_mode = 0
 enabled_focus_mode = 0
 text = "return_to_game_menu"
 align = 0
 
 [node name="OptionsButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer"]
-margin_top = 48.0
+margin_top = 36.0
 margin_right = 114.0
-margin_bottom = 62.0
+margin_bottom = 50.0
 focus_mode = 0
 enabled_focus_mode = 0
 text = "options"
 align = 0
 
 [node name="ContinueButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer"]
-margin_top = 72.0
+margin_top = 54.0
 margin_right = 114.0
-margin_bottom = 86.0
+margin_bottom = 68.0
 focus_mode = 0
 enabled_focus_mode = 0
 text = "continue"

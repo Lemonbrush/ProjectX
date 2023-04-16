@@ -55,6 +55,10 @@ func set_cursor_from_index(index: int) -> void:
 	var menu_item = get_menu_item_at_index(index)
 	
 	if menu_item == null:
+		if index == 0:
+			return
+		
+		set_cursor_from_index(0)
 		return
 		
 	var position = menu_item.rect_global_position
