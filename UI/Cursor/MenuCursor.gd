@@ -14,7 +14,7 @@ func _ready():
 	var _connection = EventBus.connect("did_update_cursor_setting", self, "update_cursor_setting")
 	update_cursor_setting()
 
-func _process(delta):
+func _process(_delta):
 	if is_focused && cursor_active_setting:
 		visible = true
 	else:

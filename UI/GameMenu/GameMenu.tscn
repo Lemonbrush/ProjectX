@@ -1003,6 +1003,8 @@ custom_constants/separation = 5
 margin_right = 42.0
 margin_bottom = 14.0
 focus_neighbour_top = NodePath("../ExitButton")
+focus_mode = 0
+enabled_focus_mode = 0
 text = "play"
 align = 0
 
@@ -1010,6 +1012,8 @@ align = 0
 margin_top = 19.0
 margin_right = 42.0
 margin_bottom = 33.0
+focus_mode = 0
+enabled_focus_mode = 0
 text = "options"
 align = 0
 
@@ -1017,6 +1021,8 @@ align = 0
 margin_top = 38.0
 margin_right = 42.0
 margin_bottom = 52.0
+focus_mode = 0
+enabled_focus_mode = 0
 text = "about"
 align = 0
 
@@ -1025,6 +1031,8 @@ margin_top = 57.0
 margin_right = 42.0
 margin_bottom = 71.0
 focus_neighbour_bottom = NodePath("../PlayButton")
+focus_mode = 0
+enabled_focus_mode = 0
 text = "exit"
 align = 0
 

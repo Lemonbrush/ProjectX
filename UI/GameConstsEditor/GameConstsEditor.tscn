@@ -60,7 +60,9 @@ custom_fonts/font = ExtResource( 4 )
 margin_top = 251.0
 margin_right = 24.0
 margin_bottom = 265.0
+focus_mode = 0
 size_flags_horizontal = 0
+enabled_focus_mode = 0
 text = "exit"
 
 [node name="MenuCursor" parent="." instance=ExtResource( 1 )]
