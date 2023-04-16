@@ -1158,6 +1158,7 @@ anims/RESET = SubResource( 35 )
 anims/Show_logo = SubResource( 36 )
 
 [node name="Stars" parent="." instance=ExtResource( 8 )]
+position = Vector2( -266, -154 )
 z_index = -1
 
 [node name="Particles2D" parent="Stars" index="0"]
