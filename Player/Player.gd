@@ -173,13 +173,13 @@ func unhandled_input(event: InputEvent):
 	elif event.is_action_pressed("left") && left <= 0.01:
 		left = event.get_action_strength("left")
 		direction -= left
-	elif event.is_action_pressed("up") && up <= 0.01:
+	elif event.is_action_pressed("up") && up <= 0.01 && !Global.is_player_talking:
 		up = event.get_action_strength("up")
 		if is_able_to_climb:
 			is_climbing = true
 	elif event.is_action_pressed("down") && down <= 0.01:
 		down = event.get_action_strength("down")
-		position.y += 1
+		check_pass_trough_collision()
 	elif event.is_action_pressed("jump"):
 		if Global.is_player_talking:
 			return
@@ -196,7 +196,8 @@ func check_for_deadly_height():
 		emit_signal("died")
 
 func check_pass_trough_collision():
-	if Input.is_action_just_pressed("down") && $GroundRay.is_colliding():
+	var is_on_ground = ground_ray1.is_colliding() || ground_ray2.is_colliding() || ground_ray3.is_colliding()
+	if Input.is_action_just_pressed("down") && !Global.is_player_talking && is_on_ground:
 		position = Vector2(position.x, position.y + 1)
 		
 func check_for_action_release():
