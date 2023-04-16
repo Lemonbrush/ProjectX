@@ -68,6 +68,8 @@ func press_button():
 	if current_menu_item != null:
 		if current_menu_item is Button && !current_menu_item.disabled:
 			current_menu_item.emit_signal("pressed")
+		elif current_menu_item.has_method("did_press"):
+			current_menu_item.did_press()
 
 func update_cursor_setting():
 	cursor_active_setting = SettingsManager.settings.is_cursor_active

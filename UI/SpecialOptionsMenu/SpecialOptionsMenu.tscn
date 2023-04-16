@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Resources/Fonts/Epilepsy Sans/Resource/EpilepsySansBold.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Resources/Themes/MainTheme.tres" type="Theme" id=2]
 [ext_resource path="res://UI/SpecialOptionsMenu/SpecialOptionsMenu.gd" type="Script" id=3]
 [ext_resource path="res://Resources/Fonts/Epilepsy Sans/Resource/EpilepsySansOutlined.tres" type="DynamicFont" id=4]
 [ext_resource path="res://UI/Cursor/MenuCursor.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI/CheckboxButton/CheckboxButton.tscn" type="PackedScene" id=6]
 
 [node name="SpecialOptionsMenu" type="CanvasLayer"]
 pause_mode = 2
@@ -30,7 +31,7 @@ custom_constants/margin_left = 25
 [node name="ContentVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer"]
 margin_left = 25.0
 margin_top = 60.0
-margin_right = 181.0
+margin_right = 188.0
 margin_bottom = 303.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -46,12 +47,12 @@ text = "special"
 
 [node name="OptionsVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer"]
 margin_top = 56.0
-margin_right = 156.0
+margin_right = 163.0
 margin_bottom = 243.0
 custom_constants/separation = 10
 
 [node name="GameConstsEditorButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
-margin_right = 156.0
+margin_right = 163.0
 margin_bottom = 13.0
 focus_mode = 0
 custom_fonts/font = ExtResource( 4 )
@@ -61,7 +62,7 @@ align = 0
 
 [node name="DeleteAllSavesButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
 margin_top = 23.0
-margin_right = 156.0
+margin_right = 163.0
 margin_bottom = 37.0
 focus_mode = 0
 enabled_focus_mode = 0
@@ -70,7 +71,7 @@ align = 0
 
 [node name="ResetGameConstantsButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
 margin_top = 47.0
-margin_right = 156.0
+margin_right = 163.0
 margin_bottom = 61.0
 focus_mode = 0
 enabled_focus_mode = 0
@@ -79,80 +80,45 @@ align = 0
 
 [node name="DeleteSystemDataButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
 margin_top = 71.0
-margin_right = 156.0
+margin_right = 163.0
 margin_bottom = 85.0
 focus_mode = 0
 enabled_focus_mode = 0
 text = "reset_options"
 align = 0
 
-[node name="DeleteAllSavesAlwaysCheckBoxContainer" type="HBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
+[node name="DeleteAllSavesAlwaysCheckBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer" instance=ExtResource( 6 )]
 margin_top = 95.0
-margin_right = 156.0
+margin_right = 163.0
 margin_bottom = 111.0
-custom_constants/separation = 10
 
-[node name="DeleteAllSavesAlwaysButton" type="Label" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/DeleteAllSavesAlwaysCheckBoxContainer"]
-margin_top = 1.0
-margin_right = 102.0
-margin_bottom = 14.0
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 4 )
-text = "autodelete_all_saves"
+[node name="Label" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/DeleteAllSavesAlwaysCheckBoxContainer" index="0"]
+margin_right = 142.0
+text = "Автоудаление сохранений"
 
-[node name="DeleteAllSavesAlwaysCheckBox" type="CheckBox" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/DeleteAllSavesAlwaysCheckBoxContainer"]
-margin_left = 112.0
-margin_right = 128.0
-margin_bottom = 16.0
-focus_mode = 0
-size_flags_horizontal = 5
-enabled_focus_mode = 0
+[node name="Checkbox" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/DeleteAllSavesAlwaysCheckBoxContainer" index="1"]
+margin_left = 147.0
+margin_right = 163.0
 
-[node name="ActivateDebugScreenCheckBoxContainer" type="HBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
+[node name="ActivateDebugScreenCheckBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer" instance=ExtResource( 6 )]
 margin_top = 121.0
-margin_right = 156.0
+margin_right = 163.0
 margin_bottom = 137.0
-custom_constants/separation = 10
 
-[node name="ActivateDebugScreen" type="Label" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/ActivateDebugScreenCheckBoxContainer"]
-margin_top = 1.0
-margin_right = 70.0
-margin_bottom = 14.0
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 4 )
-text = "debug_screen"
+[node name="Label" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/ActivateDebugScreenCheckBoxContainer" index="0"]
+margin_right = 76.0
+text = "Экран отладки"
 
-[node name="ActivateDebugScreenCheckBox" type="CheckBox" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/ActivateDebugScreenCheckBoxContainer"]
-margin_left = 80.0
-margin_right = 96.0
-margin_bottom = 16.0
-focus_mode = 0
-enabled_focus_mode = 0
+[node name="Checkbox" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/ActivateDebugScreenCheckBoxContainer" index="1"]
+margin_left = 81.0
+margin_right = 97.0
 
-[node name="MenuCursorCheckBoxContainer" type="HBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
-margin_top = 147.0
-margin_right = 156.0
-margin_bottom = 163.0
-custom_constants/separation = 10
-
-[node name="ActivateCursor" type="Label" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/MenuCursorCheckBoxContainer"]
-margin_top = 1.0
-margin_right = 36.0
-margin_bottom = 14.0
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 4 )
-text = "Курсор"
-
-[node name="CursorCheckBox" type="CheckBox" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/MenuCursorCheckBoxContainer"]
-margin_left = 46.0
-margin_right = 62.0
-margin_bottom = 16.0
-focus_mode = 0
-enabled_focus_mode = 0
+[node name="MenuCursorCheckBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer" instance=ExtResource( 6 )]
+margin_right = 163.0
 
 [node name="ExitButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
 margin_top = 173.0
-margin_right = 156.0
+margin_right = 163.0
 margin_bottom = 187.0
 focus_mode = 0
 enabled_focus_mode = 0
@@ -163,3 +129,7 @@ align = 0
 margin_top = -11.0
 margin_bottom = -4.0
 menu_parent_path = NodePath("../MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer")
+
+[editable path="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/DeleteAllSavesAlwaysCheckBoxContainer"]
+[editable path="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/ActivateDebugScreenCheckBoxContainer"]
+[editable path="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/MenuCursorCheckBoxContainer"]
