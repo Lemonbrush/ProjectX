@@ -902,9 +902,6 @@ actions = [ SubResource( 72 ) ]
 currentState = SubResource( 72 )
 defaultDirection = -1
 
-[node name="InteractionPopup" parent="WorldObjects/NPC/Dweller2" index="4"]
-labelText = "talky"
-
 [node name="Body" parent="WorldObjects/NPC/Dweller2" index="5"]
 scale = Vector2( -1, 1 )
 
