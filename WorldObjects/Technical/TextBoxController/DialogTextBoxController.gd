@@ -54,8 +54,8 @@ func process_gialog_interaction(phrase):
 			process_response(phrase)
 			dialogTextBox.set_button_hint_visibility(false)
 		"dialog":
-			dialogTextBox.set_button_hint_visibility(true)
 			process_dialog(phrase)
+			dialogTextBox.set_button_hint_visibility(true)
 		_:
 			finish_dialog()
 

@@ -54,6 +54,7 @@ size_flags_vertical = 0
 margin_right = 48.0
 margin_bottom = 14.0
 disabled = true
+enabled_focus_mode = 0
 text = "sound"
 align = 0
 
@@ -62,6 +63,7 @@ margin_top = 18.0
 margin_right = 48.0
 margin_bottom = 32.0
 disabled = true
+enabled_focus_mode = 0
 text = "Видео"
 align = 0
 
@@ -70,6 +72,7 @@ margin_top = 36.0
 margin_right = 48.0
 margin_bottom = 50.0
 disabled = true
+enabled_focus_mode = 0
 text = "language"
 align = 0
 
@@ -78,6 +81,7 @@ margin_top = 54.0
 margin_right = 48.0
 margin_bottom = 68.0
 disabled = true
+enabled_focus_mode = 0
 text = "controls"
 align = 0
 
@@ -85,6 +89,8 @@ align = 0
 margin_top = 72.0
 margin_right = 48.0
 margin_bottom = 86.0
+focus_mode = 0
+enabled_focus_mode = 0
 text = "special"
 align = 0
 
@@ -92,6 +98,8 @@ align = 0
 margin_top = 90.0
 margin_right = 48.0
 margin_bottom = 104.0
+focus_mode = 0
+enabled_focus_mode = 0
 text = "exit"
 align = 0
 
