@@ -36,11 +36,11 @@ func _on_approach(body):
 	emit_signal("on_approach", body)
 	
 func _on_leave(_body):
-	action_type = 0
-	Global.active_interaction_controller = null
-	emit_signal("on_leave")
+	force_leave()
 
 func force_leave():
+	action_type = 0
+	Global.active_interaction_controller = null
 	emit_signal("on_leave")
 
 func disabled(isDisabled):
