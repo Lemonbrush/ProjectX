@@ -27,6 +27,7 @@ func show_text(text, button_options = null):
 	remove_buttons()
 	buttonsContainer.visible = button_options != null
 	cursor.focuse(false)
+
 	if button_options:
 		cursor.focuse(true)
 		setup_buttons(button_options)
@@ -64,17 +65,17 @@ func add_text(next_text):
 	if next_text == null:
 		label.visible = false
 		return
-
-	label.visible = true
-	label.text = next_text
 	
 	textTween.interpolate_property(label, "percent_visible", 0.0, 1.0, len(next_text) * CHAR_READ_RATE, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	textTween.start()
+	
+	label.visible = true
+	label.text = next_text
 
 #### Animation logic
 
 func start_show_animation():
-	marginNode.position.y = 10
+	#marginNode.position.y = 10
 	appearanceTween.stop(self)
 	appearanceTween.interpolate_property(self, 'modulate:a', get_modulate().a, 1.0, 0.25, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0)
 	appearanceTween.interpolate_property(buttonHint, 'modulate:a', buttonHint.get_modulate().a, 1.0, 0.25, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0.5)
