@@ -23,7 +23,7 @@ color = Color( 0.0941176, 0.0784314, 0.168627, 0.509804 )
 
 [node name="MarginContainer" type="MarginContainer" parent="MainMarginContainer"]
 margin_right = 530.0
-margin_bottom = 303.0
+margin_bottom = 261.0
 size_flags_vertical = 0
 custom_constants/margin_top = 60
 custom_constants/margin_left = 25
@@ -32,7 +32,7 @@ custom_constants/margin_left = 25
 margin_left = 25.0
 margin_top = 60.0
 margin_right = 188.0
-margin_bottom = 303.0
+margin_bottom = 261.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_constants/separation = 30
@@ -48,8 +48,7 @@ text = "special"
 [node name="OptionsVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer"]
 margin_top = 56.0
 margin_right = 163.0
-margin_bottom = 243.0
-custom_constants/separation = 10
+margin_bottom = 201.0
 
 [node name="GameConstsEditorButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
 margin_right = 163.0
@@ -61,36 +60,36 @@ text = "Редактор сохранений"
 align = 0
 
 [node name="DeleteAllSavesButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
-margin_top = 23.0
+margin_top = 17.0
 margin_right = 163.0
-margin_bottom = 37.0
+margin_bottom = 31.0
 focus_mode = 0
 enabled_focus_mode = 0
 text = "delete_all_saves"
 align = 0
 
 [node name="ResetGameConstantsButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
-margin_top = 47.0
+margin_top = 35.0
 margin_right = 163.0
-margin_bottom = 61.0
+margin_bottom = 49.0
 focus_mode = 0
 enabled_focus_mode = 0
 text = "Сбросить игровые константы"
 align = 0
 
 [node name="DeleteSystemDataButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
-margin_top = 71.0
+margin_top = 53.0
 margin_right = 163.0
-margin_bottom = 85.0
+margin_bottom = 67.0
 focus_mode = 0
 enabled_focus_mode = 0
 text = "reset_options"
 align = 0
 
 [node name="DeleteAllSavesAlwaysCheckBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer" instance=ExtResource( 6 )]
-margin_top = 95.0
+margin_top = 71.0
 margin_right = 163.0
-margin_bottom = 111.0
+margin_bottom = 87.0
 
 [node name="Label" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/DeleteAllSavesAlwaysCheckBoxContainer" index="0"]
 margin_right = 142.0
@@ -101,9 +100,9 @@ margin_left = 147.0
 margin_right = 163.0
 
 [node name="ActivateDebugScreenCheckBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer" instance=ExtResource( 6 )]
-margin_top = 121.0
+margin_top = 91.0
 margin_right = 163.0
-margin_bottom = 137.0
+margin_bottom = 107.0
 
 [node name="Label" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/ActivateDebugScreenCheckBoxContainer" index="0"]
 margin_right = 76.0
@@ -114,12 +113,14 @@ margin_left = 81.0
 margin_right = 97.0
 
 [node name="MenuCursorCheckBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer" instance=ExtResource( 6 )]
+margin_top = 111.0
 margin_right = 163.0
+margin_bottom = 127.0
 
 [node name="ExitButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
-margin_top = 173.0
+margin_top = 131.0
 margin_right = 163.0
-margin_bottom = 187.0
+margin_bottom = 145.0
 focus_mode = 0
 enabled_focus_mode = 0
 text = "exit"
