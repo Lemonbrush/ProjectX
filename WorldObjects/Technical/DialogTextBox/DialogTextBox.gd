@@ -27,10 +27,12 @@ func show_text(text, button_options = null):
 	remove_buttons()
 	buttonsContainer.visible = button_options != null
 	cursor.focuse(false)
+	cursor.cursor_index = 0
 
 	if button_options:
-		cursor.focuse(true)
 		setup_buttons(button_options)
+		cursor.menu_parent_path = buttonsContainer.get_path()
+		cursor.focuse(true)
 		
 	buttonHint.modulate.a = 0.0
 	add_text(text)
