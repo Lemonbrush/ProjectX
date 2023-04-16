@@ -1229,7 +1229,7 @@ shape = SubResource( 3 )
 one_way_collision = true
 
 [node name="PassThroughBody17" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
-position = Vector2( -376, -221 )
+position = Vector2( -376, -219 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody17" index="0"]
 position = Vector2( 570, -50 )

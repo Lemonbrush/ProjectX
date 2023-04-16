@@ -175,7 +175,6 @@ func unhandled_input(event: InputEvent):
 		direction -= left
 	elif event.is_action_pressed("up") && up <= 0.01:
 		up = event.get_action_strength("up")
-		
 		if is_able_to_climb:
 			is_climbing = true
 	elif event.is_action_pressed("down") && down <= 0.01:
