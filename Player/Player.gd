@@ -182,6 +182,9 @@ func unhandled_input(event: InputEvent):
 		down = event.get_action_strength("down")
 		position.y += 1
 	elif event.is_action_pressed("jump"):
+		if Global.is_player_talking:
+			return
+		
 		if is_able_to_glide:
 			 glide = true
 		if !jump && !is_able_to_glide:

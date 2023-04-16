@@ -39,7 +39,7 @@ func _process(_delta):
 	elif menu_parent is GridContainer:
 		set_cursor_from_index(cursor_index + input.x + input.y * menu_parent.columns)
 	
-	if Input.is_action_just_pressed("ui_select") || Input.is_action_just_pressed("Interaction"):
+	if Input.is_action_just_pressed("ui_select"):
 		animation_player.play("Click")
 
 func get_menu_item_at_index(index: int) -> Control:
