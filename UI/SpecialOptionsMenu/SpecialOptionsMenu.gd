@@ -72,13 +72,11 @@ func on_special_options_pressed():
 	get_tree().root.add_child(gameConstsEditorMenuInstance)
 	gameConstsEditorMenuInstance.connect("back_pressed", self, "on_options_back_pressed")
 	mainMarginContainer.visible = false
-	cursor.disable_cursor()
-	cursor.is_focused = false
+	cursor.focuse(false)
 
 func on_options_back_pressed():
 	mainMarginContainer.visible = true
-	cursor.activate_cursor()
-	cursor.is_focused = true
+	cursor.focuse(true)
 
 func on_reset_game_constants_pressed():
 	GameEventConstants.set_default_constants()
