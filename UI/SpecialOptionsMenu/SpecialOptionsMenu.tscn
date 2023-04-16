@@ -53,7 +53,9 @@ custom_constants/separation = 10
 [node name="GameConstsEditorButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
 margin_right = 156.0
 margin_bottom = 13.0
+focus_mode = 0
 custom_fonts/font = ExtResource( 4 )
+enabled_focus_mode = 0
 text = "Редактор сохранений"
 align = 0
 
@@ -61,6 +63,8 @@ align = 0
 margin_top = 23.0
 margin_right = 156.0
 margin_bottom = 37.0
+focus_mode = 0
+enabled_focus_mode = 0
 text = "delete_all_saves"
 align = 0
 
@@ -68,6 +72,8 @@ align = 0
 margin_top = 47.0
 margin_right = 156.0
 margin_bottom = 61.0
+focus_mode = 0
+enabled_focus_mode = 0
 text = "Сбросить игровые константы"
 align = 0
 
@@ -75,6 +81,8 @@ align = 0
 margin_top = 71.0
 margin_right = 156.0
 margin_bottom = 85.0
+focus_mode = 0
+enabled_focus_mode = 0
 text = "reset_options"
 align = 0
 
@@ -96,7 +104,9 @@ text = "autodelete_all_saves"
 margin_left = 112.0
 margin_right = 128.0
 margin_bottom = 16.0
+focus_mode = 0
 size_flags_horizontal = 5
+enabled_focus_mode = 0
 
 [node name="ActivateDebugScreenCheckBoxContainer" type="HBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
 margin_top = 121.0
@@ -116,6 +126,8 @@ text = "debug_screen"
 margin_left = 80.0
 margin_right = 96.0
 margin_bottom = 16.0
+focus_mode = 0
+enabled_focus_mode = 0
 
 [node name="MenuCursorCheckBoxContainer" type="HBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
 margin_top = 147.0
@@ -135,11 +147,15 @@ text = "Курсор"
 margin_left = 46.0
 margin_right = 62.0
 margin_bottom = 16.0
+focus_mode = 0
+enabled_focus_mode = 0
 
 [node name="ExitButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
 margin_top = 173.0
 margin_right = 156.0
 margin_bottom = 187.0
+focus_mode = 0
+enabled_focus_mode = 0
 text = "exit"
 align = 0
 

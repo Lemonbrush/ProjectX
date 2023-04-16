@@ -42,6 +42,9 @@ func setup_ui():
 	deleteAllSavesByDefaultRadiobutton.pressed = SettingsManager.settings.should_delete_all_saves_on_start_session
 	activateDebugScreenRadiobutton.pressed = SettingsManager.settings.is_debug_screen_active
 	menuCursorCheckbox.pressed = SettingsManager.settings.is_cursor_active
+	
+	EventBus.did_update_cursor_setting()
+	EventBus.debug_screen_visibility_updated()
 
 func on_quit_pressed():
 	queue_free()
