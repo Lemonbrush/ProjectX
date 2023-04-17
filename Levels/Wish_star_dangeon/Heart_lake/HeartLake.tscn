@@ -622,7 +622,7 @@ tracks/14/keys = {
 "values": [ false ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Camera2D:position")
+tracks/15/path = NodePath("Main_world_objects/MysticDweller:is_player_interaction_active")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/imported = false
@@ -631,10 +631,10 @@ tracks/15/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -40, -201 ) ]
+"values": [ true ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Main_world_objects/MysticDweller:is_player_interaction_active")
+tracks/16/path = NodePath("Main_world_objects/MysticDweller/Body/InteractionController:action_type")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/imported = false
@@ -643,10 +643,10 @@ tracks/16/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ true ]
+"values": [ 0 ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Main_world_objects/MysticDweller/Body/InteractionController:action_type")
+tracks/17/path = NodePath("Main_world_objects/MysticDweller/DialogTextBoxController:visible")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/imported = false
@@ -655,10 +655,10 @@ tracks/17/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0 ]
+"values": [ true ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Main_world_objects/MysticDweller/DialogTextBoxController:visible")
+tracks/18/path = NodePath("Main_world_objects/MysticDweller/Body/Sprite:frame")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/imported = false
@@ -667,10 +667,10 @@ tracks/18/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ true ]
+"values": [ 52 ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Main_world_objects/MysticDweller/Body/Sprite:frame")
+tracks/19/path = NodePath("Main_world_objects/BackEntrance/Wide_torch:is_torch_activated")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/imported = false
@@ -679,10 +679,10 @@ tracks/19/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 52 ]
+"values": [ false ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Main_world_objects/BackEntrance/Wide_torch:is_torch_activated")
+tracks/20/path = NodePath("Main_world_objects/BackEntrance/Wide_torch2:is_torch_activated")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/imported = false
@@ -694,7 +694,7 @@ tracks/20/keys = {
 "values": [ false ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Main_world_objects/BackEntrance/Wide_torch2:is_torch_activated")
+tracks/21/path = NodePath("Main_world_objects/DustParticles2D:emitting")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/imported = false
@@ -706,7 +706,7 @@ tracks/21/keys = {
 "values": [ false ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Main_world_objects/DustParticles2D:emitting")
+tracks/22/path = NodePath("Main_world_objects/MysticDweller:visible")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/imported = false
@@ -715,10 +715,10 @@ tracks/22/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ true ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Main_world_objects/MysticDweller:visible")
+tracks/23/path = NodePath("Main_world_objects/MysticDweller/Body/InteractionController/Area2D/CollisionShape2D:disabled")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/imported = false
@@ -727,27 +727,15 @@ tracks/23/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ true ]
+"values": [ false ]
 }
 tracks/24/type = "value"
-tracks/24/path = NodePath("Main_world_objects/MysticDweller/Body/InteractionController/Area2D/CollisionShape2D:disabled")
+tracks/24/path = NodePath("Main_world_objects/MysticDweller:custom_animations_behavior")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/imported = false
 tracks/24/enabled = true
 tracks/24/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
-}
-tracks/25/type = "value"
-tracks/25/path = NodePath("Main_world_objects/MysticDweller:custom_animations_behavior")
-tracks/25/interp = 1
-tracks/25/loop_wrap = true
-tracks/25/imported = false
-tracks/25/enabled = true
-tracks/25/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -962,7 +950,7 @@ anims/Mystic_dweller_disappearance_cutscene = SubResource( 37 )
 anims/RESET = SubResource( 18 )
 
 [node name="Camera2D" parent="." index="4"]
-position = Vector2( -40, -201 )
+position = Vector2( -733, -25 )
 
 [node name="Clouds" parent="Camera2D" index="2" instance=ExtResource( 7 )]
 
@@ -1155,7 +1143,7 @@ format = 1
 tile_data = PoolIntArray( -44827185, 11, 0, -44171767, 8, 0, -44236540, 8, 0, -43975095, 1, 0, -44040064, 11, 0, -44040038, 1, 0, -43974260, 11, 0, -43778609, 11, 0, -42991488, 11, 0, -42925684, 11, 0, -42730033, 11, 0, -42663676, 8, 0, -42533367, 8, 0, -41877943, 1, 0, -41942912, 11, 0, -41942886, 1, 0, -41942644, 11, 0, -41681457, 11, 0, -41025276, 8, 0, -40894967, 8, 0, -40894336, 11, 0, -40894068, 11, 0, -40632881, 11, 0, -39780791, 1, 0, -39845760, 11, 0, -39845734, 1, 0, -39845492, 11, 0, -39584305, 11, 0, -39322103, 8, 0, -39386876, 8, 0, -38797184, 11, 0, -38796916, 11, 0, -38535729, 11, 0, -37683703, 8, 0, -37683639, 1, 0, -37748608, 11, 0, -37748582, 1, 0, -37748476, 8, 0, -37748340, 11, 0, -37487153, 11, 0, -36700032, 11, 0, -36699764, 11, 0, -36438577, 11, 0, -36045303, 8, 0, -36110076, 8, 0, -35586487, 1, 0, -35651456, 11, 0, -35651430, 1, 0, -35651188, 11, 0, -35390001, 11, 0, -34602880, 11, 0, -34602612, 11, 0, -34406903, 8, 0, -34471676, 8, 0, -34341425, 11, 0, -33489335, 1, 0, -33554304, 11, 0, -33554278, 1, 0, -33554036, 11, 0, -33292849, 11, 0, -32768503, 8, 0, -32833276, 8, 0, -32505728, 11, 0, -32505460, 11, 0, -32244273, 11, 0, -31392183, 1, 0, -31457152, 11, 0, -31457126, 1, 0, -31456884, 11, 0, -31195697, 11, 0, -31130103, 8, 0, -31194876, 8, 0, -30408576, 11, 0, -30408308, 11, 0, -30147121, 11, 0, -29491703, 8, 0, -29556476, 8, 0, -29295031, 1, 0, -29360000, 11, 0, -29359974, 1, 0, -29359732, 11, 0, -29098545, 11, 0, -28311424, 11, 0, -28311156, 11, 0, -28049969, 11, 0, -27853303, 8, 0, -27918076, 8, 0, -27197879, 1, 0, -27262848, 11, 0, -27262822, 1, 0, -27262580, 11, 0, -27001393, 11, 0, -26214903, 8, 0, -26279676, 8, 0, -26214272, 11, 0, -26214004, 11, 0, -26018353, 11, 0, -25100727, 1, 0, -25165696, 11, 0, -25165670, 1, 0, -25165428, 11, 0, -24969777, 11, 0, -24576503, 8, 0, -24641276, 8, 0, -24117120, 11, 0, -24116852, 11, 0, -23921201, 11, 0, -23003575, 1, 0, -23068544, 11, 0, -23068518, 1, 0, -23068276, 11, 0, -22938103, 8, 0, -23002876, 8, 0, -22872625, 11, 0, -22019968, 11, 0, -22019700, 11, 0, -21824049, 11, 0, -21299703, 8, 0, -21364476, 8, 0, -20906423, 1, 0, -20971392, 11, 0, -20971366, 1, 0, -20971124, 11, 0, -20841009, 11, 0, -19922816, 11, 0, -19922548, 11, 0, -19792433, 11, 0, -19661303, 8, 0, -19726076, 8, 0, -18809271, 1, 0, -18874240, 11, 0, -18874214, 1, 0, -18873972, 11, 0, -18743857, 11, 0, -18022903, 8, 0, -18087676, 8, 0, -17760817, 11, 0, -17825664, 11, 0, -17825396, 11, 0, -16712241, 11, 0, -16712119, 1, 0, -16777088, 11, 0, -16777062, 1, 0, -16776820, 11, 0, -16384503, 8, 0, -16449276, 8, 0, -15663665, 11, 0, -15728512, 11, 0, -15728244, 11, 0, -14746103, 8, 0, -14810876, 8, 0, -14615089, 11, 0, -14614967, 1, 0, -14679936, 11, 0, -14679910, 1, 0, -14679668, 11, 0, -13566513, 11, 0, -13631360, 11, 0, -13631092, 11, 0, -13107703, 8, 0, -13172476, 8, 0, -12517937, 11, 0, -12517815, 1, 0, -12582784, 11, 0, -12582758, 1, 0, -12582516, 11, 0, -11469361, 11, 0, -11469303, 8, 0, -11534208, 11, 0, -11534076, 8, 0, -11533940, 11, 0, -10420785, 11, 0, -10420663, 1, 0, -10485632, 11, 0, -10485606, 1, 0, -10485364, 11, 0, -9830903, 8, 0, -9895676, 8, 0, -9372209, 11, 0, -9437056, 11, 0, -9436788, 11, 0, -8323633, 11, 0, -8323511, 1, 0, -8388480, 11, 0, -8388454, 1, 0, -8388212, 11, 0, -8192503, 8, 0, -8257276, 8, 0, -7340197, 536870920, 0, -7275057, 11, 0, -7339904, 11, 0, -7339636, 11, 0, -6554103, 8, 0, -6618876, 8, 0, -6226481, 11, 0, -6226359, 1, 0, -6291328, 11, 0, -6291302, 1, 0, -6291060, 11, 0, -5701797, 536870920, 0, -5439760, 8, 0, -5177905, 11, 0, -5242752, 11, 0, -5242484, 11, 0, -4915703, 8, 0, -4980476, 8, 0, -4129329, 11, 0, -4129207, 1, 0, -4194176, 11, 0, -4194150, 1, 0, -4193908, 11, 0, -3866896, 8, 0, -3277303, 8, 0, -3342076, 8, 0, -3080753, 11, 0, -3145600, 11, 0, -3145332, 11, 0, -2228496, 8, 0, -2032177, 11, 0, -2032055, 2, 0, -2097024, 11, 0, -2096998, 2, 0, -2096756, 11, 0, -1638903, 7, 0, -1703676, 7, 0, -983601, 10, 0, -1048448, 10, 0, -1048180, 10, 0 )
 
 [node name="Player" parent="." index="9"]
-position = Vector2( -54, -176 )
+position = Vector2( -733, -1 )
 
 [node name="Light2D2" parent="Player" index="5"]
 visible = false
