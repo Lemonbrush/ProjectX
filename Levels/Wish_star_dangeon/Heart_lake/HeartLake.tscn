@@ -646,7 +646,7 @@ tracks/16/keys = {
 "values": [ 52 ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Main_world_objects/BackEntrance/Wide_torch:is_torch_activated")
+tracks/17/path = NodePath("Main_world_objects/DustParticles2D:emitting")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/imported = false
@@ -658,7 +658,7 @@ tracks/17/keys = {
 "values": [ false ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Main_world_objects/BackEntrance/Wide_torch2:is_torch_activated")
+tracks/18/path = NodePath("Main_world_objects/MysticDweller:visible")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/imported = false
@@ -667,10 +667,10 @@ tracks/18/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ true ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Main_world_objects/DustParticles2D:emitting")
+tracks/19/path = NodePath("Main_world_objects/MysticDweller/Body/InteractionController/Area2D/CollisionShape2D:disabled")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/imported = false
@@ -682,36 +682,12 @@ tracks/19/keys = {
 "values": [ false ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Main_world_objects/MysticDweller:visible")
+tracks/20/path = NodePath("Main_world_objects/MysticDweller:custom_animations_behavior")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/imported = false
 tracks/20/enabled = true
 tracks/20/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ true ]
-}
-tracks/21/type = "value"
-tracks/21/path = NodePath("Main_world_objects/MysticDweller/Body/InteractionController/Area2D/CollisionShape2D:disabled")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
-}
-tracks/22/type = "value"
-tracks/22/path = NodePath("Main_world_objects/MysticDweller:custom_animations_behavior")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
