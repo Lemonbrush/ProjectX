@@ -1,5 +1,7 @@
 extends BaseLevel
 
+onready var heart_item = $Main_world_objects/CutsceneObjects/AssembledHeartItem
+
 func _ready():
 	var _connection = EventBus.connect("show_heart_assembling_cutscene", self, "show_heart_assembling_cutscene") 
 	var _connection_disappear_cut = EventBus.connect("show_mystic_dweller_heart_assembler_disappear_cutscene", self, "show_mystic_dweller_heart_assembler_disappear_cutscene")
