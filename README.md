@@ -1,4 +1,4 @@
-# Project X
+# [Project X](https://lemonbrush.itch.io/kissies)
 
 ## [🎯 CHANGELOG](https://github.com/Lemonbrush/ProjectX/blob/main/ProjectResources/CHANGELOG.md)
 
