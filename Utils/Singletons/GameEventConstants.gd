@@ -59,7 +59,6 @@ func set_constant(constant_name, value):
 	if constants.has(constant_name):
 		constants[constant_name] = value
 		EventBus.game_const_changed()
-		FileManager.save_game()
 	else:
 		print("Error setting game constant - ", constant_name, " with value ", value)
 

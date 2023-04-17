@@ -681,7 +681,7 @@ anims/Platforms_lift_cutscene = SubResource( 101 )
 anims/RESET = SubResource( 100 )
 
 [node name="Camera2D" parent="." index="5"]
-position = Vector2( 58, -32 )
+position = Vector2( 905, 13 )
 backgroundColor = Color( 0.176471, 0.152941, 0.25098, 1 )
 
 [node name="Stars" parent="Camera2D" index="2" instance=ExtResource( 8 )]
@@ -1693,7 +1693,6 @@ anims/Loop = SubResource( 92 )
 anims/RESET = SubResource( 93 )
 
 [node name="Interactive_platforms" type="Node2D" parent="Moving_platforms" index="2"]
-visible = false
 
 [node name="Interactive_platform_1" type="Node2D" parent="Moving_platforms/Interactive_platforms" index="0"]
 position = Vector2( -1, -45 )
@@ -1707,7 +1706,6 @@ position = Vector2( 906, 66 )
 
 [node name="CollisionShape2D" parent="Moving_platforms/Interactive_platforms/Interactive_platform_1/PassThroughBody15" index="0"]
 shape = SubResource( 18 )
-disabled = true
 
 [node name="Wide_torch" parent="Moving_platforms/Interactive_platforms/Interactive_platform_1" index="2" instance=ExtResource( 10 )]
 position = Vector2( 906, 52 )
@@ -1724,7 +1722,6 @@ position = Vector2( 906, 66 )
 
 [node name="CollisionShape2D" parent="Moving_platforms/Interactive_platforms/Interactive_platform_2/PassThroughBody15" index="0"]
 shape = SubResource( 18 )
-disabled = true
 
 [node name="Wide_torch" parent="Moving_platforms/Interactive_platforms/Interactive_platform_2" index="2" instance=ExtResource( 10 )]
 position = Vector2( 906, 52 )
@@ -1741,7 +1738,6 @@ position = Vector2( 906, 66 )
 
 [node name="CollisionShape2D" parent="Moving_platforms/Interactive_platforms/Interactive_platform_3/PassThroughBody15" index="0"]
 shape = SubResource( 18 )
-disabled = true
 
 [node name="Wide_torch" parent="Moving_platforms/Interactive_platforms/Interactive_platform_3" index="2" instance=ExtResource( 10 )]
 position = Vector2( 906, 52 )
@@ -1758,7 +1754,6 @@ position = Vector2( 906, 66 )
 
 [node name="CollisionShape2D" parent="Moving_platforms/Interactive_platforms/Interactive_platform_4/PassThroughBody15" index="0"]
 shape = SubResource( 18 )
-disabled = true
 
 [node name="Wide_torch" parent="Moving_platforms/Interactive_platforms/Interactive_platform_4" index="2" instance=ExtResource( 10 )]
 position = Vector2( 906, 52 )
