@@ -18,6 +18,7 @@ func did_choose_option_number(option_number):
 	process_response_chosen_option(option_number)
 
 func finish_dialog():
+	Global.is_player_talking = false
 	dialogTextBox.hide()
 	dialogManager = null
 	
@@ -39,7 +40,8 @@ func on_interact(_body):
 			return
 			
 		phrase = next_phrase
-	
+
+	Global.is_player_talking = true
 	process_gialog_interaction(phrase)
 
 func process_gialog_interaction(phrase):
@@ -54,8 +56,8 @@ func process_gialog_interaction(phrase):
 			process_response(phrase)
 			dialogTextBox.set_button_hint_visibility(false)
 		"dialog":
-			dialogTextBox.set_button_hint_visibility(true)
 			process_dialog(phrase)
+			dialogTextBox.set_button_hint_visibility(true)
 		_:
 			finish_dialog()
 

@@ -1,14 +1,15 @@
 extends Node2D
 class_name InteractionController
 
-onready var area2D = $Area2D
-onready var collisionShape = $Area2D/CollisionShape2D
-
 enum ActionType {
 	UNABLE_TO_INTERACT,
 	INTERACT
 }
 
+onready var area2D = $Area2D
+onready var collisionShape = $Area2D/CollisionShape2D
+
+export(bool) var is_player_interaction_active = true
 export(ActionType) var action_type = 0
 
 signal on_approach(player, controller, body)
@@ -35,9 +36,12 @@ func _on_approach(body):
 	emit_signal("on_approach", body)
 	
 func _on_leave(_body):
+	force_leave()
+
+func force_leave():
 	action_type = 0
 	Global.active_interaction_controller = null
 	emit_signal("on_leave")
-	
+
 func disabled(isDisabled):
 	collisionShape.disabled = isDisabled

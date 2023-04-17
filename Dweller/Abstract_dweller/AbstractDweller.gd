@@ -10,6 +10,7 @@ export(Resource) var currentState
 export var currentActionIndex = 0
 export(bool) var watch_player_on_talk = true
 export(String) var custome_animation
+export(bool) var is_player_interaction_active = true
 export(bool) var custom_animations_behavior = false
 
 export(Direction) var defaultDirection = Direction.LEFT
@@ -133,11 +134,12 @@ func finish_talking():
 		body.scale.x = defaultDirection
 
 func on_npc_approach(_body):
-	interactionPopup.show()
+	if is_player_interaction_active:
+		interactionPopup.show()
 
 func on_npc_interact(interactedBody):
 	interactionPopup.hide()
-	if currentState.state != State.TALKING && currentState.state != State.CUSTOME:
+	if currentState.state != State.TALKING && currentState.state != State.CUSTOME && is_player_interaction_active:
 		is_state_new = true
 		currentState = TalkNpcAction.new()
 		
@@ -165,6 +167,9 @@ func act_timer_timeout():
 
 ### Helpers
 
+func hide_popup():
+	interactionPopup.hide()
+
 func process_still(delta):
 	velocity.y += gravity * delta
 	velocity.x = 0
@@ -177,7 +182,10 @@ func set_animation_with_state(state):
 		State.WALKING:
 			animationPlayer.play("Walk")
 		State.TALKING:
-			animationPlayer.play("Idle")
+			if animationPlayer.has_animation("Talking"):
+				animationPlayer.play("Talking")
+			else:
+				animationPlayer.play("Idle")
 		State.ACTING:
 			animationPlayer.play("Act")
 		State.CUSTOME:

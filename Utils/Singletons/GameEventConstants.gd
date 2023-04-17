@@ -47,7 +47,11 @@ func set_default_constants():
 		redThredItem_picked_up = false,
 		is_creator_house_desk_inspected = false,
 		artist_gifted_the_thread = false,
-		did_speak_to_creator_house_welcomer = false
+		did_speak_to_creator_house_welcomer = false,
+		left_side_heart_picked_up = false,
+		right_side_heart_picked_up = false,
+		assembled_heart_picked_uo = false,
+		did_trigger_heart_assembling_cutscene = false
 	}
 	EventBus.game_const_changed()
 
@@ -55,7 +59,6 @@ func set_constant(constant_name, value):
 	if constants.has(constant_name):
 		constants[constant_name] = value
 		EventBus.game_const_changed()
-		FileManager.save_game()
 	else:
 		print("Error setting game constant - ", constant_name, " with value ", value)
 

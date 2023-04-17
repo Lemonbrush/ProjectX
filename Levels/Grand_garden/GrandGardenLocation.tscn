@@ -130,6 +130,14 @@
 [ext_resource path="res://Assets/Levels/Grand_garden/World_objects/Handles.png" type="Texture" id=129]
 [ext_resource path="res://WorldObjects/Pick_ups/Items/Banana/BananaItem.tscn" type="PackedScene" id=130]
 
+[sub_resource type="Environment" id=399]
+background_mode = 4
+ambient_light_energy = 0.0
+glow_enabled = true
+glow_hdr_threshold = 1.5
+adjustment_enabled = true
+adjustment_saturation = 1.3
+
 [sub_resource type="Animation" id=312]
 resource_name = "Grand_flower_opening_cut_scene"
 length = 16.0
@@ -3452,18 +3460,13 @@ anim_offset = 1.0
 anim_offset_random = 1.0
 anim_offset_curve = SubResource( 328 )
 
-[sub_resource type="Environment" id=399]
-background_mode = 4
-ambient_light_energy = 0.0
-glow_enabled = true
-glow_hdr_threshold = 1.5
-adjustment_enabled = true
-adjustment_saturation = 1.3
-
 [node name="GrandGarden" instance=ExtResource( 3 )]
 script = ExtResource( 35 )
 
-[node name="AnimationPlayer" parent="." index="1"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
+environment = SubResource( 399 )
+
+[node name="AnimationPlayer" parent="." index="2"]
 autoplay = ""
 anims/Grand_flower_opening_cut_scene = SubResource( 312 )
 anims/RESET = SubResource( 257 )
@@ -3471,7 +3474,7 @@ anims/White_flower_grow_cut_scene = SubResource( 270 )
 anims/left_tower_cork_animation = SubResource( 255 )
 anims/right_tower_cork_animation = SubResource( 256 )
 
-[node name="ParallaxBackground2" type="ParallaxBackground" parent="." index="2"]
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="." index="3"]
 scroll_limit_end = Vector2( 0, 320 )
 
 [node name="BackgroundSprite" type="Sprite" parent="ParallaxBackground2" index="0"]
@@ -3482,7 +3485,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Background_sprites" type="Node2D" parent="." index="3"]
+[node name="Background_sprites" type="Node2D" parent="." index="4"]
 
 [node name="Top_gradient_background" type="Sprite" parent="Background_sprites" index="0"]
 position = Vector2( -2335, -1814 )
@@ -3528,11 +3531,11 @@ texture = ExtResource( 18 )
 position = Vector2( 127, 1036 )
 texture = ExtResource( 19 )
 
-[node name="Camera2D" parent="." index="4"]
+[node name="Camera2D" parent="." index="5"]
 position = Vector2( 207, 497 )
 backgroundColor = Color( 0.698039, 0.870588, 1, 1 )
 
-[node name="Background_world_objects" type="Node2D" parent="." index="5"]
+[node name="Background_world_objects" type="Node2D" parent="." index="6"]
 
 [node name="Trees" type="Node2D" parent="Background_world_objects" index="0"]
 
@@ -3652,19 +3655,19 @@ position = Vector2( 727, -711 )
 [node name="DarkTree4" parent="Background_world_objects/Trees/Grand_tree_top/Foreground_trees" index="11" instance=ExtResource( 13 )]
 position = Vector2( 615, -760 )
 
-[node name="WorldSprite" parent="." index="6"]
+[node name="WorldSprite" parent="." index="7"]
 position = Vector2( 150, -484 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="GrandGardenDoor" parent="." index="7" instance=ExtResource( 38 )]
+[node name="GrandGardenDoor" parent="." index="8" instance=ExtResource( 38 )]
 position = Vector2( 208, 528 )
 nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "GrandGardenDoor"
 
-[node name="World_objects" type="Node2D" parent="." index="8"]
+[node name="World_objects" type="Node2D" parent="." index="9"]
 pause_mode = 2
 position = Vector2( 150, -484 )
 
@@ -3879,7 +3882,7 @@ position = Vector2( 328, -956 )
 position = Vector2( 337, -978 )
 scale = Vector2( -1, 1 )
 
-[node name="Fountains" type="Node2D" parent="." index="9"]
+[node name="Fountains" type="Node2D" parent="." index="10"]
 
 [node name="Inactive_fountains" type="Node2D" parent="Fountains" index="0"]
 
@@ -3999,7 +4002,7 @@ cell_size = Vector2( 1, 1 )
 format = 1
 tile_data = PoolIntArray( 13501218, 536870912, 0, 15205154, 536870913, 0, 16909090, 536870913, 0, 18613026, 536870913, 0, 20316962, 536870914, 0 )
 
-[node name="Upper_background_objects" type="Node2D" parent="." index="10"]
+[node name="Upper_background_objects" type="Node2D" parent="." index="11"]
 position = Vector2( 150, -484 )
 
 [node name="Trees" type="Node2D" parent="Upper_background_objects" index="0"]
@@ -4011,8 +4014,6 @@ position = Vector2( -150, 484 )
 
 [node name="White_flower_dweller" parent="Upper_background_objects/Dwellers" index="0" instance=ExtResource( 39 )]
 position = Vector2( 249, 528 )
-collision_layer = 3
-collision_mask = 0
 dialogId = "White_flower_dweller"
 actions = [ ExtResource( 41 ) ]
 
@@ -4038,8 +4039,6 @@ anims/RESET = SubResource( 261 )
 
 [node name="Blue_flower_dweller" parent="Upper_background_objects/Dwellers" index="1" instance=ExtResource( 39 )]
 position = Vector2( 909, 496 )
-collision_layer = 3
-collision_mask = 0
 dialogId = "blue_flower_dweller"
 
 [node name="Sprite" type="Sprite" parent="Upper_background_objects/Dwellers/Blue_flower_dweller/Body" index="2"]
@@ -4054,8 +4053,6 @@ anims/RESET = SubResource( 263 )
 
 [node name="Green_flower_dweller" parent="Upper_background_objects/Dwellers" index="2" instance=ExtResource( 39 )]
 position = Vector2( 1085, 303 )
-collision_layer = 3
-collision_mask = 0
 dialogId = "green_flower_dweller"
 
 [node name="Sprite" type="Sprite" parent="Upper_background_objects/Dwellers/Green_flower_dweller/Body" index="2"]
@@ -4070,8 +4067,6 @@ anims/RESET = SubResource( 267 )
 
 [node name="Dandy_dweller" parent="Upper_background_objects/Dwellers" index="3" instance=ExtResource( 39 )]
 position = Vector2( -557, -80 )
-collision_layer = 3
-collision_mask = 0
 dialogId = "dandy_flower_dweller"
 
 [node name="Sprite" type="Sprite" parent="Upper_background_objects/Dwellers/Dandy_dweller/Body" index="2"]
@@ -4086,8 +4081,6 @@ anims/RESET = SubResource( 269 )
 
 [node name="Rose_flower_dweller" parent="Upper_background_objects/Dwellers" index="4" instance=ExtResource( 39 )]
 position = Vector2( 234, 240 )
-collision_layer = 3
-collision_mask = 0
 dialogId = "lover_red_flower_dweller"
 
 [node name="Sprite" type="Sprite" parent="Upper_background_objects/Dwellers/Rose_flower_dweller/Body" index="2"]
@@ -4105,8 +4098,6 @@ anims/RESET = SubResource( 284 )
 
 [node name="Red_flower_dweller" parent="Upper_background_objects/Dwellers" index="5" instance=ExtResource( 39 )]
 position = Vector2( -137, -1105 )
-collision_layer = 3
-collision_mask = 0
 dialogId = "red_flower_dweller"
 
 [node name="InteractionPopup" parent="Upper_background_objects/Dwellers/Red_flower_dweller" index="3"]
@@ -4127,8 +4118,6 @@ anims/RESET = SubResource( 300 )
 
 [node name="Yellow_flower_dweller" parent="Upper_background_objects/Dwellers" index="6" instance=ExtResource( 39 )]
 position = Vector2( 333, -1155 )
-collision_layer = 3
-collision_mask = 0
 dialogId = "jump_flower_dweller"
 
 [node name="InteractionPopup" parent="Upper_background_objects/Dwellers/Yellow_flower_dweller" index="3"]
@@ -4149,8 +4138,6 @@ anims/RESET = SubResource( 302 )
 
 [node name="Magenta_flower_dweller" parent="Upper_background_objects/Dwellers" index="7" instance=ExtResource( 39 )]
 position = Vector2( 79, -1088 )
-collision_layer = 3
-collision_mask = 0
 dialogId = "magenta_flower_dweller"
 
 [node name="Sprite" type="Sprite" parent="Upper_background_objects/Dwellers/Magenta_flower_dweller/Body" index="2"]
@@ -4166,8 +4153,6 @@ anims/RESET = SubResource( 304 )
 [node name="Pink_flower_dweller" parent="Upper_background_objects/Dwellers" index="8" instance=ExtResource( 39 )]
 position = Vector2( 462, -1074 )
 z_index = 1
-collision_layer = 3
-collision_mask = 0
 dialogId = "pink_flower_dweller"
 
 [node name="InteractionPopup" parent="Upper_background_objects/Dwellers/Pink_flower_dweller" index="3"]
@@ -4188,8 +4173,6 @@ anims/RESET = SubResource( 306 )
 
 [node name="Cactus_flower_dweller" parent="Upper_background_objects/Dwellers" index="9" instance=ExtResource( 39 )]
 position = Vector2( 56, -1185 )
-collision_layer = 3
-collision_mask = 0
 dialogId = "cactus_dweller"
 
 [node name="Sprite" type="Sprite" parent="Upper_background_objects/Dwellers/Cactus_flower_dweller/Body" index="2"]
@@ -4215,8 +4198,6 @@ texture = ExtResource( 47 )
 
 [node name="Master_white_flower_dweller" parent="Upper_background_objects/Dwellers" index="10" instance=ExtResource( 39 )]
 position = Vector2( 678, -1078 )
-collision_layer = 3
-collision_mask = 0
 dialogId = "old_white_flower_dweller"
 
 [node name="InteractionPopup" parent="Upper_background_objects/Dwellers/Master_white_flower_dweller" index="3"]
@@ -4607,7 +4588,7 @@ process_material = SubResource( 335 )
 [node name="BananaItem" parent="Upper_background_objects" index="7" instance=ExtResource( 130 )]
 position = Vector2( 460, -660 )
 
-[node name="Player" parent="." index="11"]
+[node name="Player" parent="." index="12"]
 position = Vector2( 160, -798 )
 z_index = 1
 collision_mask = 252
@@ -4615,7 +4596,7 @@ collision_mask = 252
 [node name="Light2D2" parent="Player" index="5"]
 visible = false
 
-[node name="Foreground_world_objects" type="Node2D" parent="." index="12"]
+[node name="Foreground_world_objects" type="Node2D" parent="." index="13"]
 
 [node name="Tree_top_leafs" type="Sprite" parent="Foreground_world_objects" index="0"]
 position = Vector2( 231, -914 )
@@ -8492,7 +8473,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="WaterSurface" type="Node2D" parent="." index="18"]
+[node name="WaterSurface" type="Node2D" parent="." index="19"]
 pause_mode = 2
 position = Vector2( 226, 873 )
 
@@ -8557,7 +8538,7 @@ margin_top = -25.0
 margin_right = 5296.0
 margin_bottom = 344.0
 
-[node name="Clouds" parent="." index="19" instance=ExtResource( 24 )]
+[node name="Clouds" parent="." index="20" instance=ExtResource( 24 )]
 position = Vector2( 193, -87 )
 z_index = -2
 __meta__ = {
@@ -8570,7 +8551,7 @@ amount = 800
 lifetime = 50.0
 process_material = SubResource( 253 )
 
-[node name="StarParticles" type="Particles2D" parent="." index="20"]
+[node name="StarParticles" type="Particles2D" parent="." index="21"]
 pause_mode = 2
 self_modulate = Color( 1, 1, 1, 0.784314 )
 show_behind_parent = true
@@ -8581,9 +8562,6 @@ preprocess = 10.0
 randomness = 1.0
 local_coords = false
 process_material = SubResource( 397 )
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="21"]
-environment = SubResource( 399 )
 
 [editable path="Background_world_objects/Trees/Grand_tree_top/Foreground_trees/DarkTree14"]
 [editable path="Background_world_objects/Trees/Grand_tree_top/Foreground_trees/DarkTree14/PassThroughBody"]

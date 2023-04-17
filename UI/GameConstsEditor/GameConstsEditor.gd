@@ -23,6 +23,7 @@ func update_game_const_list():
 	for game_const in GameEventConstants.constants:
 		var value = GameEventConstants.constants[game_const]
 		var button = Button.new()
+		button.align = Button.ALIGN_LEFT
 		button.rect_scale = Vector2(0.6,0.6)
 		button.text = game_const + " " + str(value)
 		gameConstsList.add_child(button)

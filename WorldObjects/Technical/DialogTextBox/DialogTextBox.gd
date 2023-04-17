@@ -11,6 +11,7 @@ onready var label = $MarginNode/PanelContainer/MarginContainer/VBoxContainer/Lab
 onready var marginNode = $MarginNode
 onready var buttonHint = $MarginNode/PanelContainer/ButtonHint
 onready var buttonsContainer = $MarginNode/PanelContainer/MarginContainer/VBoxContainer/ButtonsContainer
+onready var cursor = $MarginNode/MenuCursor
 
 var animated_button_scene_path = preload("res://UI/Animated_dialog_button/AnimatedDialogButton.tscn")
 var float_animation_direction_up = false
@@ -25,8 +26,13 @@ func _ready():
 func show_text(text, button_options = null):
 	remove_buttons()
 	buttonsContainer.visible = button_options != null
+	cursor.focuse(false)
+	cursor.cursor_index = 0
+
 	if button_options:
 		setup_buttons(button_options)
+		cursor.menu_parent_path = buttonsContainer.get_path()
+		cursor.focuse(true)
 		
 	buttonHint.modulate.a = 0.0
 	add_text(text)
@@ -61,17 +67,17 @@ func add_text(next_text):
 	if next_text == null:
 		label.visible = false
 		return
-
-	label.visible = true
-	label.text = next_text
 	
 	textTween.interpolate_property(label, "percent_visible", 0.0, 1.0, len(next_text) * CHAR_READ_RATE, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	textTween.start()
+	
+	label.percent_visible = 0
+	label.visible = true
+	label.text = next_text 
 
 #### Animation logic
 
 func start_show_animation():
-	marginNode.position.y = 10
 	appearanceTween.stop(self)
 	appearanceTween.interpolate_property(self, 'modulate:a', get_modulate().a, 1.0, 0.25, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0)
 	appearanceTween.interpolate_property(buttonHint, 'modulate:a', buttonHint.get_modulate().a, 1.0, 0.25, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0.5)

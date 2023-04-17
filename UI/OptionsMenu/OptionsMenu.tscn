@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Resources/Fonts/Epilepsy Sans/Resource/EpilepsySansBold.tres" type="DynamicFont" id=1]
 [ext_resource path="res://UI/OptionsMenu/OptionsMenu.gd" type="Script" id=2]
 [ext_resource path="res://Resources/Themes/MainTheme.tres" type="Theme" id=3]
+[ext_resource path="res://UI/Cursor/MenuCursor.tscn" type="PackedScene" id=4]
 
 [node name="OptionsMenu" type="CanvasLayer"]
 pause_mode = 2
@@ -16,77 +17,93 @@ theme = ExtResource( 3 )
 [node name="ColorRect" type="ColorRect" parent="MainMarginContainer"]
 margin_right = 530.0
 margin_bottom = 320.0
-color = Color( 0.0941176, 0.0784314, 0.168627, 0.368627 )
+color = Color( 0.0941176, 0.0784314, 0.168627, 0.509804 )
 
 [node name="MarginContainer" type="MarginContainer" parent="MainMarginContainer"]
-margin_right = 530.0
-margin_bottom = 320.0
+margin_right = 109.0
+margin_bottom = 220.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 custom_constants/margin_top = 60
+custom_constants/margin_left = 25
 
 [node name="ContentVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer"]
+margin_left = 25.0
 margin_top = 60.0
-margin_right = 530.0
-margin_bottom = 320.0
+margin_right = 109.0
+margin_bottom = 220.0
+size_flags_horizontal = 0
+size_flags_vertical = 8
 custom_constants/separation = 30
 
 [node name="HeaderLabel" type="Label" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer"]
-margin_left = 223.0
-margin_right = 307.0
+margin_right = 84.0
 margin_bottom = 26.0
 size_flags_horizontal = 4
 custom_fonts/font = ExtResource( 1 )
 text = "options"
-align = 1
 
-[node name="MenuVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer"]
-margin_left = 241.0
+[node name="OptionButtonsVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer"]
 margin_top = 56.0
-margin_right = 289.0
-margin_bottom = 171.0
-size_flags_horizontal = 4
-size_flags_vertical = 8
-theme = ExtResource( 3 )
-custom_constants/separation = 15
-
-[node name="OptionButtonsVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer"]
 margin_right = 48.0
-margin_bottom = 86.0
+margin_bottom = 160.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
-[node name="SoundButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionButtonsVBoxContainer"]
+[node name="SoundButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer"]
 margin_right = 48.0
 margin_bottom = 14.0
 disabled = true
+enabled_focus_mode = 0
 text = "sound"
+align = 0
 
-[node name="VideoButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionButtonsVBoxContainer"]
+[node name="VideoButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer"]
 margin_top = 18.0
 margin_right = 48.0
 margin_bottom = 32.0
 disabled = true
+enabled_focus_mode = 0
 text = "Видео"
+align = 0
 
-[node name="LanguageButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionButtonsVBoxContainer"]
+[node name="LanguageButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer"]
 margin_top = 36.0
 margin_right = 48.0
 margin_bottom = 50.0
 disabled = true
+enabled_focus_mode = 0
 text = "language"
+align = 0
 
-[node name="ControlsButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionButtonsVBoxContainer"]
+[node name="ControlsButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer"]
 margin_top = 54.0
 margin_right = 48.0
 margin_bottom = 68.0
 disabled = true
+enabled_focus_mode = 0
 text = "controls"
+align = 0
 
-[node name="SpecialOptionButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/OptionButtonsVBoxContainer"]
+[node name="SpecialOptionButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer"]
 margin_top = 72.0
 margin_right = 48.0
 margin_bottom = 86.0
+focus_mode = 0
+enabled_focus_mode = 0
 text = "special"
+align = 0
 
-[node name="ExitButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer"]
-margin_top = 101.0
+[node name="ExitButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer"]
+margin_top = 90.0
 margin_right = 48.0
-margin_bottom = 115.0
+margin_bottom = 104.0
+focus_mode = 0
+enabled_focus_mode = 0
 text = "exit"
+align = 0
+
+[node name="MenuCursor" parent="." instance=ExtResource( 4 )]
+margin_top = -24.0
+margin_bottom = -17.0
+menu_parent_path = NodePath("../MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer")
