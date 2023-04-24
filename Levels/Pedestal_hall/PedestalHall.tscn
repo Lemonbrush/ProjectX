@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=2]
@@ -13,6 +13,12 @@
 [ext_resource path="res://Assets/BackgroundGradients/Pedestal_room_background.png" type="Texture" id=11]
 [ext_resource path="res://Assets/BackgroundGradients/PinkEdgeGradient.png" type="Texture" id=12]
 [ext_resource path="res://WorldObjects/Technical/Clouds/Clouds.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Assets/Levels/Pedestal_hall/World_objects/Me_statue/Head.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Levels/Pedestal_hall/World_objects/Me_statue/Legs.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Levels/Pedestal_hall/World_objects/Me_statue/Chest.png" type="Texture" id=16]
+
+[sub_resource type="Animation" id=285]
+resource_name = "Kissing_statues_cutscene"
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 176, 8 )
@@ -129,13 +135,66 @@ texture = ExtResource( 12 )
 [node name="Clouds" parent="ParallaxBackground2" index="2" instance=ExtResource( 13 )]
 position = Vector2( -2, 2 )
 
+[node name="AnimationPlayer" parent="." index="3"]
+anims/Kissing_statues_cutscene = SubResource( 285 )
+
 [node name="Camera2D" parent="." index="4"]
 zoom = Vector2( 0.8, 0.8 )
 
 [node name="Clouds" parent="Camera2D" index="2" instance=ExtResource( 5 )]
 position = Vector2( -1, -67 )
 
-[node name="Sprite" type="Sprite" parent="." index="5"]
+[node name="Background_world_objects" type="Node2D" parent="." index="5"]
+z_index = -5
+
+[node name="Statues" type="Node2D" parent="Background_world_objects" index="0"]
+
+[node name="Me_statue" type="Node2D" parent="Background_world_objects/Statues" index="0"]
+modulate = Color( 0.752941, 0.752941, 0.752941, 1 )
+position = Vector2( 28, -57 )
+rotation = -0.00738346
+
+[node name="Legs" type="Sprite" parent="Background_world_objects/Statues/Me_statue" index="0"]
+position = Vector2( 13.295, -39.9029 )
+texture = ExtResource( 15 )
+
+[node name="Chest" type="Sprite" parent="Background_world_objects/Statues/Me_statue" index="1"]
+position = Vector2( 3.60535, -81.9756 )
+rotation = 0.157965
+texture = ExtResource( 16 )
+offset = Vector2( 3.04193, -34.6069 )
+
+[node name="Head" type="Sprite" parent="Background_world_objects/Statues/Me_statue/Chest" index="0"]
+position = Vector2( 4.13459, -66.5807 )
+rotation = -0.26804
+scale = Vector2( 1, 1 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.24594, -23.8718 )
+
+[node name="Me_statue2" type="Node2D" parent="Background_world_objects/Statues" index="1"]
+position = Vector2( -122, -57 )
+rotation = -0.00738346
+scale = Vector2( -1, 1 )
+
+[node name="Legs" type="Sprite" parent="Background_world_objects/Statues/Me_statue2" index="0"]
+position = Vector2( 3.01893, -46 )
+scale = Vector2( 0.746634, 1 )
+texture = ExtResource( 15 )
+
+[node name="Chest" type="Sprite" parent="Background_world_objects/Statues/Me_statue2" index="1"]
+position = Vector2( 2.60538, -81.983 )
+rotation = -0.824236
+texture = ExtResource( 16 )
+offset = Vector2( 3.04193, -34.6069 )
+
+[node name="Head" type="Sprite" parent="Background_world_objects/Statues/Me_statue2/Chest" index="0"]
+position = Vector2( 4.13459, -66.5807 )
+rotation = 1.18688
+scale = Vector2( 1, 1 )
+texture = ExtResource( 14 )
+offset = Vector2( -8.24594, -23.8718 )
+
+[node name="Sprite" type="Sprite" parent="." index="6"]
 visible = false
 modulate = Color( 0.517647, 0.517647, 0.517647, 1 )
 position = Vector2( -474, -364 )
@@ -144,12 +203,12 @@ z_index = -99
 texture = ExtResource( 11 )
 centered = false
 
-[node name="WorldSprite" parent="." index="6"]
+[node name="WorldSprite" parent="." index="7"]
 position = Vector2( -23, -567 )
 z_index = -5
 texture = ExtResource( 4 )
 
-[node name="World_objects" type="Node2D" parent="." index="7"]
+[node name="Middle_world_objects" type="Node2D" parent="." index="8"]
 
 [node name="Light2D2" parent="Player" index="5"]
 visible = false
@@ -162,6 +221,8 @@ minRadius = 50
 maxRadius = 50
 animating = false
 strength = 0.5
+
+[node name="Foreground_world_objects" type="Node2D" parent="." index="10"]
 
 [node name="PassThroughBody5" parent="Collisions/PassTrough" index="0" groups=["passThroughObject"] instance=ExtResource( 3 )]
 position = Vector2( -260, -84 )
@@ -290,7 +351,7 @@ minRadius = 500
 maxRadius = 450
 animating = false
 
-[node name="WaterSurface" type="Node2D" parent="." index="14"]
+[node name="WaterSurface" type="Node2D" parent="." index="16"]
 pause_mode = 2
 position = Vector2( 332, 50 )
 z_index = 10
