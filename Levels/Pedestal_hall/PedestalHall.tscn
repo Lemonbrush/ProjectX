@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=2]
@@ -16,6 +16,10 @@
 [ext_resource path="res://Assets/Levels/Pedestal_hall/World_objects/Me_statue/Head.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Levels/Pedestal_hall/World_objects/Me_statue/Legs.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Levels/Pedestal_hall/World_objects/Me_statue/Chest.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Levels/Pedestal_hall/World_objects/She_statue/chest.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Levels/Pedestal_hall/World_objects/She_statue/chup.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Levels/Pedestal_hall/World_objects/She_statue/head.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Levels/Pedestal_hall/World_objects/She_statue/legs.png" type="Texture" id=20]
 
 [sub_resource type="Animation" id=285]
 resource_name = "Kissing_statues_cutscene"
@@ -151,48 +155,52 @@ z_index = -5
 
 [node name="Me_statue" type="Node2D" parent="Background_world_objects/Statues" index="0"]
 modulate = Color( 0.752941, 0.752941, 0.752941, 1 )
-position = Vector2( 28, -57 )
-rotation = -0.00738346
+position = Vector2( 27, -55 )
+rotation = -0.0194807
 
 [node name="Legs" type="Sprite" parent="Background_world_objects/Statues/Me_statue" index="0"]
 position = Vector2( 13.295, -39.9029 )
 texture = ExtResource( 15 )
 
 [node name="Chest" type="Sprite" parent="Background_world_objects/Statues/Me_statue" index="1"]
-position = Vector2( 3.60535, -81.9756 )
-rotation = 0.157965
+position = Vector2( 3.60537, -81.9756 )
+rotation = 0.25834
 texture = ExtResource( 16 )
 offset = Vector2( 3.04193, -34.6069 )
 
 [node name="Head" type="Sprite" parent="Background_world_objects/Statues/Me_statue/Chest" index="0"]
 position = Vector2( 4.13459, -66.5807 )
-rotation = -0.26804
+rotation = -0.328812
 scale = Vector2( 1, 1 )
 texture = ExtResource( 14 )
 offset = Vector2( -8.24594, -23.8718 )
 
-[node name="Me_statue2" type="Node2D" parent="Background_world_objects/Statues" index="1"]
-position = Vector2( -122, -57 )
-rotation = -0.00738346
-scale = Vector2( -1, 1 )
+[node name="She_statue" type="Node2D" parent="Background_world_objects/Statues" index="1"]
+modulate = Color( 0.772549, 0.772549, 0.772549, 1 )
+position = Vector2( -138, -51 )
 
-[node name="Legs" type="Sprite" parent="Background_world_objects/Statues/Me_statue2" index="0"]
-position = Vector2( 3.01893, -46 )
-scale = Vector2( 0.746634, 1 )
-texture = ExtResource( 15 )
+[node name="Legs" type="Sprite" parent="Background_world_objects/Statues/She_statue" index="0"]
+position = Vector2( 3, -29 )
+texture = ExtResource( 20 )
 
-[node name="Chest" type="Sprite" parent="Background_world_objects/Statues/Me_statue2" index="1"]
-position = Vector2( 2.60538, -81.983 )
-rotation = -0.824236
-texture = ExtResource( 16 )
-offset = Vector2( 3.04193, -34.6069 )
+[node name="Chest" type="Sprite" parent="Background_world_objects/Statues/She_statue" index="1"]
+position = Vector2( 8, -74 )
+rotation = 0.0211496
+texture = ExtResource( 17 )
+offset = Vector2( -4.3527, -36.5899 )
 
-[node name="Head" type="Sprite" parent="Background_world_objects/Statues/Me_statue2/Chest" index="0"]
-position = Vector2( 4.13459, -66.5807 )
-rotation = 1.18688
+[node name="Head" type="Sprite" parent="Background_world_objects/Statues/She_statue/Chest" index="0"]
+position = Vector2( 1.63687, -67.0471 )
+rotation = 0.00454283
 scale = Vector2( 1, 1 )
-texture = ExtResource( 14 )
-offset = Vector2( -8.24594, -23.8718 )
+texture = ExtResource( 19 )
+offset = Vector2( 0.361778, -19.9608 )
+
+[node name="Chup" type="Sprite" parent="Background_world_objects/Statues/She_statue/Chest/Head" index="0"]
+position = Vector2( 1.68974, -59.4868 )
+rotation = -0.144409
+texture = ExtResource( 18 )
+offset = Vector2( 13, -29 )
 
 [node name="Sprite" type="Sprite" parent="." index="6"]
 visible = false
