@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=2]
@@ -23,6 +23,154 @@
 
 [sub_resource type="Animation" id=285]
 resource_name = "Kissing_statues_cutscene"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Background_world_objects/Statues/Me_statue/Chest:rotation_degrees")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 14.8018, -40.0216 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Background_world_objects/Statues/Me_statue/Chest/Head:rotation_degrees")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -18.8395, 60.8088 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Background_world_objects/Statues/She_statue/Chest:rotation_degrees")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.21178, 39.9283 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Background_world_objects/Statues/She_statue/Chest/Head:rotation_degrees")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.260285, -36.3457 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Background_world_objects/Statues/Me_statue:rotation_degrees")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -8.98415 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Background_world_objects/Statues/She_statue/Chest/Head/Chup:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 2, 2.1, 2.3, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -8.27403, -8.27403, 0.0, -13.3307, -8.3 ]
+}
+
+[sub_resource type="Animation" id=286]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Background_world_objects/Statues/Me_statue/Chest:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 14.8018 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Background_world_objects/Statues/Me_statue/Chest/Head:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -18.8395 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Background_world_objects/Statues/She_statue/Chest:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.21178 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Background_world_objects/Statues/She_statue/Chest/Head:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.260285 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Background_world_objects/Statues/Me_statue:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -8.98415 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Background_world_objects/Statues/She_statue/Chest/Head/Chup:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -8.27403 ]
+}
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 176, 8 )
@@ -141,6 +289,7 @@ position = Vector2( -2, 2 )
 
 [node name="AnimationPlayer" parent="." index="3"]
 anims/Kissing_statues_cutscene = SubResource( 285 )
+anims/RESET = SubResource( 286 )
 
 [node name="Camera2D" parent="." index="4"]
 zoom = Vector2( 0.8, 0.8 )
@@ -155,8 +304,8 @@ z_index = -5
 
 [node name="Me_statue" type="Node2D" parent="Background_world_objects/Statues" index="0"]
 modulate = Color( 0.752941, 0.752941, 0.752941, 1 )
-position = Vector2( 27, -55 )
-rotation = -0.0194807
+position = Vector2( 41, -51 )
+rotation = -0.156803
 
 [node name="Legs" type="Sprite" parent="Background_world_objects/Statues/Me_statue" index="0"]
 position = Vector2( 13.295, -39.9029 )
@@ -177,7 +326,7 @@ offset = Vector2( -8.24594, -23.8718 )
 
 [node name="She_statue" type="Node2D" parent="Background_world_objects/Statues" index="1"]
 modulate = Color( 0.772549, 0.772549, 0.772549, 1 )
-position = Vector2( -138, -51 )
+position = Vector2( -133, -59 )
 
 [node name="Legs" type="Sprite" parent="Background_world_objects/Statues/She_statue" index="0"]
 position = Vector2( 3, -29 )
