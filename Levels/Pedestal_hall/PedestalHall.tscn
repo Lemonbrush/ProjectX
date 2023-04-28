@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=72 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=2]
@@ -30,6 +30,14 @@
 [ext_resource path="res://Assets/Levels/Pedestal_hall/World_objects/Hidden_door_bricks/3.png" type="Texture" id=28]
 [ext_resource path="res://Assets/Levels/Pedestal_hall/World_objects/Hidden_door_bricks/4.png" type="Texture" id=29]
 [ext_resource path="res://Assets/Levels/Pedestal_hall/World_objects/Hidden_door_bricks/5.png" type="Texture" id=30]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Regualr_trees/Trees/CurvedTree.tscn" type="PackedScene" id=31]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Regualr_trees/Trees/SquashedTree.tscn" type="PackedScene" id=32]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Regualr_trees/Background_trees/BackgroundSmallTree.tscn" type="PackedScene" id=33]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Regualr_trees/Background_trees/BackgroundWideTree.tscn" type="PackedScene" id=34]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Regualr_trees/Trees/TallTree.tscn" type="PackedScene" id=35]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Regualr_trees/Background_trees/BackgroundSmallWideTree.tscn" type="PackedScene" id=36]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Regualr_trees/Background_trees/BackgroundTallWideTree.tscn" type="PackedScene" id=37]
+[ext_resource path="res://WorldObjects/Decorative/Tree/Regualr_trees/Trees/BushyTree.tscn" type="PackedScene" id=38]
 
 [sub_resource type="Animation" id=285]
 resource_name = "Kissing_statues_cutscene"
@@ -935,7 +943,89 @@ position = Vector2( -1, -67 )
 [node name="Background_world_objects" type="Node2D" parent="." index="5"]
 z_index = -5
 
-[node name="Statues" type="Node2D" parent="Background_world_objects" index="0"]
+[node name="Trees" type="Node2D" parent="Background_world_objects" index="0"]
+
+[node name="BushyTree" parent="Background_world_objects/Trees" index="0" instance=ExtResource( 38 )]
+position = Vector2( -406, 3 )
+
+[node name="BushyTree4" parent="Background_world_objects/Trees" index="1" instance=ExtResource( 38 )]
+position = Vector2( -377, 61 )
+scale = Vector2( -1, 1 )
+
+[node name="BushyTree5" parent="Background_world_objects/Trees" index="2" instance=ExtResource( 38 )]
+position = Vector2( -284, 55 )
+
+[node name="BushyTree6" parent="Background_world_objects/Trees" index="3" instance=ExtResource( 38 )]
+position = Vector2( 205, 58 )
+
+[node name="BushyTree7" parent="Background_world_objects/Trees" index="4" instance=ExtResource( 38 )]
+position = Vector2( 277, 59 )
+
+[node name="BushyTree3" parent="Background_world_objects/Trees" index="5" instance=ExtResource( 38 )]
+position = Vector2( 70, -37 )
+
+[node name="CurvedTree" parent="Background_world_objects/Trees" index="6" instance=ExtResource( 31 )]
+position = Vector2( -318, 1 )
+
+[node name="CurvedTree3" parent="Background_world_objects/Trees" index="7" instance=ExtResource( 31 )]
+position = Vector2( -182, -5 )
+
+[node name="CurvedTree4" parent="Background_world_objects/Trees" index="8" instance=ExtResource( 31 )]
+position = Vector2( -216, -70 )
+scale = Vector2( -1, 1 )
+
+[node name="CurvedTree5" parent="Background_world_objects/Trees" index="9" instance=ExtResource( 31 )]
+position = Vector2( 131, -50 )
+scale = Vector2( -1, 1 )
+
+[node name="SquashedTree" parent="Background_world_objects/Trees" index="10" instance=ExtResource( 32 )]
+position = Vector2( -375, -65 )
+
+[node name="TallTree" parent="Background_world_objects/Trees" index="11" instance=ExtResource( 35 )]
+position = Vector2( -348, -3 )
+
+[node name="BushyTree2" parent="Background_world_objects/Trees" index="12" instance=ExtResource( 38 )]
+position = Vector2( 207, -6 )
+
+[node name="CurvedTree2" parent="Background_world_objects/Trees" index="13" instance=ExtResource( 31 )]
+position = Vector2( 295, -8 )
+
+[node name="SquashedTree2" parent="Background_world_objects/Trees" index="14" instance=ExtResource( 32 )]
+position = Vector2( 238, -74 )
+
+[node name="TallTree2" parent="Background_world_objects/Trees" index="15" instance=ExtResource( 35 )]
+position = Vector2( 265, -12 )
+
+[node name="Background_trees" type="Node2D" parent="Background_world_objects/Trees" index="16"]
+
+[node name="BackgroundSmallWideTree" parent="Background_world_objects/Trees/Background_trees" index="0" instance=ExtResource( 36 )]
+position = Vector2( -283, 0 )
+
+[node name="BackgroundTallWideTree" parent="Background_world_objects/Trees/Background_trees" index="1" instance=ExtResource( 37 )]
+position = Vector2( -419, 1 )
+
+[node name="BackgroundSmallTree" parent="Background_world_objects/Trees/Background_trees" index="2" instance=ExtResource( 33 )]
+position = Vector2( -421, -46 )
+
+[node name="BackgroundSmallTree2" parent="Background_world_objects/Trees/Background_trees" index="3" instance=ExtResource( 33 )]
+position = Vector2( 183, 1 )
+
+[node name="BackgroundWideTree" parent="Background_world_objects/Trees/Background_trees" index="4" instance=ExtResource( 34 )]
+position = Vector2( -277, -67 )
+
+[node name="BackgroundWideTree4" parent="Background_world_objects/Trees/Background_trees" index="5" instance=ExtResource( 34 )]
+position = Vector2( 124, -15 )
+
+[node name="BackgroundWideTree5" parent="Background_world_objects/Trees/Background_trees" index="6" instance=ExtResource( 34 )]
+position = Vector2( -229, -15 )
+
+[node name="BackgroundWideTree2" parent="Background_world_objects/Trees/Background_trees" index="7" instance=ExtResource( 34 )]
+position = Vector2( 295, 1 )
+
+[node name="BackgroundWideTree3" parent="Background_world_objects/Trees/Background_trees" index="8" instance=ExtResource( 34 )]
+position = Vector2( 220, -70 )
+
+[node name="Statues" type="Node2D" parent="Background_world_objects" index="1"]
 position = Vector2( 0, 12 )
 
 [node name="Me_statue" type="Node2D" parent="Background_world_objects/Statues" index="0"]
@@ -985,7 +1075,7 @@ rotation = -0.144409
 texture = ExtResource( 18 )
 offset = Vector2( 13, -29 )
 
-[node name="Door" parent="Background_world_objects" index="1" instance=ExtResource( 2 )]
+[node name="Door" parent="Background_world_objects" index="2" instance=ExtResource( 2 )]
 position = Vector2( -47, 1 )
 
 [node name="GatesBackground" parent="Background_world_objects/Door" index="1"]
@@ -995,11 +1085,11 @@ margin_top = -80.0
 margin_right = 58.0
 margin_bottom = 3.0
 
-[node name="Hidden_door_top_notch_sprite" type="Sprite" parent="Background_world_objects" index="2"]
+[node name="Hidden_door_top_notch_sprite" type="Sprite" parent="Background_world_objects" index="3"]
 position = Vector2( -47, -71 )
 texture = ExtResource( 22 )
 
-[node name="Hidden_door_bricks" type="Node2D" parent="Background_world_objects" index="3"]
+[node name="Hidden_door_bricks" type="Node2D" parent="Background_world_objects" index="4"]
 
 [node name="1" type="Node2D" parent="Background_world_objects/Hidden_door_bricks" index="0"]
 
@@ -1127,6 +1217,23 @@ z_index = -5
 texture = ExtResource( 4 )
 
 [node name="Middle_world_objects" type="Node2D" parent="." index="8"]
+
+[node name="Trees" type="Node2D" parent="Middle_world_objects" index="0"]
+
+[node name="BushyTree" parent="Middle_world_objects/Trees" index="0" instance=ExtResource( 38 )]
+position = Vector2( -628, 1 )
+
+[node name="CurvedTree" parent="Middle_world_objects/Trees" index="1" instance=ExtResource( 31 )]
+position = Vector2( -430, 1 )
+
+[node name="CurvedTree2" parent="Middle_world_objects/Trees" index="2" instance=ExtResource( 31 )]
+position = Vector2( 343, 1 )
+
+[node name="TallTree" parent="Middle_world_objects/Trees" index="3" instance=ExtResource( 35 )]
+position = Vector2( -361, 1 )
+
+[node name="TallTree2" parent="Middle_world_objects/Trees" index="4" instance=ExtResource( 35 )]
+position = Vector2( 275, 1 )
 
 [node name="Light2D2" parent="Player" index="5"]
 visible = false
