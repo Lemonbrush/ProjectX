@@ -1775,8 +1775,8 @@ nextDoorName = "Harbor_house_door"
 
 [node name="Gates_2" parent="Doors" instance=ExtResource( 9 )]
 position = Vector2( 191, 154 )
-nextScenePath = "res://Levels/Start_gate_location/Start_gate_location.tscn"
-nextDoorName = "Gates"
+nextScenePath = "res://Levels/Pedestal_hall/PedestalHall.tscn"
+nextDoorName = "Central_hub_door"
 
 [node name="GatesBackground" parent="Doors/Gates_2" index="0"]
 margin_top = -80.0

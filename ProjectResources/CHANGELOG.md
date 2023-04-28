@@ -4,14 +4,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.6.0 Alpha] - 2023-4-17 - Wish star dangeon update
+### Added
+- Added Wish star dangeon location
+- Added controller support
+- Added menu cursor 
+- Added game logo screen
+- Added ambient light system
+- Added interactive light sources
+### Changed
+- Changed Autosave logic 
+
 ## [1.5.0 Alpha] - 2023-2-5 - Harbour house location update
 ### Added 
-- Harbour house location 
-- Changelog screen
+- Added Harbour house location 
+- Added Changelog screen
 - Optimization
 ### Changed
-- Artist quest
-- Central hub Harbour house location entrance sprite
+- Changed Artist quest
+- Changed Central hub Harbour house location entrance sprite
 ### Fixed
 - Fixed player and camera position in some locations
 
