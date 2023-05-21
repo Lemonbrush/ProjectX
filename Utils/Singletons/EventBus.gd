@@ -35,6 +35,8 @@ signal show_creator_house_desk_scene()
 signal show_heart_assembling_cutscene()
 signal show_mystic_dweller_heart_assembler_disappear_cutscene()
 
+signal show_activate_pillars_cutscene()
+
 func start_shake_screen(duration = 0.2, frequency = 16, amplitude = 2, infinity = true):
 	emit_signal("start_shake_screen", duration, frequency, amplitude, infinity)
 
@@ -107,3 +109,6 @@ func show_mystic_dweller_heart_assembler_disappear_cutscene():
 
 func did_update_cursor_setting():
 	emit_signal("did_update_cursor_setting")
+
+func show_activate_pillars_cutscene():
+	emit_signal("show_activate_pillars_cutscene")
