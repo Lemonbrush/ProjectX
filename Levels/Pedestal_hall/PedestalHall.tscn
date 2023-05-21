@@ -464,7 +464,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -8.98415 ]
+"values": [ 0.0 ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Background_world_objects/Statues/She_statue/Chest/Head/Chup:rotation_degrees")
@@ -933,6 +933,7 @@ texture = ExtResource( 12 )
 position = Vector2( -2, 2 )
 
 [node name="AnimationPlayer" parent="." index="3"]
+autoplay = "RESET"
 anims/Kissing_statues_cutscene = SubResource( 285 )
 anims/RESET = SubResource( 286 )
 
@@ -1033,7 +1034,6 @@ position = Vector2( 0, 12 )
 [node name="Me_statue" type="Node2D" parent="Background_world_objects/Statues" index="0"]
 modulate = Color( 0.752941, 0.752941, 0.752941, 1 )
 position = Vector2( 41, -51 )
-rotation = -0.156803
 
 [node name="Legs" type="Sprite" parent="Background_world_objects/Statues/Me_statue" index="0"]
 position = Vector2( 13.295, -39.9029 )
@@ -1077,10 +1077,12 @@ rotation = -0.144409
 texture = ExtResource( 18 )
 offset = Vector2( 13, -29 )
 
-[node name="Door" parent="Background_world_objects" index="2" instance=ExtResource( 2 )]
+[node name="FinalLevelDoor" parent="Background_world_objects" index="2" instance=ExtResource( 2 )]
 position = Vector2( -47, 1 )
+nextScenePath = "res://Levels/FinalLevel/FinalLevel.tscn"
+nextDoorName = "PedestalsLevelDoor"
 
-[node name="GatesBackground" parent="Background_world_objects/Door" index="1"]
+[node name="GatesBackground" parent="Background_world_objects/FinalLevelDoor" index="1"]
 material = SubResource( 287 )
 margin_left = -58.0
 margin_top = -80.0
@@ -1242,6 +1244,9 @@ tile_set = ExtResource( 39 )
 cell_size = Vector2( 1, 1 )
 format = 1
 tile_data = PoolIntArray( -8126619, 78, 0, -7471218, 76, 0, -7405492, 77, 0, -7209061, 31, 0, -7209038, 23, 0, -7209019, 20, 0, -7208987, 21, 0, -7208969, 32, 0, -6881515, 63, 0, -6684879, 63, 0, -6160494, 21, 0, -6160406, 57, 0, -6225900, 20, 0, -5963677, 64, 0, -5112103, 63, 0, -5111954, 1, 0, -5111928, 58, 0, -5177326, 20, 0, -5177309, 4, 0, -5177292, 14, 0, -4981136, 63, 0, -4718519, 64, 0, -4587237, 64, 0, -4128702, 29, 0, -4128511, 64, 0, -3670375, 63, 0, -3342716, 77, 0, -3014852, 23, 0, -3014787, 23, 0, -3014756, 20, 0, -3014671, 22, 0, -3080135, 2, 0, -3080107, 20, 0, -3014347, 64, 0, -2621076, 64, 0, -2424634, 76, 0, -2097608, 63, 0, -1966268, 60, 0, -1966167, 57, 0, -1966106, 58, 0, -2031527, 58, 0, -2031511, 24, 0, -2031291, 64, 0, -1965775, 75, 0, -1245829, 63, 0, -918149, 24, 0, -918136, 3, 0, -918113, 21, 0, -918032, 22, 0, -918017, 29, 0, -917974, 2, 0, -917967, 20, 0, -917902, 14, 0, -917887, 22, 0, -917868, 29, 0, -917822, 20, 0, -917797, 27, 0, -917774, 31, 0, -917594, 20, 0, -917550, 31, 0, -982865, 24, 0, -982808, 21, 0, -982785, 31, 0, -982732, 21, 0, -982698, 14, 0, -982683, 20, 0, -982654, 28, 0, -982561, 20, 0, -982543, 4, 0, -982526, 3, 0, 130433, 58, 0, 130517, 57, 0, 130634, 57, 0, 130739, 59, 0, 130834, 60, 0, 130934, 58, 0, 131019, 57, 0, 65591, 58, 0, 65690, 57, 0, 65809, 59, 0, 65930, 60, 0, 66040, 57, 0 )
+
+[node name="Player" parent="." index="9"]
+position = Vector2( -47, -109 )
 
 [node name="Light2D2" parent="Player" index="5"]
 visible = false
@@ -1491,8 +1496,8 @@ margin_top = -25.0
 margin_right = 5296.0
 margin_bottom = 344.0
 
-[editable path="Background_world_objects/Door"]
-[editable path="Background_world_objects/Door/InteractionController"]
+[editable path="Background_world_objects/FinalLevelDoor"]
+[editable path="Background_world_objects/FinalLevelDoor/InteractionController"]
 [editable path="Background_world_objects/Hidden_door_bricks/1/collision"]
 [editable path="Background_world_objects/Hidden_door_bricks/11/collision"]
 [editable path="Background_world_objects/Hidden_door_bricks/2/collision"]
