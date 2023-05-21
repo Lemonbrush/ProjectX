@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=2]
+[gd_scene load_steps=77 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=2]
@@ -41,6 +41,7 @@
 [ext_resource path="res://Resources/Tilesets/Resources/Decorations/Decorations.tres" type="TileSet" id=39]
 [ext_resource path="res://Dweller/Mystic_dweller/MysticDweller.tscn" type="PackedScene" id=40]
 [ext_resource path="res://Levels/Pedestal_hall/World_objects/Item_pedestal/ItemPedestal.tscn" type="PackedScene" id=41]
+[ext_resource path="res://Levels/Pedestal_hall/PedestalHall.gd" type="Script" id=42]
 
 [sub_resource type="Animation" id=285]
 resource_name = "Kissing_statues_cutscene"
@@ -768,6 +769,135 @@ tracks/29/keys = {
 "update": 0,
 "values": [ false ]
 }
+tracks/30/type = "value"
+tracks/30/path = NodePath("Camera2D:position")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -120 ) ]
+}
+
+[sub_resource type="Animation" id=304]
+resource_name = "pedestals_activation_scene"
+length = 2.5
+tracks/0/type = "method"
+tracks/0/path = NodePath("Middle_world_objects/Pedestals/ItemPedestal")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "activate"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Middle_world_objects/Pedestals/ItemPedestal6")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "activate"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Middle_world_objects/Pedestals/ItemPedestal2")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "activate"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Middle_world_objects/Pedestals/ItemPedestal3")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "activate"
+} ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("Middle_world_objects/Pedestals/ItemPedestal4")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "activate"
+} ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("Middle_world_objects/Pedestals/ItemPedestal5")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "activate"
+} ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.4, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "pause_level"
+}, {
+"args": [  ],
+"method": "unpouse_level"
+} ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Camera2D:position")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.1, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -46, -31 ), Vector2( -46, -31 ) ]
+}
 
 [sub_resource type="ShaderMaterial" id=287]
 shader = ExtResource( 21 )
@@ -901,6 +1031,7 @@ shader_param/mix_amount = 0.33
 shader_param/color_over = Color( 0, 0, 0, 1 )
 
 [node name="PedestalHall" instance=ExtResource( 1 )]
+script = ExtResource( 42 )
 
 [node name="LightingCanvasLayer" type="CanvasLayer" parent="." index="1"]
 pause_mode = 2
@@ -938,6 +1069,7 @@ position = Vector2( -2, 2 )
 autoplay = "RESET"
 anims/Kissing_statues_cutscene = SubResource( 285 )
 anims/RESET = SubResource( 286 )
+anims/pedestals_activation_scene = SubResource( 304 )
 
 [node name="Camera2D" parent="." index="4"]
 zoom = Vector2( 0.8, 0.8 )
@@ -1031,6 +1163,7 @@ position = Vector2( 295, 1 )
 position = Vector2( 220, -70 )
 
 [node name="Statues" type="Node2D" parent="Background_world_objects" index="1"]
+pause_mode = 2
 position = Vector2( 0, 12 )
 
 [node name="Me_statue" type="Node2D" parent="Background_world_objects/Statues" index="0"]
@@ -1248,13 +1381,16 @@ format = 1
 tile_data = PoolIntArray( -8126619, 78, 0, -7471218, 76, 0, -7405492, 77, 0, -7209061, 31, 0, -7209038, 23, 0, -7209019, 20, 0, -7208987, 21, 0, -7208969, 32, 0, -6881515, 63, 0, -6684879, 63, 0, -6160494, 21, 0, -6160406, 57, 0, -6225900, 20, 0, -5963677, 64, 0, -5112103, 63, 0, -5111954, 1, 0, -5111928, 58, 0, -5177326, 20, 0, -5177309, 4, 0, -5177292, 14, 0, -4981136, 63, 0, -4718519, 64, 0, -4587237, 64, 0, -4128702, 29, 0, -4128511, 64, 0, -3670375, 63, 0, -3342716, 77, 0, -3014852, 23, 0, -3014787, 23, 0, -3014756, 20, 0, -3014671, 22, 0, -3080135, 2, 0, -3080107, 20, 0, -3014347, 64, 0, -2621076, 64, 0, -2424634, 76, 0, -2097608, 63, 0, -1966268, 60, 0, -1966167, 57, 0, -1966106, 58, 0, -2031527, 58, 0, -2031511, 24, 0, -2031291, 64, 0, -1965775, 75, 0, -1245829, 63, 0, -918149, 24, 0, -918136, 3, 0, -918113, 21, 0, -918032, 22, 0, -918017, 29, 0, -917974, 2, 0, -917967, 20, 0, -917902, 14, 0, -917887, 22, 0, -917868, 29, 0, -917822, 20, 0, -917797, 27, 0, -917774, 31, 0, -917594, 20, 0, -917550, 31, 0, -982865, 24, 0, -982808, 21, 0, -982785, 31, 0, -982732, 21, 0, -982698, 14, 0, -982683, 20, 0, -982654, 28, 0, -982561, 20, 0, -982543, 4, 0, -982526, 3, 0, 130433, 58, 0, 130517, 57, 0, 130634, 57, 0, 130739, 59, 0, 130834, 60, 0, 130934, 58, 0, 131019, 57, 0, 65591, 58, 0, 65690, 57, 0, 65809, 59, 0, 65930, 60, 0, 66040, 57, 0 )
 
 [node name="MysticDweller" parent="Middle_world_objects" index="2" instance=ExtResource( 40 )]
+pause_mode = 2
 position = Vector2( -25, -95 )
+dialogId = "pillars_mystic_dweller"
 defaultDirection = -1
 
 [node name="Body" parent="Middle_world_objects/MysticDweller" index="5"]
 scale = Vector2( -1, 1 )
 
 [node name="Pedestals" type="Node2D" parent="Middle_world_objects" index="3"]
+pause_mode = 2
 
 [node name="ItemPedestal" parent="Middle_world_objects/Pedestals" index="0" instance=ExtResource( 41 )]
 position = Vector2( -159, 1 )

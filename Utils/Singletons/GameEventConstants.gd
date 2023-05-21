@@ -51,7 +51,8 @@ func set_default_constants():
 		left_side_heart_picked_up = false,
 		right_side_heart_picked_up = false,
 		assembled_heart_picked_uo = false,
-		did_trigger_heart_assembling_cutscene = false
+		did_trigger_heart_assembling_cutscene = false,
+		did_mystic_dweller_activate_pillars = false
 	}
 	EventBus.game_const_changed()
 
