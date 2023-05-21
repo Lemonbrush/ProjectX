@@ -2166,6 +2166,7 @@ z_index = 99
 
 [node name="MysticDweller" parent="Dwellers" instance=ExtResource( 72 )]
 position = Vector2( -23, -768 )
+dialogId = "lighthouse_top_mystic_dweller"
 actions = [ SubResource( 205 ), SubResource( 206 ), SubResource( 203 ), SubResource( 204 ) ]
 
 [node name="Sprite" type="Sprite" parent="Dwellers/MysticDweller/Body" index="2"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Levels/Rooms/LightHouse/Lighthouse.png" type="Texture" id=2]
@@ -206,9 +206,6 @@ extents = Vector2( 5.5, 27 )
 
 [sub_resource type="RectangleShape2D" id=110]
 extents = Vector2( 6, 27 )
-
-[sub_resource type="RectangleShape2D" id=117]
-extents = Vector2( 6, 35.5 )
 
 [sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 4, 53 )
@@ -562,24 +559,6 @@ shape = SubResource( 110 )
 [node name="InteractionPopup" parent="Doors/LightHouseTopDoor" index="3"]
 position = Vector2( 0, -44 )
 
-[node name="LightPortal" parent="Doors" index="3" instance=ExtResource( 7 )]
-position = Vector2( 8, -224 )
-nextScenePath = "res://Levels/FinalLevel/FinalLevel.tscn"
-nextDoorName = "LightPortal"
-
-[node name="GatesBackground" parent="Doors/LightPortal" index="1"]
-visible = false
-margin_left = -16.0
-margin_top = -54.0
-margin_right = 17.0
-
-[node name="CollisionShape2D" parent="Doors/LightPortal/InteractionController/Area2D" index="0"]
-position = Vector2( 0, -25.5 )
-shape = SubResource( 117 )
-
-[node name="InteractionPopup" parent="Doors/LightPortal" index="3"]
-position = Vector2( 0, -38 )
-
 [node name="AirBeam" parent="AirBlowers" index="0" instance=ExtResource( 5 )]
 position = Vector2( -11, 279 )
 
@@ -646,8 +625,6 @@ shape = SubResource( 25 )
 [editable path="Doors/LightHouseBottomDoor/InteractionController"]
 [editable path="Doors/LightHouseTopDoor"]
 [editable path="Doors/LightHouseTopDoor/InteractionController"]
-[editable path="Doors/LightPortal"]
-[editable path="Doors/LightPortal/InteractionController"]
 [editable path="AirBlowers/AirBeam"]
 [editable path="AirBlowers/AirBeam2"]
 [editable path="AirBlowers/AirBeam3"]
