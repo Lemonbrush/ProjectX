@@ -33,4 +33,7 @@ static func execute(command_line: String):
 			"emmit":
 				var signal_name = args[0]
 				if EventBus.has_method(signal_name):
-					EventBus.call(signal_name)
+					if args.size() > 1:
+						EventBus.call(signal_name, args[1])
+					else:
+						EventBus.call(signal_name)
