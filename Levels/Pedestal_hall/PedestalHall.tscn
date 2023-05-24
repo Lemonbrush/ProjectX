@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=2]
+[gd_scene load_steps=83 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=2]
@@ -42,6 +42,12 @@
 [ext_resource path="res://Dweller/Mystic_dweller/MysticDweller.tscn" type="PackedScene" id=40]
 [ext_resource path="res://Levels/Pedestal_hall/World_objects/Item_pedestal/ItemPedestal.tscn" type="PackedScene" id=41]
 [ext_resource path="res://Levels/Pedestal_hall/PedestalHall.gd" type="Script" id=42]
+[ext_resource path="res://WorldObjects/Pick_ups/Items/AssembledHeart/View/AssembledHeartItemView.tscn" type="PackedScene" id=43]
+[ext_resource path="res://WorldObjects/Pick_ups/Items/HeartKeyItem/View/HeartKeyItemView.tscn" type="PackedScene" id=44]
+[ext_resource path="res://WorldObjects/Pick_ups/Items/BlueButterfly/View/BlueButterflyItemView.tscn" type="PackedScene" id=45]
+[ext_resource path="res://WorldObjects/Pick_ups/Items/ArtistBrush/View/ArtistBrushView.tscn" type="PackedScene" id=46]
+[ext_resource path="res://WorldObjects/Pick_ups/Items/RedThred/View/RedThredItemView.tscn" type="PackedScene" id=47]
+[ext_resource path="res://WorldObjects/Pick_ups/Items/Kissnip/View/KissnipView.tscn" type="PackedScene" id=48]
 
 [sub_resource type="Animation" id=285]
 resource_name = "Kissing_statues_cutscene"
@@ -1066,7 +1072,7 @@ texture = ExtResource( 12 )
 position = Vector2( -2, 2 )
 
 [node name="AnimationPlayer" parent="." index="3"]
-autoplay = "RESET"
+autoplay = ""
 anims/Kissing_statues_cutscene = SubResource( 285 )
 anims/RESET = SubResource( 286 )
 anims/pedestals_activation_scene = SubResource( 304 )
@@ -1394,21 +1400,29 @@ pause_mode = 2
 
 [node name="ItemPedestal" parent="Middle_world_objects/Pedestals" index="0" instance=ExtResource( 41 )]
 position = Vector2( -159, 1 )
+itemScene = ExtResource( 45 )
 
 [node name="ItemPedestal6" parent="Middle_world_objects/Pedestals" index="1" instance=ExtResource( 41 )]
 position = Vector2( -207, 1 )
+dialogId = "pedestal_assembled_heart"
+item_name = "assembled_heart"
+itemScene = ExtResource( 43 )
 
 [node name="ItemPedestal2" parent="Middle_world_objects/Pedestals" index="2" instance=ExtResource( 41 )]
 position = Vector2( -111, 1 )
+itemScene = ExtResource( 47 )
 
 [node name="ItemPedestal3" parent="Middle_world_objects/Pedestals" index="3" instance=ExtResource( 41 )]
 position = Vector2( 65, 1 )
+itemScene = ExtResource( 48 )
 
 [node name="ItemPedestal4" parent="Middle_world_objects/Pedestals" index="4" instance=ExtResource( 41 )]
 position = Vector2( 113, 1 )
+itemScene = ExtResource( 46 )
 
 [node name="ItemPedestal5" parent="Middle_world_objects/Pedestals" index="5" instance=ExtResource( 41 )]
 position = Vector2( 17, 1 )
+itemScene = ExtResource( 44 )
 
 [node name="Player" parent="." index="9"]
 position = Vector2( -47, -109 )

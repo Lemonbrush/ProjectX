@@ -1,6 +1,6 @@
 extends Node2D
 
-export(String) var dialogId = ""
+export(String) var dialogId
 export(String) var interaction_popup_label_text = ""
 
 onready var dialogTextBoxController = $DialogTextBoxController
@@ -14,6 +14,10 @@ func _ready():
 	interactionController.connect("on_interact", self, "on_npc_interact")
 	interactionController.connect("on_approach", self, "on_npc_approach")
 	interactionController.connect("on_leave", self, "on_leave")
+
+func set_dialog_id(newDialogId: String):
+	dialogId = newDialogId
+	dialogTextBoxController.set_dialog_id(newDialogId) 
 
 func on_leave():
 	interactionPopup.hide()
