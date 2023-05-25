@@ -78,8 +78,9 @@ func process_dialog(phrase):
 	dialogTextBox.show_text(phrase.text)
 
 func process_response_chosen_option(chosen_option):
-	var phrase = dialogManager.get_next_dialog_by_option(chosen_option)
-	process_gialog_interaction(phrase)
+	if dialogManager != null:
+		var phrase = dialogManager.get_next_dialog_by_option(chosen_option)
+		process_gialog_interaction(phrase)
 		
 func set_dialog_id(new_dialog_id):
 	dialog_id = new_dialog_id
