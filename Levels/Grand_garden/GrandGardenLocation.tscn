@@ -3682,6 +3682,7 @@ water_tower_number = 1
 pause_mode = 2
 visible = false
 position = Vector2( 44, -1197 )
+z_index = 10
 gravity_scale = 0.0
 
 [node name="Pots" type="Node2D" parent="World_objects" index="3"]
