@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=2]
+[gd_scene load_steps=90 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=2]
@@ -905,6 +905,27 @@ tracks/7/keys = {
 "values": [ Vector2( -46, -31 ), Vector2( -46, -31 ) ]
 }
 
+[sub_resource type="RectangleShape2D" id=305]
+extents = Vector2( 13, 4 )
+
+[sub_resource type="RectangleShape2D" id=306]
+extents = Vector2( 16.25, 4 )
+
+[sub_resource type="RectangleShape2D" id=307]
+extents = Vector2( 23.75, 4 )
+
+[sub_resource type="RectangleShape2D" id=308]
+extents = Vector2( 17, 4 )
+
+[sub_resource type="RectangleShape2D" id=309]
+extents = Vector2( 17, 4 )
+
+[sub_resource type="RectangleShape2D" id=310]
+extents = Vector2( 24.75, 4 )
+
+[sub_resource type="RectangleShape2D" id=311]
+extents = Vector2( 8.75, 4 )
+
 [sub_resource type="ShaderMaterial" id=287]
 shader = ExtResource( 21 )
 shader_param/bg_color = Color( 0, 0, 0, 1 )
@@ -1091,38 +1112,76 @@ z_index = -5
 [node name="BushyTree" parent="Background_world_objects/Trees" index="0" instance=ExtResource( 38 )]
 position = Vector2( -406, 3 )
 
+[node name="CollisionShape2D" parent="Background_world_objects/Trees/BushyTree/PassThroughBody" index="0"]
+disabled = true
+
 [node name="BushyTree4" parent="Background_world_objects/Trees" index="1" instance=ExtResource( 38 )]
 position = Vector2( -377, 61 )
 scale = Vector2( -1, 1 )
 
+[node name="CollisionShape2D" parent="Background_world_objects/Trees/BushyTree4/PassThroughBody" index="0"]
+disabled = true
+
 [node name="BushyTree5" parent="Background_world_objects/Trees" index="2" instance=ExtResource( 38 )]
 position = Vector2( -284, 55 )
+
+[node name="CollisionShape2D" parent="Background_world_objects/Trees/BushyTree5/PassThroughBody" index="0"]
+disabled = true
 
 [node name="BushyTree6" parent="Background_world_objects/Trees" index="3" instance=ExtResource( 38 )]
 position = Vector2( 205, 58 )
 
+[node name="CollisionShape2D" parent="Background_world_objects/Trees/BushyTree6/PassThroughBody" index="0"]
+disabled = true
+
 [node name="BushyTree7" parent="Background_world_objects/Trees" index="4" instance=ExtResource( 38 )]
 position = Vector2( 277, 59 )
+
+[node name="CollisionShape2D" parent="Background_world_objects/Trees/BushyTree7/PassThroughBody" index="0"]
+disabled = true
 
 [node name="BushyTree3" parent="Background_world_objects/Trees" index="5" instance=ExtResource( 38 )]
 position = Vector2( 70, -37 )
 
+[node name="CollisionShape2D" parent="Background_world_objects/Trees/BushyTree3/PassThroughBody" index="0"]
+position = Vector2( 14, 45 )
+shape = SubResource( 305 )
+
 [node name="CurvedTree" parent="Background_world_objects/Trees" index="6" instance=ExtResource( 31 )]
 position = Vector2( -318, 1 )
 
+[node name="CollisionShape2D" parent="Background_world_objects/Trees/CurvedTree/PassThroughBody" index="0"]
+position = Vector2( 14.25, -3 )
+disabled = true
+
 [node name="CurvedTree3" parent="Background_world_objects/Trees" index="7" instance=ExtResource( 31 )]
 position = Vector2( -182, -5 )
+
+[node name="CollisionShape2D" parent="Background_world_objects/Trees/CurvedTree3/PassThroughBody" index="0"]
+position = Vector2( 18.25, -3 )
+shape = SubResource( 306 )
 
 [node name="CurvedTree4" parent="Background_world_objects/Trees" index="8" instance=ExtResource( 31 )]
 position = Vector2( -216, -70 )
 scale = Vector2( -1, 1 )
 
+[node name="CollisionShape2D" parent="Background_world_objects/Trees/CurvedTree4/PassThroughBody" index="0"]
+position = Vector2( -5.75, -3 )
+shape = SubResource( 307 )
+
 [node name="CurvedTree5" parent="Background_world_objects/Trees" index="9" instance=ExtResource( 31 )]
 position = Vector2( 131, -50 )
 scale = Vector2( -1, 1 )
 
+[node name="CollisionShape2D" parent="Background_world_objects/Trees/CurvedTree5/PassThroughBody" index="0"]
+disabled = true
+
 [node name="SquashedTree" parent="Background_world_objects/Trees" index="10" instance=ExtResource( 32 )]
 position = Vector2( -375, -65 )
+
+[node name="CollisionShape2D" parent="Background_world_objects/Trees/SquashedTree/PassThroughBody" index="0"]
+position = Vector2( -14, 21 )
+shape = SubResource( 308 )
 
 [node name="TallTree" parent="Background_world_objects/Trees" index="11" instance=ExtResource( 35 )]
 position = Vector2( -348, -3 )
@@ -1130,14 +1189,29 @@ position = Vector2( -348, -3 )
 [node name="BushyTree2" parent="Background_world_objects/Trees" index="12" instance=ExtResource( 38 )]
 position = Vector2( 207, -6 )
 
+[node name="CollisionShape2D" parent="Background_world_objects/Trees/BushyTree2/PassThroughBody" index="0"]
+position = Vector2( -4, 45 )
+shape = SubResource( 309 )
+
 [node name="CurvedTree2" parent="Background_world_objects/Trees" index="13" instance=ExtResource( 31 )]
 position = Vector2( 295, -8 )
+
+[node name="CollisionShape2D" parent="Background_world_objects/Trees/CurvedTree2/PassThroughBody" index="0"]
+position = Vector2( -4.75, -3 )
+shape = SubResource( 310 )
 
 [node name="SquashedTree2" parent="Background_world_objects/Trees" index="14" instance=ExtResource( 32 )]
 position = Vector2( 238, -74 )
 
+[node name="CollisionShape2D" parent="Background_world_objects/Trees/SquashedTree2/PassThroughBody" index="0"]
+disabled = true
+
 [node name="TallTree2" parent="Background_world_objects/Trees" index="15" instance=ExtResource( 35 )]
 position = Vector2( 265, -12 )
+
+[node name="CollisionShape2D" parent="Background_world_objects/Trees/TallTree2/PassThroughBody" index="0"]
+position = Vector2( 11.75, -3 )
+shape = SubResource( 311 )
 
 [node name="Background_trees" type="Node2D" parent="Background_world_objects/Trees" index="16"]
 
@@ -1688,6 +1762,36 @@ margin_top = -25.0
 margin_right = 5296.0
 margin_bottom = 344.0
 
+[editable path="Background_world_objects/Trees/BushyTree"]
+[editable path="Background_world_objects/Trees/BushyTree/PassThroughBody"]
+[editable path="Background_world_objects/Trees/BushyTree4"]
+[editable path="Background_world_objects/Trees/BushyTree4/PassThroughBody"]
+[editable path="Background_world_objects/Trees/BushyTree5"]
+[editable path="Background_world_objects/Trees/BushyTree5/PassThroughBody"]
+[editable path="Background_world_objects/Trees/BushyTree6"]
+[editable path="Background_world_objects/Trees/BushyTree6/PassThroughBody"]
+[editable path="Background_world_objects/Trees/BushyTree7"]
+[editable path="Background_world_objects/Trees/BushyTree7/PassThroughBody"]
+[editable path="Background_world_objects/Trees/BushyTree3"]
+[editable path="Background_world_objects/Trees/BushyTree3/PassThroughBody"]
+[editable path="Background_world_objects/Trees/CurvedTree"]
+[editable path="Background_world_objects/Trees/CurvedTree/PassThroughBody"]
+[editable path="Background_world_objects/Trees/CurvedTree3"]
+[editable path="Background_world_objects/Trees/CurvedTree3/PassThroughBody"]
+[editable path="Background_world_objects/Trees/CurvedTree4"]
+[editable path="Background_world_objects/Trees/CurvedTree4/PassThroughBody"]
+[editable path="Background_world_objects/Trees/CurvedTree5"]
+[editable path="Background_world_objects/Trees/CurvedTree5/PassThroughBody"]
+[editable path="Background_world_objects/Trees/SquashedTree"]
+[editable path="Background_world_objects/Trees/SquashedTree/PassThroughBody"]
+[editable path="Background_world_objects/Trees/BushyTree2"]
+[editable path="Background_world_objects/Trees/BushyTree2/PassThroughBody"]
+[editable path="Background_world_objects/Trees/CurvedTree2"]
+[editable path="Background_world_objects/Trees/CurvedTree2/PassThroughBody"]
+[editable path="Background_world_objects/Trees/SquashedTree2"]
+[editable path="Background_world_objects/Trees/SquashedTree2/PassThroughBody"]
+[editable path="Background_world_objects/Trees/TallTree2"]
+[editable path="Background_world_objects/Trees/TallTree2/PassThroughBody"]
 [editable path="Background_world_objects/FinalLevelDoor"]
 [editable path="Background_world_objects/FinalLevelDoor/InteractionController"]
 [editable path="Background_world_objects/Hidden_door_bricks/1/collision"]
