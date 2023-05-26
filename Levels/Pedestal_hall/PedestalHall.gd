@@ -8,7 +8,6 @@ func _ready():
 		var _connection = pedestal.connect("did_place_item_at_pedestal", self, "_did_place_item_at_pedestal")
 	
 func _did_place_item_at_pedestal():
-	animationPlayer.play("Show_mystic_dweller")
 	for pedestal in pedestals.get_children():
 		if !pedestal.isItemPlaced:
 			return
