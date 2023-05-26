@@ -62,6 +62,11 @@ func _process(delta):
 		State.CUSTOME:
 			process_custome_animation(delta)
 
+func reset_state():
+	currentActionIndex = 0
+	currentState = actions[currentActionIndex]
+	is_state_new = true
+	
 func setup_custome_animation(animation_name):
 	var customeAction = NpcAction.new()
 	customeAction.state = State.CUSTOME
@@ -150,7 +155,8 @@ func on_npc_interact(interactedBody):
 
 func process_custome_animation(delta):
 	if is_state_new:
-		animationPlayer.play(custome_animation)
+		if animationPlayer.has_animation(custome_animation):
+			animationPlayer.play(custome_animation)
 		is_state_new = false
 	
 	process_still(delta)
@@ -189,4 +195,5 @@ func set_animation_with_state(state):
 		State.ACTING:
 			animationPlayer.play("Act")
 		State.CUSTOME:
-			animationPlayer.play(custome_animation)
+			if animationPlayer.has_animation(custome_animation):
+				animationPlayer.play(custome_animation)

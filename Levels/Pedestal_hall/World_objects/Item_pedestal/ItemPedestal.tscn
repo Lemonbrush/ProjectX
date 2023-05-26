@@ -92,6 +92,20 @@ tracks/2/keys = {
 "update": 1,
 "values": [ false, true ]
 }
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_emit_did_place_item_at_pedestal"
+} ]
+}
 
 [sub_resource type="Animation" id=25]
 resource_name = "ItemPlaced"
@@ -157,7 +171,7 @@ position = Vector2( 0, -2 )
 texture = ExtResource( 1 )
 hframes = 17
 vframes = 2
-frame = 22
+frame = 17
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Activated = SubResource( 23 )

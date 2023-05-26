@@ -44,8 +44,22 @@ func on_quit_pressed():
 	emit_signal("back_pressed")
 
 func game_constant_option_pressed(button):
+	var args = button.text.split(" ")
+	if args.size() == 2 and (args[1] == "False" or args[1] == "True"):
+		autochange_bool_value_if_can(args[0], args[1])
+		return
 	var text = button.text
 	textField.text = "set" + " " + text
+
+func autochange_bool_value_if_can(constant_name, value):
+		var newValue = value
+		if newValue == "False":
+			newValue = "True"
+		else:
+			newValue = "False"
+			
+		var command = "set " + constant_name + " " + newValue
+		execute_command(command)
 
 func execute_command(command_line):
 	CommandHandler.execute(command_line)
