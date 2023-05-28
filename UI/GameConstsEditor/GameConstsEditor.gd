@@ -2,9 +2,9 @@ extends CanvasLayer
 
 signal back_pressed
 
-onready var exit_button = $MainMarginContainer/MarginContainer/VBoxContainer2/ExitButton
-onready var gameConstsList = $MainMarginContainer/MarginContainer/VBoxContainer2/VBoxContainer/MarginContainer/GameConstsList
-onready var textField = $MainMarginContainer/MarginContainer/VBoxContainer2/VBoxContainer/LineEdit
+onready var exit_button = $MainMarginContainer/MarginContainer/VBoxContainer/MarginContainer/GameConstsList/ExitButton
+onready var gameConstsList = $MainMarginContainer/MarginContainer/VBoxContainer/MarginContainer/GameConstsList
+onready var textField = $MainMarginContainer/MarginContainer/VBoxContainer/LineEdit
 
 func _ready():
 	var _exit_button_connection = exit_button.connect("pressed", self, "on_quit_pressed")
@@ -13,6 +13,7 @@ func _ready():
 	var _const_list_update_connection = EventBus.connect("game_const_changed", self, "update_game_const_list")
 	
 	update_game_const_list()
+	exit_button.grab_focus()
 
 func _unhandled_input(_event):
 	if Input.is_action_just_pressed("pause_menu"):
@@ -28,11 +29,11 @@ func update_game_const_list():
 		button.text = game_const + " " + str(value)
 		gameConstsList.add_child(button)
 		button.connect("pressed", self, "game_constant_option_pressed", [button])
-		button.set_enabled_focus_mode(false)
 
 func resset_game_const_list():
 	for game_const_button in gameConstsList.get_children():
-		gameConstsList.remove_child(game_const_button)
+		if game_const_button != exit_button:
+			gameConstsList.remove_child(game_const_button)
 
 func command_entered(text):
 	execute_command(text)
