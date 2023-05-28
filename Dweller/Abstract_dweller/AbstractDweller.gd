@@ -197,3 +197,7 @@ func set_animation_with_state(state):
 		State.CUSTOME:
 			if animationPlayer.has_animation(custome_animation):
 				animationPlayer.play(custome_animation)
+
+func set_interaction_mode(can_interact: bool):
+	is_player_interaction_active = can_interact
+	dialogTextBoxController.setup_interaction_mode(can_interact)
