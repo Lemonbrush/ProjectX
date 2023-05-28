@@ -46,7 +46,6 @@ margin_right = 490.0
 margin_bottom = 253.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/separation = -1
 
 [node name="ExitButton" type="Button" parent="MainMarginContainer/MarginContainer/VBoxContainer/MarginContainer/GameConstsList"]
 margin_right = 24.0

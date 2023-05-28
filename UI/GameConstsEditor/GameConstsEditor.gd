@@ -27,6 +27,7 @@ func update_game_const_list():
 		button.align = Button.ALIGN_LEFT
 		button.rect_scale = Vector2(0.6,0.6)
 		button.text = game_const + " " + str(value)
+		button.enabled_focus_mode = Control.FOCUS_ALL
 		gameConstsList.add_child(button)
 		button.connect("pressed", self, "game_constant_option_pressed", [button])
 
@@ -48,9 +49,21 @@ func game_constant_option_pressed(button):
 	var args = button.text.split(" ")
 	if args.size() == 2 and (args[1] == "False" or args[1] == "True"):
 		autochange_bool_value_if_can(args[0], args[1])
+		grab_next_button_focuse(button)
 		return
 	var text = button.text
 	textField.text = "set" + " " + text
+
+func grab_next_button_focuse(button):
+	var target_const = button.text.split(" ")[0]
+	var is_target_button = false
+	for game_const_button in gameConstsList.get_children():
+		if game_const_button.text.split(" ")[0] == target_const:
+			is_target_button = !is_target_button
+		if is_target_button:
+			game_const_button.grab_focus()
+			return
+	exit_button.grab_focus()
 
 func autochange_bool_value_if_can(constant_name, value):
 		var newValue = value
