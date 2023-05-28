@@ -6,7 +6,6 @@ onready var exit_button = $CanvasLayer/MainMenuMarginContainer/VBoxContainer/Exi
 onready var version_label = $CanvasLayer/RightMarginContainer/VersionLabel
 onready var about_button = $CanvasLayer/MainMenuMarginContainer/VBoxContainer/AboutButton
 
-onready var menu_cursor = $CanvasLayer/MenuCursor
 onready var mainMenuCanvasLayer = $CanvasLayer
 onready var logo_animation_player = $AnimationPlayer
 
@@ -21,6 +20,7 @@ func _ready():
 	options_button.connect("pressed", self, "on_options_pressed")
 	about_button.connect("pressed", self, "on_changelog_pressed")
 	version_label.text = FileManager.get_project_version()
+	play_button.grab_focus()
 	
 func on_play_pressed():
 	logo_animation_player.play("Play")
@@ -36,15 +36,13 @@ func on_options_pressed():
 	get_tree().root.add_child(optionsMenuInstance)
 	optionsMenuInstance.connect("back_pressed", self, "on_options_back_pressed")
 	mainMenuCanvasLayer.visible = false
-	menu_cursor.focuse(false)
 	
 func on_changelog_pressed():
 	mainMenuCanvasLayer.visible = false
 	var changelogMenuSceneInstance = changelogMenuScene.instance()
 	get_tree().root.add_child(changelogMenuSceneInstance)
 	changelogMenuSceneInstance.connect("back_pressed", self, "on_options_back_pressed")
-	menu_cursor.focuse(false)
 
 func on_options_back_pressed():
+	play_button.grab_focus()
 	mainMenuCanvasLayer.visible = true
-	menu_cursor.focuse(true)

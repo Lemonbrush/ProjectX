@@ -7,13 +7,13 @@
 [ext_resource path="res://Assets/UI/RadioButton/radioButton1.png" type="Texture" id=5]
 [ext_resource path="res://Assets/UI/textFieldFlatBox1.png" type="Texture" id=6]
 
-[sub_resource type="StyleBoxEmpty" id=6]
+[sub_resource type="StyleBoxEmpty" id=14]
 
-[sub_resource type="StyleBoxEmpty" id=4]
+[sub_resource type="StyleBoxEmpty" id=13]
 
-[sub_resource type="StyleBoxEmpty" id=2]
+[sub_resource type="StyleBoxEmpty" id=10]
 
-[sub_resource type="StyleBoxEmpty" id=1]
+[sub_resource type="StyleBoxEmpty" id=11]
 
 [sub_resource type="StyleBoxEmpty" id=3]
 
@@ -37,14 +37,16 @@ margin_bottom = 3.87913
 
 [resource]
 default_font = ExtResource( 2 )
-Button/colors/font_color_disabled = Color( 0.364706, 0.364706, 0.364706, 1 )
-Button/colors/font_color_hover = Color( 0.537255, 0.537255, 0.537255, 1 )
-Button/colors/font_color_pressed = Color( 0.203922, 0.203922, 0.203922, 0.611765 )
+Button/colors/font_color = Color( 1, 1, 1, 0.776471 )
+Button/colors/font_color_disabled = Color( 0.447059, 0.447059, 0.447059, 0.654902 )
+Button/colors/font_color_focus = Color( 1, 1, 1, 1 )
+Button/colors/font_color_hover = Color( 1, 1, 1, 1 )
+Button/colors/font_color_pressed = Color( 0.47451, 0.458824, 0.458824, 1 )
 Button/fonts/font = ExtResource( 1 )
-Button/styles/disabled = SubResource( 6 )
-Button/styles/focus = SubResource( 4 )
-Button/styles/hover = SubResource( 2 )
-Button/styles/normal = SubResource( 1 )
+Button/styles/disabled = SubResource( 14 )
+Button/styles/focus = SubResource( 13 )
+Button/styles/hover = SubResource( 10 )
+Button/styles/normal = SubResource( 11 )
 Button/styles/pressed = SubResource( 3 )
 CheckBox/icons/checked = ExtResource( 4 )
 CheckBox/icons/radio_checked = ExtResource( 4 )
