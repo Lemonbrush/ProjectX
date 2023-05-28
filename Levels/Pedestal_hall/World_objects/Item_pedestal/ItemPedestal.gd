@@ -1,5 +1,7 @@
 extends Node2D
 
+signal did_place_item_at_pedestal
+
 export(String) var dialogId
 export(String) var item_name
 export(String) var interaction_popup_label_text = "Осмотреть"
@@ -37,6 +39,9 @@ func _did_place_item_at_pedestal(itemName):
 		isItemPlaced = true
 		_update_pedestal_state()
 		animationPlayer.play("ItemPlace")
+
+func _emit_did_place_item_at_pedestal():
+	emit_signal("did_place_item_at_pedestal")
 
 func _update_pedestal_state():
 	interactionControllerCollisionShape.disabled = !activated

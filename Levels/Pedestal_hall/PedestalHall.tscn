@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=2]
+[gd_scene load_steps=93 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=2]
@@ -48,10 +48,11 @@
 [ext_resource path="res://WorldObjects/Pick_ups/Items/ArtistBrush/View/ArtistBrushView.tscn" type="PackedScene" id=46]
 [ext_resource path="res://WorldObjects/Pick_ups/Items/RedThred/View/RedThredItemView.tscn" type="PackedScene" id=47]
 [ext_resource path="res://WorldObjects/Pick_ups/Items/Kissnip/View/KissnipView.tscn" type="PackedScene" id=48]
+[ext_resource path="res://Dweller/NpcActions/idle/idle_npc_action.gd" type="Script" id=49]
 
 [sub_resource type="Animation" id=285]
 resource_name = "Kissing_statues_cutscene"
-length = 7.0
+length = 12.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Background_world_objects/Statues/Me_statue/Chest:rotation_degrees")
 tracks/0/interp = 2
@@ -59,7 +60,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 2 ),
+"times": PoolRealArray( 6.6, 8.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 14.8018, -40.0216 ]
@@ -71,7 +72,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1.9 ),
+"times": PoolRealArray( 6.6, 8.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ -18.8395, 60.8088 ]
@@ -83,7 +84,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 1.9 ),
+"times": PoolRealArray( 6.6, 8.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 1.21178, 39.9283 ]
@@ -95,7 +96,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 2 ),
+"times": PoolRealArray( 6.6, 8.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.260285, -36.3457 ]
@@ -107,7 +108,7 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 2 ),
+"times": PoolRealArray( 6.6, 8.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, -8.98415 ]
@@ -119,7 +120,7 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 2, 2.1, 2.3, 2.5 ),
+"times": PoolRealArray( 6.6, 8.6, 8.7, 8.9, 9.1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ -8.27403, -8.27403, 0.0, -13.3307, -8.3 ]
@@ -131,7 +132,7 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 4, 5 ),
+"times": PoolRealArray( 6.6, 10.6, 11.6 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -63, -71 ), Vector2( -63, -71 ), Vector2( -111, -71 ) ]
@@ -143,7 +144,7 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0, 5 ),
+"times": PoolRealArray( 6.6, 11.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -155,7 +156,7 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0, 4, 5 ),
+"times": PoolRealArray( 6.6, 10.6, 11.6 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -23, -71 ), Vector2( -23, -71 ), Vector2( 9, -71 ) ]
@@ -167,7 +168,7 @@ tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 0, 5 ),
+"times": PoolRealArray( 6.6, 11.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -179,7 +180,7 @@ tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0, 3.8, 4.8 ),
+"times": PoolRealArray( 6.6, 10.4, 11.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -79, -55 ), Vector2( -79, -55 ), Vector2( -127, -55 ) ]
@@ -191,7 +192,7 @@ tracks/11/loop_wrap = true
 tracks/11/imported = false
 tracks/11/enabled = true
 tracks/11/keys = {
-"times": PoolRealArray( 0, 4.8 ),
+"times": PoolRealArray( 6.6, 11.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -203,7 +204,7 @@ tracks/12/loop_wrap = true
 tracks/12/imported = false
 tracks/12/enabled = true
 tracks/12/keys = {
-"times": PoolRealArray( 0, 4, 5 ),
+"times": PoolRealArray( 6.6, 10.6, 11.6 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -23, -55 ), Vector2( -23, -55 ), Vector2( 41, -55 ) ]
@@ -215,7 +216,7 @@ tracks/13/loop_wrap = true
 tracks/13/imported = false
 tracks/13/enabled = true
 tracks/13/keys = {
-"times": PoolRealArray( 0, 5 ),
+"times": PoolRealArray( 6.6, 11.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -227,7 +228,7 @@ tracks/14/loop_wrap = true
 tracks/14/imported = false
 tracks/14/enabled = true
 tracks/14/keys = {
-"times": PoolRealArray( 0, 4.2, 5.2 ),
+"times": PoolRealArray( 6.6, 10.8, 11.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -63, -39 ), Vector2( -63, -39 ), Vector2( -111, -39 ) ]
@@ -239,7 +240,7 @@ tracks/15/loop_wrap = true
 tracks/15/imported = false
 tracks/15/enabled = true
 tracks/15/keys = {
-"times": PoolRealArray( 0, 5.2 ),
+"times": PoolRealArray( 6.6, 11.8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -251,7 +252,7 @@ tracks/16/loop_wrap = true
 tracks/16/imported = false
 tracks/16/enabled = true
 tracks/16/keys = {
-"times": PoolRealArray( 0, 3.7, 4.7 ),
+"times": PoolRealArray( 6.6, 10.3, 11.3 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -23, -39 ), Vector2( -23, -39 ), Vector2( 9, -39 ) ]
@@ -263,7 +264,7 @@ tracks/17/loop_wrap = true
 tracks/17/imported = false
 tracks/17/enabled = true
 tracks/17/keys = {
-"times": PoolRealArray( 0, 4.7 ),
+"times": PoolRealArray( 6.6, 11.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -275,7 +276,7 @@ tracks/18/loop_wrap = true
 tracks/18/imported = false
 tracks/18/enabled = true
 tracks/18/keys = {
-"times": PoolRealArray( 0, 4.1, 5.1 ),
+"times": PoolRealArray( 6.6, 10.7, 11.7 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -47, -23 ), Vector2( -47, -23 ), Vector2( -95, -23 ) ]
@@ -287,7 +288,7 @@ tracks/19/loop_wrap = true
 tracks/19/imported = false
 tracks/19/enabled = true
 tracks/19/keys = {
-"times": PoolRealArray( 0, 5.1 ),
+"times": PoolRealArray( 6.6, 11.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -299,7 +300,7 @@ tracks/20/loop_wrap = true
 tracks/20/imported = false
 tracks/20/enabled = true
 tracks/20/keys = {
-"times": PoolRealArray( 0, 4, 5 ),
+"times": PoolRealArray( 6.6, 10.6, 11.6 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -47, -7 ), Vector2( -47, -7 ), Vector2( -31, -7 ) ]
@@ -311,7 +312,7 @@ tracks/21/loop_wrap = true
 tracks/21/imported = false
 tracks/21/enabled = true
 tracks/21/keys = {
-"times": PoolRealArray( 0, 5 ),
+"times": PoolRealArray( 6.6, 11.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -323,7 +324,7 @@ tracks/22/loop_wrap = true
 tracks/22/imported = false
 tracks/22/enabled = true
 tracks/22/keys = {
-"times": PoolRealArray( 0, 5 ),
+"times": PoolRealArray( 6.6, 11.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -335,7 +336,7 @@ tracks/23/loop_wrap = true
 tracks/23/imported = false
 tracks/23/enabled = true
 tracks/23/keys = {
-"times": PoolRealArray( 0, 5 ),
+"times": PoolRealArray( 6.6, 11.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -347,7 +348,7 @@ tracks/24/loop_wrap = true
 tracks/24/imported = false
 tracks/24/enabled = true
 tracks/24/keys = {
-"times": PoolRealArray( 0, 4.8 ),
+"times": PoolRealArray( 6.6, 11.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -359,7 +360,7 @@ tracks/25/loop_wrap = true
 tracks/25/imported = false
 tracks/25/enabled = true
 tracks/25/keys = {
-"times": PoolRealArray( 0, 5 ),
+"times": PoolRealArray( 6.6, 11.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -371,7 +372,7 @@ tracks/26/loop_wrap = true
 tracks/26/imported = false
 tracks/26/enabled = true
 tracks/26/keys = {
-"times": PoolRealArray( 0, 5.2 ),
+"times": PoolRealArray( 6.6, 11.8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -383,7 +384,7 @@ tracks/27/loop_wrap = true
 tracks/27/imported = false
 tracks/27/enabled = true
 tracks/27/keys = {
-"times": PoolRealArray( 0, 4.7 ),
+"times": PoolRealArray( 6.6, 11.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -395,7 +396,7 @@ tracks/28/loop_wrap = true
 tracks/28/imported = false
 tracks/28/enabled = true
 tracks/28/keys = {
-"times": PoolRealArray( 0, 5.1 ),
+"times": PoolRealArray( 6.6, 11.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -407,10 +408,90 @@ tracks/29/loop_wrap = true
 tracks/29/imported = false
 tracks/29/enabled = true
 tracks/29/keys = {
-"times": PoolRealArray( 0, 5 ),
+"times": PoolRealArray( 6.6, 11.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
+}
+tracks/30/type = "value"
+tracks/30/path = NodePath("Camera2D:position")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/keys = {
+"times": PoolRealArray( 0, 10.2, 10.4, 12.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -44, -195 ), Vector2( -44, -195 ), Vector2( -49, -47 ), Vector2( -49, -47 ) ]
+}
+tracks/31/type = "method"
+tracks/31/path = NodePath("Middle_world_objects/MysticDweller")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/keys = {
+"times": PoolRealArray( 2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "show_hide_animation"
+} ]
+}
+tracks/32/type = "method"
+tracks/32/path = NodePath("Camera2D")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/keys = {
+"times": PoolRealArray( 5.1, 8.5, 10.1, 12.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"values": [ {
+"args": [ null, null, null, null ],
+"method": "_screen_shake"
+}, {
+"args": [  ],
+"method": "_stop_screen_shake"
+}, {
+"args": [ null, null, null, null ],
+"method": "_screen_shake"
+}, {
+"args": [  ],
+"method": "_stop_screen_shake"
+} ]
+}
+tracks/33/type = "method"
+tracks/33/path = NodePath(".")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/keys = {
+"times": PoolRealArray( 0, 12.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "pause_level"
+}, {
+"args": [  ],
+"method": "unpouse_level"
+} ]
+}
+tracks/34/type = "method"
+tracks/34/path = NodePath("Middle_world_objects/MysticDweller")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ false ],
+"method": "set_interaction_mode"
+} ]
 }
 
 [sub_resource type="Animation" id=286]
@@ -788,9 +869,70 @@ tracks/30/keys = {
 "values": [ Vector2( 0, -120 ) ]
 }
 
+[sub_resource type="Animation" id=312]
+resource_name = "Show_mystic_dweller"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.9, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -44, -116 ), Vector2( -44, -116 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Middle_world_objects/MysticDweller/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "Showing", -1, 1.0, false ],
+"method": "play"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "pause_level"
+}, {
+"args": [  ],
+"method": "unpouse_level"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Middle_world_objects/MysticDweller")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ true ],
+"method": "set_interaction_mode"
+} ]
+}
+
 [sub_resource type="Animation" id=304]
 resource_name = "pedestals_activation_scene"
-length = 2.5
+length = 4.5
 tracks/0/type = "method"
 tracks/0/path = NodePath("Middle_world_objects/Pedestals/ButterflyItemPedestal")
 tracks/0/interp = 1
@@ -882,7 +1024,7 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0.4, 2.5 ),
+"times": PoolRealArray( 0.4, 4.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -899,10 +1041,50 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0.1, 2.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0.1, 2.525, 2.85 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -46, -31 ), Vector2( -46, -31 ) ]
+"values": [ Vector2( -46, -31 ), Vector2( -46, -31 ), Vector2( -23, -105 ) ]
+}
+tracks/8/type = "method"
+tracks/8/path = NodePath("Middle_world_objects/MysticDweller/AnimationPlayer")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "Hiding", -1, 1.0, false ],
+"method": "play"
+} ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Middle_world_objects/MysticDweller:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/10/type = "method"
+tracks/10/path = NodePath("Middle_world_objects/MysticDweller")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ false ],
+"method": "set_interaction_mode"
+} ]
 }
 
 [sub_resource type="RectangleShape2D" id=305]
@@ -953,6 +1135,12 @@ extents = Vector2( 24, 8 )
 
 [sub_resource type="RectangleShape2D" id=294]
 extents = Vector2( 8, 8 )
+
+[sub_resource type="Resource" id=313]
+resource_local_to_scene = true
+script = ExtResource( 49 )
+wait_time = 10.0
+is_infinite = true
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 16, 8 )
@@ -1096,6 +1284,7 @@ position = Vector2( -2, 2 )
 autoplay = ""
 anims/Kissing_statues_cutscene = SubResource( 285 )
 anims/RESET = SubResource( 286 )
+anims/Show_mystic_dweller = SubResource( 312 )
 anims/pedestals_activation_scene = SubResource( 304 )
 
 [node name="Camera2D" parent="." index="4"]
@@ -1464,6 +1653,7 @@ tile_data = PoolIntArray( -8126619, 78, 0, -7471218, 76, 0, -7405492, 77, 0, -72
 pause_mode = 2
 position = Vector2( -25, -95 )
 dialogId = "pillars_mystic_dweller"
+currentState = SubResource( 313 )
 defaultDirection = -1
 
 [node name="Body" parent="Middle_world_objects/MysticDweller" index="5"]

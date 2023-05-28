@@ -37,6 +37,7 @@ signal show_mystic_dweller_heart_assembler_disappear_cutscene()
 
 signal show_activate_pillars_cutscene()
 signal did_place_item_at_pedestal(item_name)
+signal show_final_level_door_opening_cutscene()
 
 func start_shake_screen(duration = 0.2, frequency = 16, amplitude = 2, infinity = true):
 	emit_signal("start_shake_screen", duration, frequency, amplitude, infinity)
@@ -116,3 +117,6 @@ func show_activate_pillars_cutscene():
 
 func did_place_item_at_pedestal(item_name):
 	emit_signal("did_place_item_at_pedestal", item_name)
+
+func show_final_level_door_opening_cutscene():
+	emit_signal("show_final_level_door_opening_cutscene")
