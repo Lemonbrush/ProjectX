@@ -188,11 +188,13 @@ scale = Vector2( 1, 2.4 )
 
 [node name="InteractionController" parent="." instance=ExtResource( 4 )]
 visible = false
+z_index = 99
 
 [node name="CollisionShape2D" parent="InteractionController/Area2D" index="0"]
 disabled = true
 
 [node name="DialogController" parent="." instance=ExtResource( 5 )]
+z_index = 99
 interaction_popup_label_text = "Осмотреть"
 
 [node name="Item" type="Node2D" parent="."]
