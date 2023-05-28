@@ -55,8 +55,10 @@ particles_anim_v_frames = 1
 particles_anim_loop = false
 
 [node name="MysticDwellerAppearParticles" type="Node2D"]
+pause_mode = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+pause_mode = 2
 autoplay = "Appear"
 anims/Appear = SubResource( 1 )
 anims/RESET = SubResource( 2 )
