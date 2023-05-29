@@ -62,7 +62,6 @@ func game_constant_option_pressed(button):
 
 func grab_next_button_focuse(button):
 	var target_const = button.text.split(" ")[0]
-	var is_target_button = false
 	for game_const_button in gameConstsList.get_children():
 		if game_const_button is Button and game_const_button.text.split(" ")[0] == target_const:
 			game_const_button.grab_focus()
