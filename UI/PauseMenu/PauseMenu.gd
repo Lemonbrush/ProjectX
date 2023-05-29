@@ -6,7 +6,6 @@ onready var exitButton = $MainMarginContainer/MarginContainer/ContentVBoxContain
 onready var exitGameButton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer/ExitGameButton
 
 onready var marginContainer = $MainMarginContainer
-onready var menuCursor = $MenuCursor
 
 var optionsMenuScene = preload("res://UI/OptionsMenu/OptionsMenu.tscn")
 
@@ -17,6 +16,7 @@ func _ready():
 	exitGameButton.connect("pressed", self, "on_exit_game_button_pressed")
 	
 	get_tree().paused = true
+	continueButton.grab_focus()
 
 func _unhandled_input(_event):
 	if Input.is_action_just_pressed("pause_menu") and marginContainer.visible:
@@ -45,8 +45,7 @@ func on_options_pressed():
 	add_child(optionsMenuInstance)
 	optionsMenuInstance.connect("back_pressed", self, "on_options_back_pressed")
 	marginContainer.visible = false
-	menuCursor.focuse(false)
 
 func on_options_back_pressed():
 	marginContainer.visible = true
-	menuCursor.focuse(true)
+	continueButton.grab_focus()

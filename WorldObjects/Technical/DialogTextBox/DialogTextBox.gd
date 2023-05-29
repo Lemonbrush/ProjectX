@@ -11,7 +11,6 @@ onready var label = $MarginNode/PanelContainer/MarginContainer/VBoxContainer/Lab
 onready var marginNode = $MarginNode
 onready var buttonHint = $MarginNode/PanelContainer/ButtonHint
 onready var buttonsContainer = $MarginNode/PanelContainer/MarginContainer/VBoxContainer/ButtonsContainer
-onready var cursor = $MarginNode/MenuCursor
 
 var animated_button_scene_path = preload("res://UI/Animated_dialog_button/AnimatedDialogButton.tscn")
 var float_animation_direction_up = false
@@ -26,13 +25,10 @@ func _ready():
 func show_text(text, button_options = null):
 	remove_buttons()
 	buttonsContainer.visible = button_options != null
-	cursor.focuse(false)
-	cursor.cursor_index = 0
 
 	if button_options:
 		setup_buttons(button_options)
-		cursor.menu_parent_path = buttonsContainer.get_path()
-		cursor.focuse(true)
+		grab_button_focuse_if_needed()
 		
 	buttonHint.modulate.a = 0.0
 	add_text(text)
@@ -62,6 +58,19 @@ func setup_buttons(button_options):
 		button.set_text(button_option["text"])
 		buttonsContainer.add_child(button)
 		button.connect("pressed", self, "button_option_pressed", [button.text])
+
+func grab_button_focuse_if_needed():
+	if buttonsContainer.get_children().size() < 1:
+		return
+	var button = buttonsContainer.get_children()[0]
+	if button == null:
+		return
+	if  buttonsContainer.get_children().size() == 1:
+		button.grab_focus()
+		return
+	
+	if button.has_method("grab_focus_without_animation"):
+		button.grab_focus_without_animation()
 	
 func add_text(next_text):
 	if next_text == null:
