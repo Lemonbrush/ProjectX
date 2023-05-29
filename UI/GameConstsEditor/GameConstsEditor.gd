@@ -52,7 +52,8 @@ func game_constant_option_pressed(button):
 		grab_next_button_focuse(button)
 		return
 	var text = button.text
-	textField.text = "set" + " " + text
+	textField.text = "set_float" + " " + text
+	textField.grab_focus()
 
 func grab_next_button_focuse(button):
 	var target_const = button.text.split(" ")[0]
