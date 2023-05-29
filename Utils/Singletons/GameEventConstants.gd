@@ -4,6 +4,7 @@ var constants: Dictionary
 
 func set_default_constants():
 	constants = {
+		default_camera_zoom = 0.8,
 		kissnip_picked_up = false,
 		heart_key_picked_up = false,
 		is_artist_brush_picked_up = false,
@@ -55,12 +56,11 @@ func set_default_constants():
 		did_mystic_dweller_activate_pillars = false,
 		did_put_all_all_items_on_pedestals = false
 	}
-	EventBus.game_const_changed()
 
 func set_constant(constant_name, value):
 	if constants.has(constant_name):
 		constants[constant_name] = value
-		EventBus.game_const_changed()
+		EventBus.game_const_changed(constant_name, value)
 	else:
 		print("Error setting game constant - ", constant_name, " with value ", value)
 

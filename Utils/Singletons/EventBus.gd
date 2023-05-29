@@ -11,7 +11,7 @@ signal stop_shake_screen()
 
 signal debug_screen_visibility_updated()
 
-signal game_const_changed()
+signal game_const_changed(constant_name, value)
 signal show_lighthouse_key()
 
 signal show_create_love_potion_cut_scene()
@@ -61,8 +61,8 @@ func player_entered_door(nextScenePath):
 func debug_screen_visibility_updated():
 	emit_signal("debug_screen_visibility_updated")
 
-func game_const_changed():
-	emit_signal("game_const_changed")
+func game_const_changed(constant_name, value):
+	emit_signal("game_const_changed", constant_name, value)
 
 func show_lighthouse_key():
 	emit_signal("show_lighthouse_key")
