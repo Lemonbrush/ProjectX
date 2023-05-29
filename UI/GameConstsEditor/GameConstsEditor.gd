@@ -2,15 +2,20 @@ extends CanvasLayer
 
 signal back_pressed
 
-onready var exit_button = $MainMarginContainer/MarginContainer/VBoxContainer/MarginContainer/GameConstsList/ExitButton
+onready var exit_button = $MainMarginContainer/MarginContainer/VBoxContainer/MarginContainer/GameConstsList/HBoxContainer/HBoxContainer/ExitButton
 onready var gameConstsList = $MainMarginContainer/MarginContainer/VBoxContainer/MarginContainer/GameConstsList
-onready var textField = $MainMarginContainer/MarginContainer/VBoxContainer/LineEdit
+onready var textField = $MainMarginContainer/MarginContainer/VBoxContainer/MarginContainer/GameConstsList/HBoxContainer/LineEdit
+onready var setButton = $MainMarginContainer/MarginContainer/VBoxContainer/MarginContainer/GameConstsList/HBoxContainer/HBoxContainer2/SetButton
+onready var setFloatButton = $MainMarginContainer/MarginContainer/VBoxContainer/MarginContainer/GameConstsList/HBoxContainer/HBoxContainer2/SetFloatButton
+onready var emmitButton = $MainMarginContainer/MarginContainer/VBoxContainer/MarginContainer/GameConstsList/HBoxContainer/HBoxContainer2/EmmitButton
 
 func _ready():
 	var _exit_button_connection = exit_button.connect("pressed", self, "on_quit_pressed")
 	var _textField_connection = textField.connect("text_entered", self, "command_entered")
-	
 	var _const_list_update_connection = EventBus.connect("game_const_changed", self, "update_game_const_list")
+	var _set_button = setButton.connect("pressed", self, "on_set_button_pressed")
+	var _set_float_button = setFloatButton.connect("pressed", self, "on_set_float_button_pressed")
+	var _emmit_button = emmitButton.connect("pressed", self, "on_emmit_button_pressed")
 	
 	update_game_const_list()
 	exit_button.grab_focus()
@@ -33,7 +38,7 @@ func update_game_const_list(_const = null, _value = null):
 
 func resset_game_const_list():
 	for game_const_button in gameConstsList.get_children():
-		if game_const_button != exit_button:
+		if game_const_button != $MainMarginContainer/MarginContainer/VBoxContainer/MarginContainer/GameConstsList/HBoxContainer:
 			gameConstsList.remove_child(game_const_button)
 
 func command_entered(text):
@@ -59,9 +64,7 @@ func grab_next_button_focuse(button):
 	var target_const = button.text.split(" ")[0]
 	var is_target_button = false
 	for game_const_button in gameConstsList.get_children():
-		if game_const_button.text.split(" ")[0] == target_const:
-			is_target_button = !is_target_button
-		if is_target_button:
+		if game_const_button is Button and game_const_button.text.split(" ")[0] == target_const:
 			game_const_button.grab_focus()
 			return
 	exit_button.grab_focus()
@@ -78,3 +81,24 @@ func autochange_bool_value_if_can(constant_name, value):
 
 func execute_command(command_line):
 	CommandHandler.execute(command_line)
+
+func update_command_with_base(base):
+	var textfield_text = textField.text
+	var textfield_text_parts = textfield_text.split(" ")
+	if textfield_text == "" or textfield_text_parts.size() < 2:
+		textField.text = base
+	
+	for i in len(textfield_text_parts):
+		if i == 0:
+			textField.text = base
+		else:
+			textField.text += " " + textfield_text_parts[i]
+
+func on_set_button_pressed():
+	update_command_with_base("set")
+
+func on_set_float_button_pressed():
+	update_command_with_base("set_float")
+
+func on_emmit_button_pressed():
+	update_command_with_base("emmit")

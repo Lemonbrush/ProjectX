@@ -24,8 +24,6 @@ margin_left = 4.79225
 margin_right = 5.3
 margin_top = 5.51191
 margin_bottom = 4.93274
-expand_margin_left = 5.0
-expand_margin_top = 5.0
 
 [sub_resource type="StyleBoxTexture" id=5]
 texture = ExtResource( 3 )
