@@ -898,7 +898,6 @@ environment = SubResource( 273 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 pause_mode = 2
-autoplay = "open_transition"
 anims/Gate_opening_cut_scene = SubResource( 38 )
 anims/open_transition = SubResource( 39 )
 

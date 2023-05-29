@@ -15,7 +15,8 @@ var follow_player = true
 
 func _ready():
 	var _focus_const_change_connection = EventBus.connect("game_const_changed", self, "on_game_const_changed")
-	var _connect = EventBus.connect("cameraFocuseAnimation", self, "scale_with_animation")
+	var _connect = EventBus.connect("camera_focus_animation", self, "scale_with_animation")
+	var _default_zoom_connection = EventBus.connect("camera_focus_default_zoom", self, "scale_to_default_zoom_with_animation")
 	VisualServer.set_default_clear_color(backgroundColor)
 
 func _process(delta):
@@ -43,11 +44,11 @@ func get_target_position_from_node_group(groupName):
 	
 func scale_with_animation(newZoom, time):
 	tween.stop(self)
-	tween.interpolate_property(self, 'zoom', zoom, newZoom, time, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0)
+	tween.interpolate_property(self, 'zoom', zoom, Vector2(newZoom, newZoom), time, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0)
 	tween.start()
 
 func scale_to_default_zoom_with_animation(time = 1):
-	scale_with_animation(Vector2(default_zoom, default_zoom), time)
+	scale_with_animation(default_zoom, time)
 
 func set_default_camera_zoom(zoomValue):
 	if zoom_based_on_editor_value:

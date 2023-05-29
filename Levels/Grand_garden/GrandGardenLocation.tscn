@@ -597,14 +597,17 @@ tracks/37/loop_wrap = true
 tracks/37/imported = false
 tracks/37/enabled = true
 tracks/37/keys = {
-"times": PoolRealArray( 4.7, 6.9 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 4.7, 6.9, 16 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "values": [ {
 "args": [ null, null, null, null ],
 "method": "_screen_shake"
 }, {
 "args": [  ],
 "method": "_stop_screen_shake"
+}, {
+"args": [ null ],
+"method": "scale_to_default_zoom_with_animation"
 } ]
 }
 tracks/38/type = "value"
@@ -4014,6 +4017,7 @@ position = Vector2( 150, -484 )
 position = Vector2( -150, 484 )
 
 [node name="White_flower_dweller" parent="Upper_background_objects/Dwellers" index="0" instance=ExtResource( 39 )]
+visible = false
 position = Vector2( 249, 528 )
 dialogId = "White_flower_dweller"
 actions = [ ExtResource( 41 ) ]
@@ -4218,7 +4222,6 @@ anims/Idle = SubResource( 309 )
 anims/RESET = SubResource( 310 )
 
 [node name="White_flower_growing" type="Node2D" parent="Upper_background_objects" index="2"]
-visible = false
 
 [node name="Growing_flower_body" type="Node2D" parent="Upper_background_objects/White_flower_growing" index="0"]
 
@@ -4590,7 +4593,7 @@ process_material = SubResource( 335 )
 position = Vector2( 460, -660 )
 
 [node name="Player" parent="." index="12"]
-position = Vector2( 203, 520 )
+position = Vector2( 190, -1571 )
 z_index = 1
 collision_mask = 252
 
