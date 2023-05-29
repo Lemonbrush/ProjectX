@@ -1,13 +1,12 @@
 extends CanvasLayer
 signal back_pressed
 
-onready var quitButton = $MainMarginContainer/MarginContainer/MenuVBoxContainer/ExitButton
 onready var mainMarginContainer = $MainMarginContainer
-onready var textLabel = $MainMarginContainer/MarginContainer/MenuVBoxContainer/RichTextLabel
+onready var textLabel = $MainMarginContainer/MarginContainer/RichTextLabel
 
 func _ready():
-	quitButton.connect("pressed", self, "on_quit_pressed")
 	textLabel.text = load_file("res://ProjectResources/CHANGELOG.md")
+	textLabel.grab_focus()
 
 func _unhandled_input(_event):
 	if Input.is_action_just_pressed("pause_menu") and mainMarginContainer.visible:
