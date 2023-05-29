@@ -15,79 +15,24 @@ theme = ExtResource( 2 )
 [node name="ColorRect" type="ColorRect" parent="MainMarginContainer"]
 margin_right = 530.0
 margin_bottom = 320.0
-color = Color( 0.0941176, 0.0784314, 0.168627, 0.368627 )
+color = Color( 0.054902, 0.0431373, 0.141176, 0.819608 )
 
 [node name="MarginContainer" type="MarginContainer" parent="MainMarginContainer"]
 margin_right = 530.0
 margin_bottom = 320.0
 custom_constants/margin_right = 20
-custom_constants/margin_top = 20
+custom_constants/margin_top = 5
 custom_constants/margin_left = 20
-custom_constants/margin_bottom = 20
+custom_constants/margin_bottom = 5
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MainMarginContainer/MarginContainer"]
 margin_left = 20.0
-margin_top = 20.0
+margin_top = 5.0
 margin_right = 510.0
-margin_bottom = 300.0
+margin_bottom = 315.0
 rect_min_size = Vector2( 450, 250 )
+rect_pivot_offset = Vector2( -46, 20 )
 focus_mode = 2
 custom_fonts/normal_font = ExtResource( 3 )
-text = "# Changelog
-All notable changes to this project will be documented in this file.
-
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
-## [1.6.0 Alpha] - 2023-4-17 - Wish star dangeon update
-### Added
-- Added Wish star dangeon location
-- Added controller support
-- Added menu cursor 
-- Added game logo screen
-- Added ambient light system
-- Added interactive light sources
-### Changed
-- Changed Autosave logic 
-
-## [1.5.0 Alpha] - 2023-2-5 - Harbour house location update
-### Added 
-- Added Harbour house location 
-- Added Changelog screen
-- Optimization
-### Changed
-- Changed Artist quest
-- Changed Central hub Harbour house location entrance sprite
-### Fixed
-- Fixed player and camera position in some locations
-
-## [1.4.0 Alpha] - 2022-11-20 - Grand garden location update
-### Added
-- Added decorations
-- Added birds
-- Added Grand garden location hints on the Central hub location
-- Added butterfly item
-- Added water towers quest
-- Added flower dwellers
-
-## [1.3.1 Alpha] - 2022-10-15 - Hotfix
-### Removed
-- Removed save files
-### Fixed
-- Fixed export paths
-- Corrected player position
-- Cleaned up project
-
-## [1.3.0 Alpha] - 2022-10-15 - Central hub location update
-### Added
-- Added central hub location
-- Added lighthouse location
-- Added blue house location
-- Added yellow house location
-- Added green house location
-- Added mill location
-- Added pink house location
-- Added dialog system
-- Added central hub dwellers
-- Added art quest"
+bbcode_enabled = true
 deselect_on_focus_loss_enabled = false
