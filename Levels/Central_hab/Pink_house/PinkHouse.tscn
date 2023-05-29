@@ -205,6 +205,7 @@ environment = SubResource( 111 )
 
 [node name="Camera2D" parent="." index="3"]
 position = Vector2( 9, 0 )
+current = false
 zoom = Vector2( 0.6, 0.6 )
 zoom_based_on_editor_value = true
 
