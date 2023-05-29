@@ -21,7 +21,7 @@ func _process(_delta):
 func update_margin_visibility():
 	mainMarginContainer.visible = SettingsManager.settings.is_debug_screen_active
 
-func setup_game_consts():
+func setup_game_consts(_const = null, _value = null):
 	game_consts_rich_label.text = ""
 	for game_const in GameEventConstants.constants:
 		var value = GameEventConstants.constants[game_const]

@@ -183,6 +183,20 @@ tracks/5/keys = {
 "method": "play_show_animation"
 } ]
 }
+tracks/6/type = "method"
+tracks/6/path = NodePath("Camera2D")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 3.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ null ],
+"method": "scale_to_default_zoom_with_animation"
+} ]
+}
 
 [sub_resource type="TileSet" id=36]
 0/name = "GrassDecorationsSheet.png 0"
@@ -1647,6 +1661,7 @@ texture = ExtResource( 20 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 pause_mode = 2
+autoplay = "show_lighthouse_key_cut_scene"
 anims/show_lighthouse_key_cut_scene = SubResource( 210 )
 
 [node name="DecorationsBackground" type="Node2D" parent="."]
@@ -1950,7 +1965,6 @@ position = Vector2( 3, -4 )
 scale = Vector2( -1, 1 )
 
 [node name="LighthouseKeyItem" parent="WorldObjects" instance=ExtResource( 74 )]
-visible = false
 position = Vector2( -94, -257 )
 mode = 0
 gravity_scale = 0.6
@@ -1964,7 +1978,7 @@ process_material = SubResource( 212 )
 texture = ExtResource( 73 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 7 )]
-position = Vector2( 54, -71 )
+position = Vector2( -94, -260 )
 
 [node name="Clouds" parent="Camera2D" instance=ExtResource( 15 )]
 position = Vector2( -2, 2 )

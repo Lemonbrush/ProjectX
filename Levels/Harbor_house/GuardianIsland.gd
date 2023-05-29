@@ -38,8 +38,8 @@ func lift_island_down():
 
 func camera_focus_area_entered(body):
 	if body.get_name() == "Player":
-		EventBus.camera_focuse_animation(Vector2(1.5, 1.5), 1)
+		EventBus.camera_focus_animation(1.5, 1)
 
 func camera_focus_area_exited(body):
 	if body.get_name() == "Player":
-		EventBus.camera_focuse_animation(Vector2(1, 1), 1)
+		EventBus.camera_focus_default_zoom(1)

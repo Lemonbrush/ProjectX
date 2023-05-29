@@ -1,7 +1,8 @@
 extends Node
 
 signal did_update_cursor_setting()
-signal cameraFocuseAnimation(zoom, time)
+signal camera_focus_animation(zoomValue, time)
+signal camera_focus_default_zoom(time)
 signal playerAnimationModeChange(isPlayerAnimating)
 signal player_picked_up_item(item_name)
 signal player_entered_door(nextScenePath)
@@ -11,7 +12,7 @@ signal stop_shake_screen()
 
 signal debug_screen_visibility_updated()
 
-signal game_const_changed()
+signal game_const_changed(constant_name, value)
 signal show_lighthouse_key()
 
 signal show_create_love_potion_cut_scene()
@@ -45,8 +46,11 @@ func start_shake_screen(duration = 0.2, frequency = 16, amplitude = 2, infinity 
 func stop_shake_screen():
 	emit_signal("stop_shake_screen")
 
-func camera_focuse_animation(zoom, time):
-	emit_signal("cameraFocuseAnimation", zoom, time)
+func camera_focus_animation(zoomValue, time):
+	emit_signal("camera_focus_animation", zoomValue, time)
+
+func camera_focus_default_zoom(time):
+	emit_signal("camera_focus_default_zoom", time)
 
 func player_animation_mode_change(isPlayerAnimating):
 	emit_signal("playerAnimationModeChange", isPlayerAnimating)
@@ -61,8 +65,8 @@ func player_entered_door(nextScenePath):
 func debug_screen_visibility_updated():
 	emit_signal("debug_screen_visibility_updated")
 
-func game_const_changed():
-	emit_signal("game_const_changed")
+func game_const_changed(constant_name, value):
+	emit_signal("game_const_changed", constant_name, value)
 
 func show_lighthouse_key():
 	emit_signal("show_lighthouse_key")

@@ -19,7 +19,7 @@ func _unhandled_input(_event):
 	if Input.is_action_just_pressed("pause_menu"):
 		on_quit_pressed()
 
-func update_game_const_list():
+func update_game_const_list(_const = null, _value = null):
 	resset_game_const_list()
 	for game_const in GameEventConstants.constants:
 		var value = GameEventConstants.constants[game_const]
