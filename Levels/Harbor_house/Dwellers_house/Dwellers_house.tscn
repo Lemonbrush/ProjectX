@@ -227,6 +227,7 @@ texture = ExtResource( 10 )
 [node name="Camera2D" parent="." index="4"]
 position = Vector2( 146, 15 )
 zoom = Vector2( 0.6, 0.6 )
+zoom_based_on_editor_value = true
 
 [node name="Clouds" parent="Camera2D" index="2" instance=ExtResource( 17 )]
 position = Vector2( -2, -19 )

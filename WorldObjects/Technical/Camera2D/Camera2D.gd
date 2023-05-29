@@ -47,7 +47,7 @@ func scale_with_animation(newZoom, time):
 	tween.start()
 
 func scale_to_default_zoom_with_animation(time = 1):
-	scale_with_animation(default_zoom, time)
+	scale_with_animation(Vector2(default_zoom, default_zoom), time)
 
 func set_default_camera_zoom(zoomValue):
 	if zoom_based_on_editor_value:
