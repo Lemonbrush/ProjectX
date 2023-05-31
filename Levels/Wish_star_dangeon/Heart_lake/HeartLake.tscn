@@ -903,6 +903,8 @@ anims/RESET = SubResource( 18 )
 
 [node name="Camera2D" parent="." index="4"]
 position = Vector2( 9.40004, -192.4 )
+zoom_based_on_editor_value = true
+default_zoom = 1.0
 
 [node name="Clouds" parent="Camera2D" index="2" instance=ExtResource( 7 )]
 
