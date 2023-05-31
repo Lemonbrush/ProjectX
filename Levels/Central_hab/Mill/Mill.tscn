@@ -157,18 +157,6 @@ tracks/7/keys = {
 [sub_resource type="Animation" id=121]
 resource_name = "idle"
 length = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Camera2D:zoom")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0.8, 0.8 ) ]
-}
 
 [sub_resource type="Animation" id=38]
 resource_name = "mill_ladder_cut_scene"
@@ -204,11 +192,25 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.6 ),
+"times": PoolRealArray( 0.9 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
 "method": "show_appear_animation"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Camera2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 2.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ null ],
+"method": "scale_to_default_zoom_with_animation"
 } ]
 }
 
@@ -413,16 +415,17 @@ script = ExtResource( 19 )
 environment = SubResource( 124 )
 
 [node name="AnimationPlayer" parent="." index="2"]
-autoplay = "idle"
+autoplay = ""
 anims/RESET = SubResource( 120 )
 anims/cat_nip_creation_cut_scene = SubResource( 119 )
 anims/idle = SubResource( 121 )
 anims/mill_ladder_cut_scene = SubResource( 38 )
 
 [node name="Camera2D" parent="." index="3"]
-position = Vector2( 36, -149 )
+position = Vector2( -22, -167 )
 zoom = Vector2( 0.7, 0.7 )
 zoom_based_on_editor_value = true
+default_zoom = 0.7
 
 [node name="Clouds" parent="Camera2D" index="2" instance=ExtResource( 8 )]
 position = Vector2( -2, -19 )
