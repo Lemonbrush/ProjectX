@@ -91,6 +91,7 @@ environment = SubResource( 122 )
 position = Vector2( -4, -11 )
 zoom = Vector2( 0.7, 0.7 )
 zoom_based_on_editor_value = true
+default_zoom = 0.7
 
 [node name="Clouds2" parent="Camera2D" index="2" instance=ExtResource( 3 )]
 position = Vector2( -2, -19 )
