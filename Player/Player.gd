@@ -309,7 +309,7 @@ func start_item_pickup_animation(itemScene, use_scale_animation = true):
 	body.visible = false
 	
 	if use_scale_animation:
-		EventBus.camera_focuse_animation(Vector2(0.5, 0.5), 1)
+		EventBus.camera_focus_animation(0.5, 1)
 
 func start_door_entering_animation(nextScenePath):
 	entering_scene_path = nextScenePath
@@ -320,7 +320,7 @@ func on_pickup_animation_finished(use_scale_animation = true):
 	body.visible = true
 	
 	if use_scale_animation:
-		EventBus.camera_focuse_animation(Vector2(1, 1), 0.5)
+		EventBus.camera_focus_default_zoom(0.5)
 
 func pause_level():
 	get_tree().paused = true 

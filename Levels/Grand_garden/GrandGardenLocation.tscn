@@ -3470,7 +3470,7 @@ script = ExtResource( 35 )
 environment = SubResource( 399 )
 
 [node name="AnimationPlayer" parent="." index="2"]
-autoplay = ""
+autoplay = "RESET"
 anims/Grand_flower_opening_cut_scene = SubResource( 312 )
 anims/RESET = SubResource( 257 )
 anims/White_flower_grow_cut_scene = SubResource( 270 )

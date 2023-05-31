@@ -4,7 +4,7 @@ var constants: Dictionary
 
 func set_default_constants():
 	constants = {
-		default_camera_zoom = 0.8,
+		default_camera_zoom = 0.6,
 		kissnip_picked_up = false,
 		heart_key_picked_up = false,
 		is_artist_brush_picked_up = false,
