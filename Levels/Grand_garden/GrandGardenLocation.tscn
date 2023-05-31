@@ -4017,7 +4017,6 @@ position = Vector2( 150, -484 )
 position = Vector2( -150, 484 )
 
 [node name="White_flower_dweller" parent="Upper_background_objects/Dwellers" index="0" instance=ExtResource( 39 )]
-visible = false
 position = Vector2( 249, 528 )
 dialogId = "White_flower_dweller"
 actions = [ ExtResource( 41 ) ]
@@ -4222,6 +4221,7 @@ anims/Idle = SubResource( 309 )
 anims/RESET = SubResource( 310 )
 
 [node name="White_flower_growing" type="Node2D" parent="Upper_background_objects" index="2"]
+visible = false
 
 [node name="Growing_flower_body" type="Node2D" parent="Upper_background_objects/White_flower_growing" index="0"]
 
@@ -4593,7 +4593,7 @@ process_material = SubResource( 335 )
 position = Vector2( 460, -660 )
 
 [node name="Player" parent="." index="12"]
-position = Vector2( 190, -1571 )
+position = Vector2( 208, 523 )
 z_index = 1
 collision_mask = 252
 
