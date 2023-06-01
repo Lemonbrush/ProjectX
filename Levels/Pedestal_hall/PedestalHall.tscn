@@ -864,18 +864,6 @@ tracks/29/keys = {
 "update": 0,
 "values": [ false ]
 }
-tracks/30/type = "value"
-tracks/30/path = NodePath("Camera2D:position")
-tracks/30/interp = 1
-tracks/30/loop_wrap = true
-tracks/30/imported = false
-tracks/30/enabled = true
-tracks/30/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, -120 ) ]
-}
 
 [sub_resource type="Animation" id=312]
 resource_name = "Show_mystic_dweller"
@@ -1298,6 +1286,7 @@ anims/Show_mystic_dweller = SubResource( 312 )
 anims/pedestals_activation_scene = SubResource( 304 )
 
 [node name="Camera2D" parent="." index="5"]
+position = Vector2( -550, -53 )
 zoom = Vector2( 0.8, 0.8 )
 
 [node name="Clouds" parent="Camera2D" index="2" instance=ExtResource( 5 )]
@@ -1709,7 +1698,7 @@ item_name = "heart_key"
 itemScene = ExtResource( 44 )
 
 [node name="Player" parent="." index="10"]
-position = Vector2( -47, -109 )
+position = Vector2( -550, -10 )
 
 [node name="Light2D2" parent="Player" index="5"]
 visible = false
