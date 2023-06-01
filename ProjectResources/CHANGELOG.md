@@ -1,8 +1,23 @@
 # Changelog
-All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+## [1.7.0 Alpha] - 2023-6-2 - Kissing statues update
+### Added
+- Added Kissing statues location
+- Added diverse options to the game constants editor
+- Added default camera zoom with ability to change it in the editor
+- Minor changes in camera positioning and default zoom values across all scenes
+- Minor changes in cutscenes
+### Changed
+- Changed guardian island zoom area and zoom value
+- Changed lighthouse key position in cutscene
+- Changed menu cursor to button focus
+- Changed "About game" screen text format
+### Removed
+- Removed lighthouse top door
+### Fixed
+- Fixed debug screen visibility on resetting all settings
+- Fixed white flower dialog glitch
+- Fixed Wish star dangeon texture tileset litter
 
 ## [1.6.0 Alpha] - 2023-4-17 - Wish star dangeon update
 ### Added
@@ -93,11 +108,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added object containers such as barrels and chests
 - Added moving platforms
 - Added player fail logic
-
 ### Changed
 - Changed heart gate level and brush its elements
 - Improved game save system
-
 ### Deprecated
 - The book element is yet to be removed
 - Deprecated old game save system
@@ -112,11 +125,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
 # Types of changes
 
 - **Added** for new features.
-- **Changed** for changes in existing functionality.
-- **Deprecated** for soon-to-be removed features.
-- **Removed** for now removed features.
-- **Fixed** for any bug fixes.
-- **Security** in case of vulnerabilities.
+- **Changed** for changes in existing functionality
+- **Deprecated** for soon-to-be removed features
+- **Removed** for now removed features
+- **Fixed** for any bug fixes
