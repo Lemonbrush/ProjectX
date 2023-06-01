@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.7.0 Alpha] - 2023-6-2 - Kissing statues update
+## [1.7.0 Alpha] - 2023-6-1 - Kissing statues update
 ### Added
 - Added Kissing statues location
 - Added diverse options to the game constants editor
