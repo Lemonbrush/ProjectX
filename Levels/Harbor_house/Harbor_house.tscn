@@ -811,8 +811,8 @@ extents = Vector2( 192, 8 )
 [sub_resource type="RectangleShape2D" id=81]
 extents = Vector2( 112, 8 )
 
-[sub_resource type="RectangleShape2D" id=272]
-extents = Vector2( 315.5, 125.5 )
+[sub_resource type="RectangleShape2D" id=275]
+extents = Vector2( 339.5, 289 )
 
 [sub_resource type="RectangleShape2D" id=269]
 extents = Vector2( 14, 4 )
@@ -2459,12 +2459,11 @@ shape = SubResource( 81 )
 one_way_collision = true
 
 [node name="CameraFocusArea2D" type="Area2D" parent="GuardianIsland"]
-visible = false
 position = Vector2( 395, -248 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GuardianIsland/CameraFocusArea2D"]
-position = Vector2( -2.5, -88.5 )
-shape = SubResource( 272 )
+position = Vector2( -26.5, 75 )
+shape = SubResource( 275 )
 
 [node name="LiftWaitTimer" type="Timer" parent="GuardianIsland"]
 wait_time = 15.0
