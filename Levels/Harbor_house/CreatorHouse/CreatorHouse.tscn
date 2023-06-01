@@ -471,6 +471,7 @@ anims/creator_house_desk_scene = SubResource( 188 )
 position = Vector2( -131, 320 )
 zoom = Vector2( 0.7, 0.7 )
 backgroundColor = Color( 0.768627, 0.898039, 1, 1 )
+zoom_based_on_editor_value = true
 
 [node name="Clouds2" parent="Camera2D" index="2" instance=ExtResource( 5 )]
 position = Vector2( -2, -19 )

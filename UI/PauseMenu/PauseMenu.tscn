@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://UI/PauseMenu/PauseMenu.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Themes/MainTheme.tres" type="Theme" id=2]
 [ext_resource path="res://Resources/Fonts/Epilepsy Sans/Resource/EpilepsySansBold.tres" type="DynamicFont" id=3]
-[ext_resource path="res://UI/Cursor/MenuCursor.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "appear"
@@ -33,6 +32,7 @@ anims/appear = SubResource( 1 )
 [node name="MainMarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="MainMarginContainer"]
 margin_right = 530.0
@@ -72,8 +72,7 @@ theme = ExtResource( 2 )
 [node name="ExitGameButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer"]
 margin_right = 114.0
 margin_bottom = 14.0
-focus_mode = 0
-enabled_focus_mode = 0
+focus_neighbour_top = NodePath("../ContinueButton")
 text = "exit_game"
 align = 0
 
@@ -81,8 +80,6 @@ align = 0
 margin_top = 18.0
 margin_right = 114.0
 margin_bottom = 32.0
-focus_mode = 0
-enabled_focus_mode = 0
 text = "return_to_game_menu"
 align = 0
 
@@ -90,8 +87,6 @@ align = 0
 margin_top = 36.0
 margin_right = 114.0
 margin_bottom = 50.0
-focus_mode = 0
-enabled_focus_mode = 0
 text = "options"
 align = 0
 
@@ -99,12 +94,6 @@ align = 0
 margin_top = 54.0
 margin_right = 114.0
 margin_bottom = 68.0
-focus_mode = 0
-enabled_focus_mode = 0
+focus_neighbour_bottom = NodePath("../ExitGameButton")
 text = "continue"
 align = 0
-
-[node name="MenuCursor" parent="." instance=ExtResource( 4 )]
-margin_top = -17.0
-margin_bottom = -10.0
-menu_parent_path = NodePath("../MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer")

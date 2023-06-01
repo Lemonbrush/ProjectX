@@ -683,6 +683,8 @@ anims/RESET = SubResource( 100 )
 [node name="Camera2D" parent="." index="5"]
 position = Vector2( 905, 13 )
 backgroundColor = Color( 0.176471, 0.152941, 0.25098, 1 )
+zoom_based_on_editor_value = true
+default_zoom = 1.0
 
 [node name="Stars" parent="Camera2D" index="2" instance=ExtResource( 8 )]
 position = Vector2( 0, 1 )

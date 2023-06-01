@@ -280,8 +280,9 @@ dynamic_camera = false
 environment = SubResource( 142 )
 
 [node name="Camera2D" parent="." index="3"]
-position = Vector2( 55, -22 )
+position = Vector2( 3, -41 )
 zoom = Vector2( 0.7, 0.7 )
+zoom_based_on_editor_value = true
 
 [node name="Clouds" parent="Camera2D" index="2" instance=ExtResource( 5 )]
 position = Vector2( -2, -19 )

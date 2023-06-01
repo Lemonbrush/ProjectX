@@ -5,13 +5,13 @@ onready var quitButton = $MainMarginContainer/MarginContainer/ContentVBoxContain
 onready var specialOptionsButton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer/SpecialOptionButton
 
 onready var mainMarginContainer = $MainMarginContainer
-onready var menuCursor = $MenuCursor
 
 var specialOptionsMenuScene = preload("res://UI/SpecialOptionsMenu/SpecialOptionsMenu.tscn")
 
 func _ready():
 	quitButton.connect("pressed", self, "on_quit_pressed") 
-	specialOptionsButton.connect("pressed", self, "on_special_options_pressed") 
+	specialOptionsButton.connect("pressed", self, "on_special_options_pressed")
+	quitButton.grab_focus()
 
 func _unhandled_input(_event):
 	if Input.is_action_just_pressed("pause_menu") and mainMarginContainer.visible:
@@ -26,8 +26,7 @@ func on_special_options_pressed():
 	get_tree().root.add_child(specialOptionsMenuSceneInstance)
 	specialOptionsMenuSceneInstance.connect("back_pressed", self, "on_options_back_pressed")
 	mainMarginContainer.visible = false
-	menuCursor.focuse(false)
 
 func on_options_back_pressed():
 	mainMarginContainer.visible = true
-	menuCursor.focuse(true)
+	quitButton.grab_focus()

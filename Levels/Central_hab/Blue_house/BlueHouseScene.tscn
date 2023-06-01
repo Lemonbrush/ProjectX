@@ -519,8 +519,10 @@ anims/artist_brush_gift_scene = SubResource( 133 )
 anims/place_artwork_cut_scene = SubResource( 122 )
 
 [node name="Camera2D" parent="." index="3"]
-position = Vector2( 0, -7 )
+position = Vector2( 0, -13 )
 zoom = Vector2( 0.6, 0.6 )
+zoom_based_on_editor_value = true
+default_zoom = 0.6
 
 [node name="Clouds2" parent="Camera2D" index="2" instance=ExtResource( 6 )]
 position = Vector2( -2, -19 )

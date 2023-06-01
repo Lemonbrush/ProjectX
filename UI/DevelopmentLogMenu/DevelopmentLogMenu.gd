@@ -1,13 +1,14 @@
 extends CanvasLayer
 signal back_pressed
 
-onready var quitButton = $MainMarginContainer/MarginContainer/MenuVBoxContainer/ExitButton
 onready var mainMarginContainer = $MainMarginContainer
-onready var textLabel = $MainMarginContainer/MarginContainer/MenuVBoxContainer/RichTextLabel
+onready var textLabel = $MainMarginContainer/MarginContainer/RichTextLabel
+
+var changelog_link = "res://ProjectResources/CHANGELOG.md"
 
 func _ready():
-	quitButton.connect("pressed", self, "on_quit_pressed")
-	textLabel.text = load_file("res://ProjectResources/CHANGELOG.md")
+	textLabel.append_bbcode(load_file(changelog_link))
+	textLabel.grab_focus()
 
 func _unhandled_input(_event):
 	if Input.is_action_just_pressed("pause_menu") and mainMarginContainer.visible:
@@ -19,13 +20,28 @@ func on_quit_pressed():
 
 func load_file(file):
 	var f = File.new()
+	f.open(file, File.READ)
+	var final_text = ""
+	while not f.eof_reached():
+		var line = f.get_line()
+		line = prettify_line(line)
+		final_text += line
+	f.close()
+	return final_text
+
+func prettify_line(text):
+	var final_text = text
+	var first_char_part = text.split(" ")[0]
+	if first_char_part == "#" or first_char_part == "##":
+		final_text = final_text.to_upper()
+		final_text = "[color=white]" + final_text + "[/color]"
+	elif first_char_part == "###":
+		final_text = "[color=#8ea8fa]" + final_text + "[/color]"
+	else:
+		final_text = "[color=#cccccc]" + final_text + "[/color]"
 	
-	if not f.file_exists(file):
-		print("No file saved!")
-		return "empty"
-	
-	if f.open(file, File.READ) != 0:
-		print("Error opening file")
-		return "empty"
-		
-	return f.get_as_text()
+	final_text = final_text.replace("# ", "")
+	final_text = final_text.replace("##", "")
+	final_text = final_text.replace("#[", "[")
+	final_text += "\n"
+	return final_text

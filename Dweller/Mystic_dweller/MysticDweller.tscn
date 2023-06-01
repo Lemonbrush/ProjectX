@@ -1,13 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Assets/effects/particles.png" type="Texture" id=1]
-[ext_resource path="res://Resources/Particles/Cutscene_particles/Dust_appear_particles/DustAppearParticles.tres" type="Material" id=2]
 [ext_resource path="res://Assets/NPC/mysticDweller-Sheet.png" type="Texture" id=3]
 [ext_resource path="res://Dweller/Abstract_dweller/AbstractDweller.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Dweller/Mystic_dweller/MysticDweller.gd" type="Script" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Hiding"
-length = 2.0
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -22,16 +20,16 @@ tracks/0/keys = {
 "values": [ 53, 54, 55, 56, 58, 59 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../DustParticles2D:emitting")
+tracks/1/path = NodePath("..:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.0125, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false, true ]
+"values": [ false ]
 }
 tracks/2/type = "method"
 tracks/2/path = NodePath("..")
@@ -40,11 +38,25 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 2 ),
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "\"\"" ],
+"method": "setup_custome_animation"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.5 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "queue_free"
+"method": "spawn_appear_particles"
 } ]
 }
 
@@ -79,8 +91,24 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 0 ]
 }
+
+[sub_resource type="Animation" id=8]
+resource_name = "Showing"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.35, 0.45, 0.55, 0.65 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 59, 58, 56, 55, 54, 53, 52 ]
+}
 tracks/1/type = "value"
-tracks/1/path = NodePath("../DustParticles2D:emitting")
+tracks/1/path = NodePath("..:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -88,8 +116,39 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "\"\"" ],
+"method": "setup_custome_animation"
+}, {
+"args": [  ],
+"method": "reset_state"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "spawn_appear_particles"
+} ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -126,13 +185,8 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ]
 }
 
-[sub_resource type="CanvasItemMaterial" id=7]
-particles_animation = true
-particles_anim_h_frames = 3
-particles_anim_v_frames = 1
-particles_anim_loop = false
-
 [node name="MysticDweller" instance=ExtResource( 4 )]
+script = ExtResource( 5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
 root_node = NodePath("../Body")
@@ -140,6 +194,7 @@ autoplay = "RESET"
 anims/Hiding = SubResource( 1 )
 anims/Idle = SubResource( 2 )
 anims/RESET = SubResource( 3 )
+anims/Showing = SubResource( 8 )
 anims/Talking = SubResource( 6 )
 anims/Walk = SubResource( 4 )
 
@@ -148,16 +203,5 @@ position = Vector2( 0, -16 )
 texture = ExtResource( 3 )
 hframes = 26
 vframes = 4
-
-[node name="DustParticles2D" type="Particles2D" parent="." index="7"]
-pause_mode = 2
-material = SubResource( 7 )
-emitting = false
-amount = 40
-one_shot = true
-explosiveness = 1.0
-randomness = 1.0
-process_material = ExtResource( 2 )
-texture = ExtResource( 1 )
 
 [editable path="Body/InteractionController"]

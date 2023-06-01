@@ -22,8 +22,8 @@ static func execute(command_line: String):
 		match command:
 			"set":
 				var var_name = args[0]
-				var value = str2var(args[1])
-				GameEventConstants.set_constant(var_name, bool(value))
+				var value = args[1] == "True"
+				GameEventConstants.set_constant(var_name, value)
 			
 			"set_float":
 				var var_name = args[0]
@@ -33,4 +33,7 @@ static func execute(command_line: String):
 			"emmit":
 				var signal_name = args[0]
 				if EventBus.has_method(signal_name):
-					EventBus.call(signal_name)
+					if args.size() > 1:
+						EventBus.call(signal_name, args[1])
+					else:
+						EventBus.call(signal_name)

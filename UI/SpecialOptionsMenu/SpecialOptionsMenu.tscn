@@ -1,11 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Resources/Fonts/Epilepsy Sans/Resource/EpilepsySansBold.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Resources/Themes/MainTheme.tres" type="Theme" id=2]
 [ext_resource path="res://UI/SpecialOptionsMenu/SpecialOptionsMenu.gd" type="Script" id=3]
 [ext_resource path="res://Resources/Fonts/Epilepsy Sans/Resource/EpilepsySansOutlined.tres" type="DynamicFont" id=4]
-[ext_resource path="res://UI/Cursor/MenuCursor.tscn" type="PackedScene" id=5]
-[ext_resource path="res://UI/CheckboxButton/CheckboxButton.tscn" type="PackedScene" id=6]
 
 [node name="SpecialOptionsMenu" type="CanvasLayer"]
 pause_mode = 2
@@ -23,7 +21,7 @@ color = Color( 0.0941176, 0.0784314, 0.168627, 0.509804 )
 
 [node name="MarginContainer" type="MarginContainer" parent="MainMarginContainer"]
 margin_right = 530.0
-margin_bottom = 261.0
+margin_bottom = 219.0
 size_flags_vertical = 0
 custom_constants/margin_top = 60
 custom_constants/margin_left = 25
@@ -31,8 +29,8 @@ custom_constants/margin_left = 25
 [node name="ContentVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer"]
 margin_left = 25.0
 margin_top = 60.0
-margin_right = 188.0
-margin_bottom = 261.0
+margin_right = 163.0
+margin_bottom = 219.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_constants/separation = 30
@@ -47,90 +45,59 @@ text = "special"
 
 [node name="OptionsVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer"]
 margin_top = 56.0
-margin_right = 163.0
-margin_bottom = 201.0
+margin_right = 138.0
+margin_bottom = 159.0
 
 [node name="GameConstsEditorButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
-margin_right = 163.0
+margin_right = 138.0
 margin_bottom = 13.0
-focus_mode = 0
+focus_neighbour_top = NodePath("../ExitButton")
 custom_fonts/font = ExtResource( 4 )
-enabled_focus_mode = 0
 text = "Редактор сохранений"
 align = 0
 
 [node name="DeleteAllSavesButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
 margin_top = 17.0
-margin_right = 163.0
+margin_right = 138.0
 margin_bottom = 31.0
-focus_mode = 0
-enabled_focus_mode = 0
 text = "delete_all_saves"
 align = 0
 
 [node name="ResetGameConstantsButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
+visible = false
 margin_top = 35.0
-margin_right = 163.0
+margin_right = 156.0
 margin_bottom = 49.0
-focus_mode = 0
-enabled_focus_mode = 0
 text = "Сбросить игровые константы"
 align = 0
 
 [node name="DeleteSystemDataButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
-margin_top = 53.0
-margin_right = 163.0
-margin_bottom = 67.0
-focus_mode = 0
-enabled_focus_mode = 0
+margin_top = 35.0
+margin_right = 138.0
+margin_bottom = 49.0
 text = "reset_options"
 align = 0
 
-[node name="DeleteAllSavesAlwaysCheckBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer" instance=ExtResource( 6 )]
-margin_top = 71.0
-margin_right = 163.0
-margin_bottom = 87.0
-
-[node name="Label" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/DeleteAllSavesAlwaysCheckBoxContainer" index="0"]
-margin_right = 142.0
+[node name="DeleteAllSavesAlwaysButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
+margin_top = 53.0
+margin_right = 138.0
+margin_bottom = 67.0
+toggle_mode = true
 text = "Автоудаление сохранений"
-
-[node name="Checkbox" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/DeleteAllSavesAlwaysCheckBoxContainer" index="1"]
-margin_left = 147.0
-margin_right = 163.0
-
-[node name="ActivateDebugScreenCheckBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer" instance=ExtResource( 6 )]
-margin_top = 91.0
-margin_right = 163.0
-margin_bottom = 107.0
-
-[node name="Label" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/ActivateDebugScreenCheckBoxContainer" index="0"]
-margin_right = 76.0
-text = "Экран отладки"
-
-[node name="Checkbox" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/ActivateDebugScreenCheckBoxContainer" index="1"]
-margin_left = 81.0
-margin_right = 97.0
-
-[node name="MenuCursorCheckBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer" instance=ExtResource( 6 )]
-margin_top = 111.0
-margin_right = 163.0
-margin_bottom = 127.0
-
-[node name="ExitButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
-margin_top = 131.0
-margin_right = 163.0
-margin_bottom = 145.0
-focus_mode = 0
-enabled_focus_mode = 0
-text = "exit"
 align = 0
 
-[node name="MenuCursor" parent="." instance=ExtResource( 5 )]
-margin_top = -11.0
-margin_bottom = -4.0
-menu_parent_path = NodePath("../MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer")
+[node name="ActivateDebugScreenButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
+margin_top = 71.0
+margin_right = 138.0
+margin_bottom = 85.0
+toggle_mode = true
+text = "Экран отладки"
+align = 0
 
-[editable path="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/DeleteAllSavesAlwaysCheckBoxContainer"]
-[editable path="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/ActivateDebugScreenCheckBoxContainer"]
-[editable path="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/MenuCursorCheckBoxContainer"]
+[node name="ExitButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
+margin_top = 89.0
+margin_right = 138.0
+margin_bottom = 103.0
+focus_neighbour_bottom = NodePath("../GameConstsEditorButton")
+text = "exit"
+align = 0

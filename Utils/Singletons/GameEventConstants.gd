@@ -4,8 +4,14 @@ var constants: Dictionary
 
 func set_default_constants():
 	constants = {
-		is_player_talked_to_shore_dweller = false,
+		default_camera_zoom = 0.7,
+		kissnip_picked_up = false,
 		heart_key_picked_up = false,
+		is_artist_brush_picked_up = false,
+		redThredItem_picked_up = false,
+		assembled_heart_picked_uo = false,
+		blue_butterfly_pickedup = false,
+		is_player_talked_to_shore_dweller = false,
 		is_start_gate_open = false,
 		is_lighthouse_key_available = false,
 		is_banana_item_picked_up = false,
@@ -19,12 +25,10 @@ func set_default_constants():
 		is_mill_gear_activated = false,
 		player_knows_about_kiss_nip = false,
 		mill_ladder_placed = false,
-		kissnip_picked_up = false,
 		artist_created_artwork = false,
 		artist_told_about_kitty = false,
 		artist_told_about_artwork = false,
 		artist_brush_given = false,
-		is_artist_brush_picked_up = false,
 		old_dweller_told_about_kittens = false,
 		talked_to_eary_dweller = false,
 		lovers_help_offered = false,
@@ -42,23 +46,21 @@ func set_default_constants():
 		white_flower_quest_taken = false,
 		is_cactus_hugged = false,
 		grand_flower_did_grow = false,
-		blue_butterfly_pickedup = false,
 		guardian_statue_satisfied = false,
-		redThredItem_picked_up = false,
 		is_creator_house_desk_inspected = false,
 		artist_gifted_the_thread = false,
 		did_speak_to_creator_house_welcomer = false,
 		left_side_heart_picked_up = false,
 		right_side_heart_picked_up = false,
-		assembled_heart_picked_uo = false,
-		did_trigger_heart_assembling_cutscene = false
+		did_trigger_heart_assembling_cutscene = false,
+		did_mystic_dweller_activate_pillars = false,
+		did_put_all_all_items_on_pedestals = false
 	}
-	EventBus.game_const_changed()
 
 func set_constant(constant_name, value):
 	if constants.has(constant_name):
 		constants[constant_name] = value
-		EventBus.game_const_changed()
+		EventBus.game_const_changed(constant_name, value)
 	else:
 		print("Error setting game constant - ", constant_name, " with value ", value)
 

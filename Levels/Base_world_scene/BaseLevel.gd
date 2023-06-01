@@ -19,6 +19,9 @@ func _ready():
 	correct_player_position_by_door()
 	
 	camera.follow_player = dynamic_camera
+	var camera_zoom = GameEventConstants.get_constant("default_camera_zoom")
+	if camera_zoom != null:
+		camera.set_default_camera_zoom(camera_zoom)
 	
 func _unhandled_input(event):
 	if event.is_action_pressed("pause_menu"):

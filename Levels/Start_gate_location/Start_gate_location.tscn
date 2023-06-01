@@ -796,7 +796,6 @@ anims/Gate_opening_cut_scene = SubResource( 35 )
 anims/open_transition = SubResource( 34 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 7 )]
-position = Vector2( -672, -335 )
 backgroundColor = Color( 0.403922, 0.596078, 0.741176, 1 )
 
 [node name="Stars" parent="Camera2D" instance=ExtResource( 15 )]
@@ -887,8 +886,8 @@ tile_data = PoolIntArray( -38404127, 23, 0, -38404101, 25, 0, -38469619, 29, 0, 
 [node name="Gates" parent="." groups=["Persist"] instance=ExtResource( 12 )]
 position = Vector2( -1, -27 )
 z_index = -1
-nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
-nextDoorName = "Gates_2"
+nextScenePath = "res://Levels/Pedestal_hall/PedestalHall.tscn"
+nextDoorName = "Start_gate_door"
 
 [node name="WorldObjects" type="Node2D" parent="."]
 modulate = Color( 0.8, 0.803922, 0.831373, 1 )

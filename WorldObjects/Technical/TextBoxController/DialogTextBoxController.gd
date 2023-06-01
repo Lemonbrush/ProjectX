@@ -2,6 +2,7 @@ extends Node2D
 
 export(String) var dialog_id
 export(NodePath) var interaction_controller_path
+export(bool) var is_interaction_active = true
 
 onready var dialogTextBox = $DialogTextBox
 
@@ -26,7 +27,7 @@ func on_leave():
 	finish_dialog()
 
 func on_interact(_body):
-	if dialog_id.empty():
+	if dialog_id.empty() or !is_interaction_active:
 		return
 	
 	var phrase
@@ -78,8 +79,14 @@ func process_dialog(phrase):
 	dialogTextBox.show_text(phrase.text)
 
 func process_response_chosen_option(chosen_option):
-	var phrase = dialogManager.get_next_dialog_by_option(chosen_option)
-	process_gialog_interaction(phrase)
+	if dialogManager != null:
+		var phrase = dialogManager.get_next_dialog_by_option(chosen_option)
+		process_gialog_interaction(phrase)
 		
 func set_dialog_id(new_dialog_id):
 	dialog_id = new_dialog_id
+	
+func setup_interaction_mode(can_interact):
+	is_interaction_active = can_interact
+	if !can_interact:
+		finish_dialog()

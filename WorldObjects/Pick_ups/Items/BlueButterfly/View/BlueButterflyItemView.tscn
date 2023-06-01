@@ -240,7 +240,6 @@ tracks/2/keys = {
 
 [node name="BlueButterflyItemView" type="Node2D"]
 pause_mode = 2
-z_index = 10
 script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]

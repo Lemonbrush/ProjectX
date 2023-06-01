@@ -597,14 +597,17 @@ tracks/37/loop_wrap = true
 tracks/37/imported = false
 tracks/37/enabled = true
 tracks/37/keys = {
-"times": PoolRealArray( 4.7, 6.9 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 4.7, 6.9, 16 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "values": [ {
 "args": [ null, null, null, null ],
 "method": "_screen_shake"
 }, {
 "args": [  ],
 "method": "_stop_screen_shake"
+}, {
+"args": [ null ],
+"method": "scale_to_default_zoom_with_animation"
 } ]
 }
 tracks/38/type = "value"
@@ -855,7 +858,7 @@ tracks/15/keys = {
 "values": [ true ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Camera2D:zoom")
+tracks/16/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody136/CollisionShape2D:disabled")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/imported = false
@@ -864,10 +867,10 @@ tracks/16/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"values": [ true ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody136/CollisionShape2D:disabled")
+tracks/17/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody135/CollisionShape2D:disabled")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/imported = false
@@ -879,7 +882,7 @@ tracks/17/keys = {
 "values": [ true ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody135/CollisionShape2D:disabled")
+tracks/18/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody134/CollisionShape2D:disabled")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/imported = false
@@ -891,7 +894,7 @@ tracks/18/keys = {
 "values": [ true ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody134/CollisionShape2D:disabled")
+tracks/19/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody133/CollisionShape2D:disabled")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/imported = false
@@ -903,7 +906,7 @@ tracks/19/keys = {
 "values": [ true ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody133/CollisionShape2D:disabled")
+tracks/20/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody132/CollisionShape2D:disabled")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/imported = false
@@ -915,7 +918,7 @@ tracks/20/keys = {
 "values": [ true ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody132/CollisionShape2D:disabled")
+tracks/21/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody144/CollisionShape2D:disabled")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/imported = false
@@ -927,7 +930,7 @@ tracks/21/keys = {
 "values": [ true ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody144/CollisionShape2D:disabled")
+tracks/22/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody143/CollisionShape2D:disabled")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/imported = false
@@ -939,7 +942,7 @@ tracks/22/keys = {
 "values": [ true ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody143/CollisionShape2D:disabled")
+tracks/23/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody142/CollisionShape2D:disabled")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/imported = false
@@ -951,7 +954,7 @@ tracks/23/keys = {
 "values": [ true ]
 }
 tracks/24/type = "value"
-tracks/24/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody142/CollisionShape2D:disabled")
+tracks/24/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody147/CollisionShape2D:disabled")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/imported = false
@@ -963,7 +966,7 @@ tracks/24/keys = {
 "values": [ true ]
 }
 tracks/25/type = "value"
-tracks/25/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody147/CollisionShape2D:disabled")
+tracks/25/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody146/CollisionShape2D:disabled")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/imported = false
@@ -975,7 +978,7 @@ tracks/25/keys = {
 "values": [ true ]
 }
 tracks/26/type = "value"
-tracks/26/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody146/CollisionShape2D:disabled")
+tracks/26/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody145/CollisionShape2D:disabled")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/imported = false
@@ -987,7 +990,7 @@ tracks/26/keys = {
 "values": [ true ]
 }
 tracks/27/type = "value"
-tracks/27/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody145/CollisionShape2D:disabled")
+tracks/27/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody141/CollisionShape2D:disabled")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/imported = false
@@ -999,7 +1002,7 @@ tracks/27/keys = {
 "values": [ true ]
 }
 tracks/28/type = "value"
-tracks/28/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody141/CollisionShape2D:disabled")
+tracks/28/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody140/CollisionShape2D:disabled")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/imported = false
@@ -1011,7 +1014,7 @@ tracks/28/keys = {
 "values": [ true ]
 }
 tracks/29/type = "value"
-tracks/29/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody140/CollisionShape2D:disabled")
+tracks/29/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody139/CollisionShape2D:disabled")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/imported = false
@@ -1023,7 +1026,7 @@ tracks/29/keys = {
 "values": [ true ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody139/CollisionShape2D:disabled")
+tracks/30/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody138/CollisionShape2D:disabled")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/imported = false
@@ -1035,7 +1038,7 @@ tracks/30/keys = {
 "values": [ true ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody138/CollisionShape2D:disabled")
+tracks/31/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody137/CollisionShape2D:disabled")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/imported = false
@@ -1047,7 +1050,7 @@ tracks/31/keys = {
 "values": [ true ]
 }
 tracks/32/type = "value"
-tracks/32/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody137/CollisionShape2D:disabled")
+tracks/32/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody148/CollisionShape2D:disabled")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/imported = false
@@ -1059,7 +1062,7 @@ tracks/32/keys = {
 "values": [ true ]
 }
 tracks/33/type = "value"
-tracks/33/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody148/CollisionShape2D:disabled")
+tracks/33/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody131/CollisionShape2D:disabled")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/imported = false
@@ -1071,7 +1074,7 @@ tracks/33/keys = {
 "values": [ true ]
 }
 tracks/34/type = "value"
-tracks/34/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody131/CollisionShape2D:disabled")
+tracks/34/path = NodePath("Upper_background_objects/Great_flower/Cutscene_label/Light2D10:energy")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/imported = false
@@ -1080,10 +1083,10 @@ tracks/34/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ true ]
+"values": [ 0.0 ]
 }
 tracks/35/type = "value"
-tracks/35/path = NodePath("Upper_background_objects/Great_flower/Cutscene_label/Light2D10:energy")
+tracks/35/path = NodePath("Upper_background_objects/Young_flower/InteractionEmitterObject/InteractionController/Area2D/CollisionShape2D:disabled")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/imported = false
@@ -1091,11 +1094,11 @@ tracks/35/enabled = true
 tracks/35/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
+"update": 1,
+"values": [ false ]
 }
 tracks/36/type = "value"
-tracks/36/path = NodePath("Upper_background_objects/Young_flower/InteractionEmitterObject/InteractionController/Area2D/CollisionShape2D:disabled")
+tracks/36/path = NodePath("Upper_background_objects/Young_flower/Sofa_dirt_particles:emitting")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/imported = false
@@ -1103,11 +1106,11 @@ tracks/36/enabled = true
 tracks/36/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
+"update": 0,
 "values": [ false ]
 }
 tracks/37/type = "value"
-tracks/37/path = NodePath("Upper_background_objects/Young_flower/Sofa_dirt_particles:emitting")
+tracks/37/path = NodePath("Upper_background_objects/Young_flower/Flower_dirt_particles:emitting")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/imported = false
@@ -1119,7 +1122,7 @@ tracks/37/keys = {
 "values": [ false ]
 }
 tracks/38/type = "value"
-tracks/38/path = NodePath("Upper_background_objects/Young_flower/Flower_dirt_particles:emitting")
+tracks/38/path = NodePath("World_objects/BlueButterflyItem:gravity_scale")
 tracks/38/interp = 1
 tracks/38/loop_wrap = true
 tracks/38/imported = false
@@ -1128,10 +1131,10 @@ tracks/38/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ 0.0 ]
 }
 tracks/39/type = "value"
-tracks/39/path = NodePath("World_objects/BlueButterflyItem:gravity_scale")
+tracks/39/path = NodePath("World_objects/BlueButterflyItem:visible")
 tracks/39/interp = 1
 tracks/39/loop_wrap = true
 tracks/39/imported = false
@@ -1140,10 +1143,10 @@ tracks/39/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ false ]
 }
 tracks/40/type = "value"
-tracks/40/path = NodePath("World_objects/BlueButterflyItem:visible")
+tracks/40/path = NodePath("Fountains/Inactive_fountains/Left_tower_activated_fountains:visible")
 tracks/40/interp = 1
 tracks/40/loop_wrap = true
 tracks/40/imported = false
@@ -1155,24 +1158,12 @@ tracks/40/keys = {
 "values": [ false ]
 }
 tracks/41/type = "value"
-tracks/41/path = NodePath("Fountains/Inactive_fountains/Left_tower_activated_fountains:visible")
+tracks/41/path = NodePath("Fountains/Inactive_fountains/Right_tower_activated_fountains:visible")
 tracks/41/interp = 1
 tracks/41/loop_wrap = true
 tracks/41/imported = false
 tracks/41/enabled = true
 tracks/41/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
-}
-tracks/42/type = "value"
-tracks/42/path = NodePath("Fountains/Inactive_fountains/Right_tower_activated_fountains:visible")
-tracks/42/interp = 1
-tracks/42/loop_wrap = true
-tracks/42/imported = false
-tracks/42/enabled = true
-tracks/42/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -3467,7 +3458,7 @@ script = ExtResource( 35 )
 environment = SubResource( 399 )
 
 [node name="AnimationPlayer" parent="." index="2"]
-autoplay = ""
+autoplay = "RESET"
 anims/Grand_flower_opening_cut_scene = SubResource( 312 )
 anims/RESET = SubResource( 257 )
 anims/White_flower_grow_cut_scene = SubResource( 270 )
@@ -3682,6 +3673,7 @@ water_tower_number = 1
 pause_mode = 2
 visible = false
 position = Vector2( 44, -1197 )
+z_index = 10
 gravity_scale = 0.0
 
 [node name="Pots" type="Node2D" parent="World_objects" index="3"]
@@ -4589,7 +4581,7 @@ process_material = SubResource( 335 )
 position = Vector2( 460, -660 )
 
 [node name="Player" parent="." index="12"]
-position = Vector2( 160, -798 )
+position = Vector2( 208, 523 )
 z_index = 1
 collision_mask = 252
 
