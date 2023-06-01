@@ -42,8 +42,8 @@ size_flags_vertical = 3
 follow_focus = true
 
 [node name="GameConstsList" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/VBoxContainer/MarginContainer"]
-margin_right = 142.0
-margin_bottom = 64.0
+margin_right = 490.0
+margin_bottom = 285.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 

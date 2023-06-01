@@ -21,7 +21,7 @@ color = Color( 0.0941176, 0.0784314, 0.168627, 0.509804 )
 
 [node name="MarginContainer" type="MarginContainer" parent="MainMarginContainer"]
 margin_right = 530.0
-margin_bottom = 237.0
+margin_bottom = 219.0
 size_flags_vertical = 0
 custom_constants/margin_top = 60
 custom_constants/margin_left = 25
@@ -29,8 +29,8 @@ custom_constants/margin_left = 25
 [node name="ContentVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer"]
 margin_left = 25.0
 margin_top = 60.0
-margin_right = 181.0
-margin_bottom = 237.0
+margin_right = 163.0
+margin_bottom = 219.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_constants/separation = 30
@@ -45,11 +45,11 @@ text = "special"
 
 [node name="OptionsVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer"]
 margin_top = 56.0
-margin_right = 156.0
-margin_bottom = 177.0
+margin_right = 138.0
+margin_bottom = 159.0
 
 [node name="GameConstsEditorButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
-margin_right = 156.0
+margin_right = 138.0
 margin_bottom = 13.0
 focus_neighbour_top = NodePath("../ExitButton")
 custom_fonts/font = ExtResource( 4 )
@@ -58,12 +58,13 @@ align = 0
 
 [node name="DeleteAllSavesButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
 margin_top = 17.0
-margin_right = 156.0
+margin_right = 138.0
 margin_bottom = 31.0
 text = "delete_all_saves"
 align = 0
 
 [node name="ResetGameConstantsButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
+visible = false
 margin_top = 35.0
 margin_right = 156.0
 margin_bottom = 49.0
@@ -71,32 +72,32 @@ text = "Сбросить игровые константы"
 align = 0
 
 [node name="DeleteSystemDataButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
-margin_top = 53.0
-margin_right = 156.0
-margin_bottom = 67.0
+margin_top = 35.0
+margin_right = 138.0
+margin_bottom = 49.0
 text = "reset_options"
 align = 0
 
 [node name="DeleteAllSavesAlwaysButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
-margin_top = 71.0
-margin_right = 156.0
-margin_bottom = 85.0
+margin_top = 53.0
+margin_right = 138.0
+margin_bottom = 67.0
 toggle_mode = true
 text = "Автоудаление сохранений"
 align = 0
 
 [node name="ActivateDebugScreenButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
-margin_top = 89.0
-margin_right = 156.0
-margin_bottom = 103.0
+margin_top = 71.0
+margin_right = 138.0
+margin_bottom = 85.0
 toggle_mode = true
 text = "Экран отладки"
 align = 0
 
 [node name="ExitButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
-margin_top = 107.0
-margin_right = 156.0
-margin_bottom = 121.0
+margin_top = 89.0
+margin_right = 138.0
+margin_bottom = 103.0
 focus_neighbour_bottom = NodePath("../GameConstsEditorButton")
 text = "exit"
 align = 0

@@ -20,12 +20,7 @@ func _ready():
 	deleteSettingsDataButton.connect("pressed", self, "on_delete_settings_data_pressed")
 	activateDebugScreenRadiobutton.connect("pressed", self, "on_debug_screen_radiobutton_pressed")
 	resetGameConstantsButton.connect("pressed", self, "on_reset_game_constants_pressed")
-	
 	gameConstsEditorButton.connect("pressed", self, "on_special_options_pressed") 
-	
-	var is_game_loaded = Global.is_game_loaded
-	resetGameConstantsButton.disabled = !is_game_loaded
-	#gameConstsEditorButton.disabled = !is_game_loaded
 	
 	setup_ui()
 	quitButton.grab_focus()
@@ -50,6 +45,7 @@ func on_quit_pressed():
 
 func on_save_delete_pressed():
 	FileManager.delete_save()
+	EventBus.did_reset_game_constants()
 	setup_ui()
 
 func on_delete_all_saves_by_default_radiobutton_checked():
@@ -77,3 +73,4 @@ func on_options_back_pressed():
 func on_reset_game_constants_pressed():
 	GameEventConstants.set_default_constants()
 	FileManager.save_game()
+	EventBus.did_reset_game_constants()
