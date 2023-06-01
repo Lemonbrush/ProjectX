@@ -8,6 +8,7 @@ onready var textField = $MainMarginContainer/MarginContainer/VBoxContainer/Margi
 onready var setButton = $MainMarginContainer/MarginContainer/VBoxContainer/MarginContainer/GameConstsList/HBoxContainer/HBoxContainer2/SetButton
 onready var setFloatButton = $MainMarginContainer/MarginContainer/VBoxContainer/MarginContainer/GameConstsList/HBoxContainer/HBoxContainer2/SetFloatButton
 onready var emmitButton = $MainMarginContainer/MarginContainer/VBoxContainer/MarginContainer/GameConstsList/HBoxContainer/HBoxContainer2/EmmitButton
+onready var topHBoxPanel = $MainMarginContainer/MarginContainer/VBoxContainer/MarginContainer/GameConstsList/HBoxContainer
 
 func _ready():
 	var _exit_button_connection = exit_button.connect("pressed", self, "on_quit_pressed")
@@ -38,7 +39,7 @@ func update_game_const_list(_const = null, _value = null):
 
 func resset_game_const_list():
 	for game_const_button in gameConstsList.get_children():
-		if game_const_button != $MainMarginContainer/MarginContainer/VBoxContainer/MarginContainer/GameConstsList/HBoxContainer:
+		if game_const_button != topHBoxPanel:
 			gameConstsList.remove_child(game_const_button)
 
 func command_entered(text):

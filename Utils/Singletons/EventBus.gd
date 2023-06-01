@@ -1,5 +1,6 @@
 extends Node
 
+signal did_reset_game_constants()
 signal did_update_cursor_setting()
 signal camera_focus_animation(zoomValue, time)
 signal camera_focus_default_zoom(time)
@@ -124,3 +125,6 @@ func did_place_item_at_pedestal(item_name):
 
 func show_final_level_door_opening_cutscene():
 	emit_signal("show_final_level_door_opening_cutscene")
+
+func did_reset_game_constants():
+	emit_signal("did_reset_game_constants")

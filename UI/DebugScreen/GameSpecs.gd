@@ -7,13 +7,11 @@ onready var game_consts_rich_label = $MainMarginContainer/SpecsVBoxContainer/Gam
 
 func _ready():
 	gameVersionLabel.text = tr("version") + ": " + FileManager.get_project_version()
-	
 	var _connection = EventBus.connect("debug_screen_visibility_updated", self, "update_margin_visibility")
-	update_margin_visibility()
-	
-	setup_game_consts()
-	
 	var _game_const_changed_connection = EventBus.connect("game_const_changed", self, "setup_game_consts")
+	var _reset_game_consts = EventBus.connect("did_reset_game_constants", self, "setup_game_consts")
+	update_margin_visibility()
+	setup_game_consts()
 
 func _process(_delta):
 	fpsLabel.text = tr("fps") + ": " + str(Engine.get_frames_per_second())
