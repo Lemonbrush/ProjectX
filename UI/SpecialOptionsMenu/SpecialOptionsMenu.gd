@@ -20,12 +20,7 @@ func _ready():
 	deleteSettingsDataButton.connect("pressed", self, "on_delete_settings_data_pressed")
 	activateDebugScreenRadiobutton.connect("pressed", self, "on_debug_screen_radiobutton_pressed")
 	resetGameConstantsButton.connect("pressed", self, "on_reset_game_constants_pressed")
-	
 	gameConstsEditorButton.connect("pressed", self, "on_special_options_pressed") 
-	
-	var is_game_loaded = Global.is_game_loaded
-	#resetGameConstantsButton.disabled = !is_game_loaded
-	#gameConstsEditorButton.disabled = !is_game_loaded
 	
 	setup_ui()
 	quitButton.grab_focus()
