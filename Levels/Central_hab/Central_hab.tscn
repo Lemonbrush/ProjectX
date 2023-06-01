@@ -101,39 +101,15 @@ extents = Vector2( 26.5, 4 )
 
 [sub_resource type="Animation" id=210]
 resource_name = "show_lighthouse_key_cut_scene"
-length = 3.4
-tracks/0/type = "value"
-tracks/0/path = NodePath("Camera2D:position")
+length = 4.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("Player")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.4, 2.8 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -94, -260 ), Vector2( -94, -260 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Camera2D:zoom")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0.6, 0.9, 2.8, 3.2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 0.5, 0.5 ), Vector2( 0.5, 0.5 ), Vector2( 1, 1 ) ]
-}
-tracks/2/type = "method"
-tracks/2/path = NodePath("Player")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 2.9 ),
+"times": PoolRealArray( 0, 3.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -143,59 +119,71 @@ tracks/2/keys = {
 "method": "unpouse_level"
 } ]
 }
-tracks/3/type = "method"
-tracks/3/path = NodePath(".")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 3.1 ),
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 3.7 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
 "method": "save_game"
 } ]
 }
-tracks/4/type = "value"
-tracks/4/path = NodePath("WorldObjects/LighthouseKeyItem:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0, 1.5 ),
+tracks/2/type = "value"
+tracks/2/path = NodePath("WorldObjects/LighthouseKeyItem:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
 }
-tracks/5/type = "method"
-tracks/5/path = NodePath("WorldObjects/LighthouseKeyItem")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 1.4 ),
+tracks/3/type = "method"
+tracks/3/path = NodePath("WorldObjects/LighthouseKeyItem")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 2.2 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
 "method": "play_show_animation"
 } ]
 }
-tracks/6/type = "method"
-tracks/6/path = NodePath("Camera2D")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 3.4 ),
+tracks/4/type = "method"
+tracks/4/path = NodePath("Camera2D")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 4 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ null ],
 "method": "scale_to_default_zoom_with_animation"
 } ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Camera2D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.6, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -291, -91 ), Vector2( -291, -91 ) ]
 }
 
 [sub_resource type="TileSet" id=36]
@@ -1964,7 +1952,8 @@ position = Vector2( 3, -4 )
 scale = Vector2( -1, 1 )
 
 [node name="LighthouseKeyItem" parent="WorldObjects" instance=ExtResource( 74 )]
-position = Vector2( -94, -257 )
+visible = false
+position = Vector2( -290, -92 )
 mode = 0
 gravity_scale = 0.6
 
@@ -1977,8 +1966,7 @@ process_material = SubResource( 212 )
 texture = ExtResource( 73 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 7 )]
-position = Vector2( -94, -260 )
-zoom = Vector2( 0.7, 0.7 )
+position = Vector2( -291, -91 )
 
 [node name="Clouds" parent="Camera2D" instance=ExtResource( 15 )]
 position = Vector2( -2, 2 )
@@ -2230,9 +2218,11 @@ texture = ExtResource( 66 )
 
 [node name="Destructables" type="Node" parent="."]
 
-[node name="Collisions" type="Node" parent="."]
+[node name="Collisions" type="Node2D" parent="."]
+visible = false
+position = Vector2( 2, 62 )
 
-[node name="PassTrough" type="Node" parent="Collisions"]
+[node name="PassTrough" type="Node2D" parent="Collisions"]
 
 [node name="PassThroughBody5" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
 position = Vector2( -228, -84 )
@@ -2730,7 +2720,7 @@ position = Vector2( 109.5, 7 )
 shape = SubResource( 62 )
 one_way_collision = true
 
-[node name="Solid" type="Node" parent="Collisions"]
+[node name="Solid" type="Node2D" parent="Collisions"]
 
 [node name="PassThroughBody18" parent="Collisions/Solid" instance=ExtResource( 6 )]
 position = Vector2( -613, -50 )
@@ -2920,7 +2910,9 @@ collision_mask = 17
 position = Vector2( 0, -2 )
 shape = SubResource( 201 )
 
-[node name="Ladders" type="Node" parent="."]
+[node name="Ladders" type="Node2D" parent="."]
+visible = false
+position = Vector2( 4, 62 )
 
 [node name="Ladder3" parent="Ladders" instance=ExtResource( 12 )]
 position = Vector2( -61, -185 )
@@ -2936,7 +2928,9 @@ position = Vector2( -877, 230 )
 position = Vector2( 0, -1 )
 shape = SubResource( 68 )
 
-[node name="AirBlowers" type="Node" parent="."]
+[node name="AirBlowers" type="Node2D" parent="."]
+visible = false
+position = Vector2( 3, 62 )
 
 [node name="AirBeam3" parent="AirBlowers" instance=ExtResource( 8 )]
 position = Vector2( -695, 179 )
@@ -2967,8 +2961,6 @@ position = Vector2( 0, 1 )
 [node name="CollisionShape2D" parent="AirBlowers/AirBeam4/Area2D" index="0"]
 position = Vector2( 0.5, -39 )
 shape = SubResource( 101 )
-
-[node name="Collectables" type="Node" parent="."]
 
 [node name="Lighting" type="Node" parent="."]
 
