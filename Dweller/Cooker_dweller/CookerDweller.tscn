@@ -290,16 +290,18 @@ _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.111413, 1 ), 0.0, 0.0, 0, 
 [sub_resource type="CurveTexture" id=129]
 curve = SubResource( 128 )
 
-[sub_resource type="ParticlesMaterial" id=130]
+[sub_resource type="ParticlesMaterial" id=136]
 emission_shape = 2
 emission_box_extents = Vector3( 15, 1, 1 )
 flag_disable_z = true
 gravity = Vector3( 0, -20, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 1.0
 angular_velocity = 50.0
 angular_velocity_random = 1.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale = 0.5
+scale = 2.0
 scale_random = 1.0
 scale_curve = SubResource( 129 )
 color_ramp = SubResource( 127 )
@@ -511,13 +513,11 @@ position = Vector2( 12, -55 )
 emitting = false
 amount = 70
 lifetime = 5.0
-process_material = SubResource( 130 )
+process_material = SubResource( 136 )
 texture = ExtResource( 13 )
 
 [node name="AbstractDweller" parent="." instance=ExtResource( 5 )]
 position = Vector2( 22, -57 )
-collision_layer = 3
-collision_mask = 0
 dialogId = "cauldron_dweller"
 watch_player_on_talk = false
 defaultDirection = -1

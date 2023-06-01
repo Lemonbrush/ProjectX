@@ -1432,7 +1432,7 @@ position = Vector2( 220, -70 )
 
 [node name="Statues" type="Node2D" parent="Background_world_objects" index="1"]
 pause_mode = 2
-position = Vector2( 0, 12 )
+position = Vector2( 0, 29 )
 
 [node name="Me_statue" type="Node2D" parent="Background_world_objects/Statues" index="0"]
 modulate = Color( 0.752941, 0.752941, 0.752941, 1 )
