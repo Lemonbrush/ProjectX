@@ -22,6 +22,8 @@ func _ready():
 	var camera_zoom = GameEventConstants.get_constant("default_camera_zoom")
 	if camera_zoom != null:
 		camera.set_default_camera_zoom(camera_zoom)
+	else:
+		camera.set_default_camera_zoom(0.7)
 	
 func _unhandled_input(event):
 	if event.is_action_pressed("pause_menu"):
