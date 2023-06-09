@@ -165,7 +165,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 0, 11.3, 14.6 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 30, -27 ), Vector2( 30, -27 ), Vector2( 42, 0 ) ]
+"values": [ Vector2( 46, -42 ), Vector2( 30, -27 ), Vector2( 42, 0 ) ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("ParallaxBackground2/Clouds/Clouds_2:position")
@@ -177,7 +177,7 @@ tracks/10/keys = {
 "times": PoolRealArray( 0, 11.3, 14.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 31, -59 ), Vector2( 31, -59 ), Vector2( 14, -10 ) ]
+"values": [ Vector2( 23, -83 ), Vector2( 31, -59 ), Vector2( 14, -10 ) ]
 }
 tracks/11/type = "value"
 tracks/11/path = NodePath("ParallaxBackground2/Clouds/Clouds_3:position")
@@ -189,7 +189,7 @@ tracks/11/keys = {
 "times": PoolRealArray( 0, 11.3, 14.9 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 31, -76 ), Vector2( 31, -76 ), Vector2( 44, -20 ) ]
+"values": [ Vector2( 35, -119 ), Vector2( 31, -76 ), Vector2( 44, -20 ) ]
 }
 tracks/12/type = "value"
 tracks/12/path = NodePath("ParallaxBackground2/StarsSprite:modulate")
@@ -229,6 +229,42 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0.53, 0.57016 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ParallaxBackground2/Clouds/Clouds_3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 35, -119 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ParallaxBackground2/Clouds/Clouds_2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 23, -83 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ParallaxBackground2/Clouds/Clouds_1:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 46, -42 ) ]
 }
 
 [sub_resource type="CurveTexture" id=7]
@@ -853,21 +889,21 @@ texture = ExtResource( 11 )
 centered = false
 
 [node name="Clouds" type="Node2D" parent="ParallaxBackground2" index="1"]
-modulate = Color( 1, 1, 1, 0.156863 )
+modulate = Color( 1, 1, 1, 0.27451 )
 position = Vector2( 239, 319 )
 
 [node name="Clouds_3" type="Sprite" parent="ParallaxBackground2/Clouds" index="0"]
-position = Vector2( 31, -76 )
+position = Vector2( 35, -119 )
 scale = Vector2( 0.72549, 0.72549 )
 texture = ExtResource( 27 )
 
 [node name="Clouds_2" type="Sprite" parent="ParallaxBackground2/Clouds" index="1"]
-position = Vector2( 31, -59 )
+position = Vector2( 23, -83 )
 scale = Vector2( 0.727, 0.727 )
 texture = ExtResource( 26 )
 
 [node name="Clouds_1" type="Sprite" parent="ParallaxBackground2/Clouds" index="2"]
-position = Vector2( 30, -27 )
+position = Vector2( 46, -42 )
 scale = Vector2( 0.726, 0.726 )
 texture = ExtResource( 25 )
 
