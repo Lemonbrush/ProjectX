@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=2]
+[gd_scene load_steps=85 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=2]
@@ -34,6 +34,137 @@ adjustment_saturation = 1.3
 
 [sub_resource type="Animation" id=75]
 resource_name = "Elevation_cutscene"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 20 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 9, -322 ), Vector2( 9, -1840 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Tower/Middle_world_objects/Platform:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 20 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 9, -323 ), Vector2( 9, -1840 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 20 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "pause_level"
+}, {
+"args": [  ],
+"method": "unpouse_level"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Camera2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 20 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 2.0 ],
+"method": "scale_to_default_zoom_with_animation"
+} ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Camera2D:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 20 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 10, -337 ), Vector2( 8, -1929 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Player:z_index")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 20 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 3 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Camera2D:zoom")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 10.1, 12.7, 17.9, 19.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.7, 0.7 ), Vector2( 0.7, 0.7 ), Vector2( 1.5, 1.5 ), Vector2( 1.5, 1.5 ), Vector2( 0.7, 0.7 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("ParallaxBackground2/ParallaxLayer2/Sprite:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 10.1, 17.9, 19.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.53, 0.57016 ), Vector2( 1.2, 1.2 ), Vector2( 1.2, 1.2 ), Vector2( 0.53, 0.57 ) ]
+}
+
+[sub_resource type="Animation" id=94]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player:z_index")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 3 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ParallaxBackground2/ParallaxLayer2/Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.53, 0.57016 ) ]
+}
 
 [sub_resource type="CurveTexture" id=7]
 
@@ -189,6 +320,18 @@ tracks/2/keys = {
 "method": "force_check_body_detector"
 } ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("../Platform/PassThroughBody7/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [sub_resource type="Animation" id=74]
 length = 0.001
@@ -204,6 +347,9 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 9, -432 ) ]
 }
+
+[sub_resource type="RectangleShape2D" id=95]
+extents = Vector2( 26.5, 10 )
 
 [sub_resource type="RectangleShape2D" id=71]
 extents = Vector2( 32.0312, 8 )
@@ -530,7 +676,8 @@ scroll_limit_end = Vector2( 0, 320 )
 motion_mirroring = Vector2( 530, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground2/ParallaxLayer2" index="0"]
-scale = Vector2( 0.573, 0.568384 )
+position = Vector2( -1, -1 )
+scale = Vector2( 0.53, 0.57016 )
 texture = ExtResource( 11 )
 centered = false
 
@@ -552,6 +699,7 @@ texture = ExtResource( 6 )
 [node name="AnimationPlayer" parent="." index="3"]
 autoplay = ""
 anims/Elevation_cutscene = SubResource( 75 )
+anims/RESET = SubResource( 94 )
 
 [node name="Stars" type="Node2D" parent="." index="4"]
 modulate = Color( 1, 1, 1, 0.729412 )
@@ -568,15 +716,24 @@ visibility_rect = Rect2( -100, -100, 2000, 2500 )
 local_coords = false
 process_material = SubResource( 93 )
 
+[node name="Camera2D" parent="." index="5"]
+position = Vector2( 10, -337 )
+zoom = Vector2( 0.7, 0.7 )
+
 [node name="WorldSprite" parent="." index="6"]
 visible = false
 position = Vector2( -319, -1192 )
 
 [node name="SkyIsland" type="Node2D" parent="." index="7"]
 
-[node name="Foreground_world_objects" type="Node2D" parent="SkyIsland" index="0"]
+[node name="VisibilityChecker" parent="SkyIsland" index="0" instance=ExtResource( 14 )]
+visible = false
+position = Vector2( 6.5, -1974.5 )
+scale = Vector2( 24.15, 24.35 )
 
-[node name="Middle_world_objects" type="Node2D" parent="SkyIsland" index="1"]
+[node name="Foreground_world_objects" type="Node2D" parent="SkyIsland" index="1"]
+
+[node name="Middle_world_objects" type="Node2D" parent="SkyIsland" index="2"]
 
 [node name="Sprite" type="Sprite" parent="SkyIsland/Middle_world_objects" index="0"]
 position = Vector2( -319, -1192 )
@@ -593,7 +750,7 @@ cell_size = Vector2( 1, 1 )
 format = 1
 tile_data = PoolIntArray( -139395141, 536870935, 0, -139395107, 536870939, 0, -139460591, 536870932, 0, -139460536, 536870936, 0, -138346636, 536870936, 0, -138346594, 536870935, 0, -138346531, 536870934, 0, -138346504, 536870971, 0, -138412022, 536870935, 0, -138411984, 536870932, 0, -138411964, 536870940, 0, -138411951, 536870970, 0, -138411938, 536870935, 0, -138411921, 536870922, 0, -138411884, 536870921, 0, -137298088, 536870940, 0, -137298054, 536870933, 0, -137297967, 536870969, 0, -137363449, 536870936, 0, -137363430, 536870969, 0, -137363407, 536870971, 0, -137363306, 536870969, 0, -137363288, 536870934, 0, -137232535, 536870970, 0, -136576973, 536870970, 0, -136249444, 536870947, 0, -136249349, 536870934, 0, -136314800, 536870953, 0, -135200806, 536870936, 0, -135266271, 536870939, 0, -135266219, 536870970, 0, -135135323, 536870972, 0, -134152315, 72, 0, -133103631, 536870934, 0, -133169150, 536870930, 0, -133169119, 536870984, 0, -132055105, 536870982, 0, -132120531, 536870969, 0, -131006481, 536870916, 0, -131071994, 536870927, 0, -129957910, 58, 0, -130023410, 536870933, 0, -127860695, 60, 0, -126812179, 536870939, 0, -126877686, 536870915, 0, -126877654, 536870986, 0, -125763621, 536870953, 0, -125763596, 536870935, 0, -123666469, 536870985, 0, -123666450, 536870935, 0, -123666436, 57, 0, -123731954, 536870921, 0, -122617890, 536870926, 0, -122617859, 536870934, 0, -122683356, 536870938, 0, -122683337, 536870935, 0, -121569349, 536870934, 0, -121569325, 536870933, 0, -121634747, 536870932, 0, -120520760, 57, 0, -119537619, 536870986, 0, -118423598, 536870984, 0 )
 
-[node name="Background_world_objects" type="Node2D" parent="SkyIsland" index="2"]
+[node name="Background_world_objects" type="Node2D" parent="SkyIsland" index="3"]
 
 [node name="GodLights" type="ColorRect" parent="SkyIsland/Background_world_objects" index="0"]
 material = SubResource( 86 )
@@ -609,7 +766,7 @@ visible = false
 position = Vector2( 155.5, 360.5 )
 scale = Vector2( 20.55, 37.05 )
 
-[node name="Collisions" type="Node2D" parent="SkyIsland" index="3"]
+[node name="Collisions" type="Node2D" parent="SkyIsland" index="4"]
 visible = false
 
 [node name="Pass_through" type="Node2D" parent="SkyIsland/Collisions" index="0"]
@@ -852,7 +1009,13 @@ shape = SubResource( 85 )
 
 [node name="Tower" type="Node2D" parent="." index="8"]
 
-[node name="Clouds" parent="Tower" index="0" instance=ExtResource( 10 )]
+[node name="VisibilityChecker" parent="Tower" index="0" instance=ExtResource( 14 )]
+visible = false
+position = Vector2( 248.5, -341 )
+scale = Vector2( 128.25, 90.9 )
+
+[node name="Clouds" parent="Tower" index="1" instance=ExtResource( 10 )]
+pause_mode = 2
 position = Vector2( 9, -330 )
 
 [node name="Particles2D" parent="Tower/Clouds" index="0"]
@@ -860,9 +1023,9 @@ position = Vector2( 13, 339 )
 amount = 100
 process_material = SubResource( 22 )
 
-[node name="Foreground_world_objects" type="Node2D" parent="Tower" index="1"]
+[node name="Foreground_world_objects" type="Node2D" parent="Tower" index="2"]
 
-[node name="Middle_world_objects" type="Node2D" parent="Tower" index="2"]
+[node name="Middle_world_objects" type="Node2D" parent="Tower" index="3"]
 
 [node name="TowerTopBackgroundSprite" type="Sprite" parent="Tower/Middle_world_objects" index="0"]
 position = Vector2( -319, -1191 )
@@ -888,9 +1051,15 @@ anims/Lift_down = SubResource( 73 )
 anims/RESET = SubResource( 74 )
 
 [node name="InteractionEmitterObject" parent="Tower/Middle_world_objects/PlatformApproachDetector" index="2" instance=ExtResource( 21 )]
+pause_mode = 2
 position = Vector2( 9, -323 )
+z_index = 3
 emitting_arg = "elevator_entered"
 labelText = "Зайти"
+
+[node name="CollisionShape2D" parent="Tower/Middle_world_objects/PlatformApproachDetector/InteractionEmitterObject/InteractionController/Area2D" index="0"]
+position = Vector2( 0.5, 0 )
+shape = SubResource( 95 )
 
 [node name="Platform" type="Node2D" parent="Tower/Middle_world_objects" index="2"]
 position = Vector2( 9, -432 )
@@ -905,10 +1074,12 @@ position = Vector2( 16, 8 )
 [node name="CollisionShape2D" parent="Tower/Middle_world_objects/Platform/PassThroughBody7" index="0"]
 position = Vector2( -16.0312, 0 )
 shape = SubResource( 71 )
+disabled = true
 one_way_collision = true
 
 [node name="TowerTopSprite" type="Sprite" parent="Tower/Middle_world_objects" index="3"]
 position = Vector2( -319, -1192 )
+z_index = 2
 texture = ExtResource( 19 )
 __meta__ = {
 "_edit_lock_": true
@@ -1318,9 +1489,9 @@ playback_process_mode = 0
 anims/Loop = SubResource( 65 )
 anims/RESET = SubResource( 66 )
 
-[node name="Background_world_objects" type="Node2D" parent="Tower" index="3"]
+[node name="Background_world_objects" type="Node2D" parent="Tower" index="4"]
 
-[node name="Collisions" type="Node2D" parent="Tower" index="4"]
+[node name="Collisions" type="Node2D" parent="Tower" index="5"]
 visible = false
 
 [node name="PassTrough" type="Node2D" parent="Tower/Collisions" index="0"]
@@ -1424,7 +1595,7 @@ collision_mask = 17
 position = Vector2( 14, 0 )
 shape = SubResource( 5 )
 
-[node name="Lighting" type="Node2D" parent="Tower" index="5"]
+[node name="Lighting" type="Node2D" parent="Tower" index="6"]
 
 [node name="Light2D" type="Light2D" parent="Tower/Lighting" index="0"]
 position = Vector2( 36, -92 )
@@ -1435,8 +1606,8 @@ energy = 0.7
 mode = 2
 
 [node name="Player" parent="." index="9"]
-position = Vector2( 8, -228 )
-z_index = 1
+position = Vector2( 9, -322 )
+z_index = 3
 
 [node name="Light2D2" parent="Player" index="5"]
 visible = false
@@ -1482,6 +1653,8 @@ shape = SubResource( 23 )
 [editable path="SkyIsland/Collisions/Solid/PassThroughBody"]
 [editable path="SkyIsland/Collisions/Solid/PassThroughBody2"]
 [editable path="Tower/Clouds"]
+[editable path="Tower/Middle_world_objects/PlatformApproachDetector/InteractionEmitterObject"]
+[editable path="Tower/Middle_world_objects/PlatformApproachDetector/InteractionEmitterObject/InteractionController"]
 [editable path="Tower/Middle_world_objects/Platform/PassThroughBody7"]
 [editable path="Tower/Middle_world_objects/PedestalsLevelDoor"]
 [editable path="Tower/Middle_world_objects/PedestalsLevelDoor/InteractionController"]
