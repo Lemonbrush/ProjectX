@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=2]
+[gd_scene load_steps=84 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://WorldObjects/Technical/InteractionEmitterObject/InteractionEmitterObject.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Levels/FinalLevel/FinalLevel.gd" type="Script" id=22]
 [ext_resource path="res://Assets/Levels/Final_level/Sky_island.png" type="Texture" id=23]
+[ext_resource path="res://Shaders/GodLightsShader.tres" type="Shader" id=24]
 
 [sub_resource type="Environment" id=4]
 background_mode = 4
@@ -96,6 +97,52 @@ color_ramp = SubResource( 19 )
 anim_offset = 1.0
 anim_offset_random = 1.0
 anim_offset_curve = SubResource( 17 )
+
+[sub_resource type="ShaderMaterial" id=86]
+shader = ExtResource( 24 )
+shader_param/angle = -0.3
+shader_param/position = -0.2
+shader_param/spread = 0.0
+shader_param/cutoff = 0.195
+shader_param/falloff = 0.2
+shader_param/edge_fade = 0.344
+shader_param/speed = 1.0
+shader_param/ray1_density = 10.0
+shader_param/ray2_density = 30.0
+shader_param/ray2_intensity = 0.3
+shader_param/color = Color( 0.878431, 0.960784, 1, 0.580392 )
+shader_param/hdr = false
+shader_param/seed = 10.0
+
+[sub_resource type="RectangleShape2D" id=76]
+extents = Vector2( 64.0625, 8 )
+
+[sub_resource type="RectangleShape2D" id=77]
+extents = Vector2( 24.0625, 8 )
+
+[sub_resource type="RectangleShape2D" id=78]
+extents = Vector2( 16.0625, 8 )
+
+[sub_resource type="RectangleShape2D" id=79]
+extents = Vector2( 8.0625, 8 )
+
+[sub_resource type="RectangleShape2D" id=80]
+extents = Vector2( 16.0625, 8 )
+
+[sub_resource type="RectangleShape2D" id=81]
+extents = Vector2( 8.0625, 8 )
+
+[sub_resource type="RectangleShape2D" id=82]
+extents = Vector2( 160.062, 8 )
+
+[sub_resource type="RectangleShape2D" id=83]
+extents = Vector2( 96, 8 )
+
+[sub_resource type="RectangleShape2D" id=84]
+extents = Vector2( 32.0625, 8 )
+
+[sub_resource type="RectangleShape2D" id=85]
+extents = Vector2( 24, 8 )
 
 [sub_resource type="RectangleShape2D" id=72]
 extents = Vector2( 67.5, 24 )
@@ -549,7 +596,260 @@ tile_data = PoolIntArray( -139395141, 536870935, 0, -139395107, 536870939, 0, -1
 
 [node name="Background_world_objects" type="Node2D" parent="SkyIsland" index="2"]
 
+[node name="GodLights" type="ColorRect" parent="SkyIsland/Background_world_objects" index="0"]
+material = SubResource( 86 )
+margin_left = 185.0
+margin_top = -2727.0
+margin_right = 475.0
+margin_bottom = -2068.0
+rect_scale = Vector2( -1, 1 )
+mouse_filter = 2
+
+[node name="VisibilityChecker" parent="SkyIsland/Background_world_objects/GodLights" index="0" instance=ExtResource( 14 )]
+visible = false
+position = Vector2( 155.5, 360.5 )
+scale = Vector2( 20.55, 37.05 )
+
 [node name="Collisions" type="Node2D" parent="SkyIsland" index="3"]
+visible = false
+
+[node name="Pass_through" type="Node2D" parent="SkyIsland/Collisions" index="0"]
+
+[node name="PassThroughBody7" parent="SkyIsland/Collisions/Pass_through" index="0" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 15, -1849 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody7" index="0"]
+position = Vector2( -6.0625, 1 )
+shape = SubResource( 76 )
+one_way_collision = true
+
+[node name="PassThroughBody9" parent="SkyIsland/Collisions/Pass_through" index="1" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 47, -1881 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody9" index="0"]
+position = Vector2( -46.0625, 1 )
+shape = SubResource( 77 )
+one_way_collision = true
+
+[node name="PassThroughBody10" parent="SkyIsland/Collisions/Pass_through" index="2" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 31, -1897 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody10" index="0"]
+position = Vector2( -46.0625, 1 )
+shape = SubResource( 77 )
+one_way_collision = true
+
+[node name="PassThroughBody11" parent="SkyIsland/Collisions/Pass_through" index="3" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 47, -1913 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody11" index="0"]
+position = Vector2( -46.0625, 1 )
+shape = SubResource( 77 )
+one_way_collision = true
+
+[node name="PassThroughBody12" parent="SkyIsland/Collisions/Pass_through" index="4" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 79, -1945 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody12" index="0"]
+position = Vector2( -46.0625, 1 )
+shape = SubResource( 77 )
+one_way_collision = true
+
+[node name="PassThroughBody13" parent="SkyIsland/Collisions/Pass_through" index="5" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 63, -1961 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody13" index="0"]
+position = Vector2( -46.0625, 1 )
+shape = SubResource( 77 )
+one_way_collision = true
+
+[node name="PassThroughBody14" parent="SkyIsland/Collisions/Pass_through" index="6" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 47, -1977 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody14" index="0"]
+position = Vector2( -46.0625, 1 )
+shape = SubResource( 77 )
+one_way_collision = true
+
+[node name="PassThroughBody15" parent="SkyIsland/Collisions/Pass_through" index="7" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 47, -2009 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody15" index="0"]
+position = Vector2( -46.0625, 1 )
+shape = SubResource( 77 )
+one_way_collision = true
+
+[node name="PassThroughBody16" parent="SkyIsland/Collisions/Pass_through" index="8" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 79, -2041 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody16" index="0"]
+position = Vector2( -46.0625, 1 )
+shape = SubResource( 77 )
+one_way_collision = true
+
+[node name="PassThroughBody17" parent="SkyIsland/Collisions/Pass_through" index="9" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 63, -2057 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody17" index="0"]
+position = Vector2( -46.0625, 1 )
+shape = SubResource( 77 )
+one_way_collision = true
+
+[node name="PassThroughBody18" parent="SkyIsland/Collisions/Pass_through" index="10" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 47, -2073 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody18" index="0"]
+position = Vector2( -46.0625, 1 )
+shape = SubResource( 77 )
+one_way_collision = true
+
+[node name="PassThroughBody19" parent="SkyIsland/Collisions/Pass_through" index="11" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 63, -2025 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody19" index="0"]
+position = Vector2( -54.0625, 1 )
+shape = SubResource( 78 )
+one_way_collision = true
+
+[node name="PassThroughBody20" parent="SkyIsland/Collisions/Pass_through" index="12" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 31, -1993 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody20" index="0"]
+position = Vector2( -62.0625, 1 )
+shape = SubResource( 79 )
+one_way_collision = true
+
+[node name="PassThroughBody21" parent="SkyIsland/Collisions/Pass_through" index="13" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 63, -1993 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody21" index="0"]
+position = Vector2( -62.0625, 1 )
+shape = SubResource( 79 )
+one_way_collision = true
+
+[node name="PassThroughBody22" parent="SkyIsland/Collisions/Pass_through" index="14" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 63, -1929 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody22" index="0"]
+position = Vector2( -62.0625, 1 )
+shape = SubResource( 79 )
+one_way_collision = true
+
+[node name="PassThroughBody23" parent="SkyIsland/Collisions/Pass_through" index="15" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 95, -1929 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody23" index="0"]
+position = Vector2( -62.0625, 1 )
+shape = SubResource( 79 )
+one_way_collision = true
+
+[node name="PassThroughBody24" parent="SkyIsland/Collisions/Pass_through" index="16" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 31, -2041 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody24" index="0"]
+position = Vector2( -62.0625, 1 )
+shape = SubResource( 79 )
+one_way_collision = true
+
+[node name="PassThroughBody25" parent="SkyIsland/Collisions/Pass_through" index="17" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 175, -2073 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody25" index="0"]
+position = Vector2( -62.0625, 1 )
+shape = SubResource( 79 )
+one_way_collision = true
+
+[node name="PassThroughBody26" parent="SkyIsland/Collisions/Pass_through" index="18" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 239, -2073 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody26" index="0"]
+position = Vector2( -62.0625, 1 )
+shape = SubResource( 79 )
+one_way_collision = true
+
+[node name="PassThroughBody27" parent="SkyIsland/Collisions/Pass_through" index="19" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 143, -2057 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody27" index="0"]
+position = Vector2( -54.0625, 1 )
+shape = SubResource( 80 )
+one_way_collision = true
+
+[node name="PassThroughBody28" parent="SkyIsland/Collisions/Pass_through" index="20" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( -33, -2057 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody28" index="0"]
+position = Vector2( -54.0625, 1 )
+shape = SubResource( 80 )
+one_way_collision = true
+
+[node name="PassThroughBody29" parent="SkyIsland/Collisions/Pass_through" index="21" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( -97, -2073 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody29" index="0"]
+position = Vector2( -62.0625, 1 )
+shape = SubResource( 81 )
+one_way_collision = true
+
+[node name="PassThroughBody30" parent="SkyIsland/Collisions/Pass_through" index="22" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( -65, -2073 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody30" index="0"]
+position = Vector2( -62.0625, 1 )
+shape = SubResource( 81 )
+one_way_collision = true
+
+[node name="PassThroughBody31" parent="SkyIsland/Collisions/Pass_through" index="23" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( -1, -2073 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody31" index="0"]
+position = Vector2( -62.0625, 1 )
+shape = SubResource( 81 )
+one_way_collision = true
+
+[node name="PassThroughBody32" parent="SkyIsland/Collisions/Pass_through" index="24" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( -81, -2089 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody32" index="0"]
+position = Vector2( 89.9375, 1 )
+shape = SubResource( 82 )
+one_way_collision = true
+
+[node name="PassThroughBody33" parent="SkyIsland/Collisions/Pass_through" index="25" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( -145, -2105 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody33" index="0"]
+position = Vector2( 154, 1 )
+shape = SubResource( 83 )
+one_way_collision = true
+
+[node name="PassThroughBody8" parent="SkyIsland/Collisions/Pass_through" index="26" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 47, -1865 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody8" index="0"]
+position = Vector2( -38.0625, 1 )
+shape = SubResource( 84 )
+one_way_collision = true
+
+[node name="Solid" type="Node2D" parent="SkyIsland/Collisions" index="1"]
+
+[node name="PassThroughBody" parent="SkyIsland/Collisions/Solid" index="0" instance=ExtResource( 3 )]
+position = Vector2( 171, -1832 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Solid/PassThroughBody" index="0"]
+position = Vector2( -106, 0 )
+shape = SubResource( 85 )
+
+[node name="PassThroughBody2" parent="SkyIsland/Collisions/Solid" index="1" instance=ExtResource( 3 )]
+position = Vector2( 59, -1832 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Solid/PassThroughBody2" index="0"]
+position = Vector2( -106, 0 )
+shape = SubResource( 85 )
 
 [node name="Tower" type="Node2D" parent="." index="8"]
 
@@ -1128,7 +1428,7 @@ energy = 0.7
 mode = 2
 
 [node name="Player" parent="." index="9"]
-position = Vector2( -37, -239 )
+position = Vector2( 83, -1847 )
 z_index = 1
 
 [node name="Light2D2" parent="Player" index="5"]
@@ -1147,6 +1447,35 @@ shape = SubResource( 23 )
 
 [editable path="Stars"]
 [editable path="Camera2D/Clouds"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody7"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody9"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody10"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody11"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody12"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody13"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody14"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody15"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody16"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody17"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody18"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody19"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody20"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody21"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody22"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody23"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody24"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody25"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody26"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody27"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody28"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody29"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody30"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody31"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody32"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody33"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody8"]
+[editable path="SkyIsland/Collisions/Solid/PassThroughBody"]
+[editable path="SkyIsland/Collisions/Solid/PassThroughBody2"]
 [editable path="Tower/Middle_world_objects/Platform/PassThroughBody7"]
 [editable path="Tower/Middle_world_objects/PedestalsLevelDoor"]
 [editable path="Tower/Middle_world_objects/PedestalsLevelDoor/InteractionController"]
