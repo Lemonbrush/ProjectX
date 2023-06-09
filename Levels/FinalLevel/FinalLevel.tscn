@@ -37,7 +37,7 @@ adjustment_saturation = 1.3
 
 [sub_resource type="Animation" id=75]
 resource_name = "Elevation_cutscene"
-length = 20.0
+length = 25.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Player:position")
 tracks/0/interp = 2
@@ -45,7 +45,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 20 ),
+"times": PoolRealArray( 0, 25 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 9, -322 ), Vector2( 9, -1840 ) ]
@@ -57,7 +57,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 20 ),
+"times": PoolRealArray( 0, 25 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 9, -323 ), Vector2( 9, -1840 ) ]
@@ -69,7 +69,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 20 ),
+"times": PoolRealArray( 0, 25 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -86,7 +86,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 20 ),
+"times": PoolRealArray( 25 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ 2.0 ],
@@ -100,7 +100,7 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 20 ),
+"times": PoolRealArray( 0, 25 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 10, -337 ), Vector2( 8, -1929 ) ]
@@ -112,7 +112,7 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 20 ),
+"times": PoolRealArray( 0, 25 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 1, 3 ]
@@ -124,7 +124,7 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 10.1, 12.7, 17.9, 19.2 ),
+"times": PoolRealArray( 0, 13.3, 15.9, 22.9, 24.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0.7, 0.7 ), Vector2( 0.7, 0.7 ), Vector2( 1.5, 1.5 ), Vector2( 1.5, 1.5 ), Vector2( 0.7, 0.7 ) ]
@@ -136,7 +136,7 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0, 10.1, 17.9, 19.2 ),
+"times": PoolRealArray( 0, 13.3, 22.9, 24.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0.53, 0.57016 ), Vector2( 1.2, 1.2 ), Vector2( 1.2, 1.2 ), Vector2( 0.53, 0.57 ) ]
@@ -148,7 +148,7 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 20 ),
+"times": PoolRealArray( 25 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -162,7 +162,7 @@ tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 0, 11.3, 14.6 ),
+"times": PoolRealArray( 0, 13.3, 19.6 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 46, -42 ), Vector2( 30, -27 ), Vector2( 42, 0 ) ]
@@ -174,7 +174,7 @@ tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0, 11.3, 14.2 ),
+"times": PoolRealArray( 0, 13.3, 19.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 23, -83 ), Vector2( 31, -59 ), Vector2( 14, -10 ) ]
@@ -186,7 +186,7 @@ tracks/11/loop_wrap = true
 tracks/11/imported = false
 tracks/11/enabled = true
 tracks/11/keys = {
-"times": PoolRealArray( 0, 11.3, 14.9 ),
+"times": PoolRealArray( 0, 13.3, 19.9 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 35, -119 ), Vector2( 31, -76 ), Vector2( 44, -20 ) ]
@@ -198,7 +198,7 @@ tracks/12/loop_wrap = true
 tracks/12/imported = false
 tracks/12/enabled = true
 tracks/12/keys = {
-"times": PoolRealArray( 0, 11.4, 15.3 ),
+"times": PoolRealArray( 0, 13.4, 20.3 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0.160784 ), Color( 1, 1, 1, 0.160784 ), Color( 1, 1, 1, 0.596078 ) ]
@@ -908,7 +908,7 @@ scale = Vector2( 0.726, 0.726 )
 texture = ExtResource( 25 )
 
 [node name="StarsSprite" type="Sprite" parent="ParallaxBackground2" index="2"]
-modulate = Color( 1, 1, 1, 0.160784 )
+modulate = Color( 1, 1, 1, 0.478696 )
 self_modulate = Color( 0.65098, 0.701961, 0.835294, 1 )
 position = Vector2( 267, 137 )
 rotation = 3.14159
@@ -937,8 +937,8 @@ local_coords = false
 process_material = SubResource( 93 )
 
 [node name="Camera2D" parent="." index="5"]
-position = Vector2( 10, -337 )
-zoom = Vector2( 0.7, 0.7 )
+position = Vector2( 8.48016, -1546.8 )
+zoom = Vector2( 1.58163, 1.58163 )
 
 [node name="WorldSprite" parent="." index="6"]
 visible = false
@@ -1979,7 +1979,7 @@ energy = 0.7
 mode = 2
 
 [node name="Player" parent="." index="10"]
-position = Vector2( 9, -322 )
+position = Vector2( 9, -1475.56 )
 z_index = 3
 
 [node name="Light2D2" parent="Player" index="5"]
