@@ -1,8 +1,27 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=2]
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=4]
+[ext_resource path="res://Shaders/StarsShader.tres" type="Shader" id=5]
+[ext_resource path="res://Assets/Levels/Final_level/BackgroundStars.png" type="Texture" id=6]
+[ext_resource path="res://Resources/Tilesets/Resources/Fountains/Fountains.tres" type="TileSet" id=7]
+[ext_resource path="res://WorldObjects/Moving_platforms/MovingPlatform.gd" type="Script" id=8]
+[ext_resource path="res://Assets/BackgroundGradients/Blue_clouds.png" type="Texture" id=9]
+[ext_resource path="res://WorldObjects/Technical/Clouds/Clouds.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/BackgroundGradients/FinalLevelBackground.png" type="Texture" id=11]
+[ext_resource path="res://WorldObjects/Technical/Stars/Stars.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Resources/Tilesets/Resources/Decorations/Decorations.tres" type="TileSet" id=13]
+[ext_resource path="res://WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Assets/WorldObjects/Floating_block.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Levels/Final_level/Tower_top_background.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Levels/Final_level/Platform.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Levels/Final_level/Tower_bottom.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Levels/Final_level/Tower_top.png" type="Texture" id=19]
+[ext_resource path="res://Levels/FinalLevel/PlatformApproachDetector.gd" type="Script" id=20]
+[ext_resource path="res://WorldObjects/Technical/InteractionEmitterObject/InteractionEmitterObject.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Levels/FinalLevel/FinalLevel.gd" type="Script" id=22]
 
 [sub_resource type="Environment" id=4]
 background_mode = 4
@@ -12,47 +31,1108 @@ glow_hdr_threshold = 1.5
 adjustment_enabled = true
 adjustment_saturation = 1.3
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 61, 4.5 )
+[sub_resource type="Animation" id=75]
+resource_name = "Elevation_cutscene"
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="CurveTexture" id=7]
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.00285307, 0.248217, 0.774608, 0.997147, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.239024, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 3 )
+
+[sub_resource type="Curve" id=6]
+_data = [ Vector2( 0, 0.840033 ), 0.0, 0.0, 0, 0, Vector2( 0.103806, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.571868 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 6 )
+
+[sub_resource type="ParticlesMaterial" id=11]
+emission_shape = 2
+emission_box_extents = Vector3( 1000, 1000, 1 )
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.5
+scale_random = 1.0
+scale_curve = SubResource( 9 )
+color_ramp = SubResource( 8 )
+anim_offset = 1.0
+anim_offset_random = 1.0
+anim_offset_curve = SubResource( 7 )
+
+[sub_resource type="CurveTexture" id=17]
+
+[sub_resource type="Gradient" id=18]
+offsets = PoolRealArray( 0, 0.00285307, 0.248217, 0.774608, 0.997147, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.239024, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=19]
+gradient = SubResource( 18 )
+
+[sub_resource type="Curve" id=20]
+_data = [ Vector2( 0, 0.840033 ), 0.0, 0.0, 0, 0, Vector2( 0.103806, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.571868 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=21]
+curve = SubResource( 20 )
+
+[sub_resource type="ParticlesMaterial" id=22]
+emission_shape = 2
+emission_box_extents = Vector3( 1000, 500, 1 )
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 21 )
+color_ramp = SubResource( 19 )
+anim_offset = 1.0
+anim_offset_random = 1.0
+anim_offset_curve = SubResource( 17 )
+
+[sub_resource type="RectangleShape2D" id=72]
+extents = Vector2( 67.5, 24 )
+
+[sub_resource type="Animation" id=73]
+resource_name = "Lift_down"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Platform:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.7, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 9, -432 ), Vector2( 9, -342.96 ), Vector2( 9, -323 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "enable_platform_interaction"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("InteractionEmitterObject")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "force_check_body_detector"
+} ]
+}
+
+[sub_resource type="Animation" id=74]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Platform:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 9, -432 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=71]
+extents = Vector2( 32.0312, 8 )
+
+[sub_resource type="ShaderMaterial" id=15]
+shader = ExtResource( 5 )
+shader_param/bg_color = null
+
+[sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 6, 35.5 )
 
+[sub_resource type="RectangleShape2D" id=48]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="Curve2D" id=52]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 104, 0, 0, 0, 0, 0, 104, 19 )
+}
+
+[sub_resource type="Animation" id=50]
+resource_name = "Loop"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=51]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Curve2D" id=67]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 104, -12, 0, 0, 0, 0, 104, 19 )
+}
+
+[sub_resource type="Animation" id=53]
+resource_name = "Loop"
+length = 20.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=54]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+
+[sub_resource type="Animation" id=55]
+resource_name = "Loop"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=56]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.5 ]
+}
+
+[sub_resource type="Curve2D" id=68]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 104, 0, 0, 0, 0, 0, 104, 35 )
+}
+
+[sub_resource type="Animation" id=57]
+resource_name = "Loop"
+length = 15.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=58]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.4 ]
+}
+
+[sub_resource type="Animation" id=59]
+resource_name = "Loop"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=60]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Curve2D" id=69]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 104, -17, 0, 0, 0, 0, 104, 19 )
+}
+
+[sub_resource type="Animation" id=61]
+resource_name = "Loop"
+length = 13.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 6.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=62]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.7 ]
+}
+
+[sub_resource type="Curve2D" id=70]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 104, 0, 0, 0, 0, 0, 104, 12 )
+}
+
+[sub_resource type="Animation" id=63]
+resource_name = "Loop"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=64]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=65]
+resource_name = "Loop"
+length = 20.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=66]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.3 ]
+}
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 48.0625, 8 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 32.0625, 8 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 16.0625, 8 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 96, 8 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 144, 8 )
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 7014.5, 150 )
+
 [node name="FinalLevel" instance=ExtResource( 1 )]
+script = ExtResource( 22 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
 environment = SubResource( 4 )
 
-[node name="Player" parent="." index="5"]
-position = Vector2( -37, -239 )
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="." index="1"]
+scroll_limit_end = Vector2( 0, 320 )
 
-[node name="Light2D2" parent="Player" index="5"]
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground2" index="0"]
+motion_mirroring = Vector2( 530, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground2/ParallaxLayer2" index="0"]
+scale = Vector2( 0.573, 0.568384 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="CloudsSprite" type="Sprite" parent="ParallaxBackground2" index="1"]
+modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( 268, 254 )
+rotation = 3.14159
+scale = Vector2( 0.725426, 0.725426 )
+texture = ExtResource( 9 )
+
+[node name="StarsSprite" type="Sprite" parent="ParallaxBackground2" index="2"]
+modulate = Color( 1, 1, 1, 0.176471 )
+self_modulate = Color( 0.65098, 0.701961, 0.835294, 1 )
+position = Vector2( 267, 137 )
+rotation = 3.14159
+scale = Vector2( 0.474795, 0.474795 )
+texture = ExtResource( 6 )
+
+[node name="AnimationPlayer" parent="." index="3"]
+autoplay = ""
+anims/Elevation_cutscene = SubResource( 75 )
+
+[node name="Stars" parent="." index="4" instance=ExtResource( 12 )]
+modulate = Color( 1, 1, 1, 0.729412 )
+position = Vector2( 6, -249 )
+
+[node name="Particles2D" parent="Stars" index="0"]
+process_material = SubResource( 11 )
+
+[node name="Clouds" parent="Camera2D" index="2" instance=ExtResource( 10 )]
+position = Vector2( 43, -622 )
+
+[node name="Particles2D" parent="Camera2D/Clouds" index="0"]
+position = Vector2( 13, 339 )
+amount = 100
+process_material = SubResource( 22 )
+
+[node name="WorldSprite" parent="." index="6"]
 visible = false
+position = Vector2( -319, -1192 )
 
-[node name="PassThroughBody" parent="Collisions/Solid" index="0" instance=ExtResource( 3 )]
-position = Vector2( -5, -216 )
-collision_layer = 17
-collision_mask = 17
+[node name="Tower" type="Node2D" parent="." index="7"]
 
-[node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody" index="0"]
-position = Vector2( 14, -3.5 )
-shape = SubResource( 1 )
+[node name="Foreground_world_objects" type="Node2D" parent="Tower" index="0"]
 
-[node name="PedestalsLevelDoor" parent="Doors" index="0" instance=ExtResource( 2 )]
+[node name="Middle_world_objects" type="Node2D" parent="Tower" index="1"]
+
+[node name="TowerTopBackgroundSprite" type="Sprite" parent="Tower/Middle_world_objects" index="0"]
+position = Vector2( -319, -1191 )
+texture = ExtResource( 16 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PlatformApproachDetector" type="Node2D" parent="Tower/Middle_world_objects" index="1"]
+z_index = 1
+script = ExtResource( 20 )
+
+[node name="PlatformDetectionArea" type="Area2D" parent="Tower/Middle_world_objects/PlatformApproachDetector" index="0"]
+visible = false
+position = Vector2( -42, -338 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Middle_world_objects/PlatformApproachDetector/PlatformDetectionArea" index="0"]
+position = Vector2( 51.5, -21 )
+shape = SubResource( 72 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tower/Middle_world_objects/PlatformApproachDetector" index="1"]
+anims/Lift_down = SubResource( 73 )
+anims/RESET = SubResource( 74 )
+
+[node name="InteractionEmitterObject" parent="Tower/Middle_world_objects/PlatformApproachDetector" index="2" instance=ExtResource( 21 )]
+position = Vector2( 9, -323 )
+emitting_arg = "elevator_entered"
+labelText = "Зайти"
+
+[node name="Platform" type="Node2D" parent="Tower/Middle_world_objects" index="2"]
+position = Vector2( 9, -432 )
+
+[node name="Sprite" type="Sprite" parent="Tower/Middle_world_objects/Platform" index="0"]
+position = Vector2( 0, 32 )
+texture = ExtResource( 17 )
+
+[node name="PassThroughBody7" parent="Tower/Middle_world_objects/Platform" index="1" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 16, 8 )
+
+[node name="CollisionShape2D" parent="Tower/Middle_world_objects/Platform/PassThroughBody7" index="0"]
+position = Vector2( -16.0312, 0 )
+shape = SubResource( 71 )
+one_way_collision = true
+
+[node name="TowerTopSprite" type="Sprite" parent="Tower/Middle_world_objects" index="3"]
+position = Vector2( -319, -1192 )
+texture = ExtResource( 19 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TowerBottomSprite" type="Sprite" parent="Tower/Middle_world_objects" index="4"]
+position = Vector2( -319, -1192 )
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Decorations" type="TileMap" parent="Tower/Middle_world_objects" index="5"]
+tile_set = ExtResource( 13 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -70189111, 19, 0, -70254535, 28, 0, -66584632, 113, 0, -65863732, 111, 0, -63307718, 536871024, 0, -60751878, 23, 0, -60817350, 23, 0, -51314743, 20, 0, -51380214, 14, 0, -49151941, 536871023, 0, -42532920, 536870988, 0, -41877559, 110, 0, -41943032, 12, 0, -41942983, 108, 0, -39452726, 113, 0, -32440375, 22, 0, -32505848, 27, 0, -32505799, 23, 0, -32309220, 536870989, 0, -30408653, 536871024, 0, -25100328, 23, 0, -25100313, 15, 0, -25165795, 22, 0, -25165780, 14, 0, -25100278, 57, 0, -24051752, 59, 0, -24117192, 58, 0, -23461805, 75, 0, -23068724, 111, 0, -23134153, 536871025, 0, -21954642, 21, 0, -21954605, 22, 0, -21954589, 29, 0, -22020048, 24, 0, -22020033, 31, 0, -22020018, 23, 0, -20906071, 57, 0, -20971510, 60, 0, -20971445, 58, 0, -19857494, 29, 0, -19922936, 59, 0, -19791929, 60, 0, -19857352, 58, 0, -18808916, 536870940, 0, -18415729, 536870987, 0, -17760353, 536870934, 0, -17825731, 536870932, 0, -17825711, 59, 0, -17825690, 31, 0, -17694797, 58, 0, -16711741, 536870932, 0, -16777119, 536870934, 0, -15663230, 536870934, 0, -15663190, 536870922, 0, -15663153, 29, 0, -15663132, 536870936, 0, -15728606, 536870933, 0, -15728584, 29, 0, -15728568, 536870935, 0, -15728553, 60, 0, -15728526, 536870939, 0, -14614640, 59, 0, -14614605, 60, 0, -14614538, 57, 0, -14680044, 60, 0, -14614428, 57, 0, -13762672, 57, 0, -13696888, 536871024, 0, -13566085, 111, 0, -13303854, 112, 0, -12517480, 113, 0, -12451750, 536871025, 0, -11075618, 111, 0, -10878929, 536871023, 0 )
+
+[node name="Fountains" type="TileMap" parent="Tower/Middle_world_objects" index="6"]
+tile_set = ExtResource( 7 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -30015493, 9, 0, -28311557, 8, 0, -26738693, 7, 0, -26148935, 536870916, 0, -26214343, 4, 0, -23003206, 536870918, 0, -23068615, 5, 0, -20906047, 536870922, 0, -13631431, 0, 0, -12517463, 9, 0, -11534279, 1, 0, -10813527, 8, 0, -9371691, 1, 0, -9437148, 11, 0, -9437127, 1, 0, -9175127, 8, 0, -8388572, 11, 0, -7602263, 8, 0, -7274539, 1, 0, -7339996, 11, 0, -7339975, 1, 0, -6291420, 11, 0, -5963863, 8, 0, -5177387, 1, 0, -5242844, 11, 0, -5242823, 1, 0, -4325463, 8, 0, -4194268, 11, 0, -3080235, 1, 0, -3145692, 11, 0, -3145671, 1, 0, -2752599, 8, 0, -2097116, 11, 0, -1114199, 8, 0, -983083, 1, 0, -1048540, 11, 0, -1048519, 1, 0, 36, 11, 0, 393129, 8, 0, 1114069, 1, 0, 1048612, 11, 0, 1048633, 1, 0, 1965993, 8, 0, 2097188, 11, 0, 3080228, 11, 0, 3211221, 1, 0, 3145785, 1, 0, 3538857, 8, 0, 4128804, 11, 0, 5111844, 11, 0 )
+
+[node name="PedestalsLevelDoor" parent="Tower/Middle_world_objects" index="7" instance=ExtResource( 2 )]
 position = Vector2( 8, -224 )
 nextScenePath = "res://Levels/Pedestal_hall/PedestalHall.tscn"
 nextDoorName = "FinalLevelDoor"
 
-[node name="GatesBackground" parent="Doors/PedestalsLevelDoor" index="1"]
-visible = false
+[node name="GatesBackground" parent="Tower/Middle_world_objects/PedestalsLevelDoor" index="1"]
+material = SubResource( 15 )
 margin_left = -16.0
-margin_top = -54.0
+margin_top = -64.0
 margin_right = 17.0
 
-[node name="CollisionShape2D" parent="Doors/PedestalsLevelDoor/InteractionController/Area2D" index="0"]
-position = Vector2( 0, -25.5 )
-shape = SubResource( 3 )
+[node name="InteractionController" parent="Tower/Middle_world_objects/PedestalsLevelDoor" index="2"]
+visible = false
 
-[editable path="Collisions/Solid/PassThroughBody"]
-[editable path="Doors/PedestalsLevelDoor"]
-[editable path="Doors/PedestalsLevelDoor/InteractionController"]
+[node name="CollisionShape2D" parent="Tower/Middle_world_objects/PedestalsLevelDoor/InteractionController/Area2D" index="0"]
+position = Vector2( 0, -25.5 )
+shape = SubResource( 16 )
+
+[node name="Moving_platforms" type="Node2D" parent="Tower/Middle_world_objects" index="8"]
+
+[node name="MovingPlatform" type="Node2D" parent="Tower/Middle_world_objects/Moving_platforms" index="0"]
+position = Vector2( -71, -192 )
+script = ExtResource( 8 )
+
+[node name="Platform" type="KinematicBody2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform" index="0"]
+position = Vector2( 104, 0 )
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform/Platform" index="0" instance=ExtResource( 14 )]
+position = Vector2( -0.255653, 0 )
+
+[node name="Sprite" type="Sprite" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform/Platform" index="1"]
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform/Platform" index="2"]
+shape = SubResource( 48 )
+one_way_collision = true
+
+[node name="TileMap" type="TileMap" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform/Platform" index="3"]
+position = Vector2( -104, 12 )
+tile_set = ExtResource( 13 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -2359200, 536870941, 0 )
+
+[node name="Path2D" type="Path2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform" index="1"]
+curve = SubResource( 52 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform/Path2D" index="0"]
+position = Vector2( 104, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 50 )
+anims/RESET = SubResource( 51 )
+
+[node name="MovingPlatform2" type="Node2D" parent="Tower/Middle_world_objects/Moving_platforms" index="1"]
+position = Vector2( -174, -437 )
+script = ExtResource( 8 )
+
+[node name="Platform" type="KinematicBody2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform2" index="0"]
+position = Vector2( 104, -12 )
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform2/Platform" index="0" instance=ExtResource( 14 )]
+position = Vector2( -0.255653, 0 )
+
+[node name="Sprite" type="Sprite" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform2/Platform" index="1"]
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform2/Platform" index="2"]
+shape = SubResource( 48 )
+one_way_collision = true
+
+[node name="TileMap" type="TileMap" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform2/Platform" index="3"]
+position = Vector2( -104, 12 )
+tile_set = ExtResource( 13 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -2359200, 536870938, 0 )
+
+[node name="Path2D" type="Path2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform2" index="1"]
+curve = SubResource( 67 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform2/Path2D" index="0"]
+position = Vector2( 104, 19 )
+rotation = 3.14159
+offset = 31.0077
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform2/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform2" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 53 )
+anims/RESET = SubResource( 54 )
+
+[node name="MovingPlatform3" type="Node2D" parent="Tower/Middle_world_objects/Moving_platforms" index="2"]
+position = Vector2( 14, -401 )
+script = ExtResource( 8 )
+
+[node name="Platform" type="KinematicBody2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform3" index="0"]
+position = Vector2( 104, 0 )
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform3/Platform" index="0" instance=ExtResource( 14 )]
+position = Vector2( -0.255653, 0 )
+
+[node name="Sprite" type="Sprite" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform3/Platform" index="1"]
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform3/Platform" index="2"]
+shape = SubResource( 48 )
+one_way_collision = true
+
+[node name="TileMap" type="TileMap" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform3/Platform" index="3"]
+position = Vector2( -104, 0 )
+tile_set = ExtResource( 13 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -1572768, 536870943, 0 )
+
+[node name="Path2D" type="Path2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform3" index="1"]
+curve = SubResource( 52 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform3/Path2D" index="0"]
+position = Vector2( 104, 9.50166 )
+rotation = 3.14159
+offset = 9.49962
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform3/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform3" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 55 )
+anims/RESET = SubResource( 56 )
+
+[node name="MovingPlatform4" type="Node2D" parent="Tower/Middle_world_objects/Moving_platforms" index="3"]
+position = Vector2( -25, -548 )
+script = ExtResource( 8 )
+
+[node name="Platform" type="KinematicBody2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform4" index="0"]
+position = Vector2( 104, 0 )
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform4/Platform" index="0" instance=ExtResource( 14 )]
+position = Vector2( -0.255653, 0 )
+
+[node name="Sprite" type="Sprite" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform4/Platform" index="1"]
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform4/Platform" index="2"]
+shape = SubResource( 48 )
+one_way_collision = true
+
+[node name="TileMap" type="TileMap" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform4/Platform" index="3"]
+position = Vector2( -104, 12 )
+tile_set = ExtResource( 13 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -2359200, 536870934, 0 )
+
+[node name="Path2D" type="Path2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform4" index="1"]
+curve = SubResource( 68 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform4/Path2D" index="0"]
+position = Vector2( 104, 14.0008 )
+rotation = 3.14159
+offset = 14.0007
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform4/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform4" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 57 )
+anims/RESET = SubResource( 58 )
+
+[node name="MovingPlatform5" type="Node2D" parent="Tower/Middle_world_objects/Moving_platforms" index="4"]
+position = Vector2( -63, -705 )
+script = ExtResource( 8 )
+
+[node name="Platform" type="KinematicBody2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform5" index="0"]
+position = Vector2( 104, 0 )
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform5/Platform" index="0" instance=ExtResource( 14 )]
+position = Vector2( -0.255653, 0 )
+
+[node name="Sprite" type="Sprite" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform5/Platform" index="1"]
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform5/Platform" index="2"]
+shape = SubResource( 48 )
+one_way_collision = true
+
+[node name="TileMap" type="TileMap" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform5/Platform" index="3"]
+position = Vector2( -104, 12 )
+tile_set = ExtResource( 13 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -2359199, 536871016, 0, -1310625, 536870972, 0 )
+
+[node name="Path2D" type="Path2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform5" index="1"]
+curve = SubResource( 52 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform5/Path2D" index="0"]
+position = Vector2( 104, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform5/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform5" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 59 )
+anims/RESET = SubResource( 60 )
+
+[node name="MovingPlatform6" type="Node2D" parent="Tower/Middle_world_objects/Moving_platforms" index="5"]
+position = Vector2( -144, -833 )
+script = ExtResource( 8 )
+
+[node name="Platform" type="KinematicBody2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform6" index="0"]
+position = Vector2( 104, -17 )
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform6/Platform" index="0" instance=ExtResource( 14 )]
+position = Vector2( -0.255653, 0 )
+
+[node name="Sprite" type="Sprite" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform6/Platform" index="1"]
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform6/Platform" index="2"]
+shape = SubResource( 48 )
+one_way_collision = true
+
+[node name="TileMap" type="TileMap" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform6/Platform" index="3"]
+position = Vector2( -104, 12 )
+tile_set = ExtResource( 13 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -2359200, 536870926, 0 )
+
+[node name="Path2D" type="Path2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform6" index="1"]
+curve = SubResource( 69 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform6/Path2D" index="0"]
+position = Vector2( 104, 8.20345 )
+rotation = 3.14159
+offset = 25.2003
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform6/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform6" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 61 )
+anims/RESET = SubResource( 62 )
+
+[node name="MovingPlatform7" type="Node2D" parent="Tower/Middle_world_objects/Moving_platforms" index="6"]
+position = Vector2( -40, -1008 )
+script = ExtResource( 8 )
+
+[node name="Platform" type="KinematicBody2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform7" index="0"]
+position = Vector2( 104, 0 )
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform7/Platform" index="0" instance=ExtResource( 14 )]
+position = Vector2( -0.255653, 0 )
+
+[node name="Sprite" type="Sprite" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform7/Platform" index="1"]
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform7/Platform" index="2"]
+shape = SubResource( 48 )
+one_way_collision = true
+
+[node name="TileMap" type="TileMap" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform7/Platform" index="3"]
+position = Vector2( -104, 12 )
+tile_set = ExtResource( 13 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -2359200, 536870936, 0 )
+
+[node name="Path2D" type="Path2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform7" index="1"]
+curve = SubResource( 70 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform7/Path2D" index="0"]
+position = Vector2( 104, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform7/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform7" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 63 )
+anims/RESET = SubResource( 64 )
+
+[node name="MovingPlatform8" type="Node2D" parent="Tower/Middle_world_objects/Moving_platforms" index="7"]
+position = Vector2( -39, -1207 )
+script = ExtResource( 8 )
+
+[node name="Platform" type="KinematicBody2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform8" index="0"]
+position = Vector2( 104, 0 )
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform8/Platform" index="0" instance=ExtResource( 14 )]
+position = Vector2( -0.255653, 0 )
+
+[node name="Sprite" type="Sprite" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform8/Platform" index="1"]
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform8/Platform" index="2"]
+shape = SubResource( 48 )
+one_way_collision = true
+
+[node name="TileMap" type="TileMap" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform8/Platform" index="3"]
+position = Vector2( -104, 12 )
+tile_set = ExtResource( 13 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -2359200, 536870943, 0 )
+
+[node name="Path2D" type="Path2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform8" index="1"]
+curve = SubResource( 52 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform8/Path2D" index="0"]
+position = Vector2( 104, 5.69949 )
+rotation = 3.14159
+offset = 5.69977
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform8/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform8" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 65 )
+anims/RESET = SubResource( 66 )
+
+[node name="Background_world_objects" type="Node2D" parent="Tower" index="2"]
+
+[node name="Collisions" type="Node2D" parent="Tower" index="3"]
+visible = false
+
+[node name="PassTrough" type="Node2D" parent="Tower/Collisions" index="0"]
+
+[node name="PassThroughBody7" parent="Tower/Collisions/PassTrough" index="0" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( -49, -233 )
+
+[node name="CollisionShape2D" parent="Tower/Collisions/PassTrough/PassThroughBody7" index="0"]
+position = Vector2( -22.0625, 1 )
+shape = SubResource( 12 )
+one_way_collision = true
+
+[node name="PassThroughBody8" parent="Tower/Collisions/PassTrough" index="1" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 111, -233 )
+
+[node name="CollisionShape2D" parent="Tower/Collisions/PassTrough/PassThroughBody8" index="0"]
+position = Vector2( -22.0625, 1 )
+shape = SubResource( 12 )
+one_way_collision = true
+
+[node name="PassThroughBody9" parent="Tower/Collisions/PassTrough" index="2" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 127, -249 )
+
+[node name="CollisionShape2D" parent="Tower/Collisions/PassTrough/PassThroughBody9" index="0"]
+position = Vector2( -38.0625, 1 )
+shape = SubResource( 13 )
+one_way_collision = true
+
+[node name="PassThroughBody10" parent="Tower/Collisions/PassTrough" index="3" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( -33, -249 )
+
+[node name="CollisionShape2D" parent="Tower/Collisions/PassTrough/PassThroughBody10" index="0"]
+position = Vector2( -38.0625, 1 )
+shape = SubResource( 13 )
+one_way_collision = true
+
+[node name="PassThroughBody11" parent="Tower/Collisions/PassTrough" index="4" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( -17, -265 )
+
+[node name="CollisionShape2D" parent="Tower/Collisions/PassTrough/PassThroughBody11" index="0"]
+position = Vector2( -54.0625, 1 )
+shape = SubResource( 14 )
+one_way_collision = true
+
+[node name="PassThroughBody12" parent="Tower/Collisions/PassTrough" index="5" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 143, -265 )
+
+[node name="CollisionShape2D" parent="Tower/Collisions/PassTrough/PassThroughBody12" index="0"]
+position = Vector2( -54.0625, 1 )
+shape = SubResource( 14 )
+one_way_collision = true
+
+[node name="PassThroughBody13" parent="Tower/Collisions/PassTrough" index="6" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 143, -281 )
+
+[node name="CollisionShape2D" parent="Tower/Collisions/PassTrough/PassThroughBody13" index="0"]
+position = Vector2( -54.0625, 1 )
+shape = SubResource( 14 )
+one_way_collision = true
+
+[node name="PassThroughBody14" parent="Tower/Collisions/PassTrough" index="7" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( -17, -281 )
+
+[node name="CollisionShape2D" parent="Tower/Collisions/PassTrough/PassThroughBody14" index="0"]
+position = Vector2( -54.0625, 1 )
+shape = SubResource( 14 )
+one_way_collision = true
+
+[node name="PassThroughBody15" parent="Tower/Collisions/PassTrough" index="8" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( -1, -297 )
+
+[node name="CollisionShape2D" parent="Tower/Collisions/PassTrough/PassThroughBody15" index="0"]
+position = Vector2( -54.0625, 1 )
+shape = SubResource( 14 )
+one_way_collision = true
+
+[node name="PassThroughBody16" parent="Tower/Collisions/PassTrough" index="9" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 127, -297 )
+
+[node name="CollisionShape2D" parent="Tower/Collisions/PassTrough/PassThroughBody16" index="0"]
+position = Vector2( -54.0625, 1 )
+shape = SubResource( 14 )
+one_way_collision = true
+
+[node name="PassThroughBody17" parent="Tower/Collisions/PassTrough" index="10" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 143, -313 )
+
+[node name="CollisionShape2D" parent="Tower/Collisions/PassTrough/PassThroughBody17" index="0"]
+position = Vector2( -134, 1 )
+shape = SubResource( 10 )
+one_way_collision = true
+
+[node name="Solid" type="Node2D" parent="Tower/Collisions" index="1"]
+
+[node name="PassThroughBody" parent="Tower/Collisions/Solid" index="0" instance=ExtResource( 3 )]
+position = Vector2( -5, -216 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Tower/Collisions/Solid/PassThroughBody" index="0"]
+position = Vector2( 14, 0 )
+shape = SubResource( 5 )
+
+[node name="Lighting" type="Node2D" parent="Tower" index="4"]
+
+[node name="Light2D" type="Light2D" parent="Tower/Lighting" index="0"]
+position = Vector2( 36, -92 )
+scale = Vector2( 2.08505, 0.656576 )
+texture = ExtResource( 4 )
+color = Color( 1, 1, 1, 0.431373 )
+energy = 0.7
+mode = 2
+
+[node name="Player" parent="." index="8"]
+position = Vector2( -37, -239 )
+z_index = 1
+
+[node name="Light2D2" parent="Player" index="5"]
+visible = false
+color = Color( 0.113725, 0.407843, 0.968627, 1 )
+
+[node name="Hazard_area" type="Area2D" parent="." index="14"]
+visible = false
+position = Vector2( -1029, -243 )
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hazard_area" index="0"]
+position = Vector2( 1873.5, 319 )
+shape = SubResource( 23 )
+
+[editable path="Stars"]
+[editable path="Camera2D/Clouds"]
+[editable path="Tower/Middle_world_objects/Platform/PassThroughBody7"]
+[editable path="Tower/Middle_world_objects/PedestalsLevelDoor"]
+[editable path="Tower/Middle_world_objects/PedestalsLevelDoor/InteractionController"]
+[editable path="Tower/Collisions/PassTrough/PassThroughBody7"]
+[editable path="Tower/Collisions/PassTrough/PassThroughBody8"]
+[editable path="Tower/Collisions/PassTrough/PassThroughBody9"]
+[editable path="Tower/Collisions/PassTrough/PassThroughBody10"]
+[editable path="Tower/Collisions/PassTrough/PassThroughBody11"]
+[editable path="Tower/Collisions/PassTrough/PassThroughBody12"]
+[editable path="Tower/Collisions/PassTrough/PassThroughBody13"]
+[editable path="Tower/Collisions/PassTrough/PassThroughBody14"]
+[editable path="Tower/Collisions/PassTrough/PassThroughBody15"]
+[editable path="Tower/Collisions/PassTrough/PassThroughBody16"]
+[editable path="Tower/Collisions/PassTrough/PassThroughBody17"]
+[editable path="Tower/Collisions/Solid/PassThroughBody"]
