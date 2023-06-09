@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=2]
+[gd_scene load_steps=83 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=2]
@@ -11,7 +11,6 @@
 [ext_resource path="res://Assets/BackgroundGradients/Blue_clouds.png" type="Texture" id=9]
 [ext_resource path="res://WorldObjects/Technical/Clouds/Clouds.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/BackgroundGradients/FinalLevelBackground.png" type="Texture" id=11]
-[ext_resource path="res://WorldObjects/Technical/Stars/Stars.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Resources/Tilesets/Resources/Decorations/Decorations.tres" type="TileSet" id=13]
 [ext_resource path="res://WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/WorldObjects/Floating_block.png" type="Texture" id=15]
@@ -51,52 +50,21 @@ _data = [ Vector2( 0, 0.840033 ), 0.0, 0.0, 0, 0, Vector2( 0.103806, 1 ), 0.0, 0
 [sub_resource type="CurveTexture" id=9]
 curve = SubResource( 6 )
 
-[sub_resource type="ParticlesMaterial" id=11]
+[sub_resource type="ParticlesMaterial" id=93]
 emission_shape = 2
-emission_box_extents = Vector3( 1000, 1000, 1 )
+emission_box_extents = Vector3( 1000, 2000, 1 )
 flag_disable_z = true
 spread = 0.0
 gravity = Vector3( 0, 0, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale = 0.5
+scale = 2.0
 scale_random = 1.0
 scale_curve = SubResource( 9 )
 color_ramp = SubResource( 8 )
 anim_offset = 1.0
 anim_offset_random = 1.0
 anim_offset_curve = SubResource( 7 )
-
-[sub_resource type="CurveTexture" id=17]
-
-[sub_resource type="Gradient" id=18]
-offsets = PoolRealArray( 0, 0.00285307, 0.248217, 0.774608, 0.997147, 1 )
-colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.239024, 1, 1, 1, 0 )
-
-[sub_resource type="GradientTexture" id=19]
-gradient = SubResource( 18 )
-
-[sub_resource type="Curve" id=20]
-_data = [ Vector2( 0, 0.840033 ), 0.0, 0.0, 0, 0, Vector2( 0.103806, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.571868 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=21]
-curve = SubResource( 20 )
-
-[sub_resource type="ParticlesMaterial" id=22]
-emission_shape = 2
-emission_box_extents = Vector3( 1000, 500, 1 )
-flag_disable_z = true
-spread = 0.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 10.0
-initial_velocity_random = 0.5
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale_curve = SubResource( 21 )
-color_ramp = SubResource( 19 )
-anim_offset = 1.0
-anim_offset_random = 1.0
-anim_offset_curve = SubResource( 17 )
 
 [sub_resource type="ShaderMaterial" id=86]
 shader = ExtResource( 24 )
@@ -143,6 +111,37 @@ extents = Vector2( 32.0625, 8 )
 
 [sub_resource type="RectangleShape2D" id=85]
 extents = Vector2( 24, 8 )
+
+[sub_resource type="CurveTexture" id=17]
+
+[sub_resource type="Gradient" id=18]
+offsets = PoolRealArray( 0, 0.00285307, 0.248217, 0.774608, 0.997147, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.239024, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=19]
+gradient = SubResource( 18 )
+
+[sub_resource type="Curve" id=20]
+_data = [ Vector2( 0, 0.840033 ), 0.0, 0.0, 0, 0, Vector2( 0.103806, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.571868 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=21]
+curve = SubResource( 20 )
+
+[sub_resource type="ParticlesMaterial" id=22]
+emission_shape = 2
+emission_box_extents = Vector3( 1000, 500, 1 )
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 21 )
+color_ramp = SubResource( 19 )
+anim_offset = 1.0
+anim_offset_random = 1.0
+anim_offset_curve = SubResource( 17 )
 
 [sub_resource type="RectangleShape2D" id=72]
 extents = Vector2( 67.5, 24 )
@@ -554,20 +553,20 @@ texture = ExtResource( 6 )
 autoplay = ""
 anims/Elevation_cutscene = SubResource( 75 )
 
-[node name="Stars" parent="." index="4" instance=ExtResource( 12 )]
+[node name="Stars" type="Node2D" parent="." index="4"]
 modulate = Color( 1, 1, 1, 0.729412 )
 position = Vector2( 6, -249 )
 
-[node name="Particles2D" parent="Stars" index="0"]
-process_material = SubResource( 11 )
-
-[node name="Clouds" parent="Camera2D" index="2" instance=ExtResource( 10 )]
-position = Vector2( 43, -622 )
-
-[node name="Particles2D" parent="Camera2D/Clouds" index="0"]
-position = Vector2( 13, 339 )
-amount = 100
-process_material = SubResource( 22 )
+[node name="Particles2D" type="Particles2D" parent="Stars" index="0"]
+self_modulate = Color( 1, 1, 1, 0.784314 )
+show_behind_parent = true
+position = Vector2( -863, -2005 )
+amount = 1000
+preprocess = 10.0
+randomness = 1.0
+visibility_rect = Rect2( -100, -100, 2000, 2500 )
+local_coords = false
+process_material = SubResource( 93 )
 
 [node name="WorldSprite" parent="." index="6"]
 visible = false
@@ -853,9 +852,17 @@ shape = SubResource( 85 )
 
 [node name="Tower" type="Node2D" parent="." index="8"]
 
-[node name="Foreground_world_objects" type="Node2D" parent="Tower" index="0"]
+[node name="Clouds" parent="Tower" index="0" instance=ExtResource( 10 )]
+position = Vector2( 9, -330 )
 
-[node name="Middle_world_objects" type="Node2D" parent="Tower" index="1"]
+[node name="Particles2D" parent="Tower/Clouds" index="0"]
+position = Vector2( 13, 339 )
+amount = 100
+process_material = SubResource( 22 )
+
+[node name="Foreground_world_objects" type="Node2D" parent="Tower" index="1"]
+
+[node name="Middle_world_objects" type="Node2D" parent="Tower" index="2"]
 
 [node name="TowerTopBackgroundSprite" type="Sprite" parent="Tower/Middle_world_objects" index="0"]
 position = Vector2( -319, -1191 )
@@ -1311,9 +1318,9 @@ playback_process_mode = 0
 anims/Loop = SubResource( 65 )
 anims/RESET = SubResource( 66 )
 
-[node name="Background_world_objects" type="Node2D" parent="Tower" index="2"]
+[node name="Background_world_objects" type="Node2D" parent="Tower" index="3"]
 
-[node name="Collisions" type="Node2D" parent="Tower" index="3"]
+[node name="Collisions" type="Node2D" parent="Tower" index="4"]
 visible = false
 
 [node name="PassTrough" type="Node2D" parent="Tower/Collisions" index="0"]
@@ -1417,7 +1424,7 @@ collision_mask = 17
 position = Vector2( 14, 0 )
 shape = SubResource( 5 )
 
-[node name="Lighting" type="Node2D" parent="Tower" index="4"]
+[node name="Lighting" type="Node2D" parent="Tower" index="5"]
 
 [node name="Light2D" type="Light2D" parent="Tower/Lighting" index="0"]
 position = Vector2( 36, -92 )
@@ -1428,7 +1435,7 @@ energy = 0.7
 mode = 2
 
 [node name="Player" parent="." index="9"]
-position = Vector2( 83, -1847 )
+position = Vector2( 8, -228 )
 z_index = 1
 
 [node name="Light2D2" parent="Player" index="5"]
@@ -1445,8 +1452,6 @@ collision_mask = 64
 position = Vector2( 1873.5, 319 )
 shape = SubResource( 23 )
 
-[editable path="Stars"]
-[editable path="Camera2D/Clouds"]
 [editable path="SkyIsland/Collisions/Pass_through/PassThroughBody7"]
 [editable path="SkyIsland/Collisions/Pass_through/PassThroughBody9"]
 [editable path="SkyIsland/Collisions/Pass_through/PassThroughBody10"]
@@ -1476,6 +1481,7 @@ shape = SubResource( 23 )
 [editable path="SkyIsland/Collisions/Pass_through/PassThroughBody8"]
 [editable path="SkyIsland/Collisions/Solid/PassThroughBody"]
 [editable path="SkyIsland/Collisions/Solid/PassThroughBody2"]
+[editable path="Tower/Clouds"]
 [editable path="Tower/Middle_world_objects/Platform/PassThroughBody7"]
 [editable path="Tower/Middle_world_objects/PedestalsLevelDoor"]
 [editable path="Tower/Middle_world_objects/PedestalsLevelDoor/InteractionController"]
