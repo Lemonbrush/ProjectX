@@ -3,6 +3,7 @@ extends Node2D
 signal player_did_enter_elevator
 
 export (bool) var did_activate_platform = false
+export (bool) var did_elevate_to_sky_island = false
 
 onready var animationPlayer = $AnimationPlayer
 onready var area2d = $PlatformDetectionArea
@@ -14,8 +15,9 @@ func _ready():
 	interactionController.set_interaction_enabled(did_activate_platform)
 
 func on_area_enter(_body):
-	if !did_activate_platform:
+	if !did_activate_platform or did_elevate_to_sky_island:
 		animationPlayer.play("Lift_down")
+		did_elevate_to_sky_island = false
 		did_activate_platform = true
 
 func player_did_enter_elevator(_arg):
@@ -24,3 +26,7 @@ func player_did_enter_elevator(_arg):
 
 func enable_platform_interaction():
 	interactionController.set_interaction_enabled(true)
+
+func did_finish_elevation_to_sky_island():
+	enable_platform_interaction()
+	did_elevate_to_sky_island = true
