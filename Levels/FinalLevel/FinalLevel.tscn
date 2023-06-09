@@ -889,7 +889,7 @@ texture = ExtResource( 11 )
 centered = false
 
 [node name="Clouds" type="Node2D" parent="ParallaxBackground2" index="1"]
-modulate = Color( 1, 1, 1, 0.27451 )
+modulate = Color( 1, 1, 1, 0.537255 )
 position = Vector2( 239, 319 )
 
 [node name="Clouds_3" type="Sprite" parent="ParallaxBackground2/Clouds" index="0"]
