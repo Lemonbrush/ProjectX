@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=2]
@@ -19,6 +19,9 @@
 [ext_resource path="res://Assets/Levels/Final_level/Platform.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Levels/Final_level/Tower_bottom.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Levels/Final_level/Tower_top.png" type="Texture" id=19]
+[ext_resource path="res://Levels/FinalLevel/PlatformApproachDetector.gd" type="Script" id=20]
+[ext_resource path="res://WorldObjects/Technical/InteractionEmitterObject/InteractionEmitterObject.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Levels/FinalLevel/FinalLevel.gd" type="Script" id=22]
 
 [sub_resource type="Environment" id=4]
 background_mode = 4
@@ -27,6 +30,9 @@ glow_enabled = true
 glow_hdr_threshold = 1.5
 adjustment_enabled = true
 adjustment_saturation = 1.3
+
+[sub_resource type="Animation" id=75]
+resource_name = "Elevation_cutscene"
 
 [sub_resource type="CurveTexture" id=7]
 
@@ -89,6 +95,68 @@ color_ramp = SubResource( 19 )
 anim_offset = 1.0
 anim_offset_random = 1.0
 anim_offset_curve = SubResource( 17 )
+
+[sub_resource type="RectangleShape2D" id=72]
+extents = Vector2( 67.5, 24 )
+
+[sub_resource type="Animation" id=73]
+resource_name = "Lift_down"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Platform:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.7, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 9, -432 ), Vector2( 9, -342.96 ), Vector2( 9, -323 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "enable_platform_interaction"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("InteractionEmitterObject")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "force_check_body_detector"
+} ]
+}
+
+[sub_resource type="Animation" id=74]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Platform:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 9, -432 ) ]
+}
 
 [sub_resource type="RectangleShape2D" id=71]
 extents = Vector2( 32.0312, 8 )
@@ -403,6 +471,7 @@ extents = Vector2( 144, 8 )
 extents = Vector2( 7014.5, 150 )
 
 [node name="FinalLevel" instance=ExtResource( 1 )]
+script = ExtResource( 22 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
 environment = SubResource( 4 )
@@ -432,6 +501,10 @@ position = Vector2( 267, 137 )
 rotation = 3.14159
 scale = Vector2( 0.474795, 0.474795 )
 texture = ExtResource( 6 )
+
+[node name="AnimationPlayer" parent="." index="3"]
+autoplay = ""
+anims/Elevation_cutscene = SubResource( 75 )
 
 [node name="Stars" parent="." index="4" instance=ExtResource( 12 )]
 modulate = Color( 1, 1, 1, 0.729412 )
@@ -465,8 +538,29 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Platform" type="Node2D" parent="Tower/Middle_world_objects" index="1"]
-position = Vector2( 9, -325 )
+[node name="PlatformApproachDetector" type="Node2D" parent="Tower/Middle_world_objects" index="1"]
+z_index = 1
+script = ExtResource( 20 )
+
+[node name="PlatformDetectionArea" type="Area2D" parent="Tower/Middle_world_objects/PlatformApproachDetector" index="0"]
+visible = false
+position = Vector2( -42, -338 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Middle_world_objects/PlatformApproachDetector/PlatformDetectionArea" index="0"]
+position = Vector2( 51.5, -21 )
+shape = SubResource( 72 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tower/Middle_world_objects/PlatformApproachDetector" index="1"]
+anims/Lift_down = SubResource( 73 )
+anims/RESET = SubResource( 74 )
+
+[node name="InteractionEmitterObject" parent="Tower/Middle_world_objects/PlatformApproachDetector" index="2" instance=ExtResource( 21 )]
+position = Vector2( 9, -323 )
+emitting_arg = "elevator_entered"
+labelText = "Зайти"
+
+[node name="Platform" type="Node2D" parent="Tower/Middle_world_objects" index="2"]
+position = Vector2( 9, -432 )
 
 [node name="Sprite" type="Sprite" parent="Tower/Middle_world_objects/Platform" index="0"]
 position = Vector2( 0, 32 )
@@ -480,33 +574,33 @@ position = Vector2( -16.0312, 0 )
 shape = SubResource( 71 )
 one_way_collision = true
 
-[node name="TowerTopSprite" type="Sprite" parent="Tower/Middle_world_objects" index="2"]
+[node name="TowerTopSprite" type="Sprite" parent="Tower/Middle_world_objects" index="3"]
 position = Vector2( -319, -1192 )
 texture = ExtResource( 19 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="TowerBottomSprite" type="Sprite" parent="Tower/Middle_world_objects" index="3"]
+[node name="TowerBottomSprite" type="Sprite" parent="Tower/Middle_world_objects" index="4"]
 position = Vector2( -319, -1192 )
 texture = ExtResource( 18 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Decorations" type="TileMap" parent="Tower/Middle_world_objects" index="4"]
+[node name="Decorations" type="TileMap" parent="Tower/Middle_world_objects" index="5"]
 tile_set = ExtResource( 13 )
 cell_size = Vector2( 1, 1 )
 format = 1
 tile_data = PoolIntArray( -70189111, 19, 0, -70254535, 28, 0, -66584632, 113, 0, -65863732, 111, 0, -63307718, 536871024, 0, -60751878, 23, 0, -60817350, 23, 0, -51314743, 20, 0, -51380214, 14, 0, -49151941, 536871023, 0, -42532920, 536870988, 0, -41877559, 110, 0, -41943032, 12, 0, -41942983, 108, 0, -39452726, 113, 0, -32440375, 22, 0, -32505848, 27, 0, -32505799, 23, 0, -32309220, 536870989, 0, -30408653, 536871024, 0, -25100328, 23, 0, -25100313, 15, 0, -25165795, 22, 0, -25165780, 14, 0, -25100278, 57, 0, -24051752, 59, 0, -24117192, 58, 0, -23461805, 75, 0, -23068724, 111, 0, -23134153, 536871025, 0, -21954642, 21, 0, -21954605, 22, 0, -21954589, 29, 0, -22020048, 24, 0, -22020033, 31, 0, -22020018, 23, 0, -20906071, 57, 0, -20971510, 60, 0, -20971445, 58, 0, -19857494, 29, 0, -19922936, 59, 0, -19791929, 60, 0, -19857352, 58, 0, -18808916, 536870940, 0, -18415729, 536870987, 0, -17760353, 536870934, 0, -17825731, 536870932, 0, -17825711, 59, 0, -17825690, 31, 0, -17694797, 58, 0, -16711741, 536870932, 0, -16777119, 536870934, 0, -15663230, 536870934, 0, -15663190, 536870922, 0, -15663153, 29, 0, -15663132, 536870936, 0, -15728606, 536870933, 0, -15728584, 29, 0, -15728568, 536870935, 0, -15728553, 60, 0, -15728526, 536870939, 0, -14614640, 59, 0, -14614605, 60, 0, -14614538, 57, 0, -14680044, 60, 0, -14614428, 57, 0, -13762672, 57, 0, -13696888, 536871024, 0, -13566085, 111, 0, -13303854, 112, 0, -12517480, 113, 0, -12451750, 536871025, 0, -11075618, 111, 0, -10878929, 536871023, 0 )
 
-[node name="Fountains" type="TileMap" parent="Tower/Middle_world_objects" index="5"]
+[node name="Fountains" type="TileMap" parent="Tower/Middle_world_objects" index="6"]
 tile_set = ExtResource( 7 )
 cell_size = Vector2( 1, 1 )
 format = 1
 tile_data = PoolIntArray( -30015493, 9, 0, -28311557, 8, 0, -26738693, 7, 0, -26148935, 536870916, 0, -26214343, 4, 0, -23003206, 536870918, 0, -23068615, 5, 0, -20906047, 536870922, 0, -13631431, 0, 0, -12517463, 9, 0, -11534279, 1, 0, -10813527, 8, 0, -9371691, 1, 0, -9437148, 11, 0, -9437127, 1, 0, -9175127, 8, 0, -8388572, 11, 0, -7602263, 8, 0, -7274539, 1, 0, -7339996, 11, 0, -7339975, 1, 0, -6291420, 11, 0, -5963863, 8, 0, -5177387, 1, 0, -5242844, 11, 0, -5242823, 1, 0, -4325463, 8, 0, -4194268, 11, 0, -3080235, 1, 0, -3145692, 11, 0, -3145671, 1, 0, -2752599, 8, 0, -2097116, 11, 0, -1114199, 8, 0, -983083, 1, 0, -1048540, 11, 0, -1048519, 1, 0, 36, 11, 0, 393129, 8, 0, 1114069, 1, 0, 1048612, 11, 0, 1048633, 1, 0, 1965993, 8, 0, 2097188, 11, 0, 3080228, 11, 0, 3211221, 1, 0, 3145785, 1, 0, 3538857, 8, 0, 4128804, 11, 0, 5111844, 11, 0 )
 
-[node name="PedestalsLevelDoor" parent="Tower/Middle_world_objects" index="6" instance=ExtResource( 2 )]
+[node name="PedestalsLevelDoor" parent="Tower/Middle_world_objects" index="7" instance=ExtResource( 2 )]
 position = Vector2( 8, -224 )
 nextScenePath = "res://Levels/Pedestal_hall/PedestalHall.tscn"
 nextDoorName = "FinalLevelDoor"
@@ -524,7 +618,7 @@ visible = false
 position = Vector2( 0, -25.5 )
 shape = SubResource( 16 )
 
-[node name="Moving_platforms" type="Node2D" parent="Tower/Middle_world_objects" index="7"]
+[node name="Moving_platforms" type="Node2D" parent="Tower/Middle_world_objects" index="8"]
 
 [node name="MovingPlatform" type="Node2D" parent="Tower/Middle_world_objects/Moving_platforms" index="0"]
 position = Vector2( -71, -192 )

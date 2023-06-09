@@ -38,6 +38,12 @@ func _on_approach(body):
 func _on_leave(_body):
 	force_leave()
 
+func force_check_entered_body():
+	if area2D.get_overlapping_bodies().size() > 0:
+		interactedBody = area2D.get_overlapping_bodies()[0]
+		action_type = 1
+		emit_signal("on_approach", area2D.get_overlapping_bodies()[0])
+
 func force_leave():
 	action_type = 0
 	Global.active_interaction_controller = null
