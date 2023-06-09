@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=2]
+[gd_scene load_steps=97 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=2]
@@ -24,6 +24,9 @@
 [ext_resource path="res://Levels/FinalLevel/FinalLevel.gd" type="Script" id=22]
 [ext_resource path="res://Assets/Levels/Final_level/Sky_island.png" type="Texture" id=23]
 [ext_resource path="res://Shaders/GodLightsShader.tres" type="Shader" id=24]
+[ext_resource path="res://Assets/Levels/Final_level/Clouds/Clouds_1.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Levels/Final_level/Clouds/Clouds_2.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Levels/Final_level/Clouds/Clouds_3.png" type="Texture" id=27]
 
 [sub_resource type="Environment" id=4]
 background_mode = 4
@@ -803,13 +806,33 @@ texture = ExtResource( 11 )
 centered = false
 
 [node name="CloudsSprite" type="Sprite" parent="ParallaxBackground2" index="1"]
+visible = false
 modulate = Color( 1, 1, 1, 0.392157 )
 position = Vector2( 268, 254 )
 rotation = 3.14159
 scale = Vector2( 0.725426, 0.725426 )
 texture = ExtResource( 9 )
 
-[node name="StarsSprite" type="Sprite" parent="ParallaxBackground2" index="2"]
+[node name="Clouds" type="Node2D" parent="ParallaxBackground2" index="2"]
+modulate = Color( 1, 1, 1, 0.156863 )
+position = Vector2( 239, 319 )
+
+[node name="Clouds_3" type="Sprite" parent="ParallaxBackground2/Clouds" index="0"]
+position = Vector2( 31, -76 )
+scale = Vector2( 0.72549, 0.72549 )
+texture = ExtResource( 27 )
+
+[node name="Clouds_2" type="Sprite" parent="ParallaxBackground2/Clouds" index="1"]
+position = Vector2( 31, -59 )
+scale = Vector2( 0.727, 0.727 )
+texture = ExtResource( 26 )
+
+[node name="Clouds_1" type="Sprite" parent="ParallaxBackground2/Clouds" index="2"]
+position = Vector2( 30, -27 )
+scale = Vector2( 0.726, 0.726 )
+texture = ExtResource( 25 )
+
+[node name="StarsSprite" type="Sprite" parent="ParallaxBackground2" index="3"]
 modulate = Color( 1, 1, 1, 0.176471 )
 self_modulate = Color( 0.65098, 0.701961, 0.835294, 1 )
 position = Vector2( 267, 137 )
