@@ -162,10 +162,10 @@ tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 11.3, 14.6 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 11.3, 14.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 30, -27 ), Vector2( 42, 0 ) ]
+"values": [ Vector2( 30, -27 ), Vector2( 30, -27 ), Vector2( 42, 0 ) ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("ParallaxBackground2/Clouds/Clouds_2:position")
@@ -174,10 +174,10 @@ tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 11.3, 14.2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 11.3, 14.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 31, -59 ), Vector2( 14, -10 ) ]
+"values": [ Vector2( 31, -59 ), Vector2( 31, -59 ), Vector2( 14, -10 ) ]
 }
 tracks/11/type = "value"
 tracks/11/path = NodePath("ParallaxBackground2/Clouds/Clouds_3:position")
@@ -186,10 +186,22 @@ tracks/11/loop_wrap = true
 tracks/11/imported = false
 tracks/11/enabled = true
 tracks/11/keys = {
-"times": PoolRealArray( 11.3, 14.9 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 11.3, 14.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 31, -76 ), Vector2( 44, -20 ) ]
+"values": [ Vector2( 31, -76 ), Vector2( 31, -76 ), Vector2( 44, -20 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("ParallaxBackground2/StarsSprite:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 11.4, 15.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.160784 ), Color( 1, 1, 1, 0.160784 ), Color( 1, 1, 1, 0.596078 ) ]
 }
 
 [sub_resource type="Animation" id=94]
@@ -860,7 +872,7 @@ scale = Vector2( 0.726, 0.726 )
 texture = ExtResource( 25 )
 
 [node name="StarsSprite" type="Sprite" parent="ParallaxBackground2" index="2"]
-modulate = Color( 1, 1, 1, 0.176471 )
+modulate = Color( 1, 1, 1, 0.160784 )
 self_modulate = Color( 0.65098, 0.701961, 0.835294, 1 )
 position = Vector2( 267, 137 )
 rotation = 3.14159
