@@ -15,4 +15,4 @@ func did_start_final_cutscene(_args):
 	animationPlayer.play("Awakening_cutscene")
 
 func start_proposal_stage():
-	animationPlayer.play("start_proposal_stage")
+	animationPlayer.play("Start_proposal_stage")
