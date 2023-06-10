@@ -8,8 +8,7 @@ var targetPosition = Vector2.ZERO
 export(Color, RGB) var backgroundColor
 export(bool) var zoom_based_on_editor_value = false
 export(float) var default_zoom = 0.7
-
-var follow_player = true
+export(bool) var follow_player = true
 
 # Lifecycle Functions
 
