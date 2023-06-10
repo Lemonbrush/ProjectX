@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=2]
+[gd_scene load_steps=106 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/Levels/Final_level/BackgroundStars.png" type="Texture" id=6]
 [ext_resource path="res://Resources/Tilesets/Resources/Fountains/Fountains.tres" type="TileSet" id=7]
 [ext_resource path="res://WorldObjects/Moving_platforms/MovingPlatform.gd" type="Script" id=8]
+[ext_resource path="res://Assets/Levels/Final_level/Me_laying-Sheet.png" type="Texture" id=9]
 [ext_resource path="res://WorldObjects/Technical/Clouds/Clouds.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/BackgroundGradients/FinalLevelBackground.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Levels/Final_level/Tinted_block.png" type="Texture" id=12]
@@ -26,6 +27,8 @@
 [ext_resource path="res://Assets/Levels/Final_level/Clouds/Clouds_1.png" type="Texture" id=25]
 [ext_resource path="res://Assets/Levels/Final_level/Clouds/Clouds_2.png" type="Texture" id=26]
 [ext_resource path="res://Assets/Levels/Final_level/Clouds/Clouds_3.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Levels/Final_level/Proposal_cutscene_animation-Sheet.png" type="Texture" id=28]
+[ext_resource path="res://WorldObjects/Technical/IndependantDialogController/IndependantDialogController.tscn" type="PackedScene" id=29]
 
 [sub_resource type="Environment" id=4]
 background_mode = 4
@@ -34,6 +37,223 @@ glow_enabled = true
 glow_hdr_threshold = 1.5
 adjustment_enabled = true
 adjustment_saturation = 1.3
+
+[sub_resource type="Shader" id=108]
+code = "shader_type canvas_item;
+
+//uniform vec3 color_replace = vec3(1.0,1.0,0.0);
+uniform int OCTAVE = 12;
+uniform float timescale = 5.0;
+uniform vec4 CLOUD1_COL: hint_color = vec4(0.41,0.64,0.78,0.4);
+uniform vec4 CLOUD2_COL: hint_color = vec4(0.99,0.79,0.46,0.2);
+uniform vec4 CLOUD3_COL: hint_color = vec4(0.81,0.31,0.59,1.0);
+uniform vec4 CLOUD4_COL: hint_color = vec4(0.27,0.15,0.33,1.0);
+uniform vec4 SPACE: hint_color = vec4(0.09,0.06,0.28,0.3);
+uniform float zoomScale = 6.0;
+uniform float size = 10.0;
+uniform float starscale = 20.0;
+uniform float prob: hint_range(0.0,1.0) = 0.98;
+
+float rand(vec2 input){
+	return fract(sin(dot(input,vec2(23.53,44.0)))*42350.45);
+}
+
+float perlin(vec2 input){
+	vec2 i = floor(input);
+	vec2 j = fract(input);
+	vec2 coord = smoothstep(0.,1.,j);
+	
+	float a = rand(i);
+	float b = rand(i+vec2(1.0,0.0));
+	float c = rand(i+vec2(0.0,1.0));
+	float d = rand(i+vec2(1.0,1.0));
+
+	return mix(mix(a,b,coord.x),mix(c,d,coord.x),coord.y);
+}
+
+float fbm(vec2 input){
+	float value = 0.0;
+	float scale = 0.5;
+	
+	for(int i = 0; i < OCTAVE; i++){
+		value += perlin(input)*scale;
+		input*=2.0;
+		scale*=0.5;
+	}
+	return value;
+}
+
+float fbmCloud(vec2 input, float minimum){
+	float value = 0.0;
+	float scale = 0.5;
+	
+	for(int i = 0; i < OCTAVE; i++){
+		value += perlin(input)*scale;
+		input*=2.0;
+		scale*=0.5;
+	}
+	return smoothstep(0.,1.,(smoothstep(minimum,1.,value)-minimum)/(1.0-minimum));
+}
+
+float fbmCloud2(vec2 input, float minimum){
+	float value = 0.0;
+	float scale = 0.5;
+	
+	for(int i = 0; i < OCTAVE; i++){
+		value += perlin(input)*scale;
+		input*=2.0;
+		scale*=0.5;
+	}
+	return (smoothstep(minimum,1.,value)-minimum)/(1.0-minimum);
+}
+
+void fragment(){
+	vec4 originalColor = texture(TEXTURE, UV);
+	float timescaled = TIME * timescale;
+	//vec2 zoomUV = vec2(zoomScale * UV.x + UV.x*0.04*TIME*sin(0.07*TIME), zoomScale * UV.y + UV.y*0.05*TIME*cos(0.06*TIME));
+	vec2 zoomUV2 = vec2(zoomScale * UV.x + 0.03*timescaled*sin(0.07*timescaled), zoomScale * UV.y + 0.03*timescaled*cos(0.06*timescaled));
+	vec2 zoomUV3 = vec2(zoomScale * UV.x + 0.027*timescaled*sin(0.07*timescaled), zoomScale * UV.y + 0.025*timescaled*cos(0.06*timescaled));
+	vec2 zoomUV4 = vec2(zoomScale * UV.x + 0.021*timescaled*sin(0.07*timescaled), zoomScale * UV.y + 0.021*timescaled*cos(0.07*timescaled));
+	float tide = 0.05*sin(TIME);
+	float tide2 = 0.06*cos(0.3*TIME);
+	//if(color_replace == originalColor.rgb){
+		vec4 nebulaTexture = vec4(SPACE.rgb, 0.5+0.2*sin(0.23*TIME +UV.x-UV.y));
+		nebulaTexture += fbmCloud2(zoomUV3, 0.24 + tide)*CLOUD1_COL;
+		nebulaTexture += fbmCloud(zoomUV2*0.9, 0.33 - tide)*CLOUD2_COL;
+		nebulaTexture = mix(nebulaTexture,CLOUD3_COL,fbmCloud(vec2(0.9*zoomUV4.x,0.9*zoomUV4.y), 0.25+tide2));
+		nebulaTexture = mix(nebulaTexture,CLOUD4_COL,fbmCloud(zoomUV3*0.7+2.0, 0.4+tide2));
+		vec2 zoomstar = starscale*zoomUV2;
+		vec2 pos = floor(zoomstar / size);
+		float starValue = rand(pos);
+		if(starValue>prob){
+			vec2 center = size * pos + vec2(size, size) * 0.5;
+			float t = 0.9 + 0.2 * sin(TIME * 8.0 + (starValue - prob) / (1.0 - prob) * 45.0);
+			float color = 1.0 - distance(zoomstar, center) / (0.5 * size);
+			nebulaTexture = mix(nebulaTexture, vec4(1.0,1.0,1.0,1.0),smoothstep(0.,1.,color * t / (abs(zoomstar.y - center.y)) * t / (abs(zoomstar.x - center.x))));
+		} else {
+			zoomstar *= 5.0;
+			pos = floor(zoomstar / size);
+			float starValue2 = rand(pos + vec2(13.0,13.0));
+			if(starValue2 >= 0.95){
+				vec2 center = size * pos + vec2(size, size) * 0.5;
+				float t = 0.9 + 0.2 * sin(TIME * 8.0 + (starValue - prob) / (1.0 - prob) * 45.0);
+				float color = 1.0 - distance(zoomstar, center) / (0.5 * size);
+				nebulaTexture = mix(nebulaTexture, vec4(1.0,1.0,1.0,1.0),fbmCloud(pos,0.0)*smoothstep(0.,1.,color * t / (abs(zoomstar.y - center.y)) * t / (abs(zoomstar.x - center.x))));
+			}
+		}
+		COLOR = vec4(nebulaTexture.rgb, 1.0);
+		//COLOR = vec4(nebulaTexture.rgb,nebulaTexture.a * 1.2)
+	//} else {
+	//	COLOR = originalColor;
+	//}
+}
+"
+
+[sub_resource type="ShaderMaterial" id=109]
+shader = SubResource( 108 )
+shader_param/OCTAVE = 2
+shader_param/timescale = 0.1
+shader_param/CLOUD1_COL = Color( 0.41, 0.64, 0.78, 0.4 )
+shader_param/CLOUD2_COL = Color( 0.99, 0.79, 0.46, 0.2 )
+shader_param/CLOUD3_COL = Color( 0.411765, 0.768627, 0.960784, 1 )
+shader_param/CLOUD4_COL = Color( 0.258824, 0.247059, 0.529412, 1 )
+shader_param/SPACE = Color( 0.141176, 0.105882, 0.352941, 0.301961 )
+shader_param/zoomScale = 15.0
+shader_param/size = 15.0
+shader_param/starscale = 10.0
+shader_param/prob = 0.996
+
+[sub_resource type="Animation" id=106]
+resource_name = "Awakening_cutscene"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("SkyIsland/Middle_world_objects/Me:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SkyIsland/Middle_world_objects/WeSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Camera2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 9, -2183 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("SkyIsland/Middle_world_objects/WeSprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 2.8, 2.9, 3, 3.1, 3.2, 3.7, 3.8, 3.9, 4, 4.4, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19 ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("Player")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Camera2D:follow_player")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath("SkyIsland/Middle_world_objects/IndependantDialogController")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start_dialog"
+} ]
+}
 
 [sub_resource type="Animation" id=75]
 resource_name = "Elevation_cutscene"
@@ -203,6 +423,18 @@ tracks/12/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0.160784 ), Color( 1, 1, 1, 0.160784 ), Color( 1, 1, 1, 0.596078 ) ]
 }
+tracks/13/type = "value"
+tracks/13/path = NodePath("ParallaxBackground2/ColorRect:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 13.3, 20.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.14902 ), Color( 1, 1, 1, 0.14902 ), Color( 1, 1, 1, 0.376471 ) ]
+}
 
 [sub_resource type="Animation" id=94]
 length = 0.001
@@ -266,6 +498,105 @@ tracks/4/keys = {
 "update": 0,
 "values": [ Vector2( 46, -42 ) ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("SkyIsland/Middle_world_objects/WeSprite:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Player:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Camera2D:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 8, -250 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("SkyIsland/Middle_world_objects/WeSprite:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Player:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 8, -231 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("SkyIsland/Middle_world_objects/Me:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("ParallaxBackground2/ColorRect:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.14902 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("SkyIsland/Middle_world_objects/IndependantDialogController:is_dialog_active")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=110]
+resource_name = "Start_proposal_stage"
 
 [sub_resource type="CurveTexture" id=7]
 
@@ -411,6 +742,41 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 0.3 ]
 }
+
+[sub_resource type="Animation" id=104]
+resource_name = "Idle"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=105]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
+
+[sub_resource type="RectangleShape2D" id=107]
+extents = Vector2( 15, 10 )
 
 [sub_resource type="ShaderMaterial" id=86]
 shader = ExtResource( 24 )
@@ -908,17 +1274,28 @@ scale = Vector2( 0.726, 0.726 )
 texture = ExtResource( 25 )
 
 [node name="StarsSprite" type="Sprite" parent="ParallaxBackground2" index="2"]
-modulate = Color( 1, 1, 1, 0.478696 )
+modulate = Color( 1, 1, 1, 0.160784 )
 self_modulate = Color( 0.65098, 0.701961, 0.835294, 1 )
 position = Vector2( 267, 137 )
 rotation = 3.14159
 scale = Vector2( 0.474795, 0.474795 )
 texture = ExtResource( 6 )
 
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground2" index="3"]
+modulate = Color( 1, 1, 1, 0.14902 )
+material = SubResource( 109 )
+margin_left = -5.0
+margin_top = -11.0
+margin_right = 536.0
+margin_bottom = 357.0
+rect_pivot_offset = Vector2( -367, 252 )
+
 [node name="AnimationPlayer" parent="." index="3"]
 autoplay = ""
+anims/Awakening_cutscene = SubResource( 106 )
 anims/Elevation_cutscene = SubResource( 75 )
 anims/RESET = SubResource( 94 )
+anims/Start_proposal_stage = SubResource( 110 )
 
 [node name="Stars" type="Node2D" parent="." index="4"]
 pause_mode = 2
@@ -937,8 +1314,9 @@ local_coords = false
 process_material = SubResource( 93 )
 
 [node name="Camera2D" parent="." index="5"]
-position = Vector2( 8.48016, -1546.8 )
-zoom = Vector2( 1.58163, 1.58163 )
+position = Vector2( 8, -250 )
+zoom = Vector2( 0.7, 0.7 )
+follow_player = false
 
 [node name="WorldSprite" parent="." index="6"]
 visible = false
@@ -968,7 +1346,7 @@ format = 1
 tile_set = ExtResource( 13 )
 cell_size = Vector2( 1, 1 )
 format = 1
-tile_data = PoolIntArray( -139395141, 536870935, 0, -139395107, 536870939, 0, -139460591, 536870932, 0, -139460536, 536870936, 0, -138346636, 536870936, 0, -138346594, 536870935, 0, -138346531, 536870934, 0, -138346504, 536870971, 0, -138412022, 536870935, 0, -138411984, 536870932, 0, -138411964, 536870940, 0, -138411951, 536870970, 0, -138411938, 536870935, 0, -138411921, 536870922, 0, -138411884, 536870921, 0, -137298088, 536870940, 0, -137298054, 536870933, 0, -137297967, 536870969, 0, -137363449, 536870936, 0, -137363430, 536870969, 0, -137363407, 536870971, 0, -137363306, 536870969, 0, -137363288, 536870934, 0, -137232535, 536870970, 0, -136576973, 536870970, 0, -136249444, 536870947, 0, -136249349, 536870934, 0, -136314800, 536870953, 0, -135200806, 536870936, 0, -135266271, 536870939, 0, -135266219, 536870970, 0, -135135323, 536870972, 0, -134152315, 72, 0, -133103631, 536870934, 0, -133169150, 536870930, 0, -133169119, 536870984, 0, -132055105, 536870982, 0, -132120531, 536870969, 0, -131006481, 536870916, 0, -131071994, 536870927, 0, -129957910, 58, 0, -130023410, 536870933, 0, -127860695, 60, 0, -126812179, 536870939, 0, -126877686, 536870915, 0, -126877654, 536870986, 0, -125763621, 536870953, 0, -125763596, 536870935, 0, -123666469, 536870985, 0, -123666450, 536870935, 0, -123666436, 57, 0, -123731954, 536870921, 0, -122617890, 536870926, 0, -122617859, 536870934, 0, -122683356, 536870938, 0, -122683337, 536870935, 0, -121569349, 536870934, 0, -121569325, 536870933, 0, -121634747, 536870932, 0, -120520760, 57, 0, -119537619, 536870986, 0, -118423598, 536870984, 0 )
+tile_data = PoolIntArray( -139395141, 536870935, 0, -139395119, 536870941, 0, -139460591, 536870932, 0, -139460555, 31, 0, -139460536, 536870936, 0, -138346636, 536870936, 0, -138346619, 536870943, 0, -138346594, 536870935, 0, -138346581, 536871012, 0, -138346564, 32, 0, -138346531, 536870934, 0, -138346504, 536870971, 0, -138412022, 536870935, 0, -138412004, 29, 0, -138411984, 536870932, 0, -138411964, 536870940, 0, -138411951, 536870970, 0, -138411937, 41, 0, -138411921, 536870922, 0, -138411905, 536871004, 0, -138411884, 536870921, 0, -137298088, 536870940, 0, -137298054, 536870933, 0, -137297991, 536870952, 0, -137297967, 536870969, 0, -137297938, 536870943, 0, -137363449, 536870936, 0, -137363430, 536870969, 0, -137363407, 536870971, 0, -137363306, 536870969, 0, -137363288, 536870934, 0, -137232535, 536870970, 0, -136576973, 536870970, 0, -136249444, 536870947, 0, -136249349, 536870934, 0, -136314800, 536870953, 0, -135200806, 536870936, 0, -135266271, 536870939, 0, -135266219, 536870970, 0, -135135323, 536870972, 0, -134152315, 72, 0, -133103631, 536870934, 0, -133169150, 536870930, 0, -133169119, 536870984, 0, -132055105, 536870982, 0, -132120531, 536870969, 0, -131006481, 536870916, 0, -131071994, 536870927, 0, -129957910, 58, 0, -130023410, 536870933, 0, -127860695, 60, 0, -126812179, 536870939, 0, -126877686, 536870915, 0, -126877654, 536870986, 0, -125763621, 536870953, 0, -125763596, 536870935, 0, -123666469, 536870985, 0, -123666450, 536870935, 0, -123666436, 57, 0, -123731954, 536870921, 0, -122617890, 536870926, 0, -122617859, 536870934, 0, -122683356, 536870938, 0, -122683337, 536870935, 0, -121569349, 536870934, 0, -121569325, 536870933, 0, -121634747, 536870932, 0, -120520760, 57, 0, -119537619, 536870986, 0, -118423598, 536870984, 0 )
 
 [node name="Moving_platforms" type="Node2D" parent="SkyIsland/Middle_world_objects" index="3"]
 
@@ -1023,7 +1401,7 @@ position = Vector2( -39, -1902 )
 script = ExtResource( 8 )
 
 [node name="Platform" type="KinematicBody2D" parent="SkyIsland/Middle_world_objects/Moving_platforms/MovingPlatform9" index="0"]
-position = Vector2( 104, 5.69946 )
+position = Vector2( 104, 8.09985 )
 collision_layer = 3
 motion/sync_to_physics = true
 
@@ -1069,7 +1447,7 @@ position = Vector2( -39, -1997 )
 script = ExtResource( 8 )
 
 [node name="Platform" type="KinematicBody2D" parent="SkyIsland/Middle_world_objects/Moving_platforms/MovingPlatform10" index="0"]
-position = Vector2( 104, 0 )
+position = Vector2( 104, 6.59973 )
 collision_layer = 3
 motion/sync_to_physics = true
 
@@ -1109,6 +1487,36 @@ autoplay = "Loop"
 playback_process_mode = 0
 anims/Loop = SubResource( 102 )
 anims/RESET = SubResource( 103 )
+
+[node name="Me" type="Node2D" parent="SkyIsland/Middle_world_objects" index="4"]
+position = Vector2( 0, -2127 )
+
+[node name="Sprite" type="Sprite" parent="SkyIsland/Middle_world_objects/Me" index="0"]
+texture = ExtResource( 9 )
+hframes = 2
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SkyIsland/Middle_world_objects/Me" index="1"]
+autoplay = "Idle"
+anims/Idle = SubResource( 104 )
+anims/RESET = SubResource( 105 )
+
+[node name="InteractionEmitterObject" parent="SkyIsland/Middle_world_objects/Me" index="2" instance=ExtResource( 21 )]
+position = Vector2( 1, 15 )
+labelText = "Поцеловать"
+
+[node name="CollisionShape2D" parent="SkyIsland/Middle_world_objects/Me/InteractionEmitterObject/InteractionController/Area2D" index="0"]
+shape = SubResource( 107 )
+
+[node name="WeSprite" type="Sprite" parent="SkyIsland/Middle_world_objects" index="5"]
+visible = false
+position = Vector2( 4, -2127 )
+texture = ExtResource( 28 )
+hframes = 26
+
+[node name="IndependantDialogController" parent="SkyIsland/Middle_world_objects" index="6" instance=ExtResource( 29 )]
+position = Vector2( 1, -2145 )
+dialog_id = "my_final_dialog"
 
 [node name="Background_world_objects" type="Node2D" parent="SkyIsland" index="3"]
 
@@ -1979,7 +2387,7 @@ energy = 0.7
 mode = 2
 
 [node name="Player" parent="." index="10"]
-position = Vector2( 9, -1475.56 )
+position = Vector2( 8, -231 )
 z_index = 3
 
 [node name="Light2D2" parent="Player" index="5"]
@@ -1996,6 +2404,8 @@ collision_mask = 64
 position = Vector2( 1873.5, 319 )
 shape = SubResource( 23 )
 
+[editable path="SkyIsland/Middle_world_objects/Me/InteractionEmitterObject"]
+[editable path="SkyIsland/Middle_world_objects/Me/InteractionEmitterObject/InteractionController"]
 [editable path="SkyIsland/Collisions/Pass_through/PassThroughBody7"]
 [editable path="SkyIsland/Collisions/Pass_through/PassThroughBody9"]
 [editable path="SkyIsland/Collisions/Pass_through/PassThroughBody10"]

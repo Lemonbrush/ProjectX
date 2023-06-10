@@ -9,9 +9,10 @@ onready var dialogTextBox = $DialogTextBox
 var dialogManager
 
 func _ready():
-	var interaction_controller = get_node(interaction_controller_path) 
-	interaction_controller.connect("on_leave", self, "on_leave")
-	interaction_controller.connect("on_interact", self, "on_interact") 
+	var interaction_controller = get_node(interaction_controller_path)
+	if interaction_controller != null:
+		interaction_controller.connect("on_leave", self, "on_leave")
+		interaction_controller.connect("on_interact", self, "on_interact") 
 	
 	dialogTextBox.connect("pressed_button_number", self, "did_choose_option_number")
 	
@@ -26,7 +27,7 @@ func finish_dialog():
 func on_leave():
 	finish_dialog()
 
-func on_interact(_body):
+func on_interact(_body = null):
 	if dialog_id.empty() or !is_interaction_active:
 		return
 	

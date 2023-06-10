@@ -11,6 +11,10 @@ var current_level = ""
 var player_position_by_door = null
 
 func save_game():
+	var player_object = get_tree().get_current_scene().find_node("Player")
+	if player_object == null:
+		return
+	
 	var dir = Directory.new()
 	if !dir.dir_exists(SAVE_DIR):
 		dir.make_dir_recursive(SAVE_DIR)
@@ -29,7 +33,7 @@ func save_game():
 	var lastVisitedSceneName = get_tree().get_current_scene().get_name() 
 	save_file_resource.lastVisitedSceneName = lastVisitedSceneName
 	save_file_resource.savedLevelScenes[lastVisitedSceneName] = packedScene
-	save_file_resource.playerPosition = get_tree().get_current_scene().find_node("Player").get_global_position()
+	save_file_resource.playerPosition = player_object.get_global_position()
 	if GameEventConstants.constants:
 		save_file_resource.gameLogicVariables = GameEventConstants.constants
 	
