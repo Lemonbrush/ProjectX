@@ -25,7 +25,10 @@ func start_proposal_stage():
 	animationPlayer.play("Start_proposal_stage")
 
 func she_said_yes():
-	LevelManager.transition_to_scene(credits_scene)
+	animationPlayer.play("She_said_yes_cutscene")
+
+func show_she_said_yes_cutscene():
+	LevelManager.transition_to_scene(load(game_menu_path))
 
 func she_said_no():
 	LevelManager.transition_to_scene(load(game_menu_path))

@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=2]
+[gd_scene load_steps=114 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=2]
@@ -32,6 +32,7 @@
 [ext_resource path="res://Resources/Fonts/Epilepsy Sans/Resource/EpilepsySansBold.tres" type="DynamicFont" id=30]
 [ext_resource path="res://Resources/Themes/MainTheme.tres" type="Theme" id=31]
 [ext_resource path="res://Resources/Fonts/Epilepsy Sans/Resource/EpilepsySans.tres" type="DynamicFont" id=32]
+[ext_resource path="res://Assets/effects/Heart.png" type="Texture" id=33]
 
 [sub_resource type="Environment" id=4]
 background_mode = 4
@@ -633,6 +634,108 @@ tracks/14/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
+tracks/15/type = "value"
+tracks/15/path = NodePath("SkyIsland/Middle_world_objects/LoveParticles:emitting")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=111]
+resource_name = "She_said_yes_cutscene"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("SkyIsland/Middle_world_objects/WeSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 33, 35 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SkyIsland/Middle_world_objects/LoveParticles:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Camera2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 4, 10 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 9, -2183 ), Vector2( 9, -2183 ), Vector2( 9, -2343 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Camera2D:zoom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0.5 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("SkyIsland/ProposalControl:modulate")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("SkyIsland/ProposalControl:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "show_she_said_yes_cutscene"
+} ]
+}
 
 [sub_resource type="Animation" id=110]
 resource_name = "Start_proposal_stage"
@@ -927,6 +1030,26 @@ tracks/0/keys = {
 
 [sub_resource type="RectangleShape2D" id=107]
 extents = Vector2( 15, 10 )
+
+[sub_resource type="Curve" id=215]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.282238, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.890511, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=214]
+curve = SubResource( 215 )
+
+[sub_resource type="ParticlesMaterial" id=216]
+emission_shape = 2
+emission_box_extents = Vector3( 4, 1, 1 )
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, -10, 0 )
+initial_velocity = 40.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.1
+scale_random = 1.0
+scale_curve = SubResource( 214 )
 
 [sub_resource type="ShaderMaterial" id=86]
 shader = ExtResource( 24 )
@@ -1445,6 +1568,7 @@ autoplay = ""
 anims/Awakening_cutscene = SubResource( 106 )
 anims/Elevation_cutscene = SubResource( 75 )
 anims/RESET = SubResource( 94 )
+anims/She_said_yes_cutscene = SubResource( 111 )
 anims/Start_proposal_stage = SubResource( 110 )
 
 [node name="Stars" type="Node2D" parent="." index="4"]
@@ -1706,14 +1830,24 @@ labelText = "Поцеловать"
 [node name="CollisionShape2D" parent="SkyIsland/Middle_world_objects/Me/InteractionEmitterObject/InteractionController/Area2D" index="0"]
 shape = SubResource( 107 )
 
-[node name="WeSprite" type="Sprite" parent="SkyIsland/Middle_world_objects" index="5"]
+[node name="LoveParticles" type="Particles2D" parent="SkyIsland/Middle_world_objects" index="5"]
+position = Vector2( 7, -2120 )
+emitting = false
+amount = 100
+lifetime = 5.0
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource( 216 )
+texture = ExtResource( 33 )
+
+[node name="WeSprite" type="Sprite" parent="SkyIsland/Middle_world_objects" index="6"]
 visible = false
 position = Vector2( 4, -2127 )
 texture = ExtResource( 28 )
-hframes = 26
+hframes = 36
 
-[node name="IndependantDialogController" parent="SkyIsland/Middle_world_objects" index="6" instance=ExtResource( 29 )]
-visible = false
+[node name="IndependantDialogController" parent="SkyIsland/Middle_world_objects" index="7" instance=ExtResource( 29 )]
 position = Vector2( 1, -2145 )
 dialog_id = "my_final_dialog"
 
