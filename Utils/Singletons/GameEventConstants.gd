@@ -7,6 +7,7 @@ func set_default_constants():
 		default_camera_zoom = 0.7,
 		kissnip_picked_up = false,
 		heart_key_picked_up = false,
+		sketch_picked_up = false,
 		is_artist_brush_picked_up = false,
 		redThredItem_picked_up = false,
 		assembled_heart_picked_uo = false,

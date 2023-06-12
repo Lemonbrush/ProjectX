@@ -45,7 +45,7 @@
 [ext_resource path="res://WorldObjects/Pick_ups/Items/AssembledHeart/View/AssembledHeartItemView.tscn" type="PackedScene" id=43]
 [ext_resource path="res://WorldObjects/Pick_ups/Items/HeartKeyItem/View/HeartKeyItemView.tscn" type="PackedScene" id=44]
 [ext_resource path="res://WorldObjects/Pick_ups/Items/BlueButterfly/View/BlueButterflyItemView.tscn" type="PackedScene" id=45]
-[ext_resource path="res://WorldObjects/Pick_ups/Items/ArtistBrush/View/ArtistBrushView.tscn" type="PackedScene" id=46]
+[ext_resource path="res://WorldObjects/Pick_ups/Items/Sketch/View/SketchItemView.tscn" type="PackedScene" id=46]
 [ext_resource path="res://WorldObjects/Pick_ups/Items/RedThred/View/RedThredItemView.tscn" type="PackedScene" id=47]
 [ext_resource path="res://WorldObjects/Pick_ups/Items/Kissnip/View/KissnipView.tscn" type="PackedScene" id=48]
 [ext_resource path="res://Dweller/NpcActions/idle/idle_npc_action.gd" type="Script" id=49]
@@ -986,7 +986,7 @@ tracks/3/keys = {
 } ]
 }
 tracks/4/type = "method"
-tracks/4/path = NodePath("Middle_world_objects/Pedestals/ArtistBrushItemPedestal")
+tracks/4/path = NodePath("Middle_world_objects/Pedestals/SketchItemPedestal")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -1685,10 +1685,10 @@ dialogId = "pedestal_assembled_kiss_mint"
 item_name = "kissNip"
 itemScene = ExtResource( 48 )
 
-[node name="ArtistBrushItemPedestal" parent="Middle_world_objects/Pedestals" index="4" instance=ExtResource( 41 )]
+[node name="SketchItemPedestal" parent="Middle_world_objects/Pedestals" index="4" instance=ExtResource( 41 )]
 position = Vector2( 113, 1 )
-dialogId = "pedestal_assembled_brush"
-item_name = "artist_brush"
+dialogId = "pedestal_sketch"
+item_name = "sketch_picked_up"
 itemScene = ExtResource( 46 )
 
 [node name="HeartKeyItemPedestal" parent="Middle_world_objects/Pedestals" index="5" instance=ExtResource( 41 )]
