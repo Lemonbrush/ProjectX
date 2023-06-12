@@ -539,7 +539,7 @@ dynamic_camera = false
 environment = SubResource( 137 )
 
 [node name="AnimationPlayer" parent="." index="2"]
-autoplay = "artist_brush_gift_scene"
+autoplay = "RESET"
 anims/RESET = SubResource( 123 )
 anims/artist_brush_gift_scene = SubResource( 133 )
 anims/place_artwork_cut_scene = SubResource( 122 )
