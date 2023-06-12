@@ -1,4 +1,4 @@
-[gd_scene load_steps=176 format=2]
+[gd_scene load_steps=175 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=2]
@@ -61,7 +61,6 @@
 [ext_resource path="res://Assets/Levels/Harbor_house/World_objects/Swimming_dweller.png" type="Texture" id=59]
 [ext_resource path="res://Assets/NPC/FlatHatDwellerSprite-Sheet.png" type="Texture" id=60]
 [ext_resource path="res://WorldObjects/Sign/Sign.tscn" type="PackedScene" id=61]
-[ext_resource path="res://Assets/Levels/Harbor_house/Guardian_blush.png" type="Texture" id=62]
 
 [sub_resource type="Environment" id=273]
 background_mode = 4
@@ -2569,12 +2568,6 @@ shape = SubResource( 268 )
 
 [node name="DialogTextBoxController" parent="GuardianIsland/Background_world_objects/Guardian_statue/DialogController" index="2"]
 position = Vector2( 55, -2 )
-
-[node name="BlushSprite" type="Sprite" parent="GuardianIsland/Background_world_objects/Guardian_statue"]
-visible = false
-modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 0, -172 )
-texture = ExtResource( 62 )
 
 [node name="GuardianIslandSprite" type="Sprite" parent="GuardianIsland"]
 position = Vector2( 390, -71 )
