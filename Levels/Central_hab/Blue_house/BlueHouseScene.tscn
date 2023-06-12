@@ -539,7 +539,7 @@ dynamic_camera = false
 environment = SubResource( 137 )
 
 [node name="AnimationPlayer" parent="." index="2"]
-autoplay = "RESET"
+autoplay = "artist_brush_gift_scene"
 anims/RESET = SubResource( 123 )
 anims/artist_brush_gift_scene = SubResource( 133 )
 anims/place_artwork_cut_scene = SubResource( 122 )
@@ -574,7 +574,7 @@ nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "BlueHouseDoor"
 
 [node name="Player" parent="." index="7"]
-position = Vector2( -18, 61 )
+position = Vector2( -40, 61 )
 z_index = 1
 
 [node name="Light2D2" parent="Player" index="5"]
@@ -793,7 +793,6 @@ process_material = SubResource( 101 )
 texture = ExtResource( 4 )
 
 [node name="SketchItem" parent="." index="17" instance=ExtResource( 14 )]
-pause_mode = 2
 visible = false
 position = Vector2( -12, 51 )
 
