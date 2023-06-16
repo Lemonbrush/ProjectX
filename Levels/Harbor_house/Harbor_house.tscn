@@ -1225,7 +1225,8 @@ anims/RESET = SubResource( 217 )
 
 [node name="RedThredItem" parent="Harbor_world_objects/Middle_world_objects" instance=ExtResource( 64 )]
 visible = false
-position = Vector2( -610, 51 )
+position = Vector2( -610, 56 )
+gravity_scale = 0.0
 
 [node name="CollisionShape2D" parent="Harbor_world_objects/Middle_world_objects/RedThredItem/PickupArea2D" index="0"]
 disabled = true
