@@ -1,4 +1,4 @@
-[gd_scene load_steps=175 format=2]
+[gd_scene load_steps=176 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=2]
@@ -61,6 +61,7 @@
 [ext_resource path="res://Assets/Levels/Harbor_house/World_objects/Swimming_dweller.png" type="Texture" id=59]
 [ext_resource path="res://Assets/NPC/FlatHatDwellerSprite-Sheet.png" type="Texture" id=60]
 [ext_resource path="res://WorldObjects/Sign/Sign.tscn" type="PackedScene" id=61]
+[ext_resource path="res://WorldObjects/Pick_ups/Items/SpecialFlower/Special_flower_item.tscn" type="PackedScene" id=62]
 
 [sub_resource type="Environment" id=273]
 background_mode = 4
@@ -2030,6 +2031,12 @@ modulate = Color( 0.505882, 0.505882, 0.505882, 1 )
 position = Vector2( 1090, -258 )
 texture = ExtResource( 55 )
 
+[node name="Special_flower_item" parent="CreatorHouseIsland/Middle_world_objects" instance=ExtResource( 62 )]
+position = Vector2( -32, -574 )
+mode = 2
+mass = 1.0
+gravity_scale = 0.5
+
 [node name="Foreground_world_objects" type="Node2D" parent="CreatorHouseIsland"]
 z_index = 1
 
@@ -2719,7 +2726,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 4 )]
-position = Vector2( -475, -210 )
+position = Vector2( -963, -1299 )
 
 [node name="WaterSurface" type="Node2D" parent="."]
 pause_mode = 2

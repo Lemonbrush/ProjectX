@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://WorldObjects/Pick_ups/Items/SpecialFlower/Special_flower_item.gd" type="Script" id=1]
+[ext_resource path="res://WorldObjects/Pick_ups/Pickup_container/Pickup_container.tscn" type="PackedScene" id=2]
+[ext_resource path="res://WorldObjects/Pick_ups/Items/SpecialFlower/View/SpecialFlowerItemView.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7.55403, 13.4176 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 7.10806, 13 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 6.5, 13 )
+
+[node name="Special_flower_item" instance=ExtResource( 2 )]
+mode = 0
+mass = 0.102041
+script = ExtResource( 1 )
+itemScene = ExtResource( 3 )
+toggleGameConstant = "special_flower_picked_up"
+pickup_wait_time = 3.0
+
+[node name="VisibilityNotifier2D" parent="." index="0"]
+position = Vector2( -0.499999, -13.5 )
+scale = Vector2( 0.85, 1.45 )
+
+[node name="CollisionShape2D" parent="PickupArea2D" index="0"]
+position = Vector2( -0.44597, -13.5824 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="Collider" parent="." index="2"]
+position = Vector2( -0.44597, -13 )
+shape = SubResource( 3 )
+
+[node name="HazardArea" type="Area2D" parent="." index="3"]
+position = Vector2( 0, -15 )
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HazardArea" index="0"]
+position = Vector2( -0.5, 2 )
+shape = SubResource( 2 )
+
+[node name="UnpickableTimer" type="Timer" parent="." index="4"]
