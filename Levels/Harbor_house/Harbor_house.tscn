@@ -1117,6 +1117,9 @@ position = Vector2( -445, -15 )
 nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "Shed_door"
 
+[node name="GatesBackground" parent="Harbor_world_objects/Middle_world_objects/Doors/Harbor_house_door" index="1"]
+margin_left = -9.0
+
 [node name="Water_pound" type="Node2D" parent="Harbor_world_objects/Middle_world_objects"]
 
 [node name="FountainTileMap" type="TileMap" parent="Harbor_world_objects/Middle_world_objects/Water_pound"]
@@ -2855,6 +2858,8 @@ margin_right = 5296.0
 margin_bottom = 344.0
 
 [editable path="Camera2D/Clouds"]
+[editable path="Harbor_world_objects/Middle_world_objects/Doors/Harbor_house_door"]
+[editable path="Harbor_world_objects/Middle_world_objects/Doors/Harbor_house_door/InteractionController"]
 [editable path="Harbor_world_objects/Middle_world_objects/Dwellers/FisherWifeDweller"]
 [editable path="Harbor_world_objects/Middle_world_objects/Dwellers/FisherWifeDweller/Body/InteractionController"]
 [editable path="Harbor_world_objects/Middle_world_objects/Dwellers/FisherDweller"]
