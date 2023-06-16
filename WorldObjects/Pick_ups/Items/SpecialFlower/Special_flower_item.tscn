@@ -15,7 +15,7 @@ extents = Vector2( 6.5, 13 )
 
 [node name="Special_flower_item" instance=ExtResource( 2 )]
 mode = 0
-mass = 0.102041
+mass = 0.5
 script = ExtResource( 1 )
 itemScene = ExtResource( 3 )
 toggleGameConstant = "special_flower_picked_up"

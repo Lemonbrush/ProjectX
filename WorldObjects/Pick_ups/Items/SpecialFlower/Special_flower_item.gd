@@ -12,9 +12,8 @@ func _ready():
 
 func hit_has_been_landed(_body):
 	hazardCollisionShape.set_deferred("disabled", true)
-	gravity_scale = 1
 	
-	apply_impulse(Vector2.ZERO, Vector2(0, 150))
+	apply_impulse(Vector2.ZERO, Vector2(0, 40))
 	
 	if viewScene != null && viewScene.has_method("play_dropped_animation"):
 		viewScene.play_dropped_animation()
