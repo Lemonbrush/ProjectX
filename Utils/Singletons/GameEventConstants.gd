@@ -60,7 +60,8 @@ func set_default_constants():
 		did_say_where_special_flower_is = false,
 		special_flower_mentioned = false,
 		red_thred_quest_finished = false,
-		the_flower_mentioned = false
+		the_flower_mentioned = false,
+		last_ingredient_mentioned = false
 	}
 
 func set_constant(constant_name, value):
