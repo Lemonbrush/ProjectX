@@ -675,7 +675,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [ Vector2( -47, 0 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Upper_background_objects/White_flower_growing/Flower_ladder/CollisionShape2D:disabled")
@@ -1168,6 +1168,30 @@ tracks/41/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ true ]
+}
+tracks/42/type = "value"
+tracks/42/path = NodePath("Upper_background_objects/Dwellers/White_flower_dweller:visible")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/43/type = "value"
+tracks/43/path = NodePath("Upper_background_objects/White_flower_growing:visible")
+tracks/43/interp = 1
+tracks/43/loop_wrap = true
+tracks/43/imported = false
+tracks/43/enabled = true
+tracks/43/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=270]
@@ -3458,7 +3482,7 @@ script = ExtResource( 35 )
 environment = SubResource( 399 )
 
 [node name="AnimationPlayer" parent="." index="2"]
-autoplay = "RESET"
+autoplay = ""
 anims/Grand_flower_opening_cut_scene = SubResource( 312 )
 anims/RESET = SubResource( 257 )
 anims/White_flower_grow_cut_scene = SubResource( 270 )
@@ -4005,7 +4029,6 @@ position = Vector2( 150, -484 )
 position = Vector2( -150, 484 )
 
 [node name="White_flower_dweller" parent="Upper_background_objects/Dwellers" index="0" instance=ExtResource( 39 )]
-visible = false
 position = Vector2( 249, 528 )
 dialogId = "White_flower_dweller"
 actions = [ ExtResource( 41 ) ]
@@ -4210,8 +4233,10 @@ anims/Idle = SubResource( 309 )
 anims/RESET = SubResource( 310 )
 
 [node name="White_flower_growing" type="Node2D" parent="Upper_background_objects" index="2"]
+visible = false
 
 [node name="Growing_flower_body" type="Node2D" parent="Upper_background_objects/White_flower_growing" index="0"]
+position = Vector2( -47, 0 )
 
 [node name="Growing_white_flower_sprite" type="Sprite" parent="Upper_background_objects/White_flower_growing/Growing_flower_body" index="0"]
 position = Vector2( 146, 1000 )
