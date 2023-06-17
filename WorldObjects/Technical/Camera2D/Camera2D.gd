@@ -37,7 +37,7 @@ func get_target_position_from_node_group(groupName):
 	if (nodes.size() > 0):
 		var node = nodes[0]
 		targetPosition = node.global_position
-		targetPosition.y -= 25
+		targetPosition.y -= 40
 		return true
 	return false
 	
