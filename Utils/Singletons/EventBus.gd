@@ -41,6 +41,10 @@ signal show_activate_pillars_cutscene()
 signal did_place_item_at_pedestal(item_name)
 signal show_final_level_door_opening_cutscene()
 
+signal show_red_thred_cutscene()
+
+signal start_proposal_stage()
+
 func start_shake_screen(duration = 0.2, frequency = 16, amplitude = 2, infinity = true):
 	emit_signal("start_shake_screen", duration, frequency, amplitude, infinity)
 
@@ -128,3 +132,9 @@ func show_final_level_door_opening_cutscene():
 
 func did_reset_game_constants():
 	emit_signal("did_reset_game_constants")
+
+func start_proposal_stage():
+	emit_signal("start_proposal_stage")
+
+func show_red_thred_cutscene():
+	emit_signal("show_red_thred_cutscene")

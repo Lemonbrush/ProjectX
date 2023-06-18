@@ -274,7 +274,6 @@ scale_curve = SubResource( 116 )
 color_ramp = SubResource( 115 )
 
 [node name="Storehouse" instance=ExtResource( 2 )]
-dynamic_camera = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
 environment = SubResource( 142 )

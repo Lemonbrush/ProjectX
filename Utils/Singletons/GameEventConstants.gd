@@ -7,10 +7,12 @@ func set_default_constants():
 		default_camera_zoom = 0.7,
 		kissnip_picked_up = false,
 		heart_key_picked_up = false,
+		sketch_picked_up = false,
 		is_artist_brush_picked_up = false,
 		redThredItem_picked_up = false,
 		assembled_heart_picked_uo = false,
 		blue_butterfly_pickedup = false,
+		special_flower_picked_up = false,
 		is_player_talked_to_shore_dweller = false,
 		is_start_gate_open = false,
 		is_lighthouse_key_available = false,
@@ -54,7 +56,12 @@ func set_default_constants():
 		right_side_heart_picked_up = false,
 		did_trigger_heart_assembling_cutscene = false,
 		did_mystic_dweller_activate_pillars = false,
-		did_put_all_all_items_on_pedestals = false
+		did_put_all_all_items_on_pedestals = false,
+		did_say_where_special_flower_is = false,
+		special_flower_mentioned = false,
+		red_thred_quest_finished = false,
+		the_flower_mentioned = false,
+		last_ingredient_mentioned = false
 	}
 
 func set_constant(constant_name, value):

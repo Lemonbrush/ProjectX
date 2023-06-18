@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.8.0 Beta] - 2023-6-19 - Final location update
+### Added
+- Added final level with the proposal scene
+- Added the sketch item
+- Added red thread quest
+- Added the guardian blush
+### Changed
+- Changed brush quest
+- Changed some dialogs
+### Fixed
+- Fixed zoom in the grand garden cutscene
+- Fixed dialogs for typos
+- Fixed dialogs loop logic
+- Fixed dialog bubbles height
+- Fixed dynamic camera in some scenes
+
 ## [1.7.0 Alpha] - 2023-6-1 - Kissing statues update
 ### Added
 - Added Kissing statues location

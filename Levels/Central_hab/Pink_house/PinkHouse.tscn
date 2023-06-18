@@ -198,7 +198,6 @@ tracks/1/keys = {
 
 [node name="PinkHouse" instance=ExtResource( 3 )]
 script = ExtResource( 7 )
-dynamic_camera = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
 environment = SubResource( 111 )
@@ -207,7 +206,6 @@ environment = SubResource( 111 )
 position = Vector2( -8, 0 )
 zoom = Vector2( 0.6, 0.6 )
 zoom_based_on_editor_value = true
-default_zoom = 0.7
 
 [node name="Clouds2" parent="Camera2D" index="2" instance=ExtResource( 5 )]
 position = Vector2( -2, -19 )

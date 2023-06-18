@@ -324,7 +324,7 @@ tracks/14/keys = {
 "times": PoolRealArray( 0, 1.1, 5.5, 7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 0.5, 0.5 ), Vector2( 0.5, 0.5 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 0.7, 0.7 ), Vector2( 0.5, 0.5 ), Vector2( 0.5, 0.5 ), Vector2( 1, 1 ) ]
 }
 tracks/15/type = "value"
 tracks/15/path = NodePath("Upper_background_objects/Great_flower/Flower_body/Collisions/PassThroughBody136/CollisionShape2D:disabled")
@@ -675,7 +675,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [ Vector2( -47, 0 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Upper_background_objects/White_flower_growing/Flower_ladder/CollisionShape2D:disabled")
@@ -1168,6 +1168,30 @@ tracks/41/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ true ]
+}
+tracks/42/type = "value"
+tracks/42/path = NodePath("Upper_background_objects/Dwellers/White_flower_dweller:visible")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/43/type = "value"
+tracks/43/path = NodePath("Upper_background_objects/White_flower_growing:visible")
+tracks/43/interp = 1
+tracks/43/loop_wrap = true
+tracks/43/imported = false
+tracks/43/enabled = true
+tracks/43/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=270]
@@ -3458,7 +3482,7 @@ script = ExtResource( 35 )
 environment = SubResource( 399 )
 
 [node name="AnimationPlayer" parent="." index="2"]
-autoplay = "RESET"
+autoplay = ""
 anims/Grand_flower_opening_cut_scene = SubResource( 312 )
 anims/RESET = SubResource( 257 )
 anims/White_flower_grow_cut_scene = SubResource( 270 )
@@ -4212,6 +4236,7 @@ anims/RESET = SubResource( 310 )
 visible = false
 
 [node name="Growing_flower_body" type="Node2D" parent="Upper_background_objects/White_flower_growing" index="0"]
+position = Vector2( -47, 0 )
 
 [node name="Growing_white_flower_sprite" type="Sprite" parent="Upper_background_objects/White_flower_growing/Growing_flower_body" index="0"]
 position = Vector2( 146, 1000 )
@@ -4581,7 +4606,7 @@ process_material = SubResource( 335 )
 position = Vector2( 460, -660 )
 
 [node name="Player" parent="." index="12"]
-position = Vector2( 208, 523 )
+position = Vector2( 208, 526 )
 z_index = 1
 collision_mask = 252
 
