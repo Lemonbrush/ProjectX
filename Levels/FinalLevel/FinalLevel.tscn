@@ -2356,7 +2356,7 @@ tile_data = PoolIntArray( -1572768, 536870943, 0 )
 curve = SubResource( 52 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform3/Path2D" index="0"]
-position = Vector2( 104, 9.50166 )
+position = Vector2( 104, 9.50167 )
 rotation = 3.14159
 offset = 9.49962
 rotate = false
@@ -2403,7 +2403,7 @@ tile_data = PoolIntArray( -2359200, 536870934, 0 )
 curve = SubResource( 68 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform4/Path2D" index="0"]
-position = Vector2( 104, 14.0008 )
+position = Vector2( 104, 14.0009 )
 rotation = 3.14159
 offset = 14.0007
 rotate = false
@@ -2495,7 +2495,7 @@ tile_data = PoolIntArray( -2359200, 536870926, 0 )
 curve = SubResource( 69 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform6/Path2D" index="0"]
-position = Vector2( 104, 8.20345 )
+position = Vector2( 104, 8.20346 )
 rotation = 3.14159
 offset = 25.2003
 rotate = false
