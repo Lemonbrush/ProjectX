@@ -126,7 +126,8 @@ config/name="Kissies"
 run/main_scene="res://UI/GameMenu/GameMenu.tscn"
 config/use_custom_user_dir=true
 run/delta_sync_after_draw=true
-config/icon="res://icon.png"
+config/icon="res://Origins/Project resources/Icon/icon_with_rounded_corners_background/icon_with_rounded_corners_background_512x512.png"
+config/windows_native_icon="res://Origins/Project resources/Icon/icon_with_rounded_corners_background/icon_with_rounded_corners_background_512x512.ico"
 
 [autoload]
 
