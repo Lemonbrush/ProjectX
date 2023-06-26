@@ -14,13 +14,13 @@ anchor_bottom = 1.0
 theme = ExtResource( 3 )
 
 [node name="ColorRect" type="ColorRect" parent="MainMarginContainer"]
-margin_right = 530.0
-margin_bottom = 320.0
+margin_right = 512.0
+margin_bottom = 290.0
 color = Color( 0.0941176, 0.0784314, 0.168627, 0.509804 )
 
 [node name="MarginContainer" type="MarginContainer" parent="MainMarginContainer"]
 margin_right = 109.0
-margin_bottom = 220.0
+margin_bottom = 148.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_constants/margin_top = 60
@@ -30,7 +30,7 @@ custom_constants/margin_left = 25
 margin_left = 25.0
 margin_top = 60.0
 margin_right = 109.0
-margin_bottom = 220.0
+margin_bottom = 148.0
 size_flags_horizontal = 0
 size_flags_vertical = 8
 custom_constants/separation = 30
@@ -44,12 +44,13 @@ text = "options"
 
 [node name="OptionButtonsVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer"]
 margin_top = 56.0
-margin_right = 48.0
-margin_bottom = 160.0
+margin_right = 42.0
+margin_bottom = 88.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
 [node name="SoundButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer"]
+visible = false
 margin_right = 48.0
 margin_bottom = 14.0
 focus_neighbour_top = NodePath("../ExitButton")
@@ -58,40 +59,39 @@ text = "sound"
 align = 0
 
 [node name="VideoButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer"]
-margin_top = 18.0
+visible = false
 margin_right = 48.0
-margin_bottom = 32.0
+margin_bottom = 14.0
 disabled = true
 text = "Видео"
 align = 0
 
 [node name="LanguageButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer"]
-margin_top = 36.0
+visible = false
 margin_right = 48.0
-margin_bottom = 50.0
+margin_bottom = 14.0
 disabled = true
 text = "language"
 align = 0
 
 [node name="ControlsButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer"]
-margin_top = 54.0
+visible = false
 margin_right = 48.0
-margin_bottom = 68.0
+margin_bottom = 14.0
 disabled = true
 text = "controls"
 align = 0
 
 [node name="SpecialOptionButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer"]
-margin_top = 72.0
-margin_right = 48.0
-margin_bottom = 86.0
+margin_right = 42.0
+margin_bottom = 14.0
 text = "special"
 align = 0
 
 [node name="ExitButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer"]
-margin_top = 90.0
-margin_right = 48.0
-margin_bottom = 104.0
+margin_top = 18.0
+margin_right = 42.0
+margin_bottom = 32.0
 focus_neighbour_bottom = NodePath("../SoundButton")
 text = "exit"
 align = 0
