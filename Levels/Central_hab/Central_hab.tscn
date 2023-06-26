@@ -1894,6 +1894,7 @@ amount = 50
 lifetime = 10.0
 preprocess = 15.0
 randomness = 1.0
+visibility_rect = Rect2( -100, -400, 200, 600 )
 process_material = SubResource( 98 )
 texture = ExtResource( 28 )
 
@@ -1903,6 +1904,7 @@ position = Vector2( -443, 275 )
 amount = 10
 lifetime = 5.0
 randomness = 1.0
+visibility_rect = Rect2( -100, -500, 200, 600 )
 process_material = SubResource( 98 )
 texture = ExtResource( 28 )
 

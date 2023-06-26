@@ -513,6 +513,7 @@ position = Vector2( 12, -55 )
 emitting = false
 amount = 70
 lifetime = 5.0
+visibility_rect = Rect2( -100, -400, 200, 500 )
 process_material = SubResource( 136 )
 texture = ExtResource( 13 )
 
