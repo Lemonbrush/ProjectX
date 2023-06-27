@@ -11,6 +11,7 @@
 [ext_resource path="res://WorldObjects/Technical/Clouds/Clouds.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Levels/Old_home_location/Bed_handles.png" type="Texture" id=10]
 [ext_resource path="res://Assets/effects/NoizeRainTexture.png" type="Texture" id=11]
+[ext_resource path="res://Shaders/RainShader.gdshader" type="Shader" id=12]
 
 [sub_resource type="Environment" id=3]
 background_mode = 4
@@ -20,20 +21,8 @@ glow_hdr_threshold = 1.5
 adjustment_enabled = true
 adjustment_saturation = 1.3
 
-[sub_resource type="Shader" id=30]
-code = "shader_type canvas_item;
-
-uniform sampler2D noise;
-uniform float intensity = 0.03;
-
-void fragment() {
-    vec2 uv = vec2(SCREEN_UV);
-    uv += (texture(noise, uv + vec2(TIME/10.0,TIME/1.0)).rb-vec2(.53))*intensity;
-    COLOR = vec4(texture(SCREEN_TEXTURE, uv).rgb, 1.0);
-}"
-
 [sub_resource type="ShaderMaterial" id=31]
-shader = SubResource( 30 )
+shader = ExtResource( 12 )
 shader_param/intensity = 1.0
 shader_param/noise = ExtResource( 11 )
 
