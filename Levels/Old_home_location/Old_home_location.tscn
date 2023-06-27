@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Assets/Levels/Old_home_location/Old_home_location.png" type="Texture" id=1]
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://WorldObjects/Decorative/Tree/Regualr_trees/Trees/CurvedTree.tscn" type="PackedScene" id=8]
 [ext_resource path="res://WorldObjects/Technical/Clouds/Clouds.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Levels/Old_home_location/Bed_handles.png" type="Texture" id=10]
+[ext_resource path="res://Assets/effects/NoizeRainTexture.png" type="Texture" id=11]
 
 [sub_resource type="Environment" id=3]
 background_mode = 4
@@ -18,6 +19,32 @@ glow_enabled = true
 glow_hdr_threshold = 1.5
 adjustment_enabled = true
 adjustment_saturation = 1.3
+
+[sub_resource type="Shader" id=30]
+code = "shader_type canvas_item;
+
+uniform sampler2D noise;
+uniform float intensity = 0.03;
+
+void fragment() {
+    vec2 uv = vec2(SCREEN_UV);
+    uv += (texture(noise, uv + vec2(TIME/10.0,TIME/1.0)).rb-vec2(.53))*intensity;
+    COLOR = vec4(texture(SCREEN_TEXTURE, uv).rgb, 1.0);
+}"
+
+[sub_resource type="ShaderMaterial" id=31]
+shader = SubResource( 30 )
+shader_param/intensity = 1.0
+shader_param/noise = ExtResource( 11 )
+
+[sub_resource type="ParticlesMaterial" id=29]
+trail_divisor = 100
+emission_shape = 2
+emission_box_extents = Vector3( 250, 250, 1 )
+flag_disable_z = true
+gravity = Vector3( -100, 2000, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
 
 [sub_resource type="CurveTexture" id=7]
 
@@ -143,9 +170,18 @@ dynamic_camera = false
 environment = SubResource( 3 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." index="1"]
-color = Color( 0.137255, 0.180392, 0.262745, 1 )
+color = Color( 0.2, 0.258824, 0.376471, 1 )
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="2"]
+[node name="RainShaderRect" type="TextureRect" parent="." index="2"]
+light_mask = 0
+material = SubResource( 31 )
+margin_left = -216.0
+margin_top = -247.0
+margin_right = 853.0
+margin_bottom = 821.0
+texture = ExtResource( 11 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="3"]
 scroll_limit_end = Vector2( 0, 320 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
@@ -163,12 +199,19 @@ position = Vector2( 380, 3 )
 scale = Vector2( 0.77, 0.77 )
 texture = ExtResource( 6 )
 
-[node name="Camera2D" parent="." index="5"]
+[node name="Camera2D" parent="." index="6"]
 position = Vector2( -34, 2 )
 zoom = Vector2( 0.6, 0.6 )
 backgroundColor = Color( 0.72549, 0.827451, 0.901961, 1 )
 
-[node name="Clouds" parent="Camera2D" index="2" instance=ExtResource( 9 )]
+[node name="RainParticles2D" type="Particles2D" parent="Camera2D" index="2"]
+visible = false
+position = Vector2( 205, -99 )
+amount = 10000
+lifetime = 0.5
+process_material = SubResource( 29 )
+
+[node name="Clouds" parent="Camera2D" index="3" instance=ExtResource( 9 )]
 position = Vector2( -29, -24 )
 z_index = -2
 
@@ -177,19 +220,21 @@ amount = 20
 lifetime = 50.0
 process_material = SubResource( 15 )
 
-[node name="TallTree4" parent="." index="6" instance=ExtResource( 7 )]
+[node name="TallTree4" parent="." index="7" instance=ExtResource( 7 )]
 position = Vector2( 89, 126 )
+z_index = -3
 
 [node name="CollisionShape2D" parent="TallTree4/PassThroughBody" index="0"]
 disabled = true
 
-[node name="WorldSprite" parent="." index="7"]
+[node name="WorldSprite" parent="." index="8"]
 texture = ExtResource( 1 )
 
-[node name="World_objects" type="Node2D" parent="." index="8"]
+[node name="World_objects" type="Node2D" parent="." index="9"]
 
 [node name="Trees" type="Node2D" parent="World_objects" index="0"]
 position = Vector2( 9, -58 )
+z_index = -2
 
 [node name="TallTree2" parent="World_objects/Trees" index="0" instance=ExtResource( 7 )]
 position = Vector2( 119, 137 )
@@ -227,13 +272,13 @@ position = Vector2( 218, 176 )
 [node name="CollisionShape2D" parent="World_objects/Trees/TallTree3/PassThroughBody" index="0"]
 disabled = true
 
-[node name="Player" parent="." index="9"]
+[node name="Player" parent="." index="10"]
 position = Vector2( -51, 38 )
 
 [node name="Light2D2" parent="Player" index="5"]
 visible = false
 
-[node name="Foreground_objects" type="Node2D" parent="." index="10"]
+[node name="Foreground_objects" type="Node2D" parent="." index="11"]
 position = Vector2( -93, -3 )
 
 [node name="Bed_handles" type="Sprite" parent="Foreground_objects" index="0"]
@@ -374,7 +419,7 @@ collision_mask = 17
 position = Vector2( -26.5, 35 )
 shape = SubResource( 26 )
 
-[node name="Monitor_light" type="Node2D" parent="." index="16"]
+[node name="Monitor_light" type="Node2D" parent="." index="17"]
 
 [node name="Light2D" type="Light2D" parent="Monitor_light" index="0"]
 position = Vector2( 57, 27 )
@@ -390,7 +435,7 @@ shadow_filter_smooth = 2.7
 autoplay = "Idle"
 anims/Idle = SubResource( 20 )
 
-[node name="Occlusion" type="Node2D" parent="." index="17"]
+[node name="Occlusion" type="Node2D" parent="." index="18"]
 
 [node name="Monitor_occlusion" type="LightOccluder2D" parent="Occlusion" index="0"]
 position = Vector2( 44, -15 )
