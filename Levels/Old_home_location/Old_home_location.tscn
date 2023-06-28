@@ -183,15 +183,16 @@ texture = ExtResource( 4 )
 centered = false
 
 [node name="CloudsSprite" type="Sprite" parent="ParallaxBackground" index="1"]
-modulate = Color( 0.0745098, 0.0823529, 0.184314, 1 )
-position = Vector2( 380, 3 )
+modulate = Color( 0.654902, 0.658824, 0.72549, 1 )
+position = Vector2( 350, -22 )
 scale = Vector2( 0.77, 0.77 )
 texture = ExtResource( 6 )
 
 [node name="Camera2D" parent="." index="6"]
-position = Vector2( -34, 2 )
+position = Vector2( -15, 2 )
 zoom = Vector2( 0.6, 0.6 )
 backgroundColor = Color( 0.72549, 0.827451, 0.901961, 1 )
+zoom_based_on_editor_value = true
 
 [node name="RainParticles2D" type="Particles2D" parent="Camera2D" index="2"]
 visible = false
@@ -205,7 +206,7 @@ position = Vector2( -29, -24 )
 z_index = -2
 
 [node name="Particles2D" parent="Camera2D/Clouds" index="0"]
-amount = 20
+amount = 5
 lifetime = 50.0
 process_material = SubResource( 15 )
 
