@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://Assets/Levels/Old_home_location/Old_home_location.png" type="Texture" id=1]
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Assets/Levels/Old_home_location/World_objects/SofaSprite-Sheet.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Levels/Old_home_location/World_objects/MeSprite-Sheet.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Levels/Old_home_location/World_objects/Couch-Sheet.png" type="Texture" id=16]
+[ext_resource path="res://Assets/effects/particles.png" type="Texture" id=17]
 
 [sub_resource type="Environment" id=3]
 background_mode = 4
@@ -256,46 +257,41 @@ tracks/18/loop_wrap = true
 tracks/18/imported = false
 tracks/18/enabled = true
 tracks/18/keys = {
-"times": PoolRealArray( 11.1 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 12, 15.9 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
+"args": [ "Cooking", -1, 1.0, false ],
+"method": "play"
+}, {
 "args": [ "Bed_jumping", -1, 1.0, false ],
 "method": "play"
 } ]
 }
 tracks/19/type = "method"
-tracks/19/path = NodePath("World_objects/Computer/ComputerAnimationPlayer")
+tracks/19/path = NodePath("World_objects/Couch/CouchAnimationPlayer")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/imported = false
 tracks/19/enabled = true
 tracks/19/keys = {
-"times": PoolRealArray( 8.1, 11.1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 8 ),
+"transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [ "Anime", -1, 1.0, false ],
-"method": "play"
-}, {
-"args": [ "Turn_off", -1, 1.0, false ],
+"args": [ "Anime_watching", -1, 1.0, false ],
 "method": "play"
 } ]
 }
-tracks/20/type = "method"
-tracks/20/path = NodePath("World_objects/Couch/CouchAnimationPlayer")
+tracks/20/type = "value"
+tracks/20/path = NodePath("NPCs:modulate")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/imported = false
 tracks/20/enabled = true
 tracks/20/keys = {
-"times": PoolRealArray( 8.1, 11.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"values": [ {
-"args": [ "Anime_watching", -1, 1.0, false ],
-"method": "play"
-}, {
-"args": [ "Idle", -1, 1.0, false ],
-"method": "play"
-} ]
+"times": PoolRealArray( 0, 7.6, 8.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/21/type = "value"
 tracks/21/path = NodePath("NPCs:visible")
@@ -304,10 +300,22 @@ tracks/21/loop_wrap = true
 tracks/21/imported = false
 tracks/21/enabled = true
 tracks/21/keys = {
-"times": PoolRealArray( 8.1, 11.2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false, true ]
+"values": [ true ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("NPCs/CookingDustParticles:emitting")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=40]
@@ -540,6 +548,30 @@ tracks/18/keys = {
 "update": 0,
 "values": [ false ]
 }
+tracks/19/type = "value"
+tracks/19/path = NodePath("NPCs/CookingDustParticles:emitting")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("NPCs:modulate")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="ParticlesMaterial" id=29]
 trail_divisor = 100
@@ -731,8 +763,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=44]
 resource_name = "Anime_watching"
-length = 0.5
-loop = true
+length = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("CouchSprite:frame")
 tracks/0/interp = 1
@@ -740,10 +771,39 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 5, 6, 7, 8, 9 ]
+"values": [ 0, 7, 8, 9, 5, 7, 8, 9, 5, 6, 7, 8, 9, 5, 6, 7, 8, 9, 5, 6, 7, 8, 9, 5, 6, 7, 8, 9, 8, 0, 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CouchSprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 1, 2.8, 3.1, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("../Computer/ComputerAnimationPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.6, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "Anime", -1, 1.0, false ],
+"method": "play"
+}, {
+"args": [ "Turn_off", -1, 1.0, false ],
+"method": "play"
+} ]
 }
 
 [sub_resource type="Animation" id=45]
@@ -787,6 +847,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CouchSprite:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="RectangleShape2D" id=27]
@@ -843,9 +915,46 @@ polygon = PoolVector2Array( -86, 28, -78, 28, -78, 26, -86, 26 )
 [sub_resource type="OccluderPolygon2D" id=13]
 polygon = PoolVector2Array( -90, 22, -82, 22, -82, 20, -90, 20 )
 
+[sub_resource type="CanvasItemMaterial" id=48]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id=49]
+offsets = PoolRealArray( 0.00386847, 0.0851064, 0.880077, 1 )
+colors = PoolColorArray( 0, 0, 0, 0, 0.84913, 0.84913, 0.84913, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=50]
+gradient = SubResource( 49 )
+
+[sub_resource type="Curve" id=51]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.141593, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.557522, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=52]
+curve = SubResource( 51 )
+
+[sub_resource type="ParticlesMaterial" id=53]
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 2.0
+flag_disable_z = true
+direction = Vector3( 0, -100, 0 )
+flatness = 1.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 60.0
+initial_velocity_random = 1.0
+angular_velocity = 180.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_random = 1.0
+scale_curve = SubResource( 52 )
+color_ramp = SubResource( 50 )
+
 [sub_resource type="Animation" id=41]
 resource_name = "Bed_jumping"
-loop = true
+length = 4.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("MeSprite:position")
 tracks/0/interp = 1
@@ -853,10 +962,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3, 0.4, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.3, 0.4, 0.6, 0.7, 1, 1.1, 1.3, 1.4, 1.7, 1.8, 2, 2.1, 2.4, 2.5, 2.7, 2.8, 3.1, 3.2, 3.4, 3.5, 3.8, 3.9, 4.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -70, -12 ), Vector2( -70, -15 ), Vector2( -70, -15 ), Vector2( -70, -12 ) ]
+"values": [ Vector2( -70, -12 ), Vector2( -70, -15 ), Vector2( -70, -15 ), Vector2( -70, -12 ), Vector2( -70, -12 ), Vector2( -70, -15 ), Vector2( -70, -15 ), Vector2( -70, -12 ), Vector2( -70, -12 ), Vector2( -70, -15 ), Vector2( -70, -15 ), Vector2( -70, -12 ), Vector2( -70, -12 ), Vector2( -70, -15 ), Vector2( -70, -15 ), Vector2( -70, -12 ), Vector2( -70, -12 ), Vector2( -70, -15 ), Vector2( -70, -15 ), Vector2( -70, -12 ), Vector2( -70, -12 ), Vector2( -70, -15 ), Vector2( -70, -15 ), Vector2( -70, -12 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("SheSprite:position")
@@ -865,10 +974,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.4, 0.7, 0.8, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.4, 0.7, 0.8, 1, 1.1, 1.4, 1.5, 1.7, 1.8, 2.1, 2.2, 2.4, 2.5, 2.8, 2.9, 3.1, 3.2, 3.5, 3.6, 3.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -89, -11 ), Vector2( -89, -15 ), Vector2( -89, -15 ), Vector2( -89, -11 ) ]
+"values": [ Vector2( -89, -11 ), Vector2( -89, -11 ), Vector2( -89, -15 ), Vector2( -89, -15 ), Vector2( -89, -11 ), Vector2( -89, -11 ), Vector2( -89, -15 ), Vector2( -89, -15 ), Vector2( -89, -11 ), Vector2( -89, -11 ), Vector2( -89, -15 ), Vector2( -89, -15 ), Vector2( -89, -11 ), Vector2( -89, -11 ), Vector2( -89, -15 ), Vector2( -89, -15 ), Vector2( -89, -11 ), Vector2( -89, -11 ), Vector2( -89, -15 ), Vector2( -89, -15 ), Vector2( -89, -11 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("MeSprite:frame")
@@ -877,10 +986,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.6, 0.7, 0.8, 0.9, 1, 1.3, 1.4, 1.5, 1.6, 1.7, 2, 2.1, 2.2, 2.3, 2.4, 2.7, 2.8, 2.9, 3, 3.1, 3.4, 3.5, 3.6, 3.7, 3.8, 4.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 6, 7, 8, 13, 6 ]
+"values": [ 6, 7, 8, 13, 6, 6, 7, 8, 13, 6, 6, 7, 8, 13, 6, 6, 7, 8, 13, 6, 6, 7, 8, 13, 6, 6, 7, 8, 13, 6 ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("SheSprite:frame")
@@ -889,10 +998,170 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0.4, 0.5, 0.6, 0.7, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 0.7, 1, 1.1, 1.2, 1.3, 1.4, 1.7, 1.8, 1.9, 2, 2.1, 2.4, 2.5, 2.6, 2.7, 2.8, 3.1, 3.2, 3.3, 3.4, 3.5, 3.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 6, 7, 8, 12, 6 ]
+"values": [ 6, 6, 7, 8, 12, 6, 6, 7, 8, 12, 6, 6, 7, 8, 12, 6, 6, 7, 8, 12, 6, 6, 7, 8, 12, 6 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath(".:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.3, 3.7, 4.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("MeSprite:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("CookingDustParticles:emitting")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("CookingDustParticles:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=47]
+resource_name = "Cooking"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SheSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -84, 41 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("SheSprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 24, 25, 26, 27, 24, 25, 26, 27, 24, 25, 26, 27, 24, 25, 26, 27, 24, 25, 26, 27, 24, 25, 26, 27, 24, 25, 26, 27, 24, 25, 26, 27, 24, 25, 26, 27, 24, 25, 26, 27 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("MeSprite:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("MeSprite:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -69, 40 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("MeSprite:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 24, 25, 26, 27, 24, 25, 26, 27, 24, 25, 26, 27, 24, 25, 26, 27, 24, 25, 26, 27, 24, 25, 26, 27, 24, 25, 26, 27, 24, 25, 26, 27, 24, 25, 26, 27, 24, 25, 26, 27 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("CookingDustParticles:emitting")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath(".:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.5, 3.5, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=42]
@@ -911,6 +1180,102 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 6 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("SheSprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -84, 41 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("MeSprite:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("MeSprite:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -69, 40 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("MeSprite:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 24 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("CookingDustParticles:emitting")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath(".:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("CookingDustParticles:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
 }
 
 [node name="Old_home_location" instance=ExtResource( 2 )]
@@ -1284,18 +1649,29 @@ margin_bottom = 386.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="NPCs" type="Node2D" parent="." index="19"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
 
 [node name="MeSprite" type="Sprite" parent="NPCs" index="0"]
-position = Vector2( 12, -2 )
+position = Vector2( -69, 40 )
 rotation = 0.261799
-scale = Vector2( 1e-05, 1e-05 )
 texture = ExtResource( 15 )
 offset = Vector2( 7, -9 )
 hframes = 6
 vframes = 8
+frame = 24
 
-[node name="SheSprite" type="Sprite" parent="NPCs" index="1"]
-position = Vector2( -37, 7 )
+[node name="CookingDustParticles" type="Particles2D" parent="NPCs" index="1"]
+material = SubResource( 48 )
+position = Vector2( -80, 40 )
+amount = 30
+lifetime = 2.0
+randomness = 1.0
+process_material = SubResource( 53 )
+texture = ExtResource( 17 )
+
+[node name="SheSprite" type="Sprite" parent="NPCs" index="2"]
+position = Vector2( -84, 41 )
 rotation = -0.261799
 texture = ExtResource( 14 )
 offset = Vector2( 7, -10 )
@@ -1303,8 +1679,9 @@ hframes = 6
 vframes = 8
 frame = 6
 
-[node name="NPCsAnimationPlayer" type="AnimationPlayer" parent="NPCs" index="2"]
+[node name="NPCsAnimationPlayer" type="AnimationPlayer" parent="NPCs" index="3"]
 anims/Bed_jumping = SubResource( 41 )
+anims/Cooking = SubResource( 47 )
 anims/Jumping = SubResource( 42 )
 anims/RESET = SubResource( 43 )
 
