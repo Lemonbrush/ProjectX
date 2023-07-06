@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://Assets/Levels/Old_home_location/Old_home_location.png" type="Texture" id=1]
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Assets/Levels/Old_home_location/World_objects/ComputerAnimation-Sheet.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Levels/Old_home_location/World_objects/SofaSprite-Sheet.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Levels/Old_home_location/World_objects/MeSprite-Sheet.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Levels/Old_home_location/World_objects/Couch-Sheet.png" type="Texture" id=16]
 
 [sub_resource type="Environment" id=3]
 background_mode = 4
@@ -31,7 +32,7 @@ shader_param/noise = ExtResource( 11 )
 
 [sub_resource type="Animation" id=39]
 resource_name = "Intro"
-length = 10.0
+length = 20.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("BlackForegroundColorRect:visible")
 tracks/0/interp = 1
@@ -231,7 +232,7 @@ tracks/16/loop_wrap = true
 tracks/16/imported = false
 tracks/16/enabled = true
 tracks/16/keys = {
-"times": PoolRealArray( 0, 8.7, 10 ),
+"times": PoolRealArray( 0, 18.7, 20 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0.0745098, 0.0823529, 0.184314, 1 ) ]
@@ -243,7 +244,7 @@ tracks/17/loop_wrap = true
 tracks/17/imported = false
 tracks/17/enabled = true
 tracks/17/keys = {
-"times": PoolRealArray( 0, 8.7, 10 ),
+"times": PoolRealArray( 0, 18.7, 20 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0.654902, 0.658824, 0.72549, 1 ) ]
@@ -255,12 +256,58 @@ tracks/18/loop_wrap = true
 tracks/18/imported = false
 tracks/18/enabled = true
 tracks/18/keys = {
-"times": PoolRealArray( 8 ),
+"times": PoolRealArray( 11.1 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ "Bed_jumping", -1, 1.0, false ],
 "method": "play"
 } ]
+}
+tracks/19/type = "method"
+tracks/19/path = NodePath("World_objects/Computer/ComputerAnimationPlayer")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 8.1, 11.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "Anime", -1, 1.0, false ],
+"method": "play"
+}, {
+"args": [ "Turn_off", -1, 1.0, false ],
+"method": "play"
+} ]
+}
+tracks/20/type = "method"
+tracks/20/path = NodePath("World_objects/Couch/CouchAnimationPlayer")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 8.1, 11.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "Anime_watching", -1, 1.0, false ],
+"method": "play"
+}, {
+"args": [ "Idle", -1, 1.0, false ],
+"method": "play"
+} ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("NPCs:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 8.1, 11.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
 }
 
 [sub_resource type="Animation" id=40]
@@ -481,6 +528,18 @@ tracks/17/keys = {
 "update": 0,
 "values": [ Color( 0.654902, 0.658824, 0.72549, 1 ) ]
 }
+tracks/18/type = "value"
+tracks/18/path = NodePath("NPCs:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [sub_resource type="ParticlesMaterial" id=29]
 trail_divisor = 100
@@ -639,6 +698,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=36]
 resource_name = "Turn_off"
+length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("ComputerSprite:frame")
 tracks/0/interp = 1
@@ -667,6 +727,66 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29 ]
+}
+
+[sub_resource type="Animation" id=44]
+resource_name = "Anime_watching"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CouchSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 5, 6, 7, 8, 9 ]
+}
+
+[sub_resource type="Animation" id=45]
+resource_name = "Idle"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("CouchSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=46]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("CouchSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../../NPCs:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
 }
 
 [sub_resource type="RectangleShape2D" id=27]
@@ -953,6 +1073,19 @@ anims/RESET = SubResource( 34 )
 anims/Rumbling = SubResource( 35 )
 anims/Turn_off = SubResource( 36 )
 anims/Working = SubResource( 37 )
+
+[node name="Couch" type="Node2D" parent="World_objects" index="2"]
+
+[node name="CouchSprite" type="Sprite" parent="World_objects/Couch" index="0"]
+position = Vector2( 26, 31 )
+texture = ExtResource( 16 )
+hframes = 5
+vframes = 2
+
+[node name="CouchAnimationPlayer" type="AnimationPlayer" parent="World_objects/Couch" index="1"]
+anims/Anime_watching = SubResource( 44 )
+anims/Idle = SubResource( 45 )
+anims/RESET = SubResource( 46 )
 
 [node name="Player" parent="." index="10"]
 position = Vector2( -51, 38 )
