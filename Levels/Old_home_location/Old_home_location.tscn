@@ -77,10 +77,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 1, 1.1, 1.2, 1.3, 1.4, 5.9, 6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 1, 1.1, 1.2, 1.3, 1.4, 2.1, 2.2, 5.9, 6, 6.3, 6.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 12, 13, 14, 15, 16, 6, 0 ]
+"values": [ 12, 13, 14, 15, 16, 1, 0, 6, 0, 1, 0 ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("NPCs/MeSprite:rotation_degrees")
@@ -101,10 +101,10 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 2.5, 2.6, 2.7, 2.8, 2.9, 5.8, 5.9 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 2.5, 2.6, 2.7, 2.8, 2.9, 3.8, 3.9, 5.8, 5.9, 7, 7.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 12, 13, 14, 15, 16, 6, 0 ]
+"values": [ 12, 13, 14, 15, 16, 1, 16, 6, 0, 1, 16 ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("NPCs/SheSprite:scale")
