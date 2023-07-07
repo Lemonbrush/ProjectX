@@ -317,6 +317,30 @@ tracks/22/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0.862745, 0.917647, 0.960784, 1 ), Color( 0.862745, 0.917647, 0.960784, 1 ), Color( 0.803922, 0.858824, 0.952941, 1 ), Color( 0.803922, 0.858824, 0.952941, 1 ), Color( 0.972549, 0.882353, 0.976471, 1 ), Color( 0.972549, 0.882353, 0.976471, 1 ), Color( 0.2, 0.258824, 0.376471, 1 ) ]
 }
+tracks/23/type = "value"
+tracks/23/path = NodePath("Camera2D:position")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0, 8, 8.6, 11.5, 12, 15.5, 15.9, 18.9, 20 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -15, 2 ), Vector2( -15, 2 ), Vector2( 46, 30 ), Vector2( 46, 30 ), Vector2( -74, 30 ), Vector2( -74, 30 ), Vector2( -74, -16 ), Vector2( -74, -16 ), Vector2( -15, 2 ) ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("Camera2D:zoom")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0, 4, 6, 7.8, 8.4, 18.7, 19.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.4, 0.4 ), Vector2( 0.4, 0.4 ), Vector2( 0.6, 0.6 ), Vector2( 0.6, 0.6 ), Vector2( 0.4, 0.4 ), Vector2( 0.4, 0.4 ), Vector2( 0.6, 0.6 ) ]
+}
 
 [sub_resource type="Animation" id=40]
 length = 0.001
@@ -571,6 +595,30 @@ tracks/20/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 0.2, 0.258824, 0.376471, 1 ) ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Camera2D:position")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -15, 2 ) ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Camera2D:zoom")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.6, 0.6 ) ]
 }
 
 [sub_resource type="ParticlesMaterial" id=29]
