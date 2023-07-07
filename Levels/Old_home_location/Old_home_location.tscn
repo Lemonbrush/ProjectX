@@ -33,153 +33,153 @@ shader_param/noise = ExtResource( 11 )
 
 [sub_resource type="Animation" id=39]
 resource_name = "Intro"
-length = 20.0
+length = 30.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("BlackForegroundColorRect:visible")
+tracks/0/path = NodePath("BlackForegroundColorRect:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 6 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
+"times": PoolRealArray( 0, 4, 6, 19.2, 20 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("BlackForegroundColorRect:modulate")
+tracks/1/path = NodePath("NPCs/MeSprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 4, 6 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("NPCs/MeSprite:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
 "times": PoolRealArray( 1, 4, 5.9 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 5, 6 ), Vector2( 5, 6 ), Vector2( 5, 40 ) ]
 }
-tracks/3/type = "value"
-tracks/3/path = NodePath("NPCs/MeSprite:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
+tracks/2/type = "value"
+tracks/2/path = NodePath("NPCs/MeSprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
 "times": PoolRealArray( 1, 1.2, 1.3 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( -1.3, 1.3 ), Vector2( -1, 1 ) ]
 }
-tracks/4/type = "value"
-tracks/4/path = NodePath("NPCs/MeSprite:frame")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
+tracks/3/type = "value"
+tracks/3/path = NodePath("NPCs/MeSprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
 "times": PoolRealArray( 1, 1.1, 1.2, 1.3, 1.4, 5.9, 6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 12, 13, 14, 15, 16, 6, 0 ]
 }
-tracks/5/type = "value"
-tracks/5/path = NodePath("NPCs/MeSprite:rotation_degrees")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
+tracks/4/type = "value"
+tracks/4/path = NodePath("NPCs/MeSprite:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
 "times": PoolRealArray( 1, 1.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 15.0, 0.0 ]
 }
-tracks/6/type = "value"
-tracks/6/path = NodePath("NPCs/SheSprite:frame")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
+tracks/5/type = "value"
+tracks/5/path = NodePath("NPCs/SheSprite:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
 "times": PoolRealArray( 2.5, 2.6, 2.7, 2.8, 2.9, 5.8, 5.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 12, 13, 14, 15, 16, 6, 0 ]
 }
-tracks/7/type = "value"
-tracks/7/path = NodePath("NPCs/SheSprite:scale")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
+tracks/6/type = "value"
+tracks/6/path = NodePath("NPCs/SheSprite:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
 "times": PoolRealArray( 2.5, 2.7, 2.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( 1.3, 1.3 ), Vector2( 1, 1 ) ]
 }
-tracks/8/type = "value"
-tracks/8/path = NodePath("NPCs/SheSprite:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
+tracks/7/type = "value"
+tracks/7/path = NodePath("NPCs/SheSprite:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
 "times": PoolRealArray( 2.5, 4, 5.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -37, 7 ), Vector2( -37, 7 ), Vector2( -37, 41 ) ]
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("NPCs/SheSprite:rotation_degrees")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
+tracks/8/type = "value"
+tracks/8/path = NodePath("NPCs/SheSprite:rotation_degrees")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
 "times": PoolRealArray( 2.5, 2.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ -15.0, 0.0 ]
 }
-tracks/10/type = "value"
-tracks/10/path = NodePath("NPCs/SheSprite:visible")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
+tracks/9/type = "value"
+tracks/9/path = NodePath("NPCs/SheSprite:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
 "times": PoolRealArray( 0, 2.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
 }
-tracks/11/type = "value"
-tracks/11/path = NodePath("NPCs/MeSprite:visible")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
+tracks/10/type = "value"
+tracks/10/path = NodePath("NPCs/MeSprite:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
 }
+tracks/11/type = "value"
+tracks/11/path = NodePath("Player:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 tracks/12/type = "value"
-tracks/12/path = NodePath("Player:visible")
+tracks/12/path = NodePath("World_objects/Computer/ComputerSprite:frame")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -188,10 +188,10 @@ tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ 36 ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("World_objects/Computer/ComputerSprite:frame")
+tracks/13/path = NodePath("RainShaderRect:visible")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -200,22 +200,22 @@ tracks/13/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 36 ]
+"values": [ false ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("RainShaderRect:visible")
+tracks/14/path = NodePath("ParallaxBackground/ParallaxLayer/BackgroundSprite:modulate")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
 tracks/14/enabled = true
 tracks/14/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"times": PoolRealArray( 0, 8, 9, 12, 13, 15.9, 17, 18.7, 20 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0.490196, 0.6, 0.933333, 1 ), Color( 0.490196, 0.6, 0.933333, 1 ), Color( 0.545098, 0.439216, 0.933333, 1 ), Color( 0.545098, 0.439216, 0.933333, 1 ), Color( 0.905882, 0.27451, 0.52549, 1 ), Color( 0.905882, 0.27451, 0.52549, 1 ), Color( 0.0745098, 0.0823529, 0.184314, 1 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("ParallaxBackground/ParallaxLayer/BackgroundSprite:modulate")
+tracks/15/path = NodePath("ParallaxBackground/CloudsSprite:modulate")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/imported = false
@@ -224,27 +224,15 @@ tracks/15/keys = {
 "times": PoolRealArray( 0, 8, 9, 12, 13, 15.9, 17, 18.7, 20 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0.490196, 0.6, 0.933333, 1 ), Color( 0.490196, 0.6, 0.933333, 1 ), Color( 0.545098, 0.439216, 0.933333, 1 ), Color( 0.545098, 0.439216, 0.933333, 1 ), Color( 0.905882, 0.27451, 0.52549, 1 ), Color( 0.905882, 0.27451, 0.52549, 1 ), Color( 0.0745098, 0.0823529, 0.184314, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0.666667, 0.752941, 1, 1 ), Color( 0.666667, 0.752941, 1, 1 ), Color( 0.737255, 0.662745, 1, 1 ), Color( 0.737255, 0.662745, 1, 1 ), Color( 0.976471, 0.67451, 1, 1 ), Color( 0.976471, 0.67451, 1, 1 ), Color( 0.164706, 0.180392, 0.4, 1 ) ]
 }
-tracks/16/type = "value"
-tracks/16/path = NodePath("ParallaxBackground/CloudsSprite:modulate")
+tracks/16/type = "method"
+tracks/16/path = NodePath("NPCs/NPCsAnimationPlayer")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/imported = false
 tracks/16/enabled = true
 tracks/16/keys = {
-"times": PoolRealArray( 0, 8, 9, 12, 13, 15.9, 17, 18.7, 20 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0.666667, 0.752941, 1, 1 ), Color( 0.666667, 0.752941, 1, 1 ), Color( 0.737255, 0.662745, 1, 1 ), Color( 0.737255, 0.662745, 1, 1 ), Color( 0.976471, 0.67451, 1, 1 ), Color( 0.976471, 0.67451, 1, 1 ), Color( 0.164706, 0.180392, 0.4, 1 ) ]
-}
-tracks/17/type = "method"
-tracks/17/path = NodePath("NPCs/NPCsAnimationPlayer")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/keys = {
 "times": PoolRealArray( 12, 15.9 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
@@ -255,13 +243,13 @@ tracks/17/keys = {
 "method": "play"
 } ]
 }
-tracks/18/type = "method"
-tracks/18/path = NodePath("World_objects/Couch/CouchAnimationPlayer")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/keys = {
+tracks/17/type = "method"
+tracks/17/path = NodePath("World_objects/Couch/CouchAnimationPlayer")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
 "times": PoolRealArray( 8 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -269,20 +257,32 @@ tracks/18/keys = {
 "method": "play"
 } ]
 }
-tracks/19/type = "value"
-tracks/19/path = NodePath("NPCs:modulate")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/keys = {
+tracks/18/type = "value"
+tracks/18/path = NodePath("NPCs:modulate")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
 "times": PoolRealArray( 0, 7.6, 8.1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
+tracks/19/type = "value"
+tracks/19/path = NodePath("NPCs:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 tracks/20/type = "value"
-tracks/20/path = NodePath("NPCs:visible")
+tracks/20/path = NodePath("NPCs/CookingDustParticles:emitting")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/imported = false
@@ -291,52 +291,40 @@ tracks/20/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("NPCs/CookingDustParticles:emitting")
+tracks/21/path = NodePath("CanvasModulate:color")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/imported = false
 tracks/21/enabled = true
 tracks/21/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/22/type = "value"
-tracks/22/path = NodePath("CanvasModulate:color")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/keys = {
 "times": PoolRealArray( 0, 8, 9, 12, 13, 15.9, 17, 18.7, 20 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0.862745, 0.917647, 0.960784, 1 ), Color( 0.862745, 0.917647, 0.960784, 1 ), Color( 0.803922, 0.858824, 0.952941, 1 ), Color( 0.803922, 0.858824, 0.952941, 1 ), Color( 0.972549, 0.882353, 0.976471, 1 ), Color( 0.972549, 0.882353, 0.976471, 1 ), Color( 0.2, 0.258824, 0.376471, 1 ) ]
 }
-tracks/23/type = "value"
-tracks/23/path = NodePath("Camera2D:position")
-tracks/23/interp = 1
-tracks/23/loop_wrap = true
-tracks/23/imported = false
-tracks/23/enabled = true
-tracks/23/keys = {
+tracks/22/type = "value"
+tracks/22/path = NodePath("Camera2D:position")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
 "times": PoolRealArray( 0, 8, 8.6, 11.5, 12, 15.5, 15.9, 18.9, 20 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -15, 2 ), Vector2( -15, 2 ), Vector2( 46, 30 ), Vector2( 46, 30 ), Vector2( -74, 30 ), Vector2( -74, 30 ), Vector2( -74, -16 ), Vector2( -74, -16 ), Vector2( -15, 2 ) ]
 }
-tracks/24/type = "value"
-tracks/24/path = NodePath("Camera2D:zoom")
-tracks/24/interp = 1
-tracks/24/loop_wrap = true
-tracks/24/imported = false
-tracks/24/enabled = true
-tracks/24/keys = {
-"times": PoolRealArray( 0, 4, 6, 7.8, 8.4, 18.7, 19.7 ),
+tracks/23/type = "value"
+tracks/23/path = NodePath("Camera2D:zoom")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0, 4, 6, 7.8, 8.9, 18.7, 19.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0.4, 0.4 ), Vector2( 0.4, 0.4 ), Vector2( 0.6, 0.6 ), Vector2( 0.6, 0.6 ), Vector2( 0.4, 0.4 ), Vector2( 0.4, 0.4 ), Vector2( 0.6, 0.6 ) ]
