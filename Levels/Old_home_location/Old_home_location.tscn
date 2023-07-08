@@ -1771,7 +1771,7 @@ scale = Vector2( 1e-05, 1e-05 )
 texture = ExtResource( 15 )
 offset = Vector2( 7, -9 )
 hframes = 6
-vframes = 8
+vframes = 13
 
 [node name="CookingDustParticles" type="Particles2D" parent="NPCs" index="1"]
 material = SubResource( 48 )
