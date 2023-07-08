@@ -1788,7 +1788,7 @@ rotation = -0.261799
 texture = ExtResource( 14 )
 offset = Vector2( 7, -10 )
 hframes = 6
-vframes = 8
+vframes = 16
 frame = 12
 
 [node name="NPCsAnimationPlayer" type="AnimationPlayer" parent="NPCs" index="3"]
