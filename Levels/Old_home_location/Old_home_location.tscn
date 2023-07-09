@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=2]
+[gd_scene load_steps=80 format=2]
 
 [ext_resource path="res://Assets/Levels/Old_home_location/Old_home_location.png" type="Texture" id=1]
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
@@ -1596,8 +1596,8 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 9.5, 12, 14, 15, 16.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 9.5, 12, 14, 15, 16.5, 25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "values": [ {
 "args": [ "Working", -1, 1.0, false ],
 "method": "play"
@@ -1615,6 +1615,9 @@ tracks/6/keys = {
 "method": "stop"
 }, {
 "args": [ "Portal", -1, 1.0, false ],
+"method": "play"
+}, {
+"args": [ "PortalEnteringImpact", -1, 1.0, false ],
 "method": "play"
 } ]
 }
@@ -2383,6 +2386,48 @@ tracks/1/keys = {
 "values": [ Vector2( -59, -22 ), Vector2( -58, -22 ), Vector2( -58, -23 ) ]
 }
 
+[sub_resource type="Animation" id=65]
+resource_name = "PortalEnteringImpact"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("ComputerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 120, 93, 99, 103 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("ComputerAnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "Portal", -1, 1.0, false ],
+"method": "play"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Monitor_light:position")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -58, -23 ), Vector2( -58, -18 ), Vector2( -57, -16 ), Vector2( -59, -25 ) ]
+}
+
 [sub_resource type="Animation" id=34]
 length = 0.001
 tracks/0/type = "value"
@@ -2752,7 +2797,7 @@ position = Vector2( 59, 22 )
 
 [node name="Monitor_light" type="Node2D" parent="World_objects/Computer" index="0"]
 visible = false
-position = Vector2( -59, -22 )
+position = Vector2( -59, -18 )
 
 [node name="Monitor_occlusion" type="LightOccluder2D" parent="World_objects/Computer/Monitor_light" index="0"]
 position = Vector2( 44, -15 )
@@ -2782,6 +2827,7 @@ frame = 36
 anims/Anime = SubResource( 38 )
 anims/Glitching = SubResource( 32 )
 anims/Portal = SubResource( 33 )
+anims/PortalEnteringImpact = SubResource( 65 )
 anims/RESET = SubResource( 34 )
 anims/Rumbling = SubResource( 35 )
 anims/Turn_off = SubResource( 36 )
