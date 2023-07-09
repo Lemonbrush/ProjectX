@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=2]
+[gd_scene load_steps=79 format=2]
 
 [ext_resource path="res://Assets/Levels/Old_home_location/Old_home_location.png" type="Texture" id=1]
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
@@ -2183,7 +2183,7 @@ tracks/22/keys = {
 
 [sub_resource type="Animation" id=63]
 resource_name = "Animate"
-length = 10.0
+length = 11.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("../Camera2D:position")
 tracks/0/interp = 1
@@ -2191,10 +2191,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 2, 10.5, 11 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 35, 30 ), Vector2( -59, -8 ) ]
+"values": [ Vector2( 35, 30 ), Vector2( -59, -8 ), Vector2( -59, -8 ), Vector2( -15, 2 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("../NPCs/SheSprite:frame")
@@ -2203,10 +2203,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 1.4, 1.5, 1.6, 1.7, 2.4, 4, 4.1, 4.2, 4.3, 5, 6, 6.1, 6.2, 6.3, 6.4, 6.8, 6.9, 7, 7.1, 7.2, 7.3, 7.4, 7.5, 8, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, 8.7, 8.8, 8.9, 10, 10.1, 10.2, 10.3, 10.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 54 ]
+"values": [ 54, 55, 55, 56, 55, 54, 55, 55, 56, 55, 54, 60, 61, 62, 63, 64, 66, 67, 68, 69, 70, 71, 73, 74, 78, 79, 80, 81, 82, 83, 84, 85, 86, 85, 90, 91, 92, 93, 94 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../NPCs/SheSprite:position")
@@ -2227,10 +2227,25 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 2, 10.5, 11 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.3, 0.3 ), Vector2( 0.4, 0.4 ) ]
+"values": [ Vector2( 0.3, 0.3 ), Vector2( 0.4, 0.4 ), Vector2( 0.4, 0.4 ), Vector2( 0.6, 0.6 ) ]
+}
+
+[sub_resource type="Animation" id=64]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../NPCs/SheSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 55 ]
 }
 
 [sub_resource type="ParticlesMaterial" id=29]
@@ -2655,6 +2670,7 @@ anims/RESET = SubResource( 54 )
 
 [node name="SofaEvedroppingAnimationPlayer" type="AnimationPlayer" parent="AnimationPlayer" index="4"]
 anims/Animate = SubResource( 63 )
+anims/RESET = SubResource( 64 )
 
 [node name="Camera2D" parent="." index="6"]
 position = Vector2( -15, 2 )
@@ -2736,7 +2752,7 @@ position = Vector2( 59, 22 )
 
 [node name="Monitor_light" type="Node2D" parent="World_objects/Computer" index="0"]
 visible = false
-position = Vector2( -59, -18 )
+position = Vector2( -59, -22 )
 
 [node name="Monitor_occlusion" type="LightOccluder2D" parent="World_objects/Computer/Monitor_light" index="0"]
 position = Vector2( 44, -15 )
@@ -3035,7 +3051,7 @@ texture = ExtResource( 14 )
 offset = Vector2( 7, -10 )
 hframes = 6
 vframes = 16
-frame = 48
+frame = 55
 
 [editable path="Camera2D/Clouds"]
 [editable path="TallTree4"]
