@@ -1,7 +1,7 @@
-[gd_scene load_steps=80 format=2]
+[gd_scene load_steps=84 format=2]
 
 [ext_resource path="res://Assets/Levels/Old_home_location/Old_home_location.png" type="Texture" id=1]
-[ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Old_home_location/Old_home_location.gd" type="Script" id=2]
 [ext_resource path="res://Assets/effects/White_fade_gradient.png" type="Texture" id=3]
 [ext_resource path="res://Assets/BackgroundGradients/BackgroundGradient1.png" type="Texture" id=4]
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=5]
@@ -19,6 +19,8 @@
 [ext_resource path="res://Assets/effects/particles.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Levels/Old_home_location/World_objects/Small_table.png" type="Texture" id=18]
 [ext_resource path="res://Assets/effects/ShineParticles.png" type="Texture" id=19]
+[ext_resource path="res://UI/DebugScreen/GameSpecs.tscn" type="PackedScene" id=20]
+[ext_resource path="res://WorldObjects/Technical/Camera2D/Camera2D.tscn" type="PackedScene" id=21]
 
 [sub_resource type="Environment" id=3]
 background_mode = 4
@@ -32,6 +34,10 @@ adjustment_saturation = 1.3
 shader = ExtResource( 12 )
 shader_param/intensity = 1.0
 shader_param/noise = ExtResource( 11 )
+
+[sub_resource type="Animation" id=38]
+resource_name = "Gate_opening_cut_scene"
+length = 4.0
 
 [sub_resource type="Animation" id=39]
 resource_name = "Intro"
@@ -169,7 +175,7 @@ tracks/10/keys = {
 "values": [ false, true ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Player:visible")
+tracks/11/path = NodePath("World_objects/Computer/ComputerSprite:frame")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -178,10 +184,10 @@ tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ 36 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("World_objects/Computer/ComputerSprite:frame")
+tracks/12/path = NodePath("RainShaderRect:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -190,10 +196,10 @@ tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 36 ]
+"values": [ false ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("RainShaderRect:visible")
+tracks/13/path = NodePath("ParallaxBackground/ParallaxLayer/BackgroundSprite:modulate")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -201,11 +207,11 @@ tracks/13/enabled = true
 tracks/13/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("ParallaxBackground/ParallaxLayer/BackgroundSprite:modulate")
+tracks/14/path = NodePath("ParallaxBackground/CloudsSprite:modulate")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -216,25 +222,13 @@ tracks/14/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
-tracks/15/type = "value"
-tracks/15/path = NodePath("ParallaxBackground/CloudsSprite:modulate")
+tracks/15/type = "method"
+tracks/15/path = NodePath("AnimationPlayer/AnimeWatchingAnimationPlayer")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/imported = false
 tracks/15/enabled = true
 tracks/15/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
-tracks/16/type = "method"
-tracks/16/path = NodePath("AnimationPlayer/AnimeWatchingAnimationPlayer")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/keys = {
 "times": PoolRealArray( 8 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -242,20 +236,32 @@ tracks/16/keys = {
 "method": "play"
 } ]
 }
-tracks/17/type = "value"
-tracks/17/path = NodePath("NPCs:modulate")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/keys = {
+tracks/16/type = "value"
+tracks/16/path = NodePath("NPCs:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
 "times": PoolRealArray( 0, 7.6, 8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
+tracks/17/type = "value"
+tracks/17/path = NodePath("NPCs:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 tracks/18/type = "value"
-tracks/18/path = NodePath("NPCs:visible")
+tracks/18/path = NodePath("NPCs/CookingDustParticles:emitting")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/imported = false
@@ -264,10 +270,10 @@ tracks/18/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("NPCs/CookingDustParticles:emitting")
+tracks/19/path = NodePath("CanvasModulate:color")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/imported = false
@@ -275,11 +281,11 @@ tracks/19/enabled = true
 tracks/19/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("CanvasModulate:color")
+tracks/20/path = NodePath("Camera2D:position")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/imported = false
@@ -288,46 +294,46 @@ tracks/20/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [ Vector2( -15, 2 ) ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Camera2D:position")
+tracks/21/path = NodePath("Camera2D:zoom")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/imported = false
 tracks/21/enabled = true
 tracks/21/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -15, 2 ) ]
-}
-tracks/22/type = "value"
-tracks/22/path = NodePath("Camera2D:zoom")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/keys = {
 "times": PoolRealArray( 0, 4, 6 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0.4, 0.4 ), Vector2( 0.4, 0.4 ), Vector2( 0.6, 0.6 ) ]
 }
-tracks/23/type = "value"
-tracks/23/path = NodePath("BlackForegroundColorRect:visible")
-tracks/23/interp = 1
-tracks/23/loop_wrap = true
-tracks/23/imported = false
-tracks/23/enabled = true
-tracks/23/keys = {
+tracks/22/type = "value"
+tracks/22/path = NodePath("BlackForegroundColorRect:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
 "times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
 }
+tracks/23/type = "value"
+tracks/23/path = NodePath("World_objects/Computer/Monitor_light:visible")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 tracks/24/type = "value"
-tracks/24/path = NodePath("World_objects/Computer/Monitor_light:visible")
+tracks/24/path = NodePath("World_objects/Couch/CouchSprite:frame")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/imported = false
@@ -336,10 +342,10 @@ tracks/24/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ 0 ]
 }
 tracks/25/type = "value"
-tracks/25/path = NodePath("World_objects/Couch/CouchSprite:frame")
+tracks/25/path = NodePath("Foreground_objects/Bed_handles:z_index")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/imported = false
@@ -351,7 +357,7 @@ tracks/25/keys = {
 "values": [ 0 ]
 }
 tracks/26/type = "value"
-tracks/26/path = NodePath("Foreground_objects/Bed_handles:z_index")
+tracks/26/path = NodePath("Foreground_objects/Small_table:position")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/imported = false
@@ -359,11 +365,11 @@ tracks/26/enabled = true
 tracks/26/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
+"update": 0,
+"values": [ Vector2( 137, 46 ) ]
 }
 tracks/27/type = "value"
-tracks/27/path = NodePath("Foreground_objects/Small_table:position")
+tracks/27/path = NodePath("Foreground_objects/Small_table:z_index")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/imported = false
@@ -371,28 +377,16 @@ tracks/27/enabled = true
 tracks/27/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 137, 46 ) ]
+"update": 1,
+"values": [ 0 ]
 }
 tracks/28/type = "value"
-tracks/28/path = NodePath("Foreground_objects/Small_table:z_index")
+tracks/28/path = NodePath("World_objects/Computer/Monitor_light:position")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/imported = false
 tracks/28/enabled = true
 tracks/28/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
-}
-tracks/29/type = "value"
-tracks/29/path = NodePath("World_objects/Computer/Monitor_light:position")
-tracks/29/interp = 1
-tracks/29/loop_wrap = true
-tracks/29/imported = false
-tracks/29/enabled = true
-tracks/29/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -546,7 +540,7 @@ tracks/11/keys = {
 "values": [ true ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Player:visible")
+tracks/12/path = NodePath("World_objects/Computer/ComputerSprite:frame")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -555,10 +549,10 @@ tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ true ]
+"values": [ 36 ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("World_objects/Computer/ComputerSprite:frame")
+tracks/13/path = NodePath("RainShaderRect:visible")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -567,10 +561,10 @@ tracks/13/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 36 ]
+"values": [ false ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("RainShaderRect:visible")
+tracks/14/path = NodePath("ParallaxBackground/ParallaxLayer/BackgroundSprite:modulate")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -579,10 +573,10 @@ tracks/14/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ Color( 0.0745098, 0.0823529, 0.184314, 1 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("ParallaxBackground/ParallaxLayer/BackgroundSprite:modulate")
+tracks/15/path = NodePath("ParallaxBackground/CloudsSprite:modulate")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/imported = false
@@ -591,10 +585,10 @@ tracks/15/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 0.0745098, 0.0823529, 0.184314, 1 ) ]
+"values": [ Color( 0.654902, 0.658824, 0.72549, 1 ) ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("ParallaxBackground/CloudsSprite:modulate")
+tracks/16/path = NodePath("NPCs:visible")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/imported = false
@@ -603,10 +597,10 @@ tracks/16/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 0.654902, 0.658824, 0.72549, 1 ) ]
+"values": [ false ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("NPCs:visible")
+tracks/17/path = NodePath("NPCs/CookingDustParticles:emitting")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/imported = false
@@ -615,10 +609,10 @@ tracks/17/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ true ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("NPCs/CookingDustParticles:emitting")
+tracks/18/path = NodePath("NPCs:modulate")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/imported = false
@@ -627,10 +621,10 @@ tracks/18/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ true ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("NPCs:modulate")
+tracks/19/path = NodePath("CanvasModulate:color")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/imported = false
@@ -639,10 +633,10 @@ tracks/19/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 0.2, 0.258824, 0.376471, 1 ) ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("CanvasModulate:color")
+tracks/20/path = NodePath("Camera2D:position")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/imported = false
@@ -651,10 +645,10 @@ tracks/20/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 0.2, 0.258824, 0.376471, 1 ) ]
+"values": [ Vector2( -15, 2 ) ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Camera2D:position")
+tracks/21/path = NodePath("Camera2D:zoom")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/imported = false
@@ -663,10 +657,10 @@ tracks/21/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -15, 2 ) ]
+"values": [ Vector2( 0.6, 0.6 ) ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Camera2D:zoom")
+tracks/22/path = NodePath("World_objects/Computer/Monitor_light:visible")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/imported = false
@@ -675,10 +669,10 @@ tracks/22/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0.6, 0.6 ) ]
+"values": [ false ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("World_objects/Computer/Monitor_light:visible")
+tracks/23/path = NodePath("World_objects/Couch/CouchSprite:frame")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/imported = false
@@ -687,10 +681,10 @@ tracks/23/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ 0 ]
 }
 tracks/24/type = "value"
-tracks/24/path = NodePath("World_objects/Couch/CouchSprite:frame")
+tracks/24/path = NodePath("Foreground_objects/Bed_handles:z_index")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/imported = false
@@ -702,7 +696,7 @@ tracks/24/keys = {
 "values": [ 0 ]
 }
 tracks/25/type = "value"
-tracks/25/path = NodePath("Foreground_objects/Bed_handles:z_index")
+tracks/25/path = NodePath("Foreground_objects/Small_table:position")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/imported = false
@@ -711,10 +705,10 @@ tracks/25/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0 ]
+"values": [ Vector2( 137, 46 ) ]
 }
 tracks/26/type = "value"
-tracks/26/path = NodePath("Foreground_objects/Small_table:position")
+tracks/26/path = NodePath("Foreground_objects/Small_table:z_index")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/imported = false
@@ -723,20 +717,11 @@ tracks/26/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 137, 46 ) ]
-}
-tracks/27/type = "value"
-tracks/27/path = NodePath("Foreground_objects/Small_table:z_index")
-tracks/27/interp = 1
-tracks/27/loop_wrap = true
-tracks/27/imported = false
-tracks/27/enabled = true
-tracks/27/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
 "values": [ 0 ]
 }
+
+[sub_resource type="Animation" id=84]
+resource_name = "open_transition"
 
 [sub_resource type="Animation" id=44]
 resource_name = "Animate"
@@ -2235,6 +2220,32 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Vector2( 0.3, 0.3 ), Vector2( 0.4, 0.4 ), Vector2( 0.4, 0.4 ), Vector2( 0.6, 0.6 ) ]
 }
+tracks/4/type = "method"
+tracks/4/path = NodePath("..")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 11 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "spawn_player"
+} ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../NPCs:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 11 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [sub_resource type="Animation" id=64]
 length = 0.001
@@ -2323,8 +2334,7 @@ tracks/1/keys = {
 "values": [ 0.3, 0.35 ]
 }
 
-[sub_resource type="Animation" id=38]
-resource_name = "Anime"
+[sub_resource type="Animation" id=85]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -2583,10 +2593,10 @@ extents = Vector2( 4.0625, 1 )
 [sub_resource type="RectangleShape2D" id=28]
 extents = Vector2( 10.0625, 1 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=74]
 extents = Vector2( 112, 3.5 )
 
-[sub_resource type="RectangleShape2D" id=21]
+[sub_resource type="RectangleShape2D" id=75]
 extents = Vector2( 43.5, 3.5 )
 
 [sub_resource type="RectangleShape2D" id=22]
@@ -2604,31 +2614,31 @@ extents = Vector2( 3.5, 7.5 )
 [sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 3.5, 51 )
 
-[sub_resource type="OccluderPolygon2D" id=16]
+[sub_resource type="OccluderPolygon2D" id=76]
 polygon = PoolVector2Array( -94, 19, -94, 16, -86, 16, -86, 14, -94, 14, -94, 9, -181, 9, -181, 19 )
 
 [sub_resource type="OccluderPolygon2D" id=5]
 polygon = PoolVector2Array( 135, 78, 142, 78, 142, 63, 140, 63, 135, 63, 135, 71, -76, 71, -76, 38, -75, 38, -75, -31, 135, -31, 135, 4, 142, 4, 142, -38, -82, -38, -82, 38, -81, 38, -81, 71, -82, 71, -82, 78 )
 
-[sub_resource type="OccluderPolygon2D" id=17]
+[sub_resource type="OccluderPolygon2D" id=77]
 polygon = PoolVector2Array( -58, 58, -58, 56, -66, 56, -66, 58 )
 
-[sub_resource type="OccluderPolygon2D" id=18]
+[sub_resource type="OccluderPolygon2D" id=78]
 polygon = PoolVector2Array( -70, 52, -62, 52, -62, 50, -70, 50 )
 
-[sub_resource type="OccluderPolygon2D" id=19]
+[sub_resource type="OccluderPolygon2D" id=79]
 polygon = PoolVector2Array( -71, 46, -66, 46, -66, 44, -71, 44 )
 
-[sub_resource type="OccluderPolygon2D" id=10]
+[sub_resource type="OccluderPolygon2D" id=80]
 polygon = PoolVector2Array( -78, 40, -70, 40, -70, 38, -78, 38 )
 
-[sub_resource type="OccluderPolygon2D" id=11]
+[sub_resource type="OccluderPolygon2D" id=81]
 polygon = PoolVector2Array( -82, 34, -74, 34, -74, 32, -82, 32 )
 
-[sub_resource type="OccluderPolygon2D" id=12]
+[sub_resource type="OccluderPolygon2D" id=82]
 polygon = PoolVector2Array( -86, 28, -78, 28, -78, 26, -86, 26 )
 
-[sub_resource type="OccluderPolygon2D" id=13]
+[sub_resource type="OccluderPolygon2D" id=83]
 polygon = PoolVector2Array( -90, 22, -82, 22, -82, 20, -90, 20 )
 
 [sub_resource type="ParticlesMaterial" id=53]
@@ -2649,16 +2659,17 @@ scale_random = 1.0
 scale_curve = SubResource( 52 )
 color_ramp = SubResource( 50 )
 
-[node name="Old_home_location" instance=ExtResource( 2 )]
+[node name="Old_home_location" type="Node2D"]
+script = ExtResource( 2 )
 dynamic_camera = false
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 3 )
 
-[node name="CanvasModulate" type="CanvasModulate" parent="." index="1"]
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.2, 0.258824, 0.376471, 1 )
 
-[node name="RainShaderRect" type="TextureRect" parent="." index="2"]
+[node name="RainShaderRect" type="TextureRect" parent="."]
 visible = false
 light_mask = 0
 material = SubResource( 31 )
@@ -2668,70 +2679,73 @@ margin_right = 853.0
 margin_bottom = 821.0
 texture = ExtResource( 11 )
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="3"]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_limit_end = Vector2( 0, 320 )
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2( 530, 0 )
 
-[node name="BackgroundSprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
+[node name="BackgroundSprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 modulate = Color( 0.0745098, 0.0823529, 0.184314, 1 )
 scale = Vector2( 0.573, 0.568384 )
 texture = ExtResource( 4 )
 centered = false
 
-[node name="CloudsSprite" type="Sprite" parent="ParallaxBackground" index="1"]
+[node name="CloudsSprite" type="Sprite" parent="ParallaxBackground"]
 modulate = Color( 0.164706, 0.180392, 0.4, 1 )
 position = Vector2( 350, -22 )
 scale = Vector2( 0.77, 0.77 )
 texture = ExtResource( 6 )
 
-[node name="GameSpecs" parent="." index="4"]
+[node name="GameSpecs" parent="." instance=ExtResource( 20 )]
 visible = false
 
-[node name="AnimationPlayer" parent="." index="5"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+pause_mode = 2
 autoplay = "Intro"
+anims/Gate_opening_cut_scene = SubResource( 38 )
 anims/Intro = SubResource( 39 )
 anims/RESET = SubResource( 40 )
+anims/open_transition = SubResource( 84 )
 
-[node name="AnimeWatchingAnimationPlayer" type="AnimationPlayer" parent="AnimationPlayer" index="0"]
+[node name="AnimeWatchingAnimationPlayer" type="AnimationPlayer" parent="AnimationPlayer"]
 root_node = NodePath("../../World_objects/Couch")
 anims/Animate = SubResource( 44 )
 anims/RESET = SubResource( 46 )
 
-[node name="CookingTogetherAnimationPlayer" type="AnimationPlayer" parent="AnimationPlayer" index="1"]
+[node name="CookingTogetherAnimationPlayer" type="AnimationPlayer" parent="AnimationPlayer"]
 anims/Animate = SubResource( 56 )
 anims/RESET = SubResource( 57 )
 
-[node name="BedJumpingAnimationPlayer" type="AnimationPlayer" parent="AnimationPlayer" index="2"]
+[node name="BedJumpingAnimationPlayer" type="AnimationPlayer" parent="AnimationPlayer"]
 root_node = NodePath("../../NPCs")
 anims/Animate = SubResource( 41 )
 anims/RESET = SubResource( 43 )
 
-[node name="NightAnimationPlayer" type="AnimationPlayer" parent="AnimationPlayer" index="3"]
+[node name="NightAnimationPlayer" type="AnimationPlayer" parent="AnimationPlayer"]
 root_node = NodePath("../..")
 anims/Animate = SubResource( 55 )
 anims/RESET = SubResource( 54 )
 
-[node name="SofaEvedroppingAnimationPlayer" type="AnimationPlayer" parent="AnimationPlayer" index="4"]
+[node name="SofaEvedroppingAnimationPlayer" type="AnimationPlayer" parent="AnimationPlayer"]
 anims/Animate = SubResource( 63 )
 anims/RESET = SubResource( 64 )
 
-[node name="Camera2D" parent="." index="6"]
+[node name="Camera2D" parent="." instance=ExtResource( 21 )]
 position = Vector2( -15, 2 )
 z_index = 1
 zoom = Vector2( 0.6, 0.6 )
 backgroundColor = Color( 0.72549, 0.827451, 0.901961, 1 )
 zoom_based_on_editor_value = true
 
-[node name="RainParticles2D" type="Particles2D" parent="Camera2D" index="2"]
+[node name="RainParticles2D" type="Particles2D" parent="Camera2D"]
 visible = false
 position = Vector2( 205, -99 )
 amount = 10000
 lifetime = 0.5
 process_material = SubResource( 29 )
 
-[node name="Clouds" parent="Camera2D" index="3" instance=ExtResource( 9 )]
+[node name="Clouds" parent="Camera2D" instance=ExtResource( 9 )]
 position = Vector2( -29, -24 )
 z_index = -3
 
@@ -2740,70 +2754,70 @@ amount = 5
 lifetime = 50.0
 process_material = SubResource( 15 )
 
-[node name="TallTree4" parent="." index="7" instance=ExtResource( 7 )]
+[node name="TallTree4" parent="." instance=ExtResource( 7 )]
 position = Vector2( 89, 126 )
 z_index = -3
 
 [node name="CollisionShape2D" parent="TallTree4/PassThroughBody" index="0"]
 disabled = true
 
-[node name="WorldSprite" parent="." index="8"]
+[node name="WorldSprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 
-[node name="World_objects" type="Node2D" parent="." index="9"]
+[node name="World_objects" type="Node2D" parent="."]
 
-[node name="Trees" type="Node2D" parent="World_objects" index="0"]
+[node name="Trees" type="Node2D" parent="World_objects"]
 position = Vector2( 9, -58 )
 z_index = -2
 
-[node name="TallTree2" parent="World_objects/Trees" index="0" instance=ExtResource( 7 )]
+[node name="TallTree2" parent="World_objects/Trees" instance=ExtResource( 7 )]
 position = Vector2( 119, 137 )
 
 [node name="CollisionShape2D" parent="World_objects/Trees/TallTree2/PassThroughBody" index="0"]
 disabled = true
 
-[node name="CurvedTree" parent="World_objects/Trees" index="1" instance=ExtResource( 8 )]
+[node name="CurvedTree" parent="World_objects/Trees" instance=ExtResource( 8 )]
 position = Vector2( 120, 168 )
 
 [node name="CollisionShape2D" parent="World_objects/Trees/CurvedTree/PassThroughBody" index="0"]
 disabled = true
 
-[node name="CurvedTree2" parent="World_objects/Trees" index="2" instance=ExtResource( 8 )]
+[node name="CurvedTree2" parent="World_objects/Trees" instance=ExtResource( 8 )]
 position = Vector2( 178, 179 )
 
 [node name="CollisionShape2D" parent="World_objects/Trees/CurvedTree2/PassThroughBody" index="0"]
 disabled = true
 
-[node name="CurvedTree3" parent="World_objects/Trees" index="3" instance=ExtResource( 8 )]
+[node name="CurvedTree3" parent="World_objects/Trees" instance=ExtResource( 8 )]
 position = Vector2( 216, 144 )
 
 [node name="CollisionShape2D" parent="World_objects/Trees/CurvedTree3/PassThroughBody" index="0"]
 disabled = true
 
-[node name="TallTree" parent="World_objects/Trees" index="4" instance=ExtResource( 7 )]
+[node name="TallTree" parent="World_objects/Trees" instance=ExtResource( 7 )]
 position = Vector2( 149, 156 )
 
 [node name="CollisionShape2D" parent="World_objects/Trees/TallTree/PassThroughBody" index="0"]
 disabled = true
 
-[node name="TallTree3" parent="World_objects/Trees" index="5" instance=ExtResource( 7 )]
+[node name="TallTree3" parent="World_objects/Trees" instance=ExtResource( 7 )]
 position = Vector2( 218, 176 )
 
 [node name="CollisionShape2D" parent="World_objects/Trees/TallTree3/PassThroughBody" index="0"]
 disabled = true
 
-[node name="Computer" type="Node2D" parent="World_objects" index="1"]
+[node name="Computer" type="Node2D" parent="World_objects"]
 position = Vector2( 59, 22 )
 
-[node name="Monitor_light" type="Node2D" parent="World_objects/Computer" index="0"]
+[node name="Monitor_light" type="Node2D" parent="World_objects/Computer"]
 visible = false
 position = Vector2( -59, -18 )
 
-[node name="Monitor_occlusion" type="LightOccluder2D" parent="World_objects/Computer/Monitor_light" index="0"]
+[node name="Monitor_occlusion" type="LightOccluder2D" parent="World_objects/Computer/Monitor_light"]
 position = Vector2( 44, -15 )
 occluder = SubResource( 4 )
 
-[node name="Light2D" type="Light2D" parent="World_objects/Computer/Monitor_light" index="1"]
+[node name="Light2D" type="Light2D" parent="World_objects/Computer/Monitor_light"]
 position = Vector2( 58, 27 )
 texture = ExtResource( 3 )
 texture_scale = 0.312963
@@ -2813,18 +2827,18 @@ shadow_gradient_length = 0.6
 shadow_filter = 5
 shadow_filter_smooth = 2.7
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="World_objects/Computer/Monitor_light" index="2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="World_objects/Computer/Monitor_light"]
 autoplay = "Idle"
 anims/Idle = SubResource( 20 )
 
-[node name="ComputerSprite" type="Sprite" parent="World_objects/Computer" index="1"]
+[node name="ComputerSprite" type="Sprite" parent="World_objects/Computer"]
 texture = ExtResource( 13 )
 hframes = 30
 vframes = 6
 frame = 36
 
-[node name="ComputerAnimationPlayer" type="AnimationPlayer" parent="World_objects/Computer" index="2"]
-anims/Anime = SubResource( 38 )
+[node name="ComputerAnimationPlayer" type="AnimationPlayer" parent="World_objects/Computer"]
+anims/Anime = SubResource( 85 )
 anims/Glitching = SubResource( 32 )
 anims/Portal = SubResource( 33 )
 anims/PortalEnteringImpact = SubResource( 65 )
@@ -2833,7 +2847,7 @@ anims/Rumbling = SubResource( 35 )
 anims/Turn_off = SubResource( 36 )
 anims/Working = SubResource( 37 )
 
-[node name="PortalActivationParticles" type="Particles2D" parent="World_objects/Computer" index="3"]
+[node name="PortalActivationParticles" type="Particles2D" parent="World_objects/Computer"]
 material = SubResource( 48 )
 position = Vector2( 0, 20 )
 emitting = false
@@ -2845,7 +2859,7 @@ randomness = 1.0
 process_material = SubResource( 58 )
 texture = ExtResource( 17 )
 
-[node name="PortalEnteringParticles" type="Particles2D" parent="World_objects/Computer" index="4"]
+[node name="PortalEnteringParticles" type="Particles2D" parent="World_objects/Computer"]
 pause_mode = 2
 material = SubResource( 59 )
 position = Vector2( -4, 12 )
@@ -2858,33 +2872,34 @@ randomness = 1.0
 process_material = SubResource( 62 )
 texture = ExtResource( 19 )
 
-[node name="Couch" type="Node2D" parent="World_objects" index="2"]
+[node name="Couch" type="Node2D" parent="World_objects"]
 
-[node name="CouchSprite" type="Sprite" parent="World_objects/Couch" index="0"]
+[node name="CouchSprite" type="Sprite" parent="World_objects/Couch"]
 position = Vector2( 26, 31 )
 texture = ExtResource( 16 )
 hframes = 5
 vframes = 2
 
-[node name="Player" parent="." index="10"]
-position = Vector2( -51, 38 )
+[node name="PlayerSpawnPosition" type="Position2D" parent="World_objects"]
+position = Vector2( -58, -3 )
 
-[node name="Light2D2" parent="Player" index="5"]
-visible = false
-
-[node name="Foreground_objects" type="Node2D" parent="." index="11"]
+[node name="Foreground_objects" type="Node2D" parent="."]
 position = Vector2( -93, -3 )
 
-[node name="Bed_handles" type="Sprite" parent="Foreground_objects" index="0"]
+[node name="Bed_handles" type="Sprite" parent="Foreground_objects"]
 z_index = 1
 texture = ExtResource( 10 )
 
-[node name="Small_table" type="Sprite" parent="Foreground_objects" index="1"]
+[node name="Small_table" type="Sprite" parent="Foreground_objects"]
 position = Vector2( 129, 46 )
 z_index = 1
 texture = ExtResource( 18 )
 
-[node name="PassThroughBody7" parent="Collisions/PassTrough" index="0" groups=["passThroughObject"] instance=ExtResource( 5 )]
+[node name="Collisions" type="Node2D" parent="."]
+
+[node name="PassTrough" type="Node2D" parent="Collisions"]
+
+[node name="PassThroughBody7" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 5 )]
 position = Vector2( 20, 6 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody7" index="0"]
@@ -2892,7 +2907,7 @@ position = Vector2( -66.0625, -6 )
 shape = SubResource( 27 )
 one_way_collision = true
 
-[node name="PassThroughBody8" parent="Collisions/PassTrough" index="1" groups=["passThroughObject"] instance=ExtResource( 5 )]
+[node name="PassThroughBody8" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 5 )]
 position = Vector2( 24, 12 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody8" index="0"]
@@ -2900,7 +2915,7 @@ position = Vector2( -66.0625, -6 )
 shape = SubResource( 27 )
 one_way_collision = true
 
-[node name="PassThroughBody9" parent="Collisions/PassTrough" index="2" groups=["passThroughObject"] instance=ExtResource( 5 )]
+[node name="PassThroughBody9" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 5 )]
 position = Vector2( 28, 18 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody9" index="0"]
@@ -2908,7 +2923,7 @@ position = Vector2( -66.0625, -6 )
 shape = SubResource( 27 )
 one_way_collision = true
 
-[node name="PassThroughBody10" parent="Collisions/PassTrough" index="3" groups=["passThroughObject"] instance=ExtResource( 5 )]
+[node name="PassThroughBody10" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 5 )]
 position = Vector2( 32, 24 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody10" index="0"]
@@ -2916,7 +2931,7 @@ position = Vector2( -66.0625, -6 )
 shape = SubResource( 27 )
 one_way_collision = true
 
-[node name="PassThroughBody11" parent="Collisions/PassTrough" index="4" groups=["passThroughObject"] instance=ExtResource( 5 )]
+[node name="PassThroughBody11" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 5 )]
 position = Vector2( 36, 30 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody11" index="0"]
@@ -2924,7 +2939,7 @@ position = Vector2( -66.0625, -6 )
 shape = SubResource( 27 )
 one_way_collision = true
 
-[node name="PassThroughBody12" parent="Collisions/PassTrough" index="5" groups=["passThroughObject"] instance=ExtResource( 5 )]
+[node name="PassThroughBody12" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 5 )]
 position = Vector2( 40, 36 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody12" index="0"]
@@ -2932,7 +2947,7 @@ position = Vector2( -66.0625, -6 )
 shape = SubResource( 27 )
 one_way_collision = true
 
-[node name="PassThroughBody13" parent="Collisions/PassTrough" index="6" groups=["passThroughObject"] instance=ExtResource( 5 )]
+[node name="PassThroughBody13" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 5 )]
 position = Vector2( 44, 42 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody13" index="0"]
@@ -2940,7 +2955,7 @@ position = Vector2( -66.0625, -6 )
 shape = SubResource( 27 )
 one_way_collision = true
 
-[node name="PassThroughBody14" parent="Collisions/PassTrough" index="7" groups=["passThroughObject"] instance=ExtResource( 5 )]
+[node name="PassThroughBody14" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 5 )]
 position = Vector2( 48, 48 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody14" index="0"]
@@ -2948,7 +2963,7 @@ position = Vector2( -66.0625, -6 )
 shape = SubResource( 27 )
 one_way_collision = true
 
-[node name="PassThroughBody15" parent="Collisions/PassTrough" index="8" groups=["passThroughObject"] instance=ExtResource( 5 )]
+[node name="PassThroughBody15" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 5 )]
 position = Vector2( 67, 39 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody15" index="0"]
@@ -2956,25 +2971,27 @@ position = Vector2( -60.0625, -6 )
 shape = SubResource( 28 )
 one_way_collision = true
 
-[node name="PassThroughBody18" parent="Collisions/Solid" index="0" instance=ExtResource( 5 )]
+[node name="Solid" type="Node2D" parent="Collisions"]
+
+[node name="PassThroughBody18" parent="Collisions/Solid" instance=ExtResource( 5 )]
 position = Vector2( -114, 63 )
 collision_layer = 17
 collision_mask = 17
 
 [node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody18" index="0"]
 position = Vector2( 82, -12.5 )
-shape = SubResource( 2 )
+shape = SubResource( 74 )
 
-[node name="PassThroughBody19" parent="Collisions/Solid" index="1" instance=ExtResource( 5 )]
+[node name="PassThroughBody19" parent="Collisions/Solid" instance=ExtResource( 5 )]
 position = Vector2( -107, 13 )
 collision_layer = 17
 collision_mask = 17
 
 [node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody19" index="0"]
 position = Vector2( 13.5, -12.5 )
-shape = SubResource( 21 )
+shape = SubResource( 75 )
 
-[node name="PassThroughBody20" parent="Collisions/Solid" index="2" instance=ExtResource( 5 )]
+[node name="PassThroughBody20" parent="Collisions/Solid" instance=ExtResource( 5 )]
 position = Vector2( -114, -46 )
 collision_layer = 17
 collision_mask = 17
@@ -2983,7 +3000,7 @@ collision_mask = 17
 position = Vector2( 82, -12.5 )
 shape = SubResource( 22 )
 
-[node name="PassThroughBody21" parent="Collisions/Solid" index="3" instance=ExtResource( 5 )]
+[node name="PassThroughBody21" parent="Collisions/Solid" instance=ExtResource( 5 )]
 position = Vector2( 103, -39 )
 collision_layer = 17
 collision_mask = 17
@@ -2992,7 +3009,7 @@ collision_mask = 17
 position = Vector2( -26.5, 1.5 )
 shape = SubResource( 23 )
 
-[node name="PassThroughBody22" parent="Collisions/Solid" index="4" instance=ExtResource( 5 )]
+[node name="PassThroughBody22" parent="Collisions/Solid" instance=ExtResource( 5 )]
 position = Vector2( 105, -4 )
 collision_layer = 17
 collision_mask = 17
@@ -3001,7 +3018,7 @@ collision_mask = 17
 position = Vector2( -28.5, 13.5 )
 shape = SubResource( 24 )
 
-[node name="PassThroughBody23" parent="Collisions/Solid" index="5" instance=ExtResource( 5 )]
+[node name="PassThroughBody23" parent="Collisions/Solid" instance=ExtResource( 5 )]
 position = Vector2( 103, 55 )
 collision_layer = 17
 collision_mask = 17
@@ -3010,7 +3027,7 @@ collision_mask = 17
 position = Vector2( -26.5, -8.5 )
 shape = SubResource( 25 )
 
-[node name="PassThroughBody24" parent="Collisions/Solid" index="6" instance=ExtResource( 5 )]
+[node name="PassThroughBody24" parent="Collisions/Solid" instance=ExtResource( 5 )]
 position = Vector2( -114, -39 )
 collision_layer = 17
 collision_mask = 17
@@ -3019,47 +3036,55 @@ collision_mask = 17
 position = Vector2( -26.5, 35 )
 shape = SubResource( 26 )
 
-[node name="Occlusion" type="Node2D" parent="." index="17"]
+[node name="Ladders" type="Node2D" parent="."]
 
-[node name="Bed_occlusion" type="LightOccluder2D" parent="Occlusion" index="0"]
+[node name="Doors" type="Node2D" parent="."]
+
+[node name="Lighting" type="Node2D" parent="."]
+
+[node name="AirBlowers" type="Node2D" parent="."]
+
+[node name="Occlusion" type="Node2D" parent="."]
+
+[node name="Bed_occlusion" type="LightOccluder2D" parent="Occlusion"]
 position = Vector2( 44, -15 )
-occluder = SubResource( 16 )
+occluder = SubResource( 76 )
 
-[node name="Room_outer_occlusion" type="LightOccluder2D" parent="Occlusion" index="1"]
+[node name="Room_outer_occlusion" type="LightOccluder2D" parent="Occlusion"]
 position = Vector2( -62, -24 )
 occluder = SubResource( 5 )
 
-[node name="Stair" type="Node2D" parent="Occlusion" index="2"]
+[node name="Stair" type="Node2D" parent="Occlusion"]
 
-[node name="LightOccluder2D8" type="LightOccluder2D" parent="Occlusion/Stair" index="0"]
+[node name="LightOccluder2D8" type="LightOccluder2D" parent="Occlusion/Stair"]
 position = Vector2( 44, -15 )
-occluder = SubResource( 17 )
+occluder = SubResource( 77 )
 
-[node name="LightOccluder2D9" type="LightOccluder2D" parent="Occlusion/Stair" index="1"]
+[node name="LightOccluder2D9" type="LightOccluder2D" parent="Occlusion/Stair"]
 position = Vector2( 44, -15 )
-occluder = SubResource( 18 )
+occluder = SubResource( 78 )
 
-[node name="LightOccluder2D10" type="LightOccluder2D" parent="Occlusion/Stair" index="2"]
+[node name="LightOccluder2D10" type="LightOccluder2D" parent="Occlusion/Stair"]
 position = Vector2( 44, -15 )
-occluder = SubResource( 19 )
+occluder = SubResource( 79 )
 
-[node name="LightOccluder2D11" type="LightOccluder2D" parent="Occlusion/Stair" index="3"]
+[node name="LightOccluder2D11" type="LightOccluder2D" parent="Occlusion/Stair"]
 position = Vector2( 44, -15 )
-occluder = SubResource( 10 )
+occluder = SubResource( 80 )
 
-[node name="LightOccluder2D12" type="LightOccluder2D" parent="Occlusion/Stair" index="4"]
+[node name="LightOccluder2D12" type="LightOccluder2D" parent="Occlusion/Stair"]
 position = Vector2( 44, -15 )
-occluder = SubResource( 11 )
+occluder = SubResource( 81 )
 
-[node name="LightOccluder2D13" type="LightOccluder2D" parent="Occlusion/Stair" index="5"]
+[node name="LightOccluder2D13" type="LightOccluder2D" parent="Occlusion/Stair"]
 position = Vector2( 44, -15 )
-occluder = SubResource( 12 )
+occluder = SubResource( 82 )
 
-[node name="LightOccluder2D14" type="LightOccluder2D" parent="Occlusion/Stair" index="6"]
+[node name="LightOccluder2D14" type="LightOccluder2D" parent="Occlusion/Stair"]
 position = Vector2( 44, -15 )
-occluder = SubResource( 13 )
+occluder = SubResource( 83 )
 
-[node name="BlackForegroundColorRect" type="ColorRect" parent="." index="18"]
+[node name="BlackForegroundColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -485.0
@@ -3068,9 +3093,9 @@ margin_right = 534.0
 margin_bottom = 386.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="NPCs" type="Node2D" parent="." index="19"]
+[node name="NPCs" type="Node2D" parent="."]
 
-[node name="MeSprite" type="Sprite" parent="NPCs" index="0"]
+[node name="MeSprite" type="Sprite" parent="NPCs"]
 visible = false
 position = Vector2( 32, 40 )
 rotation = 0.261799
@@ -3080,7 +3105,7 @@ hframes = 6
 vframes = 14
 frame = 48
 
-[node name="CookingDustParticles" type="Particles2D" parent="NPCs" index="1"]
+[node name="CookingDustParticles" type="Particles2D" parent="NPCs"]
 material = SubResource( 48 )
 position = Vector2( -80, 40 )
 amount = 30
@@ -3089,7 +3114,7 @@ randomness = 1.0
 process_material = SubResource( 53 )
 texture = ExtResource( 17 )
 
-[node name="SheSprite" type="Sprite" parent="NPCs" index="2"]
+[node name="SheSprite" type="Sprite" parent="NPCs"]
 visible = false
 position = Vector2( -125, -10 )
 rotation = -0.261799
