@@ -15,4 +15,10 @@ func player_interacted_with_portal(_args):
 func spawn_player():
 	var playerInstance = playerScene.instance()
 	get_parent().add_child(playerInstance)
+	playerInstance.set_name("Player")
 	playerInstance.global_position = player_spawn_position.position
+
+func despawn_player():
+	var player = find_node("Player")
+	if player:
+		player.queue_free()
