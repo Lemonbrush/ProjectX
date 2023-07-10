@@ -2273,11 +2273,14 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 9 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
 "method": "despawn_player"
+}, {
+"args": [  ],
+"method": "transition_to_portal_sinking_animation_scene"
 } ]
 }
 tracks/1/type = "value"
@@ -2386,7 +2389,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 0, 7.8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true, true ]
+"values": [ false, true ]
 }
 tracks/10/type = "method"
 tracks/10/path = NodePath("../World_objects/Computer/ComputerAnimationPlayer")
@@ -3036,7 +3039,7 @@ position = Vector2( 59, 22 )
 
 [node name="Monitor_light" type="Node2D" parent="World_objects/Computer"]
 visible = false
-position = Vector2( -59, -25 )
+position = Vector2( -59, -18 )
 
 [node name="Monitor_occlusion" type="LightOccluder2D" parent="World_objects/Computer/Monitor_light"]
 position = Vector2( 44, -15 )
