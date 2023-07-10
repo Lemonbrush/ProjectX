@@ -53,6 +53,7 @@ anim_offset_curve = SubResource( 2 )
 
 [sub_resource type="Animation" id=41]
 resource_name = "Intro"
+length = 2.0
 tracks/0/type = "method"
 tracks/0/path = NodePath("Logo/AnimationPlayer")
 tracks/0/interp = 1
@@ -98,7 +99,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.6, 1 ),
+"times": PoolRealArray( 0, 1.6, 2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
