@@ -2,6 +2,7 @@ extends Node
 
 var save_file_resource = Save_file_resource.new()
 
+var default_load_scene_path = "res://Levels/Old_home_location/Old_home_location.tscn"
 var SAVE_DIR = "user://Saves"
 var game_save_name = "Game_save.tres"
 var save_path = SAVE_DIR + game_save_name
@@ -54,7 +55,7 @@ func load_game():
 		LevelManager.transition_to_scene(lastVisitedScene)
 	else:
 		delete_save()
-		var packedScene = load("res://Levels/Start_gate_location/Start_gate_location.tscn")
+		var packedScene = load(default_load_scene_path)
 		LevelManager.transition_to_scene(packedScene)
 
 func delete_save():
