@@ -393,6 +393,18 @@ tracks/28/keys = {
 "update": 0,
 "values": [ Vector2( -59, -22 ) ]
 }
+tracks/29/type = "value"
+tracks/29/path = NodePath(".:is_able_to_skip_cutscene")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=40]
 length = 0.001
@@ -2247,6 +2259,18 @@ tracks/5/keys = {
 "update": 1,
 "values": [ true, false ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("..:is_able_to_skip_cutscene")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 10.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [sub_resource type="Animation" id=64]
 length = 0.001
@@ -3039,7 +3063,7 @@ position = Vector2( 59, 22 )
 
 [node name="Monitor_light" type="Node2D" parent="World_objects/Computer"]
 visible = false
-position = Vector2( -59, -18 )
+position = Vector2( -59, -22 )
 
 [node name="Monitor_occlusion" type="LightOccluder2D" parent="World_objects/Computer/Monitor_light"]
 position = Vector2( 44, -15 )
