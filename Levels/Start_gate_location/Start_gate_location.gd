@@ -9,6 +9,9 @@ func _ready():
 	if GameEventConstants.is_cauldron_quest_completed():
 		lonelyDweller.visible = false
 	
+	if GameEventConstants.get_constant("is_start_gate_first_entrance"):
+		animationPlayer.play("First_entrance_animation")
+	
 func _on_key_item_collected(item_name):
 	if item_name == "HeartKeyItem":
 		animationPlayer.queue("Gate_opening_cut_scene")

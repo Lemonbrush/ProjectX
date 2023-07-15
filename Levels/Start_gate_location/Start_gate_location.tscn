@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=2]
+[gd_scene load_steps=97 format=2]
 
 [ext_resource path="res://Assets/WaterSurface/water_surface3.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -8,7 +8,7 @@
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=6]
 [ext_resource path="res://WorldObjects/Technical/Camera2D/Camera2D.tscn" type="PackedScene" id=7]
 [ext_resource path="res://WorldObjects/Destructables/Barrel/Barrel.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Assets/Levels/DemoWorld1.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Levels/Start_gate_location/DemoWorld1.png" type="Texture" id=9]
 [ext_resource path="res://Levels/Start_gate_location/Start_gate_location.gd" type="Script" id=10]
 [ext_resource path="res://Assets/Decorations/GrassDecorationsSheet.png" type="Texture" id=11]
 [ext_resource path="res://Levels/Start_gate_location/LoveGate/Gates/Gates.tscn" type="PackedScene" id=12]
@@ -20,6 +20,8 @@
 [ext_resource path="res://WorldObjects/Technical/Ladder/Ladder.tscn" type="PackedScene" id=18]
 [ext_resource path="res://WorldObjects/Interactables/OpenableContainers/Chest/Chest.tscn" type="PackedScene" id=19]
 [ext_resource path="res://WorldObjects/Sign/Sign.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Assets/Levels/Start_gate_location/World_objects/Sofa_landing-Sheet.png" type="Texture" id=21]
+[ext_resource path="res://Assets/effects/particles.png" type="Texture" id=22]
 [ext_resource path="res://Assets/WorldObjects/Signs/Tumbstone.png" type="Texture" id=23]
 [ext_resource path="res://WorldObjects/Moving_platforms/MovingPlatform.gd" type="Script" id=24]
 [ext_resource path="res://Assets/WorldObjects/Floating_block.png" type="Texture" id=25]
@@ -47,6 +49,152 @@ glow_enabled = true
 glow_hdr_threshold = 1.5
 adjustment_enabled = true
 adjustment_saturation = 1.3
+
+[sub_resource type="Animation" id=78]
+resource_name = "First_entrance_animation"
+length = 15.0
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "pause_level"
+}, {
+"args": [  ],
+"method": "unpouse_level"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2, 6, 10.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -674, -417 ), Vector2( -674, -417 ), Vector2( -674, -97 ), Vector2( -674, -97 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("WorldObjects/SofaLandingIntro/SofaLandingSprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 6.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -673, -585 ), Vector2( -673, -585 ), Vector2( -673, -90 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("WorldObjects/SofaLandingIntro/SofaLandingSprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5, 5.1, 5.2, 5.3, 5.4, 5.5, 6.5, 6.6, 6.7, 8, 8.1, 8.2, 8.5, 9.2, 9.8, 9.9, 10.1, 10.2, 10.3, 10.4, 10.5, 10.6, 10.7, 10.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 2, 12, 13, 14, 24, 25, 26, 27, 28, 26, 28, 28, 29, 30, 31, 32, 33, 34, 35 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Player:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 10.9 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -672, -74 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Player:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 10.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("WorldObjects/SofaLandingIntro/SofaLandingSprite:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 10.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/7/type = "method"
+tracks/7/path = NodePath("Camera2D")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 6.5, 6.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ null, null, null, null ],
+"method": "_screen_shake"
+}, {
+"args": [  ],
+"method": "_stop_screen_shake"
+} ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("WorldObjects/SofaLandingIntro/SofaLandingSprite:rotation_degrees")
+tracks/8/interp = 2
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 6.4, 6.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -25.0, 60.0, 0.0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("WorldObjects/SofaLandingIntro/DustParticles:emitting")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 6.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("GodLights:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 2, 6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=35]
 resource_name = "Gate_opening_cut_scene"
@@ -124,6 +272,21 @@ tracks/4/keys = {
 "args": [  ],
 "method": "_stop_screen_shake"
 } ]
+}
+
+[sub_resource type="Animation" id=79]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("WorldObjects/SofaLandingIntro/SofaLandingSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
 }
 
 [sub_resource type="Animation" id=34]
@@ -551,6 +714,44 @@ resource_name = "open_transition"
 29/shapes = [  ]
 29/z_index = 0
 
+[sub_resource type="CanvasItemMaterial" id=80]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id=81]
+offsets = PoolRealArray( 0.00386847, 0.0851064, 0.880077, 1 )
+colors = PoolColorArray( 0, 0, 0, 0, 0.84913, 0.84913, 0.84913, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=26]
+gradient = SubResource( 81 )
+
+[sub_resource type="Curve" id=82]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.141593, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.557522, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=27]
+curve = SubResource( 82 )
+
+[sub_resource type="ParticlesMaterial" id=85]
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 2.0
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+spread = 70.0
+flatness = 1.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 60.0
+initial_velocity_random = 1.0
+angular_velocity = 180.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_random = 1.0
+scale_curve = SubResource( 27 )
+color_ramp = SubResource( 26 )
+
 [sub_resource type="Resource" id=72]
 script = ExtResource( 39 )
 wait_time = 0.0
@@ -598,7 +799,7 @@ extents = Vector2( 31, 7.75 )
 [sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 48, 7.375 )
 
-[sub_resource type="RectangleShape2D" id=27]
+[sub_resource type="RectangleShape2D" id=84]
 extents = Vector2( 16, 7.375 )
 
 [sub_resource type="RectangleShape2D" id=20]
@@ -792,10 +993,14 @@ environment = SubResource( 77 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 pause_mode = 2
+autoplay = "First_entrance_animation"
+anims/First_entrance_animation = SubResource( 78 )
 anims/Gate_opening_cut_scene = SubResource( 35 )
+anims/RESET = SubResource( 79 )
 anims/open_transition = SubResource( 34 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 7 )]
+position = Vector2( -674, -97 )
 backgroundColor = Color( 0.403922, 0.596078, 0.741176, 1 )
 
 [node name="Stars" parent="Camera2D" instance=ExtResource( 15 )]
@@ -891,6 +1096,34 @@ nextDoorName = "Start_gate_door"
 
 [node name="WorldObjects" type="Node2D" parent="."]
 modulate = Color( 0.8, 0.803922, 0.831373, 1 )
+
+[node name="SofaLandingIntro" type="Node2D" parent="WorldObjects"]
+pause_mode = 2
+
+[node name="SofaLandingSprite" type="Sprite" parent="WorldObjects/SofaLandingIntro"]
+modulate = Color( 0.631373, 0.631373, 0.631373, 1 )
+position = Vector2( -673, -135 )
+rotation = 1.02127
+texture = ExtResource( 21 )
+hframes = 12
+vframes = 3
+
+[node name="Light2D2" type="Light2D" parent="WorldObjects/SofaLandingIntro/SofaLandingSprite"]
+position = Vector2( 1, 3 )
+scale = Vector2( 0.143938, 0.197316 )
+texture = ExtResource( 2 )
+energy = 0.5
+
+[node name="DustParticles" type="Particles2D" parent="WorldObjects/SofaLandingIntro"]
+material = SubResource( 80 )
+position = Vector2( -670, -74 )
+emitting = false
+amount = 15
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource( 85 )
+texture = ExtResource( 22 )
 
 [node name="NPC" type="Node2D" parent="WorldObjects"]
 
@@ -1117,7 +1350,7 @@ position = Vector2( 17, -424 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody28" index="0"]
 position = Vector2( -9, 9.375 )
-shape = SubResource( 27 )
+shape = SubResource( 84 )
 one_way_collision = true
 
 [node name="PassThroughBody18" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
@@ -1413,9 +1646,13 @@ anims/Loop = SubResource( 58 )
 anims/RESET = SubResource( 59 )
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 5 )]
+visible = false
 modulate = Color( 0.631373, 0.631373, 0.631373, 1 )
-position = Vector2( -675, -83 )
+position = Vector2( -672, -74 )
 collision_mask = 124
+
+[node name="Sprite" parent="Player/Body" index="0"]
+frame = 0
 
 [node name="Light2D2" type="Light2D" parent="Player"]
 position = Vector2( 1, 3 )
@@ -1516,3 +1753,4 @@ scale = Vector2( 20.55, 37.05 )
 [editable path="Ladders/Ladder2"]
 [editable path="Ladders/Ladder3"]
 [editable path="AirBlowers"]
+[editable path="Player"]
