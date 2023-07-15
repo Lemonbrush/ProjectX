@@ -52,7 +52,7 @@ adjustment_saturation = 1.3
 
 [sub_resource type="Animation" id=78]
 resource_name = "First_entrance_animation"
-length = 15.0
+length = 11.0
 tracks/0/type = "method"
 tracks/0/path = NodePath(".")
 tracks/0/interp = 1
@@ -993,7 +993,6 @@ environment = SubResource( 77 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 pause_mode = 2
-autoplay = "First_entrance_animation"
 anims/First_entrance_animation = SubResource( 78 )
 anims/Gate_opening_cut_scene = SubResource( 35 )
 anims/RESET = SubResource( 79 )
@@ -1102,8 +1101,7 @@ pause_mode = 2
 
 [node name="SofaLandingSprite" type="Sprite" parent="WorldObjects/SofaLandingIntro"]
 modulate = Color( 0.631373, 0.631373, 0.631373, 1 )
-position = Vector2( -673, -135 )
-rotation = 1.02127
+position = Vector2( -673, -90 )
 texture = ExtResource( 21 )
 hframes = 12
 vframes = 3
@@ -1117,7 +1115,6 @@ energy = 0.5
 [node name="DustParticles" type="Particles2D" parent="WorldObjects/SofaLandingIntro"]
 material = SubResource( 80 )
 position = Vector2( -670, -74 )
-emitting = false
 amount = 15
 one_shot = true
 explosiveness = 1.0
