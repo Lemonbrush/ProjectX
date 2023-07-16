@@ -1158,14 +1158,14 @@ nextDoorName = "Start_gate_door"
 
 [node name="NPC" type="Node2D" parent="MiddleWorldObjects"]
 
-[node name="Dweller2" parent="MiddleWorldObjects/NPC" instance=ExtResource( 38 )]
+[node name="LonelyDweller" parent="MiddleWorldObjects/NPC" instance=ExtResource( 38 )]
 position = Vector2( -833, -11.0004 )
 dialogId = "central_gate_camp_left_dweller"
 actions = [ SubResource( 72 ) ]
 currentState = SubResource( 72 )
 defaultDirection = -1
 
-[node name="Body" parent="MiddleWorldObjects/NPC/Dweller2" index="5"]
+[node name="Body" parent="MiddleWorldObjects/NPC/LonelyDweller" index="5"]
 scale = Vector2( -1, 1 )
 
 [node name="Signs" type="Node2D" parent="MiddleWorldObjects"]
@@ -1805,8 +1805,8 @@ scale = Vector2( 20.55, 37.05 )
 [editable path="MiddleWorldObjects/Gates"]
 [editable path="MiddleWorldObjects/Gates/GatesText"]
 [editable path="MiddleWorldObjects/Gates/GatesText/InteractionController"]
-[editable path="MiddleWorldObjects/NPC/Dweller2"]
-[editable path="MiddleWorldObjects/NPC/Dweller2/Body/InteractionController"]
+[editable path="MiddleWorldObjects/NPC/LonelyDweller"]
+[editable path="MiddleWorldObjects/NPC/LonelyDweller/Body/InteractionController"]
 [editable path="MiddleWorldObjects/Signs/TumbSign"]
 [editable path="MiddleWorldObjects/Signs/TumbSign/InteractionController"]
 [editable path="MiddleWorldObjects/Chests/Chest"]
