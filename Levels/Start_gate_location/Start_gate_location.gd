@@ -1,7 +1,7 @@
 extends BaseLevel
 
-onready var gates 	= $Gates
-onready var lonelyDweller = $WorldObjects/NPC/Dweller2
+onready var gates 	= $MiddleWorldObjects/Gates
+onready var lonelyDweller = $MiddleWorldObjects/NPC/LonelyDweller
 
 func _ready():
 	var _success = EventBus.connect("player_picked_up_item", self, "_on_key_item_collected") 
