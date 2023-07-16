@@ -3399,7 +3399,7 @@ vframes = 20
 frame = 74
 
 [node name="SkipHintInteractionPopup" parent="." instance=ExtResource( 23 )]
-position = Vector2( -90, 58 )
+position = Vector2( -83, 51 )
 scale = Vector2( 0.5, 0.5 )
 labelText = "Пропустить"
 
