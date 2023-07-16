@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=2]
+[gd_scene load_steps=103 format=2]
 
 [ext_resource path="res://Assets/WaterSurface/water_surface3.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -16,7 +16,7 @@
 [ext_resource path="res://Assets/BackgroundGradients/BackgroundGradient4.png" type="Texture" id=14]
 [ext_resource path="res://WorldObjects/Technical/Stars/Stars.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Assets/WaterSurface/WaterAnim.tres" type="Texture" id=16]
-[ext_resource path="res://WorldObjects/AbstractScenes/AbstractAirBlower.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Resources/Tilesets/Resources/Decorations/Decorations.tres" type="TileSet" id=17]
 [ext_resource path="res://WorldObjects/Technical/Ladder/Ladder.tscn" type="PackedScene" id=18]
 [ext_resource path="res://WorldObjects/Interactables/OpenableContainers/Chest/Chest.tscn" type="PackedScene" id=19]
 [ext_resource path="res://WorldObjects/Sign/Sign.tscn" type="PackedScene" id=20]
@@ -30,6 +30,7 @@
 [ext_resource path="res://WorldObjects/Decorative/Tree/Regualr_trees/Background_trees/BackgroundSmallTree.tscn" type="PackedScene" id=28]
 [ext_resource path="res://WorldObjects/Decorative/Tree/Regualr_trees/Background_trees/BackgroundTallWideTree.tscn" type="PackedScene" id=29]
 [ext_resource path="res://WorldObjects/Decorative/Tree/Regualr_trees/Background_trees/BackgroundWideTree.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Levels/Central_hab/World_objects/Bonfire.tscn" type="PackedScene" id=31]
 [ext_resource path="res://Shaders/GodLightsShader.tres" type="Shader" id=35]
 [ext_resource path="res://Assets/BackgroundGradients/purple_clouds.png" type="Texture" id=36]
 [ext_resource path="res://WorldObjects/Destructables/Vase/Vase.tscn" type="PackedScene" id=37]
@@ -83,7 +84,7 @@ tracks/1/keys = {
 "values": [ Vector2( -674, -417 ), Vector2( -674, -417 ), Vector2( -674, -97 ), Vector2( -674, -97 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("WorldObjects/SofaLandingIntro/SofaLandingSprite:position")
+tracks/2/path = NodePath("ForegroundWorldObjects/SofaLandingIntro/SofaLandingSprite:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -95,7 +96,7 @@ tracks/2/keys = {
 "values": [ Vector2( -673, -585 ), Vector2( -673, -585 ), Vector2( -673, -90 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("WorldObjects/SofaLandingIntro/SofaLandingSprite:frame")
+tracks/3/path = NodePath("ForegroundWorldObjects/SofaLandingIntro/SofaLandingSprite:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -131,7 +132,7 @@ tracks/5/keys = {
 "values": [ false, true ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("WorldObjects/SofaLandingIntro/SofaLandingSprite:visible")
+tracks/6/path = NodePath("ForegroundWorldObjects/SofaLandingIntro/SofaLandingSprite:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -160,7 +161,7 @@ tracks/7/keys = {
 } ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("WorldObjects/SofaLandingIntro/SofaLandingSprite:rotation_degrees")
+tracks/8/path = NodePath("ForegroundWorldObjects/SofaLandingIntro/SofaLandingSprite:rotation_degrees")
 tracks/8/interp = 2
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -172,7 +173,7 @@ tracks/8/keys = {
 "values": [ -25.0, 60.0, 0.0 ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("WorldObjects/SofaLandingIntro/DustParticles:emitting")
+tracks/9/path = NodePath("ForegroundWorldObjects/SofaLandingIntro/DustParticles:emitting")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -243,7 +244,7 @@ tracks/2/keys = {
 } ]
 }
 tracks/3/type = "method"
-tracks/3/path = NodePath("Gates")
+tracks/3/path = NodePath("MiddleWorldObjects/Gates")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -277,7 +278,7 @@ tracks/4/keys = {
 [sub_resource type="Animation" id=79]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("WorldObjects/SofaLandingIntro/SofaLandingSprite:frame")
+tracks/0/path = NodePath("ForegroundWorldObjects/SofaLandingIntro/SofaLandingSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -288,9 +289,127 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 0 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Player:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=34]
 resource_name = "open_transition"
+
+[sub_resource type="Resource" id=72]
+script = ExtResource( 39 )
+wait_time = 0.0
+is_infinite = true
+
+[sub_resource type="RectangleShape2D" id=74]
+extents = Vector2( 20.5, 16 )
+
+[sub_resource type="RectangleShape2D" id=173]
+extents = Vector2( 19, 40.5 )
+
+[sub_resource type="CanvasItemMaterial" id=170]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id=171]
+offsets = PoolRealArray( 0.0323529, 0.114706, 0.670588, 1 )
+colors = PoolColorArray( 0, 0, 0, 0, 0.972656, 0.972656, 0.972656, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=169]
+gradient = SubResource( 171 )
+
+[sub_resource type="ParticlesMaterial" id=172]
+emission_shape = 2
+emission_box_extents = Vector3( 15, 1, 1 )
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 10.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 20.0
+angular_velocity = 120.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 2.0
+color_ramp = SubResource( 169 )
+
+[sub_resource type="RectangleShape2D" id=48]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="Animation" id=50]
+resource_name = "Loop"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=51]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=58]
+resource_name = "Loop"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=59]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
 
 [sub_resource type="TileSet" id=36]
 0/name = "GrassDecorationsSheet.png 0"
@@ -752,13 +871,8 @@ scale_random = 1.0
 scale_curve = SubResource( 27 )
 color_ramp = SubResource( 26 )
 
-[sub_resource type="Resource" id=72]
-script = ExtResource( 39 )
-wait_time = 0.0
-is_infinite = true
-
-[sub_resource type="RectangleShape2D" id=74]
-extents = Vector2( 20.5, 16 )
+[sub_resource type="RectangleShape2D" id=44]
+extents = Vector2( 7.5, 42.5 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 12, 7 )
@@ -796,14 +910,17 @@ extents = Vector2( 9, 4.5 )
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 31, 7.75 )
 
-[sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 48, 7.375 )
+[sub_resource type="RectangleShape2D" id=86]
+extents = Vector2( 69.5, 7.375 )
 
 [sub_resource type="RectangleShape2D" id=84]
 extents = Vector2( 16, 7.375 )
 
-[sub_resource type="RectangleShape2D" id=20]
-extents = Vector2( 52.5, 2.5 )
+[sub_resource type="RectangleShape2D" id=174]
+extents = Vector2( 23.5, 8 )
+
+[sub_resource type="RectangleShape2D" id=87]
+extents = Vector2( 31, 2.5 )
 
 [sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 12.5, 3.5 )
@@ -838,87 +955,14 @@ extents = Vector2( 512.5, 8 )
 [sub_resource type="RectangleShape2D" id=56]
 extents = Vector2( 152, 8 )
 
-[sub_resource type="RectangleShape2D" id=25]
-extents = Vector2( 56, 10 )
+[sub_resource type="RectangleShape2D" id=175]
+extents = Vector2( 16, 10 )
 
 [sub_resource type="RectangleShape2D" id=29]
 extents = Vector2( 8, 7 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 7, 7 )
-
-[sub_resource type="RectangleShape2D" id=44]
-extents = Vector2( 7.5, 42.5 )
-
-[sub_resource type="RectangleShape2D" id=76]
-extents = Vector2( 10, 76 )
-
-[sub_resource type="RectangleShape2D" id=48]
-extents = Vector2( 8, 8 )
-
-[sub_resource type="Animation" id=50]
-resource_name = "Loop"
-length = 4.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 1.0 ]
-}
-
-[sub_resource type="Animation" id=51]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-
-[sub_resource type="Animation" id=58]
-resource_name = "Loop"
-length = 4.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 1.0 ]
-}
-
-[sub_resource type="Animation" id=59]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
 
 [sub_resource type="CanvasItemMaterial" id=40]
 light_mode = 1
@@ -1004,33 +1048,6 @@ backgroundColor = Color( 0.403922, 0.596078, 0.741176, 1 )
 
 [node name="Stars" parent="Camera2D" instance=ExtResource( 15 )]
 
-[node name="Trees" type="Node2D" parent="."]
-position = Vector2( 3, 62 )
-
-[node name="CurvedTree" parent="Trees" instance=ExtResource( 43 )]
-position = Vector2( 480, -57 )
-
-[node name="BushyTree" parent="Trees" instance=ExtResource( 44 )]
-position = Vector2( 211, -377 )
-
-[node name="TallTree" parent="Trees" instance=ExtResource( 45 )]
-position = Vector2( -474, -57 )
-
-[node name="TallTree2" parent="Trees" instance=ExtResource( 45 )]
-position = Vector2( -423, -26 )
-
-[node name="TallTree3" parent="Trees" instance=ExtResource( 45 )]
-position = Vector2( -338, -44 )
-
-[node name="TallTree4" parent="Trees" instance=ExtResource( 45 )]
-position = Vector2( -183, -377 )
-
-[node name="TallTree5" parent="Trees" instance=ExtResource( 45 )]
-position = Vector2( 241, -377 )
-
-[node name="SquashedTree" parent="Trees" instance=ExtResource( 46 )]
-position = Vector2( -313, -377 )
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_limit_end = Vector2( 0, 320 )
 
@@ -1047,39 +1064,297 @@ position = Vector2( 381.613, 240.75 )
 scale = Vector2( 0.771226, 0.771226 )
 texture = ExtResource( 36 )
 
+[node name="BackgroundWorldObjects" type="Node2D" parent="."]
+
+[node name="Trees" type="Node2D" parent="BackgroundWorldObjects"]
+
+[node name="BackgroundWideTree" parent="BackgroundWorldObjects/Trees" instance=ExtResource( 30 )]
+position = Vector2( -88, -318 )
+
+[node name="BackgroundWideTree2" parent="BackgroundWorldObjects/Trees" instance=ExtResource( 30 )]
+position = Vector2( -43, -372 )
+
+[node name="BackgroundWideTree3" parent="BackgroundWorldObjects/Trees" instance=ExtResource( 30 )]
+position = Vector2( 120, -296 )
+
+[node name="BackgroundTallWideTree" parent="BackgroundWorldObjects/Trees" instance=ExtResource( 29 )]
+position = Vector2( 22, -395 )
+
+[node name="BackgroundWideTree4" parent="BackgroundWorldObjects/Trees" instance=ExtResource( 30 )]
+position = Vector2( -267, -315 )
+
+[node name="BackgroundSmallTree" parent="BackgroundWorldObjects/Trees" instance=ExtResource( 28 )]
+position = Vector2( -163, -315 )
+
 [node name="WorldSprite" type="Sprite" parent="."]
 modulate = Color( 0.8, 0.803922, 0.831373, 1 )
 position = Vector2( -19, -274 )
 texture = ExtResource( 9 )
 
-[node name="TreesFront" type="Node2D" parent="."]
+[node name="MiddleWorldObjects" type="Node2D" parent="."]
+modulate = Color( 0.8, 0.803922, 0.831373, 1 )
+
+[node name="Trees" type="Node2D" parent="MiddleWorldObjects"]
 position = Vector2( -622, -75 )
 
-[node name="BackgroundSmallTree" parent="TreesFront" instance=ExtResource( 28 )]
+[node name="GatesTopTrees" type="Node2D" parent="MiddleWorldObjects/Trees"]
+position = Vector2( 625, 137 )
+
+[node name="CurvedTree" parent="MiddleWorldObjects/Trees/GatesTopTrees" instance=ExtResource( 43 )]
+position = Vector2( 480, -57 )
+
+[node name="BushyTree" parent="MiddleWorldObjects/Trees/GatesTopTrees" instance=ExtResource( 44 )]
+position = Vector2( 211, -377 )
+
+[node name="TallTree" parent="MiddleWorldObjects/Trees/GatesTopTrees" instance=ExtResource( 45 )]
+position = Vector2( -474, -57 )
+
+[node name="TallTree2" parent="MiddleWorldObjects/Trees/GatesTopTrees" instance=ExtResource( 45 )]
+position = Vector2( -423, -26 )
+z_index = -1
+
+[node name="TallTree3" parent="MiddleWorldObjects/Trees/GatesTopTrees" instance=ExtResource( 45 )]
+position = Vector2( -338, -44 )
+z_index = -1
+
+[node name="TallTree4" parent="MiddleWorldObjects/Trees/GatesTopTrees" instance=ExtResource( 45 )]
+position = Vector2( -183, -377 )
+
+[node name="TallTree5" parent="MiddleWorldObjects/Trees/GatesTopTrees" instance=ExtResource( 45 )]
+position = Vector2( 241, -377 )
+
+[node name="SquashedTree" parent="MiddleWorldObjects/Trees/GatesTopTrees" instance=ExtResource( 46 )]
+position = Vector2( -313, -377 )
+
+[node name="BackgroundSmallTree" parent="MiddleWorldObjects/Trees" instance=ExtResource( 28 )]
 position = Vector2( -93, -28 )
 
-[node name="BackgroundTallWideTree" parent="TreesFront" instance=ExtResource( 29 )]
+[node name="BackgroundTallWideTree" parent="MiddleWorldObjects/Trees" instance=ExtResource( 29 )]
 position = Vector2( -106, 1 )
 
-[node name="BackgroundSmallWideTree" parent="TreesFront" instance=ExtResource( 27 )]
+[node name="BackgroundSmallWideTree" parent="MiddleWorldObjects/Trees" instance=ExtResource( 27 )]
 position = Vector2( -15, 1 )
 
-[node name="BackgroundWideTree" parent="TreesFront" instance=ExtResource( 30 )]
+[node name="BackgroundWideTree" parent="MiddleWorldObjects/Trees" instance=ExtResource( 30 )]
 position = Vector2( -52, 1 )
 
-[node name="TallTree" parent="TreesFront" instance=ExtResource( 45 )]
+[node name="TallTree" parent="MiddleWorldObjects/Trees" instance=ExtResource( 45 )]
 position = Vector2( -97, 1 )
 
-[node name="BushyTree" parent="TreesFront" instance=ExtResource( 44 )]
+[node name="BushyTree" parent="MiddleWorldObjects/Trees" instance=ExtResource( 44 )]
 position = Vector2( 30, 1 )
 
-[node name="CurvedTree" parent="TreesFront" instance=ExtResource( 43 )]
+[node name="CurvedTree" parent="MiddleWorldObjects/Trees" instance=ExtResource( 43 )]
 position = Vector2( 9, 1 )
 
-[node name="SquashedTree" parent="TreesFront" instance=ExtResource( 46 )]
+[node name="SquashedTree" parent="MiddleWorldObjects/Trees" instance=ExtResource( 46 )]
 position = Vector2( -138, 1 )
 
-[node name="Decorations" type="TileMap" parent="."]
+[node name="Gates" parent="MiddleWorldObjects" groups=["Persist"] instance=ExtResource( 12 )]
+position = Vector2( -1, -27 )
+z_index = -1
+nextScenePath = "res://Levels/Pedestal_hall/PedestalHall.tscn"
+nextDoorName = "Start_gate_door"
+
+[node name="NPC" type="Node2D" parent="MiddleWorldObjects"]
+
+[node name="Dweller2" parent="MiddleWorldObjects/NPC" instance=ExtResource( 38 )]
+position = Vector2( -833, -11.0004 )
+dialogId = "central_gate_camp_left_dweller"
+actions = [ SubResource( 72 ) ]
+currentState = SubResource( 72 )
+defaultDirection = -1
+
+[node name="Body" parent="MiddleWorldObjects/NPC/Dweller2" index="5"]
+scale = Vector2( -1, 1 )
+
+[node name="Signs" type="Node2D" parent="MiddleWorldObjects"]
+position = Vector2( 1, 62 )
+
+[node name="TumbSign" parent="MiddleWorldObjects/Signs" instance=ExtResource( 20 )]
+texts_array = [ "Здесь хранится память 
+о былых временах", "и парочка конфеток..." ]
+
+[node name="Sprite" parent="MiddleWorldObjects/Signs/TumbSign" index="0"]
+position = Vector2( 0, -22 )
+texture = ExtResource( 23 )
+
+[node name="InteractionPopup" parent="MiddleWorldObjects/Signs/TumbSign" index="1"]
+position = Vector2( -1, -35 )
+
+[node name="TextBoxPopup" parent="MiddleWorldObjects/Signs/TumbSign" index="2"]
+position = Vector2( -1, -52 )
+texts_array = [ "Здесь хранится память 
+о былых временах", "и парочка конфеток..." ]
+
+[node name="CollisionShape2D" parent="MiddleWorldObjects/Signs/TumbSign/InteractionController/Area2D" index="0"]
+position = Vector2( -1.5, -6 )
+shape = SubResource( 74 )
+
+[node name="Barrels" type="Node2D" parent="MiddleWorldObjects"]
+
+[node name="Barrel" parent="MiddleWorldObjects/Barrels" instance=ExtResource( 8 )]
+position = Vector2( -282, -323 )
+
+[node name="Barrel2" parent="MiddleWorldObjects/Barrels" instance=ExtResource( 8 )]
+position = Vector2( -135, -380 )
+
+[node name="Barrel3" parent="MiddleWorldObjects/Barrels" instance=ExtResource( 8 )]
+position = Vector2( 456, -5 )
+
+[node name="Barrel4" parent="MiddleWorldObjects/Barrels" instance=ExtResource( 8 )]
+position = Vector2( 261, -7 )
+
+[node name="Barrel5" parent="MiddleWorldObjects/Barrels" instance=ExtResource( 8 )]
+position = Vector2( 141, -249 )
+
+[node name="Barrel6" parent="MiddleWorldObjects/Barrels" instance=ExtResource( 8 )]
+position = Vector2( 141, -269 )
+
+[node name="Barrel7" parent="MiddleWorldObjects/Barrels" instance=ExtResource( 8 )]
+position = Vector2( 141, -287 )
+
+[node name="Barrel8" parent="MiddleWorldObjects/Barrels" instance=ExtResource( 8 )]
+position = Vector2( 123, -249 )
+
+[node name="Barrel9" parent="MiddleWorldObjects/Barrels" instance=ExtResource( 8 )]
+position = Vector2( 125, -269 )
+
+[node name="Barrel10" parent="MiddleWorldObjects/Barrels" instance=ExtResource( 8 )]
+position = Vector2( 259, -328 )
+
+[node name="Barrel11" parent="MiddleWorldObjects/Barrels" instance=ExtResource( 8 )]
+position = Vector2( -118, -378 )
+
+[node name="Barrel12" parent="MiddleWorldObjects/Barrels" instance=ExtResource( 8 )]
+position = Vector2( -10, -459 )
+
+[node name="Vases" type="Node2D" parent="MiddleWorldObjects"]
+
+[node name="Vase" parent="MiddleWorldObjects/Vases" instance=ExtResource( 37 )]
+position = Vector2( -179, -69 )
+
+[node name="Vase3" parent="MiddleWorldObjects/Vases" instance=ExtResource( 37 )]
+position = Vector2( 159, -69 )
+
+[node name="Vase4" parent="MiddleWorldObjects/Vases" instance=ExtResource( 37 )]
+position = Vector2( -780, -21 )
+
+[node name="Vase2" parent="MiddleWorldObjects/Vases" instance=ExtResource( 37 )]
+position = Vector2( -160, -69 )
+
+[node name="Chests" type="Node2D" parent="MiddleWorldObjects"]
+
+[node name="Chest" parent="MiddleWorldObjects/Chests" instance=ExtResource( 19 )]
+position = Vector2( 61, -566 )
+innerItemScene = ExtResource( 4 )
+
+[node name="InteractionPopup" parent="MiddleWorldObjects/Chests/Chest" index="1"]
+labelText = "open"
+
+[node name="Bonfire" parent="MiddleWorldObjects" instance=ExtResource( 31 )]
+position = Vector2( 48, -383 )
+
+[node name="Area2D" type="Area2D" parent="MiddleWorldObjects/Bonfire"]
+position = Vector2( -2, -24 )
+collision_layer = 8
+collision_mask = 8
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MiddleWorldObjects/Bonfire/Area2D"]
+position = Vector2( 0, -32.5 )
+shape = SubResource( 173 )
+
+[node name="AirBlowers" type="Node2D" parent="MiddleWorldObjects"]
+
+[node name="BonfireParticles2D" type="Particles2D" parent="MiddleWorldObjects/AirBlowers"]
+material = SubResource( 170 )
+position = Vector2( 48, -407 )
+amount = 25
+lifetime = 4.0
+preprocess = 15.0
+randomness = 1.0
+visibility_rect = Rect2( -100, -200, 200, 400 )
+process_material = SubResource( 172 )
+texture = ExtResource( 22 )
+
+[node name="MovingPlatforms" type="Node2D" parent="MiddleWorldObjects"]
+
+[node name="MovingPlatform" type="Node2D" parent="MiddleWorldObjects/MovingPlatforms"]
+position = Vector2( 340, -279 )
+script = ExtResource( 24 )
+
+[node name="Platform" type="KinematicBody2D" parent="MiddleWorldObjects/MovingPlatforms/MovingPlatform"]
+motion/sync_to_physics = true
+
+[node name="Sprite" type="Sprite" parent="MiddleWorldObjects/MovingPlatforms/MovingPlatform/Platform"]
+texture = ExtResource( 25 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MiddleWorldObjects/MovingPlatforms/MovingPlatform/Platform"]
+shape = SubResource( 48 )
+one_way_collision = true
+
+[node name="Path2D" type="Path2D" parent="MiddleWorldObjects/MovingPlatforms/MovingPlatform"]
+position = Vector2( -97, 0 )
+curve = ExtResource( 26 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="MiddleWorldObjects/MovingPlatforms/MovingPlatform/Path2D"]
+position = Vector2( 97, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MiddleWorldObjects/MovingPlatforms/MovingPlatform/Path2D/PathFollow2D"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MiddleWorldObjects/MovingPlatforms/MovingPlatform"]
+autoplay = "Loop"
+playback_process_mode = 0
+playback_speed = 0.5
+anims/Loop = SubResource( 50 )
+anims/RESET = SubResource( 51 )
+
+[node name="MovingPlatform2" type="Node2D" parent="MiddleWorldObjects/MovingPlatforms"]
+position = Vector2( -335, -275 )
+script = ExtResource( 24 )
+
+[node name="Platform" type="KinematicBody2D" parent="MiddleWorldObjects/MovingPlatforms/MovingPlatform2"]
+motion/sync_to_physics = true
+
+[node name="Sprite" type="Sprite" parent="MiddleWorldObjects/MovingPlatforms/MovingPlatform2/Platform"]
+texture = ExtResource( 25 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MiddleWorldObjects/MovingPlatforms/MovingPlatform2/Platform"]
+shape = SubResource( 48 )
+one_way_collision = true
+
+[node name="Path2D" type="Path2D" parent="MiddleWorldObjects/MovingPlatforms/MovingPlatform2"]
+position = Vector2( -97, 0 )
+curve = ExtResource( 26 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="MiddleWorldObjects/MovingPlatforms/MovingPlatform2/Path2D"]
+position = Vector2( 97, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MiddleWorldObjects/MovingPlatforms/MovingPlatform2/Path2D/PathFollow2D"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MiddleWorldObjects/MovingPlatforms/MovingPlatform2"]
+autoplay = "Loop"
+playback_process_mode = 0
+playback_speed = 0.5
+anims/Loop = SubResource( 58 )
+anims/RESET = SubResource( 59 )
+
+[node name="DecorationsTilemaps" type="Node2D" parent="MiddleWorldObjects"]
+
+[node name="Decorations" type="TileMap" parent="MiddleWorldObjects/DecorationsTilemaps"]
 position = Vector2( 0, 5 )
 scale = Vector2( 1.00066, 0.999783 )
 tile_set = SubResource( 36 )
@@ -1087,19 +1362,18 @@ cell_size = Vector2( 1, 1 )
 format = 1
 tile_data = PoolIntArray( -38404127, 23, 0, -38404101, 25, 0, -38469619, 29, 0, -38469603, 2, 0, -38469555, 4, 0, -37224504, 20, 0, -35848206, 10, 0, -34275420, 23, 0, -32702506, 29, 0, -26411036, 3, 0, -26411015, 27, 0, -26476525, 20, 0, -25362576, 20, 0, -25362534, 2, 0, -24903686, 15, 0, -24969210, 23, 0, -24182672, 26, 0, -24117199, 20, 0, -24117162, 21, 0, -24117136, 26, 0, -21954849, 23, 0, -21954831, 17, 0, -21954746, 7, 0, -21954730, 22, 0, -21954674, 16, 0, -21954654, 22, 0, -21954578, 28, 0, -22019990, 23, 0, -22019942, 2, 0, -22019922, 23, 0, -22019903, 27, 0, -22019874, 6, 0, -22019829, 3, 0, -22019813, 4, 0, -16908181, 22, 0, -16908138, 29, 0, -15073091, 4, 0, -11206485, 25, 0, -6161123, 22, 0, -6161108, 11, 0, -6161092, 10, 0, -6161077, 29, 0, -6161061, 21, 0, -6161047, 7, 0, -6161032, 6, 0, -6161016, 29, 0, -6161000, 20, 0, -5702235, 22, 0, -5177521, 20, 0, -3998373, 17, 0, -3998348, 20, 0, -3998322, 25, 0, -3998290, 16, 0, -3998276, 24, 0, -3145711, 24, 0, -2032449, 24, 0, -2032432, 4, 0, -2032394, 29, 0, -2032373, 23, 0, -2032352, 24, 0, -2032307, 2, 0, -2032261, 3, 0, -2032245, 4, 0, -2032212, 14, 0, -2032186, 29, 0, -2032168, 27, 0, -2031751, 18, 0, -1900818, 24, 0, -983555, 24, 0, -983531, 14, 0, -983505, 22, 0, -983489, 20, 0, -983444, 27, 0, -983428, 29, 0, -983392, 24, 0, -983299, 16, 0, -983210, 2, 0, -983179, 29, 0, -983157, 12, 0, -983140, 22, 0, -983118, 3, 0, -983101, 4, 0, -983069, 13, 0, -1048554, 1, 0, -1048520, 21, 0, -1048502, 22, 0, -1048468, 16, 0, -1048376, 13, 0, -1048298, 29, 0, -1048280, 20, 0, -1048239, 1, 0, -1048221, 2, 0, -1048196, 12, 0, -1048180, 22, 0, -1048163, 4, 0, -1048145, 27, 0, -1048129, 22, 0, -1048105, 9, 0 )
 
-[node name="Gates" parent="." groups=["Persist"] instance=ExtResource( 12 )]
-position = Vector2( -1, -27 )
-z_index = -1
-nextScenePath = "res://Levels/Pedestal_hall/PedestalHall.tscn"
-nextDoorName = "Start_gate_door"
+[node name="ExtendedDecorations" type="TileMap" parent="MiddleWorldObjects/DecorationsTilemaps"]
+tile_set = ExtResource( 17 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -33685512, 72, 0, -32243779, 74, 0, -25165664, 77, 0, -25100262, 536870969, 0, -25100226, 58, 0, -23986392, 78, 0, -23986308, 536870972, 0, -23986268, 536870970, 0, -23527425, 536870970, 0, -23592928, 72, 0, -22740881, 57, 0, -22020117, 71, 0, -21889117, 74, 0, -21954491, 59, 0, -20578579, 536870969, 0, -20578467, 536870970, 0, -20578340, 536870971, 0, -20643811, 536870970, 0, -20643682, 58, 0, -19660521, 536871023, 0, -19398883, 68, 0, -19267880, 113, 0, -19071004, 112, 0, -17957133, 74, 0, -17825571, 536871025, 0, -17105104, 72, 0, -16974024, 111, 0, -15531897, 59, 0, -13565846, 72, 0, -9437029, 71, 0, -8716464, 73, 0, -8716458, 70, 0, -4325979, 58, 0, -3736301, 73, 0, -3146236, 78, 0, -2687677, 72, 0, -2228537, 76, 0, -1179890, 58, 0, -656060, 57, 0, 392744, 59, 0, 392895, 60, 0, 393037, 60, 0, 393177, 59, 0, 327685, 58, 0, 327822, 57, 0, 327950, 59, 0, 328144, 60, 0, 1309961, 112, 0, 1441280, 72, 0, 1441465, 70, 0, 1376660, 72, 0 )
 
-[node name="WorldObjects" type="Node2D" parent="."]
-modulate = Color( 0.8, 0.803922, 0.831373, 1 )
+[node name="ForegroundWorldObjects" type="Node2D" parent="."]
 
-[node name="SofaLandingIntro" type="Node2D" parent="WorldObjects"]
+[node name="SofaLandingIntro" type="Node2D" parent="ForegroundWorldObjects"]
 pause_mode = 2
 
-[node name="SofaLandingSprite" type="Sprite" parent="WorldObjects/SofaLandingIntro"]
+[node name="SofaLandingSprite" type="Sprite" parent="ForegroundWorldObjects/SofaLandingIntro"]
 modulate = Color( 0.631373, 0.631373, 0.631373, 1 )
 position = Vector2( -673, -585 )
 rotation = -0.436332
@@ -1107,13 +1381,13 @@ texture = ExtResource( 21 )
 hframes = 12
 vframes = 3
 
-[node name="Light2D2" type="Light2D" parent="WorldObjects/SofaLandingIntro/SofaLandingSprite"]
+[node name="Light2D2" type="Light2D" parent="ForegroundWorldObjects/SofaLandingIntro/SofaLandingSprite"]
 position = Vector2( 1, 3 )
 scale = Vector2( 0.143938, 0.197316 )
 texture = ExtResource( 2 )
 energy = 0.5
 
-[node name="DustParticles" type="Particles2D" parent="WorldObjects/SofaLandingIntro"]
+[node name="DustParticles" type="Particles2D" parent="ForegroundWorldObjects/SofaLandingIntro"]
 material = SubResource( 80 )
 position = Vector2( -670, -74 )
 emitting = false
@@ -1124,105 +1398,40 @@ randomness = 1.0
 process_material = SubResource( 85 )
 texture = ExtResource( 22 )
 
-[node name="NPC" type="Node2D" parent="WorldObjects"]
+[node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 5 )]
+modulate = Color( 0.631373, 0.631373, 0.631373, 1 )
+position = Vector2( -672, -74 )
+collision_mask = 124
 
-[node name="Dweller2" parent="WorldObjects/NPC" instance=ExtResource( 38 )]
-position = Vector2( -833, -11.0004 )
-dialogId = "central_gate_camp_left_dweller"
-actions = [ SubResource( 72 ) ]
-currentState = SubResource( 72 )
-defaultDirection = -1
+[node name="Sprite" parent="Player/Body" index="0"]
+frame = 0
 
-[node name="Body" parent="WorldObjects/NPC/Dweller2" index="5"]
-scale = Vector2( -1, 1 )
+[node name="Light2D2" type="Light2D" parent="Player"]
+position = Vector2( 1, 3 )
+scale = Vector2( 0.143938, 0.197316 )
+texture = ExtResource( 2 )
+energy = 0.5
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Signs" type="Node2D" parent="WorldObjects"]
-position = Vector2( 1, 62 )
+[node name="Collisions" type="Node2D" parent="."]
 
-[node name="TumbSign" parent="WorldObjects/Signs" instance=ExtResource( 20 )]
-texts_array = [ "Здесь хранится память 
-о былых временах", "и парочка конфеток..." ]
+[node name="Ladders" type="Node2D" parent="Collisions"]
+position = Vector2( 3, 61 )
 
-[node name="Sprite" parent="WorldObjects/Signs/TumbSign" index="0"]
-position = Vector2( 0, -22 )
-texture = ExtResource( 23 )
+[node name="Ladder2" parent="Collisions/Ladders" instance=ExtResource( 18 )]
+position = Vector2( 128, -281 )
 
-[node name="InteractionPopup" parent="WorldObjects/Signs/TumbSign" index="1"]
-position = Vector2( -1, -35 )
+[node name="Ladder3" parent="Collisions/Ladders" instance=ExtResource( 18 )]
+position = Vector2( 194, -173 )
 
-[node name="TextBoxPopup" parent="WorldObjects/Signs/TumbSign" index="2"]
-position = Vector2( -1, -52 )
-texts_array = [ "Здесь хранится память 
-о былых временах", "и парочка конфеток..." ]
+[node name="CollisionShape2D" parent="Collisions/Ladders/Ladder3" index="0"]
+position = Vector2( -0.5, -55.5 )
+shape = SubResource( 44 )
 
-[node name="CollisionShape2D" parent="WorldObjects/Signs/TumbSign/InteractionController/Area2D" index="0"]
-position = Vector2( -1.5, -6 )
-shape = SubResource( 74 )
-
-[node name="Barrels" type="Node2D" parent="WorldObjects"]
-
-[node name="Barrel" parent="WorldObjects/Barrels" instance=ExtResource( 8 )]
-position = Vector2( -233, -342 )
-
-[node name="Barrel2" parent="WorldObjects/Barrels" instance=ExtResource( 8 )]
-position = Vector2( -135, -380 )
-
-[node name="Barrel3" parent="WorldObjects/Barrels" instance=ExtResource( 8 )]
-position = Vector2( 456, -5 )
-
-[node name="Barrel4" parent="WorldObjects/Barrels" instance=ExtResource( 8 )]
-position = Vector2( 261, -7 )
-
-[node name="Barrel5" parent="WorldObjects/Barrels" instance=ExtResource( 8 )]
-position = Vector2( 141, -249 )
-
-[node name="Barrel6" parent="WorldObjects/Barrels" instance=ExtResource( 8 )]
-position = Vector2( 141, -269 )
-
-[node name="Barrel7" parent="WorldObjects/Barrels" instance=ExtResource( 8 )]
-position = Vector2( 141, -287 )
-
-[node name="Barrel8" parent="WorldObjects/Barrels" instance=ExtResource( 8 )]
-position = Vector2( 123, -249 )
-
-[node name="Barrel9" parent="WorldObjects/Barrels" instance=ExtResource( 8 )]
-position = Vector2( 125, -269 )
-
-[node name="Barrel10" parent="WorldObjects/Barrels" instance=ExtResource( 8 )]
-position = Vector2( 259, -328 )
-
-[node name="Barrel11" parent="WorldObjects/Barrels" instance=ExtResource( 8 )]
-position = Vector2( -118, -378 )
-
-[node name="Barrel12" parent="WorldObjects/Barrels" instance=ExtResource( 8 )]
-position = Vector2( -10, -459 )
-
-[node name="Vases" type="Node2D" parent="WorldObjects"]
-
-[node name="Vase" parent="WorldObjects/Vases" instance=ExtResource( 37 )]
-position = Vector2( -179, -69 )
-
-[node name="Vase3" parent="WorldObjects/Vases" instance=ExtResource( 37 )]
-position = Vector2( 159, -69 )
-
-[node name="Vase4" parent="WorldObjects/Vases" instance=ExtResource( 37 )]
-position = Vector2( -780, -21 )
-
-[node name="Vase2" parent="WorldObjects/Vases" instance=ExtResource( 37 )]
-position = Vector2( -160, -69 )
-
-[node name="Chests" type="Node2D" parent="WorldObjects"]
-
-[node name="Chest" parent="WorldObjects/Chests" instance=ExtResource( 19 )]
-position = Vector2( 61, -566 )
-innerItemScene = ExtResource( 4 )
-
-[node name="InteractionPopup" parent="WorldObjects/Chests/Chest" index="1"]
-labelText = "open"
-
-[node name="Collisions" type="Node" parent="."]
-
-[node name="PassTrough" type="Node" parent="Collisions"]
+[node name="PassTrough" type="Node2D" parent="Collisions"]
+position = Vector2( 3, 62 )
 
 [node name="PassThroughBody4" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
 position = Vector2( -262, -73 )
@@ -1340,8 +1549,8 @@ one_way_collision = true
 position = Vector2( -32, -447 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody15" index="0"]
-position = Vector2( 23, 9.375 )
-shape = SubResource( 19 )
+position = Vector2( 44.5, 9.375 )
+shape = SubResource( 86 )
 one_way_collision = true
 
 [node name="PassThroughBody28" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
@@ -1352,12 +1561,20 @@ position = Vector2( -9, 9.375 )
 shape = SubResource( 84 )
 one_way_collision = true
 
+[node name="PassThroughBody33" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
+position = Vector2( 49, -399 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody33" index="0"]
+position = Vector2( -1.5, 10 )
+shape = SubResource( 174 )
+one_way_collision = true
+
 [node name="PassThroughBody18" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
 position = Vector2( 64, -411 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody18" index="0"]
-position = Vector2( 27.5, 4.5 )
-shape = SubResource( 20 )
+position = Vector2( 49, 4.5 )
+shape = SubResource( 87 )
 one_way_collision = true
 
 [node name="PassThroughBody21" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
@@ -1456,7 +1673,8 @@ position = Vector2( 570, -50 )
 shape = SubResource( 17 )
 one_way_collision = true
 
-[node name="Solid" type="Node" parent="Collisions"]
+[node name="Solid" type="Node2D" parent="Collisions"]
+position = Vector2( 3, 62 )
 
 [node name="PassThroughBody" parent="Collisions/Solid" instance=ExtResource( 6 )]
 position = Vector2( -515, -41 )
@@ -1482,8 +1700,8 @@ collision_layer = 17
 collision_mask = 17
 
 [node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody3" index="0"]
-position = Vector2( 378, 8 )
-shape = SubResource( 25 )
+position = Vector2( 418, 8 )
+shape = SubResource( 175 )
 
 [node name="PassThroughBody4" parent="Collisions/Solid" instance=ExtResource( 6 )]
 position = Vector2( -571, -393 )
@@ -1503,33 +1721,8 @@ collision_mask = 1
 position = Vector2( -9, 9 )
 shape = SubResource( 2 )
 
-[node name="Ladders" type="Node" parent="."]
-
-[node name="Ladder2" parent="Ladders" instance=ExtResource( 18 )]
-position = Vector2( 128, -281 )
-
-[node name="Ladder3" parent="Ladders" instance=ExtResource( 18 )]
-position = Vector2( 194, -173 )
-
-[node name="CollisionShape2D" parent="Ladders/Ladder3" index="0"]
-position = Vector2( -0.5, -55.5 )
-shape = SubResource( 44 )
-
-[node name="AirBlowers" parent="." instance=ExtResource( 17 )]
-visible = false
-position = Vector2( 84, -355 )
-
-[node name="Area2D" parent="AirBlowers" index="0"]
-visible = false
-
-[node name="CollisionShape2D" parent="AirBlowers/Area2D" index="0"]
-position = Vector2( 0, -68 )
-shape = SubResource( 76 )
-disabled = true
-
-[node name="Collectables" type="Node" parent="."]
-
-[node name="Lighting" type="Node" parent="."]
+[node name="Lighting" type="Node2D" parent="."]
+position = Vector2( 6, 49 )
 
 [node name="Light2D" type="Light2D" parent="Lighting"]
 position = Vector2( -26.5, -623.995 )
@@ -1564,97 +1757,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="MovingPlatforms" type="Node2D" parent="."]
-
-[node name="MovingPlatform" type="Node2D" parent="MovingPlatforms"]
-position = Vector2( 340, -279 )
-script = ExtResource( 24 )
-
-[node name="Platform" type="KinematicBody2D" parent="MovingPlatforms/MovingPlatform"]
-motion/sync_to_physics = true
-
-[node name="Sprite" type="Sprite" parent="MovingPlatforms/MovingPlatform/Platform"]
-texture = ExtResource( 25 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatforms/MovingPlatform/Platform"]
-shape = SubResource( 48 )
-one_way_collision = true
-
-[node name="Path2D" type="Path2D" parent="MovingPlatforms/MovingPlatform"]
-position = Vector2( -97, 0 )
-curve = ExtResource( 26 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatforms/MovingPlatform/Path2D"]
-position = Vector2( 97, 0 )
-rotation = 3.14159
-rotate = false
-loop = false
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MovingPlatforms/MovingPlatform/Path2D/PathFollow2D"]
-rotation = -3.14159
-remote_path = NodePath("../../../Platform")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatforms/MovingPlatform"]
-autoplay = "Loop"
-playback_process_mode = 0
-playback_speed = 0.5
-anims/Loop = SubResource( 50 )
-anims/RESET = SubResource( 51 )
-
-[node name="MovingPlatform2" type="Node2D" parent="MovingPlatforms"]
-position = Vector2( -335, -275 )
-script = ExtResource( 24 )
-
-[node name="Platform" type="KinematicBody2D" parent="MovingPlatforms/MovingPlatform2"]
-motion/sync_to_physics = true
-
-[node name="Sprite" type="Sprite" parent="MovingPlatforms/MovingPlatform2/Platform"]
-texture = ExtResource( 25 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatforms/MovingPlatform2/Platform"]
-shape = SubResource( 48 )
-one_way_collision = true
-
-[node name="Path2D" type="Path2D" parent="MovingPlatforms/MovingPlatform2"]
-position = Vector2( -97, 0 )
-curve = ExtResource( 26 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatforms/MovingPlatform2/Path2D"]
-position = Vector2( 97, 0 )
-rotation = 3.14159
-rotate = false
-loop = false
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MovingPlatforms/MovingPlatform2/Path2D/PathFollow2D"]
-rotation = -3.14159
-remote_path = NodePath("../../../Platform")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatforms/MovingPlatform2"]
-autoplay = "Loop"
-playback_process_mode = 0
-playback_speed = 0.5
-anims/Loop = SubResource( 58 )
-anims/RESET = SubResource( 59 )
-
-[node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 5 )]
-visible = false
-modulate = Color( 0.631373, 0.631373, 0.631373, 1 )
-position = Vector2( -672, -74 )
-collision_mask = 124
-
-[node name="Sprite" parent="Player/Body" index="0"]
-frame = 0
-
-[node name="Light2D2" type="Light2D" parent="Player"]
-position = Vector2( 1, 3 )
-scale = Vector2( 0.143938, 0.197316 )
-texture = ExtResource( 2 )
-energy = 0.5
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="WaterSurface" type="Node" parent="."]
+[node name="WaterSurface" type="Node2D" parent="."]
+position = Vector2( 0, 62 )
 
 [node name="WaterSurface" type="TileMap" parent="WaterSurface"]
 modulate = Color( 1, 1, 1, 0.564706 )
@@ -1696,17 +1800,20 @@ position = Vector2( 155.5, 360.5 )
 scale = Vector2( 20.55, 37.05 )
 
 [editable path="Camera2D"]
-[editable path="TreesFront/TallTree"]
-[editable path="TreesFront/TallTree/PassThroughBody"]
-[editable path="Gates"]
-[editable path="Gates/GatesText"]
-[editable path="Gates/GatesText/InteractionController"]
-[editable path="WorldObjects/NPC/Dweller2"]
-[editable path="WorldObjects/NPC/Dweller2/Body/InteractionController"]
-[editable path="WorldObjects/Signs/TumbSign"]
-[editable path="WorldObjects/Signs/TumbSign/InteractionController"]
-[editable path="WorldObjects/Chests/Chest"]
-[editable path="WorldObjects/Chests/Chest/InteractionController"]
+[editable path="MiddleWorldObjects/Trees/TallTree"]
+[editable path="MiddleWorldObjects/Trees/TallTree/PassThroughBody"]
+[editable path="MiddleWorldObjects/Gates"]
+[editable path="MiddleWorldObjects/Gates/GatesText"]
+[editable path="MiddleWorldObjects/Gates/GatesText/InteractionController"]
+[editable path="MiddleWorldObjects/NPC/Dweller2"]
+[editable path="MiddleWorldObjects/NPC/Dweller2/Body/InteractionController"]
+[editable path="MiddleWorldObjects/Signs/TumbSign"]
+[editable path="MiddleWorldObjects/Signs/TumbSign/InteractionController"]
+[editable path="MiddleWorldObjects/Chests/Chest"]
+[editable path="MiddleWorldObjects/Chests/Chest/InteractionController"]
+[editable path="Player"]
+[editable path="Collisions/Ladders/Ladder2"]
+[editable path="Collisions/Ladders/Ladder3"]
 [editable path="Collisions/PassTrough/PassThroughBody4"]
 [editable path="Collisions/PassTrough/PassThroughBody13"]
 [editable path="Collisions/PassTrough/PassThroughBody32"]
@@ -1723,6 +1830,7 @@ scale = Vector2( 20.55, 37.05 )
 [editable path="Collisions/PassTrough/PassThroughBody14"]
 [editable path="Collisions/PassTrough/PassThroughBody15"]
 [editable path="Collisions/PassTrough/PassThroughBody28"]
+[editable path="Collisions/PassTrough/PassThroughBody33"]
 [editable path="Collisions/PassTrough/PassThroughBody18"]
 [editable path="Collisions/PassTrough/PassThroughBody21"]
 [editable path="Collisions/PassTrough/PassThroughBody22"]
@@ -1741,7 +1849,3 @@ scale = Vector2( 20.55, 37.05 )
 [editable path="Collisions/Solid/PassThroughBody3"]
 [editable path="Collisions/Solid/PassThroughBody4"]
 [editable path="Collisions/Solid/PassThroughBody2"]
-[editable path="Ladders/Ladder2"]
-[editable path="Ladders/Ladder3"]
-[editable path="AirBlowers"]
-[editable path="Player"]
