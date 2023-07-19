@@ -13,6 +13,7 @@ func set_default_constants():
 		assembled_heart_picked_uo = false,
 		blue_butterfly_pickedup = false,
 		special_flower_picked_up = false,
+		did_encounter_mystic_dweller_the_first_time = false,
 		is_start_gate_first_entrance = true,
 		is_player_talked_to_shore_dweller = false,
 		is_start_gate_open = false,
