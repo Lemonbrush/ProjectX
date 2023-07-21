@@ -3757,7 +3757,7 @@ position = Vector2( 745, 333 )
 scale = Vector2( -1, 1 )
 
 [node name="Bird9" parent="World_objects/Birds" index="6" instance=ExtResource( 20 )]
-position = Vector2( 609, 548 )
+position = Vector2( 705, 596 )
 scale = Vector2( -1, 1 )
 
 [node name="Bird13" parent="World_objects/Birds" index="7" instance=ExtResource( 20 )]
@@ -4030,7 +4030,7 @@ position = Vector2( 150, -484 )
 position = Vector2( -150, 484 )
 
 [node name="MysticDwellerRightTower" parent="Upper_background_objects/Dwellers" index="0" instance=ExtResource( 22 )]
-position = Vector2( 768, 64 )
+position = Vector2( 761, 64 )
 dialogId = "mystic_dweller_grand_garden_right_tower_dialog"
 defaultDirection = -1
 
@@ -4039,6 +4039,7 @@ scale = Vector2( -1, 1 )
 
 [node name="MysticDwellerLeftTower" parent="Upper_background_objects/Dwellers" index="1" instance=ExtResource( 22 )]
 position = Vector2( -612, 160 )
+dialogId = "mystic_dweller_grand_garden_left_tower_dialog"
 
 [node name="White_flower_dweller" parent="Upper_background_objects/Dwellers" index="2" instance=ExtResource( 39 )]
 position = Vector2( 249, 528 )
