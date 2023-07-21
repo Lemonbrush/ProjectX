@@ -14,6 +14,8 @@ onready var right_fountains = $Fountains/Activate_fountains/Right_tower_activate
 onready var inactive_left_fountains = $Fountains/Inactive_fountains/Left_tower_activated_fountains
 onready var inactive_right_fountains = $Fountains/Inactive_fountains/Right_tower_activated_fountains
 
+onready var right_tower_mystic_dweller = $Upper_background_objects/Dwellers/MysticDwellerRightTower
+
 var water_surface_final_phase = 566
 var water_surface_second_phase = 678
 var water_surface_start_phase = 873
@@ -26,6 +28,8 @@ func _ready():
 	
 	var _show_white_flower_grow_cut_scene_connection = EventBus.connect("show_white_flower_grow_cut_scene", self, "show_white_flower_grow_cut_scene")
 	var _cactus_particles_connection = EventBus.connect("show_cuctus_love_particles", self, "show_cuctus_love_particles")
+	
+	var _right_mystic_dweller = EventBus.connect("grand_garden_mystic_dweller_right_tower_hide", self, "grand_garden_mystic_dweller_right_tower_hide")
 	
 	var _young_flower_interaction_emitter_connection = young_flower_interaction_emitter.connect("interacted_with_arg", self, "did_interact_with_arg")
 	
@@ -80,3 +84,6 @@ func show_cuctus_love_particles():
 
 func set_grand_flower_grown_constant():
 	GameEventConstants.set_constant("grand_flower_did_grow", true)
+
+func grand_garden_mystic_dweller_right_tower_hide():
+	right_tower_mystic_dweller.show_hide_animation()
