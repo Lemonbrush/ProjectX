@@ -1,4 +1,4 @@
-[gd_scene load_steps=180 format=2]
+[gd_scene load_steps=182 format=2]
 
 [ext_resource path="res://Levels/Harbor_house/Harbor_house.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=2]
@@ -64,6 +64,7 @@
 [ext_resource path="res://WorldObjects/Pick_ups/Items/SpecialFlower/Special_flower_item.tscn" type="PackedScene" id=62]
 [ext_resource path="res://UI/DebugScreen/GameSpecs.tscn" type="PackedScene" id=63]
 [ext_resource path="res://WorldObjects/Pick_ups/Items/RedThred/RedThredItem.tscn" type="PackedScene" id=64]
+[ext_resource path="res://Dweller/Mystic_dweller/MysticDweller.tscn" type="PackedScene" id=65]
 
 [sub_resource type="Environment" id=273]
 background_mode = 4
@@ -72,6 +73,10 @@ glow_enabled = true
 glow_hdr_threshold = 1.5
 adjustment_enabled = true
 adjustment_saturation = 1.3
+
+[sub_resource type="Animation" id=279]
+resource_name = "Garden_mystic_dweller_hide"
+length = 2.0
 
 [sub_resource type="Animation" id=38]
 resource_name = "Gate_opening_cut_scene"
@@ -971,6 +976,7 @@ environment = SubResource( 273 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 pause_mode = 2
+anims/Garden_mystic_dweller_hide = SubResource( 279 )
 anims/Gate_opening_cut_scene = SubResource( 38 )
 anims/RESET = SubResource( 276 )
 anims/open_transition = SubResource( 39 )
@@ -2014,6 +2020,14 @@ shape = SubResource( 215 )
 [node name="Dwellers" type="Node2D" parent="CreatorHouseIsland/Middle_world_objects"]
 position = Vector2( 1023, 701 )
 
+[node name="MysticDweller" parent="CreatorHouseIsland/Middle_world_objects/Dwellers" instance=ExtResource( 65 )]
+position = Vector2( -1014, -1273 )
+dialogId = "personal_garden_mystic_dweller_dialog"
+defaultDirection = -1
+
+[node name="Body" parent="CreatorHouseIsland/Middle_world_objects/Dwellers/MysticDweller" index="5"]
+scale = Vector2( -1, 1 )
+
 [node name="WelcomingDweller" parent="CreatorHouseIsland/Middle_world_objects/Dwellers" instance=ExtResource( 49 )]
 position = Vector2( 106, -924 )
 dialogId = "creator_house_welcomer_dweller"
@@ -2810,7 +2824,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 4 )]
-position = Vector2( -474, -214 )
+position = Vector2( -1032, -1281 )
 
 [node name="WaterSurface" type="Node2D" parent="."]
 pause_mode = 2
@@ -2903,6 +2917,8 @@ margin_bottom = 344.0
 [editable path="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseThirdFloorDoor/InteractionPopup"]
 [editable path="CreatorHouseIsland/Middle_world_objects/Doors/KitchenDwellersHouseDoor"]
 [editable path="CreatorHouseIsland/Middle_world_objects/Doors/KitchenDwellersHouseDoor/InteractionController"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Dwellers/MysticDweller"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Dwellers/MysticDweller/Body/InteractionController"]
 [editable path="CreatorHouseIsland/Middle_world_objects/Dwellers/WelcomingDweller"]
 [editable path="CreatorHouseIsland/Middle_world_objects/Dwellers/WelcomingDweller/Body/InteractionController"]
 [editable path="CreatorHouseIsland/Middle_world_objects/Dwellers/BandanaAndGlassesDweller"]

@@ -6,6 +6,12 @@ enum ActionType {
 	INTERACT
 }
 
+enum SignalType {
+	ON_INTERACT,
+	ON_APPROACH,
+	ON_LEAVE
+}
+
 onready var area2D = $Area2D
 onready var collisionShape = $Area2D/CollisionShape2D
 
@@ -28,12 +34,12 @@ func _unhandled_input(event: InputEvent):
 			Global.active_interaction_controller = self
 		
 		if Global.active_interaction_controller == self:
-			emit_signal("on_interact", interactedBody)
+			emit_signal_with_action(SignalType.ON_INTERACT, interactedBody)
 
 func _on_approach(body):
 	interactedBody = body
 	action_type = 1
-	emit_signal("on_approach", body)
+	emit_signal_with_action(SignalType.ON_APPROACH, body)
 	
 func _on_leave(_body):
 	force_leave()
@@ -42,12 +48,26 @@ func force_check_entered_body():
 	if area2D.get_overlapping_bodies().size() > 0:
 		interactedBody = area2D.get_overlapping_bodies()[0]
 		action_type = 1
-		emit_signal("on_approach", area2D.get_overlapping_bodies()[0])
+		emit_signal_with_action(SignalType.ON_APPROACH, area2D.get_overlapping_bodies()[0])
 
 func force_leave():
 	action_type = 0
 	Global.active_interaction_controller = null
-	emit_signal("on_leave")
+	emit_signal_with_action(SignalType.ON_LEAVE)
 
-func disabled(isDisabled):
-	collisionShape.disabled = isDisabled
+func disable():
+	action_type = 0
+	Global.active_interaction_controller = null
+	is_player_interaction_active = true
+
+func emit_signal_with_action(action, signal_arg = null):
+	if !is_player_interaction_active:
+		return
+	
+	match action:
+		SignalType.ON_INTERACT:
+			emit_signal("on_interact", signal_arg)
+		SignalType.ON_APPROACH:
+			emit_signal("on_approach", signal_arg)
+		SignalType.ON_LEAVE:
+			emit_signal("on_leave")
