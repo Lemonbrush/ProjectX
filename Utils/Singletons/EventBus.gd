@@ -45,6 +45,7 @@ signal show_red_thred_cutscene()
 
 signal start_proposal_stage()
 signal did_finish_the_first_mystic_dweller_dialog()
+signal personal_garden_mystic_dweller_hide()
 
 func start_shake_screen(duration = 0.2, frequency = 16, amplitude = 2, infinity = true):
 	emit_signal("start_shake_screen", duration, frequency, amplitude, infinity)
@@ -142,3 +143,6 @@ func show_red_thred_cutscene():
 
 func did_finish_the_first_mystic_dweller_dialog():
 	emit_signal("did_finish_the_first_mystic_dweller_dialog")
+
+func personal_garden_mystic_dweller_hide():
+	emit_signal("personal_garden_mystic_dweller_hide")
