@@ -1559,10 +1559,11 @@ text = "Нажми [Attack], чтобы сломать бочки"
 
 [node name="Label" parent="MiddleWorldObjects/GuidingLabels/AttackHintLabel/AppearingHintLabel" index="0"]
 margin_left = 11.0
-margin_top = -35.0
+margin_top = -43.0
 margin_right = 228.0
-margin_bottom = 73.0
-text = "Нажми [Attack], чтобы сломать бочки"
+margin_bottom = 65.0
+text = "Жмякай [Attack], чтобы
+сломать препятствие"
 
 [node name="FlyHintLabel" parent="MiddleWorldObjects/GuidingLabels" instance=ExtResource( 33 )]
 position = Vector2( 17, -403 )
@@ -1591,6 +1592,16 @@ text = "Жмякни [Down], чтобы спрыгнуть вниз"
 [node name="CollisionShape2D" parent="MiddleWorldObjects/GuidingLabels/LeapBottomHintLabel/TriggerArea2D" index="0"]
 position = Vector2( -3, 10 )
 shape = SubResource( 181 )
+
+[node name="LadderHintLabel" parent="MiddleWorldObjects/GuidingLabels" instance=ExtResource( 33 )]
+position = Vector2( 183, -140 )
+
+[node name="Label" parent="MiddleWorldObjects/GuidingLabels/LadderHintLabel/AppearingHintLabel" index="0"]
+margin_left = 36.0
+margin_top = -43.0
+margin_right = 188.0
+margin_bottom = 65.0
+text = "Чтобы карабкаться по лестницам, жмякай [Up]"
 
 [node name="ForegroundWorldObjects" type="Node2D" parent="."]
 
@@ -2043,6 +2054,8 @@ scale = Vector2( 20.55, 37.05 )
 [editable path="MiddleWorldObjects/GuidingLabels/FlyHintLabel/AppearingHintLabel"]
 [editable path="MiddleWorldObjects/GuidingLabels/LeapBottomHintLabel"]
 [editable path="MiddleWorldObjects/GuidingLabels/LeapBottomHintLabel/AppearingHintLabel"]
+[editable path="MiddleWorldObjects/GuidingLabels/LadderHintLabel"]
+[editable path="MiddleWorldObjects/GuidingLabels/LadderHintLabel/AppearingHintLabel"]
 [editable path="Player"]
 [editable path="Collisions/Ladders/Ladder2"]
 [editable path="Collisions/Ladders/Ladder3"]
