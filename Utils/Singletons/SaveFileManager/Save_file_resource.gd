@@ -11,3 +11,9 @@ export var savedLevelScenes: Dictionary = {}
 ### Game logic variables
 
 export var gameLogicVariables: Dictionary = {}
+
+func reset_data():
+	lastVisitedSceneName = null
+	playerPosition = null
+	savedLevelScenes = {}
+	gameLogicVariables = {}
