@@ -60,6 +60,9 @@ func disable():
 	Global.active_interaction_controller = null
 	is_player_interaction_active = true
 
+func disabled(isDisabled):
+	collisionShape.disabled = isDisabled
+
 func emit_signal_with_action(action, signal_arg = null):
 	if !is_player_interaction_active:
 		return

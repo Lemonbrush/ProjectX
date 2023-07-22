@@ -1321,6 +1321,7 @@ defaultDirection = -1
 
 [node name="MysticDweller" parent="MiddleWorldObjects/NPC/FirstMysticDwellerEncounering" instance=ExtResource( 32 )]
 pause_mode = 2
+visible = false
 position = Vector2( -283, -9 )
 dialogId = "the_first_mystic_dweller_dialog"
 defaultDirection = -1
