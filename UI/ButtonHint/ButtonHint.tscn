@@ -15,8 +15,8 @@ margin_bottom = 3.08371
 [node name="ButtonHint" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -512.0
-margin_bottom = -290.0
+margin_right = -502.0
+margin_bottom = -280.0
 rect_pivot_offset = Vector2( -80, -27 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -46,4 +46,4 @@ custom_colors/font_color = Color( 0.15767, 0.867188, 0.539373, 1 )
 custom_colors/font_color_shadow = Color( 0.0352471, 0.171875, 0.145712, 1 )
 custom_constants/shadow_offset_x = 0
 custom_fonts/font = ExtResource( 1 )
-text = "e"
+text = "a"
