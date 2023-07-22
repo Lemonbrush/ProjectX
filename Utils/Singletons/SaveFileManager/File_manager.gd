@@ -47,7 +47,8 @@ func save_game():
 func load_game():
 	Global.is_game_loaded = true
 	
-	if has_any_save_file() && !SettingsManager.settings.should_delete_all_saves_on_start_session:
+	var should_reset_game = !SettingsManager.settings.should_delete_all_saves_on_start_session
+	if has_any_save_file() && should_reset_game && save_file_resource.lastVisitedSceneName:
 		save_file_resource = load(save_path)
 		var lastVisitedSceneName = save_file_resource.lastVisitedSceneName
 		var lastVisitedScene = save_file_resource.savedLevelScenes[lastVisitedSceneName]
@@ -60,8 +61,11 @@ func load_game():
 
 func delete_save():
 	save_file_resource = Save_file_resource.new()
+	save_file_resource.reset_data()
+	
 	var dir = Directory.new()
 	dir.remove(save_path)
+	
 	GameEventConstants.set_default_constants()
 	
 func has_any_save_file():
