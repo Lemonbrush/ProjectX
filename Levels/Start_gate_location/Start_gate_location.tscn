@@ -1322,7 +1322,6 @@ position = Vector2( 486, 5 )
 dialogId = "central_gate_camp_left_dweller"
 actions = [ SubResource( 72 ) ]
 currentState = SubResource( 72 )
-defaultDirection = -1
 
 [node name="FirstMysticDwellerEncounering" type="Node2D" parent="MiddleWorldObjects/NPC"]
 
