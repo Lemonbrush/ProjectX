@@ -7,8 +7,8 @@ onready var label = $PanelContainer/MarginContainer/Label
 func _ready():
 	setup_hint()
 
-func set_hint_action(button_action):
-	self.button_action = button_action
+func set_hint_action(new_button_action):
+	self.button_action = new_button_action
 	setup_hint()
 
 func setup_hint():
