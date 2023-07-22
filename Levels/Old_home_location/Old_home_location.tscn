@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=2]
+[gd_scene load_steps=89 format=2]
 
 [ext_resource path="res://Assets/Levels/Old_home_location/Old_home_location.png" type="Texture" id=1]
 [ext_resource path="res://Levels/Old_home_location/Old_home_location.gd" type="Script" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://WorldObjects/Technical/Camera2D/Camera2D.tscn" type="PackedScene" id=21]
 [ext_resource path="res://WorldObjects/Technical/InteractionEmitterObject/InteractionEmitterObject.tscn" type="PackedScene" id=22]
 [ext_resource path="res://WorldObjects/Technical/InteractionPopup/InteractionPopup.tscn" type="PackedScene" id=23]
+[ext_resource path="res://UI/AppearingHintLabels/AppearingHintLabels.tscn" type="PackedScene" id=24]
 
 [sub_resource type="Environment" id=3]
 background_mode = 4
@@ -2289,6 +2290,20 @@ tracks/6/keys = {
 "update": 1,
 "values": [ true, false ]
 }
+tracks/7/type = "method"
+tracks/7/path = NodePath("../World_objects/AppearingHintLabel")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 11 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "show"
+} ]
+}
 
 [sub_resource type="Animation" id=64]
 length = 0.001
@@ -3157,6 +3172,16 @@ position = Vector2( -58, -3 )
 position = Vector2( 40, 47 )
 labelText = "Запрыгнуть"
 
+[node name="AppearingHintLabel" parent="World_objects" instance=ExtResource( 24 )]
+position = Vector2( -41, -6 )
+
+[node name="Label" parent="World_objects/AppearingHintLabel" index="0"]
+margin_left = -60.0
+margin_top = -44.0
+margin_right = 157.0
+margin_bottom = 64.0
+text = "Жмякай [Left], [Right], чтобы ходить"
+
 [node name="Foreground_objects" type="Node2D" parent="."]
 position = Vector2( -93, -3 )
 
@@ -3418,6 +3443,7 @@ labelText = "Пропустить"
 [editable path="World_objects/Trees/TallTree/PassThroughBody"]
 [editable path="World_objects/Trees/TallTree3"]
 [editable path="World_objects/Trees/TallTree3/PassThroughBody"]
+[editable path="World_objects/AppearingHintLabel"]
 [editable path="Collisions/PassTrough/PassThroughBody7"]
 [editable path="Collisions/PassTrough/PassThroughBody8"]
 [editable path="Collisions/PassTrough/PassThroughBody9"]
