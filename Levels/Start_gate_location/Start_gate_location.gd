@@ -6,7 +6,8 @@ onready var mysticDwellerAppearTriggerArea2D = $MiddleWorldObjects/NPC/FirstMyst
 
 func _ready():
 	var _success = EventBus.connect("player_picked_up_item", self, "_on_key_item_collected")
-	var _mysticDwellerAppearTrigger = mysticDwellerAppearTriggerArea2D.connect("body_entered", self, "player_did_encounter_mystic_dweller")
+	if mysticDwellerAppearTriggerArea2D:
+		var _mysticDwellerAppearTrigger = mysticDwellerAppearTriggerArea2D.connect("body_entered", self, "player_did_encounter_mystic_dweller")
 	var _did_finish_mystic_dweller_dialog = EventBus.connect("did_finish_the_first_mystic_dweller_dialog", self, "did_finish_the_first_mystic_dweller_dialog")
 	
 	if GameEventConstants.is_cauldron_quest_completed():
