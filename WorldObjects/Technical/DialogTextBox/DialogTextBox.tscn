@@ -36,7 +36,6 @@ margin_left = 14.5048
 margin_top = 27.3797
 margin_right = 14.5048
 margin_bottom = 27.3797
-rect_scale = Vector2( 0.7, 0.7 )
 rect_pivot_offset = Vector2( 0.495199, -0.379669 )
 mouse_filter = 2
 size_flags_horizontal = 8

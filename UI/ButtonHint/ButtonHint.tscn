@@ -33,16 +33,17 @@ custom_styles/panel = SubResource( 1 )
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 margin_left = 3.34069
 margin_top = 2.95523
-margin_right = 9.34069
+margin_right = 19.3407
 margin_bottom = 18.9552
 custom_constants/margin_left = 2
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer"]
-margin_left = 4.0
-margin_right = 4.0
+margin_left = 2.0
+margin_right = 16.0
 margin_bottom = 16.0
 size_flags_horizontal = 4
-custom_colors/font_color = Color( 0.117647, 0.737255, 0.45098, 1 )
+custom_colors/font_color = Color( 0.15767, 0.867188, 0.539373, 1 )
 custom_colors/font_color_shadow = Color( 0.0352471, 0.171875, 0.145712, 1 )
 custom_constants/shadow_offset_x = 0
 custom_fonts/font = ExtResource( 1 )
+text = "e"
