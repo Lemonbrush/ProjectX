@@ -1554,9 +1554,6 @@ tile_data = PoolIntArray( -33685512, 72, 0, -32243779, 74, 0, -25165664, 77, 0, 
 [node name="AttackHintLabel" parent="MiddleWorldObjects/GuidingLabels" instance=ExtResource( 33 )]
 position = Vector2( 141, -257 )
 
-[node name="AppearingHintLabel" parent="MiddleWorldObjects/GuidingLabels/AttackHintLabel" index="0"]
-text = "Нажми [Attack], чтобы сломать бочки"
-
 [node name="Label" parent="MiddleWorldObjects/GuidingLabels/AttackHintLabel/AppearingHintLabel" index="0"]
 margin_left = 11.0
 margin_top = -43.0
