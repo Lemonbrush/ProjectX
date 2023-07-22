@@ -3,7 +3,7 @@
 [ext_resource path="res://WorldObjects/Technical/DialogTextBox/DialogTextBox.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Fonts/Epilepsy Sans/Resource/EpilepsySans.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Resources/Themes/MainTheme.tres" type="Theme" id=3]
-[ext_resource path="res://Assets/UI/use_popup_button_image.png" type="Texture" id=4]
+[ext_resource path="res://UI/ButtonHint/ButtonHint.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Theme" id=2]
 
@@ -11,18 +11,6 @@
 resource_name = "Idle"
 length = 2.0
 loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("MarginNode/PanelContainer/ButtonHint/Sprite:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.9 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, -2 ) ]
-}
 
 [node name="DialogTextBox" type="Node2D"]
 script = ExtResource( 1 )
@@ -31,26 +19,27 @@ script = ExtResource( 1 )
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginNode"]
 light_mask = 0
+margin_left = -10.0
+margin_top = -31.0
+margin_right = 8.50907
+margin_bottom = 0.258801
 grow_horizontal = 2
 grow_vertical = 0
+rect_pivot_offset = Vector2( 15, 27 )
 mouse_filter = 2
 theme = ExtResource( 3 )
 
-[node name="ButtonHint" type="Control" parent="MarginNode/PanelContainer"]
-light_mask = 0
+[node name="ButtonHint" parent="MarginNode/PanelContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 14.5048
 margin_top = 27.3797
 margin_right = 14.5048
 margin_bottom = 27.3797
+rect_pivot_offset = Vector2( 0.495199, -0.379669 )
 mouse_filter = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-
-[node name="Sprite" type="Sprite" parent="MarginNode/PanelContainer/ButtonHint"]
-light_mask = 0
-position = Vector2( 0, -1.81064 )
-texture = ExtResource( 4 )
-offset = Vector2( 3, 3 )
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginNode/PanelContainer"]
 light_mask = 0

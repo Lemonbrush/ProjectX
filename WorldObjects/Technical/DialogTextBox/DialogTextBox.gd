@@ -16,6 +16,7 @@ var animated_button_scene_path = preload("res://UI/Animated_dialog_button/Animat
 var float_animation_direction_up = false
 
 func _ready():
+	buttonHint.set_hint_action("Interaction")
 	buttonHint.modulate.a = 0.0
 	modulate.a = 0.0
 	

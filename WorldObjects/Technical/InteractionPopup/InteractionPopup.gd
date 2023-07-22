@@ -3,10 +3,12 @@ extends Node2D
 onready var marginNode = $MarginNode
 onready var label = $MarginNode/CenterContainer/HBoxContainer/Label
 onready var tween = $Tween
+onready var buttonHint = $MarginNode/CenterContainer/HBoxContainer/ButtonHint
 
 export(String) var labelText = ""
 
 func _ready():
+	buttonHint.set_hint_action("Interaction")
 	modulate.a = 0.0
 	label.text = labelText
 	
