@@ -6,11 +6,11 @@
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 2 )
-region_rect = Rect2( 0, 0, 14, 14 )
-margin_left = 3.34069
-margin_right = 2.95523
-margin_top = 2.95523
-margin_bottom = 3.08371
+region_rect = Rect2( 0, 0, 26.0013, 25.9678 )
+margin_left = 3.80036
+margin_right = 3.43883
+margin_top = 3.30898
+margin_bottom = 3.4331
 
 [node name="ButtonHint" type="Control"]
 anchor_right = 1.0
@@ -31,15 +31,15 @@ rect_scale = Vector2( 0.6, 0.6 )
 custom_styles/panel = SubResource( 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
-margin_left = 3.34069
-margin_top = 2.95523
-margin_right = 19.3407
-margin_bottom = 18.9552
-custom_constants/margin_left = 2
+margin_left = 3.80036
+margin_top = 3.30898
+margin_right = 18.8004
+margin_bottom = 19.309
+custom_constants/margin_left = 1
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer"]
-margin_left = 2.0
-margin_right = 16.0
+margin_left = 1.0
+margin_right = 15.0
 margin_bottom = 16.0
 size_flags_horizontal = 4
 custom_colors/font_color = Color( 0.15767, 0.867188, 0.539373, 1 )
