@@ -15,6 +15,7 @@ onready var buttonHint = $MarginNode/PanelContainer/ButtonHint
 var current_text_show = 0
 
 func _ready():
+	buttonHint.set_hint_action("Interaction")
 	buttonHint.modulate.a = 0.0
 	modulate.a = 0.0
 	var interaction_controller = get_node(interaction_controller_path) 

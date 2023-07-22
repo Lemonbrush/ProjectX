@@ -3,24 +3,12 @@
 [ext_resource path="res://Resources/Fonts/Epilepsy Sans/Resource/EpilepsySans.tres" type="DynamicFont" id=1]
 [ext_resource path="res://WorldObjects/Technical/InteractionTextBox/TextBoxPopup.gd" type="Script" id=2]
 [ext_resource path="res://Resources/Themes/MainTheme.tres" type="Theme" id=3]
-[ext_resource path="res://Assets/UI/use_popup_button_image.png" type="Texture" id=4]
+[ext_resource path="res://UI/ButtonHint/ButtonHint.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"
 length = 2.0
 loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("MarginNode/PanelContainer/ButtonHint/Sprite:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.9 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, -2 ) ]
-}
 
 [node name="TextBoxPopup" type="Node2D"]
 position = Vector2( 272, 169 )
@@ -32,22 +20,16 @@ script = ExtResource( 2 )
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="ButtonHint" type="Control" parent="MarginNode/PanelContainer"]
+[node name="ButtonHint" parent="MarginNode/PanelContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 14.5048
 margin_top = 27.3797
 margin_right = 14.5048
 margin_bottom = 27.3797
 size_flags_horizontal = 8
 size_flags_vertical = 8
-
-[node name="Sprite" type="Sprite" parent="MarginNode/PanelContainer/ButtonHint"]
-position = Vector2( 0, -1.81064 )
-texture = ExtResource( 4 )
-offset = Vector2( 3, 3 )
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginNode/PanelContainer"]
 margin_left = 4.5048
