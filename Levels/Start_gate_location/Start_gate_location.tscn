@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=2]
+[gd_scene load_steps=111 format=2]
 
 [ext_resource path="res://Assets/WaterSurface/water_surface3.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -987,6 +987,9 @@ tracks/0/keys = {
 [sub_resource type="RectangleShape2D" id=180]
 extents = Vector2( 43.5, 4.5 )
 
+[sub_resource type="RectangleShape2D" id=181]
+extents = Vector2( 23, 10 )
+
 [sub_resource type="CanvasItemMaterial" id=80]
 particles_animation = true
 particles_anim_h_frames = 3
@@ -1575,6 +1578,20 @@ text = "Если зажать [Jump] в прыжке, то ты сможешь �
 position = Vector2( 3.5, 4.5 )
 shape = SubResource( 180 )
 
+[node name="LeapBottomHintLabel" parent="MiddleWorldObjects/GuidingLabels" instance=ExtResource( 33 )]
+position = Vector2( -607, -87 )
+
+[node name="Label" parent="MiddleWorldObjects/GuidingLabels/LeapBottomHintLabel/AppearingHintLabel" index="0"]
+margin_left = 27.0
+margin_top = 4.0
+margin_right = 148.0
+margin_bottom = 112.0
+text = "Жмякни [Down], чтобы спрыгнуть вниз"
+
+[node name="CollisionShape2D" parent="MiddleWorldObjects/GuidingLabels/LeapBottomHintLabel/TriggerArea2D" index="0"]
+position = Vector2( -3, 10 )
+shape = SubResource( 181 )
+
 [node name="ForegroundWorldObjects" type="Node2D" parent="."]
 
 [node name="SofaLandingIntro" type="Node2D" parent="ForegroundWorldObjects"]
@@ -2024,6 +2041,8 @@ scale = Vector2( 20.55, 37.05 )
 [editable path="MiddleWorldObjects/GuidingLabels/AttackHintLabel/AppearingHintLabel"]
 [editable path="MiddleWorldObjects/GuidingLabels/FlyHintLabel"]
 [editable path="MiddleWorldObjects/GuidingLabels/FlyHintLabel/AppearingHintLabel"]
+[editable path="MiddleWorldObjects/GuidingLabels/LeapBottomHintLabel"]
+[editable path="MiddleWorldObjects/GuidingLabels/LeapBottomHintLabel/AppearingHintLabel"]
 [editable path="Player"]
 [editable path="Collisions/Ladders/Ladder2"]
 [editable path="Collisions/Ladders/Ladder3"]
