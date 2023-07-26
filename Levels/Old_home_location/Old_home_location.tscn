@@ -23,7 +23,7 @@
 [ext_resource path="res://WorldObjects/Technical/Camera2D/Camera2D.tscn" type="PackedScene" id=21]
 [ext_resource path="res://WorldObjects/Technical/InteractionEmitterObject/InteractionEmitterObject.tscn" type="PackedScene" id=22]
 [ext_resource path="res://WorldObjects/Technical/InteractionPopup/InteractionPopup.tscn" type="PackedScene" id=23]
-[ext_resource path="res://UI/AppearingHintLabels/AppearingHintLabels.tscn" type="PackedScene" id=24]
+[ext_resource path="res://WorldObjects/AppearingHintLabels/AppearingHintLabels.tscn" type="PackedScene" id=24]
 
 [sub_resource type="Environment" id=3]
 background_mode = 4
