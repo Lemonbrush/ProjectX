@@ -63,7 +63,9 @@ func set_default_constants():
 		special_flower_mentioned = false,
 		red_thred_quest_finished = false,
 		the_flower_mentioned = false,
-		last_ingredient_mentioned = false
+		last_ingredient_mentioned = false,
+		lighthouse_lamp_ladder_placed = false,
+		player_ignited_lighthouse_lamp = false
 	}
 
 func set_constant(constant_name, value):
