@@ -25,4 +25,5 @@ func configure_lamp_sprite():
 	buth_light_turned_on.set_active(lamp_ignited_const)
 
 func did_inetacted_with_lamp(_arg):
+	GameEventConstants.set_constant("player_ignited_lighthouse_lamp", true)
 	animationPlayer.play("Lamp_ignition_cutscene")

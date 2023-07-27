@@ -30,6 +30,8 @@ func on_player_leave():
 
 func set_interaction_enabled(is_enabled):
 	is_interaction_enabled = is_enabled
+	if !is_enabled:
+		interactionPopup.force_leave()
 
 func force_check_body_detector():
 	interactionController.force_check_entered_body()
