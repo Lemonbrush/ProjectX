@@ -5,6 +5,7 @@ onready var buth_ladder_area_shape = $MiddleWorldObjects/LightButhLadder/Ladder5
 onready var lamp_interaction_controller = $MiddleWorldObjects/Buth_light_turned_off/InteractionEmitterObject
 onready var buth_light_turned_on = $MiddleWorldObjects/Buth_light_turned_on
 onready var buth_light_turned_off = $MiddleWorldObjects/Buth_light_turned_off
+onready var black_rect_fill = $BackgroundWorldObjects/BackgroundBlackFill/BackgroundFill
 
 func _ready():
 	var _connection = lamp_interaction_controller.connect("interacted_with_arg", self, "did_inetacted_with_lamp")
@@ -23,6 +24,7 @@ func configure_lamp_sprite():
 		return
 	buth_light_turned_off.set_active(!lamp_ignited_const)
 	buth_light_turned_on.set_active(lamp_ignited_const)
+	black_rect_fill.visible = !lamp_ignited_const
 
 func did_inetacted_with_lamp(_arg):
 	GameEventConstants.set_constant("player_ignited_lighthouse_lamp", true)
