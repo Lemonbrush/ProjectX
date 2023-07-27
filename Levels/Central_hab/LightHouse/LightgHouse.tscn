@@ -469,6 +469,18 @@ tracks/11/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
+tracks/12/type = "value"
+tracks/12/path = NodePath("Player:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 8, 384 ) ]
+}
 
 [sub_resource type="Gradient" id=111]
 offsets = PoolRealArray( 0, 0.860169, 1 )
@@ -758,7 +770,6 @@ script = ExtResource( 13 )
 texture = ExtResource( 10 )
 
 [node name="InteractionEmitterObject" parent="MiddleWorldObjects/Buth_light_turned_off" index="1" instance=ExtResource( 11 )]
-visible = false
 position = Vector2( -2, 35 )
 labelText = "Осмотреть"
 
@@ -858,7 +869,7 @@ process_material = SubResource( 105 )
 texture = ExtResource( 6 )
 
 [node name="Player" parent="." index="7"]
-position = Vector2( 8, -224 )
+position = Vector2( 8, 384 )
 z_index = 2
 
 [node name="Light2D2" parent="Player" index="5"]
