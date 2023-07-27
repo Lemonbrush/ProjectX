@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Levels/Rooms/LightHouse/Lighthouse.png" type="Texture" id=2]
@@ -7,6 +7,13 @@
 [ext_resource path="res://WorldObjects/AbstractScenes/AbstractAirBlower.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/effects/particles.png" type="Texture" id=6]
 [ext_resource path="res://WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Levels/Rooms/LightHouse/ladder.png" type="Texture" id=8]
+[ext_resource path="res://Levels/Central_hab/LightHouse/LightgHouse.gd" type="Script" id=9]
+[ext_resource path="res://Assets/Levels/Rooms/LightHouse/Light_turned_off_buth_sprite.png" type="Texture" id=10]
+[ext_resource path="res://WorldObjects/Technical/InteractionEmitterObject/InteractionEmitterObject.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Levels/Rooms/LightHouse/Light_turned_on_buth_sprite.png" type="Texture" id=12]
+[ext_resource path="res://Levels/Central_hab/LightHouse/Buth_light_turned_off.gd" type="Script" id=13]
+[ext_resource path="res://Levels/Central_hab/LightHouse/Buth_light_turned_on.gd" type="Script" id=14]
 
 [sub_resource type="Environment" id=118]
 background_mode = 4
@@ -15,6 +22,48 @@ glow_enabled = true
 glow_hdr_threshold = 1.5
 adjustment_enabled = true
 adjustment_saturation = 1.3
+
+[sub_resource type="Animation" id=120]
+resource_name = "Lamp_ignition_cutscene"
+
+[sub_resource type="Animation" id=119]
+length = 0.001
+
+[sub_resource type="Gradient" id=111]
+offsets = PoolRealArray( 0, 0.860169, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=112]
+gradient = SubResource( 111 )
+
+[sub_resource type="Curve" id=113]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.532692, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=114]
+curve = SubResource( 113 )
+
+[sub_resource type="ParticlesMaterial" id=115]
+emission_shape = 2
+emission_box_extents = Vector3( 5, 30, 1 )
+flag_disable_z = true
+direction = Vector3( 1, 1, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 1.0
+angular_velocity = 333.75
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel_random = 1.0
+angle_random = 1.0
+scale = 1.5
+scale_random = 1.0
+scale_curve = SubResource( 114 )
+color_ramp = SubResource( 112 )
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 8, 45 )
 
 [sub_resource type="CanvasItemMaterial" id=98]
 particles_animation = true
@@ -165,42 +214,6 @@ extents = Vector2( 8, 54.5 )
 [sub_resource type="RectangleShape2D" id=106]
 extents = Vector2( 8, 45 )
 
-[sub_resource type="RectangleShape2D" id=20]
-extents = Vector2( 8, 45 )
-
-[sub_resource type="Gradient" id=111]
-offsets = PoolRealArray( 0, 0.860169, 1 )
-colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
-
-[sub_resource type="GradientTexture" id=112]
-gradient = SubResource( 111 )
-
-[sub_resource type="Curve" id=113]
-_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.532692, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=114]
-curve = SubResource( 113 )
-
-[sub_resource type="ParticlesMaterial" id=115]
-emission_shape = 2
-emission_box_extents = Vector3( 5, 30, 1 )
-flag_disable_z = true
-direction = Vector3( 1, 1, 0 )
-spread = 180.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 10.0
-initial_velocity_random = 1.0
-angular_velocity = 333.75
-angular_velocity_random = 1.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-linear_accel_random = 1.0
-angle_random = 1.0
-scale = 1.5
-scale_random = 1.0
-scale_curve = SubResource( 114 )
-color_ramp = SubResource( 112 )
-
 [sub_resource type="RectangleShape2D" id=108]
 extents = Vector2( 5.5, 27 )
 
@@ -223,20 +236,67 @@ extents = Vector2( 5.5, 39 )
 extents = Vector2( 5.5, 35.5 )
 
 [node name="LightgHouse" instance=ExtResource( 1 )]
+script = ExtResource( 9 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
 environment = SubResource( 118 )
+
+[node name="AnimationPlayer" parent="." index="2"]
+anims/Lamp_ignition_cutscene = SubResource( 120 )
+anims/RESET = SubResource( 119 )
 
 [node name="Camera2D" parent="." index="3"]
 position = Vector2( 13, 359 )
 zoom = Vector2( 0.7, 0.7 )
 zoom_based_on_editor_value = true
-default_zoom = 0.7
 
 [node name="WorldSprite" parent="." index="4"]
 texture = ExtResource( 2 )
 
-[node name="Steam" type="Node2D" parent="." index="5"]
+[node name="MiddleWorldObjects" type="Node2D" parent="." index="5"]
+
+[node name="Buth_light_turned_on" type="Node2D" parent="MiddleWorldObjects" index="0"]
+visible = false
+script = ExtResource( 14 )
+
+[node name="Sprite" type="Sprite" parent="MiddleWorldObjects/Buth_light_turned_on" index="0"]
+position = Vector2( 9, -259 )
+texture = ExtResource( 12 )
+
+[node name="Particles2D" type="Particles2D" parent="MiddleWorldObjects/Buth_light_turned_on" index="1"]
+position = Vector2( 8, -259 )
+amount = 1000
+lifetime = 10.0
+preprocess = 15.0
+process_material = SubResource( 115 )
+
+[node name="Buth_light_turned_off" type="Node2D" parent="MiddleWorldObjects" index="1"]
+visible = false
+position = Vector2( 9, -259 )
+script = ExtResource( 13 )
+
+[node name="Sprite" type="Sprite" parent="MiddleWorldObjects/Buth_light_turned_off" index="0"]
+texture = ExtResource( 10 )
+
+[node name="InteractionEmitterObject" parent="MiddleWorldObjects/Buth_light_turned_off" index="1" instance=ExtResource( 11 )]
+position = Vector2( -2, 35 )
+labelText = "Осмотреть"
+
+[node name="LightButhLadder" type="Node2D" parent="MiddleWorldObjects" index="2"]
+visible = false
+position = Vector2( 35, -182 )
+
+[node name="Ladder5" parent="MiddleWorldObjects/LightButhLadder" index="0" instance=ExtResource( 4 )]
+position = Vector2( 0, 2 )
+
+[node name="CollisionShape2D" parent="MiddleWorldObjects/LightButhLadder/Ladder5" index="0"]
+position = Vector2( 0, -1 )
+shape = SubResource( 20 )
+
+[node name="Sprite" type="Sprite" parent="MiddleWorldObjects/LightButhLadder" index="1"]
+texture = ExtResource( 8 )
+
+[node name="Steam" type="Node2D" parent="." index="6"]
 
 [node name="Particles2D2" type="Particles2D" parent="Steam" index="0"]
 material = SubResource( 98 )
@@ -288,7 +348,7 @@ randomness = 1.0
 process_material = SubResource( 105 )
 texture = ExtResource( 6 )
 
-[node name="Player" parent="." index="6"]
+[node name="Player" parent="." index="7"]
 position = Vector2( 9, 382 )
 z_index = 2
 
@@ -514,21 +574,7 @@ position = Vector2( -19, -93 )
 position = Vector2( 0, -1 )
 shape = SubResource( 106 )
 
-[node name="Ladder5" parent="Ladders" index="2" instance=ExtResource( 4 )]
-position = Vector2( 35, -180 )
-
-[node name="CollisionShape2D" parent="Ladders/Ladder5" index="0"]
-position = Vector2( 0, -1 )
-shape = SubResource( 20 )
-
-[node name="Particles2D" type="Particles2D" parent="Doors" index="0"]
-position = Vector2( 8, -259 )
-amount = 1000
-lifetime = 10.0
-preprocess = 15.0
-process_material = SubResource( 115 )
-
-[node name="LightHouseBottomDoor" parent="Doors" index="1" instance=ExtResource( 7 )]
+[node name="LightHouseBottomDoor" parent="Doors" index="0" instance=ExtResource( 7 )]
 position = Vector2( 7, 386 )
 nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "LightHouseBottomDoor"
@@ -545,7 +591,7 @@ shape = SubResource( 108 )
 [node name="InteractionPopup" parent="Doors/LightHouseBottomDoor" index="3"]
 position = Vector2( 0, -47 )
 
-[node name="LightHouseTopDoor" parent="Doors" index="2" instance=ExtResource( 7 )]
+[node name="LightHouseTopDoor" parent="Doors" index="1" instance=ExtResource( 7 )]
 position = Vector2( 7, -136 )
 nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "LightHouseTopDoor"
@@ -597,6 +643,7 @@ position = Vector2( 15, -3 )
 position = Vector2( 0.5, -35.5 )
 shape = SubResource( 25 )
 
+[editable path="MiddleWorldObjects/LightButhLadder/Ladder5"]
 [editable path="Collisions/PassTrough/PassThroughBody6"]
 [editable path="Collisions/PassTrough/PassThroughBody15"]
 [editable path="Collisions/PassTrough/PassThroughBody16"]
@@ -623,7 +670,6 @@ shape = SubResource( 25 )
 [editable path="Collisions/Solid/PassThroughBody13"]
 [editable path="Ladders/Ladder3"]
 [editable path="Ladders/Ladder4"]
-[editable path="Ladders/Ladder5"]
 [editable path="Doors/LightHouseBottomDoor"]
 [editable path="Doors/LightHouseBottomDoor/InteractionController"]
 [editable path="Doors/LightHouseTopDoor"]
