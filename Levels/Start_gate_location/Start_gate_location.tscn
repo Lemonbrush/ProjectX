@@ -1028,8 +1028,8 @@ scale_random = 1.0
 scale_curve = SubResource( 27 )
 color_ramp = SubResource( 26 )
 
-[sub_resource type="RectangleShape2D" id=44]
-extents = Vector2( 7.5, 42.5 )
+[sub_resource type="RectangleShape2D" id=182]
+extents = Vector2( 7.5, 46.5 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 12, 7 )
@@ -1597,7 +1597,7 @@ margin_left = 36.0
 margin_top = -43.0
 margin_right = 188.0
 margin_bottom = 65.0
-text = "Чтобы карабкаться по лестницам, жмякай [Up]"
+text = "Чтобы карабкаться по лестницам и верёвкам, жмякай [Up]"
 
 [node name="ForegroundWorldObjects" type="Node2D" parent="."]
 
@@ -1658,8 +1658,8 @@ position = Vector2( 128, -281 )
 position = Vector2( 194, -173 )
 
 [node name="CollisionShape2D" parent="Collisions/Ladders/Ladder3" index="0"]
-position = Vector2( -0.5, -55.5 )
-shape = SubResource( 44 )
+position = Vector2( -0.5, -51.5 )
+shape = SubResource( 182 )
 
 [node name="PassTrough" type="Node2D" parent="Collisions"]
 position = Vector2( 3, 62 )
