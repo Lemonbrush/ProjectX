@@ -172,7 +172,7 @@ length = 0.1
 
 [sub_resource type="Animation" id=38]
 resource_name = "mill_ladder_cut_scene"
-length = 2.5
+length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera2D:position")
 tracks/0/interp = 2
@@ -180,7 +180,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.2, 2 ),
+"times": PoolRealArray( 1, 5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -22, -167 ), Vector2( -22, -167 ) ]
@@ -192,10 +192,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5, 2, 2.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 1, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.8, 0.8 ), Vector2( 0.5, 0.5 ), Vector2( 0.5, 0.5 ), Vector2( 0.8, 0.8 ) ]
+"values": [ Vector2( 0.5, 0.5 ), Vector2( 0.5, 0.5 ) ]
 }
 tracks/2/type = "method"
 tracks/2/path = NodePath("Ladders/Ladder")
@@ -204,7 +204,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.9 ),
+"times": PoolRealArray( 2.5 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -218,11 +218,28 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 2.5 ),
+"times": PoolRealArray( 5 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ null ],
 "method": "scale_to_default_zoom_with_animation"
+} ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "pause_level"
+}, {
+"args": [  ],
+"method": "unpouse_level"
 } ]
 }
 
@@ -427,27 +444,13 @@ script = ExtResource( 19 )
 environment = SubResource( 124 )
 
 [node name="AnimationPlayer" parent="." index="2"]
-autoplay = "RESET"
+autoplay = ""
 anims/RESET = SubResource( 120 )
 anims/cat_nip_creation_cut_scene = SubResource( 119 )
 anims/idle = SubResource( 121 )
 anims/mill_ladder_cut_scene = SubResource( 38 )
 
-[node name="Camera2D" parent="." index="3"]
-position = Vector2( 7, 190 )
-zoom = Vector2( 0.8, 0.8 )
-zoom_based_on_editor_value = true
-
-[node name="Clouds" parent="Camera2D" index="2" instance=ExtResource( 8 )]
-position = Vector2( -2, -19 )
-z_index = -2
-
-[node name="Particles2D" parent="Camera2D/Clouds" index="0"]
-amount = 100
-lifetime = 10.0
-process_material = SubResource( 106 )
-
-[node name="Light" type="Node2D" parent="." index="4"]
+[node name="Light" type="Node2D" parent="." index="3"]
 
 [node name="Light2D" type="Light2D" parent="Light" index="0"]
 position = Vector2( -3, 21.5 )
@@ -480,10 +483,24 @@ scale = Vector2( 0.0538967, 0.037664 )
 texture = ExtResource( 15 )
 energy = 0.7
 
-[node name="WorldSpriteBack" type="Sprite" parent="." index="5"]
+[node name="WorldSpriteBack" type="Sprite" parent="." index="4"]
 position = Vector2( 40, -214 )
 texture = ExtResource( 4 )
 offset = Vector2( -37, 214 )
+
+[node name="Camera2D" parent="." index="5"]
+position = Vector2( -22, -167 )
+zoom = Vector2( 0.5, 0.5 )
+zoom_based_on_editor_value = true
+
+[node name="Clouds" parent="Camera2D" index="2" instance=ExtResource( 8 )]
+position = Vector2( -2, -19 )
+z_index = -2
+
+[node name="Particles2D" parent="Camera2D/Clouds" index="0"]
+amount = 100
+lifetime = 10.0
+process_material = SubResource( 106 )
 
 [node name="WorldObjects" type="Node2D" parent="." index="6"]
 
@@ -880,6 +897,7 @@ position = Vector2( 0, -28 )
 shape = SubResource( 26 )
 
 [node name="Ladder" parent="Ladders" index="1" instance=ExtResource( 20 )]
+pause_mode = 2
 position = Vector2( -22, -134 )
 
 [node name="MillDoorTop" parent="Doors" index="0" instance=ExtResource( 6 )]
