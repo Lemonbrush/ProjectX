@@ -4,6 +4,8 @@ signal did_reset_game_constants()
 signal did_update_cursor_setting()
 signal camera_focus_animation(zoomValue, time)
 signal camera_focus_default_zoom(time)
+signal camera_set_y_offset(new_offset)
+signal camera_set_default_y_offset()
 signal playerAnimationModeChange(isPlayerAnimating)
 signal player_picked_up_item(item_name)
 signal player_entered_door(nextScenePath)
@@ -55,6 +57,12 @@ func start_shake_screen(duration = 0.2, frequency = 16, amplitude = 2, infinity 
 
 func stop_shake_screen():
 	emit_signal("stop_shake_screen")
+
+func camera_set_y_offset(new_offset):
+	emit_signal("camera_set_y_offset", new_offset)
+
+func camera_set_default_y_offset():
+	emit_signal("camera_set_default_y_offset")
 
 func camera_focus_animation(zoomValue, time):
 	emit_signal("camera_focus_animation", zoomValue, time)

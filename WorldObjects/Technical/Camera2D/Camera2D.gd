@@ -9,13 +9,16 @@ export(Color, RGB) var backgroundColor
 export(bool) var zoom_based_on_editor_value = false
 export(float) var default_zoom = 0.7
 export(bool) var follow_player = true
-
-# Lifecycle Functions
+export(float) var default_y_offset = 40
+export(float) var y_offset = 40
 
 func _ready():
 	var _focus_const_change_connection = EventBus.connect("game_const_changed", self, "on_game_const_changed")
 	var _connect = EventBus.connect("camera_focus_animation", self, "scale_with_animation")
 	var _default_zoom_connection = EventBus.connect("camera_focus_default_zoom", self, "scale_to_default_zoom_with_animation")
+	var _set_y_offset = EventBus.connect("camera_set_y_offset", self, "camera_set_y_offset")
+	var _set_default_y_offset = EventBus.connect("camera_set_default_y_offset", self, "camera_set_default_y_offset")
+	
 	VisualServer.set_default_clear_color(backgroundColor)
 
 func _process(delta):
@@ -37,7 +40,7 @@ func get_target_position_from_node_group(groupName):
 	if (nodes.size() > 0):
 		var node = nodes[0]
 		targetPosition = node.global_position
-		targetPosition.y -= 40
+		targetPosition.y -= y_offset
 		return true
 	return false
 	
@@ -66,3 +69,9 @@ func _screen_shake(duration = 0.2, frequency = 16, amplitude = 2, infinity = tru
 	
 func _stop_screen_shake():
 	screenShaker.stop()
+
+func camera_set_y_offset(new_offset):
+	y_offset = new_offset
+
+func camera_set_default_y_offset():
+	y_offset = default_y_offset
