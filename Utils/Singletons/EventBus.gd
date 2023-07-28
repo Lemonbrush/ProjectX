@@ -48,6 +48,7 @@ signal did_finish_the_first_mystic_dweller_dialog()
 signal personal_garden_mystic_dweller_hide()
 signal grand_garden_mystic_dweller_right_tower_hide()
 signal grand_garden_mystic_dweller_left_tower_hide()
+signal lighthouse_mystic_dweller_finish_quest_cutscene()
 
 func start_shake_screen(duration = 0.2, frequency = 16, amplitude = 2, infinity = true):
 	emit_signal("start_shake_screen", duration, frequency, amplitude, infinity)
@@ -154,3 +155,6 @@ func grand_garden_mystic_dweller_right_tower_hide():
 
 func grand_garden_mystic_dweller_left_tower_hide():
 	emit_signal("grand_garden_mystic_dweller_left_tower_hide")
+
+func lighthouse_mystic_dweller_finish_quest_cutscene():
+	emit_signal("lighthouse_mystic_dweller_finish_quest_cutscene")

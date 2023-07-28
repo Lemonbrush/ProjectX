@@ -1,6 +1,6 @@
-[gd_scene load_steps=215 format=2]
+[gd_scene load_steps=213 format=2]
 
-[ext_resource path="res://Assets/Levels/Central_hub.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Levels/Central_hub/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Lighting/shadow.png" type="Texture" id=3]
 [ext_resource path="res://WorldObjects/Decorative/Tree/Regualr_trees/Background_trees/BackgroundSmallTree.tscn" type="PackedScene" id=4]
@@ -70,11 +70,12 @@
 [ext_resource path="res://Assets/Levels/World_objects/Wooden_hadnles_Big.png" type="Texture" id=68]
 [ext_resource path="res://WorldObjects/Sign/Sign.tscn" type="PackedScene" id=69]
 [ext_resource path="res://Assets/WorldObjects/Signs/Stone_tumb_sign.png" type="Texture" id=70]
-[ext_resource path="res://Assets/NPC/mysticDweller-Sheet.png" type="Texture" id=71]
-[ext_resource path="res://Dweller/Abstract_dweller/AbstractDweller.tscn" type="PackedScene" id=72]
+[ext_resource path="res://Levels/Central_hab/World_objects/New_island_house.tscn" type="PackedScene" id=71]
 [ext_resource path="res://Assets/effects/Heart.png" type="Texture" id=73]
 [ext_resource path="res://WorldObjects/Pick_ups/Items/LighthouseKey/LighthouseKeyItem.tscn" type="PackedScene" id=74]
 [ext_resource path="res://Resources/Tilesets/Resources/Decorations/Decorations.tres" type="TileSet" id=75]
+[ext_resource path="res://Levels/Central_hab/World_objects/Lighthouse_buth.tscn" type="PackedScene" id=76]
+[ext_resource path="res://Dweller/Mystic_dweller/MysticDweller.tscn" type="PackedScene" id=79]
 
 [sub_resource type="Environment" id=30]
 background_mode = 4
@@ -84,20 +85,120 @@ glow_hdr_threshold = 1.5
 adjustment_enabled = true
 adjustment_saturation = 1.3
 
-[sub_resource type="RectangleShape2D" id=159]
-extents = Vector2( 18, 4 )
+[sub_resource type="Animation" id=224]
+resource_name = "Lighthouse_mystic_dweller_finish_quest_cutscene"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Middle_world_objects/New_island_house:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "pause_level"
+}, {
+"args": [  ],
+"method": "unpouse_level"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Middle_world_objects/Dwellers/MysticDweller")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1, 15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "show_hide_animation"
+}, {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Camera2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2, 4, 15 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 52, -809 ), Vector2( 52, -809 ), Vector2( -199, 374 ), Vector2( -199, 374 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Middle_world_objects/New_island_house:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Middle_world_objects/New_island_house:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 5, 14 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 169, 520 ), Vector2( -185, 367 ) ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath("Middle_world_objects/New_island_house")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "activate_island_const"
+} ]
+}
 
-[sub_resource type="RectangleShape2D" id=160]
-extents = Vector2( 13, 4 )
-
-[sub_resource type="RectangleShape2D" id=161]
-extents = Vector2( 19, 4 )
-
-[sub_resource type="RectangleShape2D" id=162]
-extents = Vector2( 20, 4 )
-
-[sub_resource type="RectangleShape2D" id=163]
-extents = Vector2( 26.5, 4 )
+[sub_resource type="Animation" id=225]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Middle_world_objects/New_island_house:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 200, 367 ) ]
+}
 
 [sub_resource type="Animation" id=210]
 resource_name = "show_lighthouse_key_cut_scene"
@@ -134,7 +235,7 @@ tracks/1/keys = {
 } ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("WorldObjects/LighthouseKeyItem:visible")
+tracks/2/path = NodePath("Middle_world_objects/LighthouseKeyItem:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -146,7 +247,7 @@ tracks/2/keys = {
 "values": [ false, true ]
 }
 tracks/3/type = "method"
-tracks/3/path = NodePath("WorldObjects/LighthouseKeyItem")
+tracks/3/path = NodePath("Middle_world_objects/LighthouseKeyItem")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -185,6 +286,297 @@ tracks/5/keys = {
 "update": 0,
 "values": [ Vector2( -291, -91 ), Vector2( -291, -91 ) ]
 }
+
+[sub_resource type="RectangleShape2D" id=159]
+extents = Vector2( 18, 4 )
+
+[sub_resource type="RectangleShape2D" id=160]
+extents = Vector2( 13, 4 )
+
+[sub_resource type="RectangleShape2D" id=161]
+extents = Vector2( 19, 4 )
+
+[sub_resource type="RectangleShape2D" id=162]
+extents = Vector2( 20, 4 )
+
+[sub_resource type="RectangleShape2D" id=163]
+extents = Vector2( 26.5, 4 )
+
+[sub_resource type="RectangleShape2D" id=171]
+extents = Vector2( 5.5, 27 )
+
+[sub_resource type="Animation" id=200]
+resource_name = "Idle"
+length = 2.2
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+}
+
+[sub_resource type="Animation" id=156]
+resource_name = "Idle"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
+}
+
+[sub_resource type="Animation" id=157]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=158]
+resource_name = "Walk"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 13, 14, 15, 16, 17, 18 ]
+}
+
+[sub_resource type="Resource" id=175]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 50
+target_x_position = 80
+
+[sub_resource type="Resource" id=176]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 50
+target_x_position = 225
+
+[sub_resource type="Resource" id=177]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 40
+target_x_position = 80
+
+[sub_resource type="Resource" id=178]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 40
+target_x_position = 225
+
+[sub_resource type="Resource" id=172]
+resource_local_to_scene = true
+script = ExtResource( 22 )
+wait_time = 3.0
+is_infinite = false
+
+[sub_resource type="Resource" id=173]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 10
+target_x_position = -300
+
+[sub_resource type="Resource" id=174]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 10
+target_x_position = -600
+
+[sub_resource type="Animation" id=7]
+resource_name = "Idle"
+length = 1.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Walk"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.001, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+}
+
+[sub_resource type="Resource" id=193]
+resource_local_to_scene = true
+script = ExtResource( 22 )
+wait_time = 10.0
+is_infinite = false
+
+[sub_resource type="Resource" id=194]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 25
+target_x_position = -1000
+
+[sub_resource type="Resource" id=195]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 25
+target_x_position = -750
+
+[sub_resource type="Resource" id=196]
+resource_local_to_scene = true
+script = ExtResource( 22 )
+wait_time = 3.0
+is_infinite = false
+
+[sub_resource type="Resource" id=197]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 10
+target_x_position = -960
+
+[sub_resource type="Resource" id=199]
+resource_local_to_scene = true
+script = ExtResource( 22 )
+wait_time = 3.0
+is_infinite = false
+
+[sub_resource type="Resource" id=198]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 10
+target_x_position = -925
+
+[sub_resource type="Resource" id=182]
+resource_local_to_scene = true
+script = ExtResource( 22 )
+wait_time = 3.0
+is_infinite = false
+
+[sub_resource type="Resource" id=183]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 10
+target_x_position = -1250
+
+[sub_resource type="Resource" id=184]
+resource_local_to_scene = true
+script = ExtResource( 22 )
+wait_time = 3.0
+is_infinite = false
+
+[sub_resource type="Resource" id=185]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 10
+target_x_position = -1175
+
+[sub_resource type="Resource" id=190]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 10
+target_x_position = -775
+
+[sub_resource type="Resource" id=191]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 10
+target_x_position = -700
+
+[sub_resource type="Resource" id=192]
+resource_local_to_scene = true
+script = ExtResource( 22 )
+wait_time = 3.0
+is_infinite = false
+
+[sub_resource type="Resource" id=186]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 10
+target_x_position = -300
+
+[sub_resource type="Resource" id=187]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 10
+target_x_position = -850
+
+[sub_resource type="Resource" id=188]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 30
+target_x_position = -1100
+
+[sub_resource type="Resource" id=189]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 30
+target_x_position = -400
+
+[sub_resource type="Resource" id=205]
+resource_local_to_scene = true
+script = ExtResource( 22 )
+wait_time = 5.0
+is_infinite = false
+
+[sub_resource type="Resource" id=206]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 20
+target_x_position = 140
+
+[sub_resource type="Resource" id=203]
+resource_local_to_scene = true
+script = ExtResource( 22 )
+wait_time = 5.0
+is_infinite = false
+
+[sub_resource type="Resource" id=204]
+resource_local_to_scene = true
+script = ExtResource( 23 )
+move_speed = 20
+target_x_position = -30
 
 [sub_resource type="TileSet" id=36]
 0/name = "GrassDecorationsSheet.png 0"
@@ -608,572 +1000,6 @@ tracks/5/keys = {
 29/shapes = [  ]
 29/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=171]
-extents = Vector2( 5.5, 27 )
-
-[sub_resource type="CanvasItemMaterial" id=95]
-particles_animation = true
-particles_anim_h_frames = 3
-particles_anim_v_frames = 1
-particles_anim_loop = false
-
-[sub_resource type="Gradient" id=96]
-offsets = PoolRealArray( 0.0323529, 0.114706, 0.670588, 1 )
-colors = PoolColorArray( 0, 0, 0, 0, 0.972656, 0.972656, 0.972656, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
-
-[sub_resource type="GradientTexture" id=220]
-gradient = SubResource( 96 )
-
-[sub_resource type="ParticlesMaterial" id=98]
-emission_shape = 2
-emission_box_extents = Vector3( 10, 1, 1 )
-flag_disable_z = true
-direction = Vector3( 0, -1, 0 )
-spread = 10.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 20.0
-angular_velocity = 120.0
-angular_velocity_random = 1.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale = 2.0
-color_ramp = SubResource( 220 )
-
-[sub_resource type="RectangleShape2D" id=202]
-extents = Vector2( 14.75, 16.625 )
-
-[sub_resource type="Curve" id=213]
-_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.282238, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.890511, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=216]
-curve = SubResource( 213 )
-
-[sub_resource type="ParticlesMaterial" id=212]
-emission_shape = 2
-emission_box_extents = Vector3( 15, 1, 1 )
-flag_disable_z = true
-gravity = Vector3( 0, -10, 0 )
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale = 0.1
-scale_random = 1.0
-scale_curve = SubResource( 216 )
-
-[sub_resource type="Animation" id=200]
-resource_name = "Idle"
-length = 2.2
-step = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("Body/Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
-}
-
-[sub_resource type="Animation" id=156]
-resource_name = "Idle"
-length = 1.2
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Body/Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
-}
-
-[sub_resource type="Animation" id=157]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Body/Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
-
-[sub_resource type="Animation" id=158]
-resource_name = "Walk"
-length = 0.6
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Body/Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 13, 14, 15, 16, 17, 18 ]
-}
-
-[sub_resource type="Resource" id=175]
-resource_local_to_scene = true
-script = ExtResource( 23 )
-move_speed = 50
-target_x_position = 80
-
-[sub_resource type="Resource" id=176]
-resource_local_to_scene = true
-script = ExtResource( 23 )
-move_speed = 50
-target_x_position = 225
-
-[sub_resource type="Resource" id=177]
-resource_local_to_scene = true
-script = ExtResource( 23 )
-move_speed = 40
-target_x_position = 80
-
-[sub_resource type="Resource" id=178]
-resource_local_to_scene = true
-script = ExtResource( 23 )
-move_speed = 40
-target_x_position = 225
-
-[sub_resource type="Resource" id=172]
-resource_local_to_scene = true
-script = ExtResource( 22 )
-wait_time = 3.0
-is_infinite = false
-
-[sub_resource type="Resource" id=173]
-resource_local_to_scene = true
-script = ExtResource( 23 )
-move_speed = 10
-target_x_position = -300
-
-[sub_resource type="Resource" id=174]
-resource_local_to_scene = true
-script = ExtResource( 23 )
-move_speed = 10
-target_x_position = -600
-
-[sub_resource type="Animation" id=7]
-resource_name = "Idle"
-length = 1.6
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Body/Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 ]
-}
-
-[sub_resource type="Animation" id=6]
-resource_name = "Walk"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Body/Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.001, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-}
-
-[sub_resource type="Resource" id=193]
-resource_local_to_scene = true
-script = ExtResource( 22 )
-wait_time = 10.0
-is_infinite = false
-
-[sub_resource type="Resource" id=194]
-resource_local_to_scene = true
-script = ExtResource( 23 )
-move_speed = 25
-target_x_position = -1000
-
-[sub_resource type="Resource" id=195]
-resource_local_to_scene = true
-script = ExtResource( 23 )
-move_speed = 25
-target_x_position = -750
-
-[sub_resource type="Resource" id=196]
-resource_local_to_scene = true
-script = ExtResource( 22 )
-wait_time = 3.0
-is_infinite = false
-
-[sub_resource type="Resource" id=197]
-resource_local_to_scene = true
-script = ExtResource( 23 )
-move_speed = 10
-target_x_position = -960
-
-[sub_resource type="Resource" id=199]
-resource_local_to_scene = true
-script = ExtResource( 22 )
-wait_time = 3.0
-is_infinite = false
-
-[sub_resource type="Resource" id=198]
-resource_local_to_scene = true
-script = ExtResource( 23 )
-move_speed = 10
-target_x_position = -925
-
-[sub_resource type="Resource" id=182]
-resource_local_to_scene = true
-script = ExtResource( 22 )
-wait_time = 3.0
-is_infinite = false
-
-[sub_resource type="Resource" id=183]
-resource_local_to_scene = true
-script = ExtResource( 23 )
-move_speed = 10
-target_x_position = -1250
-
-[sub_resource type="Resource" id=184]
-resource_local_to_scene = true
-script = ExtResource( 22 )
-wait_time = 3.0
-is_infinite = false
-
-[sub_resource type="Resource" id=185]
-resource_local_to_scene = true
-script = ExtResource( 23 )
-move_speed = 10
-target_x_position = -1175
-
-[sub_resource type="Resource" id=190]
-resource_local_to_scene = true
-script = ExtResource( 23 )
-move_speed = 10
-target_x_position = -775
-
-[sub_resource type="Resource" id=191]
-resource_local_to_scene = true
-script = ExtResource( 23 )
-move_speed = 10
-target_x_position = -700
-
-[sub_resource type="Resource" id=192]
-resource_local_to_scene = true
-script = ExtResource( 22 )
-wait_time = 3.0
-is_infinite = false
-
-[sub_resource type="Resource" id=186]
-resource_local_to_scene = true
-script = ExtResource( 23 )
-move_speed = 10
-target_x_position = -300
-
-[sub_resource type="Resource" id=187]
-resource_local_to_scene = true
-script = ExtResource( 23 )
-move_speed = 10
-target_x_position = -850
-
-[sub_resource type="Resource" id=188]
-resource_local_to_scene = true
-script = ExtResource( 23 )
-move_speed = 30
-target_x_position = -1100
-
-[sub_resource type="Resource" id=189]
-resource_local_to_scene = true
-script = ExtResource( 23 )
-move_speed = 30
-target_x_position = -400
-
-[sub_resource type="Resource" id=205]
-resource_local_to_scene = true
-script = ExtResource( 22 )
-wait_time = 5.0
-is_infinite = false
-
-[sub_resource type="Resource" id=206]
-resource_local_to_scene = true
-script = ExtResource( 23 )
-move_speed = 20
-target_x_position = 140
-
-[sub_resource type="Resource" id=203]
-resource_local_to_scene = true
-script = ExtResource( 22 )
-wait_time = 5.0
-is_infinite = false
-
-[sub_resource type="Resource" id=204]
-resource_local_to_scene = true
-script = ExtResource( 23 )
-move_speed = 20
-target_x_position = -30
-
-[sub_resource type="Animation" id=207]
-resource_name = "Idle"
-length = 2.7
-tracks/0/type = "value"
-tracks/0/path = NodePath("Body/Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52 ]
-}
-
-[sub_resource type="Animation" id=208]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Body/Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
-
-[sub_resource type="Animation" id=209]
-resource_name = "Walk"
-length = 1.8
-tracks/0/type = "value"
-tracks/0/path = NodePath("Body/Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ]
-}
-
-[sub_resource type="RectangleShape2D" id=66]
-extents = Vector2( 184, 5 )
-
-[sub_resource type="RectangleShape2D" id=144]
-extents = Vector2( 8, 5 )
-
-[sub_resource type="RectangleShape2D" id=145]
-extents = Vector2( 16, 5 )
-
-[sub_resource type="RectangleShape2D" id=133]
-extents = Vector2( 15.5, 8 )
-
-[sub_resource type="RectangleShape2D" id=129]
-extents = Vector2( 144, 5 )
-
-[sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 151.5, 8 )
-
-[sub_resource type="RectangleShape2D" id=37]
-extents = Vector2( 198.5, 8 )
-
-[sub_resource type="RectangleShape2D" id=165]
-extents = Vector2( 35.5, 8 )
-
-[sub_resource type="RectangleShape2D" id=166]
-extents = Vector2( 36.5, 8 )
-
-[sub_resource type="RectangleShape2D" id=167]
-extents = Vector2( 27.5, 8 )
-
-[sub_resource type="RectangleShape2D" id=168]
-extents = Vector2( 28.5, 8 )
-
-[sub_resource type="RectangleShape2D" id=40]
-extents = Vector2( 10, 4 )
-
-[sub_resource type="RectangleShape2D" id=42]
-extents = Vector2( 24, 4.5 )
-
-[sub_resource type="RectangleShape2D" id=43]
-extents = Vector2( 16, 4 )
-
-[sub_resource type="RectangleShape2D" id=44]
-extents = Vector2( 8, 3.5 )
-
-[sub_resource type="RectangleShape2D" id=45]
-extents = Vector2( 8, 3.5 )
-
-[sub_resource type="RectangleShape2D" id=47]
-extents = Vector2( 8, 3.5 )
-
-[sub_resource type="RectangleShape2D" id=130]
-extents = Vector2( 24, 3.25 )
-
-[sub_resource type="RectangleShape2D" id=131]
-extents = Vector2( 8, 3.25 )
-
-[sub_resource type="RectangleShape2D" id=48]
-extents = Vector2( 31.5, 3.5 )
-
-[sub_resource type="RectangleShape2D" id=49]
-extents = Vector2( 96, 4.25 )
-
-[sub_resource type="RectangleShape2D" id=50]
-extents = Vector2( 160, 6 )
-
-[sub_resource type="RectangleShape2D" id=51]
-extents = Vector2( 96, 6 )
-
-[sub_resource type="RectangleShape2D" id=73]
-extents = Vector2( 48, 2 )
-
-[sub_resource type="RectangleShape2D" id=74]
-extents = Vector2( 76, 2 )
-
-[sub_resource type="RectangleShape2D" id=75]
-extents = Vector2( 72, 2 )
-
-[sub_resource type="RectangleShape2D" id=76]
-extents = Vector2( 57, 2 )
-
-[sub_resource type="RectangleShape2D" id=77]
-extents = Vector2( 80, 2 )
-
-[sub_resource type="RectangleShape2D" id=78]
-extents = Vector2( 13, 2 )
-
-[sub_resource type="RectangleShape2D" id=79]
-extents = Vector2( 70.5, 2 )
-
-[sub_resource type="RectangleShape2D" id=217]
-extents = Vector2( 32.5, 2 )
-
-[sub_resource type="RectangleShape2D" id=81]
-extents = Vector2( 35.5, 2 )
-
-[sub_resource type="RectangleShape2D" id=82]
-extents = Vector2( 80.25, 2 )
-
-[sub_resource type="RectangleShape2D" id=83]
-extents = Vector2( 21.25, 2 )
-
-[sub_resource type="RectangleShape2D" id=84]
-extents = Vector2( 70.75, 2 )
-
-[sub_resource type="RectangleShape2D" id=85]
-extents = Vector2( 95.25, 2 )
-
-[sub_resource type="RectangleShape2D" id=86]
-extents = Vector2( 56.75, 2 )
-
-[sub_resource type="RectangleShape2D" id=87]
-extents = Vector2( 10.25, 2 )
-
-[sub_resource type="RectangleShape2D" id=88]
-extents = Vector2( 37.25, 2 )
-
-[sub_resource type="RectangleShape2D" id=89]
-extents = Vector2( 70.75, 2 )
-
-[sub_resource type="RectangleShape2D" id=90]
-extents = Vector2( 40.25, 2 )
-
-[sub_resource type="RectangleShape2D" id=91]
-extents = Vector2( 22.25, 2 )
-
-[sub_resource type="RectangleShape2D" id=92]
-extents = Vector2( 28.25, 2 )
-
-[sub_resource type="RectangleShape2D" id=53]
-extents = Vector2( 8, 3.5 )
-
-[sub_resource type="RectangleShape2D" id=55]
-extents = Vector2( 160, 5.5 )
-
-[sub_resource type="RectangleShape2D" id=59]
-extents = Vector2( 32, 3.5 )
-
-[sub_resource type="RectangleShape2D" id=60]
-extents = Vector2( 30, 3.5 )
-
-[sub_resource type="RectangleShape2D" id=61]
-extents = Vector2( 8, 3.5 )
-
-[sub_resource type="RectangleShape2D" id=62]
-extents = Vector2( 95.5, 5 )
-
-[sub_resource type="RectangleShape2D" id=211]
-extents = Vector2( 648, 8 )
-
-[sub_resource type="RectangleShape2D" id=219]
-extents = Vector2( 2, 4 )
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 67, 8 )
-
-[sub_resource type="RectangleShape2D" id=201]
-extents = Vector2( 2, 2 )
-
-[sub_resource type="RectangleShape2D" id=164]
-extents = Vector2( 64, 54 )
-
-[sub_resource type="RectangleShape2D" id=218]
-extents = Vector2( 592.5, 8 )
-
-[sub_resource type="RectangleShape2D" id=93]
-extents = Vector2( 175.75, 8 )
-
-[sub_resource type="RectangleShape2D" id=69]
-extents = Vector2( 5.5, 54.5 )
-
-[sub_resource type="RectangleShape2D" id=70]
-extents = Vector2( 40, 4 )
-
-[sub_resource type="RectangleShape2D" id=71]
-extents = Vector2( 5.5, 26.5 )
-
-[sub_resource type="RectangleShape2D" id=72]
-extents = Vector2( 4.5, 10 )
-
-[sub_resource type="RectangleShape2D" id=215]
-extents = Vector2( 8, 105 )
-
-[sub_resource type="RectangleShape2D" id=68]
-extents = Vector2( 8, 89 )
-
-[sub_resource type="RectangleShape2D" id=99]
-extents = Vector2( 7.5, 72.25 )
-
-[sub_resource type="RectangleShape2D" id=100]
-extents = Vector2( 7.5, 36.625 )
-
-[sub_resource type="RectangleShape2D" id=101]
-extents = Vector2( 7.5, 39 )
-
 [sub_resource type="RectangleShape2D" id=135]
 extents = Vector2( 8, 8 )
 
@@ -1438,6 +1264,243 @@ tracks/0/keys = {
 "values": [ 0.0 ]
 }
 
+[sub_resource type="CanvasItemMaterial" id=95]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id=96]
+offsets = PoolRealArray( 0.0323529, 0.114706, 0.670588, 1 )
+colors = PoolColorArray( 0, 0, 0, 0, 0.972656, 0.972656, 0.972656, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=220]
+gradient = SubResource( 96 )
+
+[sub_resource type="ParticlesMaterial" id=98]
+emission_shape = 2
+emission_box_extents = Vector3( 10, 1, 1 )
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 10.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 20.0
+angular_velocity = 120.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 2.0
+color_ramp = SubResource( 220 )
+
+[sub_resource type="RectangleShape2D" id=202]
+extents = Vector2( 14.75, 16.625 )
+
+[sub_resource type="Curve" id=213]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.282238, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.890511, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=216]
+curve = SubResource( 213 )
+
+[sub_resource type="ParticlesMaterial" id=212]
+emission_shape = 2
+emission_box_extents = Vector3( 15, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, -10, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.1
+scale_random = 1.0
+scale_curve = SubResource( 216 )
+
+[sub_resource type="RectangleShape2D" id=99]
+extents = Vector2( 7.5, 72.25 )
+
+[sub_resource type="RectangleShape2D" id=100]
+extents = Vector2( 7.5, 36.625 )
+
+[sub_resource type="RectangleShape2D" id=101]
+extents = Vector2( 7.5, 39 )
+
+[sub_resource type="RectangleShape2D" id=66]
+extents = Vector2( 184, 5 )
+
+[sub_resource type="RectangleShape2D" id=144]
+extents = Vector2( 8, 5 )
+
+[sub_resource type="RectangleShape2D" id=145]
+extents = Vector2( 16, 5 )
+
+[sub_resource type="RectangleShape2D" id=133]
+extents = Vector2( 15.5, 8 )
+
+[sub_resource type="RectangleShape2D" id=129]
+extents = Vector2( 144, 5 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 151.5, 8 )
+
+[sub_resource type="RectangleShape2D" id=37]
+extents = Vector2( 198.5, 8 )
+
+[sub_resource type="RectangleShape2D" id=165]
+extents = Vector2( 35.5, 8 )
+
+[sub_resource type="RectangleShape2D" id=166]
+extents = Vector2( 36.5, 8 )
+
+[sub_resource type="RectangleShape2D" id=167]
+extents = Vector2( 27.5, 8 )
+
+[sub_resource type="RectangleShape2D" id=168]
+extents = Vector2( 28.5, 8 )
+
+[sub_resource type="RectangleShape2D" id=40]
+extents = Vector2( 10, 4 )
+
+[sub_resource type="RectangleShape2D" id=42]
+extents = Vector2( 24, 4.5 )
+
+[sub_resource type="RectangleShape2D" id=43]
+extents = Vector2( 16, 4 )
+
+[sub_resource type="RectangleShape2D" id=44]
+extents = Vector2( 8, 3.5 )
+
+[sub_resource type="RectangleShape2D" id=45]
+extents = Vector2( 8, 3.5 )
+
+[sub_resource type="RectangleShape2D" id=47]
+extents = Vector2( 8, 3.5 )
+
+[sub_resource type="RectangleShape2D" id=130]
+extents = Vector2( 24, 3.25 )
+
+[sub_resource type="RectangleShape2D" id=131]
+extents = Vector2( 8, 3.25 )
+
+[sub_resource type="RectangleShape2D" id=48]
+extents = Vector2( 31.5, 3.5 )
+
+[sub_resource type="RectangleShape2D" id=49]
+extents = Vector2( 96, 4.25 )
+
+[sub_resource type="RectangleShape2D" id=50]
+extents = Vector2( 160, 6 )
+
+[sub_resource type="RectangleShape2D" id=51]
+extents = Vector2( 96, 6 )
+
+[sub_resource type="RectangleShape2D" id=73]
+extents = Vector2( 48, 2 )
+
+[sub_resource type="RectangleShape2D" id=74]
+extents = Vector2( 76, 2 )
+
+[sub_resource type="RectangleShape2D" id=75]
+extents = Vector2( 72, 2 )
+
+[sub_resource type="RectangleShape2D" id=76]
+extents = Vector2( 57, 2 )
+
+[sub_resource type="RectangleShape2D" id=77]
+extents = Vector2( 80, 2 )
+
+[sub_resource type="RectangleShape2D" id=78]
+extents = Vector2( 13, 2 )
+
+[sub_resource type="RectangleShape2D" id=79]
+extents = Vector2( 70.5, 2 )
+
+[sub_resource type="RectangleShape2D" id=81]
+extents = Vector2( 35.5, 2 )
+
+[sub_resource type="RectangleShape2D" id=82]
+extents = Vector2( 80.25, 2 )
+
+[sub_resource type="RectangleShape2D" id=83]
+extents = Vector2( 21.25, 2 )
+
+[sub_resource type="RectangleShape2D" id=84]
+extents = Vector2( 70.75, 2 )
+
+[sub_resource type="RectangleShape2D" id=85]
+extents = Vector2( 95.25, 2 )
+
+[sub_resource type="RectangleShape2D" id=86]
+extents = Vector2( 56.75, 2 )
+
+[sub_resource type="RectangleShape2D" id=87]
+extents = Vector2( 10.25, 2 )
+
+[sub_resource type="RectangleShape2D" id=88]
+extents = Vector2( 37.25, 2 )
+
+[sub_resource type="RectangleShape2D" id=89]
+extents = Vector2( 70.75, 2 )
+
+[sub_resource type="RectangleShape2D" id=90]
+extents = Vector2( 40.25, 2 )
+
+[sub_resource type="RectangleShape2D" id=91]
+extents = Vector2( 22.25, 2 )
+
+[sub_resource type="RectangleShape2D" id=92]
+extents = Vector2( 28.25, 2 )
+
+[sub_resource type="RectangleShape2D" id=53]
+extents = Vector2( 8, 3.5 )
+
+[sub_resource type="RectangleShape2D" id=55]
+extents = Vector2( 160, 5.5 )
+
+[sub_resource type="RectangleShape2D" id=59]
+extents = Vector2( 32, 3.5 )
+
+[sub_resource type="RectangleShape2D" id=60]
+extents = Vector2( 30, 3.5 )
+
+[sub_resource type="RectangleShape2D" id=61]
+extents = Vector2( 8, 3.5 )
+
+[sub_resource type="RectangleShape2D" id=62]
+extents = Vector2( 95.5, 5 )
+
+[sub_resource type="RectangleShape2D" id=211]
+extents = Vector2( 648, 8 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 67, 8 )
+
+[sub_resource type="RectangleShape2D" id=201]
+extents = Vector2( 2, 2 )
+
+[sub_resource type="RectangleShape2D" id=164]
+extents = Vector2( 64, 54 )
+
+[sub_resource type="RectangleShape2D" id=223]
+extents = Vector2( 520.5, 8 )
+
+[sub_resource type="RectangleShape2D" id=93]
+extents = Vector2( 175.75, 8 )
+
+[sub_resource type="RectangleShape2D" id=69]
+extents = Vector2( 5.5, 54.5 )
+
+[sub_resource type="RectangleShape2D" id=70]
+extents = Vector2( 40, 4 )
+
+[sub_resource type="RectangleShape2D" id=71]
+extents = Vector2( 5.5, 26.5 )
+
+[sub_resource type="RectangleShape2D" id=72]
+extents = Vector2( 4.5, 10 )
+
+[sub_resource type="RectangleShape2D" id=215]
+extents = Vector2( 8, 105 )
+
+[sub_resource type="RectangleShape2D" id=68]
+extents = Vector2( 8, 89 )
+
 [sub_resource type="RectangleShape2D" id=155]
 extents = Vector2( 7014.5, 150 )
 
@@ -1449,187 +1512,6 @@ script = ExtResource( 10 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 30 )
-
-[node name="Trees" type="Node2D" parent="."]
-position = Vector2( 3, 62 )
-
-[node name="ShrineTrees" type="Node2D" parent="Trees"]
-
-[node name="BackgroundWideTree" parent="Trees/ShrineTrees" instance=ExtResource( 42 )]
-position = Vector2( -1042, -397 )
-
-[node name="BackgroundWideTree2" parent="Trees/ShrineTrees" instance=ExtResource( 42 )]
-position = Vector2( -1062, -337 )
-
-[node name="BackgroundSmallWideTree" parent="Trees/ShrineTrees" instance=ExtResource( 38 )]
-position = Vector2( -959, -338 )
-
-[node name="SquashedTree" parent="Trees/ShrineTrees" instance=ExtResource( 40 )]
-position = Vector2( -1119, -338 )
-
-[node name="CurvedTree" parent="Trees/ShrineTrees" instance=ExtResource( 41 )]
-position = Vector2( -1144, -338 )
-
-[node name="BushyTree" parent="Trees/ShrineTrees" instance=ExtResource( 39 )]
-position = Vector2( -847, -338 )
-
-[node name="TallTree" parent="Trees/ShrineTrees" instance=ExtResource( 37 )]
-position = Vector2( -949, -338 )
-
-[node name="CollisionShape2D" parent="Trees/ShrineTrees/TallTree/PassThroughBody" index="0"]
-shape = SubResource( 159 )
-
-[node name="PinkHouseTrees" type="Node2D" parent="Trees"]
-
-[node name="BackgroundWideTree" parent="Trees/PinkHouseTrees" instance=ExtResource( 42 )]
-position = Vector2( -1349, -114 )
-
-[node name="TallTree" parent="Trees/PinkHouseTrees" instance=ExtResource( 37 )]
-position = Vector2( -1486, -96 )
-
-[node name="SquashedTree" parent="Trees/PinkHouseTrees" instance=ExtResource( 40 )]
-position = Vector2( -1527, -98 )
-
-[node name="LightHouseTrees" type="Node2D" parent="Trees"]
-
-[node name="BackgroundWideTree" parent="Trees/LightHouseTrees" instance=ExtResource( 42 )]
-position = Vector2( 131, -299 )
-
-[node name="SquashedTree" parent="Trees/LightHouseTrees" instance=ExtResource( 40 )]
-position = Vector2( -153, -306 )
-
-[node name="CurvedTree" parent="Trees/LightHouseTrees" instance=ExtResource( 41 )]
-position = Vector2( 238, -305 )
-
-[node name="BackgroundSmallWideTree" parent="Trees/LightHouseTrees" instance=ExtResource( 38 )]
-position = Vector2( -33, -308 )
-
-[node name="MillTrees" type="Node2D" parent="Trees"]
-
-[node name="BushyTree3" parent="Trees/MillTrees" instance=ExtResource( 39 )]
-position = Vector2( -951, -66 )
-
-[node name="CollisionShape2D" parent="Trees/MillTrees/BushyTree3/PassThroughBody" index="0"]
-position = Vector2( -8, 45 )
-shape = SubResource( 160 )
-
-[node name="BushyTree2" parent="Trees/MillTrees" instance=ExtResource( 39 )]
-position = Vector2( -857, -66 )
-
-[node name="CollisionShape2D" parent="Trees/MillTrees/BushyTree2/PassThroughBody" index="0"]
-position = Vector2( 8, 45 )
-shape = SubResource( 161 )
-
-[node name="BushyTree" parent="Trees/MillTrees" instance=ExtResource( 39 )]
-position = Vector2( -842, 142 )
-
-[node name="TownTrees" type="Node2D" parent="Trees"]
-
-[node name="TallTree" parent="Trees/TownTrees" instance=ExtResource( 37 )]
-position = Vector2( -573, 318 )
-
-[node name="BushyTree" parent="Trees/TownTrees" instance=ExtResource( 39 )]
-position = Vector2( -294, 318 )
-
-[node name="CurvedTree" parent="Trees/TownTrees" instance=ExtResource( 41 )]
-position = Vector2( -1207, 318 )
-
-[node name="CurvedTree2" parent="Trees/TownTrees" instance=ExtResource( 41 )]
-position = Vector2( -830, 318 )
-
-[node name="SquashedTree" parent="Trees/TownTrees" instance=ExtResource( 40 )]
-position = Vector2( -632, 318 )
-
-[node name="GateTrees" type="Node2D" parent="Trees"]
-
-[node name="BackgroundTallWideTree" parent="Trees/GateTrees" instance=ExtResource( 17 )]
-position = Vector2( -281, -146 )
-
-[node name="BackgroundSmallWideTree2" parent="Trees/GateTrees" instance=ExtResource( 38 )]
-position = Vector2( -425, -66 )
-
-[node name="BackgroundSmallTree" parent="Trees/GateTrees" instance=ExtResource( 4 )]
-position = Vector2( -321, -162 )
-
-[node name="BackgroundSmallTree2" parent="Trees/GateTrees" instance=ExtResource( 4 )]
-position = Vector2( -228, -65 )
-
-[node name="BackgroundWideTree6" parent="Trees/GateTrees" instance=ExtResource( 42 )]
-position = Vector2( 454, -22 )
-
-[node name="BackgroundWideTree3" parent="Trees/GateTrees" instance=ExtResource( 42 )]
-position = Vector2( -476, -64 )
-
-[node name="BackgroundWideTree2" parent="Trees/GateTrees" instance=ExtResource( 42 )]
-position = Vector2( -542, -66 )
-
-[node name="BackgroundWideTree" parent="Trees/GateTrees" instance=ExtResource( 42 )]
-position = Vector2( 490, -48 )
-
-[node name="BackgroundWideTree4" parent="Trees/GateTrees" instance=ExtResource( 42 )]
-position = Vector2( 490, -48 )
-
-[node name="BackgroundWideTree5" parent="Trees/GateTrees" instance=ExtResource( 42 )]
-position = Vector2( 380, -55 )
-
-[node name="BackgroundSmallWideTree" parent="Trees/GateTrees" instance=ExtResource( 38 )]
-position = Vector2( 326, -66 )
-
-[node name="BackgroundSmallWideTree3" parent="Trees/GateTrees" instance=ExtResource( 38 )]
-position = Vector2( 326, -66 )
-
-[node name="TallTree" parent="Trees/GateTrees" instance=ExtResource( 37 )]
-position = Vector2( 276, -44 )
-
-[node name="TallTree2" parent="Trees/GateTrees" instance=ExtResource( 37 )]
-position = Vector2( 487, -65 )
-
-[node name="TallTree8" parent="Trees/GateTrees" instance=ExtResource( 37 )]
-position = Vector2( 411, -39 )
-
-[node name="TallTree3" parent="Trees/GateTrees" instance=ExtResource( 37 )]
-position = Vector2( 594, -66 )
-
-[node name="BushyTree" parent="Trees/GateTrees" instance=ExtResource( 39 )]
-position = Vector2( 202, -98 )
-
-[node name="CollisionShape2D" parent="Trees/GateTrees/BushyTree/PassThroughBody" index="0"]
-position = Vector2( 7, 45 )
-shape = SubResource( 162 )
-
-[node name="SquashedTree" parent="Trees/GateTrees" instance=ExtResource( 40 )]
-position = Vector2( -105, -98 )
-
-[node name="CollisionShape2D" parent="Trees/GateTrees/SquashedTree/PassThroughBody" index="0"]
-position = Vector2( -4.5, 21 )
-shape = SubResource( 163 )
-
-[node name="TallTree4" parent="Trees/GateTrees" instance=ExtResource( 37 )]
-position = Vector2( -573, -66 )
-
-[node name="TallTree5" parent="Trees/GateTrees" instance=ExtResource( 37 )]
-position = Vector2( -438, -38 )
-
-[node name="TallTree6" parent="Trees/GateTrees" instance=ExtResource( 37 )]
-position = Vector2( -398, -66 )
-
-[node name="TallTree7" parent="Trees/GateTrees" instance=ExtResource( 37 )]
-position = Vector2( -302, -122 )
-
-[node name="CurvedTree" parent="Trees/GateTrees" instance=ExtResource( 41 )]
-position = Vector2( -511, -66 )
-
-[node name="CurvedTree2" parent="Trees/GateTrees" instance=ExtResource( 41 )]
-position = Vector2( -348, -161 )
-
-[node name="BushyTree2" parent="Trees/GateTrees" instance=ExtResource( 39 )]
-position = Vector2( -592, -65 )
-
-[node name="BushyTree3" parent="Trees/GateTrees" instance=ExtResource( 39 )]
-position = Vector2( -474, -66 )
-
-[node name="BushyTree4" parent="Trees/GateTrees" instance=ExtResource( 39 )]
-position = Vector2( -234, -123 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_limit_end = Vector2( 0, 320 )
@@ -1649,21 +1531,211 @@ texture = ExtResource( 20 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 pause_mode = 2
+anims/Lighthouse_mystic_dweller_finish_quest_cutscene = SubResource( 224 )
+anims/RESET = SubResource( 225 )
 anims/show_lighthouse_key_cut_scene = SubResource( 210 )
 
-[node name="DecorationsBackground" type="Node2D" parent="."]
+[node name="Background_world_objects" type="Node2D" parent="."]
 
-[node name="SmallFountains" type="TileMap" parent="DecorationsBackground"]
+[node name="Trees" type="Node2D" parent="Background_world_objects"]
+position = Vector2( 3, 62 )
+
+[node name="ShrineTrees" type="Node2D" parent="Background_world_objects/Trees"]
+
+[node name="BackgroundWideTree" parent="Background_world_objects/Trees/ShrineTrees" instance=ExtResource( 42 )]
+position = Vector2( -1042, -397 )
+
+[node name="BackgroundWideTree2" parent="Background_world_objects/Trees/ShrineTrees" instance=ExtResource( 42 )]
+position = Vector2( -1062, -337 )
+
+[node name="BackgroundSmallWideTree" parent="Background_world_objects/Trees/ShrineTrees" instance=ExtResource( 38 )]
+position = Vector2( -959, -338 )
+
+[node name="SquashedTree" parent="Background_world_objects/Trees/ShrineTrees" instance=ExtResource( 40 )]
+position = Vector2( -1119, -338 )
+
+[node name="CurvedTree" parent="Background_world_objects/Trees/ShrineTrees" instance=ExtResource( 41 )]
+position = Vector2( -1144, -338 )
+
+[node name="BushyTree" parent="Background_world_objects/Trees/ShrineTrees" instance=ExtResource( 39 )]
+position = Vector2( -847, -338 )
+
+[node name="TallTree" parent="Background_world_objects/Trees/ShrineTrees" instance=ExtResource( 37 )]
+position = Vector2( -949, -338 )
+
+[node name="CollisionShape2D" parent="Background_world_objects/Trees/ShrineTrees/TallTree/PassThroughBody" index="0"]
+shape = SubResource( 159 )
+
+[node name="PinkHouseTrees" type="Node2D" parent="Background_world_objects/Trees"]
+
+[node name="BackgroundWideTree" parent="Background_world_objects/Trees/PinkHouseTrees" instance=ExtResource( 42 )]
+position = Vector2( -1349, -114 )
+
+[node name="TallTree" parent="Background_world_objects/Trees/PinkHouseTrees" instance=ExtResource( 37 )]
+position = Vector2( -1486, -96 )
+
+[node name="SquashedTree" parent="Background_world_objects/Trees/PinkHouseTrees" instance=ExtResource( 40 )]
+position = Vector2( -1527, -98 )
+
+[node name="LightHouseTrees" type="Node2D" parent="Background_world_objects/Trees"]
+
+[node name="BackgroundWideTree" parent="Background_world_objects/Trees/LightHouseTrees" instance=ExtResource( 42 )]
+position = Vector2( 131, -299 )
+
+[node name="SquashedTree" parent="Background_world_objects/Trees/LightHouseTrees" instance=ExtResource( 40 )]
+position = Vector2( -153, -306 )
+
+[node name="CurvedTree" parent="Background_world_objects/Trees/LightHouseTrees" instance=ExtResource( 41 )]
+position = Vector2( 238, -305 )
+
+[node name="BackgroundSmallWideTree" parent="Background_world_objects/Trees/LightHouseTrees" instance=ExtResource( 38 )]
+position = Vector2( -33, -308 )
+
+[node name="BackgroundSmallWideTree2" parent="Background_world_objects/Trees/LightHouseTrees" instance=ExtResource( 38 )]
+position = Vector2( 84, -351 )
+
+[node name="BackgroundTallWideTree" parent="Background_world_objects/Trees/LightHouseTrees" instance=ExtResource( 17 )]
+position = Vector2( 4, -347 )
+
+[node name="MillTrees" type="Node2D" parent="Background_world_objects/Trees"]
+
+[node name="BushyTree3" parent="Background_world_objects/Trees/MillTrees" instance=ExtResource( 39 )]
+position = Vector2( -951, -66 )
+
+[node name="CollisionShape2D" parent="Background_world_objects/Trees/MillTrees/BushyTree3/PassThroughBody" index="0"]
+position = Vector2( -8, 45 )
+shape = SubResource( 160 )
+
+[node name="BushyTree2" parent="Background_world_objects/Trees/MillTrees" instance=ExtResource( 39 )]
+position = Vector2( -857, -66 )
+
+[node name="CollisionShape2D" parent="Background_world_objects/Trees/MillTrees/BushyTree2/PassThroughBody" index="0"]
+position = Vector2( 8, 45 )
+shape = SubResource( 161 )
+
+[node name="BushyTree" parent="Background_world_objects/Trees/MillTrees" instance=ExtResource( 39 )]
+position = Vector2( -842, 142 )
+
+[node name="TownTrees" type="Node2D" parent="Background_world_objects/Trees"]
+
+[node name="TallTree" parent="Background_world_objects/Trees/TownTrees" instance=ExtResource( 37 )]
+position = Vector2( -573, 318 )
+
+[node name="BushyTree" parent="Background_world_objects/Trees/TownTrees" instance=ExtResource( 39 )]
+position = Vector2( -294, 318 )
+
+[node name="CurvedTree" parent="Background_world_objects/Trees/TownTrees" instance=ExtResource( 41 )]
+position = Vector2( -1207, 318 )
+
+[node name="CurvedTree2" parent="Background_world_objects/Trees/TownTrees" instance=ExtResource( 41 )]
+position = Vector2( -830, 318 )
+
+[node name="SquashedTree" parent="Background_world_objects/Trees/TownTrees" instance=ExtResource( 40 )]
+position = Vector2( -632, 318 )
+
+[node name="GateTrees" type="Node2D" parent="Background_world_objects/Trees"]
+
+[node name="BackgroundTallWideTree" parent="Background_world_objects/Trees/GateTrees" instance=ExtResource( 17 )]
+position = Vector2( -281, -146 )
+
+[node name="BackgroundSmallWideTree2" parent="Background_world_objects/Trees/GateTrees" instance=ExtResource( 38 )]
+position = Vector2( -425, -66 )
+
+[node name="BackgroundSmallTree" parent="Background_world_objects/Trees/GateTrees" instance=ExtResource( 4 )]
+position = Vector2( -321, -162 )
+
+[node name="BackgroundSmallTree2" parent="Background_world_objects/Trees/GateTrees" instance=ExtResource( 4 )]
+position = Vector2( -228, -65 )
+
+[node name="BackgroundWideTree6" parent="Background_world_objects/Trees/GateTrees" instance=ExtResource( 42 )]
+position = Vector2( 454, -22 )
+
+[node name="BackgroundWideTree3" parent="Background_world_objects/Trees/GateTrees" instance=ExtResource( 42 )]
+position = Vector2( -476, -64 )
+
+[node name="BackgroundWideTree2" parent="Background_world_objects/Trees/GateTrees" instance=ExtResource( 42 )]
+position = Vector2( -542, -66 )
+
+[node name="BackgroundWideTree" parent="Background_world_objects/Trees/GateTrees" instance=ExtResource( 42 )]
+position = Vector2( 490, -48 )
+
+[node name="BackgroundWideTree4" parent="Background_world_objects/Trees/GateTrees" instance=ExtResource( 42 )]
+position = Vector2( 490, -48 )
+
+[node name="BackgroundWideTree5" parent="Background_world_objects/Trees/GateTrees" instance=ExtResource( 42 )]
+position = Vector2( 380, -55 )
+
+[node name="BackgroundSmallWideTree" parent="Background_world_objects/Trees/GateTrees" instance=ExtResource( 38 )]
+position = Vector2( 326, -66 )
+
+[node name="BackgroundSmallWideTree3" parent="Background_world_objects/Trees/GateTrees" instance=ExtResource( 38 )]
+position = Vector2( 326, -66 )
+
+[node name="TallTree" parent="Background_world_objects/Trees/GateTrees" instance=ExtResource( 37 )]
+position = Vector2( 276, -44 )
+
+[node name="TallTree2" parent="Background_world_objects/Trees/GateTrees" instance=ExtResource( 37 )]
+position = Vector2( 487, -65 )
+
+[node name="TallTree8" parent="Background_world_objects/Trees/GateTrees" instance=ExtResource( 37 )]
+position = Vector2( 411, -39 )
+
+[node name="TallTree3" parent="Background_world_objects/Trees/GateTrees" instance=ExtResource( 37 )]
+position = Vector2( 594, -66 )
+
+[node name="BushyTree" parent="Background_world_objects/Trees/GateTrees" instance=ExtResource( 39 )]
+position = Vector2( 202, -98 )
+
+[node name="CollisionShape2D" parent="Background_world_objects/Trees/GateTrees/BushyTree/PassThroughBody" index="0"]
+position = Vector2( 7, 45 )
+shape = SubResource( 162 )
+
+[node name="SquashedTree" parent="Background_world_objects/Trees/GateTrees" instance=ExtResource( 40 )]
+position = Vector2( -105, -98 )
+
+[node name="CollisionShape2D" parent="Background_world_objects/Trees/GateTrees/SquashedTree/PassThroughBody" index="0"]
+position = Vector2( -4.5, 21 )
+shape = SubResource( 163 )
+
+[node name="TallTree4" parent="Background_world_objects/Trees/GateTrees" instance=ExtResource( 37 )]
+position = Vector2( -573, -66 )
+
+[node name="TallTree5" parent="Background_world_objects/Trees/GateTrees" instance=ExtResource( 37 )]
+position = Vector2( -438, -38 )
+
+[node name="TallTree6" parent="Background_world_objects/Trees/GateTrees" instance=ExtResource( 37 )]
+position = Vector2( -398, -66 )
+
+[node name="TallTree7" parent="Background_world_objects/Trees/GateTrees" instance=ExtResource( 37 )]
+position = Vector2( -302, -122 )
+
+[node name="CurvedTree" parent="Background_world_objects/Trees/GateTrees" instance=ExtResource( 41 )]
+position = Vector2( -511, -66 )
+
+[node name="CurvedTree2" parent="Background_world_objects/Trees/GateTrees" instance=ExtResource( 41 )]
+position = Vector2( -348, -161 )
+
+[node name="BushyTree2" parent="Background_world_objects/Trees/GateTrees" instance=ExtResource( 39 )]
+position = Vector2( -592, -65 )
+
+[node name="BushyTree3" parent="Background_world_objects/Trees/GateTrees" instance=ExtResource( 39 )]
+position = Vector2( -474, -66 )
+
+[node name="BushyTree4" parent="Background_world_objects/Trees/GateTrees" instance=ExtResource( 39 )]
+position = Vector2( -234, -123 )
+
+[node name="Decorations" type="Node2D" parent="Background_world_objects"]
+
+[node name="SmallFountains" type="TileMap" parent="Background_world_objects/Decorations"]
 tile_set = ExtResource( 30 )
 cell_size = Vector2( 26, 26 )
 format = 1
 tile_data = PoolIntArray( -524331, 1, 0, -524326, 1, 0, -458795, 1, 0, -458790, 1, 0, -393259, 1, 0, -393254, 1, 0, -327723, 1, 0, -327718, 1, 0, -262187, 1, 0, -262182, 1, 0, -196651, 1, 0, -196646, 1, 0, -131115, 1, 0, -131110, 1, 0, -65579, 1, 0, -65574, 1, 0, -43, 1, 0, -38, 1, 0, 65493, 1, 0, 65498, 1, 0, 524248, 1, 0, 589779, 0, 0, 589784, 1, 0, 655315, 1, 0, 655320, 1, 0, 720856, 1, 0, 786392, 1, 0, 786418, 1, 0, 851928, 1, 0, 851954, 1, 0, 917464, 1, 0, 917490, 1, 0, 983000, 1, 0, 983026, 1, 0, 1048536, 1, 0, 1048562, 1, 0, 1114072, 1, 0, 1114098, 1, 0, 1179608, 1, 0, 1179634, 1, 0, 1245144, 1, 0, 1245170, 1, 0, 1310680, 1, 0, 1310706, 1, 0, 1376216, 1, 0, 1376242, 1, 0, 1441752, 1, 0, 1441778, 1, 0, 1507288, 1, 0, 1507314, 1, 0, 1572824, 1, 0, 1572850, 1, 0, 1638360, 1, 0, 1638386, 1, 0, 1703896, 1, 0, 1703922, 1, 0, 1769432, 1, 0, 1769458, 1, 0, 1834968, 1, 0, 1834994, 1, 0, 1900504, 1, 0, 1900530, 1, 0, 1966040, 1, 0, 1966066, 1, 0, 2031576, 1, 0, 2031602, 1, 0, 2097112, 1, 0, 2097138, 1, 0, 2162648, 1, 0, 2162674, 1, 0, 2228184, 1, 0, 2228210, 1, 0, 2293720, 1, 0, 2293746, 1, 0, 2359256, 1, 0, 2359282, 1, 0, 2424792, 1, 0, 2424818, 1, 0, 2490328, 1, 0, 2490354, 1, 0, 2555864, 1, 0, 2555890, 1, 0, 2621400, 1, 0, 2621426, 1, 0, 2686962, 1, 0, 2752498, 1, 0 )
 
-[node name="Decorations" type="TileMap" parent="DecorationsBackground"]
+[node name="Decorations" type="TileMap" parent="Background_world_objects/Decorations"]
 tile_set = ExtResource( 75 )
 cell_size = Vector2( 1, 1 )
 format = 1
-tile_data = PoolIntArray( 21626759, 536870990, 0, 23920393, 536871014, 0, 23920409, 536871003, 0, 23920468, 536871009, 0, 23920484, 536871011, 0, 23920507, 536871014, 0, 26410763, 113, 0, 27393882, 536871023, 0, 30146368, 536871024, 0 )
 
 [node name="WorldSprite" type="Sprite" parent="."]
 position = Vector2( -186, -244 )
@@ -1672,213 +1744,694 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="WishShrine" parent="." instance=ExtResource( 32 )]
-position = Vector2( -1010, -276 )
+[node name="Middle_world_objects" type="Node2D" parent="."]
 
-[node name="Decorations" type="Node2D" parent="."]
+[node name="New_island_house" parent="Middle_world_objects" instance=ExtResource( 71 )]
+position = Vector2( 200, 367 )
 
-[node name="Mill_gear" parent="Decorations" instance=ExtResource( 24 )]
+[node name="Doors" type="Node2D" parent="Middle_world_objects"]
+position = Vector2( -140, -191 )
+
+[node name="GrandGardenDoor" parent="Middle_world_objects/Doors" instance=ExtResource( 16 )]
+position = Vector2( 1074, 299 )
+nextScenePath = "res://Levels/Grand_garden/GrandGardenLocation.tscn"
+nextDoorName = "GrandGardenDoor"
+
+[node name="GatesBackground" parent="Middle_world_objects/Doors/GrandGardenDoor" index="1"]
+margin_top = -33.0
+margin_right = 7.0
+
+[node name="MillDoorBottom" parent="Middle_world_objects/Doors" instance=ExtResource( 16 )]
+position = Vector2( -777, 395 )
+nextScenePath = "res://Levels/Central_hab/Mill/Mill.tscn"
+nextDoorName = "MillDoorBottom"
+
+[node name="GreenHouseDoor" parent="Middle_world_objects/Doors" instance=ExtResource( 16 )]
+position = Vector2( -986, 571 )
+nextScenePath = "res://Levels/Central_hab/Green_house/GreenHouse.tscn"
+nextDoorName = "GreenHouseDoor"
+
+[node name="YellowHouseTopDoor" parent="Middle_world_objects/Doors" instance=ExtResource( 16 )]
+position = Vector2( -570, 519 )
+nextScenePath = "res://Levels/Central_hab/Yellow_house/YellowHouse.tscn"
+nextDoorName = "YellowHouseTopDoor"
+
+[node name="YellowHouseBottomDoor" parent="Middle_world_objects/Doors" instance=ExtResource( 16 )]
+position = Vector2( -590, 571 )
+nextScenePath = "res://Levels/Central_hab/Yellow_house/YellowHouse.tscn"
+nextDoorName = "YellowHouseBottomDoor"
+
+[node name="MillDoorMiddle" parent="Middle_world_objects/Doors" instance=ExtResource( 16 )]
+position = Vector2( -757, 343 )
+nextScenePath = "res://Levels/Central_hab/Mill/Mill.tscn"
+nextDoorName = "MillDoorMiddle"
+
+[node name="MillDoorTop" parent="Middle_world_objects/Doors" instance=ExtResource( 16 )]
+position = Vector2( -757, 187 )
+nextScenePath = "res://Levels/Central_hab/Mill/Mill.tscn"
+nextDoorName = "MillDoorTop"
+
+[node name="PinkHouseDoor" parent="Middle_world_objects/Doors" instance=ExtResource( 16 )]
+position = Vector2( -1262, 139 )
+nextScenePath = "res://Levels/Central_hab/Pink_house/PinkHouse.tscn"
+nextDoorName = "PinkHouseDoor"
+
+[node name="Gates_2" parent="Middle_world_objects/Doors" instance=ExtResource( 9 )]
+position = Vector2( 191, 154 )
+nextScenePath = "res://Levels/Pedestal_hall/PedestalHall.tscn"
+nextDoorName = "Central_hub_door"
+
+[node name="GatesBackground" parent="Middle_world_objects/Doors/Gates_2" index="0"]
+margin_top = -80.0
+
+[node name="BlueHouseDoor" parent="Middle_world_objects/Doors" instance=ExtResource( 16 )]
+position = Vector2( -255, 555 )
+nextScenePath = "res://Levels/Central_hab/Blue_house/BlueHouseScene.tscn"
+nextDoorName = "BlueHouseDoor"
+
+[node name="LightHouseTopDoor" parent="Middle_world_objects/Doors" instance=ExtResource( 16 )]
+position = Vector2( 192, -575 )
+nextScenePath = "res://Levels/Central_hab/LightHouse/LightgHouse.tscn"
+nextDoorName = "LightHouseTopDoor"
+
+[node name="GatesBackground" parent="Middle_world_objects/Doors/LightHouseTopDoor" index="1"]
+margin_left = -15.0
+margin_top = -54.0
+margin_right = 17.0
+
+[node name="CollisionShape2D" parent="Middle_world_objects/Doors/LightHouseTopDoor/InteractionController/Area2D" index="0"]
+position = Vector2( 1.5, -17 )
+shape = SubResource( 171 )
+
+[node name="LightHouseBottomDoor" parent="Middle_world_objects/Doors" instance=ExtResource( 21 )]
+position = Vector2( 193, -53 )
+nextScenePath = "res://Levels/Central_hab/LightHouse/LightgHouse.tscn"
+nextDoorName = "LightHouseBottomDoor"
+keyGameConstant = "is_lighthouse_key_available"
+
+[node name="Wish_star_dangeon_door" parent="Middle_world_objects/Doors" instance=ExtResource( 16 )]
+position = Vector2( -871, -85 )
+nextScenePath = "res://Levels/Wish_star_dangeon/Wish_star_dangeon.tscn"
+nextDoorName = "Centeal_hub_door"
+
+[node name="GatesBackground" parent="Middle_world_objects/Doors/Wish_star_dangeon_door" index="1"]
+visible = false
+
+[node name="Dwellers" type="Node2D" parent="Middle_world_objects"]
+
+[node name="CookerDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 27 )]
+position = Vector2( -1249, -36 )
+
+[node name="FiresideDwellerLeft" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
+position = Vector2( 416, -4 )
+dialogId = "green_band_dweller"
+actions = [  ]
+currentState = ExtResource( 19 )
+watch_player_on_talk = false
+
+[node name="AnimationPlayer" parent="Middle_world_objects/Dwellers/FiresideDwellerLeft" index="0"]
+autoplay = "RESET"
+anims/Idle = SubResource( 200 )
+
+[node name="Sprite" parent="Middle_world_objects/Dwellers/FiresideDwellerLeft/Body" index="2"]
+texture = ExtResource( 45 )
+
+[node name="FiresideDwellerRight" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
+pause_mode = 2
+position = Vector2( 468, -4 )
+dialogId = "red_band_dweller"
+actions = [  ]
+currentState = ExtResource( 19 )
+watch_player_on_talk = false
+defaultDirection = -1
+
+[node name="AnimationPlayer" parent="Middle_world_objects/Dwellers/FiresideDwellerRight" index="0"]
+anims/Idle = SubResource( 156 )
+anims/RESET = SubResource( 157 )
+anims/Walk = SubResource( 158 )
+
+[node name="Body" parent="Middle_world_objects/Dwellers/FiresideDwellerRight" index="5"]
+scale = Vector2( -1, 1 )
+
+[node name="Sprite" parent="Middle_world_objects/Dwellers/FiresideDwellerRight/Body" index="2"]
+texture = ExtResource( 44 )
+
+[node name="DwellerKidBoy" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
+position = Vector2( 204, -244 )
+dialogId = "boy_dweller"
+actions = [ SubResource( 175 ), SubResource( 176 ) ]
+
+[node name="Sprite" parent="Middle_world_objects/Dwellers/DwellerKidBoy/Body" index="2"]
+texture = ExtResource( 47 )
+
+[node name="DwellerKidGirl" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
+position = Vector2( 95, -244 )
+dialogId = "girl_dweller"
+actions = [ SubResource( 177 ), SubResource( 178 ) ]
+
+[node name="Sprite" parent="Middle_world_objects/Dwellers/DwellerKidGirl/Body" index="2"]
+texture = ExtResource( 46 )
+
+[node name="ForestOlderDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
+position = Vector2( -585, -5 )
+__meta__ = {
+"_edit_lock_": true
+}
+dialogId = "old_dweller"
+actions = [ SubResource( 172 ), SubResource( 173 ), SubResource( 172 ), SubResource( 174 ) ]
+
+[node name="AnimationPlayer" parent="Middle_world_objects/Dwellers/ForestOlderDweller" index="0"]
+anims/Idle = SubResource( 7 )
+anims/Walk = SubResource( 6 )
+
+[node name="Sprite" parent="Middle_world_objects/Dwellers/ForestOlderDweller/Body" index="2"]
+position = Vector2( 0, -16 )
+texture = ExtResource( 43 )
+hframes = 16
+
+[node name="TopMillDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
+position = Vector2( -990, -4 )
+dialogId = "mill_employee_dweller"
+
+[node name="Sprite" parent="Middle_world_objects/Dwellers/TopMillDweller/Body" index="2"]
+texture = ExtResource( 58 )
+
+[node name="MagentaTable" type="Sprite" parent="Middle_world_objects/Dwellers/TopMillDweller"]
+position = Vector2( -4, -9 )
+texture = ExtResource( 61 )
+
+[node name="PicnicDwellerLeft" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
+position = Vector2( -1194, 172 )
+dialogId = "lover_boy_dweller"
+watch_player_on_talk = false
+
+[node name="Sprite" parent="Middle_world_objects/Dwellers/PicnicDwellerLeft/Body" index="2"]
+texture = ExtResource( 54 )
+
+[node name="DialogTextBoxController" parent="Middle_world_objects/Dwellers/PicnicDwellerLeft" index="6"]
+z_index = 100
+
+[node name="PicnicDwellerRight" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
+position = Vector2( -1161, 172 )
+dialogId = "lovers_girl_dweller"
+watch_player_on_talk = false
+defaultDirection = -1
+
+[node name="Body" parent="Middle_world_objects/Dwellers/PicnicDwellerRight" index="5"]
+scale = Vector2( -1, 1 )
+
+[node name="Sprite" parent="Middle_world_objects/Dwellers/PicnicDwellerRight/Body" index="2"]
+texture = ExtResource( 55 )
+
+[node name="MiddleMillDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
+position = Vector2( -752, 203 )
+dialogId = "engeneer_dweller"
+actions = [ SubResource( 193 ), SubResource( 194 ), SubResource( 195 ) ]
+
+[node name="Sprite" parent="Middle_world_objects/Dwellers/MiddleMillDweller/Body" index="2"]
+texture = ExtResource( 48 )
+
+[node name="MiddleMillBalconyDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
+position = Vector2( -952, 152 )
+dialogId = "mill_wife_dweller"
+actions = [ SubResource( 196 ), SubResource( 197 ), SubResource( 199 ), SubResource( 198 ) ]
+
+[node name="Sprite" parent="Middle_world_objects/Dwellers/MiddleMillBalconyDweller/Body" index="2"]
+texture = ExtResource( 51 )
+
+[node name="BottomMillDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
+position = Vector2( -1013, 380 )
+dialogId = "chinise_old_dweller"
+
+[node name="Sprite" parent="Middle_world_objects/Dwellers/BottomMillDweller/Body" index="2"]
+texture = ExtResource( 57 )
+
+[node name="RedTable" type="Sprite" parent="Middle_world_objects/Dwellers/BottomMillDweller"]
+position = Vector2( -1, -5 )
+texture = ExtResource( 62 )
+
+[node name="GrannyDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
+position = Vector2( -1234, 380 )
+dialogId = "chinise_wife_dweller"
+actions = [ SubResource( 182 ), SubResource( 183 ), SubResource( 184 ), SubResource( 185 ) ]
+
+[node name="Sprite" parent="Middle_world_objects/Dwellers/GrannyDweller/Body" index="2"]
+texture = ExtResource( 52 )
+
+[node name="YellowHouseDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
+position = Vector2( -771, 328 )
+dialogId = "doggy_like_dweller"
+actions = [ SubResource( 190 ), SubResource( 191 ), SubResource( 192 ) ]
+
+[node name="Sprite" parent="Middle_world_objects/Dwellers/YellowHouseDweller/Body" index="2"]
+texture = ExtResource( 53 )
+
+[node name="BlueTraderDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
+position = Vector2( -635, 380 )
+dialogId = "fat_dweller"
+
+[node name="Sprite" parent="Middle_world_objects/Dwellers/BlueTraderDweller/Body" index="2"]
+texture = ExtResource( 59 )
+hframes = 12
+
+[node name="BlueTable" type="Sprite" parent="Middle_world_objects/Dwellers/BlueTraderDweller"]
+position = Vector2( -2, -5 )
+texture = ExtResource( 63 )
+
+[node name="PinkTraderDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
+position = Vector2( -533, 380 )
+dialogId = "eary_dweller"
+
+[node name="Sprite" parent="Middle_world_objects/Dwellers/PinkTraderDweller/Body" index="2"]
+texture = ExtResource( 56 )
+
+[node name="PinkTable" type="Sprite" parent="Middle_world_objects/Dwellers/PinkTraderDweller"]
+position = Vector2( -7, -9 )
+texture = ExtResource( 61 )
+
+[node name="DwellerPeasant" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
+position = Vector2( -291, 380 )
+__meta__ = {
+"_edit_lock_": true
+}
+dialogId = "wealthy_dweller"
+actions = [ SubResource( 186 ), SubResource( 187 ) ]
+
+[node name="Sprite" parent="Middle_world_objects/Dwellers/DwellerPeasant/Body" index="2"]
+texture = ExtResource( 49 )
+
+[node name="DwellerPeasant2" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
+position = Vector2( -808, 380 )
+dialogId = "walking_peasant_dweller"
+actions = [ SubResource( 188 ), SubResource( 189 ) ]
+
+[node name="Sprite" parent="Middle_world_objects/Dwellers/DwellerPeasant2/Body" index="2"]
+texture = ExtResource( 50 )
+
+[node name="DialogTextBoxController" parent="Middle_world_objects/Dwellers/DwellerPeasant2" index="6"]
+z_index = 99
+
+[node name="MysticDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 79 )]
+pause_mode = 2
+position = Vector2( -23, -767 )
+dialogId = "lighthouse_top_mystic_dweller"
+actions = [ SubResource( 205 ), SubResource( 206 ), SubResource( 203 ), SubResource( 204 ) ]
+
+[node name="Decorations" type="Node2D" parent="Middle_world_objects"]
+
+[node name="Mill_gear" parent="Middle_world_objects/Decorations" instance=ExtResource( 24 )]
 position = Vector2( -907, -100 )
 
-[node name="GreenTable" type="Sprite" parent="Decorations"]
+[node name="GreenTable" type="Sprite" parent="Middle_world_objects/Decorations"]
 position = Vector2( 369, -12 )
 texture = ExtResource( 64 )
 
-[node name="YellowTable" type="Sprite" parent="Decorations"]
+[node name="YellowTable" type="Sprite" parent="Middle_world_objects/Decorations"]
 position = Vector2( 519, -8 )
 texture = ExtResource( 60 )
 
-[node name="Decorations" type="TileMap" parent="Decorations"]
+[node name="Decorations" type="TileMap" parent="Middle_world_objects/Decorations"]
 position = Vector2( 0, -4 )
 tile_set = SubResource( 36 )
 cell_size = Vector2( 1, 1 )
 format = 1
 tile_data = PoolIntArray( -18809983, 2, 0, -18809954, 16, 0, -18809893, 12, 0, -18809801, 29, 0, -18809756, 21, 0, -18809716, 27, 0, -16711802, 17, 0, -16711765, 9, 0, -16711720, 14, 0, -16777189, 27, 0, -16777148, 28, 0, -16777000, 29, 0, -7274854, 6, 0, -7274835, 1, 0, -6226207, 27, 0, -5177729, 29, 0, -4849026, 17, 0, -4849011, 18, 0, -4848979, 3, 0, -4848962, 24, 0, -4848944, 14, 0, -4130151, 3, 0, -4130135, 1, 0, -4130118, 2, 0, -4130100, 12, 0, -3081694, 16, 0, -3081657, 20, 0, -3081628, 28, 0, -3081605, 24, 0, -3081555, 21, 0, -3081533, 25, 0, -3081512, 13, 0, -3081485, 21, 0, -3081412, 29, 0, -3081393, 27, 0, -3080277, 17, 0, -3080216, 8, 0, -3145711, 24, 0, -3145581, 2, 0, -3145566, 1, 0, -3144920, 9, 0, -3144901, 10, 0, -2817442, 20, 0, -2031720, 23, 0, -2097053, 21, 0, -2096945, 21, 0, -984167, 3, 0, -984150, 4, 0, -984133, 2, 0, -984108, 12, 0, -984001, 27, 0, -983900, 21, 0, -983883, 20, 0, -983638, 16, 0, -983606, 7, 0, -983555, 24, 0, -983531, 14, 0, -983505, 22, 0, -983489, 20, 0, -983444, 27, 0, -983428, 29, 0, -983392, 24, 0, -983367, 25, 0, -983344, 6, 0, -983299, 16, 0, -983267, 1, 0, -983249, 2, 0, -983232, 3, 0, -983210, 2, 0, -983179, 29, 0, -983157, 12, 0, -983140, 22, 0, -983118, 3, 0, -983101, 4, 0, -983069, 13, 0, -1048554, 1, 0, -1048520, 21, 0, -1048502, 22, 0, -1048468, 16, 0, -1048444, 20, 0, -1048420, 14, 0, -1048402, 22, 0, -1048376, 13, 0, -1048342, 22, 0, -1048324, 23, 0, -1048298, 29, 0, -1048280, 20, 0, -1048196, 12, 0, -1047999, 21, 0, -1047820, 13, 0, 5243660, 4, 0, 6292358, 29, 0, 7340851, 16, 0, 7340873, 24, 0, 7340900, 20, 0, 10550161, 21, 0, 10550181, 29, 0, 10550208, 26, 0, 10550231, 7, 0, 11533349, 22, 0, 12647429, 12, 0, 12647504, 20, 0, 12647584, 2, 0, 13695981, 15, 0, 19987528, 20, 0, 19987557, 5, 0, 19987579, 17, 0, 19987614, 2, 0, 21036585, 6, 0, 23133237, 27, 0, 23133263, 16, 0, 23133296, 24, 0, 23133352, 13, 0, 23133749, 22, 0, 23133836, 21, 0, 23133863, 29, 0, 24181489, 2, 0, 24181504, 4, 0, 24181531, 22, 0, 24181573, 20, 0, 24181590, 14, 0, 24181631, 9, 0, 24181683, 20, 0, 24181705, 7, 0, 24181804, 20, 0, 24181883, 12, 0, 24181957, 21, 0, 24181977, 1, 0, 24182006, 20, 0, 24182073, 20, 0, 24182089, 12, 0, 24182175, 20, 0, 24182285, 13, 0, 24182309, 27, 0, 24182332, 12, 0, 24182394, 1, 0, 24182410, 2, 0, 24182447, 20, 0, 24182505, 18, 0 )
 
-[node name="Fountains" type="TileMap" parent="Decorations"]
+[node name="Fountains" type="TileMap" parent="Middle_world_objects/Decorations"]
 z_index = 100
 tile_set = ExtResource( 29 )
 cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( -46, 0, 0, 65490, 1, 0, 131026, 1, 0, 131067, 0, 0, 65543, 0, 0, 196562, 1, 0, 196603, 1, 0, 131073, 0, 0, 131079, 1, 0, 262098, 1, 0, 262139, 1, 0, 196609, 1, 0, 196615, 1, 0, 327634, 1, 0, 327675, 1, 0, 262145, 1, 0, 262151, 1, 0, 393170, 1, 0, 393211, 1, 0, 327681, 1, 0, 327687, 1, 0, 458706, 1, 0, 458747, 1, 0, 393217, 1, 0, 393223, 1, 0, 524242, 1, 0, 524283, 1, 0, 458753, 1, 0, 458759, 1, 0, 589778, 1, 0, 589819, 1, 0, 524289, 1, 0, 524295, 1, 0, 655314, 1, 0, 655355, 1, 0, 589825, 1, 0, 589831, 1, 0, 720850, 1, 0, 720891, 1, 0, 655361, 1, 0, 655367, 1, 0, 786386, 1, 0, 786427, 1, 0, 720897, 1, 0, 720903, 1, 0, 851922, 1, 0, 851954, 0, 0, 851963, 1, 0, 786433, 1, 0, 786439, 1, 0, 917458, 1, 0, 917466, 0, 0, 917488, 0, 0, 917490, 1, 0, 917499, 1, 0, 851969, 1, 0, 851975, 1, 0, 982994, 1, 0, 983002, 1, 0, 983024, 1, 0, 983026, 1, 0, 983035, 1, 0, 917505, 1, 0, 917511, 1, 0, 1048530, 1, 0, 1048538, 1, 0, 1048560, 1, 0, 1048562, 1, 0, 1048571, 1, 0, 983041, 1, 0, 983047, 1, 0, 1114066, 1, 0, 1114074, 1, 0, 1114096, 1, 0, 1114098, 1, 0, 1114107, 1, 0, 1048577, 1, 0, 1048583, 1, 0, 1179602, 1, 0, 1179610, 1, 0, 1179632, 1, 0, 1179634, 1, 0, 1179643, 1, 0, 1114113, 1, 0, 1114119, 1, 0, 1245138, 1, 0, 1245146, 1, 0, 1245168, 1, 0, 1245170, 1, 0, 1245179, 1, 0, 1179649, 1, 0, 1179655, 1, 0, 1310674, 1, 0, 1310682, 1, 0, 1310704, 1, 0, 1310706, 1, 0, 1310715, 1, 0, 1245185, 1, 0, 1245191, 1, 0, 1376210, 1, 0, 1376218, 1, 0, 1376240, 1, 0, 1376242, 1, 0, 1376251, 1, 0, 1310721, 1, 0, 1310727, 1, 0, 1441746, 1, 0, 1441754, 1, 0, 1441776, 1, 0, 1441778, 1, 0, 1441787, 1, 0, 1376257, 1, 0, 1376263, 1, 0, 1507282, 1, 0, 1507290, 1, 0, 1507312, 1, 0, 1507314, 1, 0, 1507323, 1, 0, 1441793, 1, 0, 1441799, 1, 0, 1572818, 1, 0, 1572826, 1, 0, 1572848, 1, 0, 1572850, 1, 0, 1572859, 1, 0, 1507329, 1, 0, 1507335, 1, 0, 1638354, 1, 0, 1638362, 1, 0, 1638384, 1, 0, 1638386, 1, 0, 1638395, 1, 0, 1572865, 1, 0, 1572871, 1, 0, 1703890, 1, 0, 1703898, 1, 0, 1703920, 1, 0, 1703922, 1, 0, 1703931, 1, 0, 1638401, 1, 0, 1638407, 1, 0, 1769426, 1, 0, 1769434, 1, 0, 1769456, 1, 0, 1769458, 1, 0, 1769467, 1, 0, 1703937, 1, 0, 1703943, 1, 0, 1834962, 1, 0, 1834970, 1, 0, 1834992, 1, 0, 1834994, 1, 0, 1835003, 1, 0, 1769473, 1, 0, 1769479, 1, 0, 1900498, 1, 0, 1900506, 1, 0, 1900528, 1, 0, 1900530, 1, 0, 1900539, 1, 0, 1835009, 1, 0, 1835015, 1, 0, 1966034, 1, 0, 1966042, 1, 0, 1966064, 1, 0, 1966066, 1, 0, 1966075, 1, 0, 1900545, 1, 0, 1900551, 1, 0, 2031570, 1, 0, 2031578, 1, 0, 2031600, 1, 0, 2031602, 1, 0, 2031611, 1, 0, 1966081, 1, 0, 1966087, 1, 0, 2097106, 1, 0, 2097114, 1, 0, 2097136, 1, 0, 2097138, 1, 0, 2097147, 1, 0, 2031617, 1, 0, 2031623, 1, 0, 2162642, 1, 0, 2162672, 1, 0, 2162674, 1, 0, 2162683, 1, 0, 2228178, 1, 0, 2228208, 1, 0, 2228210, 1, 0, 2228219, 1, 0, 2293714, 1, 0, 2359250, 2, 0 )
 
-[node name="SmallFountains" type="TileMap" parent="Decorations"]
+[node name="SmallFountains" type="TileMap" parent="Middle_world_objects/Decorations"]
 tile_set = ExtResource( 30 )
 cell_size = Vector2( 26, 26 )
 format = 1
 tile_data = PoolIntArray( 65484, 0, 0, 131020, 1, 0, 131032, 0, 0, 65556, 0, 0, 196556, 1, 0, 196568, 1, 0, 131092, 1, 0, 262092, 1, 0, 262104, 1, 0, 196628, 1, 0, 327628, 1, 0, 327640, 1, 0, 262164, 1, 0, 393164, 1, 0, 393176, 1, 0, 327700, 1, 0, 458700, 1, 0, 458712, 1, 0, 458738, 0, 0, 393236, 1, 0, 524236, 1, 0, 524274, 1, 0, 458772, 1, 0, 589772, 1, 0, 589810, 1, 0, 524308, 1, 0, 655308, 1, 0, 655346, 1, 0, 589844, 1, 0, 720844, 1, 0, 720882, 1, 0, 655380, 1, 0, 786380, 1, 0, 720916, 1, 0, 851916, 1, 0, 786452, 1, 0, 917452, 1, 0, 851988, 1, 0, 982988, 1, 0, 917524, 1, 0, 1048524, 1, 0, 983060, 1, 0, 1114060, 1, 0, 1114080, 0, 0, 1048596, 1, 0, 1179596, 1, 0, 1179616, 1, 0, 1114132, 1, 0, 1245132, 1, 0, 1245152, 1, 0, 1179668, 1, 0, 1310668, 1, 0, 1310688, 1, 0, 1245204, 1, 0, 1376204, 1, 0, 1376224, 1, 0, 1310740, 1, 0, 1441740, 1, 0, 1441760, 1, 0, 1376276, 1, 0, 1507276, 1, 0, 1507296, 1, 0, 1441812, 1, 0, 1572812, 1, 0, 1572832, 1, 0, 1507348, 1, 0, 1638348, 1, 0, 1638368, 1, 0, 1572884, 1, 0, 1703884, 1, 0, 1703904, 1, 0, 1638420, 1, 0, 1769420, 1, 0, 1769440, 1, 0, 1703956, 1, 0, 1834956, 1, 0, 1834976, 1, 0, 1769492, 1, 0, 1900492, 1, 0, 1900512, 1, 0, 1835028, 1, 0, 1966028, 1, 0, 1966048, 1, 0, 1900564, 1, 0, 2031564, 1, 0, 2031584, 1, 0, 1966100, 1, 0, 2097100, 1, 0, 2097120, 1, 0, 2031636, 1, 0, 2162636, 1, 0, 2162656, 1, 0, 2097172, 1, 0, 2228172, 1, 0, 2228192, 1, 0, 2293708, 1, 0, 2293728, 1, 0, 2359244, 1, 0, 2359264, 1, 0, 2424780, 1, 0, 2424800, 1, 0, 2490316, 1, 0, 2490336, 1, 0, 2555852, 1, 0, 2555872, 1, 0, 2621388, 1, 0, 2621408, 1, 0, 2686924, 1, 0, 2752460, 1, 0, 2817996, 1, 0, 2883532, 1, 0 )
 
-[node name="Bonfire" parent="Decorations" instance=ExtResource( 31 )]
+[node name="Bonfire" parent="Middle_world_objects/Decorations" instance=ExtResource( 31 )]
 position = Vector2( 441, -4 )
 
-[node name="WoodenHandlesBigBackground" type="Sprite" parent="Decorations"]
+[node name="WoodenHandlesBigBackground" type="Sprite" parent="Middle_world_objects/Decorations"]
 self_modulate = Color( 0.564706, 0.560784, 0.560784, 1 )
 position = Vector2( -723, -5 )
 scale = Vector2( 0.9, 0.9 )
 texture = ExtResource( 68 )
 
-[node name="Advanced_decorations" type="TileMap" parent="Decorations"]
+[node name="Advanced_decorations" type="TileMap" parent="Middle_world_objects/Decorations"]
 tile_set = ExtResource( 75 )
 cell_size = Vector2( 1, 1 )
 format = 1
-tile_data = PoolIntArray( 27328292, 536870985, 0 )
 
-[node name="Doors" type="Node2D" parent="."]
-position = Vector2( -140, -191 )
+[node name="WishShrine" parent="Middle_world_objects" instance=ExtResource( 32 )]
+position = Vector2( -1010, -276 )
 
-[node name="GrandGardenDoor" parent="Doors" instance=ExtResource( 16 )]
-position = Vector2( 1074, 299 )
-nextScenePath = "res://Levels/Grand_garden/GrandGardenLocation.tscn"
-nextDoorName = "GrandGardenDoor"
+[node name="MovingPlatforms" type="Node2D" parent="Middle_world_objects"]
 
-[node name="GatesBackground" parent="Doors/GrandGardenDoor" index="1"]
-margin_top = -33.0
-margin_right = 7.0
+[node name="MovingPlatform2" type="Node2D" parent="Middle_world_objects/MovingPlatforms"]
+position = Vector2( -810, -268 )
+script = ExtResource( 33 )
 
-[node name="MillDoorBottom" parent="Doors" instance=ExtResource( 16 )]
-position = Vector2( -777, 395 )
-nextScenePath = "res://Levels/Central_hab/Mill/Mill.tscn"
-nextDoorName = "MillDoorBottom"
+[node name="Platform" type="KinematicBody2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform2"]
+motion/sync_to_physics = true
 
-[node name="GreenHouseDoor" parent="Doors" instance=ExtResource( 16 )]
-position = Vector2( -986, 571 )
-nextScenePath = "res://Levels/Central_hab/Green_house/GreenHouse.tscn"
-nextDoorName = "GreenHouseDoor"
+[node name="Sprite" type="Sprite" parent="Middle_world_objects/MovingPlatforms/MovingPlatform2/Platform"]
+texture = ExtResource( 34 )
 
-[node name="YellowHouseTopDoor" parent="Doors" instance=ExtResource( 16 )]
-position = Vector2( -570, 519 )
-nextScenePath = "res://Levels/Central_hab/Yellow_house/YellowHouse.tscn"
-nextDoorName = "YellowHouseTopDoor"
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform2/Platform"]
+shape = SubResource( 135 )
+one_way_collision = true
 
-[node name="YellowHouseBottomDoor" parent="Doors" instance=ExtResource( 16 )]
-position = Vector2( -590, 571 )
-nextScenePath = "res://Levels/Central_hab/Yellow_house/YellowHouse.tscn"
-nextDoorName = "YellowHouseBottomDoor"
+[node name="Path2D" type="Path2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform2"]
+position = Vector2( -97, 0 )
+curve = ExtResource( 35 )
 
-[node name="MillDoorMiddle" parent="Doors" instance=ExtResource( 16 )]
-position = Vector2( -757, 343 )
-nextScenePath = "res://Levels/Central_hab/Mill/Mill.tscn"
-nextDoorName = "MillDoorMiddle"
+[node name="PathFollow2D" type="PathFollow2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform2/Path2D"]
+position = Vector2( 97, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
 
-[node name="MillDoorTop" parent="Doors" instance=ExtResource( 16 )]
-position = Vector2( -757, 187 )
-nextScenePath = "res://Levels/Central_hab/Mill/Mill.tscn"
-nextDoorName = "MillDoorTop"
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform2/Path2D/PathFollow2D"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
 
-[node name="PinkHouseDoor" parent="Doors" instance=ExtResource( 16 )]
-position = Vector2( -1262, 139 )
-nextScenePath = "res://Levels/Central_hab/Pink_house/PinkHouse.tscn"
-nextDoorName = "PinkHouseDoor"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Middle_world_objects/MovingPlatforms/MovingPlatform2"]
+autoplay = "Loop"
+playback_process_mode = 0
+playback_speed = 0.5
+anims/Loop = SubResource( 136 )
+anims/RESET = SubResource( 137 )
 
-[node name="Shed_door" parent="Doors" instance=ExtResource( 16 )]
-position = Vector2( -56, 571 )
-nextScenePath = "res://Levels/Harbor_house/Harbor_house.tscn"
-nextDoorName = "Harbor_house_door"
+[node name="MovingPlatform7" type="Node2D" parent="Middle_world_objects/MovingPlatforms"]
+position = Vector2( -1268, 478 )
+script = ExtResource( 33 )
 
-[node name="Gates_2" parent="Doors" instance=ExtResource( 9 )]
-position = Vector2( 191, 154 )
-nextScenePath = "res://Levels/Pedestal_hall/PedestalHall.tscn"
-nextDoorName = "Central_hub_door"
+[node name="Platform" type="KinematicBody2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform7"]
+motion/sync_to_physics = true
 
-[node name="GatesBackground" parent="Doors/Gates_2" index="0"]
-margin_top = -80.0
+[node name="Sprite" type="Sprite" parent="Middle_world_objects/MovingPlatforms/MovingPlatform7/Platform"]
+texture = ExtResource( 34 )
 
-[node name="BlueHouseDoor" parent="Doors" instance=ExtResource( 16 )]
-position = Vector2( -255, 555 )
-nextScenePath = "res://Levels/Central_hab/Blue_house/BlueHouseScene.tscn"
-nextDoorName = "BlueHouseDoor"
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform7/Platform"]
+shape = SubResource( 135 )
+one_way_collision = true
 
-[node name="LightHouseTopDoor" parent="Doors" instance=ExtResource( 16 )]
-position = Vector2( 192, -575 )
-nextScenePath = "res://Levels/Central_hab/LightHouse/LightgHouse.tscn"
-nextDoorName = "LightHouseTopDoor"
+[node name="Path2D" type="Path2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform7"]
+position = Vector2( -97, 0 )
+curve = SubResource( 154 )
 
-[node name="GatesBackground" parent="Doors/LightHouseTopDoor" index="1"]
-margin_left = -15.0
-margin_top = -54.0
-margin_right = 17.0
+[node name="PathFollow2D" type="PathFollow2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform7/Path2D"]
+position = Vector2( 97, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
 
-[node name="CollisionShape2D" parent="Doors/LightHouseTopDoor/InteractionController/Area2D" index="0"]
-position = Vector2( 1.5, -17 )
-shape = SubResource( 171 )
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform7/Path2D/PathFollow2D"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
 
-[node name="LightHouseBottomDoor" parent="Doors" instance=ExtResource( 21 )]
-position = Vector2( 193, -53 )
-nextScenePath = "res://Levels/Central_hab/LightHouse/LightgHouse.tscn"
-nextDoorName = "LightHouseBottomDoor"
-keyGameConstant = "is_lighthouse_key_available"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Middle_world_objects/MovingPlatforms/MovingPlatform7"]
+autoplay = "Loop"
+playback_process_mode = 0
+playback_speed = 0.5
+anims/Loop = SubResource( 146 )
+anims/RESET = SubResource( 147 )
 
-[node name="Wish_star_dangeon_door" parent="Doors" instance=ExtResource( 16 )]
-position = Vector2( -871, -85 )
-nextScenePath = "res://Levels/Wish_star_dangeon/Wish_star_dangeon.tscn"
-nextDoorName = "Centeal_hub_door"
+[node name="MovingPlatform8" type="Node2D" parent="Middle_world_objects/MovingPlatforms"]
+position = Vector2( -1298, 431 )
+script = ExtResource( 33 )
 
-[node name="GatesBackground" parent="Doors/Wish_star_dangeon_door" index="1"]
-visible = false
+[node name="Platform" type="KinematicBody2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform8"]
+motion/sync_to_physics = true
 
-[node name="WorldObjects" type="Node2D" parent="."]
+[node name="Sprite" type="Sprite" parent="Middle_world_objects/MovingPlatforms/MovingPlatform8/Platform"]
+texture = ExtResource( 34 )
 
-[node name="Barrel" type="Node2D" parent="WorldObjects"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform8/Platform"]
+shape = SubResource( 135 )
+one_way_collision = true
 
-[node name="Barrel" parent="WorldObjects/Barrel" instance=ExtResource( 26 )]
+[node name="Path2D" type="Path2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform8"]
+position = Vector2( -97, 0 )
+curve = ExtResource( 35 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform8/Path2D"]
+position = Vector2( 97, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform8/Path2D/PathFollow2D"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Middle_world_objects/MovingPlatforms/MovingPlatform8"]
+autoplay = "Loop"
+playback_process_mode = 0
+playback_speed = 0.5
+anims/Loop = SubResource( 148 )
+anims/RESET = SubResource( 149 )
+
+[node name="MovingPlatform9" type="Node2D" parent="Middle_world_objects/MovingPlatforms"]
+position = Vector2( -268, 456 )
+script = ExtResource( 33 )
+
+[node name="Platform" type="KinematicBody2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform9"]
+motion/sync_to_physics = true
+
+[node name="Sprite" type="Sprite" parent="Middle_world_objects/MovingPlatforms/MovingPlatform9/Platform"]
+texture = ExtResource( 34 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform9/Platform"]
+shape = SubResource( 135 )
+one_way_collision = true
+
+[node name="Path2D" type="Path2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform9"]
+position = Vector2( -97, 0 )
+curve = ExtResource( 35 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform9/Path2D"]
+position = Vector2( 97, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform9/Path2D/PathFollow2D"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Middle_world_objects/MovingPlatforms/MovingPlatform9"]
+autoplay = "Loop"
+playback_process_mode = 0
+playback_speed = 0.5
+anims/Loop = SubResource( 150 )
+anims/RESET = SubResource( 151 )
+
+[node name="MovingPlatform6" type="Node2D" parent="Middle_world_objects/MovingPlatforms"]
+position = Vector2( -1522, 18 )
+script = ExtResource( 33 )
+
+[node name="Platform" type="KinematicBody2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform6"]
+motion/sync_to_physics = true
+
+[node name="Sprite" type="Sprite" parent="Middle_world_objects/MovingPlatforms/MovingPlatform6/Platform"]
+texture = ExtResource( 34 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform6/Platform"]
+shape = SubResource( 135 )
+one_way_collision = true
+
+[node name="Path2D" type="Path2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform6"]
+position = Vector2( -97, 0 )
+curve = ExtResource( 35 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform6/Path2D"]
+position = Vector2( 97, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform6/Path2D/PathFollow2D"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Middle_world_objects/MovingPlatforms/MovingPlatform6"]
+autoplay = "Loop"
+playback_process_mode = 0
+playback_speed = 0.5
+anims/Loop = SubResource( 152 )
+anims/RESET = SubResource( 153 )
+
+[node name="MovingPlatform3" type="Node2D" parent="Middle_world_objects/MovingPlatforms"]
+position = Vector2( -890, -188 )
+script = ExtResource( 33 )
+
+[node name="Platform" type="KinematicBody2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform3"]
+motion/sync_to_physics = true
+
+[node name="Sprite" type="Sprite" parent="Middle_world_objects/MovingPlatforms/MovingPlatform3/Platform"]
+texture = ExtResource( 34 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform3/Platform"]
+shape = SubResource( 135 )
+one_way_collision = true
+
+[node name="Path2D" type="Path2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform3"]
+position = Vector2( -97, 0 )
+curve = ExtResource( 35 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform3/Path2D"]
+position = Vector2( 97, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform3/Path2D/PathFollow2D"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Middle_world_objects/MovingPlatforms/MovingPlatform3"]
+autoplay = "Loop"
+playback_process_mode = 0
+playback_speed = 0.5
+anims/Loop = SubResource( 138 )
+anims/RESET = SubResource( 139 )
+
+[node name="MovingPlatform4" type="Node2D" parent="Middle_world_objects/MovingPlatforms"]
+position = Vector2( -1114, -188 )
+script = ExtResource( 33 )
+
+[node name="Platform" type="KinematicBody2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform4"]
+motion/sync_to_physics = true
+
+[node name="Sprite" type="Sprite" parent="Middle_world_objects/MovingPlatforms/MovingPlatform4/Platform"]
+texture = ExtResource( 34 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform4/Platform"]
+shape = SubResource( 135 )
+one_way_collision = true
+
+[node name="Path2D" type="Path2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform4"]
+position = Vector2( -97, 0 )
+curve = ExtResource( 35 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform4/Path2D"]
+position = Vector2( 97, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform4/Path2D/PathFollow2D"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Middle_world_objects/MovingPlatforms/MovingPlatform4"]
+autoplay = "Loop"
+playback_process_mode = 0
+playback_speed = 0.5
+anims/Loop = SubResource( 140 )
+anims/RESET = SubResource( 141 )
+
+[node name="MovingPlatform5" type="Node2D" parent="Middle_world_objects/MovingPlatforms"]
+position = Vector2( -1162, -204 )
+script = ExtResource( 33 )
+
+[node name="Platform" type="KinematicBody2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform5"]
+motion/sync_to_physics = true
+
+[node name="Sprite" type="Sprite" parent="Middle_world_objects/MovingPlatforms/MovingPlatform5/Platform"]
+texture = ExtResource( 34 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform5/Platform"]
+shape = SubResource( 135 )
+one_way_collision = true
+
+[node name="Path2D" type="Path2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform5"]
+position = Vector2( -97, 0 )
+curve = ExtResource( 35 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform5/Path2D"]
+position = Vector2( 97, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Middle_world_objects/MovingPlatforms/MovingPlatform5/Path2D/PathFollow2D"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Middle_world_objects/MovingPlatforms/MovingPlatform5"]
+autoplay = "Loop"
+playback_process_mode = 0
+playback_speed = 0.5
+anims/Loop = SubResource( 142 )
+anims/RESET = SubResource( 143 )
+
+[node name="Destractibles" type="Node2D" parent="Middle_world_objects"]
+
+[node name="Barrel" type="Node2D" parent="Middle_world_objects/Destractibles"]
+
+[node name="Barrel" parent="Middle_world_objects/Destractibles/Barrel" instance=ExtResource( 26 )]
 position = Vector2( -874, 144 )
 
-[node name="Barrel2" parent="WorldObjects/Barrel" instance=ExtResource( 26 )]
+[node name="Barrel2" parent="Middle_world_objects/Destractibles/Barrel" instance=ExtResource( 26 )]
 position = Vector2( -982, 171 )
 
-[node name="Barrel3" parent="WorldObjects/Barrel" instance=ExtResource( 26 )]
+[node name="Barrel3" parent="Middle_world_objects/Destractibles/Barrel" instance=ExtResource( 26 )]
 position = Vector2( -954, 307 )
 
-[node name="Barrel4" parent="WorldObjects/Barrel" instance=ExtResource( 26 )]
+[node name="Barrel4" parent="Middle_world_objects/Destractibles/Barrel" instance=ExtResource( 26 )]
 position = Vector2( -937, 307 )
 
-[node name="Barrel5" parent="WorldObjects/Barrel" instance=ExtResource( 26 )]
+[node name="Barrel5" parent="Middle_world_objects/Destractibles/Barrel" instance=ExtResource( 26 )]
 position = Vector2( -946, 292 )
 
-[node name="Barrel6" parent="WorldObjects/Barrel" instance=ExtResource( 26 )]
+[node name="Barrel6" parent="Middle_world_objects/Destractibles/Barrel" instance=ExtResource( 26 )]
 position = Vector2( -921, 307 )
 
-[node name="Barrel7" parent="WorldObjects/Barrel" instance=ExtResource( 26 )]
+[node name="Barrel7" parent="Middle_world_objects/Destractibles/Barrel" instance=ExtResource( 26 )]
 position = Vector2( -930, 292 )
 
-[node name="Barrel8" parent="WorldObjects/Barrel" instance=ExtResource( 26 )]
+[node name="Barrel8" parent="Middle_world_objects/Destractibles/Barrel" instance=ExtResource( 26 )]
 position = Vector2( -938, 277 )
 
-[node name="Barrel9" parent="WorldObjects/Barrel" instance=ExtResource( 26 )]
+[node name="Barrel9" parent="Middle_world_objects/Destractibles/Barrel" instance=ExtResource( 26 )]
 position = Vector2( -687, 320 )
 
-[node name="Vases" type="Node2D" parent="WorldObjects"]
+[node name="Vases" type="Node2D" parent="Middle_world_objects/Destractibles"]
 
-[node name="Vase" parent="WorldObjects/Vases" instance=ExtResource( 25 )]
+[node name="Vase" parent="Middle_world_objects/Destractibles/Vases" instance=ExtResource( 25 )]
 position = Vector2( -1272, 371 )
 
-[node name="Vase7" parent="WorldObjects/Vases" instance=ExtResource( 25 )]
+[node name="Vase7" parent="Middle_world_objects/Destractibles/Vases" instance=ExtResource( 25 )]
 position = Vector2( 178, -44 )
 
-[node name="Vase9" parent="WorldObjects/Vases" instance=ExtResource( 25 )]
+[node name="Vase9" parent="Middle_world_objects/Destractibles/Vases" instance=ExtResource( 25 )]
 position = Vector2( -80, -44 )
 
-[node name="Vase8" parent="WorldObjects/Vases" instance=ExtResource( 25 )]
+[node name="Vase8" parent="Middle_world_objects/Destractibles/Vases" instance=ExtResource( 25 )]
 position = Vector2( 157, -44 )
 
-[node name="Vase2" parent="WorldObjects/Vases" instance=ExtResource( 25 )]
+[node name="Vase2" parent="Middle_world_objects/Destractibles/Vases" instance=ExtResource( 25 )]
 position = Vector2( -687, 304 )
 
-[node name="Vase3" parent="WorldObjects/Vases" instance=ExtResource( 25 )]
+[node name="Vase3" parent="Middle_world_objects/Destractibles/Vases" instance=ExtResource( 25 )]
 position = Vector2( -468, 322 )
 
-[node name="Vase4" parent="WorldObjects/Vases" instance=ExtResource( 25 )]
+[node name="Vase4" parent="Middle_world_objects/Destractibles/Vases" instance=ExtResource( 25 )]
 position = Vector2( -1042, -13 )
 
-[node name="Vase5" parent="WorldObjects/Vases" instance=ExtResource( 25 )]
+[node name="Vase5" parent="Middle_world_objects/Destractibles/Vases" instance=ExtResource( 25 )]
 position = Vector2( -1471, -77 )
 
-[node name="Vase6" parent="WorldObjects/Vases" instance=ExtResource( 25 )]
+[node name="Vase6" parent="Middle_world_objects/Destractibles/Vases" instance=ExtResource( 25 )]
 position = Vector2( -1488, -78 )
 
-[node name="Chimney_steams" type="Node2D" parent="WorldObjects"]
+[node name="Chimney_steams" type="Node2D" parent="Middle_world_objects"]
 
-[node name="Particles2D" type="Particles2D" parent="WorldObjects/Chimney_steams"]
+[node name="Particles2D" type="Particles2D" parent="Middle_world_objects/Chimney_steams"]
 material = SubResource( 95 )
 position = Vector2( -1355, -143 )
 amount = 25
@@ -1887,7 +2440,7 @@ randomness = 1.0
 process_material = SubResource( 98 )
 texture = ExtResource( 28 )
 
-[node name="Particles2D2" type="Particles2D" parent="WorldObjects/Chimney_steams"]
+[node name="Particles2D2" type="Particles2D" parent="Middle_world_objects/Chimney_steams"]
 material = SubResource( 95 )
 position = Vector2( -692, 241 )
 amount = 50
@@ -1898,7 +2451,7 @@ visibility_rect = Rect2( -100, -400, 200, 600 )
 process_material = SubResource( 98 )
 texture = ExtResource( 28 )
 
-[node name="Particles2D3" type="Particles2D" parent="WorldObjects/Chimney_steams"]
+[node name="Particles2D3" type="Particles2D" parent="Middle_world_objects/Chimney_steams"]
 material = SubResource( 95 )
 position = Vector2( -443, 275 )
 amount = 10
@@ -1908,21 +2461,21 @@ visibility_rect = Rect2( -100, -500, 200, 600 )
 process_material = SubResource( 98 )
 texture = ExtResource( 28 )
 
-[node name="Signs" type="Node2D" parent="WorldObjects"]
+[node name="Signs" type="Node2D" parent="Middle_world_objects"]
 
-[node name="MillSign" parent="WorldObjects/Signs" instance=ExtResource( 69 )]
+[node name="MillSign" parent="Middle_world_objects/Signs" instance=ExtResource( 69 )]
 position = Vector2( -829, -4 )
 texts_array = [ "Кисельск", "Население 21 кися " ]
 
-[node name="LoversSign" parent="WorldObjects/Signs" instance=ExtResource( 69 )]
+[node name="LoversSign" parent="Middle_world_objects/Signs" instance=ExtResource( 69 )]
 position = Vector2( -1075, 170 )
 texts_array = [ "Не мешайте влюбленным", "Свидание в процессе" ]
 
-[node name="CaveTopSign" parent="WorldObjects/Signs" instance=ExtResource( 69 )]
+[node name="CaveTopSign" parent="Middle_world_objects/Signs" instance=ExtResource( 69 )]
 position = Vector2( -328, -100 )
 texts_array = [ " Ми!" ]
 
-[node name="StoneSign" parent="WorldObjects/Signs" instance=ExtResource( 69 )]
+[node name="StoneSign" parent="Middle_world_objects/Signs" instance=ExtResource( 69 )]
 position = Vector2( -1091, -276 )
 texts_array = [ "Добрый путник,
 коли ты читаешь сие письмена,
@@ -1932,37 +2485,37 @@ texts_array = [ "Добрый путник,
 сердца любящих. Но сможешь ли ты
 соединить это... *не разборчиво*" ]
 
-[node name="Sprite" parent="WorldObjects/Signs/StoneSign" index="0"]
+[node name="Sprite" parent="Middle_world_objects/Signs/StoneSign" index="0"]
 position = Vector2( 0, -20 )
 texture = ExtResource( 70 )
 
-[node name="InteractionPopup" parent="WorldObjects/Signs/StoneSign" index="1"]
+[node name="InteractionPopup" parent="Middle_world_objects/Signs/StoneSign" index="1"]
 position = Vector2( 0, -30 )
 
-[node name="TextBoxPopup" parent="WorldObjects/Signs/StoneSign" index="2"]
+[node name="TextBoxPopup" parent="Middle_world_objects/Signs/StoneSign" index="2"]
 position = Vector2( 0, -47 )
 
-[node name="CollisionShape2D" parent="WorldObjects/Signs/StoneSign/InteractionController/Area2D" index="0"]
+[node name="CollisionShape2D" parent="Middle_world_objects/Signs/StoneSign/InteractionController/Area2D" index="0"]
 position = Vector2( -6.25, -6.375 )
 shape = SubResource( 202 )
 
-[node name="BranchSign" parent="WorldObjects/Signs" instance=ExtResource( 69 )]
+[node name="BranchSign" parent="Middle_world_objects/Signs" instance=ExtResource( 69 )]
 position = Vector2( 610, -31 )
 texts_array = [ "Внимание!
 Дальше прохода нет!", "Впереди секретный проход
 Он мой! Я его нашел!", "И вообще там ничего нет" ]
 
-[node name="Sprite" parent="WorldObjects/Signs/BranchSign" index="0"]
+[node name="Sprite" parent="Middle_world_objects/Signs/BranchSign" index="0"]
 position = Vector2( 3, -4 )
 scale = Vector2( -1, 1 )
 
-[node name="LighthouseKeyItem" parent="WorldObjects" instance=ExtResource( 74 )]
+[node name="LighthouseKeyItem" parent="Middle_world_objects" instance=ExtResource( 74 )]
 visible = false
 position = Vector2( -290, -92 )
 mode = 0
 gravity_scale = 0.6
 
-[node name="LoversHeartsParticles" type="Particles2D" parent="WorldObjects"]
+[node name="LoversHeartsParticles" type="Particles2D" parent="Middle_world_objects"]
 position = Vector2( -1177, 147 )
 emitting = false
 amount = 15
@@ -1970,222 +2523,10 @@ lifetime = 3.0
 process_material = SubResource( 212 )
 texture = ExtResource( 73 )
 
-[node name="Camera2D" parent="." instance=ExtResource( 7 )]
-position = Vector2( -291, -91 )
+[node name="Lighthouse" type="Node2D" parent="Middle_world_objects"]
+position = Vector2( 54, -889 )
 
-[node name="Clouds" parent="Camera2D" instance=ExtResource( 15 )]
-position = Vector2( -2, 2 )
-z_index = -2
-
-[node name="Dwellers" type="Node2D" parent="."]
-
-[node name="CookerDweller" parent="Dwellers" instance=ExtResource( 27 )]
-position = Vector2( -1249, -36 )
-
-[node name="FiresideDwellerLeft" parent="Dwellers" instance=ExtResource( 18 )]
-position = Vector2( 416, -4 )
-dialogId = "green_band_dweller"
-actions = [  ]
-currentState = ExtResource( 19 )
-watch_player_on_talk = false
-
-[node name="AnimationPlayer" parent="Dwellers/FiresideDwellerLeft" index="0"]
-autoplay = "RESET"
-anims/Idle = SubResource( 200 )
-
-[node name="Sprite" parent="Dwellers/FiresideDwellerLeft/Body" index="2"]
-texture = ExtResource( 45 )
-
-[node name="FiresideDwellerRight" parent="Dwellers" instance=ExtResource( 18 )]
-pause_mode = 2
-position = Vector2( 468, -4 )
-dialogId = "red_band_dweller"
-actions = [  ]
-currentState = ExtResource( 19 )
-watch_player_on_talk = false
-defaultDirection = -1
-
-[node name="AnimationPlayer" parent="Dwellers/FiresideDwellerRight" index="0"]
-anims/Idle = SubResource( 156 )
-anims/RESET = SubResource( 157 )
-anims/Walk = SubResource( 158 )
-
-[node name="Body" parent="Dwellers/FiresideDwellerRight" index="5"]
-scale = Vector2( -1, 1 )
-
-[node name="Sprite" parent="Dwellers/FiresideDwellerRight/Body" index="2"]
-texture = ExtResource( 44 )
-
-[node name="DwellerKidBoy" parent="Dwellers" instance=ExtResource( 18 )]
-position = Vector2( 204, -244 )
-dialogId = "boy_dweller"
-actions = [ SubResource( 175 ), SubResource( 176 ) ]
-
-[node name="Sprite" parent="Dwellers/DwellerKidBoy/Body" index="2"]
-texture = ExtResource( 47 )
-
-[node name="DwellerKidGirl" parent="Dwellers" instance=ExtResource( 18 )]
-position = Vector2( 95, -244 )
-dialogId = "girl_dweller"
-actions = [ SubResource( 177 ), SubResource( 178 ) ]
-
-[node name="Sprite" parent="Dwellers/DwellerKidGirl/Body" index="2"]
-texture = ExtResource( 46 )
-
-[node name="ForestOlderDweller" parent="Dwellers" instance=ExtResource( 18 )]
-position = Vector2( -585, -5 )
-__meta__ = {
-"_edit_lock_": true
-}
-dialogId = "old_dweller"
-actions = [ SubResource( 172 ), SubResource( 173 ), SubResource( 172 ), SubResource( 174 ) ]
-
-[node name="AnimationPlayer" parent="Dwellers/ForestOlderDweller" index="0"]
-anims/Idle = SubResource( 7 )
-anims/Walk = SubResource( 6 )
-
-[node name="Sprite" parent="Dwellers/ForestOlderDweller/Body" index="2"]
-position = Vector2( 0, -16 )
-texture = ExtResource( 43 )
-hframes = 16
-
-[node name="TopMillDweller" parent="Dwellers" instance=ExtResource( 18 )]
-position = Vector2( -990, -4 )
-dialogId = "mill_employee_dweller"
-
-[node name="Sprite" parent="Dwellers/TopMillDweller/Body" index="2"]
-texture = ExtResource( 58 )
-
-[node name="MagentaTable" type="Sprite" parent="Dwellers/TopMillDweller"]
-position = Vector2( -4, -9 )
-texture = ExtResource( 61 )
-
-[node name="PicnicDwellerLeft" parent="Dwellers" instance=ExtResource( 18 )]
-position = Vector2( -1194, 172 )
-dialogId = "lover_boy_dweller"
-watch_player_on_talk = false
-
-[node name="Sprite" parent="Dwellers/PicnicDwellerLeft/Body" index="2"]
-texture = ExtResource( 54 )
-
-[node name="DialogTextBoxController" parent="Dwellers/PicnicDwellerLeft" index="6"]
-z_index = 100
-
-[node name="PicnicDwellerRight" parent="Dwellers" instance=ExtResource( 18 )]
-position = Vector2( -1161, 172 )
-dialogId = "lovers_girl_dweller"
-watch_player_on_talk = false
-defaultDirection = -1
-
-[node name="Body" parent="Dwellers/PicnicDwellerRight" index="5"]
-scale = Vector2( -1, 1 )
-
-[node name="Sprite" parent="Dwellers/PicnicDwellerRight/Body" index="2"]
-texture = ExtResource( 55 )
-
-[node name="MiddleMillDweller" parent="Dwellers" instance=ExtResource( 18 )]
-position = Vector2( -752, 203 )
-dialogId = "engeneer_dweller"
-actions = [ SubResource( 193 ), SubResource( 194 ), SubResource( 195 ) ]
-
-[node name="Sprite" parent="Dwellers/MiddleMillDweller/Body" index="2"]
-texture = ExtResource( 48 )
-
-[node name="MiddleMillBalconyDweller" parent="Dwellers" instance=ExtResource( 18 )]
-position = Vector2( -952, 152 )
-dialogId = "mill_wife_dweller"
-actions = [ SubResource( 196 ), SubResource( 197 ), SubResource( 199 ), SubResource( 198 ) ]
-
-[node name="Sprite" parent="Dwellers/MiddleMillBalconyDweller/Body" index="2"]
-texture = ExtResource( 51 )
-
-[node name="BottomMillDweller" parent="Dwellers" instance=ExtResource( 18 )]
-position = Vector2( -1013, 380 )
-dialogId = "chinise_old_dweller"
-
-[node name="Sprite" parent="Dwellers/BottomMillDweller/Body" index="2"]
-texture = ExtResource( 57 )
-
-[node name="RedTable" type="Sprite" parent="Dwellers/BottomMillDweller"]
-position = Vector2( -1, -5 )
-texture = ExtResource( 62 )
-
-[node name="GrannyDweller" parent="Dwellers" instance=ExtResource( 18 )]
-position = Vector2( -1234, 381 )
-dialogId = "chinise_wife_dweller"
-actions = [ SubResource( 182 ), SubResource( 183 ), SubResource( 184 ), SubResource( 185 ) ]
-
-[node name="Sprite" parent="Dwellers/GrannyDweller/Body" index="2"]
-texture = ExtResource( 52 )
-
-[node name="YellowHouseDweller" parent="Dwellers" instance=ExtResource( 18 )]
-position = Vector2( -771, 328 )
-dialogId = "doggy_like_dweller"
-actions = [ SubResource( 190 ), SubResource( 191 ), SubResource( 192 ) ]
-
-[node name="Sprite" parent="Dwellers/YellowHouseDweller/Body" index="2"]
-texture = ExtResource( 53 )
-
-[node name="BlueTraderDweller" parent="Dwellers" instance=ExtResource( 18 )]
-position = Vector2( -635, 380 )
-dialogId = "fat_dweller"
-
-[node name="Sprite" parent="Dwellers/BlueTraderDweller/Body" index="2"]
-texture = ExtResource( 59 )
-hframes = 12
-
-[node name="BlueTable" type="Sprite" parent="Dwellers/BlueTraderDweller"]
-position = Vector2( -2, -5 )
-texture = ExtResource( 63 )
-
-[node name="PinkTraderDweller" parent="Dwellers" instance=ExtResource( 18 )]
-position = Vector2( -533, 380 )
-dialogId = "eary_dweller"
-
-[node name="Sprite" parent="Dwellers/PinkTraderDweller/Body" index="2"]
-texture = ExtResource( 56 )
-
-[node name="PinkTable" type="Sprite" parent="Dwellers/PinkTraderDweller"]
-position = Vector2( -7, -9 )
-texture = ExtResource( 61 )
-
-[node name="DwellerPeasant" parent="Dwellers" instance=ExtResource( 18 )]
-position = Vector2( -291, 380 )
-__meta__ = {
-"_edit_lock_": true
-}
-dialogId = "wealthy_dweller"
-actions = [ SubResource( 186 ), SubResource( 187 ) ]
-
-[node name="Sprite" parent="Dwellers/DwellerPeasant/Body" index="2"]
-texture = ExtResource( 49 )
-
-[node name="DwellerPeasant2" parent="Dwellers" instance=ExtResource( 18 )]
-position = Vector2( -808, 380 )
-dialogId = "walking_peasant_dweller"
-actions = [ SubResource( 188 ), SubResource( 189 ) ]
-
-[node name="Sprite" parent="Dwellers/DwellerPeasant2/Body" index="2"]
-texture = ExtResource( 50 )
-
-[node name="DialogTextBoxController" parent="Dwellers/DwellerPeasant2" index="6"]
-z_index = 99
-
-[node name="MysticDweller" parent="Dwellers" instance=ExtResource( 72 )]
-position = Vector2( -23, -768 )
-dialogId = "lighthouse_top_mystic_dweller"
-actions = [ SubResource( 205 ), SubResource( 206 ), SubResource( 203 ), SubResource( 204 ) ]
-
-[node name="Sprite" type="Sprite" parent="Dwellers/MysticDweller/Body" index="2"]
-position = Vector2( 0, -16 )
-texture = ExtResource( 71 )
-hframes = 26
-vframes = 4
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Dwellers/MysticDweller"]
-anims/Idle = SubResource( 207 )
-anims/RESET = SubResource( 208 )
-anims/Walk = SubResource( 209 )
+[node name="Lighthouse_buth" parent="Middle_world_objects/Lighthouse" instance=ExtResource( 76 )]
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 5 )]
 position = Vector2( 54, -58 )
@@ -2198,34 +2539,77 @@ scale = Vector2( 0.143938, 0.197316 )
 texture = ExtResource( 2 )
 energy = 0.7
 
-[node name="ForegroundDecorations" type="Node2D" parent="."]
+[node name="Foreground_world_objects" type="Node2D" parent="."]
+
+[node name="Decorations" type="Node2D" parent="Foreground_world_objects"]
 z_index = 3
 
-[node name="MillHandles" type="Sprite" parent="ForegroundDecorations"]
+[node name="MillHandles" type="Sprite" parent="Foreground_world_objects/Decorations"]
 position = Vector2( -915, 150 )
 texture = ExtResource( 65 )
 
-[node name="YellowHouseHandles" type="Sprite" parent="ForegroundDecorations"]
+[node name="YellowHouseHandles" type="Sprite" parent="Foreground_world_objects/Decorations"]
 position = Vector2( -730, 326 )
 texture = ExtResource( 65 )
 
-[node name="WoodenHandlesMiddle" type="Sprite" parent="ForegroundDecorations"]
+[node name="WoodenHandlesMiddle" type="Sprite" parent="Foreground_world_objects/Decorations"]
 position = Vector2( -785, 202 )
 texture = ExtResource( 67 )
 
-[node name="WoodenHandlesBig" type="Sprite" parent="ForegroundDecorations"]
+[node name="WoodenHandlesBig" type="Sprite" parent="Foreground_world_objects/Decorations"]
 position = Vector2( -722, -6 )
 texture = ExtResource( 68 )
 
-[node name="SteelHandles" type="Sprite" parent="ForegroundDecorations"]
+[node name="SteelHandles" type="Sprite" parent="Foreground_world_objects/Decorations"]
 position = Vector2( 54, -768 )
 texture = ExtResource( 66 )
 
-[node name="Destructables" type="Node" parent="."]
+[node name="Camera2D" parent="." instance=ExtResource( 7 )]
+position = Vector2( -199, 374 )
+
+[node name="Clouds" parent="Camera2D" instance=ExtResource( 15 )]
+position = Vector2( -2, 2 )
+z_index = -2
 
 [node name="Collisions" type="Node2D" parent="."]
 visible = false
 position = Vector2( 2, 62 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AirBlowers" type="Node2D" parent="Collisions"]
+position = Vector2( 1, 0 )
+
+[node name="AirBeam3" parent="Collisions/AirBlowers" instance=ExtResource( 8 )]
+position = Vector2( -695, 179 )
+
+[node name="Area2D" parent="Collisions/AirBlowers/AirBeam3" index="0"]
+position = Vector2( 0, 1 )
+
+[node name="CollisionShape2D" parent="Collisions/AirBlowers/AirBeam3/Area2D" index="0"]
+position = Vector2( 0, -73 )
+shape = SubResource( 99 )
+
+[node name="AirBeam5" parent="Collisions/AirBlowers" instance=ExtResource( 8 )]
+position = Vector2( -446, 213 )
+
+[node name="Area2D" parent="Collisions/AirBlowers/AirBeam5" index="0"]
+position = Vector2( 0, 1 )
+
+[node name="CollisionShape2D" parent="Collisions/AirBlowers/AirBeam5/Area2D" index="0"]
+position = Vector2( 0.5, -37.375 )
+shape = SubResource( 100 )
+
+[node name="AirBeam4" parent="Collisions/AirBlowers" instance=ExtResource( 8 )]
+position = Vector2( -1358, -204 )
+
+[node name="Area2D" parent="Collisions/AirBlowers/AirBeam4" index="0"]
+position = Vector2( 0, 1 )
+
+[node name="CollisionShape2D" parent="Collisions/AirBlowers/AirBeam4/Area2D" index="0"]
+position = Vector2( 0.5, -39 )
+shape = SubResource( 101 )
 
 [node name="PassTrough" type="Node2D" parent="Collisions"]
 
@@ -2501,14 +2885,6 @@ position = Vector2( 251.5, -2 )
 shape = SubResource( 79 )
 one_way_collision = true
 
-[node name="PassThroughBody54" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
-position = Vector2( -415, 252 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody54" index="0"]
-position = Vector2( 214, -2 )
-shape = SubResource( 217 )
-one_way_collision = true
-
 [node name="PassThroughBody55" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
 position = Vector2( -646, 272 )
 
@@ -2736,14 +3112,6 @@ collision_mask = 17
 position = Vector2( 632, -8 )
 shape = SubResource( 211 )
 
-[node name="PassThroughBody21" parent="Collisions/Solid" instance=ExtResource( 6 )]
-position = Vector2( -120, 314 )
-collision_layer = 17
-collision_mask = 17
-
-[node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody21" index="0"]
-shape = SubResource( 219 )
-
 [node name="PassThroughBody" parent="Collisions/Solid" instance=ExtResource( 6 )]
 position = Vector2( -613, -50 )
 collision_layer = 17
@@ -2804,8 +3172,8 @@ collision_layer = 17
 collision_mask = 17
 
 [node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody13" index="0"]
-position = Vector2( 576.5, -8 )
-shape = SubResource( 218 )
+position = Vector2( 504.5, -8 )
+shape = SubResource( 223 )
 
 [node name="PassThroughBody12" parent="Collisions/Solid" instance=ExtResource( 6 )]
 position = Vector2( -1509, -84 )
@@ -2915,59 +3283,40 @@ collision_mask = 17
 position = Vector2( 0, -2 )
 shape = SubResource( 201 )
 
-[node name="Ladders" type="Node2D" parent="."]
-visible = false
-position = Vector2( 4, 62 )
+[node name="Ladders" type="Node2D" parent="Collisions"]
+position = Vector2( 2, 0 )
 
-[node name="Ladder3" parent="Ladders" instance=ExtResource( 12 )]
+[node name="Ladder3" parent="Collisions/Ladders" instance=ExtResource( 12 )]
 position = Vector2( -61, -185 )
 
-[node name="CollisionShape2D" parent="Ladders/Ladder3" index="0"]
+[node name="CollisionShape2D" parent="Collisions/Ladders/Ladder3" index="0"]
 position = Vector2( -1, -18 )
 shape = SubResource( 215 )
 
-[node name="Ladder2" parent="Ladders" instance=ExtResource( 12 )]
+[node name="Ladder2" parent="Collisions/Ladders" instance=ExtResource( 12 )]
 position = Vector2( -877, 230 )
 
-[node name="CollisionShape2D" parent="Ladders/Ladder2" index="0"]
+[node name="CollisionShape2D" parent="Collisions/Ladders/Ladder2" index="0"]
 position = Vector2( 0, -1 )
 shape = SubResource( 68 )
 
-[node name="AirBlowers" type="Node2D" parent="."]
-visible = false
-position = Vector2( 3, 62 )
+[node name="FallHazardArea" type="Node2D" parent="Collisions"]
+position = Vector2( -2, -62 )
 
-[node name="AirBeam3" parent="AirBlowers" instance=ExtResource( 8 )]
-position = Vector2( -695, 179 )
+[node name="water" type="Area2D" parent="Collisions/FallHazardArea"]
+position = Vector2( -1019, 502 )
+collision_layer = 64
+collision_mask = 64
 
-[node name="Area2D" parent="AirBlowers/AirBeam3" index="0"]
-position = Vector2( 0, 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/FallHazardArea/water"]
+position = Vector2( 1873.5, 319 )
+shape = SubResource( 155 )
 
-[node name="CollisionShape2D" parent="AirBlowers/AirBeam3/Area2D" index="0"]
-position = Vector2( 0, -73 )
-shape = SubResource( 99 )
-
-[node name="AirBeam5" parent="AirBlowers" instance=ExtResource( 8 )]
-position = Vector2( -446, 213 )
-
-[node name="Area2D" parent="AirBlowers/AirBeam5" index="0"]
-position = Vector2( 0, 1 )
-
-[node name="CollisionShape2D" parent="AirBlowers/AirBeam5/Area2D" index="0"]
-position = Vector2( 0.5, -37.375 )
-shape = SubResource( 100 )
-
-[node name="AirBeam4" parent="AirBlowers" instance=ExtResource( 8 )]
-position = Vector2( -1358, -204 )
-
-[node name="Area2D" parent="AirBlowers/AirBeam4" index="0"]
-position = Vector2( 0, 1 )
-
-[node name="CollisionShape2D" parent="AirBlowers/AirBeam4/Area2D" index="0"]
-position = Vector2( 0.5, -39 )
-shape = SubResource( 101 )
-
-[node name="Lighting" type="Node" parent="."]
+[node name="Lighting" type="Node2D" parent="."]
+position = Vector2( 12, 55 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Light2D" type="Light2D" parent="Lighting"]
 position = Vector2( 21, 119.003 )
@@ -3079,358 +3428,64 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="MovingPlatforms" type="Node2D" parent="."]
-
-[node name="MovingPlatform2" type="Node2D" parent="MovingPlatforms"]
-position = Vector2( -810, -268 )
-script = ExtResource( 33 )
-
-[node name="Platform" type="KinematicBody2D" parent="MovingPlatforms/MovingPlatform2"]
-motion/sync_to_physics = true
-
-[node name="Sprite" type="Sprite" parent="MovingPlatforms/MovingPlatform2/Platform"]
-texture = ExtResource( 34 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatforms/MovingPlatform2/Platform"]
-shape = SubResource( 135 )
-one_way_collision = true
-
-[node name="Path2D" type="Path2D" parent="MovingPlatforms/MovingPlatform2"]
-position = Vector2( -97, 0 )
-curve = ExtResource( 35 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatforms/MovingPlatform2/Path2D"]
-position = Vector2( 97, 0 )
-rotation = 3.14159
-rotate = false
-loop = false
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MovingPlatforms/MovingPlatform2/Path2D/PathFollow2D"]
-rotation = -3.14159
-remote_path = NodePath("../../../Platform")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatforms/MovingPlatform2"]
-autoplay = "Loop"
-playback_process_mode = 0
-playback_speed = 0.5
-anims/Loop = SubResource( 136 )
-anims/RESET = SubResource( 137 )
-
-[node name="MovingPlatform7" type="Node2D" parent="MovingPlatforms"]
-position = Vector2( -1268, 478 )
-script = ExtResource( 33 )
-
-[node name="Platform" type="KinematicBody2D" parent="MovingPlatforms/MovingPlatform7"]
-motion/sync_to_physics = true
-
-[node name="Sprite" type="Sprite" parent="MovingPlatforms/MovingPlatform7/Platform"]
-texture = ExtResource( 34 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatforms/MovingPlatform7/Platform"]
-shape = SubResource( 135 )
-one_way_collision = true
-
-[node name="Path2D" type="Path2D" parent="MovingPlatforms/MovingPlatform7"]
-position = Vector2( -97, 0 )
-curve = SubResource( 154 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatforms/MovingPlatform7/Path2D"]
-position = Vector2( 97, 0 )
-rotation = 3.14159
-rotate = false
-loop = false
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MovingPlatforms/MovingPlatform7/Path2D/PathFollow2D"]
-rotation = -3.14159
-remote_path = NodePath("../../../Platform")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatforms/MovingPlatform7"]
-autoplay = "Loop"
-playback_process_mode = 0
-playback_speed = 0.5
-anims/Loop = SubResource( 146 )
-anims/RESET = SubResource( 147 )
-
-[node name="MovingPlatform8" type="Node2D" parent="MovingPlatforms"]
-position = Vector2( -1298, 431 )
-script = ExtResource( 33 )
-
-[node name="Platform" type="KinematicBody2D" parent="MovingPlatforms/MovingPlatform8"]
-motion/sync_to_physics = true
-
-[node name="Sprite" type="Sprite" parent="MovingPlatforms/MovingPlatform8/Platform"]
-texture = ExtResource( 34 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatforms/MovingPlatform8/Platform"]
-shape = SubResource( 135 )
-one_way_collision = true
-
-[node name="Path2D" type="Path2D" parent="MovingPlatforms/MovingPlatform8"]
-position = Vector2( -97, 0 )
-curve = ExtResource( 35 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatforms/MovingPlatform8/Path2D"]
-position = Vector2( 97, 0 )
-rotation = 3.14159
-rotate = false
-loop = false
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MovingPlatforms/MovingPlatform8/Path2D/PathFollow2D"]
-rotation = -3.14159
-remote_path = NodePath("../../../Platform")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatforms/MovingPlatform8"]
-autoplay = "Loop"
-playback_process_mode = 0
-playback_speed = 0.5
-anims/Loop = SubResource( 148 )
-anims/RESET = SubResource( 149 )
-
-[node name="MovingPlatform9" type="Node2D" parent="MovingPlatforms"]
-position = Vector2( -268, 456 )
-script = ExtResource( 33 )
-
-[node name="Platform" type="KinematicBody2D" parent="MovingPlatforms/MovingPlatform9"]
-motion/sync_to_physics = true
-
-[node name="Sprite" type="Sprite" parent="MovingPlatforms/MovingPlatform9/Platform"]
-texture = ExtResource( 34 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatforms/MovingPlatform9/Platform"]
-shape = SubResource( 135 )
-one_way_collision = true
-
-[node name="Path2D" type="Path2D" parent="MovingPlatforms/MovingPlatform9"]
-position = Vector2( -97, 0 )
-curve = ExtResource( 35 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatforms/MovingPlatform9/Path2D"]
-position = Vector2( 97, 0 )
-rotation = 3.14159
-rotate = false
-loop = false
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MovingPlatforms/MovingPlatform9/Path2D/PathFollow2D"]
-rotation = -3.14159
-remote_path = NodePath("../../../Platform")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatforms/MovingPlatform9"]
-autoplay = "Loop"
-playback_process_mode = 0
-playback_speed = 0.5
-anims/Loop = SubResource( 150 )
-anims/RESET = SubResource( 151 )
-
-[node name="MovingPlatform6" type="Node2D" parent="MovingPlatforms"]
-position = Vector2( -1522, 18 )
-script = ExtResource( 33 )
-
-[node name="Platform" type="KinematicBody2D" parent="MovingPlatforms/MovingPlatform6"]
-motion/sync_to_physics = true
-
-[node name="Sprite" type="Sprite" parent="MovingPlatforms/MovingPlatform6/Platform"]
-texture = ExtResource( 34 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatforms/MovingPlatform6/Platform"]
-shape = SubResource( 135 )
-one_way_collision = true
-
-[node name="Path2D" type="Path2D" parent="MovingPlatforms/MovingPlatform6"]
-position = Vector2( -97, 0 )
-curve = ExtResource( 35 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatforms/MovingPlatform6/Path2D"]
-position = Vector2( 97, 0 )
-rotation = 3.14159
-rotate = false
-loop = false
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MovingPlatforms/MovingPlatform6/Path2D/PathFollow2D"]
-rotation = -3.14159
-remote_path = NodePath("../../../Platform")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatforms/MovingPlatform6"]
-autoplay = "Loop"
-playback_process_mode = 0
-playback_speed = 0.5
-anims/Loop = SubResource( 152 )
-anims/RESET = SubResource( 153 )
-
-[node name="MovingPlatform3" type="Node2D" parent="MovingPlatforms"]
-position = Vector2( -890, -188 )
-script = ExtResource( 33 )
-
-[node name="Platform" type="KinematicBody2D" parent="MovingPlatforms/MovingPlatform3"]
-motion/sync_to_physics = true
-
-[node name="Sprite" type="Sprite" parent="MovingPlatforms/MovingPlatform3/Platform"]
-texture = ExtResource( 34 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatforms/MovingPlatform3/Platform"]
-shape = SubResource( 135 )
-one_way_collision = true
-
-[node name="Path2D" type="Path2D" parent="MovingPlatforms/MovingPlatform3"]
-position = Vector2( -97, 0 )
-curve = ExtResource( 35 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatforms/MovingPlatform3/Path2D"]
-position = Vector2( 97, 0 )
-rotation = 3.14159
-rotate = false
-loop = false
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MovingPlatforms/MovingPlatform3/Path2D/PathFollow2D"]
-rotation = -3.14159
-remote_path = NodePath("../../../Platform")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatforms/MovingPlatform3"]
-autoplay = "Loop"
-playback_process_mode = 0
-playback_speed = 0.5
-anims/Loop = SubResource( 138 )
-anims/RESET = SubResource( 139 )
-
-[node name="MovingPlatform4" type="Node2D" parent="MovingPlatforms"]
-position = Vector2( -1114, -188 )
-script = ExtResource( 33 )
-
-[node name="Platform" type="KinematicBody2D" parent="MovingPlatforms/MovingPlatform4"]
-motion/sync_to_physics = true
-
-[node name="Sprite" type="Sprite" parent="MovingPlatforms/MovingPlatform4/Platform"]
-texture = ExtResource( 34 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatforms/MovingPlatform4/Platform"]
-shape = SubResource( 135 )
-one_way_collision = true
-
-[node name="Path2D" type="Path2D" parent="MovingPlatforms/MovingPlatform4"]
-position = Vector2( -97, 0 )
-curve = ExtResource( 35 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatforms/MovingPlatform4/Path2D"]
-position = Vector2( 97, 0 )
-rotation = 3.14159
-rotate = false
-loop = false
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MovingPlatforms/MovingPlatform4/Path2D/PathFollow2D"]
-rotation = -3.14159
-remote_path = NodePath("../../../Platform")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatforms/MovingPlatform4"]
-autoplay = "Loop"
-playback_process_mode = 0
-playback_speed = 0.5
-anims/Loop = SubResource( 140 )
-anims/RESET = SubResource( 141 )
-
-[node name="MovingPlatform5" type="Node2D" parent="MovingPlatforms"]
-position = Vector2( -1162, -204 )
-script = ExtResource( 33 )
-
-[node name="Platform" type="KinematicBody2D" parent="MovingPlatforms/MovingPlatform5"]
-motion/sync_to_physics = true
-
-[node name="Sprite" type="Sprite" parent="MovingPlatforms/MovingPlatform5/Platform"]
-texture = ExtResource( 34 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatforms/MovingPlatform5/Platform"]
-shape = SubResource( 135 )
-one_way_collision = true
-
-[node name="Path2D" type="Path2D" parent="MovingPlatforms/MovingPlatform5"]
-position = Vector2( -97, 0 )
-curve = ExtResource( 35 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="MovingPlatforms/MovingPlatform5/Path2D"]
-position = Vector2( 97, 0 )
-rotation = 3.14159
-rotate = false
-loop = false
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MovingPlatforms/MovingPlatform5/Path2D/PathFollow2D"]
-rotation = -3.14159
-remote_path = NodePath("../../../Platform")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatforms/MovingPlatform5"]
-autoplay = "Loop"
-playback_process_mode = 0
-playback_speed = 0.5
-anims/Loop = SubResource( 142 )
-anims/RESET = SubResource( 143 )
-
-[node name="WaterSurface" type="Node" parent="."]
-
-[node name="water" type="Area2D" parent="WaterSurface"]
-position = Vector2( -1019, 502 )
-collision_layer = 64
-collision_mask = 64
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterSurface/water"]
-position = Vector2( 1873.5, 319 )
-shape = SubResource( 155 )
-
-[editable path="Trees/ShrineTrees/TallTree"]
-[editable path="Trees/ShrineTrees/TallTree/PassThroughBody"]
-[editable path="Trees/MillTrees/BushyTree3"]
-[editable path="Trees/MillTrees/BushyTree3/PassThroughBody"]
-[editable path="Trees/MillTrees/BushyTree2"]
-[editable path="Trees/MillTrees/BushyTree2/PassThroughBody"]
-[editable path="Trees/GateTrees/BushyTree"]
-[editable path="Trees/GateTrees/BushyTree/PassThroughBody"]
-[editable path="Trees/GateTrees/SquashedTree"]
-[editable path="Trees/GateTrees/SquashedTree/PassThroughBody"]
-[editable path="Doors/GrandGardenDoor"]
-[editable path="Doors/GrandGardenDoor/InteractionController"]
-[editable path="Doors/Shed_door"]
-[editable path="Doors/Shed_door/InteractionController"]
-[editable path="Doors/Gates_2"]
-[editable path="Doors/LightHouseTopDoor"]
-[editable path="Doors/LightHouseTopDoor/InteractionController"]
-[editable path="Doors/Wish_star_dangeon_door"]
-[editable path="Doors/Wish_star_dangeon_door/InteractionController"]
-[editable path="WorldObjects/Signs/StoneSign"]
-[editable path="WorldObjects/Signs/StoneSign/InteractionController"]
-[editable path="WorldObjects/Signs/BranchSign"]
-[editable path="WorldObjects/Signs/BranchSign/InteractionController"]
-[editable path="Dwellers/FiresideDwellerLeft"]
-[editable path="Dwellers/FiresideDwellerLeft/Body/InteractionController"]
-[editable path="Dwellers/FiresideDwellerRight"]
-[editable path="Dwellers/FiresideDwellerRight/Body/InteractionController"]
-[editable path="Dwellers/DwellerKidBoy"]
-[editable path="Dwellers/DwellerKidBoy/Body/InteractionController"]
-[editable path="Dwellers/DwellerKidGirl"]
-[editable path="Dwellers/DwellerKidGirl/Body/InteractionController"]
-[editable path="Dwellers/ForestOlderDweller"]
-[editable path="Dwellers/ForestOlderDweller/Body/InteractionController"]
-[editable path="Dwellers/TopMillDweller"]
-[editable path="Dwellers/TopMillDweller/Body/InteractionController"]
-[editable path="Dwellers/PicnicDwellerLeft"]
-[editable path="Dwellers/PicnicDwellerLeft/Body/InteractionController"]
-[editable path="Dwellers/PicnicDwellerRight"]
-[editable path="Dwellers/PicnicDwellerRight/Body/InteractionController"]
-[editable path="Dwellers/MiddleMillDweller"]
-[editable path="Dwellers/MiddleMillDweller/Body/InteractionController"]
-[editable path="Dwellers/MiddleMillBalconyDweller"]
-[editable path="Dwellers/MiddleMillBalconyDweller/Body/InteractionController"]
-[editable path="Dwellers/BottomMillDweller"]
-[editable path="Dwellers/BottomMillDweller/Body/InteractionController"]
-[editable path="Dwellers/GrannyDweller"]
-[editable path="Dwellers/GrannyDweller/Body/InteractionController"]
-[editable path="Dwellers/YellowHouseDweller"]
-[editable path="Dwellers/YellowHouseDweller/Body/InteractionController"]
-[editable path="Dwellers/BlueTraderDweller"]
-[editable path="Dwellers/BlueTraderDweller/Body/InteractionController"]
-[editable path="Dwellers/PinkTraderDweller"]
-[editable path="Dwellers/PinkTraderDweller/Body/InteractionController"]
-[editable path="Dwellers/DwellerPeasant"]
-[editable path="Dwellers/DwellerPeasant/Body/InteractionController"]
-[editable path="Dwellers/DwellerPeasant2"]
-[editable path="Dwellers/DwellerPeasant2/Body/InteractionController"]
-[editable path="Dwellers/MysticDweller"]
-[editable path="Dwellers/MysticDweller/Body/InteractionController"]
+[editable path="Background_world_objects/Trees/ShrineTrees/TallTree"]
+[editable path="Background_world_objects/Trees/ShrineTrees/TallTree/PassThroughBody"]
+[editable path="Background_world_objects/Trees/MillTrees/BushyTree3"]
+[editable path="Background_world_objects/Trees/MillTrees/BushyTree3/PassThroughBody"]
+[editable path="Background_world_objects/Trees/MillTrees/BushyTree2"]
+[editable path="Background_world_objects/Trees/MillTrees/BushyTree2/PassThroughBody"]
+[editable path="Background_world_objects/Trees/GateTrees/BushyTree"]
+[editable path="Background_world_objects/Trees/GateTrees/BushyTree/PassThroughBody"]
+[editable path="Background_world_objects/Trees/GateTrees/SquashedTree"]
+[editable path="Background_world_objects/Trees/GateTrees/SquashedTree/PassThroughBody"]
+[editable path="Middle_world_objects/Doors/GrandGardenDoor"]
+[editable path="Middle_world_objects/Doors/GrandGardenDoor/InteractionController"]
+[editable path="Middle_world_objects/Doors/Gates_2"]
+[editable path="Middle_world_objects/Doors/LightHouseTopDoor"]
+[editable path="Middle_world_objects/Doors/LightHouseTopDoor/InteractionController"]
+[editable path="Middle_world_objects/Doors/Wish_star_dangeon_door"]
+[editable path="Middle_world_objects/Doors/Wish_star_dangeon_door/InteractionController"]
+[editable path="Middle_world_objects/Dwellers/FiresideDwellerLeft"]
+[editable path="Middle_world_objects/Dwellers/FiresideDwellerLeft/Body/InteractionController"]
+[editable path="Middle_world_objects/Dwellers/FiresideDwellerRight"]
+[editable path="Middle_world_objects/Dwellers/FiresideDwellerRight/Body/InteractionController"]
+[editable path="Middle_world_objects/Dwellers/DwellerKidBoy"]
+[editable path="Middle_world_objects/Dwellers/DwellerKidBoy/Body/InteractionController"]
+[editable path="Middle_world_objects/Dwellers/DwellerKidGirl"]
+[editable path="Middle_world_objects/Dwellers/DwellerKidGirl/Body/InteractionController"]
+[editable path="Middle_world_objects/Dwellers/ForestOlderDweller"]
+[editable path="Middle_world_objects/Dwellers/ForestOlderDweller/Body/InteractionController"]
+[editable path="Middle_world_objects/Dwellers/TopMillDweller"]
+[editable path="Middle_world_objects/Dwellers/TopMillDweller/Body/InteractionController"]
+[editable path="Middle_world_objects/Dwellers/PicnicDwellerLeft"]
+[editable path="Middle_world_objects/Dwellers/PicnicDwellerLeft/Body/InteractionController"]
+[editable path="Middle_world_objects/Dwellers/PicnicDwellerRight"]
+[editable path="Middle_world_objects/Dwellers/PicnicDwellerRight/Body/InteractionController"]
+[editable path="Middle_world_objects/Dwellers/MiddleMillDweller"]
+[editable path="Middle_world_objects/Dwellers/MiddleMillDweller/Body/InteractionController"]
+[editable path="Middle_world_objects/Dwellers/MiddleMillBalconyDweller"]
+[editable path="Middle_world_objects/Dwellers/MiddleMillBalconyDweller/Body/InteractionController"]
+[editable path="Middle_world_objects/Dwellers/BottomMillDweller"]
+[editable path="Middle_world_objects/Dwellers/BottomMillDweller/Body/InteractionController"]
+[editable path="Middle_world_objects/Dwellers/GrannyDweller"]
+[editable path="Middle_world_objects/Dwellers/GrannyDweller/Body/InteractionController"]
+[editable path="Middle_world_objects/Dwellers/YellowHouseDweller"]
+[editable path="Middle_world_objects/Dwellers/YellowHouseDweller/Body/InteractionController"]
+[editable path="Middle_world_objects/Dwellers/BlueTraderDweller"]
+[editable path="Middle_world_objects/Dwellers/BlueTraderDweller/Body/InteractionController"]
+[editable path="Middle_world_objects/Dwellers/PinkTraderDweller"]
+[editable path="Middle_world_objects/Dwellers/PinkTraderDweller/Body/InteractionController"]
+[editable path="Middle_world_objects/Dwellers/DwellerPeasant"]
+[editable path="Middle_world_objects/Dwellers/DwellerPeasant/Body/InteractionController"]
+[editable path="Middle_world_objects/Dwellers/DwellerPeasant2"]
+[editable path="Middle_world_objects/Dwellers/DwellerPeasant2/Body/InteractionController"]
+[editable path="Middle_world_objects/Signs/StoneSign"]
+[editable path="Middle_world_objects/Signs/StoneSign/InteractionController"]
+[editable path="Middle_world_objects/Signs/BranchSign"]
+[editable path="Middle_world_objects/Signs/BranchSign/InteractionController"]
+[editable path="Collisions/AirBlowers/AirBeam3"]
+[editable path="Collisions/AirBlowers/AirBeam5"]
+[editable path="Collisions/AirBlowers/AirBeam4"]
 [editable path="Collisions/PassTrough/PassThroughBody5"]
 [editable path="Collisions/PassTrough/PassThroughBody37"]
 [editable path="Collisions/PassTrough/PassThroughBody41"]
@@ -3465,7 +3520,6 @@ shape = SubResource( 155 )
 [editable path="Collisions/PassTrough/PassThroughBody51"]
 [editable path="Collisions/PassTrough/PassThroughBody52"]
 [editable path="Collisions/PassTrough/PassThroughBody53"]
-[editable path="Collisions/PassTrough/PassThroughBody54"]
 [editable path="Collisions/PassTrough/PassThroughBody55"]
 [editable path="Collisions/PassTrough/PassThroughBody56"]
 [editable path="Collisions/PassTrough/PassThroughBody57"]
@@ -3494,7 +3548,6 @@ shape = SubResource( 155 )
 [editable path="Collisions/PassTrough/PassThroughBody12"]
 [editable path="Collisions/PassTrough/PassThroughBody10"]
 [editable path="Collisions/Solid/PassThroughBody18"]
-[editable path="Collisions/Solid/PassThroughBody21"]
 [editable path="Collisions/Solid/PassThroughBody"]
 [editable path="Collisions/Solid/PassThroughBody2"]
 [editable path="Collisions/Solid/PassThroughBody15"]
@@ -3514,8 +3567,5 @@ shape = SubResource( 155 )
 [editable path="Collisions/Solid/PassThroughBody11"]
 [editable path="Collisions/Solid/PassThroughBody19"]
 [editable path="Collisions/Solid/PassThroughBody20"]
-[editable path="Ladders/Ladder3"]
-[editable path="Ladders/Ladder2"]
-[editable path="AirBlowers/AirBeam3"]
-[editable path="AirBlowers/AirBeam5"]
-[editable path="AirBlowers/AirBeam4"]
+[editable path="Collisions/Ladders/Ladder3"]
+[editable path="Collisions/Ladders/Ladder2"]
