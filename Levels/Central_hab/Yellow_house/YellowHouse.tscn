@@ -131,7 +131,6 @@ tracks/0/keys = {
 }
 
 [node name="YellowHouse" instance=ExtResource( 1 )]
-dynamic_camera = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
 environment = SubResource( 25 )
