@@ -133,7 +133,8 @@ texture = ExtResource( 4 )
 modulate = Color( 1, 1, 1, 0.552941 )
 light_mask = 0
 position = Vector2( -0.999992, -11 )
-rotation = 6.28319
+rotation = -6.28319
+scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
