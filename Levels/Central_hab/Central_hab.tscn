@@ -2510,6 +2510,7 @@ position = Vector2( 3, -4 )
 scale = Vector2( -1, 1 )
 
 [node name="LighthouseKeyItem" parent="Middle_world_objects" instance=ExtResource( 74 )]
+visible = false
 position = Vector2( -290, -92 )
 mode = 0
 gravity_scale = 0.6
