@@ -2043,6 +2043,7 @@ scale = Vector2( 20.55, 37.05 )
 [editable path="MiddleWorldObjects/Signs/TumbSign"]
 [editable path="MiddleWorldObjects/Signs/TumbSign/InteractionController"]
 [editable path="MiddleWorldObjects/Chests/Chest"]
+[editable path="MiddleWorldObjects/Chests/Chest/InteractionPopup"]
 [editable path="MiddleWorldObjects/Chests/Chest/InteractionController"]
 [editable path="MiddleWorldObjects/GuidingLabels/AttackHintLabel"]
 [editable path="MiddleWorldObjects/GuidingLabels/AttackHintLabel/AppearingHintLabel"]

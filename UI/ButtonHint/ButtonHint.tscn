@@ -13,6 +13,7 @@ margin_top = 3.30898
 margin_bottom = 3.4331
 
 [node name="ButtonHint" type="Control"]
+light_mask = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = -502.0
@@ -23,6 +24,7 @@ size_flags_vertical = 4
 script = ExtResource( 3 )
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
+light_mask = 0
 margin_left = -4.0
 margin_top = -4.0
 margin_right = 8.29592
@@ -31,6 +33,7 @@ rect_scale = Vector2( 0.6, 0.6 )
 custom_styles/panel = SubResource( 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+light_mask = 0
 margin_left = 3.80036
 margin_top = 3.30898
 margin_right = 18.8004
@@ -38,6 +41,7 @@ margin_bottom = 19.309
 custom_constants/margin_left = 1
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer"]
+light_mask = 0
 margin_left = 1.0
 margin_right = 15.0
 margin_bottom = 16.0
