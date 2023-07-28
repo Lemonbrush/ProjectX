@@ -1,4 +1,4 @@
-[gd_scene load_steps=216 format=2]
+[gd_scene load_steps=213 format=2]
 
 [ext_resource path="res://Assets/Levels/Central_hub/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -70,12 +70,12 @@
 [ext_resource path="res://Assets/Levels/World_objects/Wooden_hadnles_Big.png" type="Texture" id=68]
 [ext_resource path="res://WorldObjects/Sign/Sign.tscn" type="PackedScene" id=69]
 [ext_resource path="res://Assets/WorldObjects/Signs/Stone_tumb_sign.png" type="Texture" id=70]
-[ext_resource path="res://Assets/NPC/mysticDweller-Sheet.png" type="Texture" id=71]
-[ext_resource path="res://Dweller/Abstract_dweller/AbstractDweller.tscn" type="PackedScene" id=72]
+[ext_resource path="res://Levels/Central_hab/World_objects/New_island_house.tscn" type="PackedScene" id=71]
 [ext_resource path="res://Assets/effects/Heart.png" type="Texture" id=73]
 [ext_resource path="res://WorldObjects/Pick_ups/Items/LighthouseKey/LighthouseKeyItem.tscn" type="PackedScene" id=74]
 [ext_resource path="res://Resources/Tilesets/Resources/Decorations/Decorations.tres" type="TileSet" id=75]
 [ext_resource path="res://Levels/Central_hab/World_objects/Lighthouse_buth.tscn" type="PackedScene" id=76]
+[ext_resource path="res://Dweller/Mystic_dweller/MysticDweller.tscn" type="PackedScene" id=79]
 
 [sub_resource type="Environment" id=30]
 background_mode = 4
@@ -84,6 +84,121 @@ glow_enabled = true
 glow_hdr_threshold = 1.5
 adjustment_enabled = true
 adjustment_saturation = 1.3
+
+[sub_resource type="Animation" id=224]
+resource_name = "Lighthouse_mystic_dweller_finish_quest_cutscene"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Middle_world_objects/New_island_house:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "pause_level"
+}, {
+"args": [  ],
+"method": "unpouse_level"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Middle_world_objects/Dwellers/MysticDweller")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1, 15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "show_hide_animation"
+}, {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Camera2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2, 4, 15 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 52, -809 ), Vector2( 52, -809 ), Vector2( -199, 374 ), Vector2( -199, 374 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Middle_world_objects/New_island_house:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Middle_world_objects/New_island_house:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 5, 14 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 169, 520 ), Vector2( -185, 367 ) ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath("Middle_world_objects/New_island_house")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "activate_island_const"
+} ]
+}
+
+[sub_resource type="Animation" id=225]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Middle_world_objects/New_island_house:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 200, 367 ) ]
+}
 
 [sub_resource type="Animation" id=210]
 resource_name = "show_lighthouse_key_cut_scene"
@@ -462,53 +577,6 @@ resource_local_to_scene = true
 script = ExtResource( 23 )
 move_speed = 20
 target_x_position = -30
-
-[sub_resource type="Animation" id=207]
-resource_name = "Idle"
-length = 2.7
-tracks/0/type = "value"
-tracks/0/path = NodePath("Body/Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52 ]
-}
-
-[sub_resource type="Animation" id=208]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Body/Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
-
-[sub_resource type="Animation" id=209]
-resource_name = "Walk"
-length = 1.8
-tracks/0/type = "value"
-tracks/0/path = NodePath("Body/Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ]
-}
 
 [sub_resource type="TileSet" id=36]
 0/name = "GrassDecorationsSheet.png 0"
@@ -1343,9 +1411,6 @@ extents = Vector2( 13, 2 )
 [sub_resource type="RectangleShape2D" id=79]
 extents = Vector2( 70.5, 2 )
 
-[sub_resource type="RectangleShape2D" id=217]
-extents = Vector2( 32.5, 2 )
-
 [sub_resource type="RectangleShape2D" id=81]
 extents = Vector2( 35.5, 2 )
 
@@ -1403,9 +1468,6 @@ extents = Vector2( 95.5, 5 )
 [sub_resource type="RectangleShape2D" id=211]
 extents = Vector2( 648, 8 )
 
-[sub_resource type="RectangleShape2D" id=219]
-extents = Vector2( 2, 4 )
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 67, 8 )
 
@@ -1415,8 +1477,8 @@ extents = Vector2( 2, 2 )
 [sub_resource type="RectangleShape2D" id=164]
 extents = Vector2( 64, 54 )
 
-[sub_resource type="RectangleShape2D" id=218]
-extents = Vector2( 592.5, 8 )
+[sub_resource type="RectangleShape2D" id=223]
+extents = Vector2( 520.5, 8 )
 
 [sub_resource type="RectangleShape2D" id=93]
 extents = Vector2( 175.75, 8 )
@@ -1469,6 +1531,8 @@ texture = ExtResource( 20 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 pause_mode = 2
+anims/Lighthouse_mystic_dweller_finish_quest_cutscene = SubResource( 224 )
+anims/RESET = SubResource( 225 )
 anims/show_lighthouse_key_cut_scene = SubResource( 210 )
 
 [node name="Background_world_objects" type="Node2D" parent="."]
@@ -1672,7 +1736,6 @@ tile_data = PoolIntArray( -524331, 1, 0, -524326, 1, 0, -458795, 1, 0, -458790, 
 tile_set = ExtResource( 75 )
 cell_size = Vector2( 1, 1 )
 format = 1
-tile_data = PoolIntArray( 21626759, 536870990, 0, 23920393, 536871014, 0, 23920409, 536871003, 0, 23920468, 536871009, 0, 23920484, 536871011, 0, 23920507, 536871014, 0, 26410763, 113, 0, 27393882, 536871023, 0, 30146368, 536871024, 0 )
 
 [node name="WorldSprite" type="Sprite" parent="."]
 position = Vector2( -186, -244 )
@@ -1682,6 +1745,9 @@ __meta__ = {
 }
 
 [node name="Middle_world_objects" type="Node2D" parent="."]
+
+[node name="New_island_house" parent="Middle_world_objects" instance=ExtResource( 71 )]
+position = Vector2( 200, 367 )
 
 [node name="Doors" type="Node2D" parent="Middle_world_objects"]
 position = Vector2( -140, -191 )
@@ -1729,11 +1795,6 @@ nextDoorName = "MillDoorTop"
 position = Vector2( -1262, 139 )
 nextScenePath = "res://Levels/Central_hab/Pink_house/PinkHouse.tscn"
 nextDoorName = "PinkHouseDoor"
-
-[node name="Shed_door" parent="Middle_world_objects/Doors" instance=ExtResource( 16 )]
-position = Vector2( -56, 571 )
-nextScenePath = "res://Levels/Harbor_house/Harbor_house.tscn"
-nextDoorName = "Harbor_house_door"
 
 [node name="Gates_2" parent="Middle_world_objects/Doors" instance=ExtResource( 9 )]
 position = Vector2( 191, 154 )
@@ -1970,21 +2031,11 @@ texture = ExtResource( 50 )
 [node name="DialogTextBoxController" parent="Middle_world_objects/Dwellers/DwellerPeasant2" index="6"]
 z_index = 99
 
-[node name="MysticDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 72 )]
+[node name="MysticDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 79 )]
+pause_mode = 2
 position = Vector2( -23, -767 )
 dialogId = "lighthouse_top_mystic_dweller"
 actions = [ SubResource( 205 ), SubResource( 206 ), SubResource( 203 ), SubResource( 204 ) ]
-
-[node name="Sprite" type="Sprite" parent="Middle_world_objects/Dwellers/MysticDweller/Body" index="2"]
-position = Vector2( 0, -16 )
-texture = ExtResource( 71 )
-hframes = 26
-vframes = 4
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Middle_world_objects/Dwellers/MysticDweller"]
-anims/Idle = SubResource( 207 )
-anims/RESET = SubResource( 208 )
-anims/Walk = SubResource( 209 )
 
 [node name="Decorations" type="Node2D" parent="Middle_world_objects"]
 
@@ -2032,7 +2083,6 @@ texture = ExtResource( 68 )
 tile_set = ExtResource( 75 )
 cell_size = Vector2( 1, 1 )
 format = 1
-tile_data = PoolIntArray( 27328292, 536870985, 0 )
 
 [node name="WishShrine" parent="Middle_world_objects" instance=ExtResource( 32 )]
 position = Vector2( -1010, -276 )
@@ -2460,7 +2510,6 @@ position = Vector2( 3, -4 )
 scale = Vector2( -1, 1 )
 
 [node name="LighthouseKeyItem" parent="Middle_world_objects" instance=ExtResource( 74 )]
-visible = false
 position = Vector2( -290, -92 )
 mode = 0
 gravity_scale = 0.6
@@ -2515,10 +2564,7 @@ position = Vector2( 54, -768 )
 texture = ExtResource( 66 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 7 )]
-position = Vector2( 52, -60 )
-__meta__ = {
-"_edit_lock_": true
-}
+position = Vector2( -199, 374 )
 
 [node name="Clouds" parent="Camera2D" instance=ExtResource( 15 )]
 position = Vector2( -2, 2 )
@@ -2838,14 +2884,6 @@ position = Vector2( 251.5, -2 )
 shape = SubResource( 79 )
 one_way_collision = true
 
-[node name="PassThroughBody54" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
-position = Vector2( -415, 252 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody54" index="0"]
-position = Vector2( 214, -2 )
-shape = SubResource( 217 )
-one_way_collision = true
-
 [node name="PassThroughBody55" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
 position = Vector2( -646, 272 )
 
@@ -3073,14 +3111,6 @@ collision_mask = 17
 position = Vector2( 632, -8 )
 shape = SubResource( 211 )
 
-[node name="PassThroughBody21" parent="Collisions/Solid" instance=ExtResource( 6 )]
-position = Vector2( -120, 314 )
-collision_layer = 17
-collision_mask = 17
-
-[node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody21" index="0"]
-shape = SubResource( 219 )
-
 [node name="PassThroughBody" parent="Collisions/Solid" instance=ExtResource( 6 )]
 position = Vector2( -613, -50 )
 collision_layer = 17
@@ -3141,8 +3171,8 @@ collision_layer = 17
 collision_mask = 17
 
 [node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody13" index="0"]
-position = Vector2( 576.5, -8 )
-shape = SubResource( 218 )
+position = Vector2( 504.5, -8 )
+shape = SubResource( 223 )
 
 [node name="PassThroughBody12" parent="Collisions/Solid" instance=ExtResource( 6 )]
 position = Vector2( -1509, -84 )
@@ -3409,8 +3439,6 @@ __meta__ = {
 [editable path="Background_world_objects/Trees/GateTrees/SquashedTree/PassThroughBody"]
 [editable path="Middle_world_objects/Doors/GrandGardenDoor"]
 [editable path="Middle_world_objects/Doors/GrandGardenDoor/InteractionController"]
-[editable path="Middle_world_objects/Doors/Shed_door"]
-[editable path="Middle_world_objects/Doors/Shed_door/InteractionController"]
 [editable path="Middle_world_objects/Doors/Gates_2"]
 [editable path="Middle_world_objects/Doors/LightHouseTopDoor"]
 [editable path="Middle_world_objects/Doors/LightHouseTopDoor/InteractionController"]
@@ -3450,8 +3478,6 @@ __meta__ = {
 [editable path="Middle_world_objects/Dwellers/DwellerPeasant/Body/InteractionController"]
 [editable path="Middle_world_objects/Dwellers/DwellerPeasant2"]
 [editable path="Middle_world_objects/Dwellers/DwellerPeasant2/Body/InteractionController"]
-[editable path="Middle_world_objects/Dwellers/MysticDweller"]
-[editable path="Middle_world_objects/Dwellers/MysticDweller/Body/InteractionController"]
 [editable path="Middle_world_objects/Signs/StoneSign"]
 [editable path="Middle_world_objects/Signs/StoneSign/InteractionController"]
 [editable path="Middle_world_objects/Signs/BranchSign"]
@@ -3493,7 +3519,6 @@ __meta__ = {
 [editable path="Collisions/PassTrough/PassThroughBody51"]
 [editable path="Collisions/PassTrough/PassThroughBody52"]
 [editable path="Collisions/PassTrough/PassThroughBody53"]
-[editable path="Collisions/PassTrough/PassThroughBody54"]
 [editable path="Collisions/PassTrough/PassThroughBody55"]
 [editable path="Collisions/PassTrough/PassThroughBody56"]
 [editable path="Collisions/PassTrough/PassThroughBody57"]
@@ -3522,7 +3547,6 @@ __meta__ = {
 [editable path="Collisions/PassTrough/PassThroughBody12"]
 [editable path="Collisions/PassTrough/PassThroughBody10"]
 [editable path="Collisions/Solid/PassThroughBody18"]
-[editable path="Collisions/Solid/PassThroughBody21"]
 [editable path="Collisions/Solid/PassThroughBody"]
 [editable path="Collisions/Solid/PassThroughBody2"]
 [editable path="Collisions/Solid/PassThroughBody15"]

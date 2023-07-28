@@ -65,7 +65,8 @@ func set_default_constants():
 		the_flower_mentioned = false,
 		last_ingredient_mentioned = false,
 		lighthouse_lamp_ladder_placed = false,
-		player_ignited_lighthouse_lamp = false
+		player_ignited_lighthouse_lamp = false,
+		did_finish_lighthouse_quest = false
 	}
 
 func set_constant(constant_name, value):
