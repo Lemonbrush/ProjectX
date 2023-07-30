@@ -984,6 +984,7 @@ anims/red_thred_cutscene = SubResource( 277 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 3 )]
 position = Vector2( -474, -222 )
+current = false
 
 [node name="Clouds" parent="Camera2D" instance=ExtResource( 15 )]
 position = Vector2( -2, -19 )

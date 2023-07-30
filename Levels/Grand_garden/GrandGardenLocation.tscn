@@ -3549,6 +3549,7 @@ texture = ExtResource( 19 )
 
 [node name="Camera2D" parent="." index="5"]
 position = Vector2( 207, 497 )
+zoom = Vector2( 0.7, 0.7 )
 backgroundColor = Color( 0.698039, 0.870588, 1, 1 )
 
 [node name="Background_world_objects" type="Node2D" parent="." index="6"]
@@ -4333,7 +4334,7 @@ margin_top = -1697.0
 margin_right = 366.0
 margin_bottom = -1671.0
 custom_fonts/font = ExtResource( 64 )
-text = "Мой садик цветет по тебе"
+text = "Мой садик цветёт по тебе"
 
 [node name="Flower_body" type="Node2D" parent="Upper_background_objects/Great_flower" index="1"]
 pause_mode = 2
@@ -4619,7 +4620,7 @@ process_material = SubResource( 335 )
 position = Vector2( 460, -660 )
 
 [node name="Player" parent="." index="12"]
-position = Vector2( 208, 526 )
+position = Vector2( 208, 527 )
 z_index = 1
 collision_mask = 252
 
