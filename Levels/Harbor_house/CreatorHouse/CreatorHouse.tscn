@@ -744,7 +744,7 @@ visible = false
 [node name="Calligraphy_books_sign" parent="Middle_world_decorations/Inspection_points" index="2" instance=ExtResource( 19 )]
 position = Vector2( -93, 249 )
 texts_array = [ "Этот шкаф полностью забит
-книгами по каллиграфии", "Некоторые из них еще даже
+книгами по каллиграфии", "Некоторые из них ещё даже
 не распечатаны" ]
 
 [node name="Sprite" parent="Middle_world_decorations/Inspection_points/Calligraphy_books_sign" index="0"]
@@ -793,7 +793,7 @@ visible = false
 [node name="Kitchen_sign" parent="Middle_world_decorations/Inspection_points" index="8" instance=ExtResource( 19 )]
 position = Vector2( 42, 73 )
 texts_array = [ "На кухне нет холодильника
-и плиты", "Похоже киси-работники просто
+и плиты", "Похоже, киси-работники просто
 приносят всю еду сразу готовой" ]
 
 [node name="Sprite" parent="Middle_world_decorations/Inspection_points/Kitchen_sign" index="0"]
@@ -801,8 +801,10 @@ visible = false
 
 [node name="Blue_sky_seat_sign" parent="Middle_world_decorations/Inspection_points" index="9" instance=ExtResource( 19 )]
 position = Vector2( 108, -9 )
-texts_array = [ "Кажется котятки-работники недавно
-прыгали на этом кресле" ]
+texts_array = [ "Судя по следам от лапок,
+котятки-работники недавно
+прыгали на этом кресле", "Они думали, что смогут скрыть
+их, положив сверху книгу" ]
 
 [node name="Sprite" parent="Middle_world_decorations/Inspection_points/Blue_sky_seat_sign" index="0"]
 visible = false
