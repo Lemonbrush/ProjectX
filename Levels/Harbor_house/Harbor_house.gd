@@ -1,6 +1,6 @@
 extends BaseLevel
 
-onready var mysticDwellerAnimationPlayer = $CreatorHouseIsland/Middle_world_objects/Dwellers/MysticDweller/AnimationPlayer
+onready var mysticDwellerAnimationPlayer = $CreatorHouseIsland/Middle_world_objects/Dwellers/MysticDweller
 
 func _ready():
 	var _red_thred_connection = EventBus.connect("show_red_thred_cutscene", self, "show_red_thred_cutscene")
@@ -10,4 +10,4 @@ func show_red_thred_cutscene():
 	animationPlayer.play("red_thred_cutscene")
 
 func personal_garden_mystic_dweller_hide():
-	mysticDwellerAnimationPlayer.play("Hiding")
+	mysticDwellerAnimationPlayer.show_hide_animation()

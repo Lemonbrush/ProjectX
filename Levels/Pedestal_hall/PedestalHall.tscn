@@ -1075,11 +1075,11 @@ tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0 ),
+"times": PoolRealArray( 3 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [ false ],
-"method": "set_interaction_mode"
+"args": [  ],
+"method": "show_hide_animation"
 } ]
 }
 
@@ -1286,7 +1286,7 @@ anims/Show_mystic_dweller = SubResource( 312 )
 anims/pedestals_activation_scene = SubResource( 304 )
 
 [node name="Camera2D" parent="." index="5"]
-position = Vector2( -550, -53 )
+position = Vector2( -44, -195 )
 zoom = Vector2( 0.8, 0.8 )
 
 [node name="Clouds" parent="Camera2D" index="2" instance=ExtResource( 5 )]
@@ -1650,6 +1650,7 @@ tile_data = PoolIntArray( -8126619, 78, 0, -7471218, 76, 0, -7405492, 77, 0, -72
 
 [node name="MysticDweller" parent="Middle_world_objects" index="2" instance=ExtResource( 40 )]
 pause_mode = 2
+visible = true
 position = Vector2( -25, -95 )
 dialogId = "pillars_mystic_dweller"
 currentState = SubResource( 313 )

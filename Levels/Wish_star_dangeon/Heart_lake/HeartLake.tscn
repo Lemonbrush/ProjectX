@@ -397,21 +397,21 @@ tracks/3/keys = {
 } ]
 }
 tracks/4/type = "method"
-tracks/4/path = NodePath("Main_world_objects/MysticDweller/AnimationPlayer")
+tracks/4/path = NodePath("Main_world_objects/BackEntrance/Wide_torch")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 1.025 ),
+"times": PoolRealArray( 5.5 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [ "Hiding", -1, 1.0, false ],
-"method": "play"
+"args": [  ],
+"method": "activate"
 } ]
 }
 tracks/5/type = "method"
-tracks/5/path = NodePath("Main_world_objects/BackEntrance/Wide_torch")
+tracks/5/path = NodePath("Main_world_objects/BackEntrance/Wide_torch2")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -425,17 +425,20 @@ tracks/5/keys = {
 } ]
 }
 tracks/6/type = "method"
-tracks/6/path = NodePath("Main_world_objects/BackEntrance/Wide_torch2")
+tracks/6/path = NodePath("Main_world_objects/MysticDweller")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 5.5 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 1, 6.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
-"method": "activate"
+"method": "show_hide_animation"
+}, {
+"args": [  ],
+"method": "queue_free"
 } ]
 }
 
@@ -902,7 +905,7 @@ anims/Mystic_dweller_disappearance_cutscene = SubResource( 37 )
 anims/RESET = SubResource( 18 )
 
 [node name="Camera2D" parent="." index="4"]
-position = Vector2( 9.40004, -192.4 )
+position = Vector2( 691, -34 )
 zoom_based_on_editor_value = true
 default_zoom = 1.0
 
@@ -989,6 +992,7 @@ position = Vector2( 724, -6 )
 
 [node name="MysticDweller" parent="Main_world_objects" index="3" instance=ExtResource( 16 )]
 pause_mode = 2
+visible = true
 position = Vector2( -21, -176 )
 dialogId = "mystic_dweller_heart_assembler"
 defaultDirection = -1

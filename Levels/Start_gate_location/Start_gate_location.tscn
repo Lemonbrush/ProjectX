@@ -57,26 +57,12 @@ adjustment_saturation = 1.3
 resource_name = "Finish_mystic_dweller_first_dialog"
 length = 2.0
 tracks/0/type = "method"
-tracks/0/path = NodePath("MiddleWorldObjects/NPC/FirstMysticDwellerEncounering/MysticDweller/AnimationPlayer")
+tracks/0/path = NodePath("MiddleWorldObjects/NPC/FirstMysticDwellerEncounering")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.1 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [ "Hiding", -1, 1.0, false ],
-"method": "play"
-} ]
-}
-tracks/1/type = "method"
-tracks/1/path = NodePath("MiddleWorldObjects/NPC/FirstMysticDwellerEncounering")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
 "times": PoolRealArray( 2 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -84,32 +70,18 @@ tracks/1/keys = {
 "method": "queue_free"
 } ]
 }
-tracks/2/type = "method"
-tracks/2/path = NodePath("MiddleWorldObjects/NPC/FirstMysticDwellerEncounering/MysticDweller/Body/InteractionController")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
+tracks/1/type = "method"
+tracks/1/path = NodePath("MiddleWorldObjects/NPC/FirstMysticDwellerEncounering/MysticDweller")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "force_leave"
-} ]
-}
-tracks/3/type = "method"
-tracks/3/path = NodePath("MiddleWorldObjects/NPC/FirstMysticDwellerEncounering/MysticDweller/Body/InteractionController")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [ true ],
-"method": "disabled"
+"method": "show_hide_animation"
 } ]
 }
 

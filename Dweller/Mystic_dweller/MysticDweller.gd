@@ -13,8 +13,6 @@ func spawn_appear_particles():
 	spawn_node(appearParticles)
 
 func spawn_node(loadedScene):
-	visible = false
-	interactionController.disabled(true)
 	var sceneInstance = loadedScene.instance()
 	get_parent().add_child(sceneInstance)
 	sceneInstance.scale = Vector2.ONE * body.scale

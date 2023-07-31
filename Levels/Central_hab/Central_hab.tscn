@@ -1747,6 +1747,8 @@ __meta__ = {
 [node name="Middle_world_objects" type="Node2D" parent="."]
 
 [node name="New_island_house" parent="Middle_world_objects" instance=ExtResource( 71 )]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 200, 367 )
 
 [node name="Doors" type="Node2D" parent="Middle_world_objects"]
@@ -2080,6 +2082,7 @@ z_index = 99
 
 [node name="MysticDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 79 )]
 pause_mode = 2
+visible = true
 position = Vector2( -23, -767 )
 dialogId = "lighthouse_top_mystic_dweller"
 actions = [ SubResource( 205 ), SubResource( 206 ), SubResource( 203 ), SubResource( 204 ) ]
@@ -2565,7 +2568,7 @@ position = Vector2( 54, -768 )
 texture = ExtResource( 66 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 7 )]
-position = Vector2( -199, 374 )
+position = Vector2( 52, -809 )
 
 [node name="Clouds" parent="Camera2D" instance=ExtResource( 15 )]
 position = Vector2( -2, 2 )
