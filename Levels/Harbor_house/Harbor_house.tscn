@@ -2022,6 +2022,7 @@ shape = SubResource( 215 )
 position = Vector2( 1023, 701 )
 
 [node name="MysticDweller" parent="CreatorHouseIsland/Middle_world_objects/Dwellers" instance=ExtResource( 65 )]
+visible = true
 position = Vector2( -1014, -1273 )
 dialogId = "personal_garden_mystic_dweller_dialog"
 defaultDirection = -1
