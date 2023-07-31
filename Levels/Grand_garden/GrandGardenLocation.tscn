@@ -4031,6 +4031,7 @@ position = Vector2( 150, -484 )
 position = Vector2( -150, 484 )
 
 [node name="MysticDwellerRightTower" parent="Upper_background_objects/Dwellers" index="0" instance=ExtResource( 22 )]
+visible = true
 position = Vector2( 761, 64 )
 dialogId = "mystic_dweller_grand_garden_right_tower_dialog"
 defaultDirection = -1
@@ -4039,6 +4040,7 @@ defaultDirection = -1
 scale = Vector2( -1, 1 )
 
 [node name="MysticDwellerLeftTower" parent="Upper_background_objects/Dwellers" index="1" instance=ExtResource( 22 )]
+visible = true
 position = Vector2( -612, 160 )
 dialogId = "mystic_dweller_grand_garden_left_tower_dialog"
 
@@ -4620,7 +4622,7 @@ process_material = SubResource( 335 )
 position = Vector2( 460, -660 )
 
 [node name="Player" parent="." index="12"]
-position = Vector2( 208, 527 )
+position = Vector2( 208, 523 )
 z_index = 1
 collision_mask = 252
 

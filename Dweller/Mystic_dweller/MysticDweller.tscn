@@ -186,6 +186,7 @@ tracks/0/keys = {
 }
 
 [node name="MysticDweller" instance=ExtResource( 4 )]
+visible = false
 script = ExtResource( 5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]

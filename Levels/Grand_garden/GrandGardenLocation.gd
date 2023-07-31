@@ -87,7 +87,7 @@ func set_grand_flower_grown_constant():
 	GameEventConstants.set_constant("grand_flower_did_grow", true)
 
 func grand_garden_mystic_dweller_right_tower_hide():
-	right_tower_mystic_dweller.show_hide_animation()
+	right_tower_mystic_dweller.place_hide_animation_scene()
 
 func grand_garden_mystic_dweller_left_tower_hide():
-	left_tower_mystic_dweller.show_hide_animation()
+	left_tower_mystic_dweller.place_hide_animation_scene()
