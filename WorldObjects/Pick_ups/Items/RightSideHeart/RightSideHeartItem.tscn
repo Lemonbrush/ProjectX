@@ -8,3 +8,4 @@
 script = ExtResource( 1 )
 itemScene = ExtResource( 3 )
 toggleGameConstant = "right_side_heart_picked_up"
+use_player_pick_up_scale_animation = false
