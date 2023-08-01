@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=2]
+[gd_scene load_steps=106 format=2]
 
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
@@ -34,6 +34,7 @@
 [ext_resource path="res://WorldObjects/Sign/Sign.tscn" type="PackedScene" id=32]
 [ext_resource path="res://WorldObjects/Destructables/Vase/Background_vase/Background_vase.tscn" type="PackedScene" id=33]
 [ext_resource path="res://WorldObjects/Destructables/Barrel/Background_barrel/Background_barrel.tscn" type="PackedScene" id=34]
+[ext_resource path="res://Assets/Levels/Wish_star_dangeon/Hidden_tower.png" type="Texture" id=35]
 
 [sub_resource type="Environment" id=3]
 background_mode = 4
@@ -47,7 +48,7 @@ adjustment_saturation = 1.3
 resource_name = "First_torch_ignite_cutscene"
 length = 5.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("Moving_platforms/Interactive_platforms:visible")
+tracks/0/path = NodePath("Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -71,7 +72,7 @@ tracks/1/keys = {
 "values": [ Vector2( 905, 13 ), Vector2( 905, 13 ) ]
 }
 tracks/2/type = "method"
-tracks/2/path = NodePath("Moving_platforms/Interactive_platforms/Interactive_platform_1/Wide_torch")
+tracks/2/path = NodePath("Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_1/Wide_torch")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -85,7 +86,7 @@ tracks/2/keys = {
 } ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Moving_platforms/Interactive_platforms/Interactive_platform_4/PassThroughBody15/CollisionShape2D:disabled")
+tracks/3/path = NodePath("Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_4/PassThroughBody15/CollisionShape2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -97,7 +98,7 @@ tracks/3/keys = {
 "values": [ false ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Moving_platforms/Interactive_platforms/Interactive_platform_3/PassThroughBody15/CollisionShape2D:disabled")
+tracks/4/path = NodePath("Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_3/PassThroughBody15/CollisionShape2D:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -109,7 +110,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Moving_platforms/Interactive_platforms/Interactive_platform_2/PassThroughBody15/CollisionShape2D:disabled")
+tracks/5/path = NodePath("Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_2/PassThroughBody15/CollisionShape2D:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -121,7 +122,7 @@ tracks/5/keys = {
 "values": [ false ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Moving_platforms/Interactive_platforms/Interactive_platform_1/PassThroughBody15/CollisionShape2D:disabled")
+tracks/6/path = NodePath("Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_1/PassThroughBody15/CollisionShape2D:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -149,7 +150,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1057, 10 ), Vector2( 1057, 10 ), Vector2( -357, 54 ), Vector2( -357, 54 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Moving_platforms/Interactive_platforms/Interactive_platform_1:position")
+tracks/1/path = NodePath("Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_1:position")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -161,7 +162,7 @@ tracks/1/keys = {
 "values": [ Vector2( -1, -45 ), Vector2( -1, -61 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Moving_platforms/Interactive_platforms/Interactive_platform_2:position")
+tracks/2/path = NodePath("Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_2:position")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -173,7 +174,7 @@ tracks/2/keys = {
 "values": [ Vector2( 119, -17 ), Vector2( 119, -61 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Moving_platforms/Interactive_platforms/Interactive_platform_3:position")
+tracks/3/path = NodePath("Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_3:position")
 tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -185,7 +186,7 @@ tracks/3/keys = {
 "values": [ Vector2( 220, 31 ), Vector2( 220, -61 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Moving_platforms/Interactive_platforms/Interactive_platform_4:position")
+tracks/4/path = NodePath("Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_4:position")
 tracks/4/interp = 2
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -197,7 +198,7 @@ tracks/4/keys = {
 "values": [ Vector2( 325, 85 ), Vector2( 325, -61 ) ]
 }
 tracks/5/type = "method"
-tracks/5/path = NodePath("World_objects/Torches/Left_island_wide_torch")
+tracks/5/path = NodePath("Hidden_tower/Middle_world_objects/Torches/Left_island_wide_torch")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -245,17 +246,92 @@ anim_offset = 1.0
 anim_offset_random = 1.0
 anim_offset_curve = SubResource( 7 )
 
-[sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 48, 8 )
-
-[sub_resource type="RectangleShape2D" id=104]
+[sub_resource type="RectangleShape2D" id=88]
 extents = Vector2( 8, 8 )
 
-[sub_resource type="RectangleShape2D" id=105]
+[sub_resource type="Animation" id=89]
+resource_name = "Loop"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=90]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="RectangleShape2D" id=91]
 extents = Vector2( 16, 8 )
 
-[sub_resource type="RectangleShape2D" id=106]
+[sub_resource type="Curve2D" id=95]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 104, 0, 0, 0, 0, 0, 104, 47 )
+}
+
+[sub_resource type="Animation" id=92]
+resource_name = "Loop"
+length = 15.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 7.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=93]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="RectangleShape2D" id=77]
+extents = Vector2( 56, 8 )
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 40, 8 )
+
+[sub_resource type="RectangleShape2D" id=110]
 extents = Vector2( 24, 8 )
+
+[sub_resource type="RectangleShape2D" id=109]
+extents = Vector2( 8, 8 )
 
 [sub_resource type="RectangleShape2D" id=107]
 extents = Vector2( 16, 8 )
@@ -263,80 +339,14 @@ extents = Vector2( 16, 8 )
 [sub_resource type="RectangleShape2D" id=108]
 extents = Vector2( 39.5, 8 )
 
-[sub_resource type="RectangleShape2D" id=109]
-extents = Vector2( 8, 8 )
-
-[sub_resource type="RectangleShape2D" id=110]
-extents = Vector2( 24, 8 )
-
-[sub_resource type="RectangleShape2D" id=14]
-extents = Vector2( 40, 8 )
-
-[sub_resource type="RectangleShape2D" id=96]
-extents = Vector2( 16, 8 )
-
-[sub_resource type="RectangleShape2D" id=16]
-extents = Vector2( 16, 8 )
-
-[sub_resource type="RectangleShape2D" id=97]
-extents = Vector2( 32, 8 )
-
-[sub_resource type="RectangleShape2D" id=98]
-extents = Vector2( 8, 8 )
-
-[sub_resource type="RectangleShape2D" id=17]
-extents = Vector2( 288.5, 8 )
-
-[sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 16, 8 )
-
-[sub_resource type="RectangleShape2D" id=20]
-extents = Vector2( 40, 8 )
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 56, 8 )
 
 [sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 72, 8 )
 
-[sub_resource type="RectangleShape2D" id=22]
-extents = Vector2( 56, 8 )
-
-[sub_resource type="RectangleShape2D" id=102]
-extents = Vector2( 8, 8 )
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 520, 8 )
-
-[sub_resource type="RectangleShape2D" id=24]
-extents = Vector2( 72, 8 )
-
-[sub_resource type="RectangleShape2D" id=77]
-extents = Vector2( 56, 8 )
-
-[sub_resource type="RectangleShape2D" id=25]
-extents = Vector2( 184, 8 )
-
-[sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 1.5, 3.5 )
-
 [sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 8, 273.25 )
-
-[sub_resource type="RectangleShape2D" id=111]
-extents = Vector2( 3.5, 63.625 )
-
-[sub_resource type="RectangleShape2D" id=112]
-extents = Vector2( 3.5, 46.3125 )
-
-[sub_resource type="RectangleShape2D" id=113]
-extents = Vector2( 3.5, 16.3125 )
-
-[sub_resource type="RectangleShape2D" id=114]
-extents = Vector2( 3.5, 25.5 )
-
-[sub_resource type="RectangleShape2D" id=115]
-extents = Vector2( 3.5, 32 )
-
-[sub_resource type="RectangleShape2D" id=116]
-extents = Vector2( 3.5, 32 )
 
 [sub_resource type="RectangleShape2D" id=117]
 extents = Vector2( 3.5, 16 )
@@ -523,83 +533,74 @@ tracks/0/keys = {
 "values": [ 0.0 ]
 }
 
-[sub_resource type="RectangleShape2D" id=88]
-extents = Vector2( 8, 8 )
-
-[sub_resource type="Animation" id=89]
-resource_name = "Loop"
-length = 10.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 1.0 ]
-}
-
-[sub_resource type="Animation" id=90]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-
-[sub_resource type="RectangleShape2D" id=91]
-extents = Vector2( 16, 8 )
-
-[sub_resource type="Curve2D" id=95]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 104, 0, 0, 0, 0, 0, 104, 47 )
-}
-
-[sub_resource type="Animation" id=92]
-resource_name = "Loop"
-length = 15.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 7.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 1.0 ]
-}
-
-[sub_resource type="Animation" id=93]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-
 [sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 24, 8 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 48, 8 )
+
+[sub_resource type="RectangleShape2D" id=104]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=105]
+extents = Vector2( 16, 8 )
+
+[sub_resource type="RectangleShape2D" id=106]
+extents = Vector2( 24, 8 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 40, 8 )
+
+[sub_resource type="RectangleShape2D" id=96]
+extents = Vector2( 16, 8 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 16, 8 )
+
+[sub_resource type="RectangleShape2D" id=97]
+extents = Vector2( 32, 8 )
+
+[sub_resource type="RectangleShape2D" id=98]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 288.5, 8 )
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 16, 8 )
+
+[sub_resource type="RectangleShape2D" id=102]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 520, 8 )
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 72, 8 )
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 184, 8 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 1.5, 3.5 )
+
+[sub_resource type="RectangleShape2D" id=111]
+extents = Vector2( 3.5, 63.625 )
+
+[sub_resource type="RectangleShape2D" id=112]
+extents = Vector2( 3.5, 46.3125 )
+
+[sub_resource type="RectangleShape2D" id=113]
+extents = Vector2( 3.5, 16.3125 )
+
+[sub_resource type="RectangleShape2D" id=114]
+extents = Vector2( 3.5, 25.5 )
+
+[sub_resource type="RectangleShape2D" id=115]
+extents = Vector2( 3.5, 32 )
+
+[sub_resource type="RectangleShape2D" id=116]
+extents = Vector2( 3.5, 32 )
 
 [sub_resource type="ConvexPolygonShape2D" id=73]
 points = PoolVector2Array( 0, 0, 0, 16, 16, 16, 16, 0 )
@@ -692,25 +693,1121 @@ position = Vector2( 0, 1 )
 [node name="Particles2D" parent="Camera2D/Stars" index="0"]
 process_material = SubResource( 11 )
 
-[node name="Background_world_objects" type="Node2D" parent="." index="6"]
+[node name="Hidden_tower" type="Node2D" parent="." index="6"]
+position = Vector2( -431, 252 )
 
-[node name="Fountains" type="TileMap" parent="Background_world_objects" index="0"]
+[node name="Sprite" type="Sprite" parent="Hidden_tower" index="0"]
+texture = ExtResource( 35 )
+
+[node name="Middle_world_objects" type="Node2D" parent="Hidden_tower" index="1"]
+
+[node name="Torches" type="Node2D" parent="Hidden_tower/Middle_world_objects" index="0"]
+
+[node name="Left_island_wide_torch" parent="Hidden_tower/Middle_world_objects/Torches" index="0" instance=ExtResource( 10 )]
+position = Vector2( 28, -165 )
+
+[node name="Left_island_wide_torch2" parent="Hidden_tower/Middle_world_objects/Torches" index="1" instance=ExtResource( 10 )]
+position = Vector2( -27, -357 )
+
+[node name="Left_island_wide_torch3" parent="Hidden_tower/Middle_world_objects/Torches" index="2" instance=ExtResource( 10 )]
+position = Vector2( -63, -165 )
+
+[node name="Left_island_wide_torch4" parent="Hidden_tower/Middle_world_objects/Torches" index="3" instance=ExtResource( 10 )]
+position = Vector2( 12, -5 )
+
+[node name="Left_island_wide_torch5" parent="Hidden_tower/Middle_world_objects/Torches" index="4" instance=ExtResource( 10 )]
+position = Vector2( -56, 187 )
+
+[node name="Left_island_wide_torch6" parent="Hidden_tower/Middle_world_objects/Torches" index="5" instance=ExtResource( 10 )]
+position = Vector2( 36, 187 )
+
+[node name="Destructibles" type="Node2D" parent="Hidden_tower/Middle_world_objects" index="1"]
+
+[node name="Background_vase7" parent="Hidden_tower/Middle_world_objects/Destructibles" index="0" instance=ExtResource( 33 )]
+position = Vector2( -33, -8 )
+
+[node name="Background_barrel3" parent="Hidden_tower/Middle_world_objects/Destructibles" index="1" instance=ExtResource( 34 )]
+position = Vector2( -30, -168 )
+
+[node name="Background_barrel4" parent="Hidden_tower/Middle_world_objects/Destructibles" index="2" instance=ExtResource( 34 )]
+position = Vector2( 15, 183 )
+
+[node name="Background_barrel5" parent="Hidden_tower/Middle_world_objects/Destructibles" index="3" instance=ExtResource( 34 )]
+position = Vector2( 12, -360 )
+
+[node name="Flying_platforms" type="Node2D" parent="Hidden_tower/Middle_world_objects" index="2"]
+
+[node name="MovingPlatform" type="Node2D" parent="Hidden_tower/Middle_world_objects/Flying_platforms" index="0"]
+position = Vector2( -208, 41 )
+script = ExtResource( 13 )
+
+[node name="Platform" type="KinematicBody2D" parent="Hidden_tower/Middle_world_objects/Flying_platforms/MovingPlatform" index="0"]
+position = Vector2( 104, 0 )
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="Hidden_tower/Middle_world_objects/Flying_platforms/MovingPlatform/Platform" index="0" instance=ExtResource( 18 )]
+position = Vector2( -0.255653, 0 )
+
+[node name="Sprite" type="Sprite" parent="Hidden_tower/Middle_world_objects/Flying_platforms/MovingPlatform/Platform" index="1"]
+texture = ExtResource( 21 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hidden_tower/Middle_world_objects/Flying_platforms/MovingPlatform/Platform" index="2"]
+shape = SubResource( 88 )
+one_way_collision = true
+
+[node name="Path2D" type="Path2D" parent="Hidden_tower/Middle_world_objects/Flying_platforms/MovingPlatform" index="1"]
+curve = ExtResource( 19 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Hidden_tower/Middle_world_objects/Flying_platforms/MovingPlatform/Path2D" index="0"]
+position = Vector2( 104, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Hidden_tower/Middle_world_objects/Flying_platforms/MovingPlatform/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Hidden_tower/Middle_world_objects/Flying_platforms/MovingPlatform" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 89 )
+anims/RESET = SubResource( 90 )
+
+[node name="MovingPlatform2" type="Node2D" parent="Hidden_tower/Middle_world_objects/Flying_platforms" index="1"]
+position = Vector2( -24, -39 )
+script = ExtResource( 13 )
+
+[node name="Platform" type="KinematicBody2D" parent="Hidden_tower/Middle_world_objects/Flying_platforms/MovingPlatform2" index="0"]
+position = Vector2( 104, 0 )
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="Hidden_tower/Middle_world_objects/Flying_platforms/MovingPlatform2/Platform" index="0" instance=ExtResource( 18 )]
+position = Vector2( -1.90735e-06, 0 )
+scale = Vector2( 1.8, 1 )
+
+[node name="Sprite" type="Sprite" parent="Hidden_tower/Middle_world_objects/Flying_platforms/MovingPlatform2/Platform" index="1"]
+texture = ExtResource( 23 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hidden_tower/Middle_world_objects/Flying_platforms/MovingPlatform2/Platform" index="2"]
+shape = SubResource( 91 )
+one_way_collision = true
+
+[node name="Path2D" type="Path2D" parent="Hidden_tower/Middle_world_objects/Flying_platforms/MovingPlatform2" index="1"]
+curve = SubResource( 95 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Hidden_tower/Middle_world_objects/Flying_platforms/MovingPlatform2/Path2D" index="0"]
+position = Vector2( 104, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Hidden_tower/Middle_world_objects/Flying_platforms/MovingPlatform2/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Hidden_tower/Middle_world_objects/Flying_platforms/MovingPlatform2" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 92 )
+anims/RESET = SubResource( 93 )
+
+[node name="Decorations" type="TileMap" parent="Hidden_tower/Middle_world_objects" index="3"]
+tile_set = ExtResource( 20 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -27721768, 62, 0, -27131899, 61, 0, -26542025, 61, 0, -26214400, 32, 0, -25034818, 61, 0, -25100270, 58, 0, -24772638, 61, 0, -24051744, 24, 0, -22937642, 57, 0, -23003128, 59, 0, -19922929, 536871023, 0, -17825778, 536870927, 0, -15466545, 536871025, 0, -14811100, 61, 0, -12451918, 61, 0, -11534390, 41, 0, -11468875, 22, 0, -11468838, 26, 0, -11534335, 14, 0, -11534315, 23, 0, -11534299, 19, 0, -10354761, 59, 0, -10354732, 58, 0, -8126529, 536871025, 0, -7209040, 58, 0, -7208930, 536871024, 0, -6291434, 35, 0, -4128807, 32, 0, -4194300, 31, 0, -3014692, 60, 0, -3080186, 58, 0, -983099, 41, 0, -983076, 28, 0, -1048571, 23, 0, -1048548, 24, 0, 65476, 58, 0, 65544, 57, 0, 2228175, 536871025, 0, 3211182, 536870942, 0, 3276766, 536871021, 0, 3211264, 536871018, 0, 4259776, 536870928, 0, 4325343, 536870970, 0, 4325378, 536870969, 0, 5373889, 536870972, 0, 8388624, 536871024, 0, 11599809, 536870939, 0, 11599838, 536870935, 0, 11534336, 536870934, 0, 11534365, 536870933, 0 )
+
+[node name="Collisions" type="Node2D" parent="Hidden_tower" index="2"]
+visible = false
+
+[node name="Solid" type="Node2D" parent="Hidden_tower/Collisions" index="0"]
+visible = false
+
+[node name="PassThroughBody22" parent="Hidden_tower/Collisions/Solid" index="0" instance=ExtResource( 1 )]
+position = Vector2( 127, 212 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Hidden_tower/Collisions/Solid/PassThroughBody22" index="0"]
+position = Vector2( -135, -11 )
+shape = SubResource( 77 )
+
+[node name="PassThrough" type="Node2D" parent="Hidden_tower/Collisions" index="1"]
+
+[node name="PassThroughBody20" parent="Hidden_tower/Collisions/PassThrough" index="0" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( -24, -343 )
+
+[node name="CollisionShape2D" parent="Hidden_tower/Collisions/PassThrough/PassThroughBody20" index="0"]
+position = Vector2( 16, -1 )
+shape = SubResource( 20 )
+one_way_collision = true
+
+[node name="PassThroughBody47" parent="Hidden_tower/Collisions/PassThrough" index="1" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( -88, 121 )
+
+[node name="CollisionShape2D" parent="Hidden_tower/Collisions/PassThrough/PassThroughBody47" index="0"]
+position = Vector2( 16, 0 )
+shape = SubResource( 110 )
+one_way_collision = true
+
+[node name="PassThroughBody46" parent="Hidden_tower/Collisions/PassThrough" index="2" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 24, 153 )
+
+[node name="CollisionShape2D" parent="Hidden_tower/Collisions/PassThrough/PassThroughBody46" index="0"]
+position = Vector2( 0, -1 )
+shape = SubResource( 109 )
+one_way_collision = true
+
+[node name="PassThroughBody36" parent="Hidden_tower/Collisions/PassThrough" index="3" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 24, 121 )
+
+[node name="CollisionShape2D" parent="Hidden_tower/Collisions/PassThrough/PassThroughBody36" index="0"]
+position = Vector2( 8, -1 )
+shape = SubResource( 107 )
+one_way_collision = true
+
+[node name="PassThroughBody43" parent="Hidden_tower/Collisions/PassThrough" index="4" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( -72, 73 )
+
+[node name="CollisionShape2D" parent="Hidden_tower/Collisions/PassThrough/PassThroughBody43" index="0"]
+position = Vector2( 0, -1 )
+shape = SubResource( 109 )
+one_way_collision = true
+
+[node name="PassThroughBody44" parent="Hidden_tower/Collisions/PassThrough" index="5" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( -56, 89 )
+
+[node name="CollisionShape2D" parent="Hidden_tower/Collisions/PassThrough/PassThroughBody44" index="0"]
+position = Vector2( 0, -1 )
+shape = SubResource( 109 )
+one_way_collision = true
+
+[node name="PassThroughBody35" parent="Hidden_tower/Collisions/PassThrough" index="6" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( -40, 73 )
+
+[node name="CollisionShape2D" parent="Hidden_tower/Collisions/PassThrough/PassThroughBody35" index="0"]
+position = Vector2( 8, -1 )
+shape = SubResource( 107 )
+one_way_collision = true
+
+[node name="PassThroughBody45" parent="Hidden_tower/Collisions/PassThrough" index="7" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 8, 73 )
+
+[node name="CollisionShape2D" parent="Hidden_tower/Collisions/PassThrough/PassThroughBody45" index="0"]
+position = Vector2( 0, -1 )
+shape = SubResource( 109 )
+one_way_collision = true
+
+[node name="PassThroughBody37" parent="Hidden_tower/Collisions/PassThrough" index="8" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 41, 41 )
+
+[node name="CollisionShape2D" parent="Hidden_tower/Collisions/PassThrough/PassThroughBody37" index="0"]
+position = Vector2( 31.5, 0 )
+shape = SubResource( 108 )
+one_way_collision = true
+
+[node name="PassThroughBody22" parent="Hidden_tower/Collisions/PassThrough" index="9" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( -40, 9 )
+
+[node name="CollisionShape2D" parent="Hidden_tower/Collisions/PassThrough/PassThroughBody22" index="0"]
+position = Vector2( 32, -1 )
+shape = SubResource( 22 )
+one_way_collision = true
+
+[node name="PassThroughBody33" parent="Hidden_tower/Collisions/PassThrough" index="10" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( -40, -39 )
+
+[node name="CollisionShape2D" parent="Hidden_tower/Collisions/PassThrough/PassThroughBody33" index="0"]
+position = Vector2( 8, -1 )
+shape = SubResource( 107 )
+one_way_collision = true
+
+[node name="PassThroughBody32" parent="Hidden_tower/Collisions/PassThrough" index="11" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 8, -39 )
+
+[node name="CollisionShape2D" parent="Hidden_tower/Collisions/PassThrough/PassThroughBody32" index="0"]
+position = Vector2( 8, -1 )
+shape = SubResource( 107 )
+one_way_collision = true
+
+[node name="PassThroughBody34" parent="Hidden_tower/Collisions/PassThrough" index="12" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 24, -71 )
+
+[node name="CollisionShape2D" parent="Hidden_tower/Collisions/PassThrough/PassThroughBody34" index="0"]
+position = Vector2( 8, -1 )
+shape = SubResource( 107 )
+one_way_collision = true
+
+[node name="PassThroughBody42" parent="Hidden_tower/Collisions/PassThrough" index="13" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( -56, -87 )
+
+[node name="CollisionShape2D" parent="Hidden_tower/Collisions/PassThrough/PassThroughBody42" index="0"]
+position = Vector2( 0, -1 )
+shape = SubResource( 109 )
+one_way_collision = true
+
+[node name="PassThroughBody41" parent="Hidden_tower/Collisions/PassThrough" index="14" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( -72, -103 )
+
+[node name="CollisionShape2D" parent="Hidden_tower/Collisions/PassThrough/PassThroughBody41" index="0"]
+position = Vector2( 0, -1 )
+shape = SubResource( 109 )
+one_way_collision = true
+
+[node name="PassThroughBody21" parent="Hidden_tower/Collisions/PassThrough" index="15" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( -56, -151 )
+
+[node name="CollisionShape2D" parent="Hidden_tower/Collisions/PassThrough/PassThroughBody21" index="0"]
+position = Vector2( 48, -1 )
+shape = SubResource( 21 )
+one_way_collision = true
+
+[node name="PassThroughBody40" parent="Hidden_tower/Collisions/PassThrough" index="16" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( -56, -183 )
+
+[node name="CollisionShape2D" parent="Hidden_tower/Collisions/PassThrough/PassThroughBody40" index="0"]
+position = Vector2( 0, -1 )
+shape = SubResource( 109 )
+one_way_collision = true
+
+[node name="PassThroughBody39" parent="Hidden_tower/Collisions/PassThrough" index="17" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 24, -247 )
+
+[node name="CollisionShape2D" parent="Hidden_tower/Collisions/PassThrough/PassThroughBody39" index="0"]
+position = Vector2( 0, -1 )
+shape = SubResource( 109 )
+one_way_collision = true
+
+[node name="PassThroughBody38" parent="Hidden_tower/Collisions/PassThrough" index="18" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( -40, -311 )
+
+[node name="CollisionShape2D" parent="Hidden_tower/Collisions/PassThrough/PassThroughBody38" index="0"]
+position = Vector2( 0, -1 )
+shape = SubResource( 109 )
+one_way_collision = true
+
+[node name="PassThroughBody31" parent="Hidden_tower/Collisions/PassThrough" index="19" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 8, -375 )
+
+[node name="CollisionShape2D" parent="Hidden_tower/Collisions/PassThrough/PassThroughBody31" index="0"]
+position = Vector2( 8, -1 )
+shape = SubResource( 107 )
+one_way_collision = true
+
+[node name="Ladders" type="Node2D" parent="Hidden_tower/Collisions" index="2"]
+visible = false
+
+[node name="WellLadder" parent="Hidden_tower/Collisions/Ladders" index="0" instance=ExtResource( 12 )]
+position = Vector2( -8, -242 )
+
+[node name="CollisionShape2D" parent="Hidden_tower/Collisions/Ladders/WellLadder" index="0"]
+position = Vector2( 0, 161 )
+shape = SubResource( 26 )
+
+[node name="Vine7" parent="Hidden_tower/Collisions/Ladders" index="1" instance=ExtResource( 12 )]
+position = Vector2( -57, -32 )
+
+[node name="CollisionShape2D" parent="Hidden_tower/Collisions/Ladders/Vine7" index="0"]
+position = Vector2( 0, -47 )
+shape = SubResource( 117 )
+
+[node name="Cave_objects" type="Node2D" parent="." index="7"]
+
+[node name="Background_world_objects" type="Node2D" parent="Cave_objects" index="0"]
+
+[node name="Fountains" type="TileMap" parent="Cave_objects/Background_world_objects" index="0"]
 tile_set = ExtResource( 11 )
 cell_size = Vector2( 1, 1 )
 format = 1
 tile_data = PoolIntArray( -20185433, 8, 0, -18547033, 8, 0, -16974151, 1, 0, -16908633, 8, 0, -15270233, 8, 0, -14876999, 1, 0, -13631833, 8, 0, -12779847, 1, 0, -11993433, 8, 0, -10748210, 1, 0, -10682695, 1, 0, -10355033, 8, 0, -9765144, 11, 0, -9699383, 1, 0, -9634057, 8, 0, -9568344, 536870920, 0, -9633470, 536870920, 0, -9633430, 536870913, 0, -8716633, 8, 0, -8716594, 1, 0, -8716568, 11, 0, -8585543, 1, 0, -8584671, 8, 0, -7995657, 8, 0, -7929944, 536870920, 0, -7995070, 536870920, 0, -7667992, 11, 0, -7602231, 1, 0, -7536278, 536870913, 0, -7078233, 8, 0, -6946271, 8, 0, -6684978, 1, 0, -6619416, 11, 0, -6488391, 1, 0, -6357257, 8, 0, -6291544, 536870920, 0, -6356670, 536870920, 0, -5570840, 11, 0, -5505079, 1, 0, -5439833, 8, 0, -5439126, 536870913, 0, -5307871, 8, 0, -4718857, 8, 0, -4653144, 536870920, 0, -4718270, 536870920, 0, -4587826, 1, 0, -4522264, 11, 0, -4391239, 1, 0, -3801433, 8, 0, -3669471, 8, 0, -3473688, 11, 0, -3407927, 1, 0, -3341974, 536870913, 0, -3080457, 8, 0, -3080280, 536870920, 0, -3145406, 536870920, 0, -2490674, 1, 0, -2425112, 11, 0, -2294087, 1, 0, -2163033, 8, 0, -1834686, 536870920, 0, -1442057, 8, 0, -1441880, 536870920, 0, -1376536, 11, 0, -1310775, 1, 0, -1375934, 536870920, 0, -1244822, 536870913, 0, -524633, 8, 0, -393522, 1, 0, -327960, 11, 0, -196935, 1, 0, 130984, 536870920, 0, 196343, 8, 0, 196930, 536870920, 0, 327625, 1, 0, 328226, 8, 0, 720616, 11, 0, 655722, 536870913, 0, 1113767, 8, 0, 1703630, 1, 0, 1769192, 11, 0, 1769384, 536870920, 0, 1834743, 8, 0, 1900217, 1, 0, 1900866, 536870920, 0, 1966626, 8, 0, 2424777, 1, 0, 2752167, 8, 0, 2687338, 536870913, 0, 2817768, 11, 0, 3407784, 536870920, 0, 3473143, 8, 0, 3539266, 536870920, 0, 3605026, 8, 0, 3800782, 1, 0, 3866344, 11, 0, 3997369, 1, 0, 4390567, 8, 0, 4521929, 1, 0, 4784490, 536870913, 0, 4914920, 11, 0, 5046184, 536870920, 0, 5111543, 8, 0, 5177666, 536870920, 0, 5243426, 8, 0, 5897934, 1, 0, 5963496, 11, 0, 6028967, 8, 0, 6094521, 1, 0, 6553545, 1, 0, 6619048, 536870920, 0, 6749943, 8, 0, 6816066, 536870920, 0, 6816290, 8, 0, 6881642, 536870913, 0, 7012072, 11, 0, 7667367, 8, 0, 7995086, 1, 0, 8060648, 11, 0, 8191673, 1, 0, 8257448, 536870920, 0, 8388343, 8, 0, 8389154, 8, 0, 8454466, 536870920, 0, 8650697, 1, 0, 8978794, 536870913, 0, 9109224, 11, 0, 9305767, 8, 0, 9895848, 536870920, 0, 10026743, 8, 0, 10092238, 1, 0, 10027554, 8, 0, 10157800, 11, 0, 10092866, 536870920, 0, 10288825, 1, 0, 10747849, 1, 0, 10944167, 8, 0, 11075946, 536870913, 0, 11206376, 11, 0, 11534248, 536870920, 0, 11665143, 8, 0, 11665954, 8, 0, 11731266, 536870920, 0, 12189390, 1, 0, 12254952, 11, 0, 12385977, 1, 0, 12321457, 536870920, 0, 12582567, 8, 0, 12845001, 1, 0, 13172648, 536870920, 0, 13173098, 536870913, 0, 13303528, 11, 0, 13303543, 8, 0, 13304354, 8, 0, 13369666, 536870920, 0, 13959857, 536870920, 0, 14220967, 8, 0, 14286542, 1, 0, 14352104, 11, 0, 14483129, 1, 0, 14811048, 536870920, 0, 14941943, 8, 0, 14942153, 1, 0, 14942754, 8, 0, 15008066, 536870920, 0, 15270250, 536870913, 0, 15400680, 11, 0, 15598257, 536870920, 0, 15859367, 8, 0, 16383694, 1, 0, 16449256, 11, 0, 16449448, 536870920, 0, 16580281, 1, 0, 16580343, 8, 0, 16581154, 8, 0, 16646466, 536870920, 0, 17039305, 1, 0, 17236657, 536870920, 0, 17367402, 536870913, 0, 17497767, 8, 0, 17497832, 11, 0, 18087848, 536870920, 0, 18218743, 8, 0, 18219554, 8, 0, 18284866, 536870920, 0, 18480846, 1, 0, 18546408, 11, 0, 18677433, 1, 0, 18875057, 536870920, 0, 19136167, 8, 0, 19136457, 1, 0, 19464554, 536870913, 0, 19594984, 11, 0, 19726248, 536870920, 0, 19857143, 8, 0, 19857954, 8, 0, 19923266, 536870920, 0, 20577998, 1, 0, 20513457, 536870920, 0, 20643560, 11, 0, 20774567, 8, 0, 20774585, 1, 0, 21233609, 1, 0, 21364648, 536870920, 0, 21495543, 8, 0, 21496354, 8, 0, 21561666, 536870920, 0, 21561706, 536870913, 0, 21692136, 11, 0, 22151857, 536870920, 0, 22412967, 8, 0, 22675150, 1, 0, 22740712, 11, 0, 22871737, 1, 0, 23003048, 536870920, 0, 23133943, 8, 0, 23134754, 8, 0, 23200066, 536870920, 0, 23330761, 1, 0, 23658858, 536870913, 0, 23789288, 11, 0, 23790257, 536870920, 0, 24051367, 8, 0, 24641448, 536870920, 0, 24772302, 1, 0, 24772343, 8, 0, 24837864, 11, 0, 24773154, 8, 0, 24838466, 536870920, 0, 24968889, 1, 0, 25427913, 1, 0, 25428657, 536870920, 0, 25689767, 8, 0, 25756010, 536870913, 0, 25886440, 11, 0, 26279848, 536870920, 0, 26410743, 8, 0, 26411554, 8, 0, 26476866, 536870920, 0, 26869454, 1, 0, 26935016, 11, 0, 27066041, 1, 0, 27067057, 536870920, 0, 27328167, 8, 0, 27525065, 1, 0, 27918248, 536870920, 0, 27853162, 536870913, 0, 27983592, 11, 0, 28049143, 8, 0, 28049954, 8, 0, 28115266, 536870920, 0, 28705457, 536870920, 0, 28966567, 8, 0, 28966606, 1, 0, 29032168, 11, 0, 29163193, 1, 0, 29556648, 536870920, 0, 29622217, 1, 0, 29687543, 8, 0, 29688354, 8, 0, 29753666, 536870920, 0, 29950314, 536870913, 0, 30539431, 8, 0, 31063758, 1, 0, 31260345, 1, 0, 31260407, 8, 0, 31260584, 536870920, 0, 31261218, 8, 0, 31392066, 536870920, 0, 32112295, 8, 0, 32047466, 536870913, 0, 32833271, 8, 0, 32834082, 8, 0, 33030466, 536870920, 0, 33160910, 1, 0, 33357497, 1, 0, 33685159, 8, 0, 34144618, 536870913, 0, 34471671, 8, 0, 34406946, 8, 0, 34668866, 536870920, 0, 35258023, 8, 0, 35258062, 1, 0, 35454649, 1, 0, 36044535, 8, 0, 35979810, 8, 0, 36241770, 536870913, 0, 36307266, 536870920, 0, 36830887, 8, 0, 37355214, 1, 0, 37551801, 1, 0, 37552674, 8, 0, 37682935, 8, 0, 37945666, 536870920, 0, 38403751, 8, 0, 38338922, 536870913, 0, 39125538, 8, 0, 39255799, 8, 0, 39452366, 1, 0, 39648953, 1, 0, 39584066, 536870920, 0, 39976615, 8, 0, 40436074, 536870913, 0, 40698402, 8, 0, 40828663, 8, 0, 41222466, 536870920, 0, 41549479, 8, 0, 41549518, 1, 0, 41746105, 1, 0, 42271266, 8, 0, 42401527, 8, 0, 42533226, 536870913, 0, 42795330, 536870920, 0, 43122343, 8, 0, 43844130, 8, 0, 43974391, 8, 0, 44433730, 536870920, 0, 44630378, 536870913, 0, 45416994, 8, 0, 45547255, 8, 0, 46006594, 536870920, 0, 46727530, 536870913, 0, 46989858, 8, 0, 47120119, 8, 0, 47579458, 536870920, 0, 48692983, 8, 0 )
 
-[node name="WorldSprite" parent="." index="7"]
+[node name="WorldSprite" type="Sprite" parent="Cave_objects" index="1"]
 position = Vector2( 1031, -392 )
 texture = ExtResource( 4 )
 
-[node name="Decorations" type="TileMap" parent="." index="8"]
+[node name="Middle_world_objects" type="Node2D" parent="Cave_objects" index="2"]
+
+[node name="Decorations" type="TileMap" parent="Cave_objects/Middle_world_objects" index="0"]
 tile_set = ExtResource( 20 )
 cell_size = Vector2( 1, 1 )
 format = 1
-tile_data = PoolIntArray( -11207128, 61, 0, -10551722, 61, 0, -9961848, 61, 0, -9568685, 7, 0, -8520177, 61, 0, -8520093, 58, 0, -8583742, 60, 0, -8583582, 536870941, 0, -8583568, 536870935, 0, -8583552, 536870944, 0, -8257997, 61, 0, -7471567, 24, 0, -7535276, 536870936, 0, -7535265, 536870957, 0, -7535262, 536870936, 0, -7535005, 60, 0, -7534976, 59, 0, -6423001, 57, 0, -6422951, 59, 0, -6486690, 58, 0, -6486540, 536870954, 0, -6486536, 536870935, 0, -6486527, 536870928, 0, -5437949, 58, 0, -4325854, 57, 0, -3538160, 536871024, 0, -3342752, 536871023, 0, -1180066, 15, 0, 853441, 536870915, 0, 853457, 536870934, 0, 1048096, 536871025, 0, 1049346, 536871025, 0, 1769077, 61, 0, 1902025, 58, 0, 2949533, 15, 0, 2949541, 24, 0, 2949555, 16, 0, 2949569, 42, 0, 2949576, 24, 0, 2950624, 536870944, 0, 2950639, 536870943, 0, 4062723, 61, 0, 3998112, 58, 0, 3998147, 59, 0, 3999121, 536870951, 0, 3999142, 536870935, 0, 3999162, 536870952, 0, 3999206, 57, 0, 3999248, 536870949, 0, 4064011, 536871023, 0, 5111307, 24, 0, 5111322, 41, 0, 5111338, 26, 0, 5111378, 14, 0, 5111398, 23, 0, 5111414, 19, 0, 5047707, 60, 0, 5047728, 58, 0, 5047791, 536870927, 0, 5047803, 536870934, 0, 6159880, 59, 0, 6159909, 58, 0, 6096373, 60, 0, 7144912, 536870914, 0, 7144927, 536870916, 0, 8192428, 45, 0, 8388112, 536871025, 0, 9305711, 536871024, 0, 9242096, 536870936, 0, 9242110, 536870944, 0, 9371137, 58, 0, 9306551, 58, 0, 10354279, 34, 0, 10290609, 536870953, 0, 10290627, 536870936, 0, 11339193, 59, 0, 11339226, 27, 0, 11404832, 58, 0, 12451369, 32, 0, 12451413, 12, 0, 12387805, 59, 0, 13499949, 60, 0, 13499991, 58, 0, 13436417, 14, 0, 13436434, 536870936, 0, 14484898, 41, 0, 14485048, 24, 0, 14485062, 54, 0, 15597078, 41, 0, 15597102, 28, 0, 15597142, 22, 0, 15597165, 24, 0, 15533392, 35, 0, 15533428, 27, 0, 15533444, 20, 0, 15533486, 18, 0, 15533500, 20, 0, 15533509, 19, 0, 15533535, 24, 0, 15533549, 26, 0, 15533567, 22, 0, 15533600, 41, 0, 15533625, 25, 0, 15533648, 24, 0, 15533689, 38, 0, 15533709, 23, 0, 16645653, 58, 0, 16645721, 57, 0, 16582023, 60, 0, 16582103, 58, 0, 16582164, 57, 0, 16582196, 536870934, 0, 16582217, 24, 0, 16582239, 14, 0, 16582277, 59, 0, 16647509, 59, 0, 17630598, 14, 0, 17630800, 59, 0, 18613762, 112, 0, 18742816, 536871025, 0, 18743090, 45, 0, 18679090, 113, 0, 18679181, 58, 0, 18679226, 536870944, 0, 18679239, 45, 0, 18679251, 14, 0, 18679401, 536870934, 0, 18679424, 536870936, 0, 18875810, 536871023, 0, 19595283, 112, 0, 19791363, 30, 0, 19791407, 109, 0, 19791441, 106, 0, 19791667, 57, 0, 19727805, 58, 0, 19727820, 57, 0, 19727916, 536870931, 0, 19727931, 536870936, 0, 19727944, 536870929, 0, 19727953, 536870943, 0, 19727991, 59, 0, 20839953, 16, 0, 20840017, 57, 0, 20840305, 44, 0, 20776307, 536870935, 0, 20776321, 536870944, 0, 20776336, 536870937, 0, 20776504, 60, 0, 20905520, 58, 0, 21759618, 111, 0, 21823571, 536871025, 0, 21824875, 58, 0, 21824911, 59, 0, 21954067, 60, 0, 23985774, 59, 0, 23985975, 27, 0, 23985997, 16, 0, 23986008, 42, 0, 23986015, 15, 0, 24968801, 536871024, 0, 25034591, 59, 0, 25100095, 58, 0, 25952259, 113, 0, 26280026, 536871023, 0, 28179985, 27, 0, 28180013, 24, 0, 28180051, 22, 0, 28180078, 24, 0, 28180464, 21, 0, 28180474, 536870953, 0, 28114960, 39, 0, 28114975, 22, 0, 28115011, 23, 0, 28115027, 40, 0, 28115044, 41, 0, 28115055, 24, 0, 29229046, 57, 0, 29163578, 58, 0, 29163628, 59, 0 )
+tile_data = PoolIntArray( -8583742, 60, 0, -8583582, 536870941, 0, -8583568, 536870935, 0, -8583552, 536870944, 0, -7535276, 536870936, 0, -7535265, 536870957, 0, -7535262, 536870936, 0, -7535005, 60, 0, -7534976, 59, 0, -6486690, 58, 0, -6486540, 536870954, 0, -6486536, 536870935, 0, -6486527, 536870928, 0, -5437949, 58, 0, -3538160, 536871024, 0, 853441, 536870915, 0, 853457, 536870934, 0, 1049346, 536871025, 0, 1902025, 58, 0, 2949533, 15, 0, 2949541, 24, 0, 2949555, 16, 0, 2949569, 42, 0, 2949576, 24, 0, 2950624, 536870944, 0, 2950639, 536870943, 0, 3998112, 58, 0, 3998147, 59, 0, 3999121, 536870951, 0, 3999142, 536870935, 0, 3999162, 536870952, 0, 3999206, 57, 0, 3999248, 536870949, 0, 4064011, 536871023, 0, 5047707, 60, 0, 5047728, 58, 0, 5047791, 536870927, 0, 5047803, 536870934, 0, 6096373, 60, 0, 7144912, 536870914, 0, 7144927, 536870916, 0, 8192428, 45, 0, 9242096, 536870936, 0, 9242110, 536870944, 0, 9306551, 58, 0, 10290609, 536870953, 0, 10290627, 536870936, 0, 11339193, 59, 0, 11339226, 27, 0, 11404832, 58, 0, 12387805, 59, 0, 13436417, 14, 0, 13436434, 536870936, 0, 14484898, 41, 0, 14485048, 24, 0, 14485062, 54, 0, 15533392, 35, 0, 15533428, 27, 0, 15533444, 20, 0, 15533486, 18, 0, 15533500, 20, 0, 15533509, 19, 0, 15533535, 24, 0, 15533549, 26, 0, 15533567, 22, 0, 15533600, 41, 0, 15533625, 25, 0, 15533648, 24, 0, 15533689, 38, 0, 15533709, 23, 0, 16582023, 60, 0, 16582103, 58, 0, 16582164, 57, 0, 16582196, 536870934, 0, 16582217, 24, 0, 16582239, 14, 0, 16582277, 59, 0, 16647509, 59, 0, 17630598, 14, 0, 17630800, 59, 0, 18613762, 112, 0, 18743090, 45, 0, 18679090, 113, 0, 18679181, 58, 0, 18679226, 536870944, 0, 18679239, 45, 0, 18679251, 14, 0, 18679401, 536870934, 0, 18679424, 536870936, 0, 18875810, 536871023, 0, 19595283, 112, 0, 19791667, 57, 0, 19727805, 58, 0, 19727820, 57, 0, 19727916, 536870931, 0, 19727931, 536870936, 0, 19727944, 536870929, 0, 19727953, 536870943, 0, 19727991, 59, 0, 20840305, 44, 0, 20776307, 536870935, 0, 20776321, 536870944, 0, 20776336, 536870937, 0, 20776504, 60, 0, 21759618, 111, 0, 21823571, 536871025, 0, 21824875, 58, 0, 21824911, 59, 0, 23985975, 27, 0, 23985997, 16, 0, 23986008, 42, 0, 23986015, 15, 0, 25034591, 59, 0, 25100095, 58, 0, 25952259, 113, 0, 26280026, 536871023, 0, 28180464, 21, 0, 28180474, 536870953, 0, 28114960, 39, 0, 28114975, 22, 0, 28115011, 23, 0, 28115027, 40, 0, 28115044, 41, 0, 28115055, 24, 0, 29229046, 57, 0, 29163578, 58, 0, 29163628, 59, 0 )
 
-[node name="Player" parent="." index="9"]
+[node name="Doors" type="Node2D" parent="Cave_objects/Middle_world_objects" index="1"]
+
+[node name="Centeal_hub_door" parent="Cave_objects/Middle_world_objects/Doors" index="0" instance=ExtResource( 3 )]
+position = Vector2( 57, -3 )
+nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
+nextDoorName = "Wish_star_dangeon_door"
+
+[node name="VisibilityChecker" parent="Cave_objects/Middle_world_objects/Doors/Centeal_hub_door" index="0"]
+visible = false
+
+[node name="GatesBackground" parent="Cave_objects/Middle_world_objects/Doors/Centeal_hub_door" index="1"]
+visible = false
+
+[node name="InteractionController" parent="Cave_objects/Middle_world_objects/Doors/Centeal_hub_door" index="2"]
+visible = false
+
+[node name="Heart_lake_door" parent="Cave_objects/Middle_world_objects/Doors" index="1" instance=ExtResource( 3 )]
+position = Vector2( 57, 445 )
+nextScenePath = "res://Levels/Wish_star_dangeon/Heart_lake/HeartLake.tscn"
+nextDoorName = "Wish_star_dangeon_enter_door"
+
+[node name="VisibilityChecker" parent="Cave_objects/Middle_world_objects/Doors/Heart_lake_door" index="0"]
+visible = false
+position = Vector2( 0, -57.5 )
+scale = Vector2( 1, 5.75 )
+
+[node name="GatesBackground" parent="Cave_objects/Middle_world_objects/Doors/Heart_lake_door" index="1"]
+visible = false
+
+[node name="CollisionShape2D" parent="Cave_objects/Middle_world_objects/Doors/Heart_lake_door/InteractionController/Area2D" index="0"]
+position = Vector2( 0, 2 )
+shape = SubResource( 103 )
+
+[node name="Torches" type="Node2D" parent="Cave_objects/Middle_world_objects" index="2"]
+
+[node name="Torch" parent="Cave_objects/Middle_world_objects/Torches" index="0" instance=ExtResource( 10 )]
+position = Vector2( -347, 439 )
+is_torch_activated = true
+
+[node name="Wide_torch3" parent="Cave_objects/Middle_world_objects/Torches" index="1" instance=ExtResource( 10 )]
+position = Vector2( -119, -9 )
+
+[node name="Wide_torch4" parent="Cave_objects/Middle_world_objects/Torches" index="2" instance=ExtResource( 10 )]
+position = Vector2( -200, -9 )
+
+[node name="Hall_flag_4_wide_torch" parent="Cave_objects/Middle_world_objects/Torches" index="3" instance=ExtResource( 10 )]
+position = Vector2( 759, -9 )
+
+[node name="Entrance_torches" type="Node2D" parent="Cave_objects/Middle_world_objects/Torches" index="4"]
+
+[node name="ActivatableTorch" parent="Cave_objects/Middle_world_objects/Torches/Entrance_torches" index="0" instance=ExtResource( 9 )]
+position = Vector2( 29, -26 )
+
+[node name="ActivatableTorch2" parent="Cave_objects/Middle_world_objects/Torches/Entrance_torches" index="1" instance=ExtResource( 9 )]
+position = Vector2( 84, -26 )
+
+[node name="Hall_flag_1" type="Node2D" parent="Cave_objects/Middle_world_objects/Torches" index="5"]
+
+[node name="Wide_torch5" parent="Cave_objects/Middle_world_objects/Torches/Hall_flag_1" index="0" instance=ExtResource( 10 )]
+position = Vector2( 322, -9 )
+
+[node name="Wide_torch6" parent="Cave_objects/Middle_world_objects/Torches/Hall_flag_1" index="1" instance=ExtResource( 10 )]
+position = Vector2( 241, -9 )
+
+[node name="Hall_flag_2" type="Node2D" parent="Cave_objects/Middle_world_objects/Torches" index="6"]
+
+[node name="Wide_torch7" parent="Cave_objects/Middle_world_objects/Torches/Hall_flag_2" index="0" instance=ExtResource( 10 )]
+position = Vector2( 482, -9 )
+
+[node name="Wide_torch8" parent="Cave_objects/Middle_world_objects/Torches/Hall_flag_2" index="1" instance=ExtResource( 10 )]
+position = Vector2( 401, -9 )
+
+[node name="Hall_flag_3" type="Node2D" parent="Cave_objects/Middle_world_objects/Torches" index="7"]
+
+[node name="Wide_torch9" parent="Cave_objects/Middle_world_objects/Torches/Hall_flag_3" index="0" instance=ExtResource( 10 )]
+position = Vector2( 643, -9 )
+
+[node name="Wide_torch10" parent="Cave_objects/Middle_world_objects/Torches/Hall_flag_3" index="1" instance=ExtResource( 10 )]
+position = Vector2( 562, -9 )
+
+[node name="Right_island_wide_torch" parent="Cave_objects/Middle_world_objects/Torches" index="8" instance=ExtResource( 10 )]
+position = Vector2( 1344, 247 )
+is_torch_activated = true
+
+[node name="Wide_torch" parent="Cave_objects/Middle_world_objects/Torches" index="9" instance=ExtResource( 10 )]
+position = Vector2( 1390, -9 )
+
+[node name="Wide_torch2" parent="Cave_objects/Middle_world_objects/Torches" index="10" instance=ExtResource( 10 )]
+position = Vector2( 1474, -9 )
+
+[node name="Wide_torch5" parent="Cave_objects/Middle_world_objects/Torches" index="11" instance=ExtResource( 10 )]
+position = Vector2( 1555, -9 )
+
+[node name="Wide_torch6" parent="Cave_objects/Middle_world_objects/Torches" index="12" instance=ExtResource( 10 )]
+position = Vector2( 1630, -9 )
+
+[node name="Wide_torch7" parent="Cave_objects/Middle_world_objects/Torches" index="13" instance=ExtResource( 10 )]
+position = Vector2( 1795, -9 )
+
+[node name="Wide_torch8" parent="Cave_objects/Middle_world_objects/Torches" index="14" instance=ExtResource( 10 )]
+position = Vector2( 1873, -9 )
+
+[node name="Wide_torch9" parent="Cave_objects/Middle_world_objects/Torches" index="15" instance=ExtResource( 10 )]
+position = Vector2( 1520, 55 )
+
+[node name="Wide_torch10" parent="Cave_objects/Middle_world_objects/Torches" index="16" instance=ExtResource( 10 )]
+position = Vector2( 1675, 247 )
+
+[node name="Wide_torch11" parent="Cave_objects/Middle_world_objects/Torches" index="17" instance=ExtResource( 10 )]
+position = Vector2( 1519, 247 )
+
+[node name="Wide_torch12" parent="Cave_objects/Middle_world_objects/Torches" index="18" instance=ExtResource( 10 )]
+position = Vector2( 1537, 151 )
+
+[node name="Left_island_wide_torch7" parent="Cave_objects/Middle_world_objects/Torches" index="19" instance=ExtResource( 10 )]
+position = Vector2( 14, 439 )
+
+[node name="Left_island_wide_torch8" parent="Cave_objects/Middle_world_objects/Torches" index="20" instance=ExtResource( 10 )]
+position = Vector2( 98, 439 )
+
+[node name="Chests" type="Node2D" parent="Cave_objects/Middle_world_objects" index="3"]
+
+[node name="ChestOne" parent="Cave_objects/Middle_world_objects/Chests" index="0" instance=ExtResource( 28 )]
+position = Vector2( -161, -3 )
+innerItemScene = ExtResource( 29 )
+
+[node name="ChestTwo" parent="Cave_objects/Middle_world_objects/Chests" index="1" instance=ExtResource( 28 )]
+position = Vector2( 1837, -3 )
+innerItemScene = ExtResource( 30 )
+
+[node name="Flag_captions" type="Node2D" parent="Cave_objects/Middle_world_objects" index="4"]
+
+[node name="Sign_1" parent="Cave_objects/Middle_world_objects/Flag_captions" index="0" instance=ExtResource( 32 )]
+position = Vector2( 281, -3 )
+texts_array = [ "˜ЛЕГЕНДА О КИСЕЛЯЧЬЕМ ЦАРСТВЕ˜", "Эта история о том,
+как появились котики", "Давным-давно, когда цветочки
+не танцевали, бабочки не пархали,
+а котики не грелись на солнышке,
+был только он", "Мы не знаем кто он был.
+Да это и не важно, ведь с него
+всё началось", "Хотя нет...", "Всё началось когда
+он встретил её", "Первую кису" ]
+
+[node name="Sprite" parent="Cave_objects/Middle_world_objects/Flag_captions/Sign_1" index="0"]
+visible = false
+
+[node name="TextBoxPopup" parent="Cave_objects/Middle_world_objects/Flag_captions/Sign_1" index="2"]
+light_mask = 0
+
+[node name="Sign_2" parent="Cave_objects/Middle_world_objects/Flag_captions" index="1" instance=ExtResource( 32 )]
+position = Vector2( 440, -3 )
+texts_array = [ "Каждый раз, когда она улыбалась,
+вырастал цветочек. Каждый вздох
+появлялась новая бабочка", "И каждое мгновение, проведённое
+с ней было как зефирка. А зефирка
+становилась облачком", "Однажды она подарила ему тьмок", "Это было волнительно,
+но взамен он украл её
+первый настоящий поцелуй", "И тогда произошёл БУМ!" ]
+
+[node name="Sprite" parent="Cave_objects/Middle_world_objects/Flag_captions/Sign_2" index="0"]
+visible = false
+
+[node name="Sign_3" parent="Cave_objects/Middle_world_objects/Flag_captions" index="2" instance=ExtResource( 32 )]
+position = Vector2( 601, -3 )
+texts_array = [ "Тьмок за тьмоком, обнимак
+за обнимаком", "Среди облачков появлялись
+островки, а на островках стали
+нежиться первые котики", "Изо дня в день, их чувства
+становились сильней и сильней,
+а котиков всё больше и больше..." ]
+
+[node name="Sprite" parent="Cave_objects/Middle_world_objects/Flag_captions/Sign_3" index="0"]
+visible = false
+
+[node name="Sign_4" parent="Cave_objects/Middle_world_objects/Flag_captions" index="3" instance=ExtResource( 32 )]
+position = Vector2( 1432, -3 )
+texts_array = [ "В каждом из нас есть место,
+которое предназначено только
+для него", "Тайный остров, о котором
+никто не знает", "Туда не так просто попасть.
+Но бывает так, что два мира
+сталкиваются друг с другом", "Котики из одного мира
+перемешиваются с котиками
+из другого", "И уже не понять чьи
+бабочки здесь пархают
+Они все становятся родными", "Появляется целый маленький
+мир, который растёт и развивается
+совместными усилиями всех котиков" ]
+
+[node name="Sprite" parent="Cave_objects/Middle_world_objects/Flag_captions/Sign_4" index="0"]
+visible = false
+
+[node name="Sign_5" parent="Cave_objects/Middle_world_objects/Flag_captions" index="4" instance=ExtResource( 32 )]
+position = Vector2( 1592, -3 )
+texts_array = [ "Котики из одного мира встречаются
+с котиками из другого, и потихоньку
+начинают дружить и любить", "Если их хозяева любят друг друга,
+то и их котики счастливы", "С каждым новым впечатлением
+появляется новый котик, деревня
+котиков, острова котиков...", "Так появились мы - котята" ]
+
+[node name="Sprite" parent="Cave_objects/Middle_world_objects/Flag_captions/Sign_5" index="0"]
+visible = false
+
+[node name="Vases" type="Node2D" parent="Cave_objects/Middle_world_objects" index="5"]
+
+[node name="Background_vase" parent="Cave_objects/Middle_world_objects/Vases" index="0" instance=ExtResource( 33 )]
+position = Vector2( -53, -11 )
+
+[node name="Background_vase2" parent="Cave_objects/Middle_world_objects/Vases" index="1" instance=ExtResource( 33 )]
+position = Vector2( -73, -11 )
+
+[node name="Background_vase3" parent="Cave_objects/Middle_world_objects/Vases" index="2" instance=ExtResource( 33 )]
+position = Vector2( 163, -11 )
+
+[node name="Background_vase4" parent="Cave_objects/Middle_world_objects/Vases" index="3" instance=ExtResource( 33 )]
+position = Vector2( 1695, -12 )
+
+[node name="Background_vase5" parent="Cave_objects/Middle_world_objects/Vases" index="4" instance=ExtResource( 33 )]
+position = Vector2( 1715, -12 )
+
+[node name="Background_vase6" parent="Cave_objects/Middle_world_objects/Vases" index="5" instance=ExtResource( 33 )]
+position = Vector2( 1734, -12 )
+
+[node name="Barrels" type="Node2D" parent="Cave_objects/Middle_world_objects" index="6"]
+
+[node name="Background_barrel" parent="Cave_objects/Middle_world_objects/Barrels" index="0" instance=ExtResource( 34 )]
+position = Vector2( 1497, 178 )
+
+[node name="Background_barrel2" parent="Cave_objects/Middle_world_objects/Barrels" index="1" instance=ExtResource( 34 )]
+position = Vector2( 1453, 68 )
+
+[node name="Moving_platforms" type="Node2D" parent="Cave_objects/Middle_world_objects" index="7"]
+
+[node name="Star_entrance" type="Node2D" parent="Cave_objects/Middle_world_objects/Moving_platforms" index="0"]
+
+[node name="Moving_platform_near_star_entrance" type="Node2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance" index="0"]
+position = Vector2( -347, 453 )
+script = ExtResource( 13 )
+
+[node name="Platform" type="KinematicBody2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/Moving_platform_near_star_entrance" index="0"]
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/Moving_platform_near_star_entrance/Platform" index="0" instance=ExtResource( 18 )]
+position = Vector2( 3.8147e-06, 0 )
+scale = Vector2( 3.4, 1 )
+
+[node name="Sprite" type="Sprite" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/Moving_platform_near_star_entrance/Platform" index="1"]
+texture = ExtResource( 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/Moving_platform_near_star_entrance/Platform" index="2"]
+shape = SubResource( 27 )
+
+[node name="Path2D" type="Path2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/Moving_platform_near_star_entrance" index="1"]
+position = Vector2( -104, 0 )
+curve = SubResource( 94 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/Moving_platform_near_star_entrance/Path2D" index="0"]
+position = Vector2( 104, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/Moving_platform_near_star_entrance/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/Moving_platform_near_star_entrance" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 50 )
+anims/RESET = SubResource( 51 )
+
+[node name="MovingPlatform" type="Node2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance" index="1"]
+position = Vector2( -111, 309 )
+script = ExtResource( 13 )
+
+[node name="Platform" type="KinematicBody2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform" index="0"]
+position = Vector2( 104, 0 )
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform/Platform" index="0" instance=ExtResource( 18 )]
+position = Vector2( -0.255653, 0 )
+
+[node name="Sprite" type="Sprite" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform/Platform" index="1"]
+texture = ExtResource( 21 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform/Platform" index="2"]
+shape = SubResource( 48 )
+one_way_collision = true
+
+[node name="Path2D" type="Path2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform" index="1"]
+curve = ExtResource( 19 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform/Path2D" index="0"]
+position = Vector2( 104, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 78 )
+anims/RESET = SubResource( 79 )
+
+[node name="MovingPlatform2" type="Node2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance" index="2"]
+position = Vector2( 49, 421 )
+script = ExtResource( 13 )
+
+[node name="Platform" type="KinematicBody2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform2" index="0"]
+position = Vector2( 104, 0 )
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform2/Platform" index="0" instance=ExtResource( 18 )]
+position = Vector2( -0.255653, 0 )
+
+[node name="Sprite" type="Sprite" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform2/Platform" index="1"]
+texture = ExtResource( 21 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform2/Platform" index="2"]
+shape = SubResource( 48 )
+one_way_collision = true
+
+[node name="Path2D" type="Path2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform2" index="1"]
+curve = SubResource( 87 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform2/Path2D" index="0"]
+position = Vector2( 104, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform2/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform2" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 80 )
+anims/RESET = SubResource( 81 )
+
+[node name="MovingPlatform3" type="Node2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance" index="3"]
+position = Vector2( -127, 389 )
+script = ExtResource( 13 )
+
+[node name="Platform" type="KinematicBody2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform3" index="0"]
+position = Vector2( 104, 0 )
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform3/Platform" index="0" instance=ExtResource( 18 )]
+position = Vector2( -0.255653, 0 )
+
+[node name="Sprite" type="Sprite" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform3/Platform" index="1"]
+texture = ExtResource( 21 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform3/Platform" index="2"]
+shape = SubResource( 48 )
+one_way_collision = true
+
+[node name="Path2D" type="Path2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform3" index="1"]
+curve = ExtResource( 19 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform3/Path2D" index="0"]
+position = Vector2( 104, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform3/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform3" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 82 )
+anims/RESET = SubResource( 83 )
+
+[node name="MovingPlatform4" type="Node2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance" index="4"]
+position = Vector2( 33, 357 )
+script = ExtResource( 13 )
+
+[node name="Platform" type="KinematicBody2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform4" index="0"]
+position = Vector2( 104, 0 )
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform4/Platform" index="0" instance=ExtResource( 18 )]
+position = Vector2( -0.255653, -9.53674e-07 )
+scale = Vector2( 1, 1.7 )
+
+[node name="Sprite" type="Sprite" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform4/Platform" index="1"]
+texture = ExtResource( 22 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform4/Platform" index="2"]
+shape = SubResource( 84 )
+one_way_collision = true
+
+[node name="Path2D" type="Path2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform4" index="1"]
+curve = ExtResource( 19 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform4/Path2D" index="0"]
+position = Vector2( 104, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform4/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cave_objects/Middle_world_objects/Moving_platforms/Star_entrance/MovingPlatform4" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 85 )
+anims/RESET = SubResource( 86 )
+
+[node name="Interactive_platforms" type="Node2D" parent="Cave_objects/Middle_world_objects/Moving_platforms" index="1"]
+
+[node name="Interactive_platform_1" type="Node2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms" index="0"]
+position = Vector2( -1, -45 )
+
+[node name="Sprite" type="Sprite" parent="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_1" index="0"]
+position = Vector2( 906, 74 )
+texture = ExtResource( 26 )
+
+[node name="PassThroughBody15" parent="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_1" index="1" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 906, 66 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_1/PassThroughBody15" index="0"]
+shape = SubResource( 18 )
+
+[node name="Wide_torch" parent="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_1" index="2" instance=ExtResource( 10 )]
+position = Vector2( 906, 52 )
+
+[node name="Interactive_platform_2" type="Node2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms" index="1"]
+position = Vector2( 119, -17 )
+
+[node name="Sprite" type="Sprite" parent="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_2" index="0"]
+position = Vector2( 906, 74 )
+texture = ExtResource( 24 )
+
+[node name="PassThroughBody15" parent="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_2" index="1" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 906, 66 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_2/PassThroughBody15" index="0"]
+shape = SubResource( 18 )
+
+[node name="Wide_torch" parent="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_2" index="2" instance=ExtResource( 10 )]
+position = Vector2( 906, 52 )
+
+[node name="Interactive_platform_3" type="Node2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms" index="2"]
+position = Vector2( 220, 31 )
+
+[node name="Sprite" type="Sprite" parent="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_3" index="0"]
+position = Vector2( 906, 74 )
+texture = ExtResource( 25 )
+
+[node name="PassThroughBody15" parent="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_3" index="1" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 906, 66 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_3/PassThroughBody15" index="0"]
+shape = SubResource( 18 )
+
+[node name="Wide_torch" parent="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_3" index="2" instance=ExtResource( 10 )]
+position = Vector2( 906, 52 )
+
+[node name="Interactive_platform_4" type="Node2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms" index="3"]
+position = Vector2( 325, 85 )
+
+[node name="Sprite" type="Sprite" parent="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_4" index="0"]
+position = Vector2( 906, 74 )
+texture = ExtResource( 27 )
+
+[node name="PassThroughBody15" parent="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_4" index="1" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 906, 66 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_4/PassThroughBody15" index="0"]
+shape = SubResource( 18 )
+
+[node name="Wide_torch" parent="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_4" index="2" instance=ExtResource( 10 )]
+position = Vector2( 906, 52 )
+
+[node name="Foreground_world_objects" type="Node2D" parent="Cave_objects" index="3"]
+z_index = 1
+
+[node name="Fountains" type="TileMap" parent="Cave_objects/Foreground_world_objects" index="0"]
+tile_set = ExtResource( 11 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -13827407, 536870920, 0, -12779330, 536870913, 0, -12189007, 536870920, 0, -10682178, 536870913, 0, -10550607, 536870920, 0, -8912207, 536870920, 0, -8585026, 536870913, 0, -7273807, 536870920, 0, -6487874, 536870913, 0, -5635407, 536870920, 0, -4390722, 536870913, 0, -3997007, 536870920, 0, -2358607, 536870920, 0, -2293570, 536870913, 0, -720207, 536870920, 0, -196418, 536870913, 0, 918193, 536870920, 0, 1900734, 536870913, 0, 2556593, 536870920, 0, 3997886, 536870913, 0, 4194993, 536870920, 0, 5833393, 536870920, 0, 6095038, 536870913, 0, 7471793, 536870920, 0, 8192190, 536870913, 0, 9110193, 536870920, 0, 10289342, 536870913, 0, 10683057, 536870920, 0, 12321457, 536870920, 0, 12386494, 536870913, 0, 13959857, 536870920, 0, 14483646, 536870913, 0, 15598257, 536870920, 0, 16580798, 536870913, 0, 17236657, 536870920, 0, 18677950, 536870913, 0, 18875057, 536870920, 0, 20513457, 536870920, 0, 20775102, 536870913, 0, 22151857, 536870920, 0, 22872254, 536870913, 0, 23790257, 536870920, 0, 24969406, 536870913, 0, 25428657, 536870920, 0, 27066558, 536870913, 0, 27067057, 536870920, 0, 28705457, 536870920, 0, 29163710, 536870913, 0, 31260862, 536870913, 0, 33358014, 536870913, 0, 35455166, 536870913, 0, 37552318, 536870913, 0, 39649470, 536870913, 0, 41746622, 536870913, 0, 43843774, 536870913, 0, 45940926, 536870913, 0, 48038078, 536870913, 0 )
+
+[node name="Collisions" type="Node2D" parent="Cave_objects" index="4"]
+
+[node name="PassTrough" type="Node2D" parent="Cave_objects/Collisions" index="0"]
+
+[node name="PassThroughBody5" parent="Cave_objects/Collisions/PassTrough" index="0" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 1455, 246 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/PassTrough/PassThroughBody5" index="0"]
+position = Vector2( -14, -1 )
+shape = SubResource( 13 )
+one_way_collision = true
+
+[node name="PassThroughBody26" parent="Cave_objects/Collisions/PassTrough" index="1" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 1417, 117 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/PassTrough/PassThroughBody26" index="0"]
+shape = SubResource( 104 )
+one_way_collision = true
+
+[node name="PassThroughBody27" parent="Cave_objects/Collisions/PassTrough" index="2" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 1369, -91 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/PassTrough/PassThroughBody27" index="0"]
+position = Vector2( 8, 0 )
+shape = SubResource( 105 )
+one_way_collision = true
+
+[node name="PassThroughBody28" parent="Cave_objects/Collisions/PassTrough" index="3" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 1481, -123 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/PassTrough/PassThroughBody28" index="0"]
+position = Vector2( 8, 0 )
+shape = SubResource( 105 )
+one_way_collision = true
+
+[node name="PassThroughBody29" parent="Cave_objects/Collisions/PassTrough" index="4" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 1529, -75 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/PassTrough/PassThroughBody29" index="0"]
+position = Vector2( 8, 0 )
+shape = SubResource( 105 )
+one_way_collision = true
+
+[node name="PassThroughBody30" parent="Cave_objects/Collisions/PassTrough" index="5" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 1641, -107 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/PassTrough/PassThroughBody30" index="0"]
+position = Vector2( 16, 0 )
+shape = SubResource( 106 )
+one_way_collision = true
+
+[node name="PassThroughBody6" parent="Cave_objects/Collisions/PassTrough" index="6" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 1615, 246 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/PassTrough/PassThroughBody6" index="0"]
+position = Vector2( -22, -1 )
+shape = SubResource( 14 )
+one_way_collision = true
+
+[node name="PassThroughBody7" parent="Cave_objects/Collisions/PassTrough" index="7" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 1599, 230 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/PassTrough/PassThroughBody7" index="0"]
+position = Vector2( -46, -1 )
+shape = SubResource( 96 )
+one_way_collision = true
+
+[node name="PassThroughBody8" parent="Cave_objects/Collisions/PassTrough" index="8" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 1513, 197 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/PassTrough/PassThroughBody8" index="0"]
+position = Vector2( -8, 0 )
+shape = SubResource( 16 )
+one_way_collision = true
+
+[node name="PassThroughBody15" parent="Cave_objects/Collisions/PassTrough" index="9" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 1481, 181 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/PassTrough/PassThroughBody15" index="0"]
+position = Vector2( -8, 0 )
+shape = SubResource( 16 )
+one_way_collision = true
+
+[node name="PassThroughBody16" parent="Cave_objects/Collisions/PassTrough" index="10" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 1577, 181 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/PassTrough/PassThroughBody16" index="0"]
+position = Vector2( -8, 0 )
+shape = SubResource( 16 )
+one_way_collision = true
+
+[node name="PassThroughBody17" parent="Cave_objects/Collisions/PassTrough" index="11" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 1449, 85 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/PassTrough/PassThroughBody17" index="0"]
+position = Vector2( 8, 0 )
+shape = SubResource( 97 )
+one_way_collision = true
+
+[node name="PassThroughBody18" parent="Cave_objects/Collisions/PassTrough" index="12" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 1449, 133 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/PassTrough/PassThroughBody18" index="0"]
+position = Vector2( -16, 0 )
+shape = SubResource( 98 )
+one_way_collision = true
+
+[node name="PassThroughBody23" parent="Cave_objects/Collisions/PassTrough" index="13" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 1577, 85 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/PassTrough/PassThroughBody23" index="0"]
+position = Vector2( -16, 0 )
+shape = SubResource( 98 )
+one_way_collision = true
+
+[node name="PassThroughBody9" parent="Cave_objects/Collisions/PassTrough" index="14" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 1545, 165 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/PassTrough/PassThroughBody9" index="0"]
+position = Vector2( -8, 0 )
+shape = SubResource( 16 )
+one_way_collision = true
+
+[node name="PassThroughBody10" parent="Cave_objects/Collisions/PassTrough" index="15" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 1513, 133 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/PassTrough/PassThroughBody10" index="0"]
+position = Vector2( -8, 0 )
+shape = SubResource( 16 )
+one_way_collision = true
+
+[node name="PassThroughBody11" parent="Cave_objects/Collisions/PassTrough" index="16" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 1545, 101 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/PassTrough/PassThroughBody11" index="0"]
+position = Vector2( -8, 0 )
+shape = SubResource( 16 )
+one_way_collision = true
+
+[node name="PassThroughBody12" parent="Cave_objects/Collisions/PassTrough" index="17" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 1529, 69 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/PassTrough/PassThroughBody12" index="0"]
+position = Vector2( -8, 0 )
+shape = SubResource( 16 )
+one_way_collision = true
+
+[node name="PassThroughBody13" parent="Cave_objects/Collisions/PassTrough" index="18" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 1497, 37 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/PassTrough/PassThroughBody13" index="0"]
+position = Vector2( -8, 0 )
+shape = SubResource( 16 )
+one_way_collision = true
+
+[node name="PassThroughBody14" parent="Cave_objects/Collisions/PassTrough" index="19" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 1368, 5 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/PassTrough/PassThroughBody14" index="0"]
+position = Vector2( 264.5, 0 )
+shape = SubResource( 17 )
+one_way_collision = true
+
+[node name="PassThroughBody19" parent="Cave_objects/Collisions/PassTrough" index="20" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 1081, 5 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/PassTrough/PassThroughBody19" index="0"]
+position = Vector2( -8, 0 )
+shape = SubResource( 19 )
+one_way_collision = true
+
+[node name="PassThroughBody24" parent="Cave_objects/Collisions/PassTrough" index="21" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 985, 5 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/PassTrough/PassThroughBody24" index="0"]
+position = Vector2( -16, 0 )
+shape = SubResource( 102 )
+one_way_collision = true
+
+[node name="PassThroughBody25" parent="Cave_objects/Collisions/PassTrough" index="22" groups=["passThroughObject"] instance=ExtResource( 1 )]
+position = Vector2( 1321, 5 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/PassTrough/PassThroughBody25" index="0"]
+position = Vector2( -16, 0 )
+shape = SubResource( 102 )
+one_way_collision = true
+
+[node name="Solid" type="Node2D" parent="Cave_objects/Collisions" index="1"]
+
+[node name="PassThroughBody18" parent="Cave_objects/Collisions/Solid" index="0" instance=ExtResource( 1 )]
+position = Vector2( -32, 16 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/Solid/PassThroughBody18" index="0"]
+position = Vector2( 297, -11 )
+shape = SubResource( 1 )
+
+[node name="PassThroughBody21" parent="Cave_objects/Collisions/Solid" index="1" instance=ExtResource( 1 )]
+position = Vector2( 208, 464 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/Solid/PassThroughBody21" index="0"]
+position = Vector2( -151, -11 )
+shape = SubResource( 24 )
+
+[node name="PassThroughBody20" parent="Cave_objects/Collisions/Solid" index="2" instance=ExtResource( 1 )]
+position = Vector2( 1552, 272 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/Solid/PassThroughBody20" index="0"]
+position = Vector2( -39, -11 )
+shape = SubResource( 25 )
+
+[node name="PassThroughBody19" parent="Cave_objects/Collisions/Solid" index="3" instance=ExtResource( 1 )]
+position = Vector2( -252, -11 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/Solid/PassThroughBody19" index="0"]
+position = Vector2( -1.5, 4.5 )
+shape = SubResource( 12 )
+
+[node name="Ladders" type="Node2D" parent="Cave_objects/Collisions" index="2"]
+
+[node name="Vine" parent="Cave_objects/Collisions/Ladders" index="0" instance=ExtResource( 12 )]
+position = Vector2( 1385, 93 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/Ladders/Vine" index="0"]
+position = Vector2( 0, 0 )
+shape = SubResource( 111 )
+
+[node name="Vine2" parent="Cave_objects/Collisions/Ladders" index="1" instance=ExtResource( 12 )]
+position = Vector2( 1641, 93 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/Ladders/Vine2" index="0"]
+position = Vector2( 0, -17.3125 )
+shape = SubResource( 112 )
+
+[node name="Vine3" parent="Cave_objects/Collisions/Ladders" index="2" instance=ExtResource( 12 )]
+position = Vector2( 1673, 93 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/Ladders/Vine3" index="0"]
+position = Vector2( 0, -47.3125 )
+shape = SubResource( 113 )
+
+[node name="Vine4" parent="Cave_objects/Collisions/Ladders" index="3" instance=ExtResource( 12 )]
+position = Vector2( 1369, -36 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/Ladders/Vine4" index="0"]
+position = Vector2( 0, -37.5 )
+shape = SubResource( 114 )
+
+[node name="Vine5" parent="Cave_objects/Collisions/Ladders" index="4" instance=ExtResource( 12 )]
+position = Vector2( 1657, -52 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/Ladders/Vine5" index="0"]
+position = Vector2( 0, -31 )
+shape = SubResource( 115 )
+
+[node name="Vine6" parent="Cave_objects/Collisions/Ladders" index="5" instance=ExtResource( 12 )]
+position = Vector2( 1433, 188 )
+
+[node name="CollisionShape2D" parent="Cave_objects/Collisions/Ladders/Vine6" index="0"]
+position = Vector2( 0, -31 )
+shape = SubResource( 116 )
+
+[node name="Player" parent="." index="8"]
 light_mask = 0
 position = Vector2( 55, -6 )
 z_index = 1
@@ -726,1053 +1823,7 @@ radius = 100
 animating = false
 strength = 0.2
 
-[node name="Foreground_world_objects" type="Node2D" parent="." index="10"]
-z_index = 1
-
-[node name="Fountains" type="TileMap" parent="Foreground_world_objects" index="0"]
-tile_set = ExtResource( 11 )
-cell_size = Vector2( 1, 1 )
-format = 1
-tile_data = PoolIntArray( -13827407, 536870920, 0, -12779330, 536870913, 0, -12189007, 536870920, 0, -10682178, 536870913, 0, -10550607, 536870920, 0, -8912207, 536870920, 0, -8585026, 536870913, 0, -7273807, 536870920, 0, -6487874, 536870913, 0, -5635407, 536870920, 0, -4390722, 536870913, 0, -3997007, 536870920, 0, -2358607, 536870920, 0, -2293570, 536870913, 0, -720207, 536870920, 0, -196418, 536870913, 0, 918193, 536870920, 0, 1900734, 536870913, 0, 2556593, 536870920, 0, 3997886, 536870913, 0, 4194993, 536870920, 0, 5833393, 536870920, 0, 6095038, 536870913, 0, 7471793, 536870920, 0, 8192190, 536870913, 0, 9110193, 536870920, 0, 10289342, 536870913, 0, 10683057, 536870920, 0, 12321457, 536870920, 0, 12386494, 536870913, 0, 13959857, 536870920, 0, 14483646, 536870913, 0, 15598257, 536870920, 0, 16580798, 536870913, 0, 17236657, 536870920, 0, 18677950, 536870913, 0, 18875057, 536870920, 0, 20513457, 536870920, 0, 20775102, 536870913, 0, 22151857, 536870920, 0, 22872254, 536870913, 0, 23790257, 536870920, 0, 24969406, 536870913, 0, 25428657, 536870920, 0, 27066558, 536870913, 0, 27067057, 536870920, 0, 28705457, 536870920, 0, 29163710, 536870913, 0, 31260862, 536870913, 0, 33358014, 536870913, 0, 35455166, 536870913, 0, 37552318, 536870913, 0, 39649470, 536870913, 0, 41746622, 536870913, 0, 43843774, 536870913, 0, 45940926, 536870913, 0, 48038078, 536870913, 0 )
-
-[node name="PassThroughBody5" parent="Collisions/PassTrough" index="0" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( 1455, 246 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody5" index="0"]
-position = Vector2( -14, -1 )
-shape = SubResource( 13 )
-one_way_collision = true
-
-[node name="PassThroughBody26" parent="Collisions/PassTrough" index="1" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( 1417, 117 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody26" index="0"]
-shape = SubResource( 104 )
-one_way_collision = true
-
-[node name="PassThroughBody27" parent="Collisions/PassTrough" index="2" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( 1369, -91 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody27" index="0"]
-position = Vector2( 8, 0 )
-shape = SubResource( 105 )
-one_way_collision = true
-
-[node name="PassThroughBody28" parent="Collisions/PassTrough" index="3" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( 1481, -123 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody28" index="0"]
-position = Vector2( 8, 0 )
-shape = SubResource( 105 )
-one_way_collision = true
-
-[node name="PassThroughBody29" parent="Collisions/PassTrough" index="4" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( 1529, -75 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody29" index="0"]
-position = Vector2( 8, 0 )
-shape = SubResource( 105 )
-one_way_collision = true
-
-[node name="PassThroughBody30" parent="Collisions/PassTrough" index="5" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( 1641, -107 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody30" index="0"]
-position = Vector2( 16, 0 )
-shape = SubResource( 106 )
-one_way_collision = true
-
-[node name="PassThroughBody31" parent="Collisions/PassTrough" index="6" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( -423, -123 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody31" index="0"]
-position = Vector2( 8, 0 )
-shape = SubResource( 107 )
-one_way_collision = true
-
-[node name="PassThroughBody32" parent="Collisions/PassTrough" index="7" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( -423, 213 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody32" index="0"]
-position = Vector2( 8, 0 )
-shape = SubResource( 107 )
-one_way_collision = true
-
-[node name="PassThroughBody33" parent="Collisions/PassTrough" index="8" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( -471, 213 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody33" index="0"]
-position = Vector2( 8, 0 )
-shape = SubResource( 107 )
-one_way_collision = true
-
-[node name="PassThroughBody34" parent="Collisions/PassTrough" index="9" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( -407, 181 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody34" index="0"]
-position = Vector2( 8, 0 )
-shape = SubResource( 107 )
-one_way_collision = true
-
-[node name="PassThroughBody35" parent="Collisions/PassTrough" index="10" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( -471, 325 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody35" index="0"]
-position = Vector2( 8, 0 )
-shape = SubResource( 107 )
-one_way_collision = true
-
-[node name="PassThroughBody36" parent="Collisions/PassTrough" index="11" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( -407, 373 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody36" index="0"]
-position = Vector2( 8, 0 )
-shape = SubResource( 107 )
-one_way_collision = true
-
-[node name="PassThroughBody37" parent="Collisions/PassTrough" index="12" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( -390, 293 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody37" index="0"]
-position = Vector2( 31.5, 0 )
-shape = SubResource( 108 )
-one_way_collision = true
-
-[node name="PassThroughBody38" parent="Collisions/PassTrough" index="13" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( -471, -59 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody38" index="0"]
-shape = SubResource( 109 )
-one_way_collision = true
-
-[node name="PassThroughBody39" parent="Collisions/PassTrough" index="14" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( -407, 5 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody39" index="0"]
-shape = SubResource( 109 )
-one_way_collision = true
-
-[node name="PassThroughBody40" parent="Collisions/PassTrough" index="15" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( -487, 69 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody40" index="0"]
-shape = SubResource( 109 )
-one_way_collision = true
-
-[node name="PassThroughBody41" parent="Collisions/PassTrough" index="16" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( -503, 149 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody41" index="0"]
-shape = SubResource( 109 )
-one_way_collision = true
-
-[node name="PassThroughBody42" parent="Collisions/PassTrough" index="17" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( -487, 165 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody42" index="0"]
-shape = SubResource( 109 )
-one_way_collision = true
-
-[node name="PassThroughBody43" parent="Collisions/PassTrough" index="18" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( -503, 325 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody43" index="0"]
-shape = SubResource( 109 )
-one_way_collision = true
-
-[node name="PassThroughBody44" parent="Collisions/PassTrough" index="19" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( -487, 341 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody44" index="0"]
-shape = SubResource( 109 )
-one_way_collision = true
-
-[node name="PassThroughBody45" parent="Collisions/PassTrough" index="20" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( -423, 325 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody45" index="0"]
-shape = SubResource( 109 )
-one_way_collision = true
-
-[node name="PassThroughBody46" parent="Collisions/PassTrough" index="21" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( -407, 405 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody46" index="0"]
-shape = SubResource( 109 )
-one_way_collision = true
-
-[node name="PassThroughBody47" parent="Collisions/PassTrough" index="22" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( -519, 373 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody47" index="0"]
-position = Vector2( 16, 0 )
-shape = SubResource( 110 )
-one_way_collision = true
-
-[node name="PassThroughBody6" parent="Collisions/PassTrough" index="23" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( 1615, 246 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody6" index="0"]
-position = Vector2( -22, -1 )
-shape = SubResource( 14 )
-one_way_collision = true
-
-[node name="PassThroughBody7" parent="Collisions/PassTrough" index="24" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( 1599, 230 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody7" index="0"]
-position = Vector2( -46, -1 )
-shape = SubResource( 96 )
-one_way_collision = true
-
-[node name="PassThroughBody8" parent="Collisions/PassTrough" index="25" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( 1513, 197 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody8" index="0"]
-position = Vector2( -8, 0 )
-shape = SubResource( 16 )
-one_way_collision = true
-
-[node name="PassThroughBody15" parent="Collisions/PassTrough" index="26" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( 1481, 181 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody15" index="0"]
-position = Vector2( -8, 0 )
-shape = SubResource( 16 )
-one_way_collision = true
-
-[node name="PassThroughBody16" parent="Collisions/PassTrough" index="27" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( 1577, 181 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody16" index="0"]
-position = Vector2( -8, 0 )
-shape = SubResource( 16 )
-one_way_collision = true
-
-[node name="PassThroughBody17" parent="Collisions/PassTrough" index="28" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( 1449, 85 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody17" index="0"]
-position = Vector2( 8, 0 )
-shape = SubResource( 97 )
-one_way_collision = true
-
-[node name="PassThroughBody18" parent="Collisions/PassTrough" index="29" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( 1449, 133 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody18" index="0"]
-position = Vector2( -16, 0 )
-shape = SubResource( 98 )
-one_way_collision = true
-
-[node name="PassThroughBody23" parent="Collisions/PassTrough" index="30" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( 1577, 85 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody23" index="0"]
-position = Vector2( -16, 0 )
-shape = SubResource( 98 )
-one_way_collision = true
-
-[node name="PassThroughBody9" parent="Collisions/PassTrough" index="31" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( 1545, 165 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody9" index="0"]
-position = Vector2( -8, 0 )
-shape = SubResource( 16 )
-one_way_collision = true
-
-[node name="PassThroughBody10" parent="Collisions/PassTrough" index="32" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( 1513, 133 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody10" index="0"]
-position = Vector2( -8, 0 )
-shape = SubResource( 16 )
-one_way_collision = true
-
-[node name="PassThroughBody11" parent="Collisions/PassTrough" index="33" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( 1545, 101 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody11" index="0"]
-position = Vector2( -8, 0 )
-shape = SubResource( 16 )
-one_way_collision = true
-
-[node name="PassThroughBody12" parent="Collisions/PassTrough" index="34" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( 1529, 69 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody12" index="0"]
-position = Vector2( -8, 0 )
-shape = SubResource( 16 )
-one_way_collision = true
-
-[node name="PassThroughBody13" parent="Collisions/PassTrough" index="35" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( 1497, 37 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody13" index="0"]
-position = Vector2( -8, 0 )
-shape = SubResource( 16 )
-one_way_collision = true
-
-[node name="PassThroughBody14" parent="Collisions/PassTrough" index="36" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( 1368, 5 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody14" index="0"]
-position = Vector2( 264.5, 0 )
-shape = SubResource( 17 )
-one_way_collision = true
-
-[node name="PassThroughBody19" parent="Collisions/PassTrough" index="37" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( 1081, 5 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody19" index="0"]
-position = Vector2( -8, 0 )
-shape = SubResource( 19 )
-one_way_collision = true
-
-[node name="PassThroughBody20" parent="Collisions/PassTrough" index="38" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( -455, -91 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody20" index="0"]
-position = Vector2( 16, 0 )
-shape = SubResource( 20 )
-one_way_collision = true
-
-[node name="PassThroughBody21" parent="Collisions/PassTrough" index="39" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( -487, 101 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody21" index="0"]
-position = Vector2( 48, 0 )
-shape = SubResource( 21 )
-one_way_collision = true
-
-[node name="PassThroughBody22" parent="Collisions/PassTrough" index="40" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( -471, 261 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody22" index="0"]
-position = Vector2( 32, 0 )
-shape = SubResource( 22 )
-one_way_collision = true
-
-[node name="PassThroughBody24" parent="Collisions/PassTrough" index="41" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( 985, 5 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody24" index="0"]
-position = Vector2( -16, 0 )
-shape = SubResource( 102 )
-one_way_collision = true
-
-[node name="PassThroughBody25" parent="Collisions/PassTrough" index="42" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( 1321, 5 )
-
-[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody25" index="0"]
-position = Vector2( -16, 0 )
-shape = SubResource( 102 )
-one_way_collision = true
-
-[node name="PassThroughBody18" parent="Collisions/Solid" index="0" instance=ExtResource( 1 )]
-position = Vector2( -32, 16 )
-collision_layer = 17
-collision_mask = 17
-
-[node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody18" index="0"]
-position = Vector2( 297, -11 )
-shape = SubResource( 1 )
-
-[node name="PassThroughBody21" parent="Collisions/Solid" index="1" instance=ExtResource( 1 )]
-position = Vector2( 208, 464 )
-collision_layer = 17
-collision_mask = 17
-
-[node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody21" index="0"]
-position = Vector2( -151, -11 )
-shape = SubResource( 24 )
-
-[node name="PassThroughBody22" parent="Collisions/Solid" index="2" instance=ExtResource( 1 )]
-position = Vector2( -304, 464 )
-collision_layer = 17
-collision_mask = 17
-
-[node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody22" index="0"]
-position = Vector2( -135, -11 )
-shape = SubResource( 77 )
-
-[node name="PassThroughBody20" parent="Collisions/Solid" index="3" instance=ExtResource( 1 )]
-position = Vector2( 1552, 272 )
-collision_layer = 17
-collision_mask = 17
-
-[node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody20" index="0"]
-position = Vector2( -39, -11 )
-shape = SubResource( 25 )
-
-[node name="PassThroughBody19" parent="Collisions/Solid" index="4" instance=ExtResource( 1 )]
-position = Vector2( -252, -11 )
-collision_layer = 17
-collision_mask = 17
-
-[node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody19" index="0"]
-position = Vector2( -1.5, 4.5 )
-shape = SubResource( 12 )
-
-[node name="WellLadder" parent="Ladders" index="0" instance=ExtResource( 12 )]
-position = Vector2( -439, 10 )
-
-[node name="CollisionShape2D" parent="Ladders/WellLadder" index="0"]
-position = Vector2( 0, 161 )
-shape = SubResource( 26 )
-
-[node name="Vine" parent="Ladders" index="1" instance=ExtResource( 12 )]
-position = Vector2( 1385, 93 )
-
-[node name="CollisionShape2D" parent="Ladders/Vine" index="0"]
-position = Vector2( 0, 0 )
-shape = SubResource( 111 )
-
-[node name="Vine2" parent="Ladders" index="2" instance=ExtResource( 12 )]
-position = Vector2( 1641, 93 )
-
-[node name="CollisionShape2D" parent="Ladders/Vine2" index="0"]
-position = Vector2( 0, -17.3125 )
-shape = SubResource( 112 )
-
-[node name="Vine3" parent="Ladders" index="3" instance=ExtResource( 12 )]
-position = Vector2( 1673, 93 )
-
-[node name="CollisionShape2D" parent="Ladders/Vine3" index="0"]
-position = Vector2( 0, -47.3125 )
-shape = SubResource( 113 )
-
-[node name="Vine4" parent="Ladders" index="4" instance=ExtResource( 12 )]
-position = Vector2( 1369, -36 )
-
-[node name="CollisionShape2D" parent="Ladders/Vine4" index="0"]
-position = Vector2( 0, -37.5 )
-shape = SubResource( 114 )
-
-[node name="Vine5" parent="Ladders" index="5" instance=ExtResource( 12 )]
-position = Vector2( 1657, -52 )
-
-[node name="CollisionShape2D" parent="Ladders/Vine5" index="0"]
-position = Vector2( 0, -31 )
-shape = SubResource( 115 )
-
-[node name="Vine6" parent="Ladders" index="6" instance=ExtResource( 12 )]
-position = Vector2( 1433, 188 )
-
-[node name="CollisionShape2D" parent="Ladders/Vine6" index="0"]
-position = Vector2( 0, -31 )
-shape = SubResource( 116 )
-
-[node name="Vine7" parent="Ladders" index="7" instance=ExtResource( 12 )]
-position = Vector2( -488, 220 )
-
-[node name="CollisionShape2D" parent="Ladders/Vine7" index="0"]
-position = Vector2( 0, -47 )
-shape = SubResource( 117 )
-
-[node name="Centeal_hub_door" parent="Doors" index="0" instance=ExtResource( 3 )]
-position = Vector2( 57, -3 )
-nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
-nextDoorName = "Wish_star_dangeon_door"
-
-[node name="VisibilityChecker" parent="Doors/Centeal_hub_door" index="0"]
-visible = false
-
-[node name="GatesBackground" parent="Doors/Centeal_hub_door" index="1"]
-visible = false
-
-[node name="InteractionController" parent="Doors/Centeal_hub_door" index="2"]
-visible = false
-
-[node name="Heart_lake_door" parent="Doors" index="1" instance=ExtResource( 3 )]
-position = Vector2( 57, 445 )
-nextScenePath = "res://Levels/Wish_star_dangeon/Heart_lake/HeartLake.tscn"
-nextDoorName = "Wish_star_dangeon_enter_door"
-
-[node name="VisibilityChecker" parent="Doors/Heart_lake_door" index="0"]
-visible = false
-position = Vector2( 0, -57.5 )
-scale = Vector2( 1, 5.75 )
-
-[node name="GatesBackground" parent="Doors/Heart_lake_door" index="1"]
-visible = false
-
-[node name="CollisionShape2D" parent="Doors/Heart_lake_door/InteractionController/Area2D" index="0"]
-position = Vector2( 0, 2 )
-shape = SubResource( 103 )
-
-[node name="World_objects" type="Node2D" parent="." index="16"]
-
-[node name="Torches" type="Node2D" parent="World_objects" index="0"]
-
-[node name="Wide_torch3" parent="World_objects/Torches" index="0" instance=ExtResource( 10 )]
-position = Vector2( -119, -9 )
-
-[node name="Wide_torch4" parent="World_objects/Torches" index="1" instance=ExtResource( 10 )]
-position = Vector2( -200, -9 )
-
-[node name="Hall_flag_4_wide_torch" parent="World_objects/Torches" index="2" instance=ExtResource( 10 )]
-position = Vector2( 759, -9 )
-
-[node name="Entrance_torches" type="Node2D" parent="World_objects/Torches" index="3"]
-
-[node name="ActivatableTorch" parent="World_objects/Torches/Entrance_torches" index="0" instance=ExtResource( 9 )]
-position = Vector2( 29, -26 )
-
-[node name="ActivatableTorch2" parent="World_objects/Torches/Entrance_torches" index="1" instance=ExtResource( 9 )]
-position = Vector2( 84, -26 )
-
-[node name="Hall_flag_1" type="Node2D" parent="World_objects/Torches" index="4"]
-
-[node name="Wide_torch5" parent="World_objects/Torches/Hall_flag_1" index="0" instance=ExtResource( 10 )]
-position = Vector2( 322, -9 )
-
-[node name="Wide_torch6" parent="World_objects/Torches/Hall_flag_1" index="1" instance=ExtResource( 10 )]
-position = Vector2( 241, -9 )
-
-[node name="Hall_flag_2" type="Node2D" parent="World_objects/Torches" index="5"]
-
-[node name="Wide_torch7" parent="World_objects/Torches/Hall_flag_2" index="0" instance=ExtResource( 10 )]
-position = Vector2( 482, -9 )
-
-[node name="Wide_torch8" parent="World_objects/Torches/Hall_flag_2" index="1" instance=ExtResource( 10 )]
-position = Vector2( 401, -9 )
-
-[node name="Hall_flag_3" type="Node2D" parent="World_objects/Torches" index="6"]
-
-[node name="Wide_torch9" parent="World_objects/Torches/Hall_flag_3" index="0" instance=ExtResource( 10 )]
-position = Vector2( 643, -9 )
-
-[node name="Wide_torch10" parent="World_objects/Torches/Hall_flag_3" index="1" instance=ExtResource( 10 )]
-position = Vector2( 562, -9 )
-
-[node name="Right_island_wide_torch" parent="World_objects/Torches" index="7" instance=ExtResource( 10 )]
-position = Vector2( 1344, 247 )
-is_torch_activated = true
-
-[node name="Wide_torch" parent="World_objects/Torches" index="8" instance=ExtResource( 10 )]
-position = Vector2( 1390, -9 )
-
-[node name="Wide_torch2" parent="World_objects/Torches" index="9" instance=ExtResource( 10 )]
-position = Vector2( 1474, -9 )
-
-[node name="Wide_torch5" parent="World_objects/Torches" index="10" instance=ExtResource( 10 )]
-position = Vector2( 1555, -9 )
-
-[node name="Wide_torch6" parent="World_objects/Torches" index="11" instance=ExtResource( 10 )]
-position = Vector2( 1630, -9 )
-
-[node name="Wide_torch7" parent="World_objects/Torches" index="12" instance=ExtResource( 10 )]
-position = Vector2( 1795, -9 )
-
-[node name="Wide_torch8" parent="World_objects/Torches" index="13" instance=ExtResource( 10 )]
-position = Vector2( 1873, -9 )
-
-[node name="Wide_torch9" parent="World_objects/Torches" index="14" instance=ExtResource( 10 )]
-position = Vector2( 1520, 55 )
-
-[node name="Wide_torch10" parent="World_objects/Torches" index="15" instance=ExtResource( 10 )]
-position = Vector2( 1675, 247 )
-
-[node name="Wide_torch11" parent="World_objects/Torches" index="16" instance=ExtResource( 10 )]
-position = Vector2( 1519, 247 )
-
-[node name="Wide_torch12" parent="World_objects/Torches" index="17" instance=ExtResource( 10 )]
-position = Vector2( 1537, 151 )
-
-[node name="Left_island_wide_torch" parent="World_objects/Torches" index="18" instance=ExtResource( 10 )]
-position = Vector2( -403, 87 )
-
-[node name="Left_island_wide_torch2" parent="World_objects/Torches" index="19" instance=ExtResource( 10 )]
-position = Vector2( -458, -105 )
-
-[node name="Left_island_wide_torch3" parent="World_objects/Torches" index="20" instance=ExtResource( 10 )]
-position = Vector2( -494, 87 )
-
-[node name="Left_island_wide_torch4" parent="World_objects/Torches" index="21" instance=ExtResource( 10 )]
-position = Vector2( -419, 247 )
-
-[node name="Left_island_wide_torch5" parent="World_objects/Torches" index="22" instance=ExtResource( 10 )]
-position = Vector2( -487, 439 )
-
-[node name="Left_island_wide_torch6" parent="World_objects/Torches" index="23" instance=ExtResource( 10 )]
-position = Vector2( -395, 439 )
-
-[node name="Left_island_wide_torch7" parent="World_objects/Torches" index="24" instance=ExtResource( 10 )]
-position = Vector2( 14, 439 )
-
-[node name="Left_island_wide_torch8" parent="World_objects/Torches" index="25" instance=ExtResource( 10 )]
-position = Vector2( 98, 439 )
-
-[node name="Chests" type="Node2D" parent="World_objects" index="1"]
-
-[node name="ChestOne" parent="World_objects/Chests" index="0" instance=ExtResource( 28 )]
-position = Vector2( -161, -3 )
-innerItemScene = ExtResource( 29 )
-
-[node name="ChestTwo" parent="World_objects/Chests" index="1" instance=ExtResource( 28 )]
-position = Vector2( 1837, -3 )
-innerItemScene = ExtResource( 30 )
-
-[node name="Flag_captions" type="Node2D" parent="World_objects" index="2"]
-
-[node name="Sign_1" parent="World_objects/Flag_captions" index="0" instance=ExtResource( 32 )]
-position = Vector2( 281, -3 )
-texts_array = [ "˜ЛЕГЕНДА О КИСЕЛЯЧЬЕМ ЦАРСТВЕ˜", "Эта история о том,
-как появились котики", "Давным-давно, когда цветочки
-не танцевали, бабочки не пархали,
-а котики не грелись на солнышке,
-был только он", "Мы не знаем кто он был.
-Да это и не важно, ведь с него
-всё началось", "Хотя нет...", "Всё началось когда
-он встретил её", "Первую кису" ]
-
-[node name="Sprite" parent="World_objects/Flag_captions/Sign_1" index="0"]
-visible = false
-
-[node name="TextBoxPopup" parent="World_objects/Flag_captions/Sign_1" index="2"]
-light_mask = 0
-
-[node name="Sign_2" parent="World_objects/Flag_captions" index="1" instance=ExtResource( 32 )]
-position = Vector2( 440, -3 )
-texts_array = [ "Каждый раз, когда она улыбалась,
-вырастал цветочек. Каждый вздох
-появлялась новая бабочка", "И каждое мгновение, проведённое
-с ней было как зефирка. А зефирка
-становилась облачком", "Однажды она подарила ему тьмок", "Это было волнительно,
-но взамен он украл её
-первый настоящий поцелуй", "И тогда произошёл БУМ!" ]
-
-[node name="Sprite" parent="World_objects/Flag_captions/Sign_2" index="0"]
-visible = false
-
-[node name="Sign_3" parent="World_objects/Flag_captions" index="2" instance=ExtResource( 32 )]
-position = Vector2( 601, -3 )
-texts_array = [ "Тьмок за тьмоком, обнимак
-за обнимаком", "Среди облачков появлялись
-островки, а на островках стали
-нежиться первые котики", "Изо дня в день, их чувства
-становились сильней и сильней,
-а котиков всё больше и больше..." ]
-
-[node name="Sprite" parent="World_objects/Flag_captions/Sign_3" index="0"]
-visible = false
-
-[node name="Sign_4" parent="World_objects/Flag_captions" index="3" instance=ExtResource( 32 )]
-position = Vector2( 1432, -3 )
-texts_array = [ "В каждом из нас есть место,
-которое предназначено только
-для него", "Тайный остров, о котором
-никто не знает", "Туда не так просто попасть.
-Но бывает так, что два мира
-сталкиваются друг с другом", "Котики из одного мира
-перемешиваются с котиками
-из другого", "И уже не понять чьи
-бабочки здесь пархают
-Они все становятся родными", "Появляется целый маленький
-мир, который растёт и развивается
-совместными усилиями всех котиков" ]
-
-[node name="Sprite" parent="World_objects/Flag_captions/Sign_4" index="0"]
-visible = false
-
-[node name="Sign_5" parent="World_objects/Flag_captions" index="4" instance=ExtResource( 32 )]
-position = Vector2( 1592, -3 )
-texts_array = [ "Котики из одного мира встречаются
-с котиками из другого, и потихоньку
-начинают дружить и любить", "Если их хозяева любят друг друга,
-то и их котики счастливы", "С каждым новым впечатлением
-появляется новый котик, деревня
-котиков, острова котиков...", "Так появились мы - котята" ]
-
-[node name="Sprite" parent="World_objects/Flag_captions/Sign_5" index="0"]
-visible = false
-
-[node name="Vases" type="Node2D" parent="World_objects" index="3"]
-
-[node name="Background_vase" parent="World_objects/Vases" index="0" instance=ExtResource( 33 )]
-position = Vector2( -53, -11 )
-
-[node name="Background_vase2" parent="World_objects/Vases" index="1" instance=ExtResource( 33 )]
-position = Vector2( -73, -11 )
-
-[node name="Background_vase3" parent="World_objects/Vases" index="2" instance=ExtResource( 33 )]
-position = Vector2( 163, -11 )
-
-[node name="Background_vase4" parent="World_objects/Vases" index="3" instance=ExtResource( 33 )]
-position = Vector2( 1695, -12 )
-
-[node name="Background_vase5" parent="World_objects/Vases" index="4" instance=ExtResource( 33 )]
-position = Vector2( 1715, -12 )
-
-[node name="Background_vase6" parent="World_objects/Vases" index="5" instance=ExtResource( 33 )]
-position = Vector2( 1734, -12 )
-
-[node name="Background_vase7" parent="World_objects/Vases" index="6" instance=ExtResource( 33 )]
-position = Vector2( -464, 244 )
-
-[node name="Barrels" type="Node2D" parent="World_objects" index="4"]
-
-[node name="Background_barrel" parent="World_objects/Barrels" index="0" instance=ExtResource( 34 )]
-position = Vector2( 1497, 178 )
-
-[node name="Background_barrel2" parent="World_objects/Barrels" index="1" instance=ExtResource( 34 )]
-position = Vector2( 1453, 68 )
-
-[node name="Background_barrel3" parent="World_objects/Barrels" index="2" instance=ExtResource( 34 )]
-position = Vector2( -461, 84 )
-
-[node name="Background_barrel4" parent="World_objects/Barrels" index="3" instance=ExtResource( 34 )]
-position = Vector2( -416, 435 )
-
-[node name="Background_barrel5" parent="World_objects/Barrels" index="4" instance=ExtResource( 34 )]
-position = Vector2( -419, -108 )
-
-[node name="Moving_platforms" type="Node2D" parent="." index="17"]
-
-[node name="Star_entrance" type="Node2D" parent="Moving_platforms" index="0"]
-
-[node name="Moving_platform_near_star_entrance" type="Node2D" parent="Moving_platforms/Star_entrance" index="0"]
-position = Vector2( -347, 453 )
-script = ExtResource( 13 )
-
-[node name="Platform" type="KinematicBody2D" parent="Moving_platforms/Star_entrance/Moving_platform_near_star_entrance" index="0"]
-collision_layer = 3
-motion/sync_to_physics = true
-
-[node name="VisibilityChecker" parent="Moving_platforms/Star_entrance/Moving_platform_near_star_entrance/Platform" index="0" instance=ExtResource( 18 )]
-position = Vector2( 3.8147e-06, 0 )
-scale = Vector2( 3.4, 1 )
-
-[node name="Sprite" type="Sprite" parent="Moving_platforms/Star_entrance/Moving_platform_near_star_entrance/Platform" index="1"]
-texture = ExtResource( 14 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Moving_platforms/Star_entrance/Moving_platform_near_star_entrance/Platform" index="2"]
-shape = SubResource( 27 )
-
-[node name="Torch" parent="Moving_platforms/Star_entrance/Moving_platform_near_star_entrance/Platform" index="3" instance=ExtResource( 10 )]
-position = Vector2( 0, -14 )
-is_torch_activated = true
-
-[node name="Path2D" type="Path2D" parent="Moving_platforms/Star_entrance/Moving_platform_near_star_entrance" index="1"]
-position = Vector2( -104, 0 )
-curve = SubResource( 94 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Moving_platforms/Star_entrance/Moving_platform_near_star_entrance/Path2D" index="0"]
-position = Vector2( 104, 0 )
-rotation = 3.14159
-rotate = false
-loop = false
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Moving_platforms/Star_entrance/Moving_platform_near_star_entrance/Path2D/PathFollow2D" index="0"]
-rotation = -3.14159
-remote_path = NodePath("../../../Platform")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Moving_platforms/Star_entrance/Moving_platform_near_star_entrance" index="2"]
-autoplay = "Loop"
-playback_process_mode = 0
-anims/Loop = SubResource( 50 )
-anims/RESET = SubResource( 51 )
-
-[node name="MovingPlatform" type="Node2D" parent="Moving_platforms/Star_entrance" index="1"]
-position = Vector2( -111, 309 )
-script = ExtResource( 13 )
-
-[node name="Platform" type="KinematicBody2D" parent="Moving_platforms/Star_entrance/MovingPlatform" index="0"]
-position = Vector2( 104, 0 )
-collision_layer = 3
-motion/sync_to_physics = true
-
-[node name="VisibilityChecker" parent="Moving_platforms/Star_entrance/MovingPlatform/Platform" index="0" instance=ExtResource( 18 )]
-position = Vector2( -0.255653, 0 )
-
-[node name="Sprite" type="Sprite" parent="Moving_platforms/Star_entrance/MovingPlatform/Platform" index="1"]
-texture = ExtResource( 21 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Moving_platforms/Star_entrance/MovingPlatform/Platform" index="2"]
-shape = SubResource( 48 )
-one_way_collision = true
-
-[node name="Path2D" type="Path2D" parent="Moving_platforms/Star_entrance/MovingPlatform" index="1"]
-curve = ExtResource( 19 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Moving_platforms/Star_entrance/MovingPlatform/Path2D" index="0"]
-position = Vector2( 104, 0 )
-rotation = 3.14159
-rotate = false
-loop = false
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Moving_platforms/Star_entrance/MovingPlatform/Path2D/PathFollow2D" index="0"]
-rotation = -3.14159
-remote_path = NodePath("../../../Platform")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Moving_platforms/Star_entrance/MovingPlatform" index="2"]
-autoplay = "Loop"
-playback_process_mode = 0
-anims/Loop = SubResource( 78 )
-anims/RESET = SubResource( 79 )
-
-[node name="MovingPlatform2" type="Node2D" parent="Moving_platforms/Star_entrance" index="2"]
-position = Vector2( 49, 421 )
-script = ExtResource( 13 )
-
-[node name="Platform" type="KinematicBody2D" parent="Moving_platforms/Star_entrance/MovingPlatform2" index="0"]
-position = Vector2( 104, 0 )
-collision_layer = 3
-motion/sync_to_physics = true
-
-[node name="VisibilityChecker" parent="Moving_platforms/Star_entrance/MovingPlatform2/Platform" index="0" instance=ExtResource( 18 )]
-position = Vector2( -0.255653, 0 )
-
-[node name="Sprite" type="Sprite" parent="Moving_platforms/Star_entrance/MovingPlatform2/Platform" index="1"]
-texture = ExtResource( 21 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Moving_platforms/Star_entrance/MovingPlatform2/Platform" index="2"]
-shape = SubResource( 48 )
-one_way_collision = true
-
-[node name="Path2D" type="Path2D" parent="Moving_platforms/Star_entrance/MovingPlatform2" index="1"]
-curve = SubResource( 87 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Moving_platforms/Star_entrance/MovingPlatform2/Path2D" index="0"]
-position = Vector2( 104, 0 )
-rotation = 3.14159
-rotate = false
-loop = false
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Moving_platforms/Star_entrance/MovingPlatform2/Path2D/PathFollow2D" index="0"]
-rotation = -3.14159
-remote_path = NodePath("../../../Platform")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Moving_platforms/Star_entrance/MovingPlatform2" index="2"]
-autoplay = "Loop"
-playback_process_mode = 0
-anims/Loop = SubResource( 80 )
-anims/RESET = SubResource( 81 )
-
-[node name="MovingPlatform3" type="Node2D" parent="Moving_platforms/Star_entrance" index="3"]
-position = Vector2( -127, 389 )
-script = ExtResource( 13 )
-
-[node name="Platform" type="KinematicBody2D" parent="Moving_platforms/Star_entrance/MovingPlatform3" index="0"]
-position = Vector2( 104, 0 )
-collision_layer = 3
-motion/sync_to_physics = true
-
-[node name="VisibilityChecker" parent="Moving_platforms/Star_entrance/MovingPlatform3/Platform" index="0" instance=ExtResource( 18 )]
-position = Vector2( -0.255653, 0 )
-
-[node name="Sprite" type="Sprite" parent="Moving_platforms/Star_entrance/MovingPlatform3/Platform" index="1"]
-texture = ExtResource( 21 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Moving_platforms/Star_entrance/MovingPlatform3/Platform" index="2"]
-shape = SubResource( 48 )
-one_way_collision = true
-
-[node name="Path2D" type="Path2D" parent="Moving_platforms/Star_entrance/MovingPlatform3" index="1"]
-curve = ExtResource( 19 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Moving_platforms/Star_entrance/MovingPlatform3/Path2D" index="0"]
-position = Vector2( 104, 0 )
-rotation = 3.14159
-rotate = false
-loop = false
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Moving_platforms/Star_entrance/MovingPlatform3/Path2D/PathFollow2D" index="0"]
-rotation = -3.14159
-remote_path = NodePath("../../../Platform")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Moving_platforms/Star_entrance/MovingPlatform3" index="2"]
-autoplay = "Loop"
-playback_process_mode = 0
-anims/Loop = SubResource( 82 )
-anims/RESET = SubResource( 83 )
-
-[node name="MovingPlatform4" type="Node2D" parent="Moving_platforms/Star_entrance" index="4"]
-position = Vector2( 33, 357 )
-script = ExtResource( 13 )
-
-[node name="Platform" type="KinematicBody2D" parent="Moving_platforms/Star_entrance/MovingPlatform4" index="0"]
-position = Vector2( 104, 0 )
-collision_layer = 3
-motion/sync_to_physics = true
-
-[node name="VisibilityChecker" parent="Moving_platforms/Star_entrance/MovingPlatform4/Platform" index="0" instance=ExtResource( 18 )]
-position = Vector2( -0.255653, -9.53674e-07 )
-scale = Vector2( 1, 1.7 )
-
-[node name="Sprite" type="Sprite" parent="Moving_platforms/Star_entrance/MovingPlatform4/Platform" index="1"]
-texture = ExtResource( 22 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Moving_platforms/Star_entrance/MovingPlatform4/Platform" index="2"]
-shape = SubResource( 84 )
-one_way_collision = true
-
-[node name="Path2D" type="Path2D" parent="Moving_platforms/Star_entrance/MovingPlatform4" index="1"]
-curve = ExtResource( 19 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Moving_platforms/Star_entrance/MovingPlatform4/Path2D" index="0"]
-position = Vector2( 104, 0 )
-rotation = 3.14159
-rotate = false
-loop = false
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Moving_platforms/Star_entrance/MovingPlatform4/Path2D/PathFollow2D" index="0"]
-rotation = -3.14159
-remote_path = NodePath("../../../Platform")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Moving_platforms/Star_entrance/MovingPlatform4" index="2"]
-autoplay = "Loop"
-playback_process_mode = 0
-anims/Loop = SubResource( 85 )
-anims/RESET = SubResource( 86 )
-
-[node name="Left_tree" type="Node2D" parent="Moving_platforms" index="1"]
-
-[node name="MovingPlatform" type="Node2D" parent="Moving_platforms/Left_tree" index="0"]
-position = Vector2( -639, 293 )
-script = ExtResource( 13 )
-
-[node name="Platform" type="KinematicBody2D" parent="Moving_platforms/Left_tree/MovingPlatform" index="0"]
-position = Vector2( 104, 0 )
-collision_layer = 3
-motion/sync_to_physics = true
-
-[node name="VisibilityChecker" parent="Moving_platforms/Left_tree/MovingPlatform/Platform" index="0" instance=ExtResource( 18 )]
-position = Vector2( -0.255653, 0 )
-
-[node name="Sprite" type="Sprite" parent="Moving_platforms/Left_tree/MovingPlatform/Platform" index="1"]
-texture = ExtResource( 21 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Moving_platforms/Left_tree/MovingPlatform/Platform" index="2"]
-shape = SubResource( 88 )
-one_way_collision = true
-
-[node name="Path2D" type="Path2D" parent="Moving_platforms/Left_tree/MovingPlatform" index="1"]
-curve = ExtResource( 19 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Moving_platforms/Left_tree/MovingPlatform/Path2D" index="0"]
-position = Vector2( 104, 0 )
-rotation = 3.14159
-rotate = false
-loop = false
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Moving_platforms/Left_tree/MovingPlatform/Path2D/PathFollow2D" index="0"]
-rotation = -3.14159
-remote_path = NodePath("../../../Platform")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Moving_platforms/Left_tree/MovingPlatform" index="2"]
-autoplay = "Loop"
-playback_process_mode = 0
-anims/Loop = SubResource( 89 )
-anims/RESET = SubResource( 90 )
-
-[node name="MovingPlatform2" type="Node2D" parent="Moving_platforms/Left_tree" index="1"]
-position = Vector2( -455, 213 )
-script = ExtResource( 13 )
-
-[node name="Platform" type="KinematicBody2D" parent="Moving_platforms/Left_tree/MovingPlatform2" index="0"]
-position = Vector2( 104, 0 )
-collision_layer = 3
-motion/sync_to_physics = true
-
-[node name="VisibilityChecker" parent="Moving_platforms/Left_tree/MovingPlatform2/Platform" index="0" instance=ExtResource( 18 )]
-position = Vector2( -1.90735e-06, 0 )
-scale = Vector2( 1.8, 1 )
-
-[node name="Sprite" type="Sprite" parent="Moving_platforms/Left_tree/MovingPlatform2/Platform" index="1"]
-texture = ExtResource( 23 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Moving_platforms/Left_tree/MovingPlatform2/Platform" index="2"]
-shape = SubResource( 91 )
-one_way_collision = true
-
-[node name="Path2D" type="Path2D" parent="Moving_platforms/Left_tree/MovingPlatform2" index="1"]
-curve = SubResource( 95 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Moving_platforms/Left_tree/MovingPlatform2/Path2D" index="0"]
-position = Vector2( 104, 0 )
-rotation = 3.14159
-rotate = false
-loop = false
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Moving_platforms/Left_tree/MovingPlatform2/Path2D/PathFollow2D" index="0"]
-rotation = -3.14159
-remote_path = NodePath("../../../Platform")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Moving_platforms/Left_tree/MovingPlatform2" index="2"]
-autoplay = "Loop"
-playback_process_mode = 0
-anims/Loop = SubResource( 92 )
-anims/RESET = SubResource( 93 )
-
-[node name="Interactive_platforms" type="Node2D" parent="Moving_platforms" index="2"]
-
-[node name="Interactive_platform_1" type="Node2D" parent="Moving_platforms/Interactive_platforms" index="0"]
-position = Vector2( -1, -45 )
-
-[node name="Sprite" type="Sprite" parent="Moving_platforms/Interactive_platforms/Interactive_platform_1" index="0"]
-position = Vector2( 906, 74 )
-texture = ExtResource( 26 )
-
-[node name="PassThroughBody15" parent="Moving_platforms/Interactive_platforms/Interactive_platform_1" index="1" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( 906, 66 )
-
-[node name="CollisionShape2D" parent="Moving_platforms/Interactive_platforms/Interactive_platform_1/PassThroughBody15" index="0"]
-shape = SubResource( 18 )
-
-[node name="Wide_torch" parent="Moving_platforms/Interactive_platforms/Interactive_platform_1" index="2" instance=ExtResource( 10 )]
-position = Vector2( 906, 52 )
-
-[node name="Interactive_platform_2" type="Node2D" parent="Moving_platforms/Interactive_platforms" index="1"]
-position = Vector2( 119, -17 )
-
-[node name="Sprite" type="Sprite" parent="Moving_platforms/Interactive_platforms/Interactive_platform_2" index="0"]
-position = Vector2( 906, 74 )
-texture = ExtResource( 24 )
-
-[node name="PassThroughBody15" parent="Moving_platforms/Interactive_platforms/Interactive_platform_2" index="1" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( 906, 66 )
-
-[node name="CollisionShape2D" parent="Moving_platforms/Interactive_platforms/Interactive_platform_2/PassThroughBody15" index="0"]
-shape = SubResource( 18 )
-
-[node name="Wide_torch" parent="Moving_platforms/Interactive_platforms/Interactive_platform_2" index="2" instance=ExtResource( 10 )]
-position = Vector2( 906, 52 )
-
-[node name="Interactive_platform_3" type="Node2D" parent="Moving_platforms/Interactive_platforms" index="2"]
-position = Vector2( 220, 31 )
-
-[node name="Sprite" type="Sprite" parent="Moving_platforms/Interactive_platforms/Interactive_platform_3" index="0"]
-position = Vector2( 906, 74 )
-texture = ExtResource( 25 )
-
-[node name="PassThroughBody15" parent="Moving_platforms/Interactive_platforms/Interactive_platform_3" index="1" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( 906, 66 )
-
-[node name="CollisionShape2D" parent="Moving_platforms/Interactive_platforms/Interactive_platform_3/PassThroughBody15" index="0"]
-shape = SubResource( 18 )
-
-[node name="Wide_torch" parent="Moving_platforms/Interactive_platforms/Interactive_platform_3" index="2" instance=ExtResource( 10 )]
-position = Vector2( 906, 52 )
-
-[node name="Interactive_platform_4" type="Node2D" parent="Moving_platforms/Interactive_platforms" index="3"]
-position = Vector2( 325, 85 )
-
-[node name="Sprite" type="Sprite" parent="Moving_platforms/Interactive_platforms/Interactive_platform_4" index="0"]
-position = Vector2( 906, 74 )
-texture = ExtResource( 27 )
-
-[node name="PassThroughBody15" parent="Moving_platforms/Interactive_platforms/Interactive_platform_4" index="1" groups=["passThroughObject"] instance=ExtResource( 1 )]
-position = Vector2( 906, 66 )
-
-[node name="CollisionShape2D" parent="Moving_platforms/Interactive_platforms/Interactive_platform_4/PassThroughBody15" index="0"]
-shape = SubResource( 18 )
-
-[node name="Wide_torch" parent="Moving_platforms/Interactive_platforms/Interactive_platform_4" index="2" instance=ExtResource( 10 )]
-position = Vector2( 906, 52 )
-
-[node name="WaterSurface" type="Node2D" parent="." index="18"]
+[node name="WaterSurface" type="Node2D" parent="." index="11"]
 pause_mode = 2
 modulate = Color( 1, 1, 1, 0.529412 )
 position = Vector2( 257, 483 )
@@ -1816,77 +1867,77 @@ margin_right = 5296.0
 margin_bottom = 344.0
 
 [editable path="Camera2D/Stars"]
-[editable path="Collisions/PassTrough/PassThroughBody5"]
-[editable path="Collisions/PassTrough/PassThroughBody26"]
-[editable path="Collisions/PassTrough/PassThroughBody27"]
-[editable path="Collisions/PassTrough/PassThroughBody28"]
-[editable path="Collisions/PassTrough/PassThroughBody29"]
-[editable path="Collisions/PassTrough/PassThroughBody30"]
-[editable path="Collisions/PassTrough/PassThroughBody31"]
-[editable path="Collisions/PassTrough/PassThroughBody32"]
-[editable path="Collisions/PassTrough/PassThroughBody33"]
-[editable path="Collisions/PassTrough/PassThroughBody34"]
-[editable path="Collisions/PassTrough/PassThroughBody35"]
-[editable path="Collisions/PassTrough/PassThroughBody36"]
-[editable path="Collisions/PassTrough/PassThroughBody37"]
-[editable path="Collisions/PassTrough/PassThroughBody38"]
-[editable path="Collisions/PassTrough/PassThroughBody39"]
-[editable path="Collisions/PassTrough/PassThroughBody40"]
-[editable path="Collisions/PassTrough/PassThroughBody41"]
-[editable path="Collisions/PassTrough/PassThroughBody42"]
-[editable path="Collisions/PassTrough/PassThroughBody43"]
-[editable path="Collisions/PassTrough/PassThroughBody44"]
-[editable path="Collisions/PassTrough/PassThroughBody45"]
-[editable path="Collisions/PassTrough/PassThroughBody46"]
-[editable path="Collisions/PassTrough/PassThroughBody47"]
-[editable path="Collisions/PassTrough/PassThroughBody6"]
-[editable path="Collisions/PassTrough/PassThroughBody7"]
-[editable path="Collisions/PassTrough/PassThroughBody8"]
-[editable path="Collisions/PassTrough/PassThroughBody15"]
-[editable path="Collisions/PassTrough/PassThroughBody16"]
-[editable path="Collisions/PassTrough/PassThroughBody17"]
-[editable path="Collisions/PassTrough/PassThroughBody18"]
-[editable path="Collisions/PassTrough/PassThroughBody23"]
-[editable path="Collisions/PassTrough/PassThroughBody9"]
-[editable path="Collisions/PassTrough/PassThroughBody10"]
-[editable path="Collisions/PassTrough/PassThroughBody11"]
-[editable path="Collisions/PassTrough/PassThroughBody12"]
-[editable path="Collisions/PassTrough/PassThroughBody13"]
-[editable path="Collisions/PassTrough/PassThroughBody14"]
-[editable path="Collisions/PassTrough/PassThroughBody19"]
-[editable path="Collisions/PassTrough/PassThroughBody20"]
-[editable path="Collisions/PassTrough/PassThroughBody21"]
-[editable path="Collisions/PassTrough/PassThroughBody22"]
-[editable path="Collisions/PassTrough/PassThroughBody24"]
-[editable path="Collisions/PassTrough/PassThroughBody25"]
-[editable path="Collisions/Solid/PassThroughBody18"]
-[editable path="Collisions/Solid/PassThroughBody21"]
-[editable path="Collisions/Solid/PassThroughBody22"]
-[editable path="Collisions/Solid/PassThroughBody20"]
-[editable path="Collisions/Solid/PassThroughBody19"]
-[editable path="Ladders/WellLadder"]
-[editable path="Ladders/Vine"]
-[editable path="Ladders/Vine2"]
-[editable path="Ladders/Vine3"]
-[editable path="Ladders/Vine4"]
-[editable path="Ladders/Vine5"]
-[editable path="Ladders/Vine6"]
-[editable path="Ladders/Vine7"]
-[editable path="Doors/Centeal_hub_door"]
-[editable path="Doors/Centeal_hub_door/InteractionController"]
-[editable path="Doors/Heart_lake_door"]
-[editable path="Doors/Heart_lake_door/InteractionController"]
-[editable path="World_objects/Flag_captions/Sign_1"]
-[editable path="World_objects/Flag_captions/Sign_1/InteractionController"]
-[editable path="World_objects/Flag_captions/Sign_2"]
-[editable path="World_objects/Flag_captions/Sign_2/InteractionController"]
-[editable path="World_objects/Flag_captions/Sign_3"]
-[editable path="World_objects/Flag_captions/Sign_3/InteractionController"]
-[editable path="World_objects/Flag_captions/Sign_4"]
-[editable path="World_objects/Flag_captions/Sign_4/InteractionController"]
-[editable path="World_objects/Flag_captions/Sign_5"]
-[editable path="World_objects/Flag_captions/Sign_5/InteractionController"]
-[editable path="Moving_platforms/Interactive_platforms/Interactive_platform_1/PassThroughBody15"]
-[editable path="Moving_platforms/Interactive_platforms/Interactive_platform_2/PassThroughBody15"]
-[editable path="Moving_platforms/Interactive_platforms/Interactive_platform_3/PassThroughBody15"]
-[editable path="Moving_platforms/Interactive_platforms/Interactive_platform_4/PassThroughBody15"]
+[editable path="Hidden_tower/Collisions/Solid/PassThroughBody22"]
+[editable path="Hidden_tower/Collisions/PassThrough/PassThroughBody20"]
+[editable path="Hidden_tower/Collisions/PassThrough/PassThroughBody47"]
+[editable path="Hidden_tower/Collisions/PassThrough/PassThroughBody46"]
+[editable path="Hidden_tower/Collisions/PassThrough/PassThroughBody36"]
+[editable path="Hidden_tower/Collisions/PassThrough/PassThroughBody43"]
+[editable path="Hidden_tower/Collisions/PassThrough/PassThroughBody44"]
+[editable path="Hidden_tower/Collisions/PassThrough/PassThroughBody35"]
+[editable path="Hidden_tower/Collisions/PassThrough/PassThroughBody45"]
+[editable path="Hidden_tower/Collisions/PassThrough/PassThroughBody37"]
+[editable path="Hidden_tower/Collisions/PassThrough/PassThroughBody22"]
+[editable path="Hidden_tower/Collisions/PassThrough/PassThroughBody33"]
+[editable path="Hidden_tower/Collisions/PassThrough/PassThroughBody32"]
+[editable path="Hidden_tower/Collisions/PassThrough/PassThroughBody34"]
+[editable path="Hidden_tower/Collisions/PassThrough/PassThroughBody42"]
+[editable path="Hidden_tower/Collisions/PassThrough/PassThroughBody41"]
+[editable path="Hidden_tower/Collisions/PassThrough/PassThroughBody21"]
+[editable path="Hidden_tower/Collisions/PassThrough/PassThroughBody40"]
+[editable path="Hidden_tower/Collisions/PassThrough/PassThroughBody39"]
+[editable path="Hidden_tower/Collisions/PassThrough/PassThroughBody38"]
+[editable path="Hidden_tower/Collisions/PassThrough/PassThroughBody31"]
+[editable path="Hidden_tower/Collisions/Ladders/WellLadder"]
+[editable path="Hidden_tower/Collisions/Ladders/Vine7"]
+[editable path="Cave_objects/Middle_world_objects/Doors/Centeal_hub_door"]
+[editable path="Cave_objects/Middle_world_objects/Doors/Centeal_hub_door/InteractionController"]
+[editable path="Cave_objects/Middle_world_objects/Doors/Heart_lake_door"]
+[editable path="Cave_objects/Middle_world_objects/Doors/Heart_lake_door/InteractionController"]
+[editable path="Cave_objects/Middle_world_objects/Flag_captions/Sign_1"]
+[editable path="Cave_objects/Middle_world_objects/Flag_captions/Sign_1/InteractionController"]
+[editable path="Cave_objects/Middle_world_objects/Flag_captions/Sign_2"]
+[editable path="Cave_objects/Middle_world_objects/Flag_captions/Sign_2/InteractionController"]
+[editable path="Cave_objects/Middle_world_objects/Flag_captions/Sign_3"]
+[editable path="Cave_objects/Middle_world_objects/Flag_captions/Sign_3/InteractionController"]
+[editable path="Cave_objects/Middle_world_objects/Flag_captions/Sign_4"]
+[editable path="Cave_objects/Middle_world_objects/Flag_captions/Sign_4/InteractionController"]
+[editable path="Cave_objects/Middle_world_objects/Flag_captions/Sign_5"]
+[editable path="Cave_objects/Middle_world_objects/Flag_captions/Sign_5/InteractionController"]
+[editable path="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_1/PassThroughBody15"]
+[editable path="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_2/PassThroughBody15"]
+[editable path="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_3/PassThroughBody15"]
+[editable path="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_4/PassThroughBody15"]
+[editable path="Cave_objects/Collisions/PassTrough/PassThroughBody5"]
+[editable path="Cave_objects/Collisions/PassTrough/PassThroughBody26"]
+[editable path="Cave_objects/Collisions/PassTrough/PassThroughBody27"]
+[editable path="Cave_objects/Collisions/PassTrough/PassThroughBody28"]
+[editable path="Cave_objects/Collisions/PassTrough/PassThroughBody29"]
+[editable path="Cave_objects/Collisions/PassTrough/PassThroughBody30"]
+[editable path="Cave_objects/Collisions/PassTrough/PassThroughBody6"]
+[editable path="Cave_objects/Collisions/PassTrough/PassThroughBody7"]
+[editable path="Cave_objects/Collisions/PassTrough/PassThroughBody8"]
+[editable path="Cave_objects/Collisions/PassTrough/PassThroughBody15"]
+[editable path="Cave_objects/Collisions/PassTrough/PassThroughBody16"]
+[editable path="Cave_objects/Collisions/PassTrough/PassThroughBody17"]
+[editable path="Cave_objects/Collisions/PassTrough/PassThroughBody18"]
+[editable path="Cave_objects/Collisions/PassTrough/PassThroughBody23"]
+[editable path="Cave_objects/Collisions/PassTrough/PassThroughBody9"]
+[editable path="Cave_objects/Collisions/PassTrough/PassThroughBody10"]
+[editable path="Cave_objects/Collisions/PassTrough/PassThroughBody11"]
+[editable path="Cave_objects/Collisions/PassTrough/PassThroughBody12"]
+[editable path="Cave_objects/Collisions/PassTrough/PassThroughBody13"]
+[editable path="Cave_objects/Collisions/PassTrough/PassThroughBody14"]
+[editable path="Cave_objects/Collisions/PassTrough/PassThroughBody19"]
+[editable path="Cave_objects/Collisions/PassTrough/PassThroughBody24"]
+[editable path="Cave_objects/Collisions/PassTrough/PassThroughBody25"]
+[editable path="Cave_objects/Collisions/Solid/PassThroughBody18"]
+[editable path="Cave_objects/Collisions/Solid/PassThroughBody21"]
+[editable path="Cave_objects/Collisions/Solid/PassThroughBody20"]
+[editable path="Cave_objects/Collisions/Solid/PassThroughBody19"]
+[editable path="Cave_objects/Collisions/Ladders/Vine"]
+[editable path="Cave_objects/Collisions/Ladders/Vine2"]
+[editable path="Cave_objects/Collisions/Ladders/Vine3"]
+[editable path="Cave_objects/Collisions/Ladders/Vine4"]
+[editable path="Cave_objects/Collisions/Ladders/Vine5"]
+[editable path="Cave_objects/Collisions/Ladders/Vine6"]
