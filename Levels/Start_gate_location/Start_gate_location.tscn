@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=2]
+[gd_scene load_steps=113 format=2]
 
 [ext_resource path="res://Assets/WaterSurface/water_surface3.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -1039,6 +1039,12 @@ extents = Vector2( 9, 4.5 )
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 31, 7.75 )
 
+[sub_resource type="RectangleShape2D" id=183]
+extents = Vector2( 74, 5 )
+
+[sub_resource type="RectangleShape2D" id=184]
+extents = Vector2( 19.5, 5 )
+
 [sub_resource type="RectangleShape2D" id=86]
 extents = Vector2( 69.5, 7.375 )
 
@@ -1303,6 +1309,7 @@ currentState = SubResource( 72 )
 
 [node name="MysticDweller" parent="MiddleWorldObjects/NPC/FirstMysticDwellerEncounering" instance=ExtResource( 32 )]
 pause_mode = 2
+visible = false
 position = Vector2( -283, -9 )
 dialogId = "the_first_mystic_dweller_dialog"
 defaultDirection = -1
@@ -1361,19 +1368,19 @@ position = Vector2( 279, -8 )
 position = Vector2( 261, -7 )
 
 [node name="Barrel5" parent="MiddleWorldObjects/Barrels" instance=ExtResource( 8 )]
-position = Vector2( 141, -249 )
+position = Vector2( -107, -246 )
 
 [node name="Barrel6" parent="MiddleWorldObjects/Barrels" instance=ExtResource( 8 )]
-position = Vector2( 141, -269 )
+position = Vector2( -107, -266 )
 
 [node name="Barrel7" parent="MiddleWorldObjects/Barrels" instance=ExtResource( 8 )]
-position = Vector2( 141, -287 )
+position = Vector2( -107, -284 )
 
 [node name="Barrel8" parent="MiddleWorldObjects/Barrels" instance=ExtResource( 8 )]
-position = Vector2( 123, -249 )
+position = Vector2( -125, -246 )
 
 [node name="Barrel9" parent="MiddleWorldObjects/Barrels" instance=ExtResource( 8 )]
-position = Vector2( 125, -269 )
+position = Vector2( -123, -266 )
 
 [node name="Barrel10" parent="MiddleWorldObjects/Barrels" instance=ExtResource( 8 )]
 position = Vector2( 259, -328 )
@@ -1526,7 +1533,10 @@ tile_data = PoolIntArray( -33685512, 72, 0, -32243779, 74, 0, -25165664, 77, 0, 
 [node name="GuidingLabels" type="Node2D" parent="MiddleWorldObjects"]
 
 [node name="AttackHintLabel" parent="MiddleWorldObjects/GuidingLabels" instance=ExtResource( 33 )]
-position = Vector2( 141, -257 )
+position = Vector2( -93, -258 )
+
+[node name="AppearingHintLabel" parent="MiddleWorldObjects/GuidingLabels/AttackHintLabel" index="0"]
+position = Vector2( -12, 3 )
 
 [node name="Label" parent="MiddleWorldObjects/GuidingLabels/AttackHintLabel/AppearingHintLabel" index="0"]
 margin_left = 11.0
@@ -1535,6 +1545,20 @@ margin_right = 228.0
 margin_bottom = 65.0
 text = "Жмякай [Attack], чтобы
 сломать препятствие"
+
+[node name="LongJumpHintLabel" parent="MiddleWorldObjects/GuidingLabels" instance=ExtResource( 33 )]
+position = Vector2( 124, -257 )
+
+[node name="AppearingHintLabel" parent="MiddleWorldObjects/GuidingLabels/LongJumpHintLabel" index="0"]
+position = Vector2( -105, 3 )
+
+[node name="Label" parent="MiddleWorldObjects/GuidingLabels/LongJumpHintLabel/AppearingHintLabel" index="0"]
+margin_left = 11.0
+margin_top = -43.0
+margin_right = 228.0
+margin_bottom = 65.0
+text = "Зажми [Jump] в прыжке,
+чтобы прыгнуть дальше"
 
 [node name="FlyHintLabel" parent="MiddleWorldObjects/GuidingLabels" instance=ExtResource( 33 )]
 position = Vector2( 17, -403 )
@@ -1627,7 +1651,7 @@ __meta__ = {
 position = Vector2( 3, 61 )
 
 [node name="Ladder2" parent="Collisions/Ladders" instance=ExtResource( 18 )]
-position = Vector2( 128, -281 )
+position = Vector2( -150, -280 )
 
 [node name="Ladder3" parent="Collisions/Ladders" instance=ExtResource( 18 )]
 position = Vector2( 194, -173 )
@@ -1749,6 +1773,22 @@ position = Vector2( 119, -303 )
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody14" index="0"]
 position = Vector2( 15, 11.75 )
 shape = SubResource( 10 )
+one_way_collision = true
+
+[node name="PassThroughBody20" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
+position = Vector2( -146, -303 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody20" index="0"]
+position = Vector2( 58, 9 )
+shape = SubResource( 183 )
+one_way_collision = true
+
+[node name="PassThroughBody34" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
+position = Vector2( -185, -349 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody34" index="0"]
+position = Vector2( 3.5, 9 )
+shape = SubResource( 184 )
 one_way_collision = true
 
 [node name="PassThroughBody15" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
@@ -2022,6 +2062,8 @@ scale = Vector2( 20.55, 37.05 )
 [editable path="MiddleWorldObjects/Chests/Chest/InteractionController"]
 [editable path="MiddleWorldObjects/GuidingLabels/AttackHintLabel"]
 [editable path="MiddleWorldObjects/GuidingLabels/AttackHintLabel/AppearingHintLabel"]
+[editable path="MiddleWorldObjects/GuidingLabels/LongJumpHintLabel"]
+[editable path="MiddleWorldObjects/GuidingLabels/LongJumpHintLabel/AppearingHintLabel"]
 [editable path="MiddleWorldObjects/GuidingLabels/FlyHintLabel"]
 [editable path="MiddleWorldObjects/GuidingLabels/FlyHintLabel/AppearingHintLabel"]
 [editable path="MiddleWorldObjects/GuidingLabels/LeapBottomHintLabel"]
@@ -2045,6 +2087,8 @@ scale = Vector2( 20.55, 37.05 )
 [editable path="Collisions/PassTrough/PassThroughBody27"]
 [editable path="Collisions/PassTrough/PassThroughBody12"]
 [editable path="Collisions/PassTrough/PassThroughBody14"]
+[editable path="Collisions/PassTrough/PassThroughBody20"]
+[editable path="Collisions/PassTrough/PassThroughBody34"]
 [editable path="Collisions/PassTrough/PassThroughBody15"]
 [editable path="Collisions/PassTrough/PassThroughBody28"]
 [editable path="Collisions/PassTrough/PassThroughBody33"]
