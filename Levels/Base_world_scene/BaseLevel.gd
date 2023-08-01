@@ -6,7 +6,7 @@ var bookMenu						= preload("res://UI/BookMenu/BookMenu.tscn")
 
 export(bool) var dynamic_camera = true
 
-onready var player 				= get_node("Player")
+onready var player 				= find_node("Player")
 onready var animationPlayer 		= $AnimationPlayer
 onready var camera				= $Camera2D
 
@@ -43,7 +43,7 @@ func correct_player_position_by_door():
 	if Global.door_name:
 		print(Global.door_name)
 		var door_node = find_node(Global.door_name)
-		if door_node:
+		if door_node && player:
 			print(player.global_position, " ", door_node.global_position)
 			player.global_position = door_node.global_position
 			player.is_entering_out = true

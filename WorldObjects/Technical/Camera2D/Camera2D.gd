@@ -9,8 +9,8 @@ export(Color, RGB) var backgroundColor
 export(bool) var zoom_based_on_editor_value = false
 export(float) var default_zoom = 0.7
 export(bool) var follow_player = true
-export(float) var default_y_offset = 40
-export(float) var y_offset = 40
+export(float) var default_y_offset = 40.0
+export(float) var y_offset = 40.0
 
 func _ready():
 	var _focus_const_change_connection = EventBus.connect("game_const_changed", self, "on_game_const_changed")
