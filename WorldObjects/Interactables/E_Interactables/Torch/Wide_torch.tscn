@@ -64,6 +64,7 @@ maxRadius = 130
 animationTime = 1.0
 
 [node name="FireParticles" type="Particles2D" parent="."]
+pause_mode = 2
 position = Vector2( 0, -6 )
 emitting = false
 amount = 50
