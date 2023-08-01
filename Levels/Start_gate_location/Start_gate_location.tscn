@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=2]
+[gd_scene load_steps=115 format=2]
 
 [ext_resource path="res://Assets/WaterSurface/water_surface3.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -421,6 +421,9 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id=34]
 resource_name = "open_transition"
+
+[sub_resource type="RectangleShape2D" id=186]
+extents = Vector2( 16.5, 4 )
 
 [sub_resource type="Resource" id=72]
 script = ExtResource( 39 )
@@ -1000,6 +1003,9 @@ scale_random = 1.0
 scale_curve = SubResource( 27 )
 color_ramp = SubResource( 26 )
 
+[sub_resource type="RectangleShape2D" id=185]
+extents = Vector2( 7.5, 25.5 )
+
 [sub_resource type="RectangleShape2D" id=182]
 extents = Vector2( 7.5, 46.5 )
 
@@ -1243,6 +1249,10 @@ position = Vector2( 405, -57 )
 [node name="BushyTree" parent="MiddleWorldObjects/Trees/GatesTopTrees" instance=ExtResource( 44 )]
 position = Vector2( 211, -377 )
 
+[node name="CollisionShape2D" parent="MiddleWorldObjects/Trees/GatesTopTrees/BushyTree/PassThroughBody" index="0"]
+position = Vector2( -4.5, 45 )
+shape = SubResource( 186 )
+
 [node name="TallTree" parent="MiddleWorldObjects/Trees/GatesTopTrees" instance=ExtResource( 45 )]
 position = Vector2( -474, -57 )
 
@@ -1394,7 +1404,7 @@ position = Vector2( -10, -459 )
 [node name="Vases" type="Node2D" parent="MiddleWorldObjects"]
 
 [node name="Vase" parent="MiddleWorldObjects/Vases" instance=ExtResource( 37 )]
-position = Vector2( -179, -69 )
+position = Vector2( -173, -69 )
 
 [node name="Vase3" parent="MiddleWorldObjects/Vases" instance=ExtResource( 37 )]
 position = Vector2( 159, -69 )
@@ -1403,7 +1413,7 @@ position = Vector2( 159, -69 )
 position = Vector2( -780, -21 )
 
 [node name="Vase2" parent="MiddleWorldObjects/Vases" instance=ExtResource( 37 )]
-position = Vector2( -160, -69 )
+position = Vector2( -154, -69 )
 
 [node name="Chests" type="Node2D" parent="MiddleWorldObjects"]
 
@@ -1528,7 +1538,7 @@ tile_data = PoolIntArray( -38404127, 23, 0, -38404101, 25, 0, -38469619, 29, 0, 
 tile_set = ExtResource( 17 )
 cell_size = Vector2( 1, 1 )
 format = 1
-tile_data = PoolIntArray( -33685512, 72, 0, -32243779, 74, 0, -25165664, 77, 0, -25100262, 536870969, 0, -25100226, 58, 0, -23986392, 78, 0, -23986308, 536870972, 0, -23986268, 536870970, 0, -23527425, 536870970, 0, -23592928, 72, 0, -22740881, 57, 0, -22020117, 71, 0, -21889117, 74, 0, -21954491, 59, 0, -20578579, 536870969, 0, -20578467, 536870970, 0, -20578340, 536870971, 0, -20643811, 536870970, 0, -20643682, 58, 0, -19660521, 536871023, 0, -19398883, 68, 0, -19267880, 113, 0, -19071004, 112, 0, -17957133, 74, 0, -17825571, 536871025, 0, -17105104, 72, 0, -16974024, 111, 0, -15531897, 59, 0, -13565846, 72, 0, -9437029, 71, 0, -8716464, 73, 0, -8716458, 70, 0, -4325979, 58, 0, -3736301, 73, 0, -3146236, 78, 0, -2687677, 72, 0, -2228537, 76, 0, -1179890, 58, 0, -656060, 57, 0, 392744, 59, 0, 392895, 60, 0, 393037, 60, 0, 393177, 59, 0, 327685, 58, 0, 327822, 57, 0, 327950, 59, 0, 328144, 60, 0, 1309961, 112, 0, 1441280, 72, 0, 1441465, 70, 0, 1376660, 72, 0 )
+tile_data = PoolIntArray( -33685512, 72, 0, -32243779, 74, 0, -25165664, 77, 0, -25100262, 536870969, 0, -25100226, 58, 0, -23986392, 78, 0, -23986308, 536870972, 0, -23986268, 536870970, 0, -23527425, 536870970, 0, -23592928, 72, 0, -22740881, 57, 0, -22020117, 71, 0, -21889117, 74, 0, -21954491, 59, 0, -20578579, 536870969, 0, -20578467, 536870970, 0, -20578340, 536870971, 0, -20643811, 536870970, 0, -20643682, 58, 0, -19660521, 536871023, 0, -19529926, 24, 0, -19529911, 23, 0, -19398883, 68, 0, -19267880, 113, 0, -19071004, 112, 0, -18481347, 536870969, 0, -17957133, 74, 0, -17825571, 536871025, 0, -17105104, 72, 0, -16974024, 111, 0, -16515219, 23, 0, -16515166, 20, 0, -16515137, 2, 0, -16515121, 3, 0, -16515101, 29, 0, -15466647, 536870970, 0, -15466582, 536870969, 0, -15466536, 536870971, 0, -15531920, 536870969, 0, -15531897, 59, 0, -13565846, 72, 0, -9437029, 71, 0, -8716464, 73, 0, -8716458, 70, 0, -4325979, 58, 0, -3736301, 73, 0, -3146236, 78, 0, -2687677, 72, 0, -2228537, 76, 0, -1179890, 58, 0, -656060, 57, 0, 392744, 59, 0, 392895, 60, 0, 393037, 60, 0, 393177, 59, 0, 327685, 58, 0, 327822, 57, 0, 327950, 59, 0, 328144, 60, 0, 1309961, 112, 0, 1441280, 72, 0, 1441465, 70, 0, 1376660, 72, 0 )
 
 [node name="GuidingLabels" type="Node2D" parent="MiddleWorldObjects"]
 
@@ -1653,6 +1663,10 @@ position = Vector2( 3, 61 )
 [node name="Ladder2" parent="Collisions/Ladders" instance=ExtResource( 18 )]
 position = Vector2( -150, -280 )
 
+[node name="CollisionShape2D" parent="Collisions/Ladders/Ladder2" index="0"]
+position = Vector2( -0.5, -44.5 )
+shape = SubResource( 185 )
+
 [node name="Ladder3" parent="Collisions/Ladders" instance=ExtResource( 18 )]
 position = Vector2( 194, -173 )
 
@@ -1731,6 +1745,30 @@ one_way_collision = true
 position = Vector2( 189, -140 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody10" index="0"]
+position = Vector2( 0, 10.5 )
+shape = SubResource( 7 )
+one_way_collision = true
+
+[node name="PassThroughBody35" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
+position = Vector2( 125, -140 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody35" index="0"]
+position = Vector2( 0, 10.5 )
+shape = SubResource( 7 )
+one_way_collision = true
+
+[node name="PassThroughBody36" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
+position = Vector2( -131, -140 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody36" index="0"]
+position = Vector2( 0, 10.5 )
+shape = SubResource( 7 )
+one_way_collision = true
+
+[node name="PassThroughBody37" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
+position = Vector2( -195, -141 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody37" index="0"]
 position = Vector2( 0, 10.5 )
 shape = SubResource( 7 )
 one_way_collision = true
@@ -2046,6 +2084,8 @@ position = Vector2( 155.5, 360.5 )
 scale = Vector2( 20.55, 37.05 )
 
 [editable path="Camera2D"]
+[editable path="MiddleWorldObjects/Trees/GatesTopTrees/BushyTree"]
+[editable path="MiddleWorldObjects/Trees/GatesTopTrees/BushyTree/PassThroughBody"]
 [editable path="MiddleWorldObjects/Trees/TallTree"]
 [editable path="MiddleWorldObjects/Trees/TallTree/PassThroughBody"]
 [editable path="MiddleWorldObjects/Gates"]
@@ -2082,6 +2122,9 @@ scale = Vector2( 20.55, 37.05 )
 [editable path="Collisions/PassTrough/PassThroughBody7"]
 [editable path="Collisions/PassTrough/PassThroughBody8"]
 [editable path="Collisions/PassTrough/PassThroughBody10"]
+[editable path="Collisions/PassTrough/PassThroughBody35"]
+[editable path="Collisions/PassTrough/PassThroughBody36"]
+[editable path="Collisions/PassTrough/PassThroughBody37"]
 [editable path="Collisions/PassTrough/PassThroughBody11"]
 [editable path="Collisions/PassTrough/PassThroughBody19"]
 [editable path="Collisions/PassTrough/PassThroughBody27"]
