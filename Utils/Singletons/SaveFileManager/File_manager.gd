@@ -6,9 +6,7 @@ var default_load_scene_path = "res://Levels/Old_home_location/Old_home_location.
 var SAVE_DIR = "user://Saves"
 var game_save_name = "Game_save.tres"
 var save_path = SAVE_DIR + game_save_name
-
 var current_level = ""
-
 var player_position_by_door = null
 
 func save_game():
@@ -21,7 +19,6 @@ func save_game():
 		dir.make_dir_recursive(SAVE_DIR)
 	
 	# saving logic
-	
 	var currentScene = get_tree().get_current_scene()
 	
 	# we have to make all subNodes to be in the root node in order to let them be packed
@@ -46,18 +43,31 @@ func save_game():
 		
 func load_game():
 	Global.is_game_loaded = true
-	
 	var should_reset_game = !SettingsManager.settings.should_delete_all_saves_on_start_session
-	if has_any_save_file() && should_reset_game && save_file_resource.lastVisitedSceneName:
-		save_file_resource = load(save_path)
-		var lastVisitedSceneName = save_file_resource.lastVisitedSceneName
-		var lastVisitedScene = save_file_resource.savedLevelScenes[lastVisitedSceneName]
-		GameEventConstants.constants = save_file_resource.gameLogicVariables
-		LevelManager.transition_to_scene(lastVisitedScene)
-	else:
-		delete_save()
-		var packedScene = load(default_load_scene_path)
-		LevelManager.transition_to_scene(packedScene)
+	
+	if !has_any_save_file() || !should_reset_game:
+		load_new_game()
+		return
+	
+	save_file_resource = load(save_path)
+	
+	if !save_file_resource.lastVisitedSceneName:
+		load_new_game()
+		return
+	
+	load_existing_save_file()
+
+func load_existing_save_file():
+	save_file_resource = load(save_path)
+	var lastVisitedSceneName = save_file_resource.lastVisitedSceneName
+	var lastVisitedScene = save_file_resource.savedLevelScenes[lastVisitedSceneName]
+	GameEventConstants.constants = save_file_resource.gameLogicVariables
+	LevelManager.transition_to_scene(lastVisitedScene)
+
+func load_new_game():
+	delete_save()
+	var packedScene = load(default_load_scene_path)
+	LevelManager.transition_to_scene(packedScene)
 
 func delete_save():
 	save_file_resource = Save_file_resource.new()
