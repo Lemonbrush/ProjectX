@@ -59,9 +59,6 @@ func on_continue_button_pressed():
 	logo_animation_player.play("Play")
 
 func logo_hide_animation_finished():
-	load_game()
-	
-func load_game():
 	FileManager.load_game()
 	
 func on_exit_pressed():
