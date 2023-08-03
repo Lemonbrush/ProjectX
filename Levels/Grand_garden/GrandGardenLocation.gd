@@ -55,7 +55,7 @@ func set_all_fountains_active(active):
 	inactive_right_fountains.visible = !active
 		
 func did_interact_with_arg(_arg):
-	animationPlayer.play("Grand_flower_opening_cut_scene")
+	animationPlayer.play("Grand_flower_interaction_cutscene")
 
 func did_destroy_cork_on_water_tower(tower_number):
 	match tower_number:
