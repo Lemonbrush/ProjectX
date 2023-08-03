@@ -1,4 +1,4 @@
-[gd_scene load_steps=457 format=2]
+[gd_scene load_steps=456 format=2]
 
 [ext_resource path="res://Assets/Levels/Grand_garden/Grand_garden.png" type="Texture" id=1]
 [ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=2]
@@ -141,7 +141,7 @@ adjustment_saturation = 1.3
 
 [sub_resource type="Animation" id=403]
 resource_name = "Grand_flower_interaction_cutscene"
-length = 7.0
+length = 8.0
 tracks/0/type = "method"
 tracks/0/path = NodePath(".")
 tracks/0/interp = 1
@@ -213,7 +213,7 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5 ),
+"times": PoolRealArray( 4.5, 4.6, 4.7, 4.8, 4.9, 5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9, 6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ]
@@ -225,7 +225,7 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 4.8, 5 ),
+"times": PoolRealArray( 0, 5.8, 6 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
@@ -237,7 +237,7 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 7 ),
+"times": PoolRealArray( 8 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ "Grand_flower_opening_cut_scene", -1, 1.0, false ],
@@ -251,7 +251,7 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0, 7 ),
+"times": PoolRealArray( 0, 8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -387,10 +387,10 @@ tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0, 1.7, 3.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 1.7, 3.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.5, 0.5 ), Vector2( 0.5, 0.5 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 0.7, 0.7 ), Vector2( 0.5, 0.5 ), Vector2( 0.5, 0.5 ), Vector2( 1, 1 ) ]
 }
 tracks/11/type = "value"
 tracks/11/path = NodePath("Upper_background_objects/Great_flower_cutscene/Great_flower/Flower_body/Collisions/PassThroughBody136/CollisionShape2D:disabled")
@@ -615,10 +615,10 @@ tracks/29/loop_wrap = true
 tracks/29/imported = false
 tracks/29/enabled = true
 tracks/29/keys = {
-"times": PoolRealArray( 1, 4.4, 5.8, 8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 4.5, 5.4, 6.9, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 1.5, 1.5, 0.0 ]
+"values": [ 0.0, 0.0, 1.5, 1.5, 0.0 ]
 }
 tracks/30/type = "value"
 tracks/30/path = NodePath("Upper_background_objects/Great_flower_cutscene/InteractionEmitterObject/InteractionController/Area2D/CollisionShape2D:disabled")
@@ -697,12 +697,9 @@ tracks/35/loop_wrap = true
 tracks/35/imported = false
 tracks/35/enabled = true
 tracks/35/keys = {
-"times": PoolRealArray( 1.5, 8.9 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 13 ),
+"transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [  ],
-"method": "set_grand_flower_grown_constant"
-}, {
 "args": [  ],
 "method": "unpouse_level"
 } ]
@@ -714,6 +711,18 @@ tracks/36/loop_wrap = true
 tracks/36/imported = false
 tracks/36/enabled = true
 tracks/36/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/37/type = "value"
+tracks/37/path = NodePath("Upper_background_objects/Great_flower_cutscene/YoungFlower:visible")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -1155,7 +1164,7 @@ tracks/35/keys = {
 "values": [ false ]
 }
 tracks/36/type = "value"
-tracks/36/path = NodePath("Upper_background_objects/Great_flower_cutscene/Sofa_dirt_particles:emitting")
+tracks/36/path = NodePath("Upper_background_objects/Great_flower_cutscene/YoungFlower/Flower_dirt_particles:emitting")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/imported = false
@@ -1167,7 +1176,7 @@ tracks/36/keys = {
 "values": [ false ]
 }
 tracks/37/type = "value"
-tracks/37/path = NodePath("Upper_background_objects/Great_flower_cutscene/YoungFlower/Flower_dirt_particles:emitting")
+tracks/37/path = NodePath("World_objects/BlueButterflyItem:gravity_scale")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/imported = false
@@ -1176,10 +1185,10 @@ tracks/37/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ 0.0 ]
 }
 tracks/38/type = "value"
-tracks/38/path = NodePath("World_objects/BlueButterflyItem:gravity_scale")
+tracks/38/path = NodePath("World_objects/BlueButterflyItem:visible")
 tracks/38/interp = 1
 tracks/38/loop_wrap = true
 tracks/38/imported = false
@@ -1188,10 +1197,10 @@ tracks/38/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ false ]
 }
 tracks/39/type = "value"
-tracks/39/path = NodePath("World_objects/BlueButterflyItem:visible")
+tracks/39/path = NodePath("Fountains/Inactive_fountains/Left_tower_activated_fountains:visible")
 tracks/39/interp = 1
 tracks/39/loop_wrap = true
 tracks/39/imported = false
@@ -1203,7 +1212,7 @@ tracks/39/keys = {
 "values": [ false ]
 }
 tracks/40/type = "value"
-tracks/40/path = NodePath("Fountains/Inactive_fountains/Left_tower_activated_fountains:visible")
+tracks/40/path = NodePath("Fountains/Inactive_fountains/Right_tower_activated_fountains:visible")
 tracks/40/interp = 1
 tracks/40/loop_wrap = true
 tracks/40/imported = false
@@ -1212,10 +1221,10 @@ tracks/40/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ true ]
 }
 tracks/41/type = "value"
-tracks/41/path = NodePath("Fountains/Inactive_fountains/Right_tower_activated_fountains:visible")
+tracks/41/path = NodePath("Upper_background_objects/Dwellers/White_flower_dweller:visible")
 tracks/41/interp = 1
 tracks/41/loop_wrap = true
 tracks/41/imported = false
@@ -1223,11 +1232,11 @@ tracks/41/enabled = true
 tracks/41/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
+"update": 1,
 "values": [ true ]
 }
 tracks/42/type = "value"
-tracks/42/path = NodePath("Upper_background_objects/Dwellers/White_flower_dweller:visible")
+tracks/42/path = NodePath("Upper_background_objects/White_flower_growing:visible")
 tracks/42/interp = 1
 tracks/42/loop_wrap = true
 tracks/42/imported = false
@@ -1236,10 +1245,10 @@ tracks/42/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false ]
 }
 tracks/43/type = "value"
-tracks/43/path = NodePath("Upper_background_objects/White_flower_growing:visible")
+tracks/43/path = NodePath("Upper_background_objects/Great_flower_cutscene/Sofa/Sprite:frame")
 tracks/43/interp = 1
 tracks/43/loop_wrap = true
 tracks/43/imported = false
@@ -1247,28 +1256,16 @@ tracks/43/enabled = true
 tracks/43/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"update": 0,
+"values": [ 0 ]
 }
 tracks/44/type = "value"
-tracks/44/path = NodePath("Upper_background_objects/Great_flower_cutscene/Sofa/Sprite:frame")
+tracks/44/path = NodePath("Upper_background_objects/Great_flower_cutscene/Sofa:visible")
 tracks/44/interp = 1
 tracks/44/loop_wrap = true
 tracks/44/imported = false
 tracks/44/enabled = true
 tracks/44/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
-tracks/45/type = "value"
-tracks/45/path = NodePath("Upper_background_objects/Great_flower_cutscene/Sofa:visible")
-tracks/45/interp = 1
-tracks/45/loop_wrap = true
-tracks/45/imported = false
-tracks/45/enabled = true
-tracks/45/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -2563,21 +2560,6 @@ scale = 0.1
 scale_random = 1.0
 scale_curve = SubResource( 214 )
 
-[sub_resource type="ParticlesMaterial" id=334]
-emission_shape = 2
-emission_box_extents = Vector3( 5, 2, 1 )
-flag_disable_z = true
-spread = 180.0
-gravity = Vector3( 0, 50, 0 )
-initial_velocity = 40.0
-initial_velocity_random = 1.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale = 3.0
-scale_random = 1.0
-scale_curve = SubResource( 273 )
-color = Color( 0.243137, 0.0392157, 0.164706, 1 )
-
 [sub_resource type="RectangleShape2D" id=313]
 extents = Vector2( 8.5, 1 )
 
@@ -3609,7 +3591,7 @@ texture = ExtResource( 19 )
 
 [node name="Camera2D" parent="." index="5"]
 position = Vector2( 207, 497 )
-zoom = Vector2( 0.5, 0.5 )
+zoom = Vector2( 0.7, 0.7 )
 backgroundColor = Color( 0.698039, 0.870588, 1, 1 )
 
 [node name="Background_world_objects" type="Node2D" parent="." index="6"]
@@ -4370,20 +4352,16 @@ tile_data = PoolIntArray( -58523777, 64, 0, -57475204, 64, 0, -57213022, 65, 0, 
 
 [node name="Great_flower_cutscene" type="Node2D" parent="Upper_background_objects" index="5"]
 
-[node name="Sofa_dirt_particles" type="Particles2D" parent="Upper_background_objects/Great_flower_cutscene" index="0"]
-position = Vector2( 62, -765 )
-emitting = false
-amount = 50
-process_material = SubResource( 334 )
-
-[node name="InteractionEmitterObject" parent="Upper_background_objects/Great_flower_cutscene" index="1" instance=ExtResource( 65 )]
+[node name="InteractionEmitterObject" parent="Upper_background_objects/Great_flower_cutscene" index="0" instance=ExtResource( 65 )]
+pause_mode = 2
 position = Vector2( 54, -764 )
 emitting_arg = "Interacted_with_young_flower"
 
 [node name="InteractionPopup" parent="Upper_background_objects/Great_flower_cutscene/InteractionEmitterObject" index="1"]
+position = Vector2( 0, -30 )
 labelText = "Осмотреть"
 
-[node name="Great_flower" type="Node2D" parent="Upper_background_objects/Great_flower_cutscene" index="2"]
+[node name="Great_flower" type="Node2D" parent="Upper_background_objects/Great_flower_cutscene" index="1"]
 position = Vector2( 40, -720 )
 
 [node name="Cutscene_label" type="Node2D" parent="Upper_background_objects/Great_flower_cutscene/Great_flower" index="0"]
@@ -4648,16 +4626,18 @@ mode = 3
 range_item_cull_mask = 262144
 
 [node name="Dirt_particles" type="Particles2D" parent="Upper_background_objects/Great_flower_cutscene/Great_flower" index="3"]
+pause_mode = 2
 position = Vector2( 4, -45 )
 emitting = false
 amount = 200
 process_material = SubResource( 317 )
 
-[node name="YoungFlower" parent="Upper_background_objects/Great_flower_cutscene" index="3" instance=ExtResource( 62 )]
+[node name="YoungFlower" parent="Upper_background_objects/Great_flower_cutscene" index="2" instance=ExtResource( 62 )]
 position = Vector2( 39, -764 )
 
-[node name="Sofa" type="Node2D" parent="Upper_background_objects/Great_flower_cutscene" index="4"]
+[node name="Sofa" type="Node2D" parent="Upper_background_objects/Great_flower_cutscene" index="3"]
 visible = false
+position = Vector2( 2, 0 )
 
 [node name="Sprite" type="Sprite" parent="Upper_background_objects/Great_flower_cutscene/Sofa" index="0"]
 position = Vector2( 72, -780 )
@@ -4665,6 +4645,7 @@ texture = ExtResource( 63 )
 hframes = 17
 
 [node name="Dirt_particles" type="Particles2D" parent="Upper_background_objects/Great_flower_cutscene/Sofa" index="1"]
+pause_mode = 2
 position = Vector2( 69, -764 )
 emitting = false
 amount = 50
@@ -4674,7 +4655,7 @@ process_material = SubResource( 406 )
 position = Vector2( 460, -660 )
 
 [node name="Player" parent="." index="12"]
-position = Vector2( 190, -1571 )
+position = Vector2( 208, 526 )
 z_index = 1
 collision_mask = 252
 

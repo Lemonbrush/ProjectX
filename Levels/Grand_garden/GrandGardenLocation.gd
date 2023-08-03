@@ -6,7 +6,7 @@ onready var animation_player = $AnimationPlayer
 onready var left_water_tower = $World_objects/Water_tower_1
 onready var right_water_tower = $World_objects/Water_tower_2
 onready var cactusLoveParticles = $Upper_background_objects/Dwellers/Cactus_flower_dweller/LoveParticles
-onready var young_flower_interaction_emitter = $Upper_background_objects/Young_flower/InteractionEmitterObject
+onready var young_flower_interaction_emitter = $Upper_background_objects/Great_flower_cutscene/InteractionEmitterObject
 
 onready var left_fountains = $Fountains/Activate_fountains/Left_tower_activated_fountains
 onready var right_fountains = $Fountains/Activate_fountains/Right_tower_activated_fountains
@@ -55,7 +55,10 @@ func set_all_fountains_active(active):
 	inactive_right_fountains.visible = !active
 		
 func did_interact_with_arg(_arg):
-	animationPlayer.play("Grand_flower_interaction_cutscene")
+	var flower_const = GameEventConstants.get_constant("grand_flower_did_grow")
+	if flower_const != null && !flower_const:
+		animationPlayer.play("Grand_flower_interaction_cutscene")
+	GameEventConstants.set_constant("grand_flower_did_grow", true)
 
 func did_destroy_cork_on_water_tower(tower_number):
 	match tower_number:
@@ -82,9 +85,6 @@ func show_white_flower_grow_cut_scene():
 	
 func show_cuctus_love_particles():
 	cactusLoveParticles.emitting = true
-
-func set_grand_flower_grown_constant():
-	GameEventConstants.set_constant("grand_flower_did_grow", true)
 
 func grand_garden_mystic_dweller_right_tower_hide():
 	right_tower_mystic_dweller.show_hide_animation()
