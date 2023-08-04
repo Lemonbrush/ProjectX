@@ -1,0 +1,83 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Dweller/NpcActions/idle/idle_npc_action.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Levels/Central_hub/World_objects/Lovers/LoversFurniture.png" type="Texture" id=2]
+[ext_resource path="res://Dweller/Simple_dweller/Dweller.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/effects/Heart.png" type="Texture" id=4]
+[ext_resource path="res://Assets/NPC/SittingBoyDwellerSprite-Sheet.png" type="Texture" id=5]
+[ext_resource path="res://Assets/NPC/SittingGirlDwellerSprite-Sheet.png" type="Texture" id=6]
+[ext_resource path="res://WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Levels/Central_hab/World_objects/Lovers.gd" type="Script" id=8]
+
+[sub_resource type="Curve" id=213]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.282238, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.890511, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=216]
+curve = SubResource( 213 )
+
+[sub_resource type="ParticlesMaterial" id=212]
+emission_shape = 2
+emission_box_extents = Vector3( 15, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, -10, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.1
+scale_random = 1.0
+scale_curve = SubResource( 216 )
+
+[sub_resource type="Resource" id=8]
+script = ExtResource( 1 )
+wait_time = 0.0
+is_infinite = true
+
+[node name="Lovers" type="Node2D"]
+script = ExtResource( 8 )
+
+[node name="VisibilityChecker" parent="." instance=ExtResource( 7 )]
+visible = false
+position = Vector2( 3.8147e-06, -23.5 )
+scale = Vector2( 6.2, 5.55 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Furniture" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="LoversHeartsParticles" type="Particles2D" parent="."]
+position = Vector2( 0, -5 )
+emitting = false
+amount = 15
+lifetime = 3.0
+process_material = SubResource( 212 )
+texture = ExtResource( 4 )
+
+[node name="Boy" parent="." instance=ExtResource( 3 )]
+position = Vector2( -17, 20 )
+dialogId = "lover_boy_dweller"
+actions = [ SubResource( 8 ) ]
+currentState = SubResource( 8 )
+watch_player_on_talk = false
+
+[node name="Sprite" parent="Boy/Body" index="2"]
+texture = ExtResource( 5 )
+
+[node name="Girl" parent="." instance=ExtResource( 3 )]
+position = Vector2( 16, 20 )
+dialogId = "lovers_girl_dweller"
+actions = [ SubResource( 8 ) ]
+currentState = SubResource( 8 )
+watch_player_on_talk = false
+defaultDirection = -1
+
+[node name="Body" parent="Girl" index="5"]
+scale = Vector2( -1, 1 )
+
+[node name="Sprite" parent="Girl/Body" index="2"]
+texture = ExtResource( 6 )
+
+[editable path="Boy"]
+[editable path="Boy/Body/InteractionController"]
+[editable path="Girl"]
+[editable path="Girl/Body/InteractionController"]

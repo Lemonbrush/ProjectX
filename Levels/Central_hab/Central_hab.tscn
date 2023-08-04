@@ -1,4 +1,4 @@
-[gd_scene load_steps=214 format=2]
+[gd_scene load_steps=210 format=2]
 
 [ext_resource path="res://Assets/Levels/Central_hub/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lighting/playerLight.png" type="Texture" id=2]
@@ -53,8 +53,7 @@
 [ext_resource path="res://Assets/NPC/BrownHairGirlDwellerSprite-Sheet.png" type="Texture" id=51]
 [ext_resource path="res://Assets/NPC/PinkHairGirlDwellerSprite-Sheet.png" type="Texture" id=52]
 [ext_resource path="res://Assets/NPC/DoggyLikeDwellerSprite-Sheet.png" type="Texture" id=53]
-[ext_resource path="res://Assets/NPC/SittingBoyDwellerSprite-Sheet.png" type="Texture" id=54]
-[ext_resource path="res://Assets/NPC/SittingGirlDwellerSprite-Sheet.png" type="Texture" id=55]
+[ext_resource path="res://Levels/Central_hab/World_objects/Lovers.tscn" type="PackedScene" id=54]
 [ext_resource path="res://Assets/NPC/TraderDwellerSprite_1-Sheet.png" type="Texture" id=56]
 [ext_resource path="res://Assets/NPC/TraderDwellerSprite_2-Sheet.png" type="Texture" id=57]
 [ext_resource path="res://Assets/NPC/TraderDwellerSprite_3-Sheet.png" type="Texture" id=58]
@@ -71,7 +70,6 @@
 [ext_resource path="res://WorldObjects/Sign/Sign.tscn" type="PackedScene" id=69]
 [ext_resource path="res://Assets/WorldObjects/Signs/Stone_tumb_sign.png" type="Texture" id=70]
 [ext_resource path="res://Levels/Central_hab/World_objects/New_island_house.tscn" type="PackedScene" id=71]
-[ext_resource path="res://Assets/effects/Heart.png" type="Texture" id=73]
 [ext_resource path="res://WorldObjects/Pick_ups/Items/LighthouseKey/LighthouseKeyItem.tscn" type="PackedScene" id=74]
 [ext_resource path="res://Resources/Tilesets/Resources/Decorations/Decorations.tres" type="TileSet" id=75]
 [ext_resource path="res://Levels/Central_hab/World_objects/Lighthouse_buth.tscn" type="PackedScene" id=76]
@@ -184,6 +182,9 @@ tracks/6/keys = {
 "method": "activate_island_const"
 } ]
 }
+
+[sub_resource type="Animation" id=233]
+resource_name = "Lovers_the_heart_appear_cutscene"
 
 [sub_resource type="Animation" id=225]
 length = 0.001
@@ -1295,23 +1296,6 @@ color_ramp = SubResource( 220 )
 [sub_resource type="RectangleShape2D" id=202]
 extents = Vector2( 14.75, 16.625 )
 
-[sub_resource type="Curve" id=213]
-_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.282238, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.890511, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=216]
-curve = SubResource( 213 )
-
-[sub_resource type="ParticlesMaterial" id=212]
-emission_shape = 2
-emission_box_extents = Vector3( 15, 1, 1 )
-flag_disable_z = true
-gravity = Vector3( 0, -10, 0 )
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale = 0.1
-scale_random = 1.0
-scale_curve = SubResource( 216 )
-
 [sub_resource type="RectangleShape2D" id=99]
 extents = Vector2( 7.5, 72.25 )
 
@@ -1535,6 +1519,7 @@ texture = ExtResource( 20 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 pause_mode = 2
 anims/Lighthouse_mystic_dweller_finish_quest_cutscene = SubResource( 224 )
+anims/Lovers_the_heart_appear_cutscene = SubResource( 233 )
 anims/RESET = SubResource( 225 )
 anims/show_lighthouse_key_cut_scene = SubResource( 210 )
 
@@ -1892,6 +1877,9 @@ tile_data = PoolIntArray( -5439767, 59, 0, -4062525, 59, 0, -2293775, 24, 0, -23
 
 [node name="Dwellers" type="Node2D" parent="Middle_world_objects"]
 
+[node name="Lovers" parent="Middle_world_objects/Dwellers" instance=ExtResource( 54 )]
+position = Vector2( -1179, 152 )
+
 [node name="CookerDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 27 )]
 position = Vector2( -1249, -36 )
 
@@ -1972,29 +1960,6 @@ texture = ExtResource( 58 )
 [node name="MagentaTable" type="Sprite" parent="Middle_world_objects/Dwellers/TopMillDweller"]
 position = Vector2( -4, -9 )
 texture = ExtResource( 61 )
-
-[node name="PicnicDwellerLeft" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
-position = Vector2( -1194, 172 )
-dialogId = "lover_boy_dweller"
-watch_player_on_talk = false
-
-[node name="Sprite" parent="Middle_world_objects/Dwellers/PicnicDwellerLeft/Body" index="2"]
-texture = ExtResource( 54 )
-
-[node name="DialogTextBoxController" parent="Middle_world_objects/Dwellers/PicnicDwellerLeft" index="6"]
-z_index = 100
-
-[node name="PicnicDwellerRight" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
-position = Vector2( -1161, 172 )
-dialogId = "lovers_girl_dweller"
-watch_player_on_talk = false
-defaultDirection = -1
-
-[node name="Body" parent="Middle_world_objects/Dwellers/PicnicDwellerRight" index="5"]
-scale = Vector2( -1, 1 )
-
-[node name="Sprite" parent="Middle_world_objects/Dwellers/PicnicDwellerRight/Body" index="2"]
-texture = ExtResource( 55 )
 
 [node name="MiddleMillDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -752, 203 )
@@ -2520,14 +2485,6 @@ visible = false
 position = Vector2( -290, -92 )
 mode = 0
 gravity_scale = 0.6
-
-[node name="LoversHeartsParticles" type="Particles2D" parent="Middle_world_objects"]
-position = Vector2( -1177, 147 )
-emitting = false
-amount = 15
-lifetime = 3.0
-process_material = SubResource( 212 )
-texture = ExtResource( 73 )
 
 [node name="Lighthouse" type="Node2D" parent="Middle_world_objects"]
 position = Vector2( 54, -889 )
@@ -3406,10 +3363,6 @@ __meta__ = {
 [editable path="Middle_world_objects/Dwellers/ForestOlderDweller/Body/InteractionController"]
 [editable path="Middle_world_objects/Dwellers/TopMillDweller"]
 [editable path="Middle_world_objects/Dwellers/TopMillDweller/Body/InteractionController"]
-[editable path="Middle_world_objects/Dwellers/PicnicDwellerLeft"]
-[editable path="Middle_world_objects/Dwellers/PicnicDwellerLeft/Body/InteractionController"]
-[editable path="Middle_world_objects/Dwellers/PicnicDwellerRight"]
-[editable path="Middle_world_objects/Dwellers/PicnicDwellerRight/Body/InteractionController"]
 [editable path="Middle_world_objects/Dwellers/MiddleMillDweller"]
 [editable path="Middle_world_objects/Dwellers/MiddleMillDweller/Body/InteractionController"]
 [editable path="Middle_world_objects/Dwellers/MiddleMillBalconyDweller"]
