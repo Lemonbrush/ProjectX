@@ -2535,13 +2535,12 @@ position = Vector2( -2, 2 )
 z_index = -2
 
 [node name="Collisions" type="Node2D" parent="."]
-position = Vector2( 2, 62 )
+position = Vector2( 3, 62 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="AirBlowers" type="Node2D" parent="Collisions"]
-position = Vector2( 1, 0 )
 
 [node name="AirBeam3" parent="Collisions/AirBlowers" instance=ExtResource( 8 )]
 position = Vector2( -695, 179 )
