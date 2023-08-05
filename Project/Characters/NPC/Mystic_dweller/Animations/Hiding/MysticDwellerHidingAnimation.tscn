@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Characters/NPC/MysticDweller/hiding_mystic_dweller-Sheet.png" type="Texture" id=1]
-[ext_resource path="res://Project/Characters/NPC/Mystic_dweller/Animations/MysticDwellerHidingAnimation.gd" type="Script" id=2]
+[ext_resource path="res://Project/Characters/NPC/Mystic_dweller/Animations/Hiding/MysticDwellerHidingAnimation.gd" type="Script" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Animate"

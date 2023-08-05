@@ -10,10 +10,10 @@
 [ext_resource path="res://Project/Characters/Player/States/Jump_top.gd" type="Script" id=8]
 [ext_resource path="res://Project/Characters/Player/States/Jump_fall.gd" type="Script" id=9]
 [ext_resource path="res://Project/Characters/Player/States/Jump_glide.gd" type="Script" id=10]
-[ext_resource path="res://Project/Characters/Player/Climb.gd" type="Script" id=11]
-[ext_resource path="res://Project/Characters/Player/Attack.gd" type="Script" id=12]
-[ext_resource path="res://Project/Characters/Player/Door_enter_in.gd" type="Script" id=13]
-[ext_resource path="res://Project/Characters/Player/Door_enter_out.gd" type="Script" id=14]
+[ext_resource path="res://Project/Characters/Player/StateMachine/Climb.gd" type="Script" id=11]
+[ext_resource path="res://Project/Characters/Player/StateMachine/Attack.gd" type="Script" id=12]
+[ext_resource path="res://Project/Characters/Player/StateMachine/Door_enter_in.gd" type="Script" id=13]
+[ext_resource path="res://Project/Characters/Player/StateMachine/Door_enter_out.gd" type="Script" id=14]
 
 [sub_resource type="Animation" id=16]
 resource_name = "Attack"

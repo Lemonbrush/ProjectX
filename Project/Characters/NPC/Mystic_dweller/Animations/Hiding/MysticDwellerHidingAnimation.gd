@@ -1,6 +1,6 @@
 extends Node2D
 
-var appearParticles = preload("res://Project/WorldObjects/Technical/MysticDwellerAppearParticles/MysticDwellerAppearParticles.tscn")
+var appearParticles = preload("res://Project/Characters/NPC/Mystic_dweller/WorldObjects/MysticDwellerAppearParticles/MysticDwellerAppearParticles.tscn")
 
 func spawn_appear_particles():
 	var particles = appearParticles.instance()
