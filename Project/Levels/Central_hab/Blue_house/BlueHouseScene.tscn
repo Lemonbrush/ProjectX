@@ -533,7 +533,6 @@ color_ramp = SubResource( 107 )
 
 [node name="BlueHouseScene" instance=ExtResource( 2 )]
 script = ExtResource( 10 )
-dynamic_camera = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
 environment = SubResource( 137 )
@@ -570,7 +569,7 @@ texture = ExtResource( 9 )
 
 [node name="BlueHouseDoor" parent="." index="6" instance=ExtResource( 5 )]
 position = Vector2( 6, -18 )
-nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
+nextScenePath = "res://Project/Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "BlueHouseDoor"
 
 [node name="Player" parent="." index="7"]

@@ -973,7 +973,7 @@ texture = ExtResource( 14 )
 
 [node name="BackDoor" parent="Main_world_objects/BackEntrance" index="1" instance=ExtResource( 10 )]
 position = Vector2( 691, 0 )
-nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
+nextScenePath = "res://Project/Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "Wish_star_dangeon_door"
 
 [node name="VisibilityChecker" parent="Main_world_objects/BackEntrance/BackDoor" index="0"]
@@ -1270,7 +1270,7 @@ shape = SubResource( 3 )
 
 [node name="Wish_star_dangeon_enter_door" parent="Doors" index="0" instance=ExtResource( 10 )]
 position = Vector2( -733, 0 )
-nextScenePath = "res://Levels/Wish_star_dangeon/Wish_star_dangeon.tscn"
+nextScenePath = "res://Project/Levels/Wish_star_dangeon/Wish_star_dangeon.tscn"
 nextDoorName = "Heart_lake_door"
 
 [node name="VisibilityChecker" parent="Doors/Wish_star_dangeon_enter_door" index="0"]

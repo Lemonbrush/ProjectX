@@ -1482,7 +1482,7 @@ offset = Vector2( 13, -29 )
 
 [node name="FinalLevelDoor" parent="Background_world_objects" index="2" instance=ExtResource( 2 )]
 position = Vector2( -47, 1 )
-nextScenePath = "res://Levels/FinalLevel/FinalLevel.tscn"
+nextScenePath = "res://Project/Levels/FinalLevel/FinalLevel.tscn"
 nextDoorName = "PedestalsLevelDoor"
 
 [node name="GatesBackground" parent="Background_world_objects/FinalLevelDoor" index="1"]
@@ -1867,7 +1867,7 @@ shape = SubResource( 284 )
 [node name="Start_gate_door" parent="Doors" index="0" instance=ExtResource( 2 )]
 position = Vector2( -552, 1 )
 z_index = -1
-nextScenePath = "res://Levels/Start_gate_location/Start_gate_location.tscn"
+nextScenePath = "res://Project/Levels/Start_gate_location/Start_gate_location.tscn"
 nextDoorName = "Gates"
 
 [node name="VisibilityChecker" parent="Doors/Start_gate_door" index="0"]
@@ -1885,7 +1885,7 @@ shape = SubResource( 4 )
 [node name="Central_hub_door" parent="Doors" index="1" instance=ExtResource( 2 )]
 position = Vector2( 441, 1 )
 z_index = -1
-nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
+nextScenePath = "res://Project/Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "Gates_2"
 
 [node name="VisibilityChecker" parent="Doors/Central_hub_door" index="0"]

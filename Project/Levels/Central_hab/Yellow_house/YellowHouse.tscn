@@ -327,12 +327,12 @@ shape = SubResource( 16 )
 
 [node name="YellowHouseTopDoor" parent="Doors" index="0" instance=ExtResource( 4 )]
 position = Vector2( 32, 21 )
-nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
+nextScenePath = "res://Project/Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "YellowHouseTopDoor"
 
 [node name="YellowHouseBottomDoor" parent="Doors" index="1" instance=ExtResource( 4 )]
 position = Vector2( 3, 83 )
-nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
+nextScenePath = "res://Project/Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "YellowHouseBottomDoor"
 
 [node name="Dweller" parent="." index="11" instance=ExtResource( 6 )]

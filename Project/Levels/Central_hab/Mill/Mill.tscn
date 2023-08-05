@@ -902,17 +902,17 @@ position = Vector2( -22, -134 )
 
 [node name="MillDoorTop" parent="Doors" index="0" instance=ExtResource( 6 )]
 position = Vector2( 36, -134 )
-nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
+nextScenePath = "res://Project/Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "MillDoorTop"
 
 [node name="MillDoorBottom" parent="Doors" index="1" instance=ExtResource( 6 )]
 position = Vector2( -13, 74 )
-nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
+nextScenePath = "res://Project/Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "MillDoorBottom"
 
 [node name="MillDoorMiddle" parent="Doors" index="2" instance=ExtResource( 6 )]
 position = Vector2( -20, 12 )
-nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
+nextScenePath = "res://Project/Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "MillDoorMiddle"
 
 [node name="fire" type="Particles2D" parent="." index="14"]

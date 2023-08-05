@@ -272,7 +272,7 @@ shape = SubResource( 118 )
 
 [node name="GreenHouseDoor" parent="Doors" index="0" instance=ExtResource( 5 )]
 position = Vector2( -13, 53 )
-nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
+nextScenePath = "res://Project/Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "GreenHouseDoor"
 
 [node name="TableDweller" parent="." index="10" instance=ExtResource( 7 )]

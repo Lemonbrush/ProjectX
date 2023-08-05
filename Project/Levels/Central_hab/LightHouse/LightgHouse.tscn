@@ -1174,7 +1174,7 @@ shape = SubResource( 106 )
 
 [node name="LightHouseBottomDoor" parent="Doors" index="0" instance=ExtResource( 7 )]
 position = Vector2( 7, 386 )
-nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
+nextScenePath = "res://Project/Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "LightHouseBottomDoor"
 
 [node name="GatesBackground" parent="Doors/LightHouseBottomDoor" index="1"]
@@ -1191,7 +1191,7 @@ position = Vector2( 0, -47 )
 
 [node name="LightHouseTopDoor" parent="Doors" index="1" instance=ExtResource( 7 )]
 position = Vector2( 7, -136 )
-nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
+nextScenePath = "res://Project/Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "LightHouseTopDoor"
 
 [node name="GatesBackground" parent="Doors/LightHouseTopDoor" index="1"]

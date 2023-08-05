@@ -509,7 +509,7 @@ label_text = "Осмотреть"
 
 [node name="CreatorHouseTopWindowDoor" parent="Middle_world_decorations/Doors" index="0" instance=ExtResource( 3 )]
 position = Vector2( 132, -228 )
-nextScenePath = "res://Levels/Harbor_house/Harbor_house.tscn"
+nextScenePath = "res://Project/Levels/Harbor_house/Harbor_house.tscn"
 nextDoorName = "CreatorHouseTopWindowDoor"
 
 [node name="VisibilityChecker" parent="Middle_world_decorations/Doors/CreatorHouseTopWindowDoor" index="0"]
@@ -532,7 +532,7 @@ position = Vector2( -1, -39 )
 
 [node name="CreatorHouseTopFloorDoor" parent="Middle_world_decorations/Doors" index="1" instance=ExtResource( 3 )]
 position = Vector2( 133, -133 )
-nextScenePath = "res://Levels/Harbor_house/Harbor_house.tscn"
+nextScenePath = "res://Project/Levels/Harbor_house/Harbor_house.tscn"
 nextDoorName = "CreatorHouseTopFloorDoor"
 
 [node name="VisibilityChecker" parent="Middle_world_decorations/Doors/CreatorHouseTopFloorDoor" index="0"]
@@ -557,7 +557,7 @@ position = Vector2( -1, -39 )
 
 [node name="CreatorHouseThirdFloorDoor" parent="Middle_world_decorations/Doors" index="2" instance=ExtResource( 3 )]
 position = Vector2( 152, 166 )
-nextScenePath = "res://Levels/Harbor_house/Harbor_house.tscn"
+nextScenePath = "res://Project/Levels/Harbor_house/Harbor_house.tscn"
 nextDoorName = "CreatorHouseThirdFloorDoor"
 
 [node name="VisibilityChecker" parent="Middle_world_decorations/Doors/CreatorHouseThirdFloorDoor" index="0"]
@@ -582,7 +582,7 @@ position = Vector2( -1, -39 )
 
 [node name="CreatorHouseFirstFloorDoorOne" parent="Middle_world_decorations/Doors" index="3" instance=ExtResource( 3 )]
 position = Vector2( -131, 339 )
-nextScenePath = "res://Levels/Harbor_house/Harbor_house.tscn"
+nextScenePath = "res://Project/Levels/Harbor_house/Harbor_house.tscn"
 nextDoorName = "CreatorHouseFirstFloorDoorOne"
 
 [node name="VisibilityChecker" parent="Middle_world_decorations/Doors/CreatorHouseFirstFloorDoorOne" index="0"]
@@ -607,7 +607,7 @@ position = Vector2( 1, -42 )
 
 [node name="CreatorHouseFirstFloorDoorTwo" parent="Middle_world_decorations/Doors" index="4" instance=ExtResource( 3 )]
 position = Vector2( 33, 339 )
-nextScenePath = "res://Levels/Harbor_house/Harbor_house.tscn"
+nextScenePath = "res://Project/Levels/Harbor_house/Harbor_house.tscn"
 nextDoorName = "CreatorHouseFirstFloorDoorTwo"
 
 [node name="VisibilityChecker" parent="Middle_world_decorations/Doors/CreatorHouseFirstFloorDoorTwo" index="0"]

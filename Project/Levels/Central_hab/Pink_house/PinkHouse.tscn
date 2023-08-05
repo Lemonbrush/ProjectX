@@ -350,7 +350,7 @@ shape = SubResource( 18 )
 
 [node name="PinkHouseDoor" parent="Doors" index="0" instance=ExtResource( 4 )]
 position = Vector2( 26, 23 )
-nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
+nextScenePath = "res://Project/Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "PinkHouseDoor"
 
 [node name="fire" type="Particles2D" parent="." index="9"]

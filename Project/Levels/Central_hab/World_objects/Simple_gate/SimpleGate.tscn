@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
+[ext_resource path="res://Project/Resources/Shaders/StarsShader.tres" type="Shader" id=1]
 [ext_resource path="res://Project/WorldObjects/Technical/InteractionController/InteractionController.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Project/WorldObjects/Interactables/Door/SimpleGate.gd" type="Script" id=3]
 [ext_resource path="res://Project/WorldObjects/Technical/InteractionPopup/InteractionPopup.tscn" type="PackedScene" id=4]
 
-[sub_resource type="ShaderMaterial" id=2]
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 1 )
+shader_param/bg_color = null
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 32, 19.5 )
@@ -13,13 +16,10 @@ extents = Vector2( 32, 19.5 )
 script = ExtResource( 3 )
 
 [node name="GatesBackground" type="ColorRect" parent="."]
-material = SubResource( 2 )
+material = SubResource( 4 )
 margin_left = -31.0
 margin_top = -160.0
 margin_right = 33.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 32

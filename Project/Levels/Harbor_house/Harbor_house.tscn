@@ -30,7 +30,7 @@
 [ext_resource path="res://Assets/Effects/Lighting/White_fade_gradient.png" type="Texture" id=28]
 [ext_resource path="res://Project/Resources/Tilesets/Resources/Water surface/WaterSurfaceNarrow.tres" type="TileSet" id=29]
 [ext_resource path="res://Project/WorldObjects/Decorative/Animals/Bird/Bird.tscn" type="PackedScene" id=30]
-[ext_resource path="res://Project/Levels/Central_hab/World_objects/Bonfire.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Project/Levels/Central_hab/World_objects/Bonfire/Bonfire.tscn" type="PackedScene" id=31]
 [ext_resource path="res://Project/WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=32]
 [ext_resource path="res://Project/WorldObjects/Destructables/Vase/Vase.tscn" type="PackedScene" id=33]
 [ext_resource path="res://Project/WorldObjects/Destructables/Crate/Crate.tscn" type="PackedScene" id=34]
@@ -1121,7 +1121,7 @@ texture = ExtResource( 46 )
 
 [node name="Harbor_house_door" parent="Harbor_world_objects/Middle_world_objects/Doors" instance=ExtResource( 9 )]
 position = Vector2( -445, -15 )
-nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
+nextScenePath = "res://Project/Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "Shed_door"
 
 [node name="GatesBackground" parent="Harbor_world_objects/Middle_world_objects/Doors/Harbor_house_door" index="1"]
@@ -1889,7 +1889,7 @@ moving_platform_apply_velocity_on_leave = 0
 
 [node name="CreatorHouseTopWindowDoor" parent="CreatorHouseIsland/Middle_world_objects/Doors" instance=ExtResource( 9 )]
 position = Vector2( 190, -957 )
-nextScenePath = "res://Levels/Harbor_house/CreatorHouse/CreatorHouse.tscn"
+nextScenePath = "res://Project/Levels/Harbor_house/CreatorHouse/CreatorHouse.tscn"
 nextDoorName = "CreatorHouseTopWindowDoor"
 
 [node name="VisibilityChecker" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseTopWindowDoor" index="0"]
@@ -1911,7 +1911,7 @@ position = Vector2( -1, -39 )
 
 [node name="CreatorHouseTopFloorDoor" parent="CreatorHouseIsland/Middle_world_objects/Doors" instance=ExtResource( 9 )]
 position = Vector2( 191, -862 )
-nextScenePath = "res://Levels/Harbor_house/CreatorHouse/CreatorHouse.tscn"
+nextScenePath = "res://Project/Levels/Harbor_house/CreatorHouse/CreatorHouse.tscn"
 nextDoorName = "CreatorHouseTopFloorDoor"
 
 [node name="VisibilityChecker" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseTopFloorDoor" index="0"]
@@ -1935,7 +1935,7 @@ position = Vector2( -1, -39 )
 
 [node name="CreatorHouseFirstFloorDoorOne" parent="CreatorHouseIsland/Middle_world_objects/Doors" instance=ExtResource( 9 )]
 position = Vector2( -73, -390 )
-nextScenePath = "res://Levels/Harbor_house/CreatorHouse/CreatorHouse.tscn"
+nextScenePath = "res://Project/Levels/Harbor_house/CreatorHouse/CreatorHouse.tscn"
 nextDoorName = "CreatorHouseFirstFloorDoorOne"
 
 [node name="VisibilityChecker" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseFirstFloorDoorOne" index="0"]
@@ -1959,7 +1959,7 @@ position = Vector2( 1, -42 )
 
 [node name="CreatorHouseFirstFloorDoorTwo" parent="CreatorHouseIsland/Middle_world_objects/Doors" instance=ExtResource( 9 )]
 position = Vector2( 91, -390 )
-nextScenePath = "res://Levels/Harbor_house/CreatorHouse/CreatorHouse.tscn"
+nextScenePath = "res://Project/Levels/Harbor_house/CreatorHouse/CreatorHouse.tscn"
 nextDoorName = "CreatorHouseFirstFloorDoorTwo"
 
 [node name="VisibilityChecker" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseFirstFloorDoorTwo" index="0"]
@@ -1983,7 +1983,7 @@ position = Vector2( 1, -42 )
 
 [node name="CreatorHouseThirdFloorDoor" parent="CreatorHouseIsland/Middle_world_objects/Doors" instance=ExtResource( 9 )]
 position = Vector2( 210, -572 )
-nextScenePath = "res://Levels/Harbor_house/CreatorHouse/CreatorHouse.tscn"
+nextScenePath = "res://Project/Levels/Harbor_house/CreatorHouse/CreatorHouse.tscn"
 nextDoorName = "CreatorHouseThirdFloorDoor"
 
 [node name="VisibilityChecker" parent="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseThirdFloorDoor" index="0"]
@@ -2007,12 +2007,12 @@ position = Vector2( -1, -39 )
 
 [node name="DwellersHouseDoor" parent="CreatorHouseIsland/Middle_world_objects/Doors" instance=ExtResource( 9 )]
 position = Vector2( -267, -239 )
-nextScenePath = "res://Levels/Harbor_house/Dwellers_house/Dwellers_house.tscn"
+nextScenePath = "res://Project/Levels/Harbor_house/Dwellers_house/Dwellers_house.tscn"
 nextDoorName = "DwellersHouseDoor"
 
 [node name="KitchenDwellersHouseDoor" parent="CreatorHouseIsland/Middle_world_objects/Doors" instance=ExtResource( 9 )]
 position = Vector2( -11, -239 )
-nextScenePath = "res://Levels/Harbor_house/Storehouse/Storehouse.tscn"
+nextScenePath = "res://Project/Levels/Harbor_house/Storehouse/Storehouse.tscn"
 nextDoorName = "KitchenDwellersHouseDoor"
 
 [node name="CollisionShape2D" parent="CreatorHouseIsland/Middle_world_objects/Doors/KitchenDwellersHouseDoor/InteractionController/Area2D" index="0"]

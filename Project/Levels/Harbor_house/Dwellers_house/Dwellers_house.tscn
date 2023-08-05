@@ -253,7 +253,7 @@ __meta__ = {
 
 [node name="DwellersHouseDoor" parent="Middle_world_objects/Doors" index="0" instance=ExtResource( 3 )]
 position = Vector2( 147, 36 )
-nextScenePath = "res://Levels/Harbor_house/Harbor_house.tscn"
+nextScenePath = "res://Project/Levels/Harbor_house/Harbor_house.tscn"
 nextDoorName = "DwellersHouseDoor"
 
 [node name="Desctructable_objects" type="Node2D" parent="Middle_world_objects" index="1"]

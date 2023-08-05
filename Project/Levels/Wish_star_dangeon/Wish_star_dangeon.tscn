@@ -1103,7 +1103,7 @@ tile_data = PoolIntArray( -8583742, 60, 0, -8583582, 536870941, 0, -8583568, 536
 
 [node name="Centeal_hub_door" parent="Cave_objects/Middle_world_objects/Doors" index="0" instance=ExtResource( 3 )]
 position = Vector2( 57, -3 )
-nextScenePath = "res://Levels/Central_hab/Central_hab.tscn"
+nextScenePath = "res://Project/Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "Wish_star_dangeon_door"
 
 [node name="VisibilityChecker" parent="Cave_objects/Middle_world_objects/Doors/Centeal_hub_door" index="0"]
@@ -1117,7 +1117,7 @@ visible = false
 
 [node name="Heart_lake_door" parent="Cave_objects/Middle_world_objects/Doors" index="1" instance=ExtResource( 3 )]
 position = Vector2( 57, 445 )
-nextScenePath = "res://Levels/Wish_star_dangeon/Heart_lake/HeartLake.tscn"
+nextScenePath = "res://Project/Levels/Wish_star_dangeon/Heart_lake/HeartLake.tscn"
 nextDoorName = "Wish_star_dangeon_enter_door"
 
 [node name="VisibilityChecker" parent="Cave_objects/Middle_world_objects/Doors/Heart_lake_door" index="0"]

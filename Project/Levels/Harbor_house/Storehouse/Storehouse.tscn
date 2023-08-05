@@ -356,7 +356,7 @@ position = Vector2( 130, -15 )
 
 [node name="KitchenDwellersHouseDoor" parent="Middle_world_objects" index="3" instance=ExtResource( 12 )]
 position = Vector2( 54, -5 )
-nextScenePath = "res://Levels/Harbor_house/Harbor_house.tscn"
+nextScenePath = "res://Project/Levels/Harbor_house/Harbor_house.tscn"
 nextDoorName = "KitchenDwellersHouseDoor"
 
 [node name="GatesBackground" parent="Middle_world_objects/KitchenDwellersHouseDoor" index="1"]
