@@ -6,7 +6,7 @@ onready var specialOptionsButton = $MainMarginContainer/MarginContainer/ContentV
 
 onready var mainMarginContainer = $MainMarginContainer
 
-var specialOptionsMenuScene = preload("res://UI/SpecialOptionsMenu/SpecialOptionsMenu.tscn")
+var specialOptionsMenuScene = preload("res://Project/UI/SpecialOptionsMenu/SpecialOptionsMenu.tscn")
 
 func _ready():
 	quitButton.connect("pressed", self, "on_quit_pressed") 

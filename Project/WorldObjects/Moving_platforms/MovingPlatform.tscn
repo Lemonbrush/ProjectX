@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://WorldObjects/Moving_platforms/MovingPlatform.gd" type="Script" id=1]
-[ext_resource path="res://Assets/WorldObjects/Floating_block.png" type="Texture" id=2]
-[ext_resource path="res://WorldObjects/Moving_platforms/Paths/HorizontalPath.tres" type="Curve2D" id=3]
-[ext_resource path="res://WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Project/WorldObjects/Moving_platforms/MovingPlatform.gd" type="Script" id=1]
+[ext_resource path="res://Assets/SharedWorldObjects/FloatingBlocks/Floating_block.png" type="Texture" id=2]
+[ext_resource path="res://Project/WorldObjects/Moving_platforms/Paths/HorizontalPath.tres" type="Curve2D" id=3]
+[ext_resource path="res://Project/WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=48]
 extents = Vector2( 8, 8 )

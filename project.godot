@@ -123,7 +123,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Kissies"
-run/main_scene="res://UI/SplashScreen/SplashScreen.tscn"
+run/main_scene="res://Project/UI/SplashScreen/SplashScreen.tscn"
 config/use_custom_user_dir=true
 run/delta_sync_after_draw=true
 boot_splash/show_image=false
@@ -133,13 +133,13 @@ config/windows_native_icon="res://Origins/Project resources/Icon/icon_with_round
 
 [autoload]
 
-FileManager="*res://Utils/Singletons/SaveFileManager/File_manager.gd"
-Global="*res://Utils/Singletons/Global.gd"
-LevelManager="*res://Utils/Singletons/LevelManager.gd"
-EventBus="*res://Utils/Singletons/EventBus.gd"
-SettingsManager="*res://Utils/Singletons/SettingsManager/SettingsManager.gd"
-GameEventConstants="*res://Utils/Singletons/GameEventConstants.gd"
-ParticlesCache="*res://Utils/Singletons/ParticlesCache.gd"
+FileManager="*res://Project/Utils/Singletons/SaveFileManager/File_manager.gd"
+Global="*res://Project/Utils/Singletons/Global.gd"
+LevelManager="*res://Project/Utils/Singletons/LevelManager.gd"
+EventBus="*res://Project/Utils/Singletons/EventBus.gd"
+SettingsManager="*res://Project/Utils/Singletons/SettingsManager/SettingsManager.gd"
+GameEventConstants="*res://Project/Utils/Singletons/GameEventConstants.gd"
+ParticlesCache="*res://Project/Utils/Singletons/ParticlesCache.gd"
 
 [debug]
 

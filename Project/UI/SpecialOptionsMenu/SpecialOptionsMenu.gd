@@ -11,7 +11,7 @@ onready var deleteAllSavesByDefaultRadiobutton = $MainMarginContainer/MarginCont
 onready var activateDebugScreenRadiobutton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/ActivateDebugScreenButton
 onready var gameConstsEditorButton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/GameConstsEditorButton
 
-var gameConstsEditorMenu = load("res://UI/GameConstsEditor/GameConstsEditor.tscn")
+var gameConstsEditorMenu = load("res://Project/UI/GameConstsEditor/GameConstsEditor.tscn")
 
 func _ready():
 	quitButton.connect("pressed", self, "on_quit_pressed") 

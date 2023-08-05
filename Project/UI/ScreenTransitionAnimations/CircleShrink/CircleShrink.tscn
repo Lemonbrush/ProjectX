@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Shaders/RoundTransitionShader.tres" type="Shader" id=1]
-[ext_resource path="res://UI/ScreenTransitionAnimations/CircleShrink/CircleShrink.gd" type="Script" id=2]
+[ext_resource path="res://Project/Resources/Shaders/RoundTransitionShader.tres" type="Shader" id=1]
+[ext_resource path="res://Project/UI/ScreenTransitionAnimations/CircleShrink/CircleShrink.gd" type="Script" id=2]
 
 [sub_resource type="ShaderMaterial" id=33]
 shader = ExtResource( 1 )

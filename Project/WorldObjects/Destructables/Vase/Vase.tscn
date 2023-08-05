@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/WorldObjects/vase.png" type="Texture" id=1]
-[ext_resource path="res://WorldObjects/Destructables/CrushableObject/CrushableObject.tscn" type="PackedScene" id=2]
-[ext_resource path="res://WorldObjects/Destructables/Vase/VaseCrush/VaseCrush.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/SharedWorldObjects/Destructibles/Vase/vase.png" type="Texture" id=1]
+[ext_resource path="res://Project/WorldObjects/Destructables/CrushableObject/CrushableObject.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Project/WorldObjects/Destructables/Vase/VaseCrush/VaseCrush.tscn" type="PackedScene" id=3]
 
 [node name="Vase" instance=ExtResource( 2 )]
 collision_layer = 3

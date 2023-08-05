@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://WorldObjects/Destructables/Crate/Crate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Project/WorldObjects/Destructables/Crate/Crate.tscn" type="PackedScene" id=1]
 
 [node name="Crate" instance=ExtResource( 1 )]
 collision_layer = 19

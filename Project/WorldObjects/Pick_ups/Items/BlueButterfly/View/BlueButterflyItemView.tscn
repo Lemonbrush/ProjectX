@@ -1,9 +1,9 @@
 [gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Assets/Pickups/Blue_butterfly/Blue_butterfly.png" type="Texture" id=1]
-[ext_resource path="res://Assets/effects/ShineSprincles.png" type="Texture" id=2]
-[ext_resource path="res://Assets/effects/particles.png" type="Texture" id=3]
-[ext_resource path="res://WorldObjects/Pick_ups/BasicItemView/BasicItemView.gd" type="Script" id=4]
+[ext_resource path="res://Assets/effects/Particles/ShineSprincles.png" type="Texture" id=2]
+[ext_resource path="res://Assets/effects/Particles/particles.png" type="Texture" id=3]
+[ext_resource path="res://Project/WorldObjects/Pick_ups/BasicItemView/BasicItemView.gd" type="Script" id=4]
 
 [sub_resource type="CanvasItemMaterial" id=12]
 particles_animation = true

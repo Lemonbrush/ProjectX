@@ -7,7 +7,7 @@ onready var exitGameButton = $MainMarginContainer/MarginContainer/ContentVBoxCon
 
 onready var marginContainer = $MainMarginContainer
 
-var optionsMenuScene = preload("res://UI/OptionsMenu/OptionsMenu.tscn")
+var optionsMenuScene = preload("res://Project/UI/OptionsMenu/OptionsMenu.tscn")
 
 func _ready():
 	continueButton.connect("pressed", self, "on_continue_button_pressed")

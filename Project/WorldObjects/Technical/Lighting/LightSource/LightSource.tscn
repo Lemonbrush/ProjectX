@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://WorldObjects/Technical/Lighting/LightSource/LightSource.gd" type="Script" id=1]
+[ext_resource path="res://Project/WorldObjects/Technical/Lighting/LightSource/LightSource.gd" type="Script" id=1]
 
 [node name="LightSource" type="Position2D" groups=["lights"]]
 script = ExtResource( 1 )

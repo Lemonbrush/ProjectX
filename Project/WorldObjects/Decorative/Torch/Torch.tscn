@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Assets/WorldObjects/Torch/Torch.png" type="Texture" id=1]
-[ext_resource path="res://Assets/effects/White_fade_gradient.png" type="Texture" id=2]
-[ext_resource path="res://Assets/effects/WhiteSquare.png" type="Texture" id=3]
+[ext_resource path="res://Assets/SharedWorldObjects/Torches/Torch.png" type="Texture" id=1]
+[ext_resource path="res://Assets/effects/Lighting/White_fade_gradient.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Effects/Particles/WhiteSquare.png" type="Texture" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"

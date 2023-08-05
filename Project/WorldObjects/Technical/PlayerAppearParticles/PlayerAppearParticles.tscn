@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Assets/effects/particles.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Effects/Particles/particles.png" type="Texture" id=1]
 
 [sub_resource type="Animation" id=18]
 resource_name = "emit"

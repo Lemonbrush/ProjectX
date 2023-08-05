@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Resources/Particles/Background_particles/Stars/Stars_process_material.tres" type="Material" id=1]
+[ext_resource path="res://Project/Resources/Particles/Background_particles/Stars/Stars_process_material.tres" type="Material" id=1]
 
 [node name="Clouds" type="Node2D"]
 

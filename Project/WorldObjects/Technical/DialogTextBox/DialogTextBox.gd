@@ -12,7 +12,7 @@ onready var marginNode = $MarginNode
 onready var buttonHint = $MarginNode/PanelContainer/ButtonHint
 onready var buttonsContainer = $MarginNode/PanelContainer/MarginContainer/VBoxContainer/ButtonsContainer
 
-var animated_button_scene_path = preload("res://UI/Animated_dialog_button/AnimatedDialogButton.tscn")
+var animated_button_scene_path = preload("res://Project/UI/Animated_dialog_button/AnimatedDialogButton.tscn")
 var float_animation_direction_up = false
 
 func _ready():

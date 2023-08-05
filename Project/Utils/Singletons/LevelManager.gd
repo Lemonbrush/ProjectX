@@ -1,9 +1,12 @@
 extends Node
 
-var fade_transition = preload("res://UI/ScreenTransitionAnimations/FadeTransition/FadeLevelTransition.tscn")
+var fade_transition = preload("res://Project/UI/ScreenTransitionAnimations/FadeTransition/FadeLevelTransition.tscn")
 
 func transition_to_level(scenePath):
 	var packedScene = load(scenePath)
+	if packedScene == null:
+		print("Failed to transition. Scene value is null")
+		return
 	var nextScene = packedScene.instance()
 	
 	yield(get_tree().create_timer(.1),"timeout")
@@ -21,6 +24,10 @@ func transition_to_level(scenePath):
 		var _scene = get_tree().change_scene_to(packedScene)
 
 func transition_to_scene(scene):
+	if scene == null:
+		print("Failed to transition. Scene value is null")
+		return
+	
 	yield(get_tree().create_timer(.1),"timeout")
 	var screenTransition = fade_transition.instance()
 	add_child(screenTransition)

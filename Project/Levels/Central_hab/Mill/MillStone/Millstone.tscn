@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/Levels/Rooms/Mill/MillstoneTop-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/Rooms/Mill/MillstoneBottom.png" type="Texture" id=2]
-[ext_resource path="res://Levels/Central_hab/Mill/MillStone/Millstone.gd" type="Script" id=3]
+[ext_resource path="res://Project/Levels/Central_hab/Mill/MillStone/Millstone.gd" type="Script" id=3]
 
 [sub_resource type="Animation" id=8]
 resource_name = "Activate"

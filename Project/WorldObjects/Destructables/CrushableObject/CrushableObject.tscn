@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://WorldObjects/Destructables/CrushableObject/CrushableObject.gd" type="Script" id=1]
-[ext_resource path="res://Assets/WorldObjects/WorldObjects.png" type="Texture" id=2]
-[ext_resource path="res://WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Project/WorldObjects/Destructables/CrushableObject/CrushableObject.gd" type="Script" id=1]
+[ext_resource path="res://Assets/SharedWorldObjects/Destructibles/Barrel/WorldObjects.png" type="Texture" id=2]
+[ext_resource path="res://Project/WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )

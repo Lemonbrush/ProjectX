@@ -1,7 +1,7 @@
 [gd_resource type="TileSet" load_steps=4 format=2]
 
-[ext_resource path="res://Resources/Tilesets/AnimatedTextures/Water_surface/WaterAnim.tres" type="Texture" id=1]
-[ext_resource path="res://Assets/WaterSurface/water_surface3.png" type="Texture" id=2]
+[ext_resource path="res://Project/Resources/Tilesets/AnimatedTextures/Water_surface/WaterAnim.tres" type="Texture" id=1]
+[ext_resource path="res://Assets/Tilesets/Animanimated_tiles/WaterSurface/Water_surface/water_surface3.png" type="Texture" id=2]
 
 [sub_resource type="ConvexPolygonShape2D" id=402]
 points = PoolVector2Array( 0, 0, 0, 16, 16, 16, 16, 0 )

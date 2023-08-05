@@ -2,7 +2,7 @@ extends Node
 
 var save_file_resource = Save_file_resource.new()
 
-var default_load_scene_path = "res://Levels/Old_home_location/Old_home_location.tscn"
+var default_load_scene_path = "res://Project/Levels/Old_home_location/Old_home_location.tscn"
 var SAVE_DIR = "user://Saves"
 var game_save_name = "Game_save.tres"
 var save_path = SAVE_DIR + game_save_name

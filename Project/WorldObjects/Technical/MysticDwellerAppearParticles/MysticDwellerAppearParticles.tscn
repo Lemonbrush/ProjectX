@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Assets/effects/particles.png" type="Texture" id=1]
-[ext_resource path="res://Resources/Particles/Cutscene_particles/Dust_appear_particles/DustAppearParticles.tres" type="Material" id=2]
+[ext_resource path="res://Project/Resources/Particles/Cutscene_particles/Dust_appear_particles/DustAppearParticles.tres" type="Material" id=1]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Appear"
@@ -71,5 +70,4 @@ amount = 40
 one_shot = true
 explosiveness = 1.0
 randomness = 1.0
-process_material = ExtResource( 2 )
-texture = ExtResource( 1 )
+process_material = ExtResource( 1 )

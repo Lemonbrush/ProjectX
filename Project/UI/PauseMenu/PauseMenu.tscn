@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://UI/PauseMenu/PauseMenu.gd" type="Script" id=1]
-[ext_resource path="res://Resources/Themes/MainTheme.tres" type="Theme" id=2]
-[ext_resource path="res://Resources/Fonts/Epilepsy Sans/Resource/EpilepsySansBold.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Project/UI/PauseMenu/PauseMenu.gd" type="Script" id=1]
+[ext_resource path="res://Project/Resources/Fonts/Epilepsy Sans/Resource/EpilepsySansBold.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Project/Resources/Themes/MainTheme.tres" type="Theme" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "appear"
@@ -32,7 +32,7 @@ anims/appear = SubResource( 1 )
 [node name="MainMarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 2 )
+theme = ExtResource( 3 )
 
 [node name="ColorRect" type="ColorRect" parent="MainMarginContainer"]
 margin_right = 512.0
@@ -57,7 +57,7 @@ margin_right = 68.0
 margin_bottom = 26.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 2 )
 text = "pause"
 align = 1
 
@@ -67,7 +67,7 @@ margin_right = 114.0
 margin_bottom = 124.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme = ExtResource( 2 )
+theme = ExtResource( 3 )
 
 [node name="ExitGameButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer"]
 margin_right = 114.0

@@ -1,13 +1,13 @@
 [gd_scene load_steps=23 format=2]
 
-[ext_resource path="res://Assets/WorldObjects/Torch/Torch.png" type="Texture" id=1]
-[ext_resource path="res://Assets/effects/particles.png" type="Texture" id=2]
-[ext_resource path="res://WorldObjects/Technical/Lighting/LightSource/LightSource.tscn" type="PackedScene" id=3]
-[ext_resource path="res://WorldObjects/Technical/InteractionPopup/InteractionPopup.tscn" type="PackedScene" id=4]
-[ext_resource path="res://WorldObjects/Technical/InteractionController/InteractionController.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/effects/WhiteSquare.png" type="Texture" id=6]
-[ext_resource path="res://WorldObjects/Interactables/E_Interactables/Torch/ActivatableTorch.gd" type="Script" id=7]
-[ext_resource path="res://WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/SharedWorldObjects/Torches/Torch.png" type="Texture" id=1]
+[ext_resource path="res://Assets/effects/Particles/particles.png" type="Texture" id=2]
+[ext_resource path="res://Project/WorldObjects/Technical/Lighting/LightSource/LightSource.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Project/WorldObjects/Technical/InteractionPopup/InteractionPopup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Project/WorldObjects/Technical/InteractionController/InteractionController.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Effects/Particles/WhiteSquare.png" type="Texture" id=6]
+[ext_resource path="res://Project/WorldObjects/Interactables/E_Interactables/Torch/ActivatableTorch.gd" type="Script" id=7]
+[ext_resource path="res://Project/WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Gradient" id=129]
 offsets = PoolRealArray( 0.00294118, 0.147059, 0.467647, 0.835294, 0.998305, 1 )

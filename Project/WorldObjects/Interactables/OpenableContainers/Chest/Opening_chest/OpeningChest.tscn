@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Assets/WorldObjects/Chest/Chest_sprite_sheet-Sheet.png" type="Texture" id=1]
-[ext_resource path="res://WorldObjects/Interactables/OpenableContainers/OpenableContainerOpenSceneObject/OpenableContainerOpenSceneObject.gd" type="Script" id=2]
+[ext_resource path="res://Assets/SharedWorldObjects/Chest/Chest_sprite_sheet-Sheet.png" type="Texture" id=1]
+[ext_resource path="res://Project/WorldObjects/Interactables/OpenableContainers/OpenableContainerOpenSceneObject/OpenableContainerOpenSceneObject.gd" type="Script" id=2]
 
 [sub_resource type="Animation" id=11]
 resource_name = "Open"

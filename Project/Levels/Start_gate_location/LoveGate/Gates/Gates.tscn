@@ -1,12 +1,11 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Levels/Start_gate_location/LoveGate/Gates/LoveGateLeft.png" type="Texture" id=1]
-[ext_resource path="res://Levels/Start_gate_location/LoveGate/Gates/LoveGateRight.png" type="Texture" id=2]
-[ext_resource path="res://Levels/Start_gate_location/LoveGate/Gates/Gates.gd" type="Script" id=3]
-[ext_resource path="res://Shaders/StarsShader.tres" type="Shader" id=4]
-[ext_resource path="res://WorldObjects/Technical/InteractionController/InteractionController.tscn" type="PackedScene" id=5]
-[ext_resource path="res://WorldObjects/Technical/InteractionPopup/InteractionPopup.tscn" type="PackedScene" id=6]
-[ext_resource path="res://WorldObjects/Sign/Sign.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Project/Levels/Start_gate_location/LoveGate/Gates/LoveGateLeft.png" type="Texture" id=1]
+[ext_resource path="res://Project/Levels/Start_gate_location/LoveGate/Gates/LoveGateRight.png" type="Texture" id=2]
+[ext_resource path="res://Project/Levels/Start_gate_location/LoveGate/Gates/Gates.gd" type="Script" id=3]
+[ext_resource path="res://Project/WorldObjects/Technical/InteractionController/InteractionController.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Project/WorldObjects/Technical/InteractionPopup/InteractionPopup.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Project/WorldObjects/Sign/Sign.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Open"
@@ -92,8 +91,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="ShaderMaterial" id=6]
-shader = ExtResource( 4 )
-shader_param/bg_color = null
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 11.75, 16.5 )

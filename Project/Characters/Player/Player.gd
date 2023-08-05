@@ -1,9 +1,9 @@
 extends KinematicBody2D
 class_name Player
 
-var footstepParticles   = preload("res://WorldObjects/Technical/FootstepsParticles/FootstepParticles.tscn")
-var appearParticles     = preload("res://WorldObjects/Technical/PlayerAppearParticles/PlayerAppearParticles.tscn")
-var itemPickupScenePath = preload("res://Player/Animation_scenes/Item_picking_player/Item_picking_player.tscn")
+var footstepParticles   = preload("res://Project/WorldObjects/Technical/FootstepsParticles/FootstepParticles.tscn")
+var appearParticles     = preload("res://Project/WorldObjects/Technical/PlayerAppearParticles/PlayerAppearParticles.tscn")
+var itemPickupScenePath = preload("res://Project/Characters/Player/Animation_scenes/Item_picking_player/Item_picking_player.tscn")
 
 onready var ground_ray1 			= $Body/GroundRay1
 onready var ground_ray2 			= $Body/GroundRay2

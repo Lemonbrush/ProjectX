@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Assets/WorldObjects/Trees/tree4.png" type="Texture" id=1]
-[ext_resource path="res://Shaders/TreeAirWave.tres" type="Shader" id=2]
-[ext_resource path="res://WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=3]
-[ext_resource path="res://WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/SharedWorldObjects/Trees/Trees/tree4.png" type="Texture" id=1]
+[ext_resource path="res://Project/Resources/Shaders/TreeAirWave.tres" type="Shader" id=2]
+[ext_resource path="res://Project/WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Project/WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=4]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 2 )

@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Assets/Clouds/CloudsTransparentBottom.png" type="Texture" id=1]
+[ext_resource path="res://Assets/SharedWorldObjects/Clouds/CloudsTransparentBottom.png" type="Texture" id=1]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 particles_animation = true

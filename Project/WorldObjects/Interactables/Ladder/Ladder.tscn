@@ -1,9 +1,9 @@
 [gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://Assets/Levels/World_objects/ladder.png" type="Texture" id=1]
-[ext_resource path="res://WorldObjects/Technical/Ladder/Ladder.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/effects/particles.png" type="Texture" id=3]
-[ext_resource path="res://WorldObjects/Interactables/Ladder/Ladder.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Levels/Central_hub/World_objects/Ladders/ladder.png" type="Texture" id=1]
+[ext_resource path="res://Project/WorldObjects/Technical/Ladder/Ladder.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/effects/Particles/particles.png" type="Texture" id=3]
+[ext_resource path="res://Project/WorldObjects/Interactables/Ladder/Ladder.gd" type="Script" id=4]
 
 [sub_resource type="Animation" id=2]
 resource_name = "Appear"

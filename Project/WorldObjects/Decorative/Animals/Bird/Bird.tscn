@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Assets/WorldObjects/Decorative/Birds/Bird_animation-Sheet.png" type="Texture" id=1]
-[ext_resource path="res://WorldObjects/Decorative/Animals/Bird/Bird.gd" type="Script" id=2]
-[ext_resource path="res://WorldObjects/Decorative/Animals/Bird/FlyingBird/FlyingBird.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/SharedWorldObjects/Decorative/Birds/Bird_animation-Sheet.png" type="Texture" id=1]
+[ext_resource path="res://Project/WorldObjects/Decorative/Animals/Bird/Bird.gd" type="Script" id=2]
+[ext_resource path="res://Project/WorldObjects/Decorative/Animals/Bird/FlyingBird/FlyingBird.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Fly"

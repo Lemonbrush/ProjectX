@@ -1,7 +1,7 @@
 extends AbstractDweller
 
-var mysticDwellerHideAnimation = preload("res://Dweller/Mystic_dweller/Animations/MysticDwellerHidingAnimation.tscn")
-var appearParticles = preload("res://WorldObjects/Technical/MysticDwellerAppearParticles/MysticDwellerAppearParticles.tscn")
+var mysticDwellerHideAnimation = preload("res://Project/Characters/NPC/Mystic_dweller/Animations/MysticDwellerHidingAnimation.tscn")
+var appearParticles = preload("res://Project/WorldObjects/Technical/MysticDwellerAppearParticles/MysticDwellerAppearParticles.tscn")
 
 func show_hide_animation():
 	animationPlayer.play("Hiding")

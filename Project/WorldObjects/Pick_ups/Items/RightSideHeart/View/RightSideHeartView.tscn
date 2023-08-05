@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://WorldObjects/Pick_ups/BasicItemView/BasicItemView.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Project/WorldObjects/Pick_ups/BasicItemView/BasicItemView.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Pickups/RightHalfHeart/RightHalfHeartItem-Sheet.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]

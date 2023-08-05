@@ -1,7 +1,7 @@
 [gd_resource type="TileSet" load_steps=3 format=2]
 
-[ext_resource path="res://Assets/WaterSurface/Water_surface_narrow/water_surface_narrow3.png" type="Texture" id=1]
-[ext_resource path="res://Resources/Tilesets/AnimatedTextures/Water_surface/Water_surface_narrow.tres" type="Texture" id=2]
+[ext_resource path="res://Assets/Tilesets/Animanimated_tiles/WaterSurface/Water_surface_narrow/water_surface_narrow3.png" type="Texture" id=1]
+[ext_resource path="res://Project/Resources/Tilesets/AnimatedTextures/Water_surface/Water_surface_narrow.tres" type="Texture" id=2]
 
 [resource]
 0/name = "Water_surface_narrow.tres 0"

@@ -1,6 +1,6 @@
 [gd_resource type="DynamicFont" load_steps=2 format=2]
 
-[ext_resource path="res://Resources/Fonts/Custom Font ttf 12h 3.0 for Paint/Font/CustomFontTtf12H30ForPaint.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Project/Resources/Fonts/Custom Font ttf 12h 3.0 for Paint/Font/CustomFontTtf12H30ForPaint.ttf" type="DynamicFontData" id=1]
 
 [resource]
 size = 12

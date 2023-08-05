@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/WorldObjects/Dark_trees/Dark_tree_background_3.png" type="Texture" id=1]
-[ext_resource path="res://WorldObjects/Decorative/Tree/Abstract_scene/AbstractTree.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/SharedWorldObjects/Trees/BackgroundTrees/Dark_tree_background_3.png" type="Texture" id=1]
+[ext_resource path="res://Project/WorldObjects/Decorative/Tree/Abstract_scene/AbstractTree.tscn" type="PackedScene" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 71.25, 4 )

@@ -11,8 +11,8 @@ onready var buttons_container = $CanvasLayer/MainMenuMarginContainer/VBoxContain
 onready var mainMenuCanvasLayer = $CanvasLayer
 onready var logo_animation_player = $AnimationPlayer
 
-var optionsMenuScene = preload("res://UI/OptionsMenu/OptionsMenu.tscn")
-var changelogMenuScene = preload("res://UI/DevelopmentLogMenu/DevelopmentLogMenu.tscn")
+var optionsMenuScene = preload("res://Project/UI/OptionsMenu/OptionsMenu.tscn")
+var changelogMenuScene = preload("res://Project/UI/DevelopmentLogMenu/DevelopmentLogMenu.tscn")
 
 func _ready():
 	Global.is_game_loaded = false

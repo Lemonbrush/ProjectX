@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://WorldObjects/Technical/InteractionEmitterObject/Emitter_on_interaction_object.gd" type="Script" id=1]
-[ext_resource path="res://WorldObjects/Technical/InteractionPopup/InteractionPopup.tscn" type="PackedScene" id=2]
-[ext_resource path="res://WorldObjects/Technical/InteractionController/InteractionController.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Project/WorldObjects/Technical/InteractionEmitterObject/Emitter_on_interaction_object.gd" type="Script" id=1]
+[ext_resource path="res://Project/WorldObjects/Technical/InteractionPopup/InteractionPopup.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Project/WorldObjects/Technical/InteractionController/InteractionController.tscn" type="PackedScene" id=3]
 
 [node name="InteractionEmitterObject" type="Node2D"]
 script = ExtResource( 1 )
