@@ -258,7 +258,7 @@ tracks/8/keys = {
 
 [sub_resource type="Animation" id=312]
 resource_name = "Grand_flower_opening_cut_scene"
-length = 13.0
+length = 11.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Upper_background_objects/Great_flower_cutscene/Great_flower/Flower_body/Great_flower_sprite:frame")
 tracks/0/interp = 2
@@ -350,7 +350,7 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0, 13 ),
+"times": PoolRealArray( 0, 11 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 190, -1571 ), Vector2( 190, -1571 ) ]
@@ -638,7 +638,7 @@ tracks/31/loop_wrap = true
 tracks/31/imported = false
 tracks/31/enabled = true
 tracks/31/keys = {
-"times": PoolRealArray( 0.9, 3.1, 13 ),
+"times": PoolRealArray( 0.9, 3.1, 11 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "values": [ {
 "args": [ null, null, null, null ],
@@ -696,7 +696,7 @@ tracks/35/loop_wrap = true
 tracks/35/imported = false
 tracks/35/enabled = true
 tracks/35/keys = {
-"times": PoolRealArray( 13 ),
+"times": PoolRealArray( 11 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -4653,7 +4653,7 @@ process_material = SubResource( 406 )
 position = Vector2( 460, -660 )
 
 [node name="Player" parent="." index="12"]
-position = Vector2( 208, 526 )
+position = Vector2( 190, -1571 )
 z_index = 1
 collision_mask = 252
 

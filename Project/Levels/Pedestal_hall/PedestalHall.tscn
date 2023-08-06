@@ -1650,6 +1650,7 @@ tile_data = PoolIntArray( -8126619, 78, 0, -7471218, 76, 0, -7405492, 77, 0, -72
 
 [node name="MysticDweller" parent="Middle_world_objects" index="2" instance=ExtResource( 40 )]
 pause_mode = 2
+visible = true
 position = Vector2( -25, -95 )
 dialogId = "pillars_mystic_dweller"
 currentState = SubResource( 313 )

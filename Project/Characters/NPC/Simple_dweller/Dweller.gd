@@ -46,6 +46,9 @@ func _ready():
 	#textBoxPopup.connect("dialogueFinished", self, "finish_talking")
 
 func _process(delta): 
+	if !("state" in currentState):
+		return
+	
 	if !animationPlayer.current_animation:
 		set_animation_with_state(currentState.state)
 	
@@ -96,7 +99,7 @@ func process_idle(delta, wait_time, is_infinite):
 	if is_state_new:
 		is_state_new = false
 		
-		if !is_infinite:
+		if !is_infinite and wait_time > 0:
 			waitTimer.wait_time = wait_time
 			waitTimer.start()
 	

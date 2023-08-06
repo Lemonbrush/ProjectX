@@ -9,7 +9,7 @@ onready var dialogTextBox = $DialogTextBox
 var dialogManager
 
 func _ready():
-	var interaction_controller = get_node(interaction_controller_path)
+	var interaction_controller = find_node(interaction_controller_path)
 	if interaction_controller != null:
 		interaction_controller.connect("on_leave", self, "on_leave")
 		interaction_controller.connect("on_interact", self, "on_interact") 

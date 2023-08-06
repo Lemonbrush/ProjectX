@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Assets/Levels/Rooms/GreenHouse/GreenHouse.png" type="Texture" id=1]
 [ext_resource path="res://Project/Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/Characters/NPC/CentralHub/ChinaFamily/GreenHouseSittingDwellerSprite-Sheet.png" type="Texture" id=6]
 [ext_resource path="res://Project/Characters/NPC/Simple_dweller/Dweller.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Levels/Rooms/GreenHouse/Table.png" type="Texture" id=8]
+[ext_resource path="res://Project/Characters/NPC/NpcActions/idle/idle_npc_action.gd" type="Script" id=9]
 
 [sub_resource type="Environment" id=122]
 background_mode = 4
@@ -81,6 +82,12 @@ extents = Vector2( 43, 5 )
 [sub_resource type="RectangleShape2D" id=118]
 extents = Vector2( 31, 4.5 )
 
+[sub_resource type="Resource" id=123]
+resource_local_to_scene = true
+script = ExtResource( 9 )
+wait_time = 0.0
+is_infinite = true
+
 [node name="GreenHouse" instance=ExtResource( 2 )]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
@@ -108,6 +115,9 @@ position = Vector2( -14, 48 )
 z_index = 2
 
 [node name="Light2D2" parent="Player" index="5"]
+visible = false
+
+[node name="Collisions" parent="." index="6"]
 visible = false
 
 [node name="PassThroughBody6" parent="Collisions/PassTrough" index="0" groups=["passThroughObject"] instance=ExtResource( 4 )]
@@ -278,6 +288,8 @@ nextDoorName = "GreenHouseDoor"
 [node name="TableDweller" parent="." index="10" instance=ExtResource( 7 )]
 position = Vector2( -9, -28 )
 dialogId = "chinise_son_dweller"
+actions = [ SubResource( 123 ) ]
+currentState = null
 
 [node name="Sprite" parent="TableDweller/Body" index="2"]
 texture = ExtResource( 6 )

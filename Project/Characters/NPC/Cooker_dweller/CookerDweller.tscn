@@ -499,8 +499,8 @@ script = ExtResource( 8 )
 
 [node name="VisibilityChecker" parent="." instance=ExtResource( 1 )]
 visible = false
-position = Vector2( -4.5, -52 )
-scale = Vector2( 6.95, 5.2 )
+position = Vector2( -4.5, -186 )
+scale = Vector2( 6.95, 18.6 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Finished = SubResource( 132 )
@@ -570,6 +570,10 @@ process_material = SubResource( 101 )
 texture = ExtResource( 4 )
 
 [node name="Collisions" type="Node2D" parent="."]
+visible = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="PassThroughBody12" parent="Collisions" instance=ExtResource( 3 )]
 position = Vector2( 12, -54 )

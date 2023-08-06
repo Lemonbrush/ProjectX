@@ -1,4 +1,4 @@
-[gd_scene load_steps=210 format=2]
+[gd_scene load_steps=215 format=2]
 
 [ext_resource path="res://Assets/Levels/Central_hub/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Effects/Lighting/playerLight.png" type="Texture" id=2]
@@ -188,18 +188,6 @@ resource_name = "Lovers_the_heart_appear_cutscene"
 
 [sub_resource type="Animation" id=225]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Middle_world_objects/New_island_house:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 200, 367 ) ]
-}
 
 [sub_resource type="Animation" id=210]
 resource_name = "show_lighthouse_key_cut_scene"
@@ -869,6 +857,18 @@ tracks/0/keys = {
 "values": [ 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 }
 
+[sub_resource type="Resource" id=236]
+resource_local_to_scene = true
+script = ExtResource( 22 )
+wait_time = 0.0
+is_infinite = false
+
+[sub_resource type="Resource" id=237]
+resource_local_to_scene = true
+script = ExtResource( 22 )
+wait_time = 0.0
+is_infinite = false
+
 [sub_resource type="Resource" id=193]
 resource_local_to_scene = true
 script = ExtResource( 22 )
@@ -910,6 +910,12 @@ resource_local_to_scene = true
 script = ExtResource( 23 )
 move_speed = 10
 target_x_position = -925
+
+[sub_resource type="Resource" id=240]
+resource_local_to_scene = true
+script = ExtResource( 22 )
+wait_time = 0.0
+is_infinite = false
 
 [sub_resource type="Resource" id=182]
 resource_local_to_scene = true
@@ -953,6 +959,18 @@ script = ExtResource( 22 )
 wait_time = 3.0
 is_infinite = false
 
+[sub_resource type="Resource" id=238]
+resource_local_to_scene = true
+script = ExtResource( 22 )
+wait_time = 0.0
+is_infinite = true
+
+[sub_resource type="Resource" id=241]
+resource_local_to_scene = true
+script = ExtResource( 22 )
+wait_time = 0.0
+is_infinite = true
+
 [sub_resource type="Resource" id=186]
 resource_local_to_scene = true
 script = ExtResource( 23 )
@@ -977,7 +995,7 @@ script = ExtResource( 23 )
 move_speed = 30
 target_x_position = -400
 
-[sub_resource type="Resource" id=205]
+[sub_resource type="Resource" id=242]
 resource_local_to_scene = true
 script = ExtResource( 22 )
 wait_time = 5.0
@@ -989,7 +1007,7 @@ script = ExtResource( 23 )
 move_speed = 20
 target_x_position = 140
 
-[sub_resource type="Resource" id=203]
+[sub_resource type="Resource" id=243]
 resource_local_to_scene = true
 script = ExtResource( 22 )
 wait_time = 5.0
@@ -1320,8 +1338,8 @@ extents = Vector2( 15.5, 8 )
 [sub_resource type="RectangleShape2D" id=129]
 extents = Vector2( 144, 5 )
 
-[sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 151.5, 8 )
+[sub_resource type="RectangleShape2D" id=235]
+extents = Vector2( 152.25, 8 )
 
 [sub_resource type="RectangleShape2D" id=37]
 extents = Vector2( 198.5, 8 )
@@ -1819,14 +1837,6 @@ nextScenePath = "res://Project/Levels/Central_hab/LightHouse/LightgHouse.tscn"
 nextDoorName = "LightHouseBottomDoor"
 keyGameConstant = "is_lighthouse_key_available"
 
-[node name="Wish_star_dangeon_door" parent="Middle_world_objects/Doors" instance=ExtResource( 16 )]
-position = Vector2( -871, -85 )
-nextScenePath = "res://Project/Levels/Wish_star_dangeon/Wish_star_dangeon.tscn"
-nextDoorName = "Centeal_hub_door"
-
-[node name="GatesBackground" parent="Middle_world_objects/Doors/Wish_star_dangeon_door" index="1"]
-visible = false
-
 [node name="Decorations" type="Node2D" parent="Middle_world_objects"]
 
 [node name="Mill_gear" parent="Middle_world_objects/Decorations" instance=ExtResource( 24 )]
@@ -1845,7 +1855,7 @@ position = Vector2( 0, -4 )
 tile_set = SubResource( 36 )
 cell_size = Vector2( 1, 1 )
 format = 1
-tile_data = PoolIntArray( -18809983, 2, 0, -18809954, 16, 0, -18809893, 12, 0, -18809801, 29, 0, -18809756, 21, 0, -18809716, 27, 0, -16711802, 17, 0, -16711765, 9, 0, -16711720, 14, 0, -16777189, 27, 0, -16777148, 28, 0, -16777000, 29, 0, -7274854, 6, 0, -7274835, 1, 0, -6226207, 27, 0, -5177729, 29, 0, -4849026, 17, 0, -4849011, 18, 0, -4848979, 3, 0, -4848962, 24, 0, -4848944, 14, 0, -4130151, 3, 0, -4130135, 1, 0, -4130118, 2, 0, -4130100, 12, 0, -3081694, 16, 0, -3081657, 20, 0, -3081628, 28, 0, -3081605, 24, 0, -3081555, 21, 0, -3081533, 25, 0, -3081512, 13, 0, -3081485, 21, 0, -3081412, 29, 0, -3081393, 27, 0, -3080277, 17, 0, -3080216, 8, 0, -3145711, 24, 0, -3145581, 2, 0, -3145566, 1, 0, -3144920, 9, 0, -3144901, 10, 0, -2817442, 20, 0, -2031720, 23, 0, -2097053, 21, 0, -2096945, 21, 0, -984167, 3, 0, -984150, 4, 0, -984133, 2, 0, -984108, 12, 0, -984001, 27, 0, -983900, 21, 0, -983883, 20, 0, -983638, 16, 0, -983606, 7, 0, -983555, 24, 0, -983531, 14, 0, -983505, 22, 0, -983489, 20, 0, -983444, 27, 0, -983428, 29, 0, -983392, 24, 0, -983367, 25, 0, -983344, 6, 0, -983299, 16, 0, -983267, 1, 0, -983249, 2, 0, -983232, 3, 0, -983210, 2, 0, -983179, 29, 0, -983157, 12, 0, -983140, 22, 0, -983118, 3, 0, -983101, 4, 0, -983069, 13, 0, -1048554, 1, 0, -1048520, 21, 0, -1048502, 22, 0, -1048468, 16, 0, -1048444, 20, 0, -1048420, 14, 0, -1048402, 22, 0, -1048376, 13, 0, -1048342, 22, 0, -1048324, 23, 0, -1048298, 29, 0, -1048280, 20, 0, -1048196, 12, 0, -1047999, 21, 0, -1047820, 13, 0, 5243660, 4, 0, 7340820, 29, 0, 7340851, 16, 0, 7340873, 24, 0, 7340882, 4, 0, 7340900, 20, 0, 7340926, 14, 0, 7340935, 2, 0, 10550161, 21, 0, 10550181, 29, 0, 10550208, 26, 0, 10550231, 7, 0, 11533349, 22, 0, 12647429, 12, 0, 12647504, 20, 0, 12647584, 2, 0, 13695981, 15, 0, 19987528, 20, 0, 19987557, 5, 0, 19987579, 17, 0, 19987614, 2, 0, 21036585, 6, 0, 23133237, 27, 0, 23133263, 16, 0, 23133296, 24, 0, 23133352, 13, 0, 23133749, 22, 0, 23133836, 21, 0, 23133863, 29, 0, 24181489, 2, 0, 24181504, 4, 0, 24181531, 22, 0, 24181573, 20, 0, 24181590, 14, 0, 24181631, 9, 0, 24181683, 20, 0, 24181705, 7, 0, 24181804, 20, 0, 24181883, 12, 0, 24181957, 21, 0, 24181977, 1, 0, 24182006, 20, 0, 24182073, 20, 0, 24182089, 12, 0, 24182175, 20, 0, 24182285, 13, 0, 24182309, 27, 0, 24182332, 12, 0, 24182394, 1, 0, 24182410, 2, 0, 24182447, 20, 0, 24182505, 18, 0 )
+tile_data = PoolIntArray( -18809983, 2, 0, -18809954, 16, 0, -18809893, 12, 0, -18809801, 29, 0, -18809756, 21, 0, -18809716, 27, 0, -16711802, 17, 0, -16711765, 9, 0, -16711720, 14, 0, -16777189, 27, 0, -16777148, 28, 0, -16777000, 29, 0, -7274854, 6, 0, -7274835, 1, 0, -6226207, 27, 0, -5177729, 29, 0, -4849026, 17, 0, -4849011, 18, 0, -4848979, 3, 0, -4848962, 24, 0, -4848944, 14, 0, -4130151, 3, 0, -4130135, 1, 0, -4130118, 2, 0, -4130100, 12, 0, -3081694, 16, 0, -3081657, 20, 0, -3081628, 28, 0, -3081605, 24, 0, -3081555, 21, 0, -3081533, 25, 0, -3081512, 13, 0, -3081485, 21, 0, -3081412, 29, 0, -3081393, 27, 0, -3080277, 17, 0, -3080216, 8, 0, -3145711, 24, 0, -3145581, 2, 0, -3145566, 1, 0, -3144920, 9, 0, -3144901, 10, 0, -2817442, 20, 0, -2031720, 23, 0, -2097053, 21, 0, -2096945, 21, 0, -984167, 3, 0, -984150, 4, 0, -984133, 2, 0, -984108, 12, 0, -984001, 27, 0, -983900, 21, 0, -983883, 20, 0, -983638, 16, 0, -983606, 7, 0, -983555, 24, 0, -983531, 14, 0, -983505, 22, 0, -983489, 20, 0, -983444, 27, 0, -983428, 29, 0, -983392, 24, 0, -983367, 25, 0, -983344, 6, 0, -983299, 16, 0, -983267, 1, 0, -983249, 2, 0, -983232, 3, 0, -983210, 2, 0, -983179, 29, 0, -983157, 12, 0, -983140, 22, 0, -983118, 3, 0, -983101, 4, 0, -983069, 13, 0, -1048554, 1, 0, -1048520, 21, 0, -1048502, 22, 0, -1048468, 16, 0, -1048444, 20, 0, -1048420, 14, 0, -1048402, 22, 0, -1048376, 13, 0, -1048342, 22, 0, -1048324, 23, 0, -1048298, 29, 0, -1048280, 20, 0, -1048196, 12, 0, -1047999, 21, 0, -1047820, 13, 0, 5243660, 4, 0, 7340820, 29, 0, 7340851, 16, 0, 7340873, 24, 0, 7340882, 4, 0, 7340900, 20, 0, 7340926, 14, 0, 7340935, 2, 0, 10550161, 21, 0, 10550181, 29, 0, 10550208, 26, 0, 10550231, 7, 0, 12647429, 12, 0, 12647504, 20, 0, 12647584, 2, 0, 13695981, 15, 0, 19987528, 20, 0, 19987557, 5, 0, 19987579, 17, 0, 19987614, 2, 0, 21036585, 6, 0, 23133237, 27, 0, 23133263, 16, 0, 23133296, 24, 0, 23133352, 13, 0, 23133749, 22, 0, 23133836, 21, 0, 23133863, 29, 0, 24181489, 2, 0, 24181504, 4, 0, 24181531, 22, 0, 24181573, 20, 0, 24181590, 14, 0, 24181631, 9, 0, 24181683, 20, 0, 24181705, 7, 0, 24181804, 20, 0, 24181883, 12, 0, 24181957, 21, 0, 24181977, 1, 0, 24182006, 20, 0, 24182073, 20, 0, 24182089, 12, 0, 24182175, 20, 0, 24182285, 13, 0, 24182309, 27, 0, 24182332, 12, 0, 24182394, 1, 0, 24182410, 2, 0, 24182447, 20, 0, 24182505, 18, 0 )
 
 [node name="Fountains" type="TileMap" parent="Middle_world_objects/Decorations"]
 z_index = 100
@@ -1953,6 +1963,8 @@ hframes = 16
 [node name="TopMillDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -990, -4 )
 dialogId = "mill_employee_dweller"
+actions = [ SubResource( 236 ) ]
+currentState = SubResource( 237 )
 
 [node name="Sprite" parent="Middle_world_objects/Dwellers/TopMillDweller/Body" index="2"]
 texture = ExtResource( 58 )
@@ -1980,6 +1992,8 @@ texture = ExtResource( 51 )
 [node name="BottomMillDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -1013, 380 )
 dialogId = "chinise_old_dweller"
+actions = [ SubResource( 240 ) ]
+currentState = null
 
 [node name="Sprite" parent="Middle_world_objects/Dwellers/BottomMillDweller/Body" index="2"]
 texture = ExtResource( 57 )
@@ -2007,6 +2021,8 @@ texture = ExtResource( 53 )
 [node name="BlueTraderDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -635, 380 )
 dialogId = "fat_dweller"
+actions = [ SubResource( 238 ) ]
+currentState = null
 
 [node name="Sprite" parent="Middle_world_objects/Dwellers/BlueTraderDweller/Body" index="2"]
 texture = ExtResource( 59 )
@@ -2019,6 +2035,8 @@ texture = ExtResource( 63 )
 [node name="PinkTraderDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -533, 380 )
 dialogId = "eary_dweller"
+actions = [ SubResource( 241 ) ]
+currentState = null
 
 [node name="Sprite" parent="Middle_world_objects/Dwellers/PinkTraderDweller/Body" index="2"]
 texture = ExtResource( 56 )
@@ -2034,6 +2052,7 @@ __meta__ = {
 }
 dialogId = "wealthy_dweller"
 actions = [ SubResource( 186 ), SubResource( 187 ) ]
+currentState = null
 
 [node name="Sprite" parent="Middle_world_objects/Dwellers/DwellerPeasant/Body" index="2"]
 texture = ExtResource( 49 )
@@ -2053,7 +2072,7 @@ z_index = 99
 pause_mode = 2
 position = Vector2( -23, -767 )
 dialogId = "lighthouse_top_mystic_dweller"
-actions = [ SubResource( 205 ), SubResource( 206 ), SubResource( 203 ), SubResource( 204 ) ]
+actions = [ SubResource( 242 ), SubResource( 206 ), SubResource( 243 ), SubResource( 204 ) ]
 
 [node name="WishShrine" parent="Middle_world_objects" instance=ExtResource( 32 )]
 position = Vector2( -1010, -276 )
@@ -2535,6 +2554,7 @@ position = Vector2( -2, 2 )
 z_index = -2
 
 [node name="Collisions" type="Node2D" parent="."]
+visible = false
 position = Vector2( 3, 62 )
 __meta__ = {
 "_edit_lock_": true
@@ -2626,8 +2646,8 @@ one_way_collision = true
 position = Vector2( -162, -100 )
 
 [node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody6" index="0"]
-position = Vector2( 213.5, 10 )
-shape = SubResource( 12 )
+position = Vector2( 212.75, 10 )
+shape = SubResource( 235 )
 one_way_collision = true
 
 [node name="PassThroughBody7" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 6 )]
@@ -3192,10 +3212,10 @@ shape = SubResource( 201 )
 position = Vector2( 2, 0 )
 
 [node name="Ladder3" parent="Collisions/Ladders" instance=ExtResource( 12 )]
-position = Vector2( -61, -185 )
+position = Vector2( -63, -185 )
 
 [node name="CollisionShape2D" parent="Collisions/Ladders/Ladder3" index="0"]
-position = Vector2( -1, -18 )
+position = Vector2( 0, -18 )
 shape = SubResource( 215 )
 
 [node name="Ladder2" parent="Collisions/Ladders" instance=ExtResource( 12 )]
@@ -3348,8 +3368,6 @@ __meta__ = {
 [editable path="Middle_world_objects/Doors/Gates_2"]
 [editable path="Middle_world_objects/Doors/LightHouseTopDoor"]
 [editable path="Middle_world_objects/Doors/LightHouseTopDoor/InteractionController"]
-[editable path="Middle_world_objects/Doors/Wish_star_dangeon_door"]
-[editable path="Middle_world_objects/Doors/Wish_star_dangeon_door/InteractionController"]
 [editable path="Middle_world_objects/Dwellers/FiresideDwellerLeft"]
 [editable path="Middle_world_objects/Dwellers/FiresideDwellerLeft/Body/InteractionController"]
 [editable path="Middle_world_objects/Dwellers/FiresideDwellerRight"]

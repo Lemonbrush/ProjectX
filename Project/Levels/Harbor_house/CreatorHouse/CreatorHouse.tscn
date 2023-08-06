@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=2]
+[gd_scene load_steps=109 format=2]
 
 [ext_resource path="res://Assets/Levels/Harbor_house/Rooms/Creator_house_rooms.png" type="Texture" id=1]
 [ext_resource path="res://Project/Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
@@ -164,6 +164,9 @@ extents = Vector2( 5, 18.5 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.5, 25.5 )
+
+[sub_resource type="RectangleShape2D" id=191]
+extents = Vector2( 3.5, 23 )
 
 [sub_resource type="Gradient" id=152]
 offsets = PoolRealArray( 0.00294118, 0.147059, 0.467647, 0.835294, 0.997059, 1 )
@@ -561,6 +564,7 @@ nextScenePath = "res://Project/Levels/Harbor_house/Harbor_house.tscn"
 nextDoorName = "CreatorHouseThirdFloorDoor"
 
 [node name="VisibilityChecker" parent="Middle_world_decorations/Doors/CreatorHouseThirdFloorDoor" index="0"]
+visible = false
 position = Vector2( -2, -23.5 )
 scale = Vector2( 1, 2.35 )
 
@@ -570,12 +574,12 @@ margin_left = -11.0
 margin_top = -46.0
 margin_right = 7.0
 
-[node name="Area2D" parent="Middle_world_decorations/Doors/CreatorHouseThirdFloorDoor/InteractionController" index="0"]
-visible = false
+[node name="InteractionController" parent="Middle_world_decorations/Doors/CreatorHouseThirdFloorDoor" index="2"]
+position = Vector2( -2, 0 )
 
 [node name="CollisionShape2D" parent="Middle_world_decorations/Doors/CreatorHouseThirdFloorDoor/InteractionController/Area2D" index="0"]
-position = Vector2( 0.5, -15.5 )
-shape = SubResource( 1 )
+position = Vector2( 0.5, -13 )
+shape = SubResource( 191 )
 
 [node name="InteractionPopup" parent="Middle_world_decorations/Doors/CreatorHouseThirdFloorDoor" index="3"]
 position = Vector2( -1, -39 )

@@ -48,7 +48,7 @@ tile_data = PoolIntArray( 3276765, 536870985, 0 )
 
 [node name="Shed_door" parent="." instance=ExtResource( 3 )]
 position = Vector2( -11, 13 )
-nextScenePath = "res://Levels/Harbor_house/Harbor_house.tscn"
+nextScenePath = "res://Project/Levels/Harbor_house/Harbor_house.tscn"
 nextDoorName = "Harbor_house_door"
 
 [node name="Collisions" type="Node2D" parent="."]

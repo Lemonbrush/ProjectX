@@ -177,12 +177,10 @@ tracks/0/keys = {
 }
 
 [node name="MysticDweller" instance=ExtResource( 4 )]
-visible = false
 script = ExtResource( 5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
 root_node = NodePath("../Body")
-autoplay = "RESET"
 anims/Hiding = SubResource( 1 )
 anims/Idle = SubResource( 2 )
 anims/RESET = SubResource( 3 )

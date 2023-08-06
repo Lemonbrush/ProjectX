@@ -984,7 +984,6 @@ anims/red_thred_cutscene = SubResource( 277 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 3 )]
 position = Vector2( -474, -222 )
-current = false
 
 [node name="Clouds" parent="Camera2D" instance=ExtResource( 15 )]
 position = Vector2( -2, -19 )
@@ -2135,6 +2134,7 @@ texture = ExtResource( 55 )
 position = Vector2( -32, -574 )
 mode = 2
 gravity_scale = 0.5
+use_player_pick_up_scale_animation = false
 
 [node name="Foreground_world_objects" type="Node2D" parent="CreatorHouseIsland"]
 z_index = 1

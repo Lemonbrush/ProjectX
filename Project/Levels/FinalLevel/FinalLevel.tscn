@@ -1,4 +1,4 @@
-[gd_scene load_steps=121 format=2]
+[gd_scene load_steps=115 format=2]
 
 [ext_resource path="res://Project/Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Project/WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=2]
@@ -16,10 +16,9 @@
 [ext_resource path="res://Project/WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/SharedWorldObjects/FloatingBlocks/Floating_block.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Levels/Final_level/Tower_top_background.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Levels/Final_level/Platform.png" type="Texture" id=17]
+[ext_resource path="res://Project/Levels/FinalLevel/WorldObjects/AutomaticPlatformLift.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Assets/Levels/Final_level/Tower_bottom.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Levels/Final_level/Tower_top.png" type="Texture" id=19]
-[ext_resource path="res://Project/Levels/FinalLevel/PlatformApproachDetector.gd" type="Script" id=20]
 [ext_resource path="res://Project/WorldObjects/Technical/InteractionEmitterObject/InteractionEmitterObject.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Project/Levels/FinalLevel/FinalLevel.gd" type="Script" id=22]
 [ext_resource path="res://Assets/Levels/Final_level/Sky_island.png" type="Texture" id=23]
@@ -1180,86 +1179,6 @@ extents = Vector2( 32.0625, 8 )
 [sub_resource type="RectangleShape2D" id=85]
 extents = Vector2( 24, 8 )
 
-[sub_resource type="RectangleShape2D" id=71]
-extents = Vector2( 32.0312, 8 )
-
-[sub_resource type="RectangleShape2D" id=72]
-extents = Vector2( 67.5, 24 )
-
-[sub_resource type="Animation" id=73]
-resource_name = "Lift_down"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("Platform:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1.7, 3 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 9, -432 ), Vector2( 9, -342.96 ), Vector2( 9, -323 ) ]
-}
-tracks/1/type = "method"
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 3 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "enable_platform_interaction"
-} ]
-}
-tracks/2/type = "method"
-tracks/2/path = NodePath("InteractionEmitterObject")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 3 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "force_check_body_detector"
-} ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Platform/PassThroughBody7/CollisionShape2D:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-
-[sub_resource type="Animation" id=74]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Platform:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 9, -432 ) ]
-}
-
-[sub_resource type="RectangleShape2D" id=95]
-extents = Vector2( 26.5, 10 )
-
 [sub_resource type="CurveTexture" id=17]
 
 [sub_resource type="Gradient" id=18]
@@ -2225,53 +2144,7 @@ collision_mask = 17
 position = Vector2( -106, 0 )
 shape = SubResource( 85 )
 
-[node name="PlatformApproachDetector" type="Node2D" parent="." index="8"]
-script = ExtResource( 20 )
-
-[node name="Platform" type="Node2D" parent="PlatformApproachDetector" index="0"]
-position = Vector2( 9, -432 )
-z_index = 1
-
-[node name="Sprite" type="Sprite" parent="PlatformApproachDetector/Platform" index="0"]
-position = Vector2( 0, 32 )
-texture = ExtResource( 17 )
-
-[node name="PassThroughBody7" parent="PlatformApproachDetector/Platform" index="1" groups=["passThroughObject"] instance=ExtResource( 3 )]
-position = Vector2( 16, 8 )
-
-[node name="CollisionShape2D" parent="PlatformApproachDetector/Platform/PassThroughBody7" index="0"]
-position = Vector2( -16.0312, 0 )
-shape = SubResource( 71 )
-one_way_collision = true
-
-[node name="DecorationsTileMap" type="TileMap" parent="PlatformApproachDetector/Platform" index="2"]
-tile_set = ExtResource( 13 )
-cell_size = Vector2( 1, 1 )
-format = 1
-tile_data = PoolIntArray( -983069, 20, 0, -983042, 26, 0, -1048566, 22, 0, 65503, 57, 0, 18, 60, 0, 1048592, 73, 0, 2097121, 112, 0, 3014671, 111, 0, 3211248, 74, 0 )
-
-[node name="PlatformDetectionArea" type="Area2D" parent="PlatformApproachDetector" index="1"]
-visible = false
-position = Vector2( -42, -338 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformApproachDetector/PlatformDetectionArea" index="0"]
-position = Vector2( 51.5, -21 )
-shape = SubResource( 72 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="PlatformApproachDetector" index="2"]
-anims/Lift_down = SubResource( 73 )
-anims/RESET = SubResource( 74 )
-
-[node name="InteractionEmitterObject" parent="PlatformApproachDetector" index="3" instance=ExtResource( 21 )]
-pause_mode = 2
-position = Vector2( 9, -323 )
-z_index = 3
-emitting_arg = "elevator_entered"
-labelText = "Зайти"
-
-[node name="CollisionShape2D" parent="PlatformApproachDetector/InteractionEmitterObject/InteractionController/Area2D" index="0"]
-position = Vector2( 0.5, 0 )
-shape = SubResource( 95 )
+[node name="PlatformApproachDetector" parent="." index="8" instance=ExtResource( 17 )]
 
 [node name="Tower" type="Node2D" parent="." index="9"]
 
@@ -2886,9 +2759,6 @@ shape = SubResource( 23 )
 [editable path="SkyIsland/Collisions/Pass_through/PassThroughBody8"]
 [editable path="SkyIsland/Collisions/Solid/PassThroughBody"]
 [editable path="SkyIsland/Collisions/Solid/PassThroughBody2"]
-[editable path="PlatformApproachDetector/Platform/PassThroughBody7"]
-[editable path="PlatformApproachDetector/InteractionEmitterObject"]
-[editable path="PlatformApproachDetector/InteractionEmitterObject/InteractionController"]
 [editable path="Tower/Clouds"]
 [editable path="Tower/Middle_world_objects/PedestalsLevelDoor"]
 [editable path="Tower/Middle_world_objects/PedestalsLevelDoor/InteractionController"]
