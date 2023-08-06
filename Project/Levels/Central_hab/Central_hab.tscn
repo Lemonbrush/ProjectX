@@ -1,4 +1,4 @@
-[gd_scene load_steps=215 format=2]
+[gd_scene load_steps=221 format=2]
 
 [ext_resource path="res://Assets/Levels/Central_hub/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Effects/Lighting/playerLight.png" type="Texture" id=2]
@@ -1314,6 +1314,37 @@ color_ramp = SubResource( 220 )
 [sub_resource type="RectangleShape2D" id=202]
 extents = Vector2( 14.75, 16.625 )
 
+[sub_resource type="CurveTexture" id=244]
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.00285307, 0.248217, 0.774608, 0.997147, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.239024, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 3 )
+
+[sub_resource type="Curve" id=245]
+_data = [ Vector2( 0, 0.840033 ), 0.0, 0.0, 0, 0, Vector2( 0.103806, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.571868 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 245 )
+
+[sub_resource type="ParticlesMaterial" id=246]
+emission_shape = 2
+emission_box_extents = Vector3( 3000, 1500, 1 )
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 9 )
+color_ramp = SubResource( 8 )
+anim_offset = 1.0
+anim_offset_random = 1.0
+anim_offset_curve = SubResource( 244 )
+
 [sub_resource type="RectangleShape2D" id=99]
 extents = Vector2( 7.5, 72.25 )
 
@@ -2547,11 +2578,15 @@ position = Vector2( 54, -768 )
 texture = ExtResource( 66 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 7 )]
-position = Vector2( 52, -809 )
+position = Vector2( 49, -91 )
 
 [node name="Clouds" parent="Camera2D" instance=ExtResource( 15 )]
 position = Vector2( -2, 2 )
 z_index = -2
+
+[node name="Particles2D" parent="Camera2D/Clouds" index="0"]
+amount = 500
+process_material = SubResource( 246 )
 
 [node name="Collisions" type="Node2D" parent="."]
 visible = false
@@ -3402,6 +3437,7 @@ __meta__ = {
 [editable path="Middle_world_objects/Signs/StoneSign/InteractionController"]
 [editable path="Middle_world_objects/Signs/BranchSign"]
 [editable path="Middle_world_objects/Signs/BranchSign/InteractionController"]
+[editable path="Camera2D/Clouds"]
 [editable path="Collisions/AirBlowers/AirBeam3"]
 [editable path="Collisions/AirBlowers/AirBeam5"]
 [editable path="Collisions/AirBlowers/AirBeam4"]
