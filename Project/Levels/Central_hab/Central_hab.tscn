@@ -26,7 +26,7 @@
 [ext_resource path="res://Project/Levels/Central_hab/World_objects/Mill_gear/Mill_gear.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Project/WorldObjects/Destructables/Vase/Vase.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Project/WorldObjects/Destructables/Barrel/Barrel.tscn" type="PackedScene" id=26]
-[ext_resource path="res://Project/Characters/NPC/Cooker_dweller/CookerDweller.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Project/Levels/Central_hab/World_objects/Cooker_dweller/CookerDweller.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Assets/Effects/Particles/particles.png" type="Texture" id=28]
 [ext_resource path="res://Project/Resources/Tilesets/Resources/Fountains/Fountains.tres" type="TileSet" id=29]
 [ext_resource path="res://Project/Resources/Tilesets/Resources/Fountains/SmallFountains.tres" type="TileSet" id=30]
@@ -2542,7 +2542,7 @@ position = Vector2( 54, -889 )
 [node name="Lighthouse_buth" parent="Middle_world_objects/Lighthouse" instance=ExtResource( 76 )]
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 5 )]
-position = Vector2( 54, -58 )
+position = Vector2( -1289, -95 )
 z_index = 2
 
 [node name="Light2D2" type="Light2D" parent="Player"]

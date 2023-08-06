@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Project/WorldObjects/Pick_ups/Items/EmptyJur/View/EmptyJurItemView.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Project/WorldObjects/Pick_ups/Pickup_container/Pickup_container.tscn" type="PackedScene" id=2]
+
+[node name="EmptyJurItem" instance=ExtResource( 2 )]
+itemScene = ExtResource( 1 )

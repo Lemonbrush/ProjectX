@@ -72,7 +72,7 @@ color_ramp = SubResource( 21 )
 
 [sub_resource type="Animation" id=20]
 resource_name = "Show"
-length = 5.0
+length = 1.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Particles2D:visible")
 tracks/0/interp = 1
@@ -133,6 +133,20 @@ tracks/4/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/5/type = "method"
+tracks/5/path = NodePath("AnimationPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 1.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "idle", -1, 1.0, false ],
+"method": "play"
+} ]
+}
 
 [sub_resource type="Animation" id=13]
 resource_name = "idle"
@@ -180,8 +194,6 @@ pause_mode = 2
 script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0.5, 0.5 )
-scale = Vector2( 1e-05, 1e-05 )
 texture = ExtResource( 1 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
@@ -196,7 +208,6 @@ texture = ExtResource( 2 )
 
 [node name="DustParticles" type="Particles2D" parent="."]
 material = SubResource( 14 )
-emitting = false
 amount = 15
 one_shot = true
 explosiveness = 1.0
