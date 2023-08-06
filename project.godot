@@ -32,7 +32,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "DialogManager",
 "language": "GDScript",
-"path": "res://Project/Utils/DialogManager.gd"
+"path": "res://Project/WorldObjects/Dialog/DialogManager/DialogManager.gd"
 }, {
 "base": "NpcAction",
 "class": "IdleNpcAction",

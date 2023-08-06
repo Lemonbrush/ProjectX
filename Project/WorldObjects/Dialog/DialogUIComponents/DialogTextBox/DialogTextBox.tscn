@@ -1,67 +1,86 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Project/Resources/Fonts/Epilepsy Sans/Resource/EpilepsySans.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Project/WorldObjects/Technical/InteractionTextBox/TextBoxPopup.gd" type="Script" id=2]
-[ext_resource path="res://Project/Resources/Themes/MainTheme.tres" type="Theme" id=3]
-[ext_resource path="res://Project/UI/ButtonHint/ButtonHint.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Project/Resources/Themes/MainTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Project/UI/ButtonHint/ButtonHint.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Project/Resources/Fonts/Epilepsy Sans/Resource/EpilepsySans.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Project/WorldObjects/Dialog/DialogUIComponents/DialogTextBox/DialogTextBox.gd" type="Script" id=4]
+
+[sub_resource type="Theme" id=2]
 
 [sub_resource type="Animation" id=1]
-resource_name = "Idle"
 length = 2.0
 loop = true
 
-[node name="TextBoxPopup" type="Node2D"]
-position = Vector2( 272, 169 )
-script = ExtResource( 2 )
+[node name="DialogTextBox" type="Node2D"]
+script = ExtResource( 4 )
 
 [node name="MarginNode" type="Node2D" parent="."]
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginNode"]
+light_mask = 0
+margin_left = -10.0
+margin_top = -31.0
+margin_right = 8.50907
+margin_bottom = 0.258801
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource( 3 )
+rect_pivot_offset = Vector2( 15, 27 )
+mouse_filter = 2
+theme = ExtResource( 1 )
 
-[node name="ButtonHint" parent="MarginNode/PanelContainer" instance=ExtResource( 4 )]
+[node name="ButtonHint" parent="MarginNode/PanelContainer" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 14.5048
 margin_top = 27.3797
 margin_right = 14.5048
 margin_bottom = 27.3797
+rect_pivot_offset = Vector2( 0.495199, -0.379669 )
+mouse_filter = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginNode/PanelContainer"]
+light_mask = 0
 margin_left = 4.5048
 margin_top = 4.37967
 margin_right = 14.5048
 margin_bottom = 27.3797
+mouse_filter = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource( 2 )
 custom_constants/margin_right = 5
 custom_constants/margin_top = 5
 custom_constants/margin_left = 5
 custom_constants/margin_bottom = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginNode/PanelContainer/MarginContainer"]
+light_mask = 0
 margin_left = 5.0
 margin_top = 5.0
 margin_right = 5.0
 margin_bottom = 18.0
+mouse_filter = 2
 custom_constants/separation = 10
 
 [node name="Label" type="Label" parent="MarginNode/PanelContainer/MarginContainer/VBoxContainer"]
+light_mask = 0
 margin_bottom = 13.0
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = ExtResource( 3 )
 
 [node name="ButtonsContainer" type="VBoxContainer" parent="MarginNode/PanelContainer/MarginContainer/VBoxContainer"]
 visible = false
+light_mask = 0
 margin_top = 23.0
-margin_right = 50.0
 margin_bottom = 23.0
 
 [node name="TextTween" type="Tween" parent="."]
 
 [node name="AppearanceTween" type="Tween" parent="."]
+
+[node name="FloatTween" type="Tween" parent="."]
 
 [node name="HintButtonAnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"
