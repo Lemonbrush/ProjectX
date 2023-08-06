@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Assets/Levels/Central_hub/World_objects/CauldronDweller/Jur/Lid.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/Central_hub/World_objects/Lovers/KissSpirit-Sheet.png" type="Texture" id=2]
@@ -125,6 +125,9 @@ tracks/6/keys = {
 "method": "spawn_item"
 } ]
 }
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 22, 10 )
 
 [sub_resource type="Animation" id=1]
 resource_name = "Animate"
@@ -280,6 +283,9 @@ interaction_popup_label_text = "Осмотреть"
 [node name="InteractionPopup" parent="FloatingHeart/DialogController" index="0"]
 position = Vector2( 0, -17 )
 
+[node name="CollisionShape2D" parent="FloatingHeart/DialogController/InteractionController/Area2D" index="0"]
+shape = SubResource( 18 )
+
 [node name="DialogTextBoxController" parent="FloatingHeart/DialogController" index="2"]
 position = Vector2( 1, -34 )
 
@@ -339,3 +345,4 @@ position = Vector2( 0, -13 )
 itemScene = ExtResource( 8 )
 
 [editable path="FloatingHeart/DialogController"]
+[editable path="FloatingHeart/DialogController/InteractionController"]
