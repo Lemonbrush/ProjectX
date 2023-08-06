@@ -4,4 +4,6 @@
 [ext_resource path="res://Project/WorldObjects/Pick_ups/Pickup_container/Pickup_container.tscn" type="PackedScene" id=2]
 
 [node name="EmptyJurItem" instance=ExtResource( 2 )]
+mode = 0
+gravity_scale = 0.6
 itemScene = ExtResource( 1 )

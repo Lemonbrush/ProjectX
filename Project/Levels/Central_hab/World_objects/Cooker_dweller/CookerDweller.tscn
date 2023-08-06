@@ -346,8 +346,8 @@ scale = 1.5
 scale_curve = SubResource( 111 )
 color_ramp = SubResource( 110 )
 
-[sub_resource type="RectangleShape2D" id=102]
-extents = Vector2( 23.875, 1.5 )
+[sub_resource type="RectangleShape2D" id=138]
+extents = Vector2( 23.875, 5.5 )
 
 [sub_resource type="RectangleShape2D" id=104]
 extents = Vector2( 16.4688, 1.25 )
@@ -521,8 +521,8 @@ __meta__ = {
 position = Vector2( 12, -54 )
 
 [node name="CollisionShape2D" parent="Collisions/PassThroughBody12" index="0"]
-position = Vector2( 0, -1.5 )
-shape = SubResource( 102 )
+position = Vector2( 0, 2.5 )
+shape = SubResource( 138 )
 one_way_collision = true
 
 [node name="PassThroughBody13" parent="Collisions" instance=ExtResource( 11 )]
@@ -606,7 +606,7 @@ lifetime = 2.0
 process_material = SubResource( 135 )
 
 [node name="ItemSpawner" parent="." instance=ExtResource( 10 )]
-position = Vector2( -38, -55 )
+position = Vector2( 1, -61 )
 itemScene = ExtResource( 15 )
 
 [editable path="AbstractDweller"]
