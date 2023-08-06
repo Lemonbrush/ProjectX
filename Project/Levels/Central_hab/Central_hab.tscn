@@ -2585,10 +2585,11 @@ position = Vector2( -2, 2 )
 z_index = -2
 
 [node name="Particles2D" parent="Camera2D/Clouds" index="0"]
-amount = 500
+amount = 700
 process_material = SubResource( 246 )
 
 [node name="Collisions" type="Node2D" parent="."]
+visible = false
 position = Vector2( 3, 62 )
 __meta__ = {
 "_edit_lock_": true
