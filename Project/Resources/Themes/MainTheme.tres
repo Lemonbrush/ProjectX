@@ -1,0 +1,51 @@
+[gd_resource type="Theme" load_steps=11 format=2]
+
+[ext_resource path="res://Project/Resources/Fonts/Custom Font ttf 12h 3.0 for Paint/Resource/CFont12H30PBold.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Project/Resources/Fonts/Custom Font ttf 12h 3.0 for Paint/Resource/CFont12H30P.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/UI/UIElements/Panrl_container_texture.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxTexture" id=7]
+region_rect = Rect2( -0.495987, -0.829727, 12.0068, 12.2569 )
+margin_left = 4.79225
+margin_right = 5.3
+margin_top = 5.51191
+margin_bottom = 4.93274
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 16, 16 )
+margin_left = 4.5048
+margin_right = 4.00427
+margin_top = 4.37967
+margin_bottom = 3.87913
+
+[resource]
+default_font = ExtResource( 2 )
+Button/colors/font_color = Color( 1, 1, 1, 0.776471 )
+Button/colors/font_color_disabled = Color( 0.447059, 0.447059, 0.447059, 0.654902 )
+Button/colors/font_color_focus = Color( 1, 1, 1, 1 )
+Button/colors/font_color_hover = Color( 1, 1, 1, 1 )
+Button/colors/font_color_pressed = Color( 0.47451, 0.458824, 0.458824, 1 )
+Button/fonts/font = ExtResource( 1 )
+Button/styles/disabled = SubResource( 14 )
+Button/styles/focus = SubResource( 13 )
+Button/styles/hover = SubResource( 10 )
+Button/styles/normal = SubResource( 11 )
+Button/styles/pressed = SubResource( 3 )
+CheckBox/icons/checked = null
+CheckBox/icons/radio_checked = null
+CheckBox/icons/radio_unchecked = null
+CheckBox/icons/unchecked = null
+LineEdit/styles/focus = SubResource( 7 )
+LineEdit/styles/normal = SubResource( 7 )
+PanelContainer/styles/panel = SubResource( 5 )

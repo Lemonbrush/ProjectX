@@ -1,0 +1,2776 @@
+[gd_scene load_steps=115 format=2]
+
+[ext_resource path="res://Project/Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Project/WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Project/WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Effects/Lighting/shadow.png" type="Texture" id=4]
+[ext_resource path="res://Project/Resources/Shaders/StarsShader.tres" type="Shader" id=5]
+[ext_resource path="res://Assets/Levels/Final_level/BackgroundStars.png" type="Texture" id=6]
+[ext_resource path="res://Project/Resources/Tilesets/Resources/Fountains/Fountains.tres" type="TileSet" id=7]
+[ext_resource path="res://Project/WorldObjects/Moving_platforms/MovingPlatform.gd" type="Script" id=8]
+[ext_resource path="res://Assets/Levels/Final_level/Me_laying-Sheet.png" type="Texture" id=9]
+[ext_resource path="res://Project/WorldObjects/Technical/Clouds/Clouds.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/BackgroundGradients/FinalLevelBackground.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Levels/Final_level/Tinted_block.png" type="Texture" id=12]
+[ext_resource path="res://Project/Resources/Tilesets/Resources/Decorations/Decorations.tres" type="TileSet" id=13]
+[ext_resource path="res://Project/WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Assets/SharedWorldObjects/FloatingBlocks/Floating_block.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Levels/Final_level/Tower_top_background.png" type="Texture" id=16]
+[ext_resource path="res://Project/Levels/FinalLevel/WorldObjects/AutomaticPlatformLift.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Assets/Levels/Final_level/Tower_bottom.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Levels/Final_level/Tower_top.png" type="Texture" id=19]
+[ext_resource path="res://Project/WorldObjects/Technical/InteractionEmitterObject/InteractionEmitterObject.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Project/Levels/FinalLevel/FinalLevel.gd" type="Script" id=22]
+[ext_resource path="res://Assets/Levels/Final_level/Sky_island.png" type="Texture" id=23]
+[ext_resource path="res://Project/Resources/Shaders/GodLightsShader.tres" type="Shader" id=24]
+[ext_resource path="res://Assets/Levels/Final_level/Clouds/Clouds_1.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Levels/Final_level/Clouds/Clouds_2.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Levels/Final_level/Clouds/Clouds_3.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Levels/Final_level/Proposal_cutscene_animation-Sheet.png" type="Texture" id=28]
+[ext_resource path="res://Project/WorldObjects/Technical/IndependantDialogController/IndependantDialogController.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Project/Resources/Fonts/Epilepsy Sans/Resource/EpilepsySansBold.tres" type="DynamicFont" id=30]
+[ext_resource path="res://Project/Resources/Themes/MainTheme.tres" type="Theme" id=31]
+[ext_resource path="res://Project/Resources/Fonts/Epilepsy Sans/Resource/EpilepsySans.tres" type="DynamicFont" id=32]
+[ext_resource path="res://Assets/Effects/Particles/Heart.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Levels/Final_level/MysticDwellerCoat-Sheet.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Levels/Final_level/MysticDwellerMask-Sheet.png" type="Texture" id=35]
+
+[sub_resource type="Environment" id=4]
+background_mode = 4
+ambient_light_energy = 0.0
+glow_enabled = true
+glow_hdr_threshold = 1.5
+adjustment_enabled = true
+adjustment_saturation = 1.3
+
+[sub_resource type="Shader" id=108]
+code = "shader_type canvas_item;
+
+//uniform vec3 color_replace = vec3(1.0,1.0,0.0);
+uniform int OCTAVE = 12;
+uniform float timescale = 5.0;
+uniform vec4 CLOUD1_COL: hint_color = vec4(0.41,0.64,0.78,0.4);
+uniform vec4 CLOUD2_COL: hint_color = vec4(0.99,0.79,0.46,0.2);
+uniform vec4 CLOUD3_COL: hint_color = vec4(0.81,0.31,0.59,1.0);
+uniform vec4 CLOUD4_COL: hint_color = vec4(0.27,0.15,0.33,1.0);
+uniform vec4 SPACE: hint_color = vec4(0.09,0.06,0.28,0.3);
+uniform float zoomScale = 6.0;
+uniform float size = 10.0;
+uniform float starscale = 20.0;
+uniform float prob: hint_range(0.0,1.0) = 0.98;
+
+float rand(vec2 input){
+	return fract(sin(dot(input,vec2(23.53,44.0)))*42350.45);
+}
+
+float perlin(vec2 input){
+	vec2 i = floor(input);
+	vec2 j = fract(input);
+	vec2 coord = smoothstep(0.,1.,j);
+	
+	float a = rand(i);
+	float b = rand(i+vec2(1.0,0.0));
+	float c = rand(i+vec2(0.0,1.0));
+	float d = rand(i+vec2(1.0,1.0));
+
+	return mix(mix(a,b,coord.x),mix(c,d,coord.x),coord.y);
+}
+
+float fbm(vec2 input){
+	float value = 0.0;
+	float scale = 0.5;
+	
+	for(int i = 0; i < OCTAVE; i++){
+		value += perlin(input)*scale;
+		input*=2.0;
+		scale*=0.5;
+	}
+	return value;
+}
+
+float fbmCloud(vec2 input, float minimum){
+	float value = 0.0;
+	float scale = 0.5;
+	
+	for(int i = 0; i < OCTAVE; i++){
+		value += perlin(input)*scale;
+		input*=2.0;
+		scale*=0.5;
+	}
+	return smoothstep(0.,1.,(smoothstep(minimum,1.,value)-minimum)/(1.0-minimum));
+}
+
+float fbmCloud2(vec2 input, float minimum){
+	float value = 0.0;
+	float scale = 0.5;
+	
+	for(int i = 0; i < OCTAVE; i++){
+		value += perlin(input)*scale;
+		input*=2.0;
+		scale*=0.5;
+	}
+	return (smoothstep(minimum,1.,value)-minimum)/(1.0-minimum);
+}
+
+void fragment(){
+	vec4 originalColor = texture(TEXTURE, UV);
+	float timescaled = TIME * timescale;
+	//vec2 zoomUV = vec2(zoomScale * UV.x + UV.x*0.04*TIME*sin(0.07*TIME), zoomScale * UV.y + UV.y*0.05*TIME*cos(0.06*TIME));
+	vec2 zoomUV2 = vec2(zoomScale * UV.x + 0.03*timescaled*sin(0.07*timescaled), zoomScale * UV.y + 0.03*timescaled*cos(0.06*timescaled));
+	vec2 zoomUV3 = vec2(zoomScale * UV.x + 0.027*timescaled*sin(0.07*timescaled), zoomScale * UV.y + 0.025*timescaled*cos(0.06*timescaled));
+	vec2 zoomUV4 = vec2(zoomScale * UV.x + 0.021*timescaled*sin(0.07*timescaled), zoomScale * UV.y + 0.021*timescaled*cos(0.07*timescaled));
+	float tide = 0.05*sin(TIME);
+	float tide2 = 0.06*cos(0.3*TIME);
+	//if(color_replace == originalColor.rgb){
+		vec4 nebulaTexture = vec4(SPACE.rgb, 0.5+0.2*sin(0.23*TIME +UV.x-UV.y));
+		nebulaTexture += fbmCloud2(zoomUV3, 0.24 + tide)*CLOUD1_COL;
+		nebulaTexture += fbmCloud(zoomUV2*0.9, 0.33 - tide)*CLOUD2_COL;
+		nebulaTexture = mix(nebulaTexture,CLOUD3_COL,fbmCloud(vec2(0.9*zoomUV4.x,0.9*zoomUV4.y), 0.25+tide2));
+		nebulaTexture = mix(nebulaTexture,CLOUD4_COL,fbmCloud(zoomUV3*0.7+2.0, 0.4+tide2));
+		vec2 zoomstar = starscale*zoomUV2;
+		vec2 pos = floor(zoomstar / size);
+		float starValue = rand(pos);
+		if(starValue>prob){
+			vec2 center = size * pos + vec2(size, size) * 0.5;
+			float t = 0.9 + 0.2 * sin(TIME * 8.0 + (starValue - prob) / (1.0 - prob) * 45.0);
+			float color = 1.0 - distance(zoomstar, center) / (0.5 * size);
+			nebulaTexture = mix(nebulaTexture, vec4(1.0,1.0,1.0,1.0),smoothstep(0.,1.,color * t / (abs(zoomstar.y - center.y)) * t / (abs(zoomstar.x - center.x))));
+		} else {
+			zoomstar *= 5.0;
+			pos = floor(zoomstar / size);
+			float starValue2 = rand(pos + vec2(13.0,13.0));
+			if(starValue2 >= 0.95){
+				vec2 center = size * pos + vec2(size, size) * 0.5;
+				float t = 0.9 + 0.2 * sin(TIME * 8.0 + (starValue - prob) / (1.0 - prob) * 45.0);
+				float color = 1.0 - distance(zoomstar, center) / (0.5 * size);
+				nebulaTexture = mix(nebulaTexture, vec4(1.0,1.0,1.0,1.0),fbmCloud(pos,0.0)*smoothstep(0.,1.,color * t / (abs(zoomstar.y - center.y)) * t / (abs(zoomstar.x - center.x))));
+			}
+		}
+		COLOR = vec4(nebulaTexture.rgb, 1.0);
+		//COLOR = vec4(nebulaTexture.rgb,nebulaTexture.a * 1.2)
+	//} else {
+	//	COLOR = originalColor;
+	//}
+}
+"
+
+[sub_resource type="ShaderMaterial" id=109]
+shader = SubResource( 108 )
+shader_param/OCTAVE = 2
+shader_param/timescale = 0.1
+shader_param/CLOUD1_COL = Color( 0.41, 0.64, 0.78, 0.4 )
+shader_param/CLOUD2_COL = Color( 0.99, 0.79, 0.46, 0.2 )
+shader_param/CLOUD3_COL = Color( 0.411765, 0.768627, 0.960784, 1 )
+shader_param/CLOUD4_COL = Color( 0.258824, 0.247059, 0.529412, 1 )
+shader_param/SPACE = Color( 0.141176, 0.105882, 0.352941, 0.301961 )
+shader_param/zoomScale = 15.0
+shader_param/size = 15.0
+shader_param/starscale = 10.0
+shader_param/prob = 0.996
+
+[sub_resource type="Animation" id=106]
+resource_name = "Awakening_cutscene"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("SkyIsland/Middle_world_objects/Me:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SkyIsland/Middle_world_objects/WeSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Camera2D:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 9, -2183 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("SkyIsland/Middle_world_objects/WeSprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 2.8, 2.9, 3, 3.1, 3.2, 3.7, 3.8, 3.9, 4, 4.4, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19 ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("Player")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Camera2D:follow_player")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath("SkyIsland/Middle_world_objects/IndependantDialogController")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start_dialog"
+} ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("SkyIsland/Middle_world_objects/IndependantDialogController:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 7 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=75]
+resource_name = "Elevation_cutscene"
+length = 25.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 9, -322 ), Vector2( 9, -1840 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("PlatformApproachDetector/Platform:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 9, -323 ), Vector2( 9, -1840 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "pause_level"
+}, {
+"args": [  ],
+"method": "unpouse_level"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Camera2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 25 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 2.0 ],
+"method": "scale_to_default_zoom_with_animation"
+} ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Camera2D:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 10, -337 ), Vector2( 8, -1929 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Player:z_index")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 3 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Camera2D:zoom")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 13.3, 15.9, 22.9, 24.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.7, 0.7 ), Vector2( 0.7, 0.7 ), Vector2( 1.5, 1.5 ), Vector2( 1.5, 1.5 ), Vector2( 0.7, 0.7 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("ParallaxBackground2/ParallaxLayer2/Sprite:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 13.3, 22.9, 24.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.53, 0.57016 ), Vector2( 1.2, 1.2 ), Vector2( 1.2, 1.2 ), Vector2( 0.53, 0.57 ) ]
+}
+tracks/8/type = "method"
+tracks/8/path = NodePath("PlatformApproachDetector")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 25 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "did_finish_elevation_to_sky_island"
+} ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("ParallaxBackground2/Clouds/Clouds_1:position")
+tracks/9/interp = 2
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 13.3, 19.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 46, -42 ), Vector2( 30, -27 ), Vector2( 42, 0 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("ParallaxBackground2/Clouds/Clouds_2:position")
+tracks/10/interp = 2
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 13.3, 19.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 23, -83 ), Vector2( 31, -59 ), Vector2( 14, -10 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("ParallaxBackground2/Clouds/Clouds_3:position")
+tracks/11/interp = 2
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 13.3, 19.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 35, -119 ), Vector2( 31, -76 ), Vector2( 44, -20 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("ParallaxBackground2/StarsSprite:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 13.4, 20.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.160784 ), Color( 1, 1, 1, 0.160784 ), Color( 1, 1, 1, 0.596078 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("ParallaxBackground2/ColorRect:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 13.3, 20.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.14902 ), Color( 1, 1, 1, 0.14902 ), Color( 1, 1, 1, 0.376471 ) ]
+}
+
+[sub_resource type="Animation" id=94]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player:z_index")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 3 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ParallaxBackground2/ParallaxLayer2/Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.53, 0.57016 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ParallaxBackground2/Clouds/Clouds_3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 35, -119 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ParallaxBackground2/Clouds/Clouds_2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 23, -83 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ParallaxBackground2/Clouds/Clouds_1:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 46, -42 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("SkyIsland/Middle_world_objects/WeSprite:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Player:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Camera2D:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 8, -250 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("SkyIsland/Middle_world_objects/WeSprite:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Player:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 8, -231 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("SkyIsland/Middle_world_objects/Me:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("ParallaxBackground2/ColorRect:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.14902 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("SkyIsland/Middle_world_objects/IndependantDialogController:is_dialog_active")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("SkyIsland/ProposalControl:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("SkyIsland/ProposalControl:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("SkyIsland/Middle_world_objects/LoveParticles:emitting")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=111]
+resource_name = "She_said_yes_cutscene"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("SkyIsland/Middle_world_objects/WeSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 33, 35 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SkyIsland/Middle_world_objects/LoveParticles:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Camera2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 4, 10 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 9, -2183 ), Vector2( 9, -2183 ), Vector2( 9, -2343 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Camera2D:zoom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0.5 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("SkyIsland/ProposalControl:modulate")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("SkyIsland/ProposalControl:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "show_she_said_yes_cutscene"
+} ]
+}
+
+[sub_resource type="Animation" id=110]
+resource_name = "Start_proposal_stage"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.7, 0.7 ), Vector2( 0.5, 0.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SkyIsland/Middle_world_objects/WeSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2, 2.1, 2.2, 2.3, 2.5, 2.6, 2.7, 2.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 19, 19, 20, 21, 22, 22, 23, 24, 25 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("SkyIsland/Middle_world_objects/Me:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("SkyIsland/Middle_world_objects/IndependantDialogController:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("SkyIsland/Middle_world_objects/WeSprite:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("SkyIsland/ProposalControl:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 2.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("SkyIsland/ProposalControl:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 2.7, 3.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/7/type = "method"
+tracks/7/path = NodePath("SkyIsland/ProposalControl/VBoxContainer/HBoxContainer/YesButton")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "grab_focus"
+} ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Camera2D:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 9, -2183 ) ]
+}
+
+[sub_resource type="CurveTexture" id=7]
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.00285307, 0.248217, 0.774608, 0.997147, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.239024, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 3 )
+
+[sub_resource type="Curve" id=6]
+_data = [ Vector2( 0, 0.840033 ), 0.0, 0.0, 0, 0, Vector2( 0.103806, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.571868 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 6 )
+
+[sub_resource type="ParticlesMaterial" id=93]
+emission_shape = 2
+emission_box_extents = Vector3( 1000, 2000, 1 )
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 2.0
+scale_random = 1.0
+scale_curve = SubResource( 9 )
+color_ramp = SubResource( 8 )
+anim_offset = 1.0
+anim_offset_random = 1.0
+anim_offset_curve = SubResource( 7 )
+
+[sub_resource type="Animation" id=217]
+resource_name = "Animate"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[sub_resource type="Animation" id=218]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=219]
+resource_name = "Animate"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, -1.0 ]
+}
+
+[sub_resource type="Animation" id=220]
+resource_name = "Animate"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[sub_resource type="Animation" id=221]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="RectangleShape2D" id=48]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="Curve2D" id=52]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 104, 0, 0, 0, 0, 0, 104, 19 )
+}
+
+[sub_resource type="Animation" id=96]
+resource_name = "Loop"
+length = 20.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=97]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.3 ]
+}
+
+[sub_resource type="Curve2D" id=98]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 104, 0, 0, 0, 0, 0, 104, 27 )
+}
+
+[sub_resource type="Animation" id=99]
+resource_name = "Loop"
+length = 25.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 12.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=100]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.3 ]
+}
+
+[sub_resource type="Curve2D" id=101]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 104, 0, 0, 0, 0, 0, 104, 22 )
+}
+
+[sub_resource type="Animation" id=102]
+resource_name = "Loop"
+length = 15.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 7.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=103]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.3 ]
+}
+
+[sub_resource type="Animation" id=104]
+resource_name = "Idle"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=105]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
+
+[sub_resource type="RectangleShape2D" id=107]
+extents = Vector2( 15, 10 )
+
+[sub_resource type="Curve" id=215]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.282238, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.890511, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=214]
+curve = SubResource( 215 )
+
+[sub_resource type="ParticlesMaterial" id=216]
+emission_shape = 2
+emission_box_extents = Vector3( 4, 1, 1 )
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, -10, 0 )
+initial_velocity = 40.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.1
+scale_random = 1.0
+scale_curve = SubResource( 214 )
+
+[sub_resource type="ShaderMaterial" id=86]
+shader = ExtResource( 24 )
+shader_param/angle = -0.3
+shader_param/position = -0.2
+shader_param/spread = 0.0
+shader_param/cutoff = 0.195
+shader_param/falloff = 0.2
+shader_param/edge_fade = 0.344
+shader_param/speed = 1.0
+shader_param/ray1_density = 10.0
+shader_param/ray2_density = 30.0
+shader_param/ray2_intensity = 0.3
+shader_param/color = Color( 0.878431, 0.960784, 1, 0.580392 )
+shader_param/hdr = false
+shader_param/seed = 10.0
+
+[sub_resource type="RectangleShape2D" id=76]
+extents = Vector2( 64.0625, 8 )
+
+[sub_resource type="RectangleShape2D" id=77]
+extents = Vector2( 24.0625, 8 )
+
+[sub_resource type="RectangleShape2D" id=78]
+extents = Vector2( 16.0625, 8 )
+
+[sub_resource type="RectangleShape2D" id=79]
+extents = Vector2( 8.0625, 8 )
+
+[sub_resource type="RectangleShape2D" id=80]
+extents = Vector2( 16.0625, 8 )
+
+[sub_resource type="RectangleShape2D" id=81]
+extents = Vector2( 8.0625, 8 )
+
+[sub_resource type="RectangleShape2D" id=82]
+extents = Vector2( 160.062, 8 )
+
+[sub_resource type="RectangleShape2D" id=83]
+extents = Vector2( 96, 8 )
+
+[sub_resource type="RectangleShape2D" id=84]
+extents = Vector2( 32.0625, 8 )
+
+[sub_resource type="RectangleShape2D" id=85]
+extents = Vector2( 24, 8 )
+
+[sub_resource type="CurveTexture" id=17]
+
+[sub_resource type="Gradient" id=18]
+offsets = PoolRealArray( 0, 0.00285307, 0.248217, 0.774608, 0.997147, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.239024, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=19]
+gradient = SubResource( 18 )
+
+[sub_resource type="Curve" id=20]
+_data = [ Vector2( 0, 0.840033 ), 0.0, 0.0, 0, 0, Vector2( 0.103806, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.571868 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=21]
+curve = SubResource( 20 )
+
+[sub_resource type="ParticlesMaterial" id=22]
+emission_shape = 2
+emission_box_extents = Vector3( 1000, 500, 1 )
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 21 )
+color_ramp = SubResource( 19 )
+anim_offset = 1.0
+anim_offset_random = 1.0
+anim_offset_curve = SubResource( 17 )
+
+[sub_resource type="ShaderMaterial" id=15]
+shader = ExtResource( 5 )
+shader_param/bg_color = null
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 6, 35.5 )
+
+[sub_resource type="Animation" id=50]
+resource_name = "Loop"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=51]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Curve2D" id=67]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 104, -12, 0, 0, 0, 0, 104, 19 )
+}
+
+[sub_resource type="Animation" id=53]
+resource_name = "Loop"
+length = 20.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=54]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+
+[sub_resource type="Animation" id=55]
+resource_name = "Loop"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=56]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.5 ]
+}
+
+[sub_resource type="Curve2D" id=68]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 104, 0, 0, 0, 0, 0, 104, 35 )
+}
+
+[sub_resource type="Animation" id=57]
+resource_name = "Loop"
+length = 15.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=58]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.4 ]
+}
+
+[sub_resource type="Animation" id=59]
+resource_name = "Loop"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=60]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Curve2D" id=69]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 104, -17, 0, 0, 0, 0, 104, 19 )
+}
+
+[sub_resource type="Animation" id=61]
+resource_name = "Loop"
+length = 13.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 6.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=62]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.7 ]
+}
+
+[sub_resource type="Curve2D" id=70]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 104, 0, 0, 0, 0, 0, 104, 12 )
+}
+
+[sub_resource type="Animation" id=63]
+resource_name = "Loop"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=64]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=65]
+resource_name = "Loop"
+length = 20.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=66]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.3 ]
+}
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 48.0625, 8 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 32.0625, 8 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 16.0625, 8 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 96, 8 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 144, 8 )
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 7014.5, 150 )
+
+[node name="FinalLevel" instance=ExtResource( 1 )]
+script = ExtResource( 22 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
+environment = SubResource( 4 )
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="." index="1"]
+scroll_limit_end = Vector2( 0, 320 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground2" index="0"]
+motion_mirroring = Vector2( 530, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground2/ParallaxLayer2" index="0"]
+position = Vector2( -1, -1 )
+scale = Vector2( 0.53, 0.57016 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="Clouds" type="Node2D" parent="ParallaxBackground2" index="1"]
+modulate = Color( 1, 1, 1, 0.537255 )
+position = Vector2( 239, 319 )
+
+[node name="Clouds_3" type="Sprite" parent="ParallaxBackground2/Clouds" index="0"]
+position = Vector2( 35, -119 )
+scale = Vector2( 0.72549, 0.72549 )
+texture = ExtResource( 27 )
+
+[node name="Clouds_2" type="Sprite" parent="ParallaxBackground2/Clouds" index="1"]
+position = Vector2( 23, -83 )
+scale = Vector2( 0.727, 0.727 )
+texture = ExtResource( 26 )
+
+[node name="Clouds_1" type="Sprite" parent="ParallaxBackground2/Clouds" index="2"]
+position = Vector2( 46, -42 )
+scale = Vector2( 0.726, 0.726 )
+texture = ExtResource( 25 )
+
+[node name="StarsSprite" type="Sprite" parent="ParallaxBackground2" index="2"]
+modulate = Color( 1, 1, 1, 0.160784 )
+self_modulate = Color( 0.65098, 0.701961, 0.835294, 1 )
+position = Vector2( 267, 137 )
+rotation = 3.14159
+scale = Vector2( 0.474795, 0.474795 )
+texture = ExtResource( 6 )
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground2" index="3"]
+modulate = Color( 1, 1, 1, 0.14902 )
+material = SubResource( 109 )
+margin_left = -5.0
+margin_top = -11.0
+margin_right = 536.0
+margin_bottom = 357.0
+rect_pivot_offset = Vector2( -367, 252 )
+
+[node name="AnimationPlayer" parent="." index="3"]
+autoplay = ""
+anims/Awakening_cutscene = SubResource( 106 )
+anims/Elevation_cutscene = SubResource( 75 )
+anims/RESET = SubResource( 94 )
+anims/She_said_yes_cutscene = SubResource( 111 )
+anims/Start_proposal_stage = SubResource( 110 )
+
+[node name="Stars" type="Node2D" parent="." index="4"]
+pause_mode = 2
+modulate = Color( 1, 1, 1, 0.729412 )
+position = Vector2( 6, -249 )
+
+[node name="Particles2D" type="Particles2D" parent="Stars" index="0"]
+self_modulate = Color( 1, 1, 1, 0.784314 )
+show_behind_parent = true
+position = Vector2( -863, -2005 )
+amount = 1000
+preprocess = 10.0
+randomness = 1.0
+visibility_rect = Rect2( -100, -100, 2000, 2500 )
+local_coords = false
+process_material = SubResource( 93 )
+
+[node name="Camera2D" parent="." index="5"]
+position = Vector2( 8, -250 )
+zoom = Vector2( 0.5, 0.5 )
+follow_player = false
+
+[node name="WorldSprite" parent="." index="6"]
+visible = false
+position = Vector2( -319, -1192 )
+
+[node name="SkyIsland" type="Node2D" parent="." index="7"]
+
+[node name="VisibilityChecker" parent="SkyIsland" index="0" instance=ExtResource( 14 )]
+visible = false
+position = Vector2( 6.5, -1974.5 )
+scale = Vector2( 24.15, 24.35 )
+
+[node name="ProposalControl" type="Control" parent="SkyIsland" index="1"]
+visible = false
+margin_top = -2249.0
+margin_right = 40.0
+margin_bottom = -2209.0
+theme = ExtResource( 31 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SkyIsland/ProposalControl" index="0"]
+margin_left = -82.0
+margin_top = 17.0
+margin_right = 99.0
+margin_bottom = 101.0
+custom_constants/separation = 15
+
+[node name="ProposalLabel" type="Label" parent="SkyIsland/ProposalControl/VBoxContainer" index="0"]
+margin_right = 181.0
+margin_bottom = 55.0
+custom_fonts/font = ExtResource( 30 )
+text = "Ты будешь
+моей женой?"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SkyIsland/ProposalControl/VBoxContainer" index="1"]
+margin_left = 38.0
+margin_top = 70.0
+margin_right = 142.0
+margin_bottom = 83.0
+size_flags_horizontal = 4
+
+[node name="YesButton" type="Button" parent="SkyIsland/ProposalControl/VBoxContainer/HBoxContainer" index="0"]
+margin_right = 50.0
+margin_bottom = 13.0
+rect_min_size = Vector2( 50, 0 )
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 1, 1, 1, 0.2 )
+custom_fonts/font = ExtResource( 32 )
+text = "Да"
+
+[node name="NoButton" type="Button" parent="SkyIsland/ProposalControl/VBoxContainer/HBoxContainer" index="1"]
+margin_left = 54.0
+margin_right = 104.0
+margin_bottom = 13.0
+rect_min_size = Vector2( 50, 0 )
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 1, 1, 1, 0.2 )
+custom_fonts/font = ExtResource( 32 )
+text = "Нет"
+
+[node name="Foreground_world_objects" type="Node2D" parent="SkyIsland" index="2"]
+z_index = 1
+
+[node name="MysticDwellerParts" type="Node2D" parent="SkyIsland/Foreground_world_objects" index="0"]
+position = Vector2( -11, 5 )
+
+[node name="Mask" type="Node2D" parent="SkyIsland/Foreground_world_objects/MysticDwellerParts" index="0"]
+position = Vector2( 13, -1976 )
+
+[node name="Sprite" type="Sprite" parent="SkyIsland/Foreground_world_objects/MysticDwellerParts/Mask" index="0"]
+rotation = -0.0168393
+texture = ExtResource( 35 )
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SkyIsland/Foreground_world_objects/MysticDwellerParts/Mask" index="1"]
+autoplay = "Animate"
+anims/Animate = SubResource( 217 )
+anims/RESET = SubResource( 218 )
+
+[node name="TiltAnimationPlayer" type="AnimationPlayer" parent="SkyIsland/Foreground_world_objects/MysticDwellerParts/Mask" index="2"]
+autoplay = "Animate"
+anims/Animate = SubResource( 219 )
+
+[node name="Coat" type="Node2D" parent="SkyIsland/Foreground_world_objects/MysticDwellerParts" index="1"]
+position = Vector2( 48, -1967 )
+
+[node name="Sprite" type="Sprite" parent="SkyIsland/Foreground_world_objects/MysticDwellerParts/Coat" index="0"]
+position = Vector2( -8, 16 )
+texture = ExtResource( 34 )
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SkyIsland/Foreground_world_objects/MysticDwellerParts/Coat" index="1"]
+autoplay = "Animate"
+anims/Animate = SubResource( 220 )
+anims/RESET = SubResource( 221 )
+
+[node name="Middle_world_objects" type="Node2D" parent="SkyIsland" index="3"]
+
+[node name="Sprite" type="Sprite" parent="SkyIsland/Middle_world_objects" index="0"]
+position = Vector2( -319, -1192 )
+texture = ExtResource( 23 )
+
+[node name="Fountains" type="TileMap" parent="SkyIsland/Middle_world_objects" index="1"]
+tile_set = ExtResource( 7 )
+cell_size = Vector2( 1, 1 )
+format = 1
+
+[node name="Decorations" type="TileMap" parent="SkyIsland/Middle_world_objects" index="2"]
+tile_set = ExtResource( 13 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -139395141, 536870935, 0, -139395119, 536870941, 0, -139460591, 536870932, 0, -139460555, 31, 0, -139460536, 536870936, 0, -138346636, 536870936, 0, -138346619, 536870943, 0, -138346594, 536870935, 0, -138346581, 536871012, 0, -138346564, 32, 0, -138346531, 536870934, 0, -138346504, 536870971, 0, -138412022, 536870935, 0, -138412004, 29, 0, -138411984, 536870932, 0, -138411964, 536870940, 0, -138411951, 536870970, 0, -138411937, 41, 0, -138411921, 536870922, 0, -138411905, 536871004, 0, -138411884, 536870921, 0, -137298088, 536870940, 0, -137298054, 536870933, 0, -137297991, 536870952, 0, -137297967, 536870969, 0, -137297938, 536870943, 0, -137363449, 536870936, 0, -137363430, 536870969, 0, -137363407, 536870971, 0, -137363306, 536870969, 0, -137363288, 536870934, 0, -137232535, 536870970, 0, -136576973, 536870970, 0, -136249444, 536870947, 0, -136249349, 536870934, 0, -136314800, 536870953, 0, -135200806, 536870936, 0, -135266271, 536870939, 0, -135266219, 536870970, 0, -135135323, 536870972, 0, -134152315, 72, 0, -133103631, 536870934, 0, -133169150, 536870930, 0, -133169119, 536870984, 0, -132055105, 536870982, 0, -132120531, 536870969, 0, -131006481, 536870916, 0, -131071994, 536870927, 0, -129957910, 58, 0, -130023410, 536870933, 0, -127860695, 60, 0, -126812179, 536870939, 0, -126877686, 536870915, 0, -126877654, 536870986, 0, -125763621, 536870953, 0, -125763596, 536870935, 0, -123666469, 536870985, 0, -123666450, 536870935, 0, -123666436, 57, 0, -123731954, 536870921, 0, -122617890, 536870926, 0, -122617859, 536870934, 0, -122683356, 536870938, 0, -122683337, 536870935, 0, -121569349, 536870934, 0, -121569325, 536870933, 0, -121634747, 536870932, 0, -120520760, 57, 0, -119537619, 536870986, 0, -118423598, 536870984, 0 )
+
+[node name="Moving_platforms" type="Node2D" parent="SkyIsland/Middle_world_objects" index="3"]
+
+[node name="MovingPlatform8" type="Node2D" parent="SkyIsland/Middle_world_objects/Moving_platforms" index="0"]
+position = Vector2( -151, -1950 )
+script = ExtResource( 8 )
+
+[node name="Platform" type="KinematicBody2D" parent="SkyIsland/Middle_world_objects/Moving_platforms/MovingPlatform8" index="0"]
+position = Vector2( 104, 5.69946 )
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="SkyIsland/Middle_world_objects/Moving_platforms/MovingPlatform8/Platform" index="0" instance=ExtResource( 14 )]
+position = Vector2( -0.255653, 0 )
+
+[node name="Sprite" type="Sprite" parent="SkyIsland/Middle_world_objects/Moving_platforms/MovingPlatform8/Platform" index="1"]
+texture = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SkyIsland/Middle_world_objects/Moving_platforms/MovingPlatform8/Platform" index="2"]
+shape = SubResource( 48 )
+one_way_collision = true
+
+[node name="TileMap" type="TileMap" parent="SkyIsland/Middle_world_objects/Moving_platforms/MovingPlatform8/Platform" index="3"]
+position = Vector2( -104, 12 )
+tile_set = ExtResource( 13 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -2359200, 536870943, 0 )
+
+[node name="Path2D" type="Path2D" parent="SkyIsland/Middle_world_objects/Moving_platforms/MovingPlatform8" index="1"]
+curve = SubResource( 52 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="SkyIsland/Middle_world_objects/Moving_platforms/MovingPlatform8/Path2D" index="0"]
+position = Vector2( 104, 5.69949 )
+rotation = 3.14159
+offset = 5.69977
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="SkyIsland/Middle_world_objects/Moving_platforms/MovingPlatform8/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SkyIsland/Middle_world_objects/Moving_platforms/MovingPlatform8" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 96 )
+anims/RESET = SubResource( 97 )
+
+[node name="MovingPlatform9" type="Node2D" parent="SkyIsland/Middle_world_objects/Moving_platforms" index="1"]
+position = Vector2( -39, -1902 )
+script = ExtResource( 8 )
+
+[node name="Platform" type="KinematicBody2D" parent="SkyIsland/Middle_world_objects/Moving_platforms/MovingPlatform9" index="0"]
+position = Vector2( 104, 8.09985 )
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="SkyIsland/Middle_world_objects/Moving_platforms/MovingPlatform9/Platform" index="0" instance=ExtResource( 14 )]
+position = Vector2( -0.255653, 0 )
+
+[node name="Sprite" type="Sprite" parent="SkyIsland/Middle_world_objects/Moving_platforms/MovingPlatform9/Platform" index="1"]
+texture = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SkyIsland/Middle_world_objects/Moving_platforms/MovingPlatform9/Platform" index="2"]
+shape = SubResource( 48 )
+one_way_collision = true
+
+[node name="TileMap" type="TileMap" parent="SkyIsland/Middle_world_objects/Moving_platforms/MovingPlatform9/Platform" index="3"]
+position = Vector2( -104, 12 )
+tile_set = ExtResource( 13 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -2359200, 14, 0, -1245086, 57, 0 )
+
+[node name="Path2D" type="Path2D" parent="SkyIsland/Middle_world_objects/Moving_platforms/MovingPlatform9" index="1"]
+curve = SubResource( 98 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="SkyIsland/Middle_world_objects/Moving_platforms/MovingPlatform9/Path2D" index="0"]
+position = Vector2( 104, 8.09983 )
+rotation = 3.14159
+offset = 8.0989
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="SkyIsland/Middle_world_objects/Moving_platforms/MovingPlatform9/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SkyIsland/Middle_world_objects/Moving_platforms/MovingPlatform9" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 99 )
+anims/RESET = SubResource( 100 )
+
+[node name="MovingPlatform10" type="Node2D" parent="SkyIsland/Middle_world_objects/Moving_platforms" index="2"]
+position = Vector2( -39, -1997 )
+script = ExtResource( 8 )
+
+[node name="Platform" type="KinematicBody2D" parent="SkyIsland/Middle_world_objects/Moving_platforms/MovingPlatform10" index="0"]
+position = Vector2( 104, 6.59973 )
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="SkyIsland/Middle_world_objects/Moving_platforms/MovingPlatform10/Platform" index="0" instance=ExtResource( 14 )]
+position = Vector2( -0.255653, 0 )
+
+[node name="Sprite" type="Sprite" parent="SkyIsland/Middle_world_objects/Moving_platforms/MovingPlatform10/Platform" index="1"]
+texture = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SkyIsland/Middle_world_objects/Moving_platforms/MovingPlatform10/Platform" index="2"]
+shape = SubResource( 48 )
+one_way_collision = true
+
+[node name="TileMap" type="TileMap" parent="SkyIsland/Middle_world_objects/Moving_platforms/MovingPlatform10/Platform" index="3"]
+position = Vector2( -104, 12 )
+tile_set = ExtResource( 13 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -2359200, 23, 0, -262049, 72, 0 )
+
+[node name="Path2D" type="Path2D" parent="SkyIsland/Middle_world_objects/Moving_platforms/MovingPlatform10" index="1"]
+curve = SubResource( 101 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="SkyIsland/Middle_world_objects/Moving_platforms/MovingPlatform10/Path2D" index="0"]
+position = Vector2( 104, 6.59979 )
+rotation = 3.14159
+offset = 6.59939
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="SkyIsland/Middle_world_objects/Moving_platforms/MovingPlatform10/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SkyIsland/Middle_world_objects/Moving_platforms/MovingPlatform10" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 102 )
+anims/RESET = SubResource( 103 )
+
+[node name="Me" type="Node2D" parent="SkyIsland/Middle_world_objects" index="4"]
+position = Vector2( 0, -2127 )
+
+[node name="Sprite" type="Sprite" parent="SkyIsland/Middle_world_objects/Me" index="0"]
+texture = ExtResource( 9 )
+hframes = 2
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SkyIsland/Middle_world_objects/Me" index="1"]
+autoplay = "Idle"
+anims/Idle = SubResource( 104 )
+anims/RESET = SubResource( 105 )
+
+[node name="InteractionEmitterObject" parent="SkyIsland/Middle_world_objects/Me" index="2" instance=ExtResource( 21 )]
+position = Vector2( 1, 15 )
+labelText = "Поцеловать"
+
+[node name="CollisionShape2D" parent="SkyIsland/Middle_world_objects/Me/InteractionEmitterObject/InteractionController/Area2D" index="0"]
+shape = SubResource( 107 )
+
+[node name="LoveParticles" type="Particles2D" parent="SkyIsland/Middle_world_objects" index="5"]
+position = Vector2( 7, -2120 )
+emitting = false
+amount = 100
+lifetime = 5.0
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource( 216 )
+texture = ExtResource( 33 )
+
+[node name="WeSprite" type="Sprite" parent="SkyIsland/Middle_world_objects" index="6"]
+visible = false
+position = Vector2( 4, -2127 )
+texture = ExtResource( 28 )
+hframes = 36
+
+[node name="IndependantDialogController" parent="SkyIsland/Middle_world_objects" index="7" instance=ExtResource( 29 )]
+position = Vector2( 1, -2145 )
+dialog_id = "my_final_dialog"
+
+[node name="Background_world_objects" type="Node2D" parent="SkyIsland" index="4"]
+
+[node name="GodLights" type="ColorRect" parent="SkyIsland/Background_world_objects" index="0"]
+material = SubResource( 86 )
+margin_left = 185.0
+margin_top = -2727.0
+margin_right = 475.0
+margin_bottom = -2068.0
+rect_scale = Vector2( -1, 1 )
+mouse_filter = 2
+
+[node name="VisibilityChecker" parent="SkyIsland/Background_world_objects/GodLights" index="0" instance=ExtResource( 14 )]
+visible = false
+position = Vector2( 155.5, 360.5 )
+scale = Vector2( 20.55, 37.05 )
+
+[node name="Collisions" type="Node2D" parent="SkyIsland" index="5"]
+visible = false
+
+[node name="Pass_through" type="Node2D" parent="SkyIsland/Collisions" index="0"]
+
+[node name="PassThroughBody7" parent="SkyIsland/Collisions/Pass_through" index="0" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 15, -1849 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody7" index="0"]
+position = Vector2( -6.0625, 1 )
+shape = SubResource( 76 )
+one_way_collision = true
+
+[node name="PassThroughBody9" parent="SkyIsland/Collisions/Pass_through" index="1" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 47, -1881 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody9" index="0"]
+position = Vector2( -46.0625, 1 )
+shape = SubResource( 77 )
+one_way_collision = true
+
+[node name="PassThroughBody10" parent="SkyIsland/Collisions/Pass_through" index="2" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 31, -1897 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody10" index="0"]
+position = Vector2( -46.0625, 1 )
+shape = SubResource( 77 )
+one_way_collision = true
+
+[node name="PassThroughBody11" parent="SkyIsland/Collisions/Pass_through" index="3" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 47, -1913 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody11" index="0"]
+position = Vector2( -46.0625, 1 )
+shape = SubResource( 77 )
+one_way_collision = true
+
+[node name="PassThroughBody12" parent="SkyIsland/Collisions/Pass_through" index="4" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 79, -1945 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody12" index="0"]
+position = Vector2( -46.0625, 1 )
+shape = SubResource( 77 )
+one_way_collision = true
+
+[node name="PassThroughBody13" parent="SkyIsland/Collisions/Pass_through" index="5" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 63, -1961 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody13" index="0"]
+position = Vector2( -46.0625, 1 )
+shape = SubResource( 77 )
+one_way_collision = true
+
+[node name="PassThroughBody14" parent="SkyIsland/Collisions/Pass_through" index="6" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 47, -1977 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody14" index="0"]
+position = Vector2( -46.0625, 1 )
+shape = SubResource( 77 )
+one_way_collision = true
+
+[node name="PassThroughBody15" parent="SkyIsland/Collisions/Pass_through" index="7" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 47, -2009 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody15" index="0"]
+position = Vector2( -46.0625, 1 )
+shape = SubResource( 77 )
+one_way_collision = true
+
+[node name="PassThroughBody16" parent="SkyIsland/Collisions/Pass_through" index="8" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 79, -2041 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody16" index="0"]
+position = Vector2( -46.0625, 1 )
+shape = SubResource( 77 )
+one_way_collision = true
+
+[node name="PassThroughBody17" parent="SkyIsland/Collisions/Pass_through" index="9" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 63, -2057 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody17" index="0"]
+position = Vector2( -46.0625, 1 )
+shape = SubResource( 77 )
+one_way_collision = true
+
+[node name="PassThroughBody18" parent="SkyIsland/Collisions/Pass_through" index="10" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 47, -2073 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody18" index="0"]
+position = Vector2( -46.0625, 1 )
+shape = SubResource( 77 )
+one_way_collision = true
+
+[node name="PassThroughBody19" parent="SkyIsland/Collisions/Pass_through" index="11" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 63, -2025 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody19" index="0"]
+position = Vector2( -54.0625, 1 )
+shape = SubResource( 78 )
+one_way_collision = true
+
+[node name="PassThroughBody20" parent="SkyIsland/Collisions/Pass_through" index="12" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 31, -1993 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody20" index="0"]
+position = Vector2( -62.0625, 1 )
+shape = SubResource( 79 )
+one_way_collision = true
+
+[node name="PassThroughBody21" parent="SkyIsland/Collisions/Pass_through" index="13" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 63, -1993 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody21" index="0"]
+position = Vector2( -62.0625, 1 )
+shape = SubResource( 79 )
+one_way_collision = true
+
+[node name="PassThroughBody22" parent="SkyIsland/Collisions/Pass_through" index="14" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 63, -1929 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody22" index="0"]
+position = Vector2( -62.0625, 1 )
+shape = SubResource( 79 )
+one_way_collision = true
+
+[node name="PassThroughBody23" parent="SkyIsland/Collisions/Pass_through" index="15" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 95, -1929 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody23" index="0"]
+position = Vector2( -62.0625, 1 )
+shape = SubResource( 79 )
+one_way_collision = true
+
+[node name="PassThroughBody24" parent="SkyIsland/Collisions/Pass_through" index="16" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 31, -2041 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody24" index="0"]
+position = Vector2( -62.0625, 1 )
+shape = SubResource( 79 )
+one_way_collision = true
+
+[node name="PassThroughBody25" parent="SkyIsland/Collisions/Pass_through" index="17" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 175, -2073 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody25" index="0"]
+position = Vector2( -62.0625, 1 )
+shape = SubResource( 79 )
+one_way_collision = true
+
+[node name="PassThroughBody26" parent="SkyIsland/Collisions/Pass_through" index="18" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 239, -2073 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody26" index="0"]
+position = Vector2( -62.0625, 1 )
+shape = SubResource( 79 )
+one_way_collision = true
+
+[node name="PassThroughBody27" parent="SkyIsland/Collisions/Pass_through" index="19" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 143, -2057 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody27" index="0"]
+position = Vector2( -54.0625, 1 )
+shape = SubResource( 80 )
+one_way_collision = true
+
+[node name="PassThroughBody28" parent="SkyIsland/Collisions/Pass_through" index="20" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( -33, -2057 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody28" index="0"]
+position = Vector2( -54.0625, 1 )
+shape = SubResource( 80 )
+one_way_collision = true
+
+[node name="PassThroughBody29" parent="SkyIsland/Collisions/Pass_through" index="21" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( -97, -2073 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody29" index="0"]
+position = Vector2( -62.0625, 1 )
+shape = SubResource( 81 )
+one_way_collision = true
+
+[node name="PassThroughBody30" parent="SkyIsland/Collisions/Pass_through" index="22" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( -65, -2073 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody30" index="0"]
+position = Vector2( -62.0625, 1 )
+shape = SubResource( 81 )
+one_way_collision = true
+
+[node name="PassThroughBody31" parent="SkyIsland/Collisions/Pass_through" index="23" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( -1, -2073 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody31" index="0"]
+position = Vector2( -62.0625, 1 )
+shape = SubResource( 81 )
+one_way_collision = true
+
+[node name="PassThroughBody32" parent="SkyIsland/Collisions/Pass_through" index="24" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( -81, -2089 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody32" index="0"]
+position = Vector2( 89.9375, 1 )
+shape = SubResource( 82 )
+one_way_collision = true
+
+[node name="PassThroughBody33" parent="SkyIsland/Collisions/Pass_through" index="25" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( -145, -2105 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody33" index="0"]
+position = Vector2( 154, 1 )
+shape = SubResource( 83 )
+one_way_collision = true
+
+[node name="PassThroughBody8" parent="SkyIsland/Collisions/Pass_through" index="26" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 47, -1865 )
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Pass_through/PassThroughBody8" index="0"]
+position = Vector2( -38.0625, 1 )
+shape = SubResource( 84 )
+one_way_collision = true
+
+[node name="Solid" type="Node2D" parent="SkyIsland/Collisions" index="1"]
+
+[node name="PassThroughBody" parent="SkyIsland/Collisions/Solid" index="0" instance=ExtResource( 3 )]
+position = Vector2( 171, -1832 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Solid/PassThroughBody" index="0"]
+position = Vector2( -106, 0 )
+shape = SubResource( 85 )
+
+[node name="PassThroughBody2" parent="SkyIsland/Collisions/Solid" index="1" instance=ExtResource( 3 )]
+position = Vector2( 59, -1832 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="SkyIsland/Collisions/Solid/PassThroughBody2" index="0"]
+position = Vector2( -106, 0 )
+shape = SubResource( 85 )
+
+[node name="PlatformApproachDetector" parent="." index="8" instance=ExtResource( 17 )]
+
+[node name="Tower" type="Node2D" parent="." index="9"]
+
+[node name="VisibilityChecker" parent="Tower" index="0" instance=ExtResource( 14 )]
+visible = false
+position = Vector2( 248.5, -341 )
+scale = Vector2( 128.25, 90.9 )
+
+[node name="Clouds" parent="Tower" index="1" instance=ExtResource( 10 )]
+pause_mode = 2
+position = Vector2( 9, -330 )
+
+[node name="Particles2D" parent="Tower/Clouds" index="0"]
+position = Vector2( 13, 339 )
+amount = 100
+process_material = SubResource( 22 )
+
+[node name="Foreground_world_objects" type="Node2D" parent="Tower" index="2"]
+
+[node name="Middle_world_objects" type="Node2D" parent="Tower" index="3"]
+
+[node name="TowerTopBackgroundSprite" type="Sprite" parent="Tower/Middle_world_objects" index="0"]
+position = Vector2( -319, -1191 )
+texture = ExtResource( 16 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TowerTopSprite" type="Sprite" parent="Tower/Middle_world_objects" index="1"]
+position = Vector2( -319, -1192 )
+z_index = 2
+texture = ExtResource( 19 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TowerBottomSprite" type="Sprite" parent="Tower/Middle_world_objects" index="2"]
+position = Vector2( -319, -1192 )
+z_index = 1
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Decorations" type="TileMap" parent="Tower/Middle_world_objects" index="3"]
+z_index = 2
+tile_set = ExtResource( 13 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -70189111, 19, 0, -70254535, 28, 0, -66584632, 113, 0, -65863732, 111, 0, -63307718, 536871024, 0, -60751878, 23, 0, -60817350, 23, 0, -51314743, 20, 0, -51380214, 14, 0, -49151941, 536871023, 0, -42532920, 536870988, 0, -41877559, 110, 0, -41943032, 12, 0, -41942983, 108, 0, -39452726, 113, 0, -32440375, 22, 0, -32505848, 27, 0, -32505799, 23, 0, -32309220, 536870989, 0, -30408653, 536871024, 0, -25100328, 23, 0, -25100313, 15, 0, -25165795, 22, 0, -25165780, 14, 0, -25100278, 57, 0, -24051752, 59, 0, -24117192, 58, 0, -23461805, 75, 0, -23068724, 111, 0, -23134153, 536871025, 0, -21954642, 21, 0, -21954605, 22, 0, -21954589, 29, 0, -22020048, 24, 0, -22020033, 31, 0, -22020018, 23, 0, -20906071, 57, 0, -20971510, 60, 0, -20971445, 58, 0, -19857494, 29, 0, -19922936, 59, 0, -19791929, 60, 0, -19857352, 58, 0, -18808916, 536870940, 0, -18415729, 536870987, 0, -17760353, 536870934, 0, -17825731, 536870932, 0, -17825711, 59, 0, -17825690, 31, 0, -17694797, 58, 0, -16711741, 536870932, 0, -16777119, 536870934, 0, -15663230, 536870934, 0, -15663190, 536870922, 0, -15663153, 29, 0, -15663132, 536870936, 0, -15728606, 536870933, 0, -15728584, 29, 0, -15728568, 536870935, 0, -15728553, 60, 0, -15728526, 536870939, 0, -14614640, 59, 0, -14614605, 60, 0, -14614538, 57, 0, -14680044, 60, 0, -14614428, 57, 0, -13762672, 57, 0, -13696888, 536871024, 0, -13566085, 111, 0, -13303854, 112, 0, -12517480, 113, 0, -12451750, 536871025, 0, -11075618, 111, 0, -10878929, 536871023, 0 )
+
+[node name="Fountains" type="TileMap" parent="Tower/Middle_world_objects" index="4"]
+tile_set = ExtResource( 7 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -30015493, 9, 0, -28311557, 8, 0, -26738693, 7, 0, -26148935, 536870916, 0, -26214343, 4, 0, -23003206, 536870918, 0, -23068615, 5, 0, -20906047, 536870922, 0, -13631431, 0, 0, -12517463, 9, 0, -11534279, 1, 0, -10813527, 8, 0, -9371691, 1, 0, -9437148, 11, 0, -9437127, 1, 0, -9175127, 8, 0, -8388572, 11, 0, -7602263, 8, 0, -7274539, 1, 0, -7339996, 11, 0, -7339975, 1, 0, -6291420, 11, 0, -5963863, 8, 0, -5177387, 1, 0, -5242844, 11, 0, -5242823, 1, 0, -4325463, 8, 0, -4194268, 11, 0, -3080235, 1, 0, -3145692, 11, 0, -3145671, 1, 0, -2752599, 8, 0, -2097116, 11, 0, -1114199, 8, 0, -983083, 1, 0, -1048540, 11, 0, -1048519, 1, 0, 36, 11, 0, 393129, 8, 0, 1114069, 1, 0, 1048612, 11, 0, 1048633, 1, 0, 1965993, 8, 0, 2097188, 11, 0, 3080228, 11, 0, 3211221, 1, 0, 3145785, 1, 0, 3538857, 8, 0, 4128804, 11, 0, 5111844, 11, 0 )
+
+[node name="PedestalsLevelDoor" parent="Tower/Middle_world_objects" index="5" instance=ExtResource( 2 )]
+position = Vector2( 8, -224 )
+z_index = 1
+nextScenePath = "res://Project/Levels/Pedestal_hall/PedestalHall.tscn"
+nextDoorName = "FinalLevelDoor"
+
+[node name="GatesBackground" parent="Tower/Middle_world_objects/PedestalsLevelDoor" index="1"]
+material = SubResource( 15 )
+margin_left = -16.0
+margin_top = -64.0
+margin_right = 17.0
+
+[node name="InteractionController" parent="Tower/Middle_world_objects/PedestalsLevelDoor" index="2"]
+visible = false
+
+[node name="CollisionShape2D" parent="Tower/Middle_world_objects/PedestalsLevelDoor/InteractionController/Area2D" index="0"]
+position = Vector2( 0, -25.5 )
+shape = SubResource( 16 )
+
+[node name="Moving_platforms" type="Node2D" parent="Tower/Middle_world_objects" index="6"]
+
+[node name="MovingPlatform" type="Node2D" parent="Tower/Middle_world_objects/Moving_platforms" index="0"]
+position = Vector2( -71, -192 )
+script = ExtResource( 8 )
+
+[node name="Platform" type="KinematicBody2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform" index="0"]
+position = Vector2( 104, 0 )
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform/Platform" index="0" instance=ExtResource( 14 )]
+position = Vector2( -0.255653, 0 )
+
+[node name="Sprite" type="Sprite" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform/Platform" index="1"]
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform/Platform" index="2"]
+shape = SubResource( 48 )
+one_way_collision = true
+
+[node name="TileMap" type="TileMap" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform/Platform" index="3"]
+position = Vector2( -104, 12 )
+tile_set = ExtResource( 13 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -2359200, 536870941, 0 )
+
+[node name="Path2D" type="Path2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform" index="1"]
+curve = SubResource( 52 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform/Path2D" index="0"]
+position = Vector2( 104, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 50 )
+anims/RESET = SubResource( 51 )
+
+[node name="MovingPlatform2" type="Node2D" parent="Tower/Middle_world_objects/Moving_platforms" index="1"]
+position = Vector2( -174, -437 )
+script = ExtResource( 8 )
+
+[node name="Platform" type="KinematicBody2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform2" index="0"]
+position = Vector2( 104, 19 )
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform2/Platform" index="0" instance=ExtResource( 14 )]
+position = Vector2( -0.255653, 0 )
+
+[node name="Sprite" type="Sprite" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform2/Platform" index="1"]
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform2/Platform" index="2"]
+shape = SubResource( 48 )
+disabled = true
+one_way_collision = true
+
+[node name="TileMap" type="TileMap" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform2/Platform" index="3"]
+position = Vector2( -104, 12 )
+tile_set = ExtResource( 13 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -2359200, 536870938, 0 )
+
+[node name="Path2D" type="Path2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform2" index="1"]
+curve = SubResource( 67 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform2/Path2D" index="0"]
+position = Vector2( 104, 19 )
+rotation = 3.14159
+offset = 31.0077
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform2/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform2" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 53 )
+anims/RESET = SubResource( 54 )
+
+[node name="MovingPlatform3" type="Node2D" parent="Tower/Middle_world_objects/Moving_platforms" index="2"]
+position = Vector2( 14, -401 )
+script = ExtResource( 8 )
+
+[node name="Platform" type="KinematicBody2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform3" index="0"]
+position = Vector2( 104, 9.50168 )
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform3/Platform" index="0" instance=ExtResource( 14 )]
+position = Vector2( -0.255653, 0 )
+
+[node name="Sprite" type="Sprite" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform3/Platform" index="1"]
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform3/Platform" index="2"]
+shape = SubResource( 48 )
+disabled = true
+one_way_collision = true
+
+[node name="TileMap" type="TileMap" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform3/Platform" index="3"]
+position = Vector2( -104, 0 )
+tile_set = ExtResource( 13 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -1572768, 536870943, 0 )
+
+[node name="Path2D" type="Path2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform3" index="1"]
+curve = SubResource( 52 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform3/Path2D" index="0"]
+position = Vector2( 104, 9.50166 )
+rotation = 3.14159
+offset = 9.49962
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform3/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform3" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 55 )
+anims/RESET = SubResource( 56 )
+
+[node name="MovingPlatform4" type="Node2D" parent="Tower/Middle_world_objects/Moving_platforms" index="3"]
+position = Vector2( -25, -548 )
+script = ExtResource( 8 )
+
+[node name="Platform" type="KinematicBody2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform4" index="0"]
+position = Vector2( 104, 14.0009 )
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform4/Platform" index="0" instance=ExtResource( 14 )]
+position = Vector2( -0.255653, 0 )
+
+[node name="Sprite" type="Sprite" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform4/Platform" index="1"]
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform4/Platform" index="2"]
+shape = SubResource( 48 )
+disabled = true
+one_way_collision = true
+
+[node name="TileMap" type="TileMap" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform4/Platform" index="3"]
+position = Vector2( -104, 12 )
+tile_set = ExtResource( 13 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -2359200, 536870934, 0 )
+
+[node name="Path2D" type="Path2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform4" index="1"]
+curve = SubResource( 68 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform4/Path2D" index="0"]
+position = Vector2( 104, 14.0008 )
+rotation = 3.14159
+offset = 14.0007
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform4/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform4" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 57 )
+anims/RESET = SubResource( 58 )
+
+[node name="MovingPlatform5" type="Node2D" parent="Tower/Middle_world_objects/Moving_platforms" index="4"]
+position = Vector2( -63, -705 )
+script = ExtResource( 8 )
+
+[node name="Platform" type="KinematicBody2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform5" index="0"]
+position = Vector2( 104, 0 )
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform5/Platform" index="0" instance=ExtResource( 14 )]
+position = Vector2( -0.255653, 0 )
+
+[node name="Sprite" type="Sprite" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform5/Platform" index="1"]
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform5/Platform" index="2"]
+shape = SubResource( 48 )
+one_way_collision = true
+
+[node name="TileMap" type="TileMap" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform5/Platform" index="3"]
+position = Vector2( -104, 12 )
+tile_set = ExtResource( 13 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -2359199, 536871016, 0, -1310625, 536870972, 0 )
+
+[node name="Path2D" type="Path2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform5" index="1"]
+curve = SubResource( 52 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform5/Path2D" index="0"]
+position = Vector2( 104, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform5/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform5" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 59 )
+anims/RESET = SubResource( 60 )
+
+[node name="MovingPlatform6" type="Node2D" parent="Tower/Middle_world_objects/Moving_platforms" index="5"]
+position = Vector2( -144, -833 )
+script = ExtResource( 8 )
+
+[node name="Platform" type="KinematicBody2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform6" index="0"]
+position = Vector2( 104, 8.20343 )
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform6/Platform" index="0" instance=ExtResource( 14 )]
+position = Vector2( -0.255653, 0 )
+
+[node name="Sprite" type="Sprite" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform6/Platform" index="1"]
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform6/Platform" index="2"]
+shape = SubResource( 48 )
+disabled = true
+one_way_collision = true
+
+[node name="TileMap" type="TileMap" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform6/Platform" index="3"]
+position = Vector2( -104, 12 )
+tile_set = ExtResource( 13 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -2359200, 536870926, 0 )
+
+[node name="Path2D" type="Path2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform6" index="1"]
+curve = SubResource( 69 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform6/Path2D" index="0"]
+position = Vector2( 104, 8.20345 )
+rotation = 3.14159
+offset = 25.2003
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform6/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform6" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 61 )
+anims/RESET = SubResource( 62 )
+
+[node name="MovingPlatform7" type="Node2D" parent="Tower/Middle_world_objects/Moving_platforms" index="6"]
+position = Vector2( -40, -1008 )
+script = ExtResource( 8 )
+
+[node name="Platform" type="KinematicBody2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform7" index="0"]
+position = Vector2( 104, 0 )
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform7/Platform" index="0" instance=ExtResource( 14 )]
+position = Vector2( -0.255653, 0 )
+
+[node name="Sprite" type="Sprite" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform7/Platform" index="1"]
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform7/Platform" index="2"]
+shape = SubResource( 48 )
+disabled = true
+one_way_collision = true
+
+[node name="TileMap" type="TileMap" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform7/Platform" index="3"]
+position = Vector2( -104, 12 )
+tile_set = ExtResource( 13 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -2359200, 536870936, 0 )
+
+[node name="Path2D" type="Path2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform7" index="1"]
+curve = SubResource( 70 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform7/Path2D" index="0"]
+position = Vector2( 104, 0 )
+rotation = 3.14159
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform7/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform7" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 63 )
+anims/RESET = SubResource( 64 )
+
+[node name="MovingPlatform8" type="Node2D" parent="Tower/Middle_world_objects/Moving_platforms" index="7"]
+position = Vector2( -39, -1207 )
+script = ExtResource( 8 )
+
+[node name="Platform" type="KinematicBody2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform8" index="0"]
+position = Vector2( 104, 5.69946 )
+collision_layer = 3
+motion/sync_to_physics = true
+
+[node name="VisibilityChecker" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform8/Platform" index="0" instance=ExtResource( 14 )]
+position = Vector2( -0.255653, 0 )
+
+[node name="Sprite" type="Sprite" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform8/Platform" index="1"]
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform8/Platform" index="2"]
+shape = SubResource( 48 )
+disabled = true
+one_way_collision = true
+
+[node name="TileMap" type="TileMap" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform8/Platform" index="3"]
+position = Vector2( -104, 12 )
+tile_set = ExtResource( 13 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -2359200, 536870943, 0 )
+
+[node name="Path2D" type="Path2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform8" index="1"]
+curve = SubResource( 52 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform8/Path2D" index="0"]
+position = Vector2( 104, 5.69949 )
+rotation = 3.14159
+offset = 5.69977
+rotate = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform8/Path2D/PathFollow2D" index="0"]
+rotation = -3.14159
+remote_path = NodePath("../../../Platform")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform8" index="2"]
+autoplay = "Loop"
+playback_process_mode = 0
+anims/Loop = SubResource( 65 )
+anims/RESET = SubResource( 66 )
+
+[node name="Background_world_objects" type="Node2D" parent="Tower" index="4"]
+
+[node name="Collisions" type="Node2D" parent="Tower" index="5"]
+visible = false
+
+[node name="PassTrough" type="Node2D" parent="Tower/Collisions" index="0"]
+
+[node name="PassThroughBody7" parent="Tower/Collisions/PassTrough" index="0" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( -49, -233 )
+
+[node name="CollisionShape2D" parent="Tower/Collisions/PassTrough/PassThroughBody7" index="0"]
+position = Vector2( -22.0625, 1 )
+shape = SubResource( 12 )
+one_way_collision = true
+
+[node name="PassThroughBody8" parent="Tower/Collisions/PassTrough" index="1" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 111, -233 )
+
+[node name="CollisionShape2D" parent="Tower/Collisions/PassTrough/PassThroughBody8" index="0"]
+position = Vector2( -22.0625, 1 )
+shape = SubResource( 12 )
+one_way_collision = true
+
+[node name="PassThroughBody9" parent="Tower/Collisions/PassTrough" index="2" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 127, -249 )
+
+[node name="CollisionShape2D" parent="Tower/Collisions/PassTrough/PassThroughBody9" index="0"]
+position = Vector2( -38.0625, 1 )
+shape = SubResource( 13 )
+one_way_collision = true
+
+[node name="PassThroughBody10" parent="Tower/Collisions/PassTrough" index="3" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( -33, -249 )
+
+[node name="CollisionShape2D" parent="Tower/Collisions/PassTrough/PassThroughBody10" index="0"]
+position = Vector2( -38.0625, 1 )
+shape = SubResource( 13 )
+one_way_collision = true
+
+[node name="PassThroughBody11" parent="Tower/Collisions/PassTrough" index="4" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( -17, -265 )
+
+[node name="CollisionShape2D" parent="Tower/Collisions/PassTrough/PassThroughBody11" index="0"]
+position = Vector2( -54.0625, 1 )
+shape = SubResource( 14 )
+one_way_collision = true
+
+[node name="PassThroughBody12" parent="Tower/Collisions/PassTrough" index="5" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 143, -265 )
+
+[node name="CollisionShape2D" parent="Tower/Collisions/PassTrough/PassThroughBody12" index="0"]
+position = Vector2( -54.0625, 1 )
+shape = SubResource( 14 )
+one_way_collision = true
+
+[node name="PassThroughBody13" parent="Tower/Collisions/PassTrough" index="6" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 143, -281 )
+
+[node name="CollisionShape2D" parent="Tower/Collisions/PassTrough/PassThroughBody13" index="0"]
+position = Vector2( -54.0625, 1 )
+shape = SubResource( 14 )
+one_way_collision = true
+
+[node name="PassThroughBody14" parent="Tower/Collisions/PassTrough" index="7" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( -17, -281 )
+
+[node name="CollisionShape2D" parent="Tower/Collisions/PassTrough/PassThroughBody14" index="0"]
+position = Vector2( -54.0625, 1 )
+shape = SubResource( 14 )
+one_way_collision = true
+
+[node name="PassThroughBody15" parent="Tower/Collisions/PassTrough" index="8" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( -1, -297 )
+
+[node name="CollisionShape2D" parent="Tower/Collisions/PassTrough/PassThroughBody15" index="0"]
+position = Vector2( -54.0625, 1 )
+shape = SubResource( 14 )
+one_way_collision = true
+
+[node name="PassThroughBody16" parent="Tower/Collisions/PassTrough" index="9" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 127, -297 )
+
+[node name="CollisionShape2D" parent="Tower/Collisions/PassTrough/PassThroughBody16" index="0"]
+position = Vector2( -54.0625, 1 )
+shape = SubResource( 14 )
+one_way_collision = true
+
+[node name="PassThroughBody17" parent="Tower/Collisions/PassTrough" index="10" groups=["passThroughObject"] instance=ExtResource( 3 )]
+position = Vector2( 143, -313 )
+
+[node name="CollisionShape2D" parent="Tower/Collisions/PassTrough/PassThroughBody17" index="0"]
+position = Vector2( -134, 1 )
+shape = SubResource( 10 )
+one_way_collision = true
+
+[node name="Solid" type="Node2D" parent="Tower/Collisions" index="1"]
+
+[node name="PassThroughBody" parent="Tower/Collisions/Solid" index="0" instance=ExtResource( 3 )]
+position = Vector2( -5, -216 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Tower/Collisions/Solid/PassThroughBody" index="0"]
+position = Vector2( 14, 0 )
+shape = SubResource( 5 )
+
+[node name="Lighting" type="Node2D" parent="Tower" index="6"]
+
+[node name="Light2D" type="Light2D" parent="Tower/Lighting" index="0"]
+position = Vector2( 36, -92 )
+scale = Vector2( 2.08505, 0.656576 )
+texture = ExtResource( 4 )
+color = Color( 1, 1, 1, 0.431373 )
+energy = 0.7
+mode = 2
+
+[node name="Player" parent="." index="10"]
+position = Vector2( 8, -231 )
+z_index = 3
+
+[node name="Light2D2" parent="Player" index="5"]
+visible = false
+color = Color( 0.113725, 0.407843, 0.968627, 1 )
+
+[node name="Hazard_area" type="Area2D" parent="." index="16"]
+visible = false
+position = Vector2( -1029, -243 )
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hazard_area" index="0"]
+position = Vector2( 1873.5, 319 )
+shape = SubResource( 23 )
+
+[editable path="SkyIsland/Middle_world_objects/Me/InteractionEmitterObject"]
+[editable path="SkyIsland/Middle_world_objects/Me/InteractionEmitterObject/InteractionController"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody7"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody9"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody10"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody11"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody12"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody13"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody14"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody15"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody16"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody17"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody18"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody19"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody20"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody21"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody22"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody23"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody24"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody25"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody26"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody27"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody28"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody29"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody30"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody31"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody32"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody33"]
+[editable path="SkyIsland/Collisions/Pass_through/PassThroughBody8"]
+[editable path="SkyIsland/Collisions/Solid/PassThroughBody"]
+[editable path="SkyIsland/Collisions/Solid/PassThroughBody2"]
+[editable path="Tower/Clouds"]
+[editable path="Tower/Middle_world_objects/PedestalsLevelDoor"]
+[editable path="Tower/Middle_world_objects/PedestalsLevelDoor/InteractionController"]
+[editable path="Tower/Collisions/PassTrough/PassThroughBody7"]
+[editable path="Tower/Collisions/PassTrough/PassThroughBody8"]
+[editable path="Tower/Collisions/PassTrough/PassThroughBody9"]
+[editable path="Tower/Collisions/PassTrough/PassThroughBody10"]
+[editable path="Tower/Collisions/PassTrough/PassThroughBody11"]
+[editable path="Tower/Collisions/PassTrough/PassThroughBody12"]
+[editable path="Tower/Collisions/PassTrough/PassThroughBody13"]
+[editable path="Tower/Collisions/PassTrough/PassThroughBody14"]
+[editable path="Tower/Collisions/PassTrough/PassThroughBody15"]
+[editable path="Tower/Collisions/PassTrough/PassThroughBody16"]
+[editable path="Tower/Collisions/PassTrough/PassThroughBody17"]
+[editable path="Tower/Collisions/Solid/PassThroughBody"]

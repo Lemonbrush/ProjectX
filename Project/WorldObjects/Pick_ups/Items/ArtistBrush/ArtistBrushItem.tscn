@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Project/WorldObjects/Pick_ups/Pickup_container/Pickup_container.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Project/WorldObjects/Pick_ups/Items/ArtistBrush/View/ArtistBrushView.tscn" type="PackedScene" id=2]
+
+[node name="ArtistBrushItem" instance=ExtResource( 1 )]
+itemScene = ExtResource( 2 )
+toggleGameConstant = "is_artist_brush_picked_up"
+use_player_pick_up_scale_animation = false

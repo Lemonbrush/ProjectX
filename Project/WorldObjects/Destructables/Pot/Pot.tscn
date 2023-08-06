@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/SharedWorldObjects/Destructibles/Pot/Pot_still.png" type="Texture" id=1]
+[ext_resource path="res://Project/WorldObjects/Destructables/CrushableObject/CrushableObject.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Project/WorldObjects/Destructables/Pot/Pot_crush/Pot_crush.tscn" type="PackedScene" id=3]
+
+[node name="Pot" instance=ExtResource( 2 )]
+collision_layer = 3
+collision_mask = 3
+crashAnimationScene = ExtResource( 3 )
+
+[node name="Sprite" parent="." index="4"]
+texture = ExtResource( 1 )
+hframes = 1
+vframes = 1
