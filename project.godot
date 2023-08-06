@@ -72,7 +72,7 @@ _global_script_classes=[ {
 "base": "State",
 "class": "PlayerState",
 "language": "GDScript",
-"path": "res://Project/Utils/StateMachine/PlayerState.gd"
+"path": "res://Project/Characters/Player/StateMachine/PlayerState.gd"
 }, {
 "base": "Resource",
 "class": "Save_file_resource",
@@ -87,12 +87,12 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "State",
 "language": "GDScript",
-"path": "res://Project/Utils/StateMachine/State.gd"
+"path": "res://Project/Characters/Player/StateMachine/State.gd"
 }, {
 "base": "Node",
 "class": "StateMachine",
 "language": "GDScript",
-"path": "res://Project/Utils/StateMachine/StateMachine.gd"
+"path": "res://Project/Characters/Player/StateMachine/StateMachine.gd"
 }, {
 "base": "NpcAction",
 "class": "TalkNpcAction",
