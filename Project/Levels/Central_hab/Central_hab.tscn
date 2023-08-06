@@ -2589,7 +2589,6 @@ amount = 500
 process_material = SubResource( 246 )
 
 [node name="Collisions" type="Node2D" parent="."]
-visible = false
 position = Vector2( 3, 62 )
 __meta__ = {
 "_edit_lock_": true
@@ -3254,7 +3253,7 @@ position = Vector2( 0, -18 )
 shape = SubResource( 215 )
 
 [node name="Ladder2" parent="Collisions/Ladders" instance=ExtResource( 12 )]
-position = Vector2( -877, 230 )
+position = Vector2( -879, 230 )
 
 [node name="CollisionShape2D" parent="Collisions/Ladders/Ladder2" index="0"]
 position = Vector2( 0, -1 )

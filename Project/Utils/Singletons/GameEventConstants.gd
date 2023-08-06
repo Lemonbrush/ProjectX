@@ -70,7 +70,8 @@ func set_default_constants():
 		old_lower_said_hello = false,
 		player_knows_about_the_first_kiss_ghost = false,
 		picked_up_empty_jur = false,
-		did_show_empty_jur = false
+		did_show_empty_jur = false,
+		did_harvest_heart_jur_cutscene_played = false
 	}
 
 func set_constant(constant_name, value):
