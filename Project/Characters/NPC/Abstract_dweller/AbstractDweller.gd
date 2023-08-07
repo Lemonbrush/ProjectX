@@ -111,7 +111,7 @@ func process_idle(delta, wait_time, is_infinite):
 	if is_state_new:
 		is_state_new = false
 		
-		if !is_infinite:
+		if !is_infinite && wait_time > 0:
 			waitTimer.wait_time = wait_time
 			waitTimer.start()
 	
