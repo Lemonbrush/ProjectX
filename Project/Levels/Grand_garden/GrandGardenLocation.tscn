@@ -1,4 +1,4 @@
-[gd_scene load_steps=455 format=2]
+[gd_scene load_steps=456 format=2]
 
 [ext_resource path="res://Assets/Levels/Grand_garden/Grand_garden.png" type="Texture" id=1]
 [ext_resource path="res://Project/WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Project/WorldObjects/Decorative/Tree/Dark_trees/Background_trees/DarkTreeBackground3.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Project/WorldObjects/Decorative/Tree/Dark_trees/Trees/DarkTree3.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Project/WorldObjects/Decorative/Tree/Dark_trees/Trees/DarkTree4.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Project/WorldObjects/Technical/ItemSpawner/ItemSpawner.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/Tilesets/Animanimated_tiles/WaterSurface/Water_surface/water_surface3.png" type="Texture" id=15]
 [ext_resource path="res://Project/Resources/Tilesets/AnimatedTextures/Water_surface/WaterAnim.tres" type="Texture" id=16]
 [ext_resource path="res://Project/WorldObjects/Technical/Ladder/Ladder.tscn" type="PackedScene" id=17]
@@ -651,51 +652,13 @@ tracks/31/keys = {
 "method": "scale_to_default_zoom_with_animation"
 } ]
 }
-tracks/32/type = "value"
-tracks/32/path = NodePath("World_objects/BlueButterflyItem:gravity_scale")
+tracks/32/type = "method"
+tracks/32/path = NodePath(".")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/imported = false
 tracks/32/enabled = true
 tracks/32/keys = {
-"times": PoolRealArray( 8.9 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 1.0 ]
-}
-tracks/33/type = "value"
-tracks/33/path = NodePath("World_objects/BlueButterflyItem:visible")
-tracks/33/interp = 1
-tracks/33/loop_wrap = true
-tracks/33/imported = false
-tracks/33/enabled = true
-tracks/33/keys = {
-"times": PoolRealArray( 0, 8.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/34/type = "method"
-tracks/34/path = NodePath("World_objects/BlueButterflyItem")
-tracks/34/interp = 1
-tracks/34/loop_wrap = true
-tracks/34/imported = false
-tracks/34/enabled = true
-tracks/34/keys = {
-"times": PoolRealArray( 8.3 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "play_show_animation"
-} ]
-}
-tracks/35/type = "method"
-tracks/35/path = NodePath(".")
-tracks/35/interp = 1
-tracks/35/loop_wrap = true
-tracks/35/imported = false
-tracks/35/enabled = true
-tracks/35/keys = {
 "times": PoolRealArray( 11 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -703,29 +666,43 @@ tracks/35/keys = {
 "method": "unpouse_level"
 } ]
 }
-tracks/36/type = "value"
-tracks/36/path = NodePath("Upper_background_objects/Great_flower_cutscene/Sofa:visible")
-tracks/36/interp = 1
-tracks/36/loop_wrap = true
-tracks/36/imported = false
-tracks/36/enabled = true
-tracks/36/keys = {
+tracks/33/type = "value"
+tracks/33/path = NodePath("Upper_background_objects/Great_flower_cutscene/Sofa:visible")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
 }
-tracks/37/type = "value"
-tracks/37/path = NodePath("Upper_background_objects/Great_flower_cutscene/YoungFlower:visible")
-tracks/37/interp = 1
-tracks/37/loop_wrap = true
-tracks/37/imported = false
-tracks/37/enabled = true
-tracks/37/keys = {
+tracks/34/type = "value"
+tracks/34/path = NodePath("Upper_background_objects/Great_flower_cutscene/YoungFlower:visible")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/35/type = "method"
+tracks/35/path = NodePath("World_objects/ItemSpawner")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/keys = {
+"times": PoolRealArray( 8.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "spawn_item"
+} ]
 }
 
 [sub_resource type="Animation" id=257]
@@ -1175,7 +1152,7 @@ tracks/36/keys = {
 "values": [ false ]
 }
 tracks/37/type = "value"
-tracks/37/path = NodePath("World_objects/BlueButterflyItem:gravity_scale")
+tracks/37/path = NodePath("Fountains/Inactive_fountains/Left_tower_activated_fountains:visible")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/imported = false
@@ -1184,10 +1161,10 @@ tracks/37/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ false ]
 }
 tracks/38/type = "value"
-tracks/38/path = NodePath("World_objects/BlueButterflyItem:visible")
+tracks/38/path = NodePath("Fountains/Inactive_fountains/Right_tower_activated_fountains:visible")
 tracks/38/interp = 1
 tracks/38/loop_wrap = true
 tracks/38/imported = false
@@ -1196,10 +1173,10 @@ tracks/38/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ true ]
 }
 tracks/39/type = "value"
-tracks/39/path = NodePath("Fountains/Inactive_fountains/Left_tower_activated_fountains:visible")
+tracks/39/path = NodePath("Upper_background_objects/Dwellers/White_flower_dweller:visible")
 tracks/39/interp = 1
 tracks/39/loop_wrap = true
 tracks/39/imported = false
@@ -1207,11 +1184,11 @@ tracks/39/enabled = true
 tracks/39/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
+"update": 1,
+"values": [ true ]
 }
 tracks/40/type = "value"
-tracks/40/path = NodePath("Fountains/Inactive_fountains/Right_tower_activated_fountains:visible")
+tracks/40/path = NodePath("Upper_background_objects/White_flower_growing:visible")
 tracks/40/interp = 1
 tracks/40/loop_wrap = true
 tracks/40/imported = false
@@ -1219,11 +1196,11 @@ tracks/40/enabled = true
 tracks/40/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ true ]
+"update": 1,
+"values": [ false ]
 }
 tracks/41/type = "value"
-tracks/41/path = NodePath("Upper_background_objects/Dwellers/White_flower_dweller:visible")
+tracks/41/path = NodePath("Upper_background_objects/Great_flower_cutscene/Sofa/Sprite:frame")
 tracks/41/interp = 1
 tracks/41/loop_wrap = true
 tracks/41/imported = false
@@ -1231,40 +1208,16 @@ tracks/41/enabled = true
 tracks/41/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"update": 0,
+"values": [ 0 ]
 }
 tracks/42/type = "value"
-tracks/42/path = NodePath("Upper_background_objects/White_flower_growing:visible")
+tracks/42/path = NodePath("Upper_background_objects/Great_flower_cutscene/Sofa:visible")
 tracks/42/interp = 1
 tracks/42/loop_wrap = true
 tracks/42/imported = false
 tracks/42/enabled = true
 tracks/42/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/43/type = "value"
-tracks/43/path = NodePath("Upper_background_objects/Great_flower_cutscene/Sofa/Sprite:frame")
-tracks/43/interp = 1
-tracks/43/loop_wrap = true
-tracks/43/imported = false
-tracks/43/enabled = true
-tracks/43/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
-tracks/44/type = "value"
-tracks/44/path = NodePath("Upper_background_objects/Great_flower_cutscene/Sofa:visible")
-tracks/44/interp = 1
-tracks/44/loop_wrap = true
-tracks/44/imported = false
-tracks/44/enabled = true
-tracks/44/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -3590,7 +3543,6 @@ texture = ExtResource( 19 )
 
 [node name="Camera2D" parent="." index="5"]
 position = Vector2( 207, 497 )
-zoom = Vector2( 0.7, 0.7 )
 backgroundColor = Color( 0.698039, 0.870588, 1, 1 )
 
 [node name="Background_world_objects" type="Node2D" parent="." index="6"]
@@ -3728,19 +3680,16 @@ nextDoorName = "GrandGardenDoor"
 pause_mode = 2
 position = Vector2( 150, -484 )
 
-[node name="Water_tower_1" parent="World_objects" index="0" instance=ExtResource( 27 )]
+[node name="ItemSpawner" parent="World_objects" index="0" instance=ExtResource( 14 )]
+position = Vector2( 44, -1197 )
+itemScene = ExtResource( 67 )
+
+[node name="Water_tower_1" parent="World_objects" index="1" instance=ExtResource( 27 )]
 position = Vector2( -810, 388 )
 
-[node name="Water_tower_2" parent="World_objects" index="1" instance=ExtResource( 27 )]
+[node name="Water_tower_2" parent="World_objects" index="2" instance=ExtResource( 27 )]
 position = Vector2( 713, 532 )
 water_tower_number = 1
-
-[node name="BlueButterflyItem" parent="World_objects" index="2" instance=ExtResource( 67 )]
-pause_mode = 2
-visible = false
-position = Vector2( 44, -1197 )
-z_index = 10
-gravity_scale = 0.0
 
 [node name="Pots" type="Node2D" parent="World_objects" index="3"]
 
