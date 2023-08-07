@@ -501,14 +501,7 @@ __meta__ = {
 
 [node name="Middle_world_decorations" type="Node2D" parent="." index="7"]
 
-[node name="Interaction_hints" type="Node2D" parent="Middle_world_decorations" index="0"]
-
-[node name="AbstractDialogInteractionObject" parent="Middle_world_decorations/Interaction_hints" index="0" instance=ExtResource( 16 )]
-position = Vector2( -142, 249 )
-dialogId = "creator_house_desk_dialog"
-label_text = "Осмотреть"
-
-[node name="Doors" type="Node2D" parent="Middle_world_decorations" index="1"]
+[node name="Doors" type="Node2D" parent="Middle_world_decorations" index="0"]
 
 [node name="CreatorHouseTopWindowDoor" parent="Middle_world_decorations/Doors" index="0" instance=ExtResource( 3 )]
 position = Vector2( 132, -228 )
@@ -634,14 +627,14 @@ shape = SubResource( 1 )
 [node name="InteractionPopup" parent="Middle_world_decorations/Doors/CreatorHouseFirstFloorDoorTwo" index="3"]
 position = Vector2( 1, -42 )
 
-[node name="fire" type="Particles2D" parent="Middle_world_decorations" index="2"]
+[node name="fire" type="Particles2D" parent="Middle_world_decorations" index="1"]
 position = Vector2( 159, -218 )
 amount = 3
 randomness = 1.0
 process_material = SubResource( 154 )
 texture = ExtResource( 10 )
 
-[node name="Lamp_fires" type="Node2D" parent="Middle_world_decorations" index="3"]
+[node name="Lamp_fires" type="Node2D" parent="Middle_world_decorations" index="2"]
 
 [node name="fire" type="Particles2D" parent="Middle_world_decorations/Lamp_fires" index="0"]
 position = Vector2( -223, 274 )
@@ -692,7 +685,7 @@ randomness = 1.0
 process_material = SubResource( 157 )
 texture = ExtResource( 10 )
 
-[node name="Destructables" type="Node2D" parent="Middle_world_decorations" index="4"]
+[node name="Destructables" type="Node2D" parent="Middle_world_decorations" index="3"]
 
 [node name="Crate" type="Node2D" parent="Middle_world_decorations/Destructables" index="0"]
 
@@ -714,7 +707,7 @@ position = Vector2( 125, -100 )
 [node name="Crate6" parent="Middle_world_decorations/Destructables/Crate" index="5" instance=ExtResource( 13 )]
 position = Vector2( 125, -116 )
 
-[node name="ArtistBrushItem" parent="Middle_world_decorations" index="5" instance=ExtResource( 18 )]
+[node name="ArtistBrushItem" parent="Middle_world_decorations" index="4" instance=ExtResource( 18 )]
 visible = false
 position = Vector2( -142, 201 )
 gravity_scale = 0.0
@@ -722,7 +715,7 @@ gravity_scale = 0.0
 [node name="CollisionShape2D" parent="Middle_world_decorations/ArtistBrushItem/PickupArea2D" index="0"]
 disabled = true
 
-[node name="Inspection_points" type="Node2D" parent="Middle_world_decorations" index="6"]
+[node name="Inspection_points" type="Node2D" parent="Middle_world_decorations" index="5"]
 
 [node name="Couch_sign" parent="Middle_world_decorations/Inspection_points" index="0" instance=ExtResource( 19 )]
 position = Vector2( -209, 339 )
@@ -815,6 +808,11 @@ texts_array = [ "Коллекция манги, диван, плед,
 
 [node name="Sprite" parent="Middle_world_decorations/Inspection_points/Top_couch_sign" index="0"]
 visible = false
+
+[node name="Desk" parent="Middle_world_decorations/Inspection_points" index="11" instance=ExtResource( 16 )]
+position = Vector2( -142, 249 )
+dialogId = "creator_house_desk_dialog"
+label_text = "Осмотреть"
 
 [node name="Foreground_world_decorations" type="Node2D" parent="." index="8"]
 
