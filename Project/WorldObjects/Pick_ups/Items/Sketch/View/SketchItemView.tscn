@@ -157,8 +157,8 @@ tracks/5/keys = {
 "times": PoolRealArray( 1 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [ "idle", null ],
-"method": "add_animation"
+"args": [ "idle", -1, 1.0, false ],
+"method": "play"
 } ]
 }
 

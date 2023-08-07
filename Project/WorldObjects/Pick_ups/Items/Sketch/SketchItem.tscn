@@ -8,3 +8,4 @@ pause_mode = 2
 gravity_scale = 0.1
 itemScene = ExtResource( 1 )
 toggleGameConstant = "sketch_picked_up"
+use_player_pick_up_scale_animation = false
