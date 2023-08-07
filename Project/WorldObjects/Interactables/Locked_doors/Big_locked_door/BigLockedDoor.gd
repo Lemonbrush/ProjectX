@@ -33,7 +33,7 @@ func _on_approach(body):
 func _on_leave():
 	interactionPopup.hide()
 	
-func _on_interact(_body):
+func _on_interact(body):
 	interactionPopup.hide()
 	var could_be_opened = false
 	
@@ -43,7 +43,7 @@ func _on_interact(_body):
 	if isLocked:
 		try_to_open_door(could_be_opened)
 	else:
-		enter_door()
+		enter_door(body)
 
 func get_game_constant_value_by_string(gameConstant):
 	if !GameEventConstants.constants.has(gameConstant):
@@ -55,6 +55,7 @@ func try_to_open_door(could_be_opened):
 		isLocked = false
 		animationPlayer.play("Open")
 
-func enter_door():
+func enter_door(player):
 	Global.door_name = nextDoorName
+	player.global_position = global_position
 	EventBus.player_entered_door(nextScenePath)
