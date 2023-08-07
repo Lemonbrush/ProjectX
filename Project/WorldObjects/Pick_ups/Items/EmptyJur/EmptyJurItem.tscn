@@ -7,3 +7,4 @@
 mode = 0
 gravity_scale = 0.6
 itemScene = ExtResource( 1 )
+toggleGameConstant = "picked_up_empty_jur"
