@@ -4,5 +4,6 @@
 [ext_resource path="res://Project/WorldObjects/Pick_ups/Items/Kissnip/View/KissnipView.tscn" type="PackedScene" id=2]
 
 [node name="KissnipItem" instance=ExtResource( 1 )]
+pause_mode = 2
 itemScene = ExtResource( 2 )
 toggleGameConstant = "kissnip_picked_up"
