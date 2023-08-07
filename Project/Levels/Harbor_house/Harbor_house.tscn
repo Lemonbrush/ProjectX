@@ -65,6 +65,7 @@
 [ext_resource path="res://Project/UI/DebugScreen/GameSpecs.tscn" type="PackedScene" id=63]
 [ext_resource path="res://Project/WorldObjects/Pick_ups/Items/RedThred/RedThredItem.tscn" type="PackedScene" id=64]
 [ext_resource path="res://Project/Characters/NPC/Mystic_dweller/MysticDweller.tscn" type="PackedScene" id=65]
+[ext_resource path="res://Project/WorldObjects/Technical/ItemSpawner/ItemSpawner.tscn" type="PackedScene" id=66]
 
 [sub_resource type="Environment" id=273]
 background_mode = 4
@@ -74,84 +75,15 @@ glow_hdr_threshold = 1.5
 adjustment_enabled = true
 adjustment_saturation = 1.3
 
-[sub_resource type="Animation" id=279]
-resource_name = "Garden_mystic_dweller_hide"
-length = 2.0
-
 [sub_resource type="Animation" id=38]
 resource_name = "Gate_opening_cut_scene"
 length = 4.0
 
 [sub_resource type="Animation" id=276]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Harbor_world_objects/Middle_world_objects/RedThredItem/PickupArea2D/CollisionShape2D:disabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ true ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Harbor_world_objects/Middle_world_objects/RedThredItem:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
-}
 
 [sub_resource type="Animation" id=39]
 resource_name = "open_transition"
-
-[sub_resource type="Animation" id=277]
-resource_name = "red_thred_cutscene"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Harbor_world_objects/Middle_world_objects/RedThredItem/PickupArea2D/CollisionShape2D:disabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.1 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/1/type = "method"
-tracks/1/path = NodePath("Harbor_world_objects/Middle_world_objects/RedThredItem")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "play_show_animation"
-} ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Harbor_world_objects/Middle_world_objects/RedThredItem:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
 
 [sub_resource type="CanvasItemMaterial" id=170]
 particles_animation = true
@@ -318,6 +250,9 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 13, 14, 15, 16, 17, 18 ]
 }
+
+[sub_resource type="RectangleShape2D" id=280]
+extents = Vector2( 23.75, 12.5 )
 
 [sub_resource type="Animation" id=216]
 resource_name = "Idle"
@@ -976,11 +911,9 @@ environment = SubResource( 273 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 pause_mode = 2
-anims/Garden_mystic_dweller_hide = SubResource( 279 )
 anims/Gate_opening_cut_scene = SubResource( 38 )
 anims/RESET = SubResource( 276 )
 anims/open_transition = SubResource( 39 )
-anims/red_thred_cutscene = SubResource( 277 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 3 )]
 position = Vector2( -474, -222 )
@@ -1212,6 +1145,9 @@ dialogId = "harbor_house_fisher_dweller"
 watch_player_on_talk = false
 defaultDirection = -1
 
+[node name="InteractionPopup" parent="Harbor_world_objects/Middle_world_objects/Dwellers/FisherDweller" index="3"]
+pause_mode = 2
+
 [node name="Body" parent="Harbor_world_objects/Middle_world_objects/Dwellers/FisherDweller" index="4"]
 scale = Vector2( -1, 1 )
 
@@ -1221,21 +1157,21 @@ texture = ExtResource( 48 )
 hframes = 13
 vframes = 4
 
-[node name="InteractionController" parent="Harbor_world_objects/Middle_world_objects/Dwellers/FisherDweller/Body" index="2"]
-visible = false
+[node name="CollisionShape2D" parent="Harbor_world_objects/Middle_world_objects/Dwellers/FisherDweller/Body/InteractionController/Area2D" index="0"]
+position = Vector2( -7.25, -2.5 )
+shape = SubResource( 280 )
+
+[node name="DialogTextBoxController" parent="Harbor_world_objects/Middle_world_objects/Dwellers/FisherDweller" index="5"]
+pause_mode = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Harbor_world_objects/Middle_world_objects/Dwellers/FisherDweller"]
 autoplay = "Idle"
 anims/Idle = SubResource( 216 )
 anims/RESET = SubResource( 217 )
 
-[node name="RedThredItem" parent="Harbor_world_objects/Middle_world_objects" instance=ExtResource( 64 )]
-visible = false
-position = Vector2( -610, 56 )
-gravity_scale = 0.0
-
-[node name="CollisionShape2D" parent="Harbor_world_objects/Middle_world_objects/RedThredItem/PickupArea2D" index="0"]
-disabled = true
+[node name="RedThredItemSpawner" parent="Harbor_world_objects/Middle_world_objects" instance=ExtResource( 66 )]
+position = Vector2( -639, 71 )
+itemScene = ExtResource( 64 )
 
 [node name="Foreground_world_objects" type="Node2D" parent="Harbor_world_objects"]
 position = Vector2( -20, -192 )
@@ -2879,7 +2815,6 @@ margin_bottom = 344.0
 [editable path="Harbor_world_objects/Middle_world_objects/Dwellers/FisherWifeDweller/Body/InteractionController"]
 [editable path="Harbor_world_objects/Middle_world_objects/Dwellers/FisherDweller"]
 [editable path="Harbor_world_objects/Middle_world_objects/Dwellers/FisherDweller/Body/InteractionController"]
-[editable path="Harbor_world_objects/Middle_world_objects/RedThredItem"]
 [editable path="Harbor_world_objects/Collisions/PassTrough/PassThroughBody11"]
 [editable path="Harbor_world_objects/Collisions/PassTrough/PassThroughBody12"]
 [editable path="Harbor_world_objects/Collisions/PassTrough/PassThroughBody13"]
