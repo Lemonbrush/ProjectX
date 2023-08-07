@@ -267,6 +267,7 @@ texture = ExtResource( 3 )
 
 [node name="DialogController" parent="." instance=ExtResource( 5 )]
 position = Vector2( 0, -165 )
+z_index = 99
 dialogId = "guardian_statue_dialog"
 interaction_popup_label_text = "Осмотреть"
 
@@ -274,7 +275,6 @@ interaction_popup_label_text = "Осмотреть"
 position = Vector2( 0, -22 )
 
 [node name="CollisionShape2D" parent="DialogController/InteractionController/Area2D" index="0"]
-visible = false
 shape = SubResource( 30 )
 
 [node name="DialogTextBoxController" parent="DialogController" index="2"]
