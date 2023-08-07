@@ -1,5 +1,6 @@
 extends Node2D
 
+onready var animationPlayer = $AnimationPlayer
 
 func play_dropped_animation():
-	$AnimationPlayer.play("Dropped")
+	animationPlayer.play("Dropped")

@@ -53,9 +53,11 @@ tracks/0/keys = {
 [node name="LeftSideHeartView" instance=ExtResource( 1 )]
 
 [node name="Sprite" parent="." index="0"]
-rotation = 0.021756
 texture = ExtResource( 2 )
 hframes = 3
+
+[node name="DustParticles" parent="." index="2"]
+emitting = true
 
 [node name="AnimationPlayer" parent="." index="3"]
 anims/RESET = SubResource( 1 )

@@ -4,7 +4,7 @@
 [ext_resource path="res://Project/Levels/Pedestal_hall/World_objects/Item_pedestal/ItemPedestal.gd" type="Script" id=2]
 [ext_resource path="res://Project/WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Project/WorldObjects/Technical/InteractionController/InteractionController.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Project/WorldObjects/Technical/DialogController/DialogController.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Project/WorldObjects/Dialog/DialogController/DialogController.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Effects/Particles/particles.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=23]

@@ -3,7 +3,7 @@
 [ext_resource path="res://Project/Resources/Shaders/StarsShader.tres" type="Shader" id=1]
 [ext_resource path="res://Project/WorldObjects/Technical/InteractionController/InteractionController.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Project/WorldObjects/Interactables/Door/SimpleGate.gd" type="Script" id=3]
-[ext_resource path="res://Project/WorldObjects/Technical/InteractionPopup/InteractionPopup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Project/WorldObjects/Dialog/DialogUIComponents/InteractionPopup/InteractionPopup.tscn" type="PackedScene" id=4]
 
 [sub_resource type="ShaderMaterial" id=4]
 shader = ExtResource( 1 )

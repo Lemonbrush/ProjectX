@@ -67,7 +67,11 @@ func set_default_constants():
 		lighthouse_lamp_ladder_placed = false,
 		player_ignited_lighthouse_lamp = false,
 		did_finish_lighthouse_quest = false,
-		old_lower_said_hello = false
+		old_lower_said_hello = false,
+		player_knows_about_the_first_kiss_ghost = false,
+		picked_up_empty_jur = false,
+		did_show_empty_jur = false,
+		did_harvest_heart_jur_cutscene_played = false
 	}
 
 func set_constant(constant_name, value):
@@ -85,6 +89,6 @@ func get_constant(constant_name):
 		return
 
 func is_cauldron_quest_completed():
-	var is_wish_star_picked_up = GameEventConstants.constants.has("is_wish_star_picked_up") && GameEventConstants.constants["is_wish_star_picked_up"]
-	var is_love_potion_created = GameEventConstants.constants.has("is_love_potion_created") && GameEventConstants.constants["is_love_potion_created"]
-	return is_love_potion_created && is_wish_star_picked_up
+	var is_assembled_heart_picked_up = constants.has("assembled_heart_picked_uo") && get_constant("assembled_heart_picked_uo")
+	var is_love_potion_created = constants.has("is_love_potion_created") && get_constant("is_love_potion_created")
+	return is_assembled_heart_picked_up && is_love_potion_created

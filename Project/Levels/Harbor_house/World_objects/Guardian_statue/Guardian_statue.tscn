@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Effects/Particles/particles.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Effects/Particles/ShineParticles.png" type="Texture" id=3]
 [ext_resource path="res://Project/Levels/Harbor_house/World_objects/Guardian_statue/Guardian_statue.gd" type="Script" id=4]
-[ext_resource path="res://Project/WorldObjects/Technical/DialogController/DialogController.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Project/WorldObjects/Dialog/DialogController/DialogController.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Levels/Harbor_house/Guardian_blush.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=1]

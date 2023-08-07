@@ -42,8 +42,6 @@ func state_check():
 # Functions
 
 func transition_to(target_state: String, msg: Dictionary = {}):
-	#print(current_state, " to ", target_state)
-
 	if !states.has(target_state):
 		print("there is no state: ", target_state)
 		return

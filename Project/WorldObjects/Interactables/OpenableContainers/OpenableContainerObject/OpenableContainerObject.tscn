@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Project/WorldObjects/Interactables/OpenableContainers/OpenableContainerObject/OpenableContainerObject.gd" type="Script" id=1]
 [ext_resource path="res://Project/WorldObjects/Technical/InteractionController/InteractionController.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Project/WorldObjects/Technical/InteractionPopup/InteractionPopup.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Project/WorldObjects/Dialog/DialogUIComponents/InteractionPopup/InteractionPopup.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Project/WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=4]
 
 [node name="OpenableContainerObject" type="Node2D"]

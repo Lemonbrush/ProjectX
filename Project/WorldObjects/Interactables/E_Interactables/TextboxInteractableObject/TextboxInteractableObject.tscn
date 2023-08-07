@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Project/WorldObjects/Technical/InteractionTextBox/TextBoxPopup.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Project/WorldObjects/Technical/Dialog/DialogUIComponents/InteractionTextBox/TextBoxPopup.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Project/WorldObjects/Technical/InteractionController/InteractionController.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Project/WorldObjects/Technical/InteractionPopup/InteractionPopup.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Project/WorldObjects/Technical/Dialog/DialogUIComponents/InteractionPopup/InteractionPopup.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 17.5, 12 )

@@ -147,6 +147,20 @@ tracks/4/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/5/type = "method"
+tracks/5/path = NodePath("AnimationPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "idle", null ],
+"method": "add_animation"
+} ]
+}
 
 [sub_resource type="Animation" id=21]
 resource_name = "idle"
@@ -206,11 +220,11 @@ pause_mode = 2
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
-rotation = -0.0872665
 texture = ExtResource( 1 )
 hframes = 2
 
 [node name="Particles2D" type="Particles2D" parent="."]
+visible = false
 material = SubResource( 10 )
 amount = 2
 lifetime = 0.5
@@ -221,7 +235,6 @@ texture = ExtResource( 4 )
 
 [node name="DustParticles" type="Particles2D" parent="."]
 material = SubResource( 14 )
-emitting = false
 amount = 15
 one_shot = true
 explosiveness = 1.0

@@ -22,7 +22,7 @@
 [ext_resource path="res://Project/UI/DebugScreen/GameSpecs.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Project/WorldObjects/Technical/Camera2D/Camera2D.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Project/WorldObjects/Technical/InteractionEmitterObject/InteractionEmitterObject.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Project/WorldObjects/Technical/InteractionPopup/InteractionPopup.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Project/WorldObjects/Dialog/DialogUIComponents/InteractionPopup/InteractionPopup.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Project/WorldObjects/AppearingHintLabels/AppearingHintLabels.tscn" type="PackedScene" id=24]
 
 [sub_resource type="Environment" id=3]
