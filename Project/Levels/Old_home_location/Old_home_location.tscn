@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=2]
+[gd_scene load_steps=97 format=2]
 
 [ext_resource path="res://Assets/Levels/Old_home_location/Old_home_location.png" type="Texture" id=1]
 [ext_resource path="res://Project/Levels/Old_home_location/Old_home_location.gd" type="Script" id=2]
@@ -26,6 +26,12 @@
 [ext_resource path="res://Project/WorldObjects/AppearingHintLabels/AppearingHintLabels.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Assets/Audio/Old_home_location/Intro/Components/норатор.wav" type="AudioStream" id=25]
 [ext_resource path="res://Assets/Audio/Old_home_location/Intro/Components/Intro Music.wav" type="AudioStream" id=26]
+[ext_resource path="res://Assets/Audio/Old_home_location/Intro/Components/SFX components/CosmicLasers.wav" type="AudioStream" id=27]
+[ext_resource path="res://Assets/Audio/Old_home_location/Intro/Components/SFX components/BackgroundRain.wav" type="AudioStream" id=28]
+[ext_resource path="res://Assets/Audio/Old_home_location/Intro/Components/SFX components/CosmicSound.wav" type="AudioStream" id=29]
+[ext_resource path="res://Assets/Audio/Old_home_location/Intro/Components/SFX components/SofaJumpingOutOfBlanketPartition.wav" type="AudioStream" id=30]
+[ext_resource path="res://Assets/Audio/Old_home_location/Intro/Components/SFX components/PortalAppearingIntroPartition.wav" type="AudioStream" id=31]
+[ext_resource path="res://Assets/Audio/Old_home_location/Intro/Components/SFX components/SofaEnteringPortalPartition.wav" type="AudioStream" id=32]
 
 [sub_resource type="Environment" id=3]
 background_mode = 4
@@ -1951,6 +1957,20 @@ tracks/28/keys = {
 "method": "play"
 } ]
 }
+tracks/29/type = "method"
+tracks/29/path = NodePath("MusicPlayer/IntroFirstPart/SFX/PortalAppearingPlayer")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"times": PoolRealArray( 3.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
 
 [sub_resource type="Animation" id=54]
 length = 0.001
@@ -2332,6 +2352,20 @@ tracks/7/keys = {
 "values": [ {
 "args": [  ],
 "method": "show"
+} ]
+}
+tracks/8/type = "method"
+tracks/8/path = NodePath("../MusicPlayer/IntroFirstPart/SFX/SofaJumpingOutOfBlanketPlayer")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 4.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
 } ]
 }
 
@@ -2980,6 +3014,21 @@ dynamic_camera = false
 
 [node name="SFX" type="Node" parent="MusicPlayer/IntroFirstPart"]
 
+[node name="SofaJumpingOutOfBlanketPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroFirstPart/SFX"]
+stream = ExtResource( 30 )
+
+[node name="PortalAppearingPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroFirstPart/SFX"]
+stream = ExtResource( 31 )
+
+[node name="CosmicSoundPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroFirstPart/SFX"]
+stream = ExtResource( 29 )
+
+[node name="CosmicLasersPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroFirstPart/SFX"]
+stream = ExtResource( 27 )
+
+[node name="BackgroundRainPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroFirstPart/SFX"]
+stream = ExtResource( 28 )
+
 [node name="NoratorAudioStreamPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroFirstPart"]
 stream = ExtResource( 25 )
 
@@ -2989,6 +3038,9 @@ stream = ExtResource( 26 )
 [node name="IntroSecondPart" type="Node" parent="MusicPlayer"]
 
 [node name="SFX" type="Node" parent="MusicPlayer/IntroSecondPart"]
+
+[node name="SofaEnteringPortalPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroSecondPart/SFX"]
+stream = ExtResource( 32 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 3 )
