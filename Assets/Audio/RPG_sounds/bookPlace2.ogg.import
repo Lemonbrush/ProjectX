@@ -11,5 +11,5 @@ dest_files=[ "res://.import/bookPlace2.ogg-a1735ac7fc0aba858cf590fe347dbbf2.oggs
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

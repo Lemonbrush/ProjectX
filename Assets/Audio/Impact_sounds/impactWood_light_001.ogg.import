@@ -11,5 +11,5 @@ dest_files=[ "res://.import/impactWood_light_001.ogg-b35a0abf9b519494fd1693ddf73
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/handleSmallLeather.ogg-e2356ae022cca044189a0136374ae
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/rollover5.ogg-2251f8471be19d66c6243ee8211d0b19.oggst
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

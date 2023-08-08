@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Assets/Characters/Sofa/MainSprite/SofaSpriteSheet.png" type="Texture" id=1]
 [ext_resource path="res://Project/Characters/Player/States/Jump.gd" type="Script" id=2]
@@ -14,6 +14,17 @@
 [ext_resource path="res://Project/Characters/Player/StateMachine/Attack.gd" type="Script" id=12]
 [ext_resource path="res://Project/Characters/Player/StateMachine/Door_enter_in.gd" type="Script" id=13]
 [ext_resource path="res://Project/Characters/Player/StateMachine/Door_enter_out.gd" type="Script" id=14]
+[ext_resource path="res://Assets/Audio/Impact_sounds/footstep_grass_003.ogg" type="AudioStream" id=15]
+[ext_resource path="res://Assets/Audio/Impact_sounds/footstep_grass_002.ogg" type="AudioStream" id=16]
+[ext_resource path="res://Project/Utils/RandomAudioStreamPlayer/RandomAudioStreamPlayer.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Assets/Audio/Impact_sounds/footstep_grass_001.ogg" type="AudioStream" id=18]
+[ext_resource path="res://Assets/Audio/Impact_sounds/footstep_grass_000.ogg" type="AudioStream" id=19]
+[ext_resource path="res://Assets/Audio/Impact_sounds/footstep_grass_004.ogg" type="AudioStream" id=20]
+[ext_resource path="res://Assets/Audio/Impact_sounds/footstep_concrete_003.ogg" type="AudioStream" id=21]
+[ext_resource path="res://Assets/Audio/Impact_sounds/footstep_concrete_001.ogg" type="AudioStream" id=22]
+[ext_resource path="res://Assets/Audio/Impact_sounds/footstep_concrete_004.ogg" type="AudioStream" id=23]
+[ext_resource path="res://Assets/Audio/Impact_sounds/footstep_concrete_002.ogg" type="AudioStream" id=24]
+[ext_resource path="res://Assets/Audio/Impact_sounds/footstep_concrete_000.ogg" type="AudioStream" id=25]
 
 [sub_resource type="Animation" id=16]
 resource_name = "Attack"
@@ -288,6 +299,59 @@ collision_layer = 131
 collision_mask = 108
 script = ExtResource( 3 )
 
+[node name="FootstepAudioPlayer" parent="." instance=ExtResource( 17 )]
+numberToPlay = 3
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="FootstepAudioPlayer"]
+stream = ExtResource( 19 )
+volume_db = -2.0
+bus = "Footsteps"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="FootstepAudioPlayer"]
+stream = ExtResource( 18 )
+volume_db = -2.0
+bus = "Footsteps"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="FootstepAudioPlayer"]
+stream = ExtResource( 16 )
+volume_db = -2.0
+bus = "Footsteps"
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="FootstepAudioPlayer"]
+stream = ExtResource( 15 )
+volume_db = -2.0
+bus = "Footsteps"
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="FootstepAudioPlayer"]
+stream = ExtResource( 20 )
+volume_db = -2.0
+bus = "Footsteps"
+
+[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="FootstepAudioPlayer"]
+stream = ExtResource( 25 )
+volume_db = -2.0
+bus = "Footsteps"
+
+[node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="FootstepAudioPlayer"]
+stream = ExtResource( 22 )
+volume_db = -2.0
+bus = "Footsteps"
+
+[node name="AudioStreamPlayer8" type="AudioStreamPlayer" parent="FootstepAudioPlayer"]
+stream = ExtResource( 24 )
+volume_db = -2.0
+bus = "Footsteps"
+
+[node name="AudioStreamPlayer9" type="AudioStreamPlayer" parent="FootstepAudioPlayer"]
+stream = ExtResource( 21 )
+volume_db = -2.0
+bus = "Footsteps"
+
+[node name="AudioStreamPlayer10" type="AudioStreamPlayer" parent="FootstepAudioPlayer"]
+stream = ExtResource( 23 )
+volume_db = -2.0
+bus = "Footsteps"
+
 [node name="CoyoteTimer" type="Timer" parent="."]
 one_shot = true
 
@@ -356,7 +420,7 @@ position = Vector2( 8, -16 )
 texture = ExtResource( 1 )
 hframes = 19
 vframes = 14
-frame = 76
+frame = 44
 
 [node name="GroundRay1" type="RayCast2D" parent="Body"]
 visible = false

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/lowRandom.ogg-45b46f257b62f5d9ee9a82b9f8abb7b5.oggst
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/creak3.ogg-6caf7e00c3030b4a69d135a0c1cf1290.oggstr" 
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

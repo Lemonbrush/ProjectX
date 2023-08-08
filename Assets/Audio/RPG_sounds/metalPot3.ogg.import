@@ -11,5 +11,5 @@ dest_files=[ "res://.import/metalPot3.ogg-cd02029f164172b1b32dc4e1443806b4.oggst
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

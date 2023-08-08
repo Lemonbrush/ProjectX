@@ -11,5 +11,5 @@ dest_files=[ "res://.import/zap2.ogg-3ef3ddc0aca44252aff476ba667fc86e.oggstr" ]
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

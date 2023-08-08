@@ -11,5 +11,5 @@ dest_files=[ "res://.import/confirmation_001.ogg-e52fa2d0db0cd3ca1b12560a71e9cd3
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

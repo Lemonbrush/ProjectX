@@ -11,5 +11,5 @@ dest_files=[ "res://.import/bookClose.ogg-edf89dd5fe2cf3754eb1e65f8dd13a02.oggst
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

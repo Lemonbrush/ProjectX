@@ -11,5 +11,5 @@ dest_files=[ "res://.import/lowDown.ogg-1008ee891359cf98ca729a83f7e1cffe.oggstr"
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

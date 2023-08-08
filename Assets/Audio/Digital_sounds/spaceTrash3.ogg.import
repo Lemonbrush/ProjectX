@@ -11,5 +11,5 @@ dest_files=[ "res://.import/spaceTrash3.ogg-c109d95f660f44df5fc0a73082858bd6.ogg
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

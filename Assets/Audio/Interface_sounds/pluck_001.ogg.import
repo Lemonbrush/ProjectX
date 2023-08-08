@@ -11,5 +11,5 @@ dest_files=[ "res://.import/pluck_001.ogg-426059c7d85ce4268c2916b53600aa72.oggst
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

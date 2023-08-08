@@ -11,5 +11,5 @@ dest_files=[ "res://.import/footstep_wood_002.ogg-df67fa49ce4f0820652578544077e0
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

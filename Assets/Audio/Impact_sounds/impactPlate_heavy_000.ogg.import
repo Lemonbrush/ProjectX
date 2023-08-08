@@ -11,5 +11,5 @@ dest_files=[ "res://.import/impactPlate_heavy_000.ogg-90a5b9aeaeffa92c5cec8b3764
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

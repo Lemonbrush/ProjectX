@@ -11,5 +11,5 @@ dest_files=[ "res://.import/highDown.ogg-749c07f713d444801f5468bbafd8ccd4.oggstr
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

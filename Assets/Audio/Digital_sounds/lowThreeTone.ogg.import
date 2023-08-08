@@ -11,5 +11,5 @@ dest_files=[ "res://.import/lowThreeTone.ogg-09c471f8ea5a52896142eda71ae595da.og
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/maximize_004.ogg-be587a8f416966b7018756e315e99e6c.og
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

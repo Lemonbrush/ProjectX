@@ -11,5 +11,5 @@ dest_files=[ "res://.import/bookOpen.ogg-3de3f3a1a98856018d8f706b31b5e223.oggstr
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

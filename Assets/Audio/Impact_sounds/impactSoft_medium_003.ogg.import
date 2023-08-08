@@ -11,5 +11,5 @@ dest_files=[ "res://.import/impactSoft_medium_003.ogg-80bab3a7df1668da371eaccf24
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

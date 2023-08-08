@@ -11,5 +11,5 @@ dest_files=[ "res://.import/metalLatch.ogg-28c577f88e363cdba2c773f4d0583d7e.oggs
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

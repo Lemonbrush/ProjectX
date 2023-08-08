@@ -11,5 +11,5 @@ dest_files=[ "res://.import/glass_002.ogg-bea1488373bc94bd3ae577a3306c5989.oggst
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

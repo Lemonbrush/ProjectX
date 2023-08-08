@@ -11,5 +11,5 @@ dest_files=[ "res://.import/drawKnife3.ogg-eac02a4f4acf19597ebe58fd4238b287.oggs
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

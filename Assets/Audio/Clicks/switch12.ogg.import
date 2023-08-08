@@ -11,5 +11,5 @@ dest_files=[ "res://.import/switch12.ogg-186a7880ae91457448b4ba3cb042a3ca.oggstr
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

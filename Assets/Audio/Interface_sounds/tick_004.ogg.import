@@ -11,5 +11,5 @@ dest_files=[ "res://.import/tick_004.ogg-1ae12a1e447892973796919c179dff87.oggstr
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/phaserDown1.ogg-426cb2dce43e26f2cd3928f3ee7a0e19.ogg
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/beltHandle1.ogg-1958371105a153a66936c7aac56d8eaa.ogg
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
