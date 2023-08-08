@@ -3057,6 +3057,7 @@ margin_top = -247.0
 margin_right = 853.0
 margin_bottom = 821.0
 texture = ExtResource( 11 )
+stretch_mode = 2
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_limit_end = Vector2( 0, 320 )
