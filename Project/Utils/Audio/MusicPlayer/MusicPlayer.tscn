@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/Audio/Background music/calmTheme.mp3" type="AudioStream" id=1]
+[ext_resource path="res://Assets/Audio/Misc/Background music/calmTheme.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Project/Utils/Audio/MusicPlayer/MusicPlayer.gd" type="Script" id=2]
 
 [sub_resource type="Animation" id=1]
