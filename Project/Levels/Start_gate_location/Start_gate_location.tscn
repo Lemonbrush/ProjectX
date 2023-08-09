@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=2]
+[gd_scene load_steps=119 format=2]
 
 [ext_resource path="res://Assets/Tilesets/Animanimated_tiles/WaterSurface/Water_surface/water_surface3.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Effects/Lighting/playerLight.png" type="Texture" id=2]
@@ -46,6 +46,7 @@
 [ext_resource path="res://Project/WorldObjects/Decorative/Tree/Regualr_trees/Trees/BushyTree.tscn" type="PackedScene" id=44]
 [ext_resource path="res://Project/WorldObjects/Decorative/Tree/Regualr_trees/Trees/TallTree.tscn" type="PackedScene" id=45]
 [ext_resource path="res://Project/WorldObjects/Decorative/Tree/Regualr_trees/Trees/SquashedTree.tscn" type="PackedScene" id=46]
+[ext_resource path="res://Assets/Audio/Start_gate_location/FallingIntroMusic.wav" type="AudioStream" id=47]
 
 [sub_resource type="Environment" id=77]
 background_mode = 4
@@ -247,6 +248,20 @@ tracks/11/keys = {
 }, {
 "args": [  ],
 "method": "play_background_music"
+} ]
+}
+tracks/12/type = "method"
+tracks/12/path = NodePath("Audio/FallingIntroMusicAudioStreamPlayer")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
 } ]
 }
 
@@ -1195,6 +1210,13 @@ position = Vector2( -3, -62 )
 script = ExtResource( 10 )
 background_music = ExtResource( 40 )
 
+[node name="Audio" type="Node" parent="."]
+
+[node name="FallingIntroMusicAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
+pause_mode = 2
+stream = ExtResource( 47 )
+bus = "Music"
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 77 )
 
@@ -1202,6 +1224,7 @@ environment = SubResource( 77 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 pause_mode = 2
+autoplay = "First_entrance_animation"
 anims/Finish_mystic_dweller_first_dialog = SubResource( 179 )
 anims/First_entrance_animation = SubResource( 78 )
 anims/Gate_opening_cut_scene = SubResource( 35 )
@@ -1641,9 +1664,9 @@ text = "Чтобы карабкаться по лестницам и верёв�
 pause_mode = 2
 
 [node name="SofaLandingSprite" type="Sprite" parent="ForegroundWorldObjects/SofaLandingIntro"]
-visible = false
 modulate = Color( 0.631373, 0.631373, 0.631373, 1 )
-position = Vector2( -673, -90 )
+position = Vector2( -673, -585 )
+rotation = -0.436332
 texture = ExtResource( 21 )
 hframes = 12
 vframes = 3
@@ -1657,6 +1680,7 @@ energy = 0.5
 [node name="DustParticles" type="Particles2D" parent="ForegroundWorldObjects/SofaLandingIntro"]
 material = SubResource( 80 )
 position = Vector2( -670, -74 )
+emitting = false
 amount = 15
 one_shot = true
 explosiveness = 1.0
@@ -2093,6 +2117,7 @@ position = Vector2( 335.5, 319 )
 shape = SubResource( 41 )
 
 [node name="GodLights" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 material = SubResource( 66 )
 margin_left = -865.0
 margin_top = -697.0
