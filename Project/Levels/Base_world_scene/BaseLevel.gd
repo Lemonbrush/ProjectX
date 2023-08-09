@@ -4,6 +4,7 @@ class_name BaseLevel
 var pauseMenu 					= preload("res://Project/UI/PauseMenu/PauseMenu.tscn")
 var bookMenu						= preload("res://Project/UI/BookMenu/BookMenu.tscn")
 
+export (AudioStreamSample) var background_music
 export(bool) var dynamic_camera = true
 
 onready var player 				= find_node("Player")
@@ -60,3 +61,9 @@ func pause_level():
 	
 func unpouse_level():
 	get_tree().paused = false
+
+func play_background_music():
+	MusicPlayer.play_stream(background_music)
+
+func stop_background_music():
+	MusicPlayer.stop()

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/nature-99499.mp3-3a6530b456794371442d18285e913255.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Misc/Background music/nature-99499.mp3"
+dest_files=[ "res://.import/nature-99499.mp3-3a6530b456794371442d18285e913255.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

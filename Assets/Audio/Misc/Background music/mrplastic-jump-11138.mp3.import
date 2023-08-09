@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mrplastic-jump-11138.mp3-becd077a3559ceb58e5ce9e3b62ab84f.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Misc/Background music/mrplastic-jump-11138.mp3"
+dest_files=[ "res://.import/mrplastic-jump-11138.mp3-becd077a3559ceb58e5ce9e3b62ab84f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

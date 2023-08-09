@@ -27,7 +27,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "CommandHandler",
 "language": "GDScript",
-"path": "res://Project/Utils/CommandHandler.gd"
+"path": "res://Project/Utils/CommandHandler/CommandHandler.gd"
 }, {
 "base": "Node",
 "class": "DialogManager",
@@ -140,6 +140,7 @@ EventBus="*res://Project/Utils/Singletons/EventBus.gd"
 SettingsManager="*res://Project/Utils/Singletons/SettingsManager/SettingsManager.gd"
 GameEventConstants="*res://Project/Utils/Singletons/GameEventConstants.gd"
 ParticlesCache="*res://Project/Utils/Singletons/ParticlesCache.gd"
+MusicPlayer="*res://Project/Utils/Audio/MusicPlayer/MusicPlayer.tscn"
 
 [debug]
 
