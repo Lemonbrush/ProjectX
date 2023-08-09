@@ -2594,6 +2594,34 @@ tracks/14/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
+tracks/15/type = "method"
+tracks/15/path = NodePath("../MusicPlayer/IntroFirstPart/NoratorSecondPartAudioStreamPlayer")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/16/type = "method"
+tracks/16/path = NodePath("../MusicPlayer/IntroSecondPart/SFX/SofaEnteringPortalPlayer")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 5.7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
 
 [sub_resource type="Animation" id=87]
 length = 0.001
@@ -3022,7 +3050,6 @@ color_ramp = SubResource( 50 )
 [node name="Old_home_location" type="Node2D"]
 script = ExtResource( 2 )
 dynamic_camera = false
-is_able_to_skip_cutscene = false
 
 [node name="MusicPlayer" type="Node" parent="."]
 
@@ -3214,7 +3241,7 @@ position = Vector2( 59, 22 )
 
 [node name="Monitor_light" type="Node2D" parent="World_objects/Computer"]
 visible = false
-position = Vector2( -59, -18 )
+position = Vector2( -59, -22 )
 
 [node name="Monitor_occlusion" type="LightOccluder2D" parent="World_objects/Computer/Monitor_light"]
 position = Vector2( 44, -15 )
