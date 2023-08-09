@@ -1700,6 +1700,7 @@ energy = 0.5
 [node name="DustParticles" type="Particles2D" parent="ForegroundWorldObjects/SofaLandingIntro"]
 material = SubResource( 80 )
 position = Vector2( -670, -74 )
+emitting = false
 amount = 15
 one_shot = true
 explosiveness = 1.0
