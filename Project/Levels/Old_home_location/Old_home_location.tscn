@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=2]
+[gd_scene load_steps=98 format=2]
 
 [ext_resource path="res://Assets/Levels/Old_home_location/Old_home_location.png" type="Texture" id=1]
 [ext_resource path="res://Project/Levels/Old_home_location/Old_home_location.gd" type="Script" id=2]
@@ -24,7 +24,7 @@
 [ext_resource path="res://Project/WorldObjects/Technical/InteractionEmitterObject/InteractionEmitterObject.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Project/WorldObjects/Dialog/DialogUIComponents/InteractionPopup/InteractionPopup.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Project/WorldObjects/AppearingHintLabels/AppearingHintLabels.tscn" type="PackedScene" id=24]
-[ext_resource path="res://Assets/Audio/Old_home_location/Intro/Components/норатор.wav" type="AudioStream" id=25]
+[ext_resource path="res://Assets/Audio/Old_home_location/Intro/Components/NoratorFirstPart.wav" type="AudioStream" id=25]
 [ext_resource path="res://Assets/Audio/Old_home_location/Intro/Components/Intro Music.wav" type="AudioStream" id=26]
 [ext_resource path="res://Assets/Audio/Old_home_location/Intro/Components/SFX components/CosmicLasers.wav" type="AudioStream" id=27]
 [ext_resource path="res://Assets/Audio/Old_home_location/Intro/Components/SFX components/BackgroundRain.wav" type="AudioStream" id=28]
@@ -32,6 +32,7 @@
 [ext_resource path="res://Assets/Audio/Old_home_location/Intro/Components/SFX components/SofaJumpingOutOfBlanketPartition.wav" type="AudioStream" id=30]
 [ext_resource path="res://Assets/Audio/Old_home_location/Intro/Components/SFX components/PortalAppearingIntroPartition.wav" type="AudioStream" id=31]
 [ext_resource path="res://Assets/Audio/Old_home_location/Intro/Components/SFX components/SofaEnteringPortalPartition.wav" type="AudioStream" id=32]
+[ext_resource path="res://Assets/Audio/Old_home_location/Intro/Components/NoratorSecondPart.wav" type="AudioStream" id=33]
 
 [sub_resource type="Environment" id=3]
 background_mode = 4
@@ -2368,6 +2369,20 @@ tracks/8/keys = {
 "method": "play"
 } ]
 }
+tracks/9/type = "method"
+tracks/9/path = NodePath("../MusicPlayer/IntroFirstPart/IntroMusicAudioStreamPlayer")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 11 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
 
 [sub_resource type="Animation" id=64]
 length = 0.001
@@ -3032,6 +3047,9 @@ stream = ExtResource( 28 )
 
 [node name="NoratorAudioStreamPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroFirstPart"]
 stream = ExtResource( 25 )
+
+[node name="NoratorSecondPartAudioStreamPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroFirstPart"]
+stream = ExtResource( 33 )
 
 [node name="IntroMusicAudioStreamPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroFirstPart"]
 stream = ExtResource( 26 )
