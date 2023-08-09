@@ -10,6 +10,7 @@ resource_name = "Fade"
 script = ExtResource( 2 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 stream = ExtResource( 1 )
 bus = "Music"
 
