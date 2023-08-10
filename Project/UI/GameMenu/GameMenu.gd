@@ -51,11 +51,13 @@ func grab_first_button_focus():
 			return
 
 func on_new_game_button_pressed():
+	new_game_button.disabled = true
 	FileManager.delete_save()
 	EventBus.did_reset_game_constants()
 	logo_animation_player.play("Play")
 	
 func on_continue_button_pressed():
+	continue_button.disabled = true
 	logo_animation_player.play("Play")
 
 func logo_hide_animation_finished():
