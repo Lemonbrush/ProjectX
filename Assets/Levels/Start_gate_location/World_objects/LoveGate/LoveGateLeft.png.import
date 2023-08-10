@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LoveGateRight.png-3a1e22c93166a45cdca3cb0b02585e82.stex"
+path="res://.import/LoveGateLeft.png-0a4b6f73195bf9b12a066828195ffda8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Project/Levels/Start_gate_location/LoveGate/Gates/LoveGateRight.png"
-dest_files=[ "res://.import/LoveGateRight.png-3a1e22c93166a45cdca3cb0b02585e82.stex" ]
+source_file="res://Assets/Levels/Start_gate_location/World_objects/LoveGate/LoveGateLeft.png"
+dest_files=[ "res://.import/LoveGateLeft.png-0a4b6f73195bf9b12a066828195ffda8.stex" ]
 
 [params]
 
