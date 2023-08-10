@@ -477,7 +477,7 @@ texture = ExtResource( 1 )
 position = Vector2( -10, 208 )
 z_index = 2
 
-[node name="Light2D2" parent="Player" index="5"]
+[node name="Light2D2" parent="Player" index="6"]
 visible = false
 
 [node name="Collisions" parent="." index="11"]

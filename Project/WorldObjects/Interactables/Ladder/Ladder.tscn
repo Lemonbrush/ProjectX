@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/Levels/Central_hub/World_objects/Ladders/ladder.png" type="Texture" id=1]
 [ext_resource path="res://Project/WorldObjects/Technical/Ladder/Ladder.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/effects/Particles/particles.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Effects/Particles/particles.png" type="Texture" id=3]
 [ext_resource path="res://Project/WorldObjects/Interactables/Ladder/Ladder.gd" type="Script" id=4]
 
 [sub_resource type="Animation" id=2]
