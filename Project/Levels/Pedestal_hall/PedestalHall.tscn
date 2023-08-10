@@ -1650,7 +1650,6 @@ tile_data = PoolIntArray( -8126619, 78, 0, -7471218, 76, 0, -7405492, 77, 0, -72
 
 [node name="MysticDweller" parent="Middle_world_objects" index="2" instance=ExtResource( 40 )]
 pause_mode = 2
-visible = true
 position = Vector2( -25, -95 )
 dialogId = "pillars_mystic_dweller"
 currentState = SubResource( 313 )
@@ -1701,9 +1700,6 @@ itemScene = ExtResource( 44 )
 [node name="Player" parent="." index="10"]
 position = Vector2( -550, -10 )
 
-[node name="Light2D2" parent="Player" index="5"]
-visible = false
-
 [node name="LightSource" parent="Player" index="6" instance=ExtResource( 6 )]
 position = Vector2( 78, 5 )
 color = Color( 1, 0.8, 0.764706, 1 )
@@ -1712,6 +1708,9 @@ minRadius = 50
 maxRadius = 50
 animating = false
 strength = 0.5
+
+[node name="Light2D2" parent="Player" index="7"]
+visible = false
 
 [node name="Foreground_world_objects" type="Node2D" parent="." index="11"]
 
