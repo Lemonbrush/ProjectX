@@ -2714,7 +2714,7 @@ mode = 2
 position = Vector2( 8, -231 )
 z_index = 3
 
-[node name="Light2D2" parent="Player" index="5"]
+[node name="Light2D2" parent="Player" index="6"]
 visible = false
 color = Color( 0.113725, 0.407843, 0.968627, 1 )
 
