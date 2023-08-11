@@ -1872,7 +1872,7 @@ shape = SubResource( 116 )
 
 [node name="Player" parent="." index="9"]
 light_mask = 0
-position = Vector2( 215, -43 )
+position = Vector2( 57, -12 )
 z_index = 1
 collision_mask = 108
 
