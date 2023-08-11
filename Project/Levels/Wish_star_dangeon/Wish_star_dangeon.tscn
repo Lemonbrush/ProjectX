@@ -1593,7 +1593,7 @@ shape = SubResource( 18 )
 position = Vector2( 906, 52 )
 
 [node name="Foreground_world_objects" type="Node2D" parent="Cave_objects" index="3"]
-z_index = 1
+z_index = 2
 
 [node name="Fountains" type="TileMap" parent="Cave_objects/Foreground_world_objects" index="0"]
 tile_set = ExtResource( 11 )
@@ -1872,7 +1872,7 @@ shape = SubResource( 116 )
 
 [node name="Player" parent="." index="9"]
 light_mask = 0
-position = Vector2( 55, -6 )
+position = Vector2( 215, -43 )
 z_index = 1
 collision_mask = 108
 
