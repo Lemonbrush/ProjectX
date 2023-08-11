@@ -501,6 +501,20 @@ tracks/34/keys = {
 "method": "set_interaction_mode"
 } ]
 }
+tracks/35/type = "method"
+tracks/35/path = NodePath("Middle_world_objects/MysticDweller")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "finish_talking"
+} ]
+}
 
 [sub_resource type="Animation" id=286]
 length = 0.001
@@ -1075,11 +1089,28 @@ tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 3 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
+"method": "finish_talking"
+}, {
+"args": [  ],
 "method": "show_hide_animation"
+} ]
+}
+tracks/11/type = "method"
+tracks/11/path = NodePath("Middle_world_objects/MysticDweller")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ false ],
+"method": "set_interaction_mode"
 } ]
 }
 
