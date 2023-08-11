@@ -3064,8 +3064,8 @@ color_ramp = SubResource( 50 )
 
 [node name="Old_home_location" type="Node2D"]
 script = ExtResource( 2 )
-dynamic_camera = false
 background_music = ExtResource( 34 )
+dynamic_camera = false
 is_able_to_skip_cutscene = false
 
 [node name="MusicPlayer" type="Node" parent="."]
@@ -3090,12 +3090,15 @@ stream = ExtResource( 27 )
 stream = ExtResource( 28 )
 
 [node name="NoratorAudioStreamPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroFirstPart"]
+pause_mode = 2
 stream = ExtResource( 25 )
 
 [node name="NoratorSecondPartAudioStreamPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroFirstPart"]
+pause_mode = 2
 stream = ExtResource( 33 )
 
 [node name="IntroMusicAudioStreamPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroFirstPart"]
+pause_mode = 2
 stream = ExtResource( 26 )
 
 [node name="IntroSecondPart" type="Node" parent="MusicPlayer"]
@@ -3103,6 +3106,7 @@ stream = ExtResource( 26 )
 [node name="SFX" type="Node" parent="MusicPlayer/IntroSecondPart"]
 
 [node name="SofaEnteringPortalPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroSecondPart/SFX"]
+pause_mode = 2
 stream = ExtResource( 32 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
