@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=2]
+[gd_scene load_steps=93 format=2]
 
 [ext_resource path="res://Project/Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Project/WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://Assets/Tilesets/Animanimated_tiles/WaterSurface/Water_surface/water_surface3.png" type="Texture" id=8]
 [ext_resource path="res://Project/Resources/Shaders/BlurShader.gdshader" type="Shader" id=9]
 [ext_resource path="res://Project/Resources/Tilesets/AnimatedTextures/Water_surface/WaterAnim.tres" type="Texture" id=10]
-[ext_resource path="res://Assets/BackgroundGradients/Pedestal_room_background.png" type="Texture" id=11]
 [ext_resource path="res://Assets/BackgroundGradients/PinkEdgeGradient.png" type="Texture" id=12]
 [ext_resource path="res://Project/WorldObjects/Technical/Clouds/Clouds.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Assets/Levels/Pedestal_hall/World_objects/Me_statue/Head.png" type="Texture" id=14]
@@ -1306,9 +1305,6 @@ position = Vector2( 381.613, 240.75 )
 scale = Vector2( 0.771226, 0.771226 )
 texture = ExtResource( 12 )
 
-[node name="Clouds" parent="ParallaxBackground2" index="2" instance=ExtResource( 13 )]
-position = Vector2( -2, 2 )
-
 [node name="AnimationPlayer" parent="." index="4"]
 autoplay = ""
 anims/Kissing_statues_cutscene = SubResource( 285 )
@@ -1322,6 +1318,11 @@ zoom = Vector2( 0.8, 0.8 )
 
 [node name="Clouds" parent="Camera2D" index="2" instance=ExtResource( 5 )]
 position = Vector2( -1, -67 )
+
+[node name="Clouds2" parent="Camera2D" index="3" instance=ExtResource( 13 )]
+pause_mode = 2
+position = Vector2( 42, 197 )
+z_index = -5
 
 [node name="Background_world_objects" type="Node2D" parent="." index="6"]
 z_index = -5
@@ -1640,21 +1641,12 @@ position = Vector2( 162, 77 )
 shape = SubResource( 294 )
 one_way_collision = true
 
-[node name="Sprite" type="Sprite" parent="." index="7"]
-visible = false
-modulate = Color( 0.517647, 0.517647, 0.517647, 1 )
-position = Vector2( -474, -364 )
-scale = Vector2( 0.709762, 0.704044 )
-z_index = -99
-texture = ExtResource( 11 )
-centered = false
-
-[node name="WorldSprite" parent="." index="8"]
+[node name="WorldSprite" parent="." index="7"]
 position = Vector2( -23, -567 )
 z_index = -5
 texture = ExtResource( 4 )
 
-[node name="Middle_world_objects" type="Node2D" parent="." index="9"]
+[node name="Middle_world_objects" type="Node2D" parent="." index="8"]
 
 [node name="Trees" type="Node2D" parent="Middle_world_objects" index="0"]
 
@@ -1728,7 +1720,7 @@ dialogId = "pedestal_assembled_heart_key"
 item_name = "heart_key"
 itemScene = ExtResource( 44 )
 
-[node name="Player" parent="." index="10"]
+[node name="Player" parent="." index="9"]
 position = Vector2( -550, -10 )
 
 [node name="LightSource" parent="Player" index="6" instance=ExtResource( 6 )]
@@ -1743,9 +1735,9 @@ strength = 0.5
 [node name="Light2D2" parent="Player" index="7"]
 visible = false
 
-[node name="Foreground_world_objects" type="Node2D" parent="." index="11"]
+[node name="Foreground_world_objects" type="Node2D" parent="." index="10"]
 
-[node name="Collisions" parent="." index="12"]
+[node name="Collisions" parent="." index="11"]
 visible = false
 
 [node name="PassThroughBody5" parent="Collisions/PassTrough" index="0" groups=["passThroughObject"] instance=ExtResource( 3 )]
@@ -1939,7 +1931,7 @@ minRadius = 500
 maxRadius = 450
 animating = false
 
-[node name="WaterSurface" type="Node2D" parent="." index="17"]
+[node name="WaterSurface" type="Node2D" parent="." index="16"]
 pause_mode = 2
 position = Vector2( 332, 50 )
 z_index = 10
