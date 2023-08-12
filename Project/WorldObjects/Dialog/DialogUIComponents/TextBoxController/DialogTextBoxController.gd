@@ -3,7 +3,7 @@ extends Node2D
 export(String) var dialog_id
 export(NodePath) var interaction_controller_path
 export(bool) var is_interaction_active = true
-export (AudioStreamSample) var voice_sample
+export (AudioStreamRandomPitch) var voice_sample
 
 onready var dialogTextBox = $DialogTextBox
 onready var voiceGenerator = $VoiceGeneratorAudioStreamPlayer

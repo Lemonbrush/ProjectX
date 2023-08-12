@@ -2,7 +2,7 @@ extends Node2D
 
 signal finished_phrase
 
-export (AudioStreamSample) var voice_sample
+export (AudioStreamRandomPitch) var voice_sample
 
 onready var player = $AudioStreamPlayer
 
@@ -25,10 +25,13 @@ func _ready():
 func set_voice_sample(stream):
 	voice_sample = stream
 	player.stream = stream
+	if player.stream != null:
+		player.stream.random_pitch = 1.5
 
-func play(text: String) -> void:
-	_phrase = text
-	_phrase_pos = 0
+func play(text) -> void:
+	if text is String:
+		_phrase = text
+		_phrase_pos = 0
 
 func stop():
 	emit_signal("finished_phrase")
