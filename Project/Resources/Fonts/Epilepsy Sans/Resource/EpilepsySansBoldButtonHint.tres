@@ -1,0 +1,11 @@
+[gd_resource type="DynamicFont" load_steps=2 format=2]
+
+[ext_resource path="res://Project/Resources/Fonts/Epilepsy Sans/Font/EpilepsySansBold.ttf" type="DynamicFontData" id=1]
+
+[resource]
+size = 26
+outline_size = 1
+outline_color = Color( 0.0220749, 0.128906, 0.108449, 1 )
+extra_spacing_top = -8
+extra_spacing_bottom = -2
+font_data = ExtResource( 1 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/cute_and_slow_theme.mp3-fbf5464122d60b9bcae43bdc5d0b042d.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Misc/Background music/cute_and_slow_theme.mp3"
+dest_files=[ "res://.import/cute_and_slow_theme.mp3-fbf5464122d60b9bcae43bdc5d0b042d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/chop.ogg-c1f71f99a0237587c2da907a01cb238b.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Misc/RPG_sounds/chop.ogg"
+dest_files=[ "res://.import/chop.ogg-c1f71f99a0237587c2da907a01cb238b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

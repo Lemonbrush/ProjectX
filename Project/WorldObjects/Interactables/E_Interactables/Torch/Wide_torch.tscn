@@ -1,0 +1,163 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Project/WorldObjects/Interactables/E_Interactables/Torch/ActivatableTorch.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Effects/Particles/WhiteSquare.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Effects/Particles/particles.png" type="Texture" id=3]
+[ext_resource path="res://Project/WorldObjects/Dialog/DialogUIComponents/InteractionPopup/InteractionPopup.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Project/WorldObjects/Technical/InteractionController/InteractionController.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Project/WorldObjects/Technical/Lighting/LightSource/LightSource.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/SharedWorldObjects/Torches/Wide_torch.png" type="Texture" id=10]
+[ext_resource path="res://Project/WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=11]
+
+[sub_resource type="Gradient" id=129]
+offsets = PoolRealArray( 0.00294118, 0.147059, 0.467647, 0.835294, 0.998305, 1 )
+colors = PoolColorArray( 1, 0.881219, 0.581395, 1, 0.907969, 0.627734, 0.247628, 1, 0.947032, 0.313998, 0.0941026, 1, 1, 1, 1, 0.694117, 1, 1, 1, 0.541176, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=96]
+gradient = SubResource( 129 )
+
+[sub_resource type="Curve" id=130]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.11442, 0.403329 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=98]
+curve = SubResource( 130 )
+
+[sub_resource type="ParticlesMaterial" id=140]
+emission_shape = 2
+emission_box_extents = Vector3( 5, 2, 1 )
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 10.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 0.03
+angular_velocity = 250.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 4.0
+linear_accel_random = 1.0
+angle = 360.0
+angle_random = 1.0
+scale = 1.5
+scale_curve = SubResource( 98 )
+color_ramp = SubResource( 96 )
+
+[sub_resource type="RectangleShape2D" id=139]
+extents = Vector2( 13, 8 )
+
+[sub_resource type="Gradient" id=141]
+offsets = PoolRealArray( 0, 0.415254, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 0.961288, 0.527809, 0.306881, 1, 0.98082, 0.250762, 0.0580612, 1 )
+
+[sub_resource type="GradientTexture" id=137]
+gradient = SubResource( 141 )
+
+[sub_resource type="ParticlesMaterial" id=142]
+lifetime_randomness = 1.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 90.0
+initial_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color_ramp = SubResource( 137 )
+
+[sub_resource type="CanvasItemMaterial" id=143]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id=144]
+offsets = PoolRealArray( 0, 0.00550964, 0.201102, 0.672176, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.677686, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=126]
+gradient = SubResource( 144 )
+
+[sub_resource type="Curve" id=145]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.240876, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.875912, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.990268, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=128]
+curve = SubResource( 145 )
+
+[sub_resource type="ParticlesMaterial" id=146]
+emission_shape = 1
+emission_sphere_radius = 3.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 60.0
+initial_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 720.0
+angle_random = 1.0
+scale = 0.1
+scale_random = 1.0
+scale_curve = SubResource( 128 )
+color_ramp = SubResource( 126 )
+
+[node name="Wide_torch" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="VisibilityChecker" parent="." instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 0, -14.5 )
+scale = Vector2( 1, 2.45 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 10 )
+
+[node name="LightSource" parent="." instance=ExtResource( 8 )]
+position = Vector2( 0, -8 )
+color = Color( 0.968627, 0.952941, 0.933333, 1 )
+radius = 200
+minRadius = 100
+maxRadius = 130
+animationTime = 1.0
+
+[node name="FireParticles" type="Particles2D" parent="."]
+pause_mode = 2
+position = Vector2( 0, -6 )
+emitting = false
+amount = 50
+lifetime = 3.0
+randomness = 1.0
+process_material = SubResource( 140 )
+texture = ExtResource( 2 )
+
+[node name="InteractionPopup" parent="." instance=ExtResource( 6 )]
+position = Vector2( 0, -8 )
+labelText = "Зажечь"
+
+[node name="InteractionController" parent="." instance=ExtResource( 7 )]
+visible = false
+position = Vector2( 0, 10 )
+
+[node name="CollisionShape2D" parent="InteractionController/Area2D" index="0"]
+position = Vector2( 0, -2 )
+shape = SubResource( 139 )
+
+[node name="IgniteLightParticles" type="Particles2D" parent="."]
+position = Vector2( 0, -7 )
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource( 142 )
+
+[node name="IgniteParticles" type="Particles2D" parent="."]
+pause_mode = 2
+material = SubResource( 143 )
+position = Vector2( 0, -6 )
+emitting = false
+amount = 30
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource( 146 )
+texture = ExtResource( 3 )
+
+[editable path="InteractionController"]

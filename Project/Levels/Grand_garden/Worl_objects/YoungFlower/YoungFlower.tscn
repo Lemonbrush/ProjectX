@@ -1,0 +1,179 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Assets/Effects/Particles/ShineSprincles.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Levels/Grand_garden/World_objects/Great_flower/Young_flower.png" type="Texture" id=2]
+[ext_resource path="res://Project/Levels/Grand_garden/Worl_objects/YoungFlower/YoungFlower.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=403]
+resource_name = "Hiding"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Young_flower:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 11, 12, 12, 13, 14, 15, 16, 17, 18, 17, 19, 20, 21 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shine_particles:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Flower_dirt_particles:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=404]
+resource_name = "Idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Young_flower:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shine_particles:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=405]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Young_flower:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="CanvasItemMaterial" id=325]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id=326]
+offsets = PoolRealArray( 0, 0.35461, 0.562648, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=15]
+gradient = SubResource( 326 )
+
+[sub_resource type="ParticlesMaterial" id=327]
+emission_shape = 1
+emission_sphere_radius = 15.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color_ramp = SubResource( 15 )
+anim_speed = 2.0
+anim_speed_random = 1.0
+anim_offset_random = 1.0
+
+[sub_resource type="Curve" id=272]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.148374, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.896341, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=406]
+curve = SubResource( 272 )
+
+[sub_resource type="ParticlesMaterial" id=335]
+emission_shape = 2
+emission_box_extents = Vector3( 5, 2, 1 )
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 50, 0 )
+initial_velocity = 40.0
+initial_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 3.0
+scale_random = 1.0
+scale_curve = SubResource( 406 )
+color = Color( 0.243137, 0.0392157, 0.164706, 1 )
+
+[node name="YoungFlower" type="Node2D"]
+pause_mode = 2
+script = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Idle"
+anims/Hiding = SubResource( 403 )
+anims/Idle = SubResource( 404 )
+anims/RESET = SubResource( 405 )
+
+[node name="Young_flower" type="Sprite" parent="."]
+position = Vector2( 0, -17 )
+texture = ExtResource( 2 )
+hframes = 11
+vframes = 2
+
+[node name="Shine_particles" type="Particles2D" parent="."]
+material = SubResource( 325 )
+emitting = false
+amount = 2
+lifetime = 0.5
+preprocess = 1.0
+randomness = 1.0
+process_material = SubResource( 327 )
+texture = ExtResource( 1 )
+
+[node name="Flower_dirt_particles" type="Particles2D" parent="."]
+emitting = false
+amount = 50
+process_material = SubResource( 335 )

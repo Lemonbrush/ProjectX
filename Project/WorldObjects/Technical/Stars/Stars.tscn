@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Project/Resources/Particles/Background_particles/Stars/Stars_process_material.tres" type="Material" id=1]
+
+[node name="Clouds" type="Node2D"]
+pause_mode = 2
+
+[node name="Particles2D" type="Particles2D" parent="."]
+pause_mode = 2
+self_modulate = Color( 1, 1, 1, 0.784314 )
+show_behind_parent = true
+amount = 200
+preprocess = 10.0
+randomness = 1.0
+local_coords = false
+process_material = ExtResource( 1 )

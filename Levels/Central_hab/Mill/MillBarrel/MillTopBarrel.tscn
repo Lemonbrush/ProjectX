@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=2]
-
-[ext_resource path="res://Levels/Central_hab/Mill/MillBarrel/MillTopBarrel.gd" type="Script" id=1]
-[ext_resource path="res://WorldObjects/Destructables/Barrel/Barrel.tscn" type="PackedScene" id=2]
-
-[node name="MillTopBarrel" instance=ExtResource( 2 )]
-script = ExtResource( 1 )

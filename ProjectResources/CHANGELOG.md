@@ -1,5 +1,44 @@
 # Changelog
 
+## [1.9.0 Beta] - 2023-8-12 - Cut scenes
+### Added
+- Added mystic dwellers across the game
+- Added button hints adaptation to key mapping
+- Added tutorial hints
+- Added portal sinking cutscene
+- Added prologue intro level
+- Added start gate falling cutscene
+- Added continue game main menu option
+- Added lighthouse quest
+- Added walk sounds
+### Changed
+- Changed indoor camera behavior in some houses
+- Changed mill ladder cutscene timings
+- Changed heart in a jar item location
+- Changed the harbour house location dialogs
+- Changed the grand garden location dialogs
+- Changed the artist dweller dialog
+- Changed the green and red band dwellers dialogs
+- Changed the red thread pedestal caption
+- Changed the fisher dweller dialogs
+- Changed the chinese wife dweller dialogs
+- Changed the grandpa dweller dialogs
+- Changed wish star tample signs
+- Changed the mill dweller dialogs
+- Changed caverns left tower appear in cutscene
+- Chenged central hub three sprite
+- Changed the big flower appearing cutscene
+- Changed the sad girl dweller quest
+### Fixed
+- Fixed save deletion setting
+- Fixed the girl statue sprite
+- Fixed item picking animation glow effect
+- Fixed button hint light affection
+- Fixed dialogs spelling
+- Fixed cancelling mystic dweller hide animation
+- Fixed save logic
+- Fixed lighthouse door player entrance position
+
 ## [1.8.0 Beta] - 2023-6-19 - Final location update
 ### Added
 - Added final level with the proposal scene

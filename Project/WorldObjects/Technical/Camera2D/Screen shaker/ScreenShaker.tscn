@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Project/WorldObjects/Technical/Camera2D/Screen shaker/ScreenShake.gd" type="Script" id=1]
+
+[node name="ScreenShaker" type="Node"]
+script = ExtResource( 1 )
+
+[node name="ShakeTween" type="Tween" parent="."]
+
+[node name="Frequency" type="Timer" parent="."]
+
+[node name="Duration" type="Timer" parent="."]

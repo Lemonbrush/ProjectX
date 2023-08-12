@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Project/WorldObjects/Destructables/CrushableObject/CrushableObject.gd" type="Script" id=1]
+[ext_resource path="res://Assets/SharedWorldObjects/Destructibles/Barrel/WorldObjects.png" type="Texture" id=2]
+[ext_resource path="res://Project/WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 8 )
+
+[node name="CrushableObject" type="KinematicBody2D"]
+moving_platform_apply_velocity_on_leave = 1
+script = ExtResource( 1 )
+
+[node name="VisibilityChecker" parent="." instance=ExtResource( 3 )]
+visible = false
+
+[node name="GroundRay1" type="RayCast2D" parent="."]
+position = Vector2( 8, 8 )
+enabled = true
+cast_to = Vector2( 0, 1 )
+collision_mask = 128
+
+[node name="GroundRay2" type="RayCast2D" parent="."]
+position = Vector2( -8, 8 )
+enabled = true
+cast_to = Vector2( 0, 1 )
+collision_mask = 128
+
+[node name="GroundRay3" type="RayCast2D" parent="."]
+position = Vector2( 0, 8 )
+enabled = true
+cast_to = Vector2( 0, 1 )
+collision_mask = 128
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+hframes = 3
+vframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 1 )
+
+[node name="HazardArea" type="Area2D" parent="."]
+visible = false
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HazardArea"]
+shape = SubResource( 1 )

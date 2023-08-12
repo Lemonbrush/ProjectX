@@ -1,0 +1,3628 @@
+[gd_scene load_steps=99 format=2]
+
+[ext_resource path="res://Assets/Levels/Old_home_location/Old_home_location.png" type="Texture" id=1]
+[ext_resource path="res://Project/Levels/Old_home_location/Old_home_location.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Effects/Lighting/White_fade_gradient.png" type="Texture" id=3]
+[ext_resource path="res://Assets/BackgroundGradients/BackgroundGradient1.png" type="Texture" id=4]
+[ext_resource path="res://Project/WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/BackgroundGradients/Blue_clouds.png" type="Texture" id=6]
+[ext_resource path="res://Project/WorldObjects/Decorative/Tree/Regualr_trees/Trees/TallTree.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Project/WorldObjects/Decorative/Tree/Regualr_trees/Trees/CurvedTree.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Project/WorldObjects/Technical/Clouds/Clouds.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Levels/Old_home_location/Bed_handles.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Effects/Noizes/NoizeRainTexture.png" type="Texture" id=11]
+[ext_resource path="res://Project/Resources/Shaders/RainShader.gdshader" type="Shader" id=12]
+[ext_resource path="res://Assets/Levels/Old_home_location/World_objects/ComputerAnimation-Sheet.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Levels/Old_home_location/World_objects/SofaSprite-Sheet.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Levels/Old_home_location/World_objects/MeSprite-Sheet.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Levels/Old_home_location/World_objects/Couch-Sheet.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Effects/Particles/particles.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Levels/Old_home_location/World_objects/Small_table.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Effects/Particles/ShineParticles.png" type="Texture" id=19]
+[ext_resource path="res://Project/UI/DebugScreen/GameSpecs.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Project/WorldObjects/Technical/Camera2D/Camera2D.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Project/WorldObjects/Technical/InteractionEmitterObject/InteractionEmitterObject.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Project/WorldObjects/Dialog/DialogUIComponents/InteractionPopup/InteractionPopup.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Project/WorldObjects/AppearingHintLabels/AppearingHintLabels.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Assets/Audio/Old_home_location/Intro/Components/NoratorFirstPart.wav" type="AudioStream" id=25]
+[ext_resource path="res://Assets/Audio/Old_home_location/Intro/Components/Intro Music.wav" type="AudioStream" id=26]
+[ext_resource path="res://Assets/Audio/Old_home_location/Intro/Components/SFX components/CosmicLasers.wav" type="AudioStream" id=27]
+[ext_resource path="res://Assets/Audio/Old_home_location/Intro/Components/SFX components/BackgroundRain.wav" type="AudioStream" id=28]
+[ext_resource path="res://Assets/Audio/Old_home_location/Intro/Components/SFX components/CosmicSound.wav" type="AudioStream" id=29]
+[ext_resource path="res://Assets/Audio/Old_home_location/Intro/Components/SFX components/SofaJumpingOutOfBlanketPartition.wav" type="AudioStream" id=30]
+[ext_resource path="res://Assets/Audio/Old_home_location/Intro/Components/SFX components/PortalAppearingIntroPartition.wav" type="AudioStream" id=31]
+[ext_resource path="res://Assets/Audio/Old_home_location/Intro/Components/SFX components/SofaEnteringPortalPartition.wav" type="AudioStream" id=32]
+[ext_resource path="res://Assets/Audio/Old_home_location/Intro/Components/NoratorSecondPart.wav" type="AudioStream" id=33]
+[ext_resource path="res://Assets/Audio/Old_home_location/Dark soundtrack/Intro Dark Soundtrack(2).wav" type="AudioStream" id=34]
+
+[sub_resource type="Environment" id=3]
+background_mode = 4
+ambient_light_energy = 0.0
+glow_enabled = true
+glow_hdr_threshold = 1.5
+adjustment_enabled = true
+adjustment_saturation = 1.3
+
+[sub_resource type="ShaderMaterial" id=31]
+shader = ExtResource( 12 )
+shader_param/intensity = 1.0
+shader_param/noise = ExtResource( 11 )
+
+[sub_resource type="Animation" id=38]
+resource_name = "Gate_opening_cut_scene"
+length = 4.0
+
+[sub_resource type="Animation" id=39]
+resource_name = "Intro"
+length = 12.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("BlackForegroundColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 8.5, 10 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("NPCs/MeSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 5.5, 8.5, 9.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 5, 6 ), Vector2( 5, 6 ), Vector2( 5, 40 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("NPCs/MeSprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 5.5, 5.7, 5.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1.3, 1.3 ), Vector2( -1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("NPCs/MeSprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 5.5, 5.6, 5.7, 5.8, 5.9, 6.6, 6.7, 9.9, 10, 10.3, 10.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 12, 13, 14, 15, 16, 1, 0, 6, 0, 1, 0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("NPCs/MeSprite:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 5.5, 5.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 15.0, 0.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("NPCs/SheSprite:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 7, 7.1, 7.2, 7.3, 7.4, 8.3, 8.4, 9.8, 9.9, 11, 11.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 12, 13, 14, 15, 16, 1, 16, 6, 0, 1, 16 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("NPCs/SheSprite:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 7, 7.2, 7.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1.3, 1.3 ), Vector2( 1, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("NPCs/SheSprite:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 7, 8.5, 9.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -37, 7 ), Vector2( -37, 7 ), Vector2( -37, 41 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("NPCs/SheSprite:rotation_degrees")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 7, 7.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -15.0, 0.0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("NPCs/SheSprite:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("NPCs/MeSprite:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 5.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("World_objects/Computer/ComputerSprite:frame")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 36 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("RainShaderRect:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("ParallaxBackground/ParallaxLayer/BackgroundSprite:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("ParallaxBackground/CloudsSprite:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/15/type = "method"
+tracks/15/path = NodePath("AnimationPlayer/AnimeWatchingAnimationPlayer")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 12 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "Animate", -1, 1.0, false ],
+"method": "play"
+} ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("NPCs:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 11.6, 12 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("NPCs:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("NPCs/CookingDustParticles:emitting")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("CanvasModulate:color")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Camera2D:position")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -15, 2 ) ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Camera2D:zoom")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0, 8.5, 10.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.4, 0.4 ), Vector2( 0.4, 0.4 ), Vector2( 0.6, 0.6 ) ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("BlackForegroundColorRect:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("World_objects/Computer/Monitor_light:visible")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("World_objects/Couch/CouchSprite:frame")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("Foreground_objects/Bed_handles:z_index")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("Foreground_objects/Small_table:position")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 137, 46 ) ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("Foreground_objects/Small_table:z_index")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/28/type = "value"
+tracks/28/path = NodePath("World_objects/Computer/Monitor_light:position")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -59, -22 ) ]
+}
+tracks/29/type = "value"
+tracks/29/path = NodePath(".:is_able_to_skip_cutscene")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/30/type = "method"
+tracks/30/path = NodePath("SkipHintInteractionPopup")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/keys = {
+"times": PoolRealArray( 0.5, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "show"
+}, {
+"args": [  ],
+"method": "hide"
+} ]
+}
+tracks/31/type = "method"
+tracks/31/path = NodePath("MusicPlayer/IntroFirstPart/NoratorAudioStreamPlayer")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/32/type = "method"
+tracks/32/path = NodePath("MusicPlayer/IntroFirstPart/IntroMusicAudioStreamPlayer")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+
+[sub_resource type="Animation" id=40]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BlackForegroundColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BlackForegroundColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("NPCs/MeSprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 12, -2 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("NPCs/MeSprite:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("NPCs/MeSprite:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("NPCs/MeSprite:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 15.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("NPCs/SheSprite:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 12 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("NPCs/SheSprite:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("NPCs/SheSprite:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -37, 7 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("NPCs/SheSprite:rotation_degrees")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -15.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("NPCs/SheSprite:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("NPCs/MeSprite:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("World_objects/Computer/ComputerSprite:frame")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 36 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("RainShaderRect:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("ParallaxBackground/ParallaxLayer/BackgroundSprite:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.0745098, 0.0823529, 0.184314, 1 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("ParallaxBackground/CloudsSprite:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.654902, 0.658824, 0.72549, 1 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("NPCs:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("NPCs/CookingDustParticles:emitting")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("NPCs:modulate")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("CanvasModulate:color")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.2, 0.258824, 0.376471, 1 ) ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Camera2D:position")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -15, 2 ) ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Camera2D:zoom")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.6, 0.6 ) ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("World_objects/Computer/Monitor_light:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("World_objects/Couch/CouchSprite:frame")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("Foreground_objects/Bed_handles:z_index")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("Foreground_objects/Small_table:position")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 137, 46 ) ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("Foreground_objects/Small_table:z_index")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=84]
+resource_name = "open_transition"
+
+[sub_resource type="Animation" id=44]
+resource_name = "Animate"
+length = 2.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("CouchSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 2.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 7, 8, 9, 5, 7, 8, 9, 5, 6, 7, 8, 9, 5, 6, 7, 0, 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CouchSprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 1, 1.6, 1.9, 2.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("../Computer/ComputerAnimationPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.6, 1.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "Anime", -1, 1.0, false ],
+"method": "play"
+}, {
+"args": [ "Turn_off", -1, 1.0, false ],
+"method": "play"
+} ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../../CanvasModulate:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.862745, 0.917647, 0.960784, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../../ParallaxBackground/ParallaxLayer/BackgroundSprite:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.490196, 0.6, 0.933333, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../../ParallaxBackground/CloudsSprite:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.666667, 0.752941, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("../../Camera2D:zoom")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.6, 0.6 ), Vector2( 0.4, 0.4 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("../../Camera2D:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1, 2, 2.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -15, 2 ), Vector2( 46, 30 ), Vector2( 46, 30 ), Vector2( -74, 30 ) ]
+}
+tracks/8/type = "method"
+tracks/8/path = NodePath("../../AnimationPlayer/CookingTogetherAnimationPlayer")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 2.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "Animate", -1, 1.0, false ],
+"method": "play"
+} ]
+}
+
+[sub_resource type="Animation" id=46]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("CouchSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../../NPCs:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CouchSprite:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../../CanvasModulate:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../../ParallaxBackground/ParallaxLayer/BackgroundSprite:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.490196, 0.6, 0.933333, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../../ParallaxBackground/CloudsSprite:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.666667, 0.752941, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("../../Camera2D:zoom")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.4, 0.4 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("../../Camera2D:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -15, 2 ) ]
+}
+
+[sub_resource type="Animation" id=56]
+resource_name = "Animate"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../NPCs:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../NPCs/SheSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -84, 41 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../NPCs/SheSprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 24, 25, 26, 27, 24, 25, 26, 27, 24, 25, 26, 27, 24, 25, 26, 27, 24, 25, 26 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../NPCs/MeSprite:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../NPCs/MeSprite:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -69, 40 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../NPCs/MeSprite:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 24, 25, 26, 27, 24, 25, 26, 27, 24, 25, 26, 27, 24, 25, 26, 27, 24, 25, 26 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("../NPCs/CookingDustParticles:emitting")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("../NPCs:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.5, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../CanvasModulate:color")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.862745, 0.917647, 0.960784, 1 ), Color( 0.803922, 0.858824, 0.952941, 1 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../ParallaxBackground/ParallaxLayer/BackgroundSprite:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.490196, 0.6, 0.933333, 1 ), Color( 0.545098, 0.439216, 0.933333, 1 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("../ParallaxBackground/CloudsSprite:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.666667, 0.752941, 1, 1 ), Color( 0.737255, 0.662745, 1, 1 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("../Camera2D:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -74, 30 ), Vector2( -74, 30 ), Vector2( -74, -16 ) ]
+}
+tracks/12/type = "method"
+tracks/12/path = NodePath("BedJumpingAnimationPlayer")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "Animate", -1, 1.0, false ],
+"method": "play"
+} ]
+}
+
+[sub_resource type="Animation" id=57]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../NPCs/SheSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 24 ]
+}
+
+[sub_resource type="Animation" id=41]
+resource_name = "Animate"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.4, 0.6, 0.7, 1, 1.1, 1.3, 1.4, 1.7, 1.8, 2, 2.1, 2.4, 2.5, 2.7, 2.8, 3.1, 3.2, 3.4, 3.5, 3.8, 3.9, 4.1, 4.2, 4.5, 4.6, 4.8, 4.9, 5.2, 5.3, 5.5, 5.6, 5.9, 6, 6.2, 6.3, 6.6, 6.7, 6.9, 7, 7.3, 7.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -70, -12 ), Vector2( -70, -15 ), Vector2( -70, -15 ), Vector2( -70, -12 ), Vector2( -70, -12 ), Vector2( -70, -15 ), Vector2( -70, -15 ), Vector2( -70, -12 ), Vector2( -70, -12 ), Vector2( -70, -15 ), Vector2( -70, -15 ), Vector2( -70, -12 ), Vector2( -70, -12 ), Vector2( -70, -15 ), Vector2( -70, -15 ), Vector2( -70, -12 ), Vector2( -70, -12 ), Vector2( -70, -15 ), Vector2( -70, -15 ), Vector2( -70, -12 ), Vector2( -70, -12 ), Vector2( -70, -15 ), Vector2( -70, -15 ), Vector2( -70, -12 ), Vector2( -70, -12 ), Vector2( -70, -15 ), Vector2( -70, -15 ), Vector2( -70, -12 ), Vector2( -70, -12 ), Vector2( -70, -15 ), Vector2( -70, -15 ), Vector2( -70, -12 ), Vector2( -70, -12 ), Vector2( -70, -15 ), Vector2( -70, -15 ), Vector2( -70, -12 ), Vector2( -70, -12 ), Vector2( -70, -15 ), Vector2( -70, -15 ), Vector2( -70, -12 ), Vector2( -70, -12 ), Vector2( -70, -15 ), Vector2( -70, -15 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SheSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.7, 0.8, 1, 1.1, 1.4, 1.5, 1.7, 1.8, 2.1, 2.2, 2.4, 2.5, 2.8, 2.9, 3.1, 3.2, 3.5, 3.6, 3.8, 3.9, 4.2, 4.3, 4.5, 4.6, 4.9, 5, 5.2, 5.3, 5.6, 5.7, 5.9, 6, 6.3, 6.4, 6.6, 6.7, 7, 7.1, 7.3, 7.4, 7.7, 7.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -89, -11 ), Vector2( -89, -11 ), Vector2( -89, -15 ), Vector2( -89, -15 ), Vector2( -89, -11 ), Vector2( -89, -11 ), Vector2( -89, -15 ), Vector2( -89, -15 ), Vector2( -89, -11 ), Vector2( -89, -11 ), Vector2( -89, -15 ), Vector2( -89, -15 ), Vector2( -89, -11 ), Vector2( -89, -11 ), Vector2( -89, -15 ), Vector2( -89, -15 ), Vector2( -89, -11 ), Vector2( -89, -11 ), Vector2( -89, -15 ), Vector2( -89, -15 ), Vector2( -89, -11 ), Vector2( -89, -11 ), Vector2( -89, -15 ), Vector2( -89, -15 ), Vector2( -89, -11 ), Vector2( -89, -11 ), Vector2( -89, -15 ), Vector2( -89, -15 ), Vector2( -89, -11 ), Vector2( -89, -11 ), Vector2( -89, -15 ), Vector2( -89, -15 ), Vector2( -89, -11 ), Vector2( -89, -11 ), Vector2( -89, -15 ), Vector2( -89, -15 ), Vector2( -89, -11 ), Vector2( -89, -11 ), Vector2( -89, -15 ), Vector2( -89, -15 ), Vector2( -89, -11 ), Vector2( -89, -11 ), Vector2( -89, -15 ), Vector2( -89, -15 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MeSprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.6, 0.7, 0.8, 0.9, 1, 1.3, 1.4, 1.5, 1.6, 1.7, 2, 2.1, 2.2, 2.3, 2.4, 2.7, 2.8, 2.9, 3, 3.1, 3.4, 3.5, 3.6, 3.7, 3.8, 4.1, 4.2, 4.3, 4.4, 4.5, 4.8, 4.9, 5, 5.1, 5.2, 5.5, 5.6, 5.7, 5.8, 5.9, 6.2, 6.3, 6.4, 6.5, 6.6, 6.9, 7, 7.1, 7.2, 7.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 6, 7, 8, 13, 6, 6, 7, 8, 13, 6, 6, 7, 8, 13, 6, 6, 7, 8, 13, 6, 6, 7, 8, 13, 6, 6, 7, 8, 13, 6, 6, 7, 8, 13, 6, 6, 7, 8, 13, 6, 6, 7, 8, 13, 6, 6, 7, 8, 13, 6, 6, 7, 8, 13 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("SheSprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 0.7, 1, 1.1, 1.2, 1.3, 1.4, 1.7, 1.8, 1.9, 2, 2.1, 2.4, 2.5, 2.6, 2.7, 2.8, 3.1, 3.2, 3.3, 3.4, 3.5, 3.8, 3.9, 4, 4.1, 4.2, 4.5, 4.6, 4.7, 4.8, 4.9, 5.2, 5.3, 5.4, 5.5, 5.6, 5.9, 6, 6.1, 6.2, 6.3, 6.6, 6.7, 6.8, 6.9, 7, 7.3, 7.4, 7.5, 7.6, 7.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 6, 6, 7, 8, 12, 6, 6, 7, 8, 12, 6, 6, 7, 8, 12, 6, 6, 7, 8, 12, 6, 6, 7, 8, 12, 6, 6, 7, 8, 12, 6, 6, 7, 8, 12, 6, 6, 7, 8, 12, 6, 6, 7, 8, 12, 6, 6, 7, 8, 12, 6, 6, 7, 8, 12 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath(".:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.3, 6.6, 7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("MeSprite:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("CookingDustParticles:emitting")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("CookingDustParticles:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../CanvasModulate:color")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.803922, 0.858824, 0.952941, 1 ), Color( 0.972549, 0.882353, 0.976471, 1 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("../ParallaxBackground/ParallaxLayer/BackgroundSprite:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.545098, 0.439216, 0.933333, 1 ), Color( 0.905882, 0.27451, 0.52549, 1 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("../ParallaxBackground/CloudsSprite:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.737255, 0.662745, 1, 1 ), Color( 0.976471, 0.67451, 1, 1 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("../BlackForegroundColorRect:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 6.2, 7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("../Camera2D:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 6.2, 7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -74, -16 ), Vector2( -74, -16 ), Vector2( -15, 2 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("../Camera2D:zoom")
+tracks/14/interp = 2
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 6.2, 7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.4, 0.4 ), Vector2( 0.4, 0.4 ), Vector2( 0.6, 0.6 ) ]
+}
+tracks/15/type = "method"
+tracks/15/path = NodePath("../AnimationPlayer/NightAnimationPlayer")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "Animate", -1, 1.0, false ],
+"method": "play"
+} ]
+}
+
+[sub_resource type="Animation" id=43]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("SheSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 6 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("SheSprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -84, 41 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("MeSprite:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("MeSprite:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -69, 40 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("MeSprite:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 24 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("CookingDustParticles:emitting")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath(".:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("CookingDustParticles:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../CanvasModulate:color")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.862745, 0.917647, 0.960784, 1 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("../ParallaxBackground/ParallaxLayer/BackgroundSprite:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.490196, 0.6, 0.933333, 1 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("../ParallaxBackground/CloudsSprite:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.666667, 0.752941, 1, 1 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("../BlackForegroundColorRect:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("../Camera2D:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -74, 30 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("../Camera2D:zoom")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.4, 0.4 ) ]
+}
+
+[sub_resource type="Animation" id=55]
+resource_name = "Animate"
+length = 32.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ParallaxBackground/ParallaxLayer/BackgroundSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.0745098, 0.0823529, 0.184314, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ParallaxBackground/CloudsSprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.164706, 0.180392, 0.4, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CanvasModulate:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 6.4, 6.6, 6.7, 12.5, 12.7, 12.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.2, 0.258824, 0.376471, 1 ), Color( 0.2, 0.258824, 0.376471, 1 ), Color( 1, 1, 1, 1 ), Color( 0.2, 0.258824, 0.376471, 1 ), Color( 0.2, 0.258824, 0.376471, 1 ), Color( 1, 1, 1, 1 ), Color( 0.2, 0.258824, 0.376471, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Camera2D:zoom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 8.5, 11.2, 24, 28.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.6, 0.6 ), Vector2( 0.6, 0.6 ), Vector2( 0.4, 0.4 ), Vector2( 0.4, 0.4 ), Vector2( 0.3, 0.3 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Camera2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 8.5, 11.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -15, 2 ), Vector2( -15, 2 ), Vector2( 35, 30 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("World_objects/Computer/Monitor_light:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath("World_objects/Computer/ComputerAnimationPlayer")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 12.7, 15.2, 17.2, 18.2, 19.7, 28.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "Working", -1, 1.0, false ],
+"method": "play"
+}, {
+"args": [ "Glitching", -1, 1.0, false ],
+"method": "play"
+}, {
+"args": [ "Rumbling", -1, 1.0, false ],
+"method": "play"
+}, {
+"args": [ "", -1, 1.0, false ],
+"method": "play"
+}, {
+"args": [ true ],
+"method": "stop"
+}, {
+"args": [ "Portal", -1, 1.0, false ],
+"method": "play"
+}, {
+"args": [ "PortalEnteringImpact", -1, 1.0, false ],
+"method": "play"
+} ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("NPCs/CookingDustParticles:emitting")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("NPCs:modulate")
+tracks/8/interp = 0
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 6.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("RainShaderRect:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("BlackForegroundColorRect:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 6.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("BlackForegroundColorRect:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("NPCs:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/13/type = "method"
+tracks/13/path = NodePath("Camera2D")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 6.5, 6.8, 12.6, 12.9, 19, 19.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ null, null, null, null ],
+"method": "_screen_shake"
+}, {
+"args": [  ],
+"method": "_stop_screen_shake"
+}, {
+"args": [ null, null, null, null ],
+"method": "_screen_shake"
+}, {
+"args": [  ],
+"method": "_stop_screen_shake"
+}, {
+"args": [ null, null, null, null ],
+"method": "_screen_shake"
+}, {
+"args": [  ],
+"method": "_stop_screen_shake"
+} ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("NPCs/MeSprite:frame")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 6.5, 6.6, 6.7, 6.8, 6.9, 7, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 7.9, 8, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, 8.7, 8.8, 8.9, 9, 9.1, 9.2, 9.3, 9.4, 9.5, 9.6, 9.7, 9.8, 9.9, 10, 10.1, 10.2, 10.3, 10.4, 10.5, 10.6, 10.7, 10.8, 10.9, 11, 11.1, 11.2, 11.3, 11.4, 11.5, 11.6, 11.7, 11.8, 11.9, 12, 12.1, 12.2, 12.3, 12.4, 12.5, 12.6, 16.5, 19.4, 19.5, 19.6, 19.7, 19.8, 19.9, 20.1, 20.6, 23, 23.1, 23.2, 23.3, 23.4, 23.6, 23.7, 23.8, 23.9, 24, 24.2, 24.3, 24.4, 24.5, 24.6, 24.8, 25.2, 25.6, 26, 26.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 48, 49, 50, 51, 52, 53, 54, 48, 49, 50, 51, 52, 54, 48, 49, 50, 51, 52, 53, 54, 48, 49, 50, 51, 52, 53, 54, 48, 49, 50, 51, 52, 54, 48, 49, 50, 51, 52, 53, 54, 48, 49, 50, 51, 52, 53, 54, 48, 49, 50, 51, 52, 54, 52, 53, 54, 48, 49, 50, 51, 52, 54, 78, 53, 55, 56, 57, 58, 60, 61, 60, 66, 67, 68, 67, 66, 66, 67, 68, 67, 66, 66, 67, 68, 67, 66, 69, 70, 71, 73, 74 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("NPCs/MeSprite:scale")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 6.5, 28.4, 28.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.1, 0.1 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("NPCs/MeSprite:position")
+tracks/16/interp = 2
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 6.5, 26.7, 27.7, 28.1, 28.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 32, 40 ), Vector2( 32, 40 ), Vector2( 32, 31 ), Vector2( 32, 31 ), Vector2( 56, 32 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("NPCs/SheSprite:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 6.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -125, -10 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("NPCs/SheSprite:frame")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 6.5, 6.6, 6.7, 7.5, 7.6, 7.7, 8.5, 8.6, 8.7, 9.5, 9.6, 9.7, 10.5, 10.6, 10.7, 11.5, 11.6, 11.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 48, 49, 48, 48, 49, 48, 48, 49, 48, 48, 49, 48, 48, 49, 48, 48, 49, 48 ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Foreground_objects/Bed_handles:z_index")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 6, 6.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("NPCs/MeSprite:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 6.5, 28.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("NPCs/SheSprite:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 6.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Foreground_objects/Small_table:z_index")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0, 6.5, 32 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 0 ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Foreground_objects/Small_table:position")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 6.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 129, 46 ) ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("World_objects/Computer/ComputerSprite:frame")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 18.5, 18.6, 18.7, 18.8, 18.9, 19, 19.1, 19.2, 19.3, 19.4, 19.5, 19.6, 19.7, 19.8, 19.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104 ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("World_objects/Computer/Monitor_light:position")
+tracks/25/interp = 0
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"times": PoolRealArray( 0, 18.4, 18.6, 18.7, 18.8, 19.1, 19.4, 19.5, 19.7, 19.8, 19.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -59, -22 ), Vector2( -59, -22 ), Vector2( -59, -21 ), Vector2( -59, -20 ), Vector2( -59, -19 ), Vector2( -59, -18 ), Vector2( -57, -17 ), Vector2( -59, -28 ), Vector2( -59, -29 ), Vector2( -59, -25 ), Vector2( -59, -18 ) ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("World_objects/Computer/PortalActivationParticles:emitting")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"times": PoolRealArray( 0, 19.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("World_objects/Computer/PortalEnteringParticles:emitting")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 0.1, 28.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/28/type = "method"
+tracks/28/path = NodePath("AnimationPlayer/SofaEvedroppingAnimationPlayer")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"times": PoolRealArray( 32 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "Animate", -1, 1.0, false ],
+"method": "play"
+} ]
+}
+tracks/29/type = "method"
+tracks/29/path = NodePath("MusicPlayer/IntroFirstPart/SFX/PortalAppearingPlayer")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"times": PoolRealArray( 5.9 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+
+[sub_resource type="Animation" id=54]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ParallaxBackground/ParallaxLayer/BackgroundSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.0745098, 0.0823529, 0.184314, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ParallaxBackground/CloudsSprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.164706, 0.180392, 0.4, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CanvasModulate:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.2, 0.258824, 0.376471, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Camera2D:zoom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.6, 0.6 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Camera2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -15, 2 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("World_objects/Computer/Monitor_light:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("NPCs/CookingDustParticles:emitting")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("NPCs:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("RainShaderRect:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("BlackForegroundColorRect:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("BlackForegroundColorRect:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("NPCs:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("NPCs/MeSprite:frame")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 48 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("NPCs/MeSprite:scale")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("NPCs/MeSprite:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 32, 40 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("NPCs/SheSprite:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -125, -10 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("NPCs/SheSprite:frame")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 48 ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Foreground_objects/Bed_handles:z_index")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("NPCs/MeSprite:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("NPCs/SheSprite:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Foreground_objects/Small_table:z_index")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Foreground_objects/Small_table:position")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 129, 46 ) ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("World_objects/Computer/ComputerSprite:frame")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 90 ]
+}
+
+[sub_resource type="Animation" id=63]
+resource_name = "Animate"
+length = 11.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 10.5, 11 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 35, 30 ), Vector2( -59, -8 ), Vector2( -59, -8 ), Vector2( -15, 2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../NPCs/SheSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.4, 1.5, 1.6, 1.7, 2.4, 4, 4.1, 4.2, 4.3, 5, 6, 6.1, 6.2, 6.3, 6.4, 6.8, 6.9, 7, 7.1, 7.2, 7.3, 7.4, 7.5, 8, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, 8.7, 8.8, 8.9, 10, 10.1, 10.2, 10.3, 10.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 54, 55, 55, 56, 55, 54, 55, 55, 56, 55, 54, 60, 61, 62, 63, 64, 66, 67, 68, 69, 70, 71, 73, 74, 78, 79, 80, 81, 82, 83, 84, 85, 86, 85, 90, 91, 92, 93, 94 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../NPCs/SheSprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -71, -9 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../Camera2D:zoom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2, 10.5, 11 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.3, 0.3 ), Vector2( 0.4, 0.4 ), Vector2( 0.4, 0.4 ), Vector2( 0.6, 0.6 ) ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("..")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 11 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "spawn_player"
+} ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../NPCs:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 11 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("..:is_able_to_skip_cutscene")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 10.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/7/type = "method"
+tracks/7/path = NodePath("../World_objects/AppearingHintLabel")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 11 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "show"
+} ]
+}
+tracks/8/type = "method"
+tracks/8/path = NodePath("../MusicPlayer/IntroFirstPart/SFX/SofaJumpingOutOfBlanketPlayer")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 4.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/9/type = "method"
+tracks/9/path = NodePath("../MusicPlayer/IntroFirstPart/IntroMusicAudioStreamPlayer")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 11 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/10/type = "method"
+tracks/10/path = NodePath("..")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 11 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "play_background_music"
+} ]
+}
+
+[sub_resource type="Animation" id=64]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../NPCs/SheSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 55 ]
+}
+
+[sub_resource type="Animation" id=86]
+resource_name = "Animate"
+length = 9.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("..")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "despawn_player"
+}, {
+"args": [  ],
+"method": "transition_to_portal_sinking_animation_scene"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../NPCs/SheSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.8, 0.9, 1, 1.1, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 5, 5.1, 5.2, 5.3, 5.6, 5.9, 6.1, 6.3, 6.5, 6.7, 6.9, 7.1, 7.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 96, 97, 98, 99, 96, 97, 98, 99, 100, 99, 96, 97, 98, 99, 102, 103, 104, 105, 104, 106, 107, 108, 109, 110, 111, 112, 113 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../Camera2D:zoom")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 3, 6.7, 7.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.6, 0.6 ), Vector2( 0.6, 0.6 ), Vector2( 0.3, 0.3 ), Vector2( 0.3, 0.3 ), Vector2( 0.2, 0.2 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../Camera2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -15, 2 ), Vector2( -15, 2 ), Vector2( 48, 36 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../NPCs:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../NPCs/SheSprite:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 7.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("../NPCs/MeSprite:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("../NPCs/SheSprite:position")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 6.7, 7.3, 7.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 34, 41 ), Vector2( 34, 41 ), Vector2( 34, 33 ), Vector2( 55, 35 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../NPCs/SheSprite:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 7.5, 7.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.1, 0.1 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../World_objects/Computer/PortalEnteringParticles:emitting")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 7.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/10/type = "method"
+tracks/10/path = NodePath("../World_objects/Computer/ComputerAnimationPlayer")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 7.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "PortalEnteringImpact", -1, 1.0, false ],
+"method": "play"
+} ]
+}
+tracks/11/type = "method"
+tracks/11/path = NodePath("../Camera2D")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 7.7, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ null, null, null, null ],
+"method": "_screen_shake"
+}, {
+"args": [  ],
+"method": "_stop_screen_shake"
+} ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("../CanvasModulate:color")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 7.7, 7.8, 7.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.2, 0.258824, 0.376471, 1 ), Color( 0.2, 0.258824, 0.376471, 1 ), Color( 1, 1, 1, 1 ), Color( 0.2, 0.258824, 0.376471, 1 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("../BlackForegroundColorRect:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("../BlackForegroundColorRect:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 8, 9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/15/type = "method"
+tracks/15/path = NodePath("../MusicPlayer/IntroFirstPart/NoratorSecondPartAudioStreamPlayer")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/16/type = "method"
+tracks/16/path = NodePath("../MusicPlayer/IntroSecondPart/SFX/SofaEnteringPortalPlayer")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 5.7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+
+[sub_resource type="Animation" id=87]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../NPCs/SheSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 74 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../NPCs/SheSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 34, 41 ) ]
+}
+
+[sub_resource type="ParticlesMaterial" id=29]
+trail_divisor = 100
+emission_shape = 2
+emission_box_extents = Vector3( 250, 250, 1 )
+flag_disable_z = true
+gravity = Vector3( -100, 2000, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+
+[sub_resource type="CurveTexture" id=7]
+
+[sub_resource type="Gradient" id=14]
+offsets = PoolRealArray( 0, 0.00285307, 0.248217, 0.774608, 0.997147, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.239024, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 14 )
+
+[sub_resource type="Curve" id=6]
+_data = [ Vector2( 0, 0.840033 ), 0.0, 0.0, 0, 0, Vector2( 0.103806, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.571868 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 6 )
+
+[sub_resource type="ParticlesMaterial" id=15]
+emission_shape = 2
+emission_box_extents = Vector3( 250, 50, 1 )
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 9 )
+color_ramp = SubResource( 8 )
+anim_offset = 1.0
+anim_offset_random = 1.0
+anim_offset_curve = SubResource( 7 )
+
+[sub_resource type="OccluderPolygon2D" id=4]
+polygon = PoolVector2Array( 25, 50, 25, 50, 25, 38, 9, 38, 5, 38, 25, 38, 25, 50, 24, 50, 25, 50 )
+
+[sub_resource type="Animation" id=20]
+resource_name = "Idle"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Light2D:energy")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.5, 0.55 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Light2D:texture_scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.3, 0.35 ]
+}
+
+[sub_resource type="Animation" id=85]
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("ComputerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 150, 151, 152, 153, 154, 155 ]
+}
+
+[sub_resource type="Animation" id=32]
+resource_name = "Glitching"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("ComputerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 30, 31, 32 ]
+}
+
+[sub_resource type="Animation" id=33]
+resource_name = "Portal"
+length = 0.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("ComputerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 120, 121, 122, 123, 124, 125, 126 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Monitor_light:position")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -59, -22 ), Vector2( -58, -22 ), Vector2( -58, -23 ) ]
+}
+
+[sub_resource type="Animation" id=65]
+resource_name = "PortalEnteringImpact"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("ComputerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 120, 93, 99, 103 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("ComputerAnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "Portal", -1, 1.0, false ],
+"method": "play"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Monitor_light:position")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -58, -23 ), Vector2( -58, -18 ), Vector2( -57, -16 ), Vector2( -59, -25 ) ]
+}
+
+[sub_resource type="Animation" id=34]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ComputerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 36 ]
+}
+
+[sub_resource type="Animation" id=35]
+resource_name = "Rumbling"
+length = 0.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("ComputerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 60, 61, 62, 63, 64, 65, 66 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Monitor_light:position")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -58, -23 ), Vector2( -58, -22 ), Vector2( -58, -23 ) ]
+}
+
+[sub_resource type="Animation" id=36]
+resource_name = "Turn_off"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("ComputerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 36 ]
+}
+
+[sub_resource type="Animation" id=37]
+resource_name = "Working"
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("ComputerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29 ]
+}
+
+[sub_resource type="CanvasItemMaterial" id=48]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id=49]
+offsets = PoolRealArray( 0.00386847, 0.0851064, 0.880077, 1 )
+colors = PoolColorArray( 0, 0, 0, 0, 0.84913, 0.84913, 0.84913, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=50]
+gradient = SubResource( 49 )
+
+[sub_resource type="Curve" id=51]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.141593, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.557522, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=52]
+curve = SubResource( 51 )
+
+[sub_resource type="ParticlesMaterial" id=58]
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 5.0
+flag_disable_z = true
+direction = Vector3( 0, -100, 0 )
+spread = 100.0
+flatness = 1.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 60.0
+initial_velocity_random = 1.0
+angular_velocity = 180.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_random = 1.0
+scale_curve = SubResource( 52 )
+color_ramp = SubResource( 50 )
+
+[sub_resource type="CanvasItemMaterial" id=59]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id=60]
+offsets = PoolRealArray( 0, 0.193853, 0.808511, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=61]
+gradient = SubResource( 60 )
+
+[sub_resource type="ParticlesMaterial" id=62]
+emission_shape = 1
+emission_sphere_radius = 5.0
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 50.0
+initial_velocity_random = 1.0
+angular_velocity = 100.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+orbit_velocity_random = 1.0
+angle = 360.0
+angle_random = 1.0
+color_ramp = SubResource( 61 )
+anim_speed = 0.1
+anim_speed_random = 1.0
+anim_offset = 1.0
+anim_offset_random = 1.0
+
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 4.0625, 1 )
+
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 10.0625, 1 )
+
+[sub_resource type="RectangleShape2D" id=74]
+extents = Vector2( 112, 3.5 )
+
+[sub_resource type="RectangleShape2D" id=75]
+extents = Vector2( 43.5, 3.5 )
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 112, 3.5 )
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 3.5, 17.5 )
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 1.5, 29.5 )
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 3.5, 7.5 )
+
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 3.5, 51 )
+
+[sub_resource type="OccluderPolygon2D" id=76]
+polygon = PoolVector2Array( -94, 19, -94, 16, -86, 16, -86, 14, -94, 14, -94, 9, -181, 9, -181, 19 )
+
+[sub_resource type="OccluderPolygon2D" id=5]
+polygon = PoolVector2Array( 135, 78, 142, 78, 142, 63, 140, 63, 135, 63, 135, 71, -76, 71, -76, 38, -75, 38, -75, -31, 135, -31, 135, 4, 142, 4, 142, -38, -82, -38, -82, 38, -81, 38, -81, 71, -82, 71, -82, 78 )
+
+[sub_resource type="OccluderPolygon2D" id=77]
+polygon = PoolVector2Array( -58, 58, -58, 56, -66, 56, -66, 58 )
+
+[sub_resource type="OccluderPolygon2D" id=78]
+polygon = PoolVector2Array( -70, 52, -62, 52, -62, 50, -70, 50 )
+
+[sub_resource type="OccluderPolygon2D" id=79]
+polygon = PoolVector2Array( -71, 46, -66, 46, -66, 44, -71, 44 )
+
+[sub_resource type="OccluderPolygon2D" id=80]
+polygon = PoolVector2Array( -78, 40, -70, 40, -70, 38, -78, 38 )
+
+[sub_resource type="OccluderPolygon2D" id=81]
+polygon = PoolVector2Array( -82, 34, -74, 34, -74, 32, -82, 32 )
+
+[sub_resource type="OccluderPolygon2D" id=82]
+polygon = PoolVector2Array( -86, 28, -78, 28, -78, 26, -86, 26 )
+
+[sub_resource type="OccluderPolygon2D" id=83]
+polygon = PoolVector2Array( -90, 22, -82, 22, -82, 20, -90, 20 )
+
+[sub_resource type="ParticlesMaterial" id=53]
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 2.0
+flag_disable_z = true
+direction = Vector3( 0, -100, 0 )
+flatness = 1.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 60.0
+initial_velocity_random = 1.0
+angular_velocity = 180.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_random = 1.0
+scale_curve = SubResource( 52 )
+color_ramp = SubResource( 50 )
+
+[node name="Old_home_location" type="Node2D"]
+script = ExtResource( 2 )
+background_music = ExtResource( 34 )
+dynamic_camera = false
+is_able_to_skip_cutscene = false
+
+[node name="MusicPlayer" type="Node" parent="."]
+
+[node name="IntroFirstPart" type="Node" parent="MusicPlayer"]
+
+[node name="SFX" type="Node" parent="MusicPlayer/IntroFirstPart"]
+
+[node name="SofaJumpingOutOfBlanketPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroFirstPart/SFX"]
+stream = ExtResource( 30 )
+
+[node name="PortalAppearingPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroFirstPart/SFX"]
+stream = ExtResource( 31 )
+
+[node name="CosmicSoundPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroFirstPart/SFX"]
+stream = ExtResource( 29 )
+
+[node name="CosmicLasersPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroFirstPart/SFX"]
+stream = ExtResource( 27 )
+
+[node name="BackgroundRainPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroFirstPart/SFX"]
+stream = ExtResource( 28 )
+
+[node name="NoratorAudioStreamPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroFirstPart"]
+pause_mode = 2
+stream = ExtResource( 25 )
+
+[node name="NoratorSecondPartAudioStreamPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroFirstPart"]
+pause_mode = 2
+stream = ExtResource( 33 )
+
+[node name="IntroMusicAudioStreamPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroFirstPart"]
+pause_mode = 2
+stream = ExtResource( 26 )
+
+[node name="IntroSecondPart" type="Node" parent="MusicPlayer"]
+
+[node name="SFX" type="Node" parent="MusicPlayer/IntroSecondPart"]
+
+[node name="SofaEnteringPortalPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroSecondPart/SFX"]
+pause_mode = 2
+stream = ExtResource( 32 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 3 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.2, 0.258824, 0.376471, 1 )
+
+[node name="RainShaderRect" type="TextureRect" parent="."]
+visible = false
+light_mask = 0
+material = SubResource( 31 )
+margin_left = -216.0
+margin_top = -247.0
+margin_right = 853.0
+margin_bottom = 821.0
+texture = ExtResource( 11 )
+stretch_mode = 2
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_limit_end = Vector2( 0, 320 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 530, 0 )
+
+[node name="BackgroundSprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color( 0.0745098, 0.0823529, 0.184314, 1 )
+scale = Vector2( 0.573, 0.568384 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="CloudsSprite" type="Sprite" parent="ParallaxBackground"]
+modulate = Color( 0.164706, 0.180392, 0.4, 1 )
+position = Vector2( 350, -22 )
+scale = Vector2( 0.77, 0.77 )
+texture = ExtResource( 6 )
+
+[node name="GameSpecs" parent="." instance=ExtResource( 20 )]
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+pause_mode = 2
+autoplay = "Intro"
+anims/Gate_opening_cut_scene = SubResource( 38 )
+anims/Intro = SubResource( 39 )
+anims/RESET = SubResource( 40 )
+anims/open_transition = SubResource( 84 )
+
+[node name="AnimeWatchingAnimationPlayer" type="AnimationPlayer" parent="AnimationPlayer"]
+root_node = NodePath("../../World_objects/Couch")
+anims/Animate = SubResource( 44 )
+anims/RESET = SubResource( 46 )
+
+[node name="CookingTogetherAnimationPlayer" type="AnimationPlayer" parent="AnimationPlayer"]
+anims/Animate = SubResource( 56 )
+anims/RESET = SubResource( 57 )
+
+[node name="BedJumpingAnimationPlayer" type="AnimationPlayer" parent="AnimationPlayer"]
+root_node = NodePath("../../NPCs")
+anims/Animate = SubResource( 41 )
+anims/RESET = SubResource( 43 )
+
+[node name="NightAnimationPlayer" type="AnimationPlayer" parent="AnimationPlayer"]
+root_node = NodePath("../..")
+anims/Animate = SubResource( 55 )
+anims/RESET = SubResource( 54 )
+
+[node name="SofaEvedroppingAnimationPlayer" type="AnimationPlayer" parent="AnimationPlayer"]
+anims/Animate = SubResource( 63 )
+anims/RESET = SubResource( 64 )
+
+[node name="SofaEnteringPortalAnimationPlayer" type="AnimationPlayer" parent="AnimationPlayer"]
+anims/Animate = SubResource( 86 )
+anims/RESET = SubResource( 87 )
+
+[node name="Camera2D" parent="." instance=ExtResource( 21 )]
+position = Vector2( -15, 2 )
+z_index = 1
+zoom = Vector2( 0.6, 0.6 )
+backgroundColor = Color( 0.72549, 0.827451, 0.901961, 1 )
+zoom_based_on_editor_value = true
+
+[node name="RainParticles2D" type="Particles2D" parent="Camera2D"]
+visible = false
+position = Vector2( 205, -99 )
+amount = 10000
+lifetime = 0.5
+process_material = SubResource( 29 )
+
+[node name="Clouds" parent="Camera2D" instance=ExtResource( 9 )]
+position = Vector2( -29, -24 )
+z_index = -3
+
+[node name="Particles2D" parent="Camera2D/Clouds" index="0"]
+amount = 5
+lifetime = 50.0
+process_material = SubResource( 15 )
+
+[node name="TallTree4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 89, 126 )
+z_index = -3
+
+[node name="CollisionShape2D" parent="TallTree4/PassThroughBody" index="0"]
+disabled = true
+
+[node name="WorldSprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+
+[node name="World_objects" type="Node2D" parent="."]
+
+[node name="Trees" type="Node2D" parent="World_objects"]
+position = Vector2( 9, -58 )
+z_index = -2
+
+[node name="TallTree2" parent="World_objects/Trees" instance=ExtResource( 7 )]
+position = Vector2( 119, 137 )
+
+[node name="CollisionShape2D" parent="World_objects/Trees/TallTree2/PassThroughBody" index="0"]
+disabled = true
+
+[node name="CurvedTree" parent="World_objects/Trees" instance=ExtResource( 8 )]
+position = Vector2( 120, 168 )
+
+[node name="CollisionShape2D" parent="World_objects/Trees/CurvedTree/PassThroughBody" index="0"]
+disabled = true
+
+[node name="CurvedTree2" parent="World_objects/Trees" instance=ExtResource( 8 )]
+position = Vector2( 178, 179 )
+
+[node name="CollisionShape2D" parent="World_objects/Trees/CurvedTree2/PassThroughBody" index="0"]
+disabled = true
+
+[node name="CurvedTree3" parent="World_objects/Trees" instance=ExtResource( 8 )]
+position = Vector2( 216, 144 )
+
+[node name="CollisionShape2D" parent="World_objects/Trees/CurvedTree3/PassThroughBody" index="0"]
+disabled = true
+
+[node name="TallTree" parent="World_objects/Trees" instance=ExtResource( 7 )]
+position = Vector2( 149, 156 )
+
+[node name="CollisionShape2D" parent="World_objects/Trees/TallTree/PassThroughBody" index="0"]
+disabled = true
+
+[node name="TallTree3" parent="World_objects/Trees" instance=ExtResource( 7 )]
+position = Vector2( 218, 176 )
+
+[node name="CollisionShape2D" parent="World_objects/Trees/TallTree3/PassThroughBody" index="0"]
+disabled = true
+
+[node name="Computer" type="Node2D" parent="World_objects"]
+position = Vector2( 59, 22 )
+
+[node name="Monitor_light" type="Node2D" parent="World_objects/Computer"]
+visible = false
+position = Vector2( -59, -22 )
+
+[node name="Monitor_occlusion" type="LightOccluder2D" parent="World_objects/Computer/Monitor_light"]
+position = Vector2( 44, -15 )
+occluder = SubResource( 4 )
+
+[node name="Light2D" type="Light2D" parent="World_objects/Computer/Monitor_light"]
+position = Vector2( 58, 27 )
+texture = ExtResource( 3 )
+texture_scale = 0.312963
+energy = 0.512963
+shadow_enabled = true
+shadow_gradient_length = 0.6
+shadow_filter = 5
+shadow_filter_smooth = 2.7
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="World_objects/Computer/Monitor_light"]
+autoplay = "Idle"
+anims/Idle = SubResource( 20 )
+
+[node name="ComputerSprite" type="Sprite" parent="World_objects/Computer"]
+texture = ExtResource( 13 )
+hframes = 30
+vframes = 6
+frame = 36
+
+[node name="ComputerAnimationPlayer" type="AnimationPlayer" parent="World_objects/Computer"]
+anims/Anime = SubResource( 85 )
+anims/Glitching = SubResource( 32 )
+anims/Portal = SubResource( 33 )
+anims/PortalEnteringImpact = SubResource( 65 )
+anims/RESET = SubResource( 34 )
+anims/Rumbling = SubResource( 35 )
+anims/Turn_off = SubResource( 36 )
+anims/Working = SubResource( 37 )
+
+[node name="PortalActivationParticles" type="Particles2D" parent="World_objects/Computer"]
+material = SubResource( 48 )
+position = Vector2( 0, 20 )
+emitting = false
+amount = 60
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource( 58 )
+texture = ExtResource( 17 )
+
+[node name="PortalEnteringParticles" type="Particles2D" parent="World_objects/Computer"]
+pause_mode = 2
+material = SubResource( 59 )
+position = Vector2( -4, 12 )
+emitting = false
+amount = 25
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource( 62 )
+texture = ExtResource( 19 )
+
+[node name="Couch" type="Node2D" parent="World_objects"]
+
+[node name="CouchSprite" type="Sprite" parent="World_objects/Couch"]
+position = Vector2( 26, 31 )
+texture = ExtResource( 16 )
+hframes = 5
+vframes = 2
+
+[node name="PlayerSpawnPosition" type="Position2D" parent="World_objects"]
+position = Vector2( -58, -3 )
+
+[node name="PortalInteractionEmitter" parent="World_objects" instance=ExtResource( 22 )]
+position = Vector2( 40, 47 )
+labelText = "Запрыгнуть"
+
+[node name="AppearingHintLabel" parent="World_objects" instance=ExtResource( 24 )]
+position = Vector2( -41, -6 )
+
+[node name="Label" parent="World_objects/AppearingHintLabel" index="0"]
+margin_left = -60.0
+margin_top = -44.0
+margin_right = 157.0
+margin_bottom = 64.0
+text = "Жмякай [Left], [Right], чтобы ходить"
+
+[node name="Foreground_objects" type="Node2D" parent="."]
+position = Vector2( -93, -3 )
+
+[node name="Bed_handles" type="Sprite" parent="Foreground_objects"]
+z_index = 1
+texture = ExtResource( 10 )
+
+[node name="Small_table" type="Sprite" parent="Foreground_objects"]
+position = Vector2( 129, 46 )
+z_index = 1
+texture = ExtResource( 18 )
+
+[node name="Collisions" type="Node2D" parent="."]
+
+[node name="PassTrough" type="Node2D" parent="Collisions"]
+
+[node name="PassThroughBody7" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 5 )]
+position = Vector2( 20, 6 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody7" index="0"]
+position = Vector2( -66.0625, -6 )
+shape = SubResource( 27 )
+one_way_collision = true
+
+[node name="PassThroughBody8" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 5 )]
+position = Vector2( 24, 12 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody8" index="0"]
+position = Vector2( -66.0625, -6 )
+shape = SubResource( 27 )
+one_way_collision = true
+
+[node name="PassThroughBody9" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 5 )]
+position = Vector2( 28, 18 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody9" index="0"]
+position = Vector2( -66.0625, -6 )
+shape = SubResource( 27 )
+one_way_collision = true
+
+[node name="PassThroughBody10" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 5 )]
+position = Vector2( 32, 24 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody10" index="0"]
+position = Vector2( -66.0625, -6 )
+shape = SubResource( 27 )
+one_way_collision = true
+
+[node name="PassThroughBody11" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 5 )]
+position = Vector2( 36, 30 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody11" index="0"]
+position = Vector2( -66.0625, -6 )
+shape = SubResource( 27 )
+one_way_collision = true
+
+[node name="PassThroughBody12" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 5 )]
+position = Vector2( 40, 36 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody12" index="0"]
+position = Vector2( -66.0625, -6 )
+shape = SubResource( 27 )
+one_way_collision = true
+
+[node name="PassThroughBody13" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 5 )]
+position = Vector2( 44, 42 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody13" index="0"]
+position = Vector2( -66.0625, -6 )
+shape = SubResource( 27 )
+one_way_collision = true
+
+[node name="PassThroughBody14" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 5 )]
+position = Vector2( 48, 48 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody14" index="0"]
+position = Vector2( -66.0625, -6 )
+shape = SubResource( 27 )
+one_way_collision = true
+
+[node name="PassThroughBody15" parent="Collisions/PassTrough" groups=["passThroughObject"] instance=ExtResource( 5 )]
+position = Vector2( 67, 39 )
+
+[node name="CollisionShape2D" parent="Collisions/PassTrough/PassThroughBody15" index="0"]
+position = Vector2( -60.0625, -6 )
+shape = SubResource( 28 )
+one_way_collision = true
+
+[node name="Solid" type="Node2D" parent="Collisions"]
+
+[node name="PassThroughBody18" parent="Collisions/Solid" instance=ExtResource( 5 )]
+position = Vector2( -114, 63 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody18" index="0"]
+position = Vector2( 82, -12.5 )
+shape = SubResource( 74 )
+
+[node name="PassThroughBody19" parent="Collisions/Solid" instance=ExtResource( 5 )]
+position = Vector2( -107, 13 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody19" index="0"]
+position = Vector2( 13.5, -12.5 )
+shape = SubResource( 75 )
+
+[node name="PassThroughBody20" parent="Collisions/Solid" instance=ExtResource( 5 )]
+position = Vector2( -114, -46 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody20" index="0"]
+position = Vector2( 82, -12.5 )
+shape = SubResource( 22 )
+
+[node name="PassThroughBody21" parent="Collisions/Solid" instance=ExtResource( 5 )]
+position = Vector2( 103, -39 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody21" index="0"]
+position = Vector2( -26.5, 1.5 )
+shape = SubResource( 23 )
+
+[node name="PassThroughBody22" parent="Collisions/Solid" instance=ExtResource( 5 )]
+position = Vector2( 105, -4 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody22" index="0"]
+position = Vector2( -28.5, 13.5 )
+shape = SubResource( 24 )
+
+[node name="PassThroughBody23" parent="Collisions/Solid" instance=ExtResource( 5 )]
+position = Vector2( 103, 55 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody23" index="0"]
+position = Vector2( -26.5, -8.5 )
+shape = SubResource( 25 )
+
+[node name="PassThroughBody24" parent="Collisions/Solid" instance=ExtResource( 5 )]
+position = Vector2( -114, -39 )
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" parent="Collisions/Solid/PassThroughBody24" index="0"]
+position = Vector2( -26.5, 35 )
+shape = SubResource( 26 )
+
+[node name="Ladders" type="Node2D" parent="."]
+
+[node name="Doors" type="Node2D" parent="."]
+
+[node name="Lighting" type="Node2D" parent="."]
+
+[node name="AirBlowers" type="Node2D" parent="."]
+
+[node name="Occlusion" type="Node2D" parent="."]
+
+[node name="Bed_occlusion" type="LightOccluder2D" parent="Occlusion"]
+position = Vector2( 44, -15 )
+occluder = SubResource( 76 )
+
+[node name="Room_outer_occlusion" type="LightOccluder2D" parent="Occlusion"]
+position = Vector2( -62, -24 )
+occluder = SubResource( 5 )
+
+[node name="Stair" type="Node2D" parent="Occlusion"]
+
+[node name="LightOccluder2D8" type="LightOccluder2D" parent="Occlusion/Stair"]
+position = Vector2( 44, -15 )
+occluder = SubResource( 77 )
+
+[node name="LightOccluder2D9" type="LightOccluder2D" parent="Occlusion/Stair"]
+position = Vector2( 44, -15 )
+occluder = SubResource( 78 )
+
+[node name="LightOccluder2D10" type="LightOccluder2D" parent="Occlusion/Stair"]
+position = Vector2( 44, -15 )
+occluder = SubResource( 79 )
+
+[node name="LightOccluder2D11" type="LightOccluder2D" parent="Occlusion/Stair"]
+position = Vector2( 44, -15 )
+occluder = SubResource( 80 )
+
+[node name="LightOccluder2D12" type="LightOccluder2D" parent="Occlusion/Stair"]
+position = Vector2( 44, -15 )
+occluder = SubResource( 81 )
+
+[node name="LightOccluder2D13" type="LightOccluder2D" parent="Occlusion/Stair"]
+position = Vector2( 44, -15 )
+occluder = SubResource( 82 )
+
+[node name="LightOccluder2D14" type="LightOccluder2D" parent="Occlusion/Stair"]
+position = Vector2( 44, -15 )
+occluder = SubResource( 83 )
+
+[node name="BlackForegroundColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -485.0
+margin_top = -349.0
+margin_right = 534.0
+margin_bottom = 386.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="NPCs" type="Node2D" parent="."]
+
+[node name="MeSprite" type="Sprite" parent="NPCs"]
+visible = false
+position = Vector2( 32, 40 )
+rotation = 0.261799
+texture = ExtResource( 15 )
+offset = Vector2( 7, -9 )
+hframes = 6
+vframes = 14
+frame = 48
+
+[node name="CookingDustParticles" type="Particles2D" parent="NPCs"]
+material = SubResource( 48 )
+position = Vector2( -80, 40 )
+amount = 30
+lifetime = 2.0
+randomness = 1.0
+process_material = SubResource( 53 )
+texture = ExtResource( 17 )
+
+[node name="SheSprite" type="Sprite" parent="NPCs"]
+visible = false
+position = Vector2( 34, 41 )
+rotation = -0.261799
+texture = ExtResource( 14 )
+offset = Vector2( 7, -10 )
+hframes = 6
+vframes = 20
+frame = 74
+
+[node name="SkipHintInteractionPopup" parent="." instance=ExtResource( 23 )]
+position = Vector2( -83, 51 )
+scale = Vector2( 0.5, 0.5 )
+labelText = "Пропустить"
+
+[editable path="Camera2D/Clouds"]
+[editable path="TallTree4"]
+[editable path="TallTree4/PassThroughBody"]
+[editable path="World_objects/Trees/TallTree2"]
+[editable path="World_objects/Trees/TallTree2/PassThroughBody"]
+[editable path="World_objects/Trees/CurvedTree"]
+[editable path="World_objects/Trees/CurvedTree/PassThroughBody"]
+[editable path="World_objects/Trees/CurvedTree2"]
+[editable path="World_objects/Trees/CurvedTree2/PassThroughBody"]
+[editable path="World_objects/Trees/CurvedTree3"]
+[editable path="World_objects/Trees/CurvedTree3/PassThroughBody"]
+[editable path="World_objects/Trees/TallTree"]
+[editable path="World_objects/Trees/TallTree/PassThroughBody"]
+[editable path="World_objects/Trees/TallTree3"]
+[editable path="World_objects/Trees/TallTree3/PassThroughBody"]
+[editable path="World_objects/AppearingHintLabel"]
+[editable path="Collisions/PassTrough/PassThroughBody7"]
+[editable path="Collisions/PassTrough/PassThroughBody8"]
+[editable path="Collisions/PassTrough/PassThroughBody9"]
+[editable path="Collisions/PassTrough/PassThroughBody10"]
+[editable path="Collisions/PassTrough/PassThroughBody11"]
+[editable path="Collisions/PassTrough/PassThroughBody12"]
+[editable path="Collisions/PassTrough/PassThroughBody13"]
+[editable path="Collisions/PassTrough/PassThroughBody14"]
+[editable path="Collisions/PassTrough/PassThroughBody15"]
+[editable path="Collisions/Solid/PassThroughBody18"]
+[editable path="Collisions/Solid/PassThroughBody19"]
+[editable path="Collisions/Solid/PassThroughBody20"]
+[editable path="Collisions/Solid/PassThroughBody21"]
+[editable path="Collisions/Solid/PassThroughBody22"]
+[editable path="Collisions/Solid/PassThroughBody23"]
+[editable path="Collisions/Solid/PassThroughBody24"]
