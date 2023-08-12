@@ -256,6 +256,18 @@ tracks/8/keys = {
 "update": 1,
 "values": [ true, false ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("Camera2D:zoom")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.7, 0.7 ), Vector2( 0.5, 0.5 ) ]
+}
 
 [sub_resource type="Animation" id=312]
 resource_name = "Grand_flower_opening_cut_scene"
@@ -387,10 +399,10 @@ tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0, 0.5, 1.7, 3.2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 1.7, 3.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.7, 0.7 ), Vector2( 0.5, 0.5 ), Vector2( 0.5, 0.5 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 0.5, 0.5 ), Vector2( 0.5, 0.5 ), Vector2( 1, 1 ) ]
 }
 tracks/11/type = "value"
 tracks/11/path = NodePath("Upper_background_objects/Great_flower_cutscene/Great_flower/Flower_body/Collisions/PassThroughBody136/CollisionShape2D:disabled")
@@ -3543,6 +3555,7 @@ texture = ExtResource( 19 )
 
 [node name="Camera2D" parent="." index="5"]
 position = Vector2( 207, 497 )
+zoom = Vector2( 0.5, 0.5 )
 backgroundColor = Color( 0.698039, 0.870588, 1, 1 )
 
 [node name="Background_world_objects" type="Node2D" parent="." index="6"]
@@ -4602,7 +4615,7 @@ process_material = SubResource( 406 )
 position = Vector2( 460, -660 )
 
 [node name="Player" parent="." index="12"]
-position = Vector2( 198, -1296 )
+position = Vector2( 229, -1610 )
 z_index = 1
 collision_mask = 252
 
