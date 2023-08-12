@@ -6,7 +6,7 @@ onready var yes_button = $SkyIsland/ProposalControl/VBoxContainer/HBoxContainer/
 onready var no_button = $SkyIsland/ProposalControl/VBoxContainer/HBoxContainer/NoButton
 
 var credits_scene = ""
-var game_menu_path = "res://UI/GameMenu/GameMenu.tscn"
+var game_menu_path = "res://Project/UI/GameMenu/GameMenu.tscn"
 
 func _ready():
 	var _elevator_connection = platform_approachDetector.connect("player_did_enter_elevator", self, "player_did_enter_elevator")

@@ -11,7 +11,7 @@
 [ext_resource path="res://Assets/Levels/Start_gate_location/DemoWorld1.png" type="Texture" id=9]
 [ext_resource path="res://Project/Levels/Start_gate_location/Start_gate_location.gd" type="Script" id=10]
 [ext_resource path="res://Assets/Tilesets/Decorations/GrassDecorationsSheet.png" type="Texture" id=11]
-[ext_resource path="res://Project/Levels/Start_gate_location/LoveGate/Gates/Gates.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Project/Levels/Start_gate_location/World_objects/LoveGate/Gates.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Project/Resources/Tilesets/AnimatedTextures/Flowers/Dancing_flowers/dancing_flowers.tres" type="Texture" id=13]
 [ext_resource path="res://Assets/BackgroundGradients/BackgroundGradient4.png" type="Texture" id=14]
 [ext_resource path="res://Project/WorldObjects/Technical/Stars/Stars.tscn" type="PackedScene" id=15]
@@ -457,18 +457,6 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Camera2D:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -282, -27 ) ]
 }
 
 [sub_resource type="Animation" id=34]
@@ -1246,6 +1234,7 @@ environment = SubResource( 77 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 pause_mode = 2
+autoplay = "RESET"
 anims/Finish_mystic_dweller_first_dialog = SubResource( 179 )
 anims/First_entrance_animation = SubResource( 78 )
 anims/Gate_opening_cut_scene = SubResource( 35 )
@@ -1254,7 +1243,7 @@ anims/RESET = SubResource( 79 )
 anims/open_transition = SubResource( 34 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 7 )]
-position = Vector2( -282, -27 )
+position = Vector2( -674, -417 )
 backgroundColor = Color( 0.403922, 0.596078, 0.741176, 1 )
 
 [node name="Stars" parent="Camera2D" instance=ExtResource( 15 )]
@@ -1373,6 +1362,9 @@ nextDoorName = "Start_gate_door"
 
 [node name="GatesBackground" parent="MiddleWorldObjects/Gates" index="1"]
 material = SubResource( 187 )
+
+[node name="InteractionPopup" parent="MiddleWorldObjects/Gates" index="5"]
+labelText = "Войти"
 
 [node name="GatesText" parent="MiddleWorldObjects/Gates" index="6"]
 texts_array = [ "Войдет лишь тот, кто ключ 
@@ -1686,7 +1678,8 @@ pause_mode = 2
 
 [node name="SofaLandingSprite" type="Sprite" parent="ForegroundWorldObjects/SofaLandingIntro"]
 modulate = Color( 0.631373, 0.631373, 0.631373, 1 )
-position = Vector2( -673, -90 )
+position = Vector2( -673, -585 )
+rotation = -0.436332
 texture = ExtResource( 21 )
 hframes = 12
 vframes = 3
@@ -2137,6 +2130,7 @@ position = Vector2( 335.5, 319 )
 shape = SubResource( 41 )
 
 [node name="GodLights" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 material = SubResource( 66 )
 margin_left = -865.0
 margin_top = -697.0

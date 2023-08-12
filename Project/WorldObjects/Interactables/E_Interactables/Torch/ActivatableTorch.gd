@@ -5,6 +5,8 @@ export var is_torch_activated = false
 onready var interaction_popup = $InteractionPopup
 onready var interaction_conteroller = $InteractionController
 onready var fire_particles = $FireParticles
+onready var ignite_particles = $IgniteParticles
+onready var ignite_light_particles = $IgniteLightParticles
 onready var light_source = $LightSource
 
 func _ready():
@@ -25,6 +27,8 @@ func on_interact(_body):
 
 func activate():
 	fire_particles.emitting = true
+	ignite_particles.emitting = true
+	ignite_light_particles.emitting = true
 	light_source.strength = true
 	is_torch_activated = true
 	interaction_popup.hide()

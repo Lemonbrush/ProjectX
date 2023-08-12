@@ -5,6 +5,7 @@
 [ext_resource path="res://Project/WorldObjects/Pick_ups/ChestItemJumper.gd" type="Script" id=3]
 
 [node name="LeftSideHeartItem" instance=ExtResource( 1 )]
+gravity_scale = 2.0
 script = ExtResource( 3 )
 itemScene = ExtResource( 2 )
 toggleGameConstant = "left_side_heart_picked_up"

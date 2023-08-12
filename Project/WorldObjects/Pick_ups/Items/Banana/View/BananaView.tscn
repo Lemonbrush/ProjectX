@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Assets/effects/Particles/ShineSprincles.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Effects/Particles/ShineSprincles.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Pickups/Banana/Banana.png" type="Texture" id=2]
 [ext_resource path="res://Project/WorldObjects/Pick_ups/Items/Banana/View/BananaView.gd" type="Script" id=3]
 
