@@ -1363,6 +1363,9 @@ nextDoorName = "Start_gate_door"
 [node name="GatesBackground" parent="MiddleWorldObjects/Gates" index="1"]
 material = SubResource( 187 )
 
+[node name="InteractionPopup" parent="MiddleWorldObjects/Gates" index="5"]
+labelText = "Войти"
+
 [node name="GatesText" parent="MiddleWorldObjects/Gates" index="6"]
 texts_array = [ "Войдет лишь тот, кто ключ 
 от сердца подберёт" ]
