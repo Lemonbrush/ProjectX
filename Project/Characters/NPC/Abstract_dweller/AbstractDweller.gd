@@ -5,6 +5,7 @@ enum State { IDLE, WALKING, TALKING, ACTING, CUSTOME }
 enum Direction { LEFT = 1, RIGHT = -1 }
 
 export(String) var dialogId
+export (AudioStreamSample) var voice_sample
 export(Array, Resource) var actions
 export(Resource) var currentState 
 export var currentActionIndex = 0
@@ -30,6 +31,7 @@ var gravity = 500
 
 func _ready():
 	dialogTextBoxController.set_dialog_id(dialogId)
+	dialogTextBoxController.set_voice_sample(voice_sample)
 	
 	if !actions:
 		var idleAction = IdleNpcAction.new()
