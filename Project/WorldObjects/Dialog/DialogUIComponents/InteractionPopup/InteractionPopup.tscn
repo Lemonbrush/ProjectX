@@ -6,6 +6,7 @@
 [ext_resource path="res://Project/WorldObjects/Dialog/DialogUIComponents/InteractionPopup/InteractionPopup.gd" type="Script" id=4]
 
 [node name="InteractionPopup" type="Node2D"]
+z_index = 5
 script = ExtResource( 4 )
 
 [node name="MarginNode" type="Node2D" parent="."]
