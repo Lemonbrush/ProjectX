@@ -31,7 +31,7 @@ var gravity = 500
 
 func _ready():
 	dialogTextBoxController.set_dialog_id(dialogId)
-	dialogTextBoxController.set_voice_sample(voice_sample)
+	dialogTextBoxController.set_letter_sounds_resource(voice_sample)
 	
 	if !actions:
 		var idleAction = IdleNpcAction.new()

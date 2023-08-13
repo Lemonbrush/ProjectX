@@ -53,18 +53,8 @@ func _process(delta: float) -> void:
 	
 	if not player.playing:
 		if _phrase_pos < _phrase.length():
-			if _punctuations.has(_phrase[_phrase_pos]):
-				if _original_pitch_scale:
-					player.pitch_scale = _original_pitch_scale
-					_original_pitch_scale = 0
-				_phrase_wait = _punctuations[_phrase[_phrase_pos]]
-			else:
-				var question_distance: int = _get_distance_to_question(_phrase, _phrase_pos)
-				if question_distance >= 0 and question_distance < 4:
-					if not _original_pitch_scale:
-						_original_pitch_scale = player.pitch_scale
-					player.pitch_scale += 0.15 / float(question_distance)
-				player.play()
+			
+			player.play()
 			_phrase_pos += 1
 		else:
 			stop()

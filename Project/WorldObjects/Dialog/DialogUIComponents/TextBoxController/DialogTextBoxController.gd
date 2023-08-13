@@ -3,17 +3,17 @@ extends Node2D
 export(String) var dialog_id
 export(NodePath) var interaction_controller_path
 export(bool) var is_interaction_active = true
-export (AudioStreamRandomPitch) var voice_sample
+export (Resource) var voice_sample
 
 onready var dialogTextBox = $DialogTextBox
-onready var voiceGenerator = $VoiceGeneratorAudioStreamPlayer
+onready var voiceGenerator = $LetterSoundPlayer
 
 var dialogManager
 
 # Lifecycle functions
 
 func _ready():
-	voiceGenerator.set_voice_sample(voice_sample)
+	voiceGenerator.set_letter_sounds_resource(voice_sample)
 	var interaction_controller = get_node(interaction_controller_path)
 	if interaction_controller != null:
 		interaction_controller.connect("on_leave", self, "on_leave")
@@ -39,8 +39,8 @@ func did_choose_option_number(option_number):
 
 # Functions
 
-func set_voice_sample(stream):
-	voiceGenerator.set_voice_sample(stream)
+func set_letter_sounds_resource(stream):
+	voiceGenerator.set_letter_sounds_resource(stream)
 
 func extract_phrase_model():
 	if dialogManager == null:
@@ -75,9 +75,10 @@ func process_dialog_interaction(phrase):
 func process_response_partition(phrase):
 	var responses = get_valid_response_options(phrase)
 	var text = phrase.text
-	voiceGenerator.play(text)
 	dialogTextBox.show_text(text, responses)
 	dialogTextBox.set_button_hint_visibility(false)
+	if text != null:
+		voiceGenerator.play(text)
 
 func get_valid_response_options(phrase):
 	var responses = []
