@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/p.ogg-1a18aed004e7aeea04b31d37207a3e0c.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Letters/Sasha/p.ogg"
+dest_files=[ "res://.import/p.ogg-1a18aed004e7aeea04b31d37207a3e0c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/longBlank.ogg-e05e4487732cfbf0d9e48034b2abbadc.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Letters/Universal/longBlank.ogg"
+dest_files=[ "res://.import/longBlank.ogg-e05e4487732cfbf0d9e48034b2abbadc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
