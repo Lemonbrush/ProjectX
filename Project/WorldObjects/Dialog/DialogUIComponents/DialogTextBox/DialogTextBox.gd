@@ -40,7 +40,7 @@ func show_button_hint():
 	textBoxContainer.show_button_hint()
 
 func hide_button_hint():
-	textBoxContainer.hide_button_hint()
+	textBoxContainer.instant_hide_button_hint()
 
 func show():
 	appearAnimator.show()

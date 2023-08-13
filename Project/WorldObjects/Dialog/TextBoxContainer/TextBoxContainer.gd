@@ -11,6 +11,7 @@ var animated_button_scene_path = preload("res://Project/UI/Animated_dialog_butto
 # Lifecycle
 
 func _ready():
+	buttonHint.instant_hide()
 	buttonHint.set_hint_action("Interaction")
 	hide_button_hint()
 
@@ -50,10 +51,13 @@ func show_label():
 	label.visible = true
 
 func show_button_hint():
-	buttonHint.visible = true
+	buttonHint.show()
 
 func hide_button_hint():
-	buttonHint.visible = false
+	buttonHint.hide()
+
+func instant_hide_button_hint():
+	buttonHint.instant_hide()
 
 # Private functions
 
