@@ -4,6 +4,7 @@ class_name ACVoiceBox
 signal started_talking_phrase(phrase)
 signal characters_sounded(characters)
 signal finished_phrase()
+signal skip_talking(full_text)
 
 export (Resource) var letter_sounds_resource
 export (float) var PITCH_MULTIPLIER_RANGE := 0.3
@@ -22,20 +23,22 @@ func _ready():
 # Functions
 
 func play(text: String):
+	reset()
 	if letter_sounds_resource == null:
+		emit_signal("skip_talking", text)
 		return
 	parse_input_string(text)
 	emit_signal("started_talking_phrase", text)
 	play_next_sound()
 
-func stop():
-	audioPlayer.stop()
-	remaining_sounds = []
-
 func set_letter_sounds_resource(resource):
 	letter_sounds_resource = resource
 	if letter_sounds_resource:
 		letter_sounds_resource.load_sounds_dictionary()
+
+func reset():
+	audioPlayer.stop()
+	remaining_sounds = []
 
 # Private functions
 
@@ -54,7 +57,6 @@ func play_next_sound():
 	audioPlayer.pitch_scale = base_pitch + (PITCH_MULTIPLIER_RANGE * randf()) + (INFLECTION_SHIFT if next_symbol.inflective else 0.0)
 	audioPlayer.stream = sound
 	audioPlayer.play()
-
 
 func parse_input_string(in_string: String):
 	for word in in_string.split(' '):

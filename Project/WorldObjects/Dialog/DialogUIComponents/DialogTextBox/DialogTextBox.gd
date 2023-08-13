@@ -18,6 +18,9 @@ func did_press_button_with_text(button_text):
 
 # Functions
 
+func show_if_needed():
+	appearAnimator.show_if_needed()
+
 func set_label_text(new_text):
 	textBoxContainer.set_label_text(new_text)
 
@@ -41,3 +44,6 @@ func show():
 
 func hide():
 	appearAnimator.hide()
+
+func instant_hide():
+	appearAnimator.instant_hide()

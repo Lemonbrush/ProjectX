@@ -26,6 +26,7 @@ func on_interact(_body = null):
 	if dialog_id.empty() or !is_interaction_active:
 		return
 	Global.is_player_talking = true
+	dialogTextBox.show_if_needed()
 	dialogManager.request_dialog()
 
 func did_choose_dialog_option(option_number):
@@ -41,13 +42,17 @@ func voice_generator_did_start_talking(_phrase_text):
 func voice_generator_did_fibish_talking():
 	dialogTextBox.show_button_hint()
 
+func voice_generator_skipped_talking(full_text):
+	current_text = full_text
+	dialogTextBox.set_label_text(current_text)
+	dialogTextBox.show_button_hint()
+
 func did_receive_text_dialog(text):
 	if text == null:
 		finish_dialog()
 		return
 	reset_dialogTextBox()
 	voiceGenerator.play(text)
-	dialogTextBox.show()
 	dialogTextBox.hide_buttons()
 
 func did_receive_response_dialog(text, responses):
@@ -55,9 +60,9 @@ func did_receive_response_dialog(text, responses):
 		finish_dialog()
 		return
 	reset_dialogTextBox()
+	voiceGenerator.reset()
 	if text:
 		voiceGenerator.play(text)
-	
 	dialogTextBox.show_button_options(responses)
 
 func did_receive_error(text):
@@ -89,7 +94,7 @@ func finish_dialog():
 	Global.is_player_talking = false
 	dialogTextBox.hide()
 	dialogManager.reset()
-	voiceGenerator.stop()
+	voiceGenerator.reset()
 
 func configure_interaction_controller():
 	var interaction_controller = get_node(interaction_controller_path)
@@ -103,8 +108,10 @@ func configure_voice_generator():
 	voiceGenerator.connect("characters_sounded", self, "voice_generator_did_pronounced_text")
 	voiceGenerator.connect("finished_phrase", self, "voice_generator_did_fibish_talking")
 	voiceGenerator.connect("started_talking_phrase", self, "voice_generator_did_start_talking")
+	voiceGenerator.connect("skip_talking", self, "voice_generator_skipped_talking")
 
 func configure_dialogTextBox():
+	dialogTextBox.instant_hide()
 	dialogTextBox.connect("did_press_button_with_text", self, "did_choose_dialog_option")
 
 func configure_dialog_manager():

@@ -15,12 +15,15 @@ func instant_show():
 func instant_hide():
 	target_node.modulate.a = 0.0
 
+func show_if_needed():
+	if target_node.modulate.a == 0.0:
+		show()
+
 func show():
 	if target_node == null:
 		return
-	
 	appearTween.stop(target_node)
-	appearTween.interpolate_property(target_node, 'modulate:a', get_modulate().a, 1.0, 0.25, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0)
+	appearTween.interpolate_property(target_node, 'modulate:a', target_node.get_modulate().a, 1.0, 0.25, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0)
 	appearTween.start()
 
 func hide():
@@ -28,5 +31,5 @@ func hide():
 		return
 	
 	appearTween.stop(target_node)
-	appearTween.interpolate_property(target_node, 'modulate:a', get_modulate().a, 0.0, 0.25, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0)
+	appearTween.interpolate_property(target_node, 'modulate:a', target_node.get_modulate().a, 0.0, 0.25, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0)
 	appearTween.start()
