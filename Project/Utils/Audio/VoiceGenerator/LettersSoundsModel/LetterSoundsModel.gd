@@ -76,7 +76,9 @@ func load_sounds_dictionary():
 }
 
 func get_sound_for_letter(letter):
-	var sound = sounds[letter]
+	var sound
+	if sounds.has(letter):
+		sound = sounds[letter]
 	
 	var capital_letter = letter.to_upper()
 	if sound == null and sounds.has(capital_letter):

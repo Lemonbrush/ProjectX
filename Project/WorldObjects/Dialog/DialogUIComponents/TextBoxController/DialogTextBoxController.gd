@@ -10,6 +10,7 @@ onready var voiceGenerator = $LetterSoundPlayer
 onready var dialogManager = $DialogManager
 
 var current_text = ""
+var target_text = ""
 
 # Lifecycle
 
@@ -26,6 +27,8 @@ func on_interact(_body = null):
 	if dialog_id.empty() or !is_interaction_active:
 		return
 	Global.is_player_talking = true
+	current_text = ""
+	target_text = ""
 	dialogTextBox.show_if_needed()
 	dialogManager.request_dialog()
 
@@ -34,7 +37,13 @@ func did_choose_dialog_option(option_number):
 
 func voice_generator_did_pronounced_text(pronounced_text):
 	current_text += pronounced_text
-	dialogTextBox.set_label_text(current_text)
+	var current_text_length = float(current_text.length())
+	var target_text_length = float(target_text.length())
+	
+	var one_percent = 1.0/target_text_length
+	var pronaunced_percents = one_percent * current_text_length
+	var new_percent = 1.0 - (1.0 - pronaunced_percents)
+	dialogTextBox.set_label_text_percent_visible(new_percent)
 
 func voice_generator_did_start_talking(_phrase_text):
 	reset_dialogTextBox()
@@ -52,8 +61,10 @@ func did_receive_text_dialog(text):
 		finish_dialog()
 		return
 	reset_dialogTextBox()
+	target_text = text
 	voiceGenerator.play(text)
 	dialogTextBox.hide_buttons()
+	dialogTextBox.set_label_text(text)
 
 func did_receive_response_dialog(text, responses):
 	if responses == null:
@@ -72,7 +83,6 @@ func did_receive_error(text):
 # Functions
 
 func reset_dialogTextBox():
-	current_text = ""
 	dialogTextBox.set_label_text("")
 	dialogTextBox.hide_button_hint()
 

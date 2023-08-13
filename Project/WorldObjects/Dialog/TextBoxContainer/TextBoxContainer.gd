@@ -19,6 +19,9 @@ func button_option_pressed(button_text):
 
 # Functions
 
+func set_label_text_percent_visible(new_percent):
+	label.percent_visible = new_percent
+
 func set_label_text(new_text):
 	label.text = new_text
 	
