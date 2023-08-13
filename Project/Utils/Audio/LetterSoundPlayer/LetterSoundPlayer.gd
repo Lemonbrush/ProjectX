@@ -13,6 +13,7 @@ export (float, 2.5, 4.5) var base_pitch := 3.5
 
 onready var audioPlayer = $AudioStreamPlayer
 
+var active_sound_resource
 var remaining_sounds := []
 
 # Lifecycle functions
@@ -22,11 +23,21 @@ func _ready():
 	
 # Functions
 
+func configure_sound_resource_file(text):
+	if letter_sounds_resource != null:
+		active_sound_resource = letter_sounds_resource
+		return
+	
+	if default_letter_sounds_resource != null:
+		active_sound_resource = default_letter_sounds_resource
+		active_sound_resource.load_sounds_dictionary()
+		return
+	
+	emit_signal("skip_talking", text)
+	
 func play(text: String):
 	reset()
-	if letter_sounds_resource == null:
-		emit_signal("skip_talking", text)
-		return
+	configure_sound_resource_file(text)
 	parse_input_string(text)
 	emit_signal("started_talking_phrase", text)
 	play_next_sound()
@@ -54,7 +65,7 @@ func play_next_sound():
 		play_next_sound()
 		return
 	
-	var sound: AudioStreamSample = letter_sounds_resource.get_sound_for_letter(next_symbol.sound)
+	var sound: AudioStreamSample = active_sound_resource.get_sound_for_letter(next_symbol.sound)
 	audioPlayer.pitch_scale = base_pitch + (PITCH_MULTIPLIER_RANGE * randf())
 	audioPlayer.stream = sound
 	audioPlayer.play()
@@ -66,7 +77,7 @@ func parse_input_string(in_string: String):
 	
 func parse_word(word: String):
 	for i in range(len(word)):
-		if word[i].to_lower() in letter_sounds_resource.sounds.keys():
+		if word[i].to_lower() in active_sound_resource.sounds.keys():
 			add_symbol(word[i].to_lower(), word[i])
 		else:
 			add_symbol('', word[i])
