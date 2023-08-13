@@ -8,8 +8,8 @@ signal skip_talking(full_text)
 
 export (Resource) var letter_sounds_resource
 export (Resource) var default_letter_sounds_resource
-export (float) var PITCH_MULTIPLIER_RANGE := 2.3
-export (float, 2.5, 4.5) var base_pitch := 3.5
+export (float) var PITCH_MULTIPLIER_RANGE := 0.2
+export (float, 2.5, 4.5) var base_pitch := 2.5
 
 onready var audioPlayer = $AudioStreamPlayer
 
