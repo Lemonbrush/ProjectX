@@ -2559,7 +2559,7 @@ position = Vector2( -290, -92 )
 itemScene = ExtResource( 74 )
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 5 )]
-position = Vector2( 51, -39 )
+position = Vector2( 386, -13 )
 z_index = 2
 
 [node name="Light2D2" type="Light2D" parent="Player"]
@@ -2595,7 +2595,7 @@ position = Vector2( 54, -768 )
 texture = ExtResource( 66 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 7 )]
-position = Vector2( 52, -809 )
+position = Vector2( 422, -19 )
 
 [node name="Clouds" parent="Camera2D" instance=ExtResource( 15 )]
 position = Vector2( -2, 2 )

@@ -1,6 +1,7 @@
 extends Node2D
 class_name ACVoiceBox
 
+signal started_talking_phrase(phrase)
 signal characters_sounded(characters)
 signal finished_phrase()
 
@@ -24,6 +25,7 @@ func play(text: String):
 	if letter_sounds_resource == null:
 		return
 	parse_input_string(text)
+	emit_signal("started_talking_phrase", text)
 	play_next_sound()
 
 func stop():

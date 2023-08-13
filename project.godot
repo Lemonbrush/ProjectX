@@ -35,9 +35,9 @@ _global_script_classes=[ {
 "path": "res://Project/Utils/CommandHandler/CommandHandler.gd"
 }, {
 "base": "Node",
-"class": "DialogManager",
+"class": "DialogService",
 "language": "GDScript",
-"path": "res://Project/WorldObjects/Dialog/DialogManager/DialogManager.gd"
+"path": "res://Project/WorldObjects/Dialog/DialogManager/DialogService.gd"
 }, {
 "base": "NpcAction",
 "class": "IdleNpcAction",
@@ -115,7 +115,7 @@ _global_script_class_icons={
 "Barrel": "",
 "BaseLevel": "",
 "CommandHandler": "",
-"DialogManager": "",
+"DialogService": "",
 "IdleNpcAction": "",
 "InteractionController": "",
 "LetterSoundsModel": "",
