@@ -27,6 +27,11 @@ func on_interact(_body = null):
 	if dialog_id.empty() or !is_interaction_active:
 		return
 	Global.is_player_talking = true
+	
+	if current_text != target_text:
+		skip_dialog_animation(target_text)
+		return
+	
 	current_text = ""
 	target_text = ""
 	dialogTextBox.show_if_needed()
@@ -49,12 +54,11 @@ func voice_generator_did_start_talking(_phrase_text):
 	reset_dialogTextBox()
 
 func voice_generator_did_fibish_talking():
+	current_text = target_text
 	dialogTextBox.show_button_hint()
 
 func voice_generator_skipped_talking(full_text):
-	current_text = full_text
-	dialogTextBox.set_label_text(current_text)
-	dialogTextBox.show_button_hint()
+	skip_dialog_animation(full_text)
 
 func did_receive_text_dialog(text):
 	if text == null:
@@ -81,6 +85,12 @@ func did_receive_error(text):
 	finish_dialog()
 
 # Functions
+
+func skip_dialog_animation(full_text):
+	voiceGenerator.reset()
+	current_text = full_text
+	dialogTextBox.set_label_text_percent_visible(1)
+	dialogTextBox.show_button_hint()
 
 func reset_dialogTextBox():
 	dialogTextBox.set_label_text("")
