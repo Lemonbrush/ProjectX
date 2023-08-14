@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.gd" type="Script" id=1]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/Sasha/LettersSoundsSasha.tres" type="Resource" id=2]
+
+[resource]
+script = ExtResource( 1 )
+letter_sounds_resource = ExtResource( 2 )
+PITCH_MULTIPLIER_RANGE = 0.2
+base_pitch = 1.5

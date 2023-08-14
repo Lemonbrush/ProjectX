@@ -9,7 +9,7 @@ signal skip_talking(full_text)
 export (Resource) var letter_sounds_resource
 export (Resource) var default_letter_sounds_resource
 export (float) var PITCH_MULTIPLIER_RANGE := 0.2
-export (float, 2.5, 4.5) var base_pitch := 2.5
+export (float) var base_pitch := 1.5
 
 onready var audioPlayer = $AudioStreamPlayer
 
@@ -42,10 +42,16 @@ func play(text: String):
 	emit_signal("started_talking_phrase", text)
 	play_next_sound()
 
-func set_letter_sounds_resource(resource):
-	letter_sounds_resource = resource
+func set_letter_sounds_resource(configurationModel: VoiceGeneratorConfigurationModel):
+	if configurationModel == null:
+		return
+	
+	letter_sounds_resource = configurationModel.letter_sounds_resource
 	if letter_sounds_resource:
 		letter_sounds_resource.load_sounds_dictionary()
+	
+	PITCH_MULTIPLIER_RANGE = configurationModel.PITCH_MULTIPLIER_RANGE
+	base_pitch = configurationModel.base_pitch
 
 func reset():
 	audioPlayer.stop()

@@ -8,4 +8,4 @@ script = ExtResource( 1 )
 default_letter_sounds_resource = ExtResource( 2 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-bus = "SFX"
+bus = "Speech"

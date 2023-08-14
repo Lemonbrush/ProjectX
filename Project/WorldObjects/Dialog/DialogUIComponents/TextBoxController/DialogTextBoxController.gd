@@ -2,7 +2,7 @@ extends Node2D
 
 export(String) var dialog_id
 export(NodePath) var interaction_controller_path
-export (Resource) var voice_sample
+export (Resource) var voice_generator_configuration_file
 export(bool) var is_interaction_active = true
 
 onready var dialogTextBox = $DialogTextBox
@@ -124,7 +124,7 @@ func configure_interaction_controller():
 	interaction_controller.connect("on_interact", self, "on_interact")
 
 func configure_voice_generator():
-	voiceGenerator.set_letter_sounds_resource(voice_sample)
+	voiceGenerator.set_letter_sounds_resource(voice_generator_configuration_file)
 	voiceGenerator.connect("characters_sounded", self, "voice_generator_did_pronounced_text")
 	voiceGenerator.connect("finished_phrase", self, "voice_generator_did_fibish_talking")
 	voiceGenerator.connect("started_talking_phrase", self, "voice_generator_did_start_talking")

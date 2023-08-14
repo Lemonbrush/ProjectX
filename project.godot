@@ -108,6 +108,11 @@ _global_script_classes=[ {
 "class": "TalkNpcAction",
 "language": "GDScript",
 "path": "res://Project/Characters/NPC/NpcActions/talk/talk_npc_action.gd"
+}, {
+"base": "Resource",
+"class": "VoiceGeneratorConfigurationModel",
+"language": "GDScript",
+"path": "res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.gd"
 } ]
 _global_script_class_icons={
 "ACVoiceBox": "",
@@ -129,7 +134,8 @@ _global_script_class_icons={
 "SettingsResource": "",
 "State": "",
 "StateMachine": "",
-"TalkNpcAction": ""
+"TalkNpcAction": "",
+"VoiceGeneratorConfigurationModel": ""
 }
 
 [application]
