@@ -46,12 +46,12 @@ func set_letter_sounds_resource(configurationModel: VoiceGeneratorConfigurationM
 	if configurationModel == null:
 		return
 	
-	letter_sounds_resource = configurationModel.letter_sounds_resource
+	letter_sounds_resource = configurationModel.get_letter_sounds_resource()
 	if letter_sounds_resource:
 		letter_sounds_resource.load_sounds_dictionary()
 	
-	PITCH_MULTIPLIER_RANGE = configurationModel.PITCH_MULTIPLIER_RANGE
-	base_pitch = configurationModel.base_pitch
+	PITCH_MULTIPLIER_RANGE = configurationModel.get_pitch_multiplier()
+	base_pitch = configurationModel.get_base_pitch()
 
 func reset():
 	audioPlayer.stop()
