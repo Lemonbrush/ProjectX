@@ -1,4 +1,4 @@
-[gd_scene load_steps=228 format=2]
+[gd_scene load_steps=229 format=2]
 
 [ext_resource path="res://Assets/Levels/Central_hub/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Effects/Lighting/playerLight.png" type="Texture" id=2]
@@ -997,6 +997,11 @@ resource_local_to_scene = true
 script = ExtResource( 22 )
 wait_time = 3.0
 is_infinite = false
+
+[sub_resource type="Resource" id=251]
+script = ExtResource( 73 )
+letter_sounds_resource = ExtResource( 72 )
+voice_mode = 1
 
 [sub_resource type="Resource" id=238]
 resource_local_to_scene = true
@@ -2095,6 +2100,7 @@ texture = ExtResource( 53 )
 [node name="BlueTraderDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -635, 380 )
 dialogId = "fat_dweller"
+voice_generator_configuration_file = SubResource( 251 )
 actions = [ SubResource( 238 ) ]
 currentState = null
 
