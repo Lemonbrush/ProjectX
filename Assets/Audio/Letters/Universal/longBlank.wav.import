@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/longBlank.wav-b49d9423a940800feb89cea295bcf839.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Letters/Universal/longBlank.wav"
+dest_files=[ "res://.import/longBlank.wav-b49d9423a940800feb89cea295bcf839.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
