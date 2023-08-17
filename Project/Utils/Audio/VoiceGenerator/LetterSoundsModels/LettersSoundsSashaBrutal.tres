@@ -1,0 +1,73 @@
+[gd_resource type="Resource" load_steps=35 format=2]
+
+[ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/n.wav" type="AudioStream" id=1]
+[ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/io.wav" type="AudioStream" id=2]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/LetterSoundsModel.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/t.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/f.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Audio/Letters/Universal/longBlank.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Audio/Letters/Universal/blank.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/d.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/e.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/j.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/g.wav" type="AudioStream" id=11]
+[ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/v.wav" type="AudioStream" id=12]
+[ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/a.wav" type="AudioStream" id=13]
+[ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/o.wav" type="AudioStream" id=14]
+[ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/m.wav" type="AudioStream" id=15]
+[ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/k.wav" type="AudioStream" id=16]
+[ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/ii.wav" type="AudioStream" id=17]
+[ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/z.wav" type="AudioStream" id=18]
+[ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/l.wav" type="AudioStream" id=19]
+[ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/i.wav" type="AudioStream" id=20]
+[ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/h.wav" type="AudioStream" id=21]
+[ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/ch.wav" type="AudioStream" id=22]
+[ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/c.wav" type="AudioStream" id=23]
+[ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/sh.wav" type="AudioStream" id=24]
+[ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/shh.wav" type="AudioStream" id=25]
+[ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/ih.wav" type="AudioStream" id=26]
+[ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/ia.wav" type="AudioStream" id=27]
+[ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/iy.wav" type="AudioStream" id=28]
+[ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/ya.wav" type="AudioStream" id=29]
+[ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/r.wav" type="AudioStream" id=30]
+[ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/y.wav" type="AudioStream" id=31]
+[ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/p.wav" type="AudioStream" id=32]
+[ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/s.wav" type="AudioStream" id=33]
+[ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/b.wav" type="AudioStream" id=34]
+
+[resource]
+script = ExtResource( 3 )
+a_letter_sample = ExtResource( 13 )
+b_letter_sample = ExtResource( 34 )
+v_letter_sample = ExtResource( 12 )
+g_letter_sample = ExtResource( 11 )
+d_letter_sample = ExtResource( 8 )
+e_letter_sample = ExtResource( 9 )
+io_letter_sample = ExtResource( 2 )
+j_letter_sample = ExtResource( 10 )
+z_letter_sample = ExtResource( 18 )
+i_letter_sample = ExtResource( 20 )
+ii_letter_sample = ExtResource( 17 )
+k_letter_sample = ExtResource( 16 )
+l_letter_sample = ExtResource( 19 )
+m_letter_sample = ExtResource( 15 )
+n_letter_sample = ExtResource( 1 )
+o_letter_sample = ExtResource( 14 )
+p_letter_sample = ExtResource( 32 )
+r_letter_sample = ExtResource( 30 )
+s_letter_sample = ExtResource( 33 )
+t_letter_sample = ExtResource( 4 )
+y_letter_sample = ExtResource( 31 )
+f_letter_sample = ExtResource( 5 )
+h_letter_sample = ExtResource( 21 )
+c_letter_sample = ExtResource( 23 )
+ch_letter_sample = ExtResource( 22 )
+sh_letter_sample = ExtResource( 24 )
+shh_letter_sample = ExtResource( 25 )
+ih_letter_sample = ExtResource( 26 )
+ia_letter_sample = ExtResource( 27 )
+iy_letter_sample = ExtResource( 28 )
+ya_letter_sample = ExtResource( 29 )
+blank_letter_sample = ExtResource( 7 )
+long_blank_letter_sample = ExtResource( 6 )
+default_letter_sample = ExtResource( 13 )

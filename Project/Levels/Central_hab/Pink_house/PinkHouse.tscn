@@ -12,7 +12,7 @@
 [ext_resource path="res://Assets/Levels/Rooms/PinkHouse/Table.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Characters/NPC/CentralHub/Witch/PotDwellerAtHome-Sheet.png" type="Texture" id=11]
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.gd" type="Script" id=12]
-[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/Katya/LettersSoundsKatya.tres" type="Resource" id=13]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/LettersSoundsKatya.tres" type="Resource" id=13]
 
 [sub_resource type="Environment" id=111]
 background_mode = 4

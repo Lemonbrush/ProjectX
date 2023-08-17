@@ -52,7 +52,7 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "LetterSoundsModel",
 "language": "GDScript",
-"path": "res://Project/Utils/Audio/VoiceGenerator/LettersSoundsModel/LetterSoundsModel.gd"
+"path": "res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/LetterSoundsModel.gd"
 }, {
 "base": "Position2D",
 "class": "LightSource",

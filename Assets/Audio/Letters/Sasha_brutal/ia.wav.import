@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ia.wav-af6bbfc79f45b4be23129b95db140704.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Letters/Sasha_brutal/ia.wav"
+dest_files=[ "res://.import/ia.wav-af6bbfc79f45b4be23129b95db140704.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
