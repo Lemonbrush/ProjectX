@@ -1,8 +1,15 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/MonoSoundAlphabetVoiceModel/LetterSoundsMi.tres" type="Resource" id=1]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Characters/NPC/MysticDweller/mysticDweller-Sheet.png" type="Texture" id=3]
 [ext_resource path="res://Project/Characters/NPC/Abstract_dweller/AbstractDweller.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Project/Characters/NPC/Mystic_dweller/MysticDweller.gd" type="Script" id=5]
+
+[sub_resource type="Resource" id=9]
+script = ExtResource( 2 )
+letter_sounds_resource = ExtResource( 1 )
+voice_mode = 3
 
 [sub_resource type="Animation" id=1]
 resource_name = "Hiding"
@@ -178,6 +185,7 @@ tracks/0/keys = {
 
 [node name="MysticDweller" instance=ExtResource( 4 )]
 script = ExtResource( 5 )
+voice_generator_configuration_file = SubResource( 9 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
 root_node = NodePath("../Body")

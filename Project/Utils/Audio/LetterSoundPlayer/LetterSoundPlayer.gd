@@ -67,11 +67,11 @@ func play_next_sound():
 	var next_symbol = remaining_sounds.pop_front()
 	emit_signal("characters_sounded", next_symbol.characters)
 	
-	if next_symbol.sound == '':
+	var sound: AudioStreamSample = active_sound_resource.get_sound_for_letter(next_symbol.sound)
+	if sound == null:
 		play_next_sound()
 		return
 	
-	var sound: AudioStreamSample = active_sound_resource.get_sound_for_letter(next_symbol.sound)
 	audioPlayer.pitch_scale = base_pitch + (PITCH_MULTIPLIER_RANGE * randf())
 	audioPlayer.stream = sound
 	audioPlayer.play()
@@ -83,7 +83,7 @@ func parse_input_string(in_string: String):
 	
 func parse_word(word: String):
 	for i in range(len(word)):
-		if word[i].to_lower() in active_sound_resource.sounds.keys():
+		if word[i].to_lower() in active_sound_resource.get_available_letters_array():
 			add_symbol(word[i].to_lower(), word[i])
 		else:
 			add_symbol('', word[i])

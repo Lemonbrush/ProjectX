@@ -10,8 +10,8 @@
 [ext_resource path="res://Project/Levels/Central_hab/World_objects/Lovers/Lovers.gd" type="Script" id=8]
 [ext_resource path="res://Assets/Levels/Central_hub/World_objects/CauldronDweller/Jur/Heart.png" type="Texture" id=9]
 [ext_resource path="res://Project/Levels/Central_hab/World_objects/Lovers/KissSpirit/KissSpirit.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/LettersSoundsSofa.tres" type="Resource" id=11]
-[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/LettersSoundsSasha.tres" type="Resource" id=12]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsSofa.tres" type="Resource" id=11]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsSasha.tres" type="Resource" id=12]
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.gd" type="Script" id=13]
 
 [sub_resource type="Animation" id=217]

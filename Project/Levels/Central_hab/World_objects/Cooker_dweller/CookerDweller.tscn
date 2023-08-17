@@ -16,7 +16,7 @@
 [ext_resource path="res://Project/WorldObjects/AbstractScenes/AbstractAirBlower.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Project/WorldObjects/Pick_ups/Items/EmptyJur/EmptyJurItem.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.gd" type="Script" id=16]
-[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/LettersSoundsKatya.tres" type="Resource" id=17]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsKatya.tres" type="Resource" id=17]
 
 [sub_resource type="Animation" id=116]
 length = 0.001

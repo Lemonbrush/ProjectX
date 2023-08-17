@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=35 format=2]
 
-[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/LetterSoundsModel.gd" type="Script" id=1]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/FullAlphabetSoundsModel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Audio/Letters/Sasha/c.wav" type="AudioStream" id=2]
 [ext_resource path="res://Assets/Audio/Letters/Sasha/ch.wav" type="AudioStream" id=3]
 [ext_resource path="res://Assets/Audio/Letters/Sasha/r.wav" type="AudioStream" id=4]

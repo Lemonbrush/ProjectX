@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/n.wav" type="AudioStream" id=1]
 [ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/io.wav" type="AudioStream" id=2]
-[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/LetterSoundsModel.gd" type="Script" id=3]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/FullAlphabetSoundsModel.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/t.wav" type="AudioStream" id=4]
 [ext_resource path="res://Assets/Audio/Letters/Sasha_brutal/f.wav" type="AudioStream" id=5]
 [ext_resource path="res://Assets/Audio/Letters/Universal/longBlank.wav" type="AudioStream" id=6]
