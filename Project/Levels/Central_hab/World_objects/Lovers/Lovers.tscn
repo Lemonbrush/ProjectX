@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Project/Characters/NPC/NpcActions/idle/idle_npc_action.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Levels/Central_hub/World_objects/Lovers/LoversFurniture.png" type="Texture" id=2]
@@ -10,6 +10,9 @@
 [ext_resource path="res://Project/Levels/Central_hab/World_objects/Lovers/Lovers.gd" type="Script" id=8]
 [ext_resource path="res://Assets/Levels/Central_hub/World_objects/CauldronDweller/Jur/Heart.png" type="Texture" id=9]
 [ext_resource path="res://Project/Levels/Central_hab/World_objects/Lovers/KissSpirit/KissSpirit.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/LettersSoundsSofa.tres" type="Resource" id=11]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/LettersSoundsSasha.tres" type="Resource" id=12]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.gd" type="Script" id=13]
 
 [sub_resource type="Animation" id=217]
 resource_name = "First_kiss_spirit_appear"
@@ -97,10 +100,20 @@ scale = 0.1
 scale_random = 1.0
 scale_curve = SubResource( 216 )
 
+[sub_resource type="Resource" id=219]
+script = ExtResource( 13 )
+letter_sounds_resource = ExtResource( 12 )
+voice_mode = 3
+
 [sub_resource type="Resource" id=8]
 script = ExtResource( 1 )
 wait_time = 0.0
 is_infinite = true
+
+[sub_resource type="Resource" id=220]
+script = ExtResource( 13 )
+letter_sounds_resource = ExtResource( 11 )
+voice_mode = 3
 
 [node name="Lovers" type="Node2D"]
 script = ExtResource( 8 )
@@ -130,6 +143,7 @@ texture = ExtResource( 4 )
 [node name="Boy" parent="." instance=ExtResource( 3 )]
 position = Vector2( -17, 20 )
 dialogId = "lover_boy_dweller"
+voice_generator_configuration_file = SubResource( 219 )
 actions = [ SubResource( 8 ) ]
 currentState = SubResource( 8 )
 watch_player_on_talk = false
@@ -140,6 +154,7 @@ texture = ExtResource( 5 )
 [node name="Girl" parent="." instance=ExtResource( 3 )]
 position = Vector2( 16, 20 )
 dialogId = "lovers_girl_dweller"
+voice_generator_configuration_file = SubResource( 220 )
 actions = [ SubResource( 8 ) ]
 currentState = SubResource( 8 )
 watch_player_on_talk = false
