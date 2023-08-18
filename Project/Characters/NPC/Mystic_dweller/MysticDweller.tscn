@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/MonoSoundAlphabetVoiceModel/LetterSoundsMi.tres" type="Resource" id=1]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/MonoSoundAlphabetVoiceModel/LetterSoundsBa.tres" type="Resource" id=1]
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Characters/NPC/MysticDweller/mysticDweller-Sheet.png" type="Texture" id=3]
 [ext_resource path="res://Project/Characters/NPC/Abstract_dweller/AbstractDweller.tscn" type="PackedScene" id=4]

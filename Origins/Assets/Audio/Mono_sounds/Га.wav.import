@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Га.wav-7a6a4031db53aabfac219ddfcbf00667.sample"
+
+[deps]
+
+source_file="res://Origins/Assets/Audio/Mono_sounds/Га.wav"
+dest_files=[ "res://.import/Га.wav-7a6a4031db53aabfac219ddfcbf00667.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
