@@ -1,4 +1,4 @@
-[gd_scene load_steps=182 format=2]
+[gd_scene load_steps=190 format=2]
 
 [ext_resource path="res://Project/Levels/Harbor_house/Harbor_house.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Effects/Lighting/shadow.png" type="Texture" id=2]
@@ -66,6 +66,10 @@
 [ext_resource path="res://Project/WorldObjects/Pick_ups/Items/RedThred/RedThredItem.tscn" type="PackedScene" id=64]
 [ext_resource path="res://Project/Characters/NPC/Mystic_dweller/MysticDweller.tscn" type="PackedScene" id=65]
 [ext_resource path="res://Project/WorldObjects/Technical/ItemSpawner/ItemSpawner.tscn" type="PackedScene" id=66]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsSasha.tres" type="Resource" id=67]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.gd" type="Script" id=68]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsSashaBrutal.tres" type="Resource" id=69]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsSofa.tres" type="Resource" id=70]
 
 [sub_resource type="Environment" id=273]
 background_mode = 4
@@ -177,6 +181,11 @@ angle_random = 1.0
 scale = 1.5
 scale_curve = SubResource( 103 )
 color_ramp = SubResource( 102 )
+
+[sub_resource type="Resource" id=281]
+script = ExtResource( 68 )
+letter_sounds_resource = ExtResource( 70 )
+voice_mode = 3
 
 [sub_resource type="Resource" id=223]
 resource_local_to_scene = true
@@ -357,6 +366,11 @@ extents = Vector2( 3.5, 25.5 )
 
 [sub_resource type="RectangleShape2D" id=215]
 extents = Vector2( 3, 16 )
+
+[sub_resource type="Resource" id=282]
+script = ExtResource( 68 )
+letter_sounds_resource = ExtResource( 67 )
+voice_mode = 4
 
 [sub_resource type="Animation" id=232]
 resource_name = "Idle"
@@ -548,6 +562,11 @@ tracks/0/keys = {
 "values": [ 13, 14, 15, 16, 17, 18 ]
 }
 
+[sub_resource type="Resource" id=283]
+script = ExtResource( 68 )
+letter_sounds_resource = ExtResource( 67 )
+voice_mode = 4
+
 [sub_resource type="Resource" id=253]
 resource_local_to_scene = true
 script = ExtResource( 52 )
@@ -632,6 +651,11 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 13, 14, 15, 16, 17, 18 ]
 }
+
+[sub_resource type="Resource" id=284]
+script = ExtResource( 68 )
+letter_sounds_resource = ExtResource( 69 )
+voice_mode = 3
 
 [sub_resource type="Resource" id=261]
 resource_local_to_scene = true
@@ -1122,6 +1146,7 @@ position = Vector2( 29, 192 )
 [node name="FisherWifeDweller" parent="Harbor_world_objects/Middle_world_objects/Dwellers" instance=ExtResource( 49 )]
 position = Vector2( 172, -113 )
 dialogId = "fisher_wife_dweller"
+voice_generator_configuration_file = SubResource( 281 )
 actions = [ SubResource( 223 ), SubResource( 224 ), SubResource( 225 ), SubResource( 226 ) ]
 defaultDirection = -1
 
@@ -1967,6 +1992,7 @@ scale = Vector2( -1, 1 )
 [node name="WelcomingDweller" parent="CreatorHouseIsland/Middle_world_objects/Dwellers" instance=ExtResource( 49 )]
 position = Vector2( 106, -924 )
 dialogId = "creator_house_welcomer_dweller"
+voice_generator_configuration_file = SubResource( 282 )
 
 [node name="Sprite" type="Sprite" parent="CreatorHouseIsland/Middle_world_objects/Dwellers/WelcomingDweller/Body" index="0"]
 position = Vector2( -1, -16 )
@@ -2024,6 +2050,7 @@ anims/Walk = SubResource( 249 )
 [node name="ConeDweller" parent="CreatorHouseIsland/Middle_world_objects/Dwellers" instance=ExtResource( 49 )]
 position = Vector2( -1413, -940 )
 dialogId = "harbor_house_cone_dweller"
+voice_generator_configuration_file = SubResource( 283 )
 actions = [ SubResource( 253 ), SubResource( 254 ), SubResource( 255 ), SubResource( 256 ), SubResource( 257 ), SubResource( 258 ) ]
 
 [node name="Sprite" type="Sprite" parent="CreatorHouseIsland/Middle_world_objects/Dwellers/ConeDweller/Body" index="0"]
@@ -2044,6 +2071,7 @@ anims/Walk = SubResource( 252 )
 [node name="FlatHatDweller" parent="CreatorHouseIsland/Middle_world_objects/Dwellers" instance=ExtResource( 49 )]
 position = Vector2( -662, -940 )
 dialogId = "harbor_house_extra_worker_dweller"
+voice_generator_configuration_file = SubResource( 284 )
 actions = [ SubResource( 261 ), SubResource( 262 ), SubResource( 263 ), SubResource( 264 ) ]
 
 [node name="Sprite" type="Sprite" parent="CreatorHouseIsland/Middle_world_objects/Dwellers/FlatHatDweller/Body" index="0"]

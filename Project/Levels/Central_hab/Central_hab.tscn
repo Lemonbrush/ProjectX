@@ -1,4 +1,4 @@
-[gd_scene load_steps=232 format=2]
+[gd_scene load_steps=236 format=2]
 
 [ext_resource path="res://Assets/Levels/Central_hub/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Effects/Lighting/playerLight.png" type="Texture" id=2]
@@ -77,6 +77,7 @@
 [ext_resource path="res://Project/Resources/Tilesets/Resources/Decorations/Decorations.tres" type="TileSet" id=75]
 [ext_resource path="res://Project/Levels/Central_hab/World_objects/Lighthouse_buth/Lighthouse_buth.tscn" type="PackedScene" id=76]
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsSashaBrutal.tres" type="Resource" id=77]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsSofa.tres" type="Resource" id=78]
 [ext_resource path="res://Project/Characters/NPC/Mystic_dweller/MysticDweller.tscn" type="PackedScene" id=79]
 
 [sub_resource type="Environment" id=30]
@@ -829,6 +830,11 @@ script = ExtResource( 23 )
 move_speed = 50
 target_x_position = 225
 
+[sub_resource type="Resource" id=255]
+script = ExtResource( 73 )
+letter_sounds_resource = ExtResource( 78 )
+voice_mode = 5
+
 [sub_resource type="Resource" id=177]
 resource_local_to_scene = true
 script = ExtResource( 23 )
@@ -927,6 +933,11 @@ script = ExtResource( 23 )
 move_speed = 25
 target_x_position = -750
 
+[sub_resource type="Resource" id=256]
+script = ExtResource( 73 )
+letter_sounds_resource = ExtResource( 77 )
+voice_mode = 4
+
 [sub_resource type="Resource" id=196]
 resource_local_to_scene = true
 script = ExtResource( 22 )
@@ -956,6 +967,11 @@ resource_local_to_scene = true
 script = ExtResource( 22 )
 wait_time = 0.0
 is_infinite = false
+
+[sub_resource type="Resource" id=254]
+script = ExtResource( 73 )
+letter_sounds_resource = ExtResource( 78 )
+voice_mode = 3
 
 [sub_resource type="Resource" id=182]
 resource_local_to_scene = true
@@ -2027,6 +2043,7 @@ texture = ExtResource( 47 )
 [node name="DwellerKidGirl" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
 position = Vector2( 95, -244 )
 dialogId = "girl_dweller"
+voice_generator_configuration_file = SubResource( 255 )
 actions = [ SubResource( 177 ), SubResource( 178 ) ]
 
 [node name="Sprite" parent="Middle_world_objects/Dwellers/DwellerKidGirl/Body" index="2"]
@@ -2074,6 +2091,7 @@ texture = ExtResource( 48 )
 [node name="MiddleMillBalconyDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -952, 152 )
 dialogId = "mill_wife_dweller"
+voice_generator_configuration_file = SubResource( 256 )
 actions = [ SubResource( 196 ), SubResource( 197 ), SubResource( 199 ), SubResource( 198 ) ]
 
 [node name="Sprite" parent="Middle_world_objects/Dwellers/MiddleMillBalconyDweller/Body" index="2"]
@@ -2095,6 +2113,7 @@ texture = ExtResource( 62 )
 [node name="GrannyDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -1234, 380 )
 dialogId = "chinise_wife_dweller"
+voice_generator_configuration_file = SubResource( 254 )
 actions = [ SubResource( 182 ), SubResource( 183 ), SubResource( 184 ), SubResource( 185 ) ]
 
 [node name="Sprite" parent="Middle_world_objects/Dwellers/GrannyDweller/Body" index="2"]

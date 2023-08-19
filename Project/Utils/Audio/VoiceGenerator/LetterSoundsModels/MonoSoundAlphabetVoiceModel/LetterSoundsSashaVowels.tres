@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=13 format=2]
+
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/MonoSoundAlphabetVoiceModel/MonoSoundAlphabetVoiceModel.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Audio/Letters/Sasha/y.wav" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Audio/Letters/Sasha/io.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Audio/Letters/Sasha/ia.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Audio/Letters/Sasha/a.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Audio/Letters/Sasha/i.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Audio/Letters/Sasha/sh.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Audio/Letters/Sasha/ii.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Audio/Letters/Sasha/iy.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Audio/Letters/Sasha/ya.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Audio/Letters/Sasha/e.wav" type="AudioStream" id=11]
+[ext_resource path="res://Assets/Audio/Letters/Sasha/o.wav" type="AudioStream" id=12]
+
+[resource]
+script = ExtResource( 1 )
+letter_audio_sample = [ ExtResource( 5 ), ExtResource( 11 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 7 ), ExtResource( 2 ), ExtResource( 10 ) ]
