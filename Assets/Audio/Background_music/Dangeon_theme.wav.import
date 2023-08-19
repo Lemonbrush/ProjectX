@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Dangeon_theme.wav-cf7e14c60c95315ebc3b4f067ba19b55.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Background_music/Dangeon_theme.wav"
+dest_files=[ "res://.import/Dangeon_theme.wav-cf7e14c60c95315ebc3b4f067ba19b55.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

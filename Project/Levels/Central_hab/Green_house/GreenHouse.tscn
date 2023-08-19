@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Assets/Levels/Rooms/GreenHouse/GreenHouse.png" type="Texture" id=1]
 [ext_resource path="res://Project/Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Project/Characters/NPC/Simple_dweller/Dweller.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Levels/Rooms/GreenHouse/Table.png" type="Texture" id=8]
 [ext_resource path="res://Project/Characters/NPC/NpcActions/idle/idle_npc_action.gd" type="Script" id=9]
+[ext_resource path="res://Assets/Audio/Background_music/Indoor_theme.wav" type="AudioStream" id=10]
 
 [sub_resource type="Environment" id=122]
 background_mode = 4
@@ -89,6 +90,7 @@ wait_time = 0.0
 is_infinite = true
 
 [node name="GreenHouse" instance=ExtResource( 2 )]
+background_music = ExtResource( 10 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
 environment = SubResource( 122 )
@@ -114,7 +116,7 @@ texture = ExtResource( 1 )
 position = Vector2( -14, 48 )
 z_index = 2
 
-[node name="Light2D2" parent="Player" index="5"]
+[node name="Light2D2" parent="Player" index="6"]
 visible = false
 
 [node name="Collisions" parent="." index="6"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=115 format=2]
+[gd_scene load_steps=116 format=2]
 
 [ext_resource path="res://Project/Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Project/WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Project/Levels/FinalLevel/WorldObjects/AutomaticPlatformLift.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Assets/Levels/Final_level/Tower_bottom.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Levels/Final_level/Tower_top.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Audio/Background_music/Final_level_theme.wav" type="AudioStream" id=20]
 [ext_resource path="res://Project/WorldObjects/Technical/InteractionEmitterObject/InteractionEmitterObject.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Project/Levels/FinalLevel/FinalLevel.gd" type="Script" id=22]
 [ext_resource path="res://Assets/Levels/Final_level/Sky_island.png" type="Texture" id=23]
@@ -1513,6 +1514,7 @@ extents = Vector2( 7014.5, 150 )
 
 [node name="FinalLevel" instance=ExtResource( 1 )]
 script = ExtResource( 22 )
+background_music = ExtResource( 20 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
 environment = SubResource( 4 )
@@ -2346,7 +2348,7 @@ tile_data = PoolIntArray( -1572768, 536870943, 0 )
 curve = SubResource( 52 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform3/Path2D" index="0"]
-position = Vector2( 104, 9.50166 )
+position = Vector2( 104, 9.50167 )
 rotation = 3.14159
 offset = 9.49962
 rotate = false
@@ -2393,7 +2395,7 @@ tile_data = PoolIntArray( -2359200, 536870934, 0 )
 curve = SubResource( 68 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform4/Path2D" index="0"]
-position = Vector2( 104, 14.0008 )
+position = Vector2( 104, 14.0009 )
 rotation = 3.14159
 offset = 14.0007
 rotate = false
@@ -2485,7 +2487,7 @@ tile_data = PoolIntArray( -2359200, 536870926, 0 )
 curve = SubResource( 69 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform6/Path2D" index="0"]
-position = Vector2( 104, 8.20345 )
+position = Vector2( 104, 8.20346 )
 rotation = 3.14159
 offset = 25.2003
 rotate = false

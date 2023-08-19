@@ -1,4 +1,4 @@
-[gd_scene load_steps=190 format=2]
+[gd_scene load_steps=191 format=2]
 
 [ext_resource path="res://Project/Levels/Harbor_house/Harbor_house.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Effects/Lighting/shadow.png" type="Texture" id=2]
@@ -70,6 +70,7 @@
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.gd" type="Script" id=68]
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsSashaBrutal.tres" type="Resource" id=69]
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsSofa.tres" type="Resource" id=70]
+[ext_resource path="res://Assets/Audio/Background_music/Central_hub_theme.wav" type="AudioStream" id=71]
 
 [sub_resource type="Environment" id=273]
 background_mode = 4
@@ -927,6 +928,7 @@ shader_param/color_over = Color( 0, 0, 0, 1 )
 
 [node name="Harbor_house" type="Node2D"]
 script = ExtResource( 1 )
+background_music = ExtResource( 71 )
 
 [node name="GameSpecs" parent="." instance=ExtResource( 63 )]
 
