@@ -1,5 +1,7 @@
 extends Node2D
 
+export (AudioStreamSample) var background_music
+
 onready var new_game_button = $CanvasLayer/MainMenuMarginContainer/VBoxContainer/PlayButton
 onready var options_button = $CanvasLayer/MainMenuMarginContainer/VBoxContainer/OptionsButton
 onready var exit_button = $CanvasLayer/MainMenuMarginContainer/VBoxContainer/ExitButton
@@ -23,6 +25,7 @@ func _ready():
 	options_button.connect("pressed", self, "on_options_pressed")
 	about_button.connect("pressed", self, "on_changelog_pressed")
 	update_ui_data()
+	play_background_music()
 	
 
 func update_ui_data():
@@ -61,9 +64,11 @@ func on_continue_button_pressed():
 	logo_animation_player.play("Play")
 
 func logo_hide_animation_finished():
+	stop_background_music()
 	FileManager.load_game()
 	
 func on_exit_pressed():
+	stop_background_music()
 	get_tree().quit()
 
 func on_options_pressed():
@@ -81,3 +86,9 @@ func on_changelog_pressed():
 func on_options_back_pressed():
 	update_ui_data()
 	mainMenuCanvasLayer.visible = true
+
+func play_background_music():
+	MusicPlayer.play_stream(background_music)
+
+func stop_background_music():
+	MusicPlayer.stop()
