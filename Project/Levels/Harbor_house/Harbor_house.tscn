@@ -929,6 +929,7 @@ shader_param/color_over = Color( 0, 0, 0, 1 )
 [node name="Harbor_house" type="Node2D"]
 script = ExtResource( 1 )
 background_music = ExtResource( 71 )
+play_background_music_on_ready = false
 
 [node name="GameSpecs" parent="." instance=ExtResource( 63 )]
 

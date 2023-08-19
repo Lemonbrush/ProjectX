@@ -462,6 +462,20 @@ tracks/32/keys = {
 "method": "play"
 } ]
 }
+tracks/33/type = "method"
+tracks/33/path = NodePath(".")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop_background_music"
+} ]
+}
 
 [sub_resource type="Animation" id=40]
 length = 0.001
@@ -3066,7 +3080,7 @@ color_ramp = SubResource( 50 )
 script = ExtResource( 2 )
 background_music = ExtResource( 34 )
 dynamic_camera = false
-is_able_to_skip_cutscene = false
+play_background_music_on_ready = false
 
 [node name="MusicPlayer" type="Node" parent="."]
 
