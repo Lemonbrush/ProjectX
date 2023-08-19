@@ -1,0 +1,73 @@
+[gd_resource type="Resource" load_steps=35 format=2]
+
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/FullAlphabetSoundsModel.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Audio/Letters/Katya/l.wav" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Audio/Letters/Katya/k.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Audio/Letters/Katya/p.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Audio/Letters/Katya/o.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Audio/Letters/Katya/y.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Audio/Letters/Katya/t.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Audio/Letters/Katya/sh.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Audio/Letters/Katya/d.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Audio/Letters/Katya/i.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Audio/Letters/Katya/g.wav" type="AudioStream" id=11]
+[ext_resource path="res://Assets/Audio/Letters/Katya/e.wav" type="AudioStream" id=12]
+[ext_resource path="res://Assets/Audio/Letters/Katya/a.wav" type="AudioStream" id=13]
+[ext_resource path="res://Assets/Audio/Letters/Katya/z.wav" type="AudioStream" id=14]
+[ext_resource path="res://Assets/Audio/Letters/Katya/m.wav" type="AudioStream" id=15]
+[ext_resource path="res://Assets/Audio/Letters/Katya/n.wav" type="AudioStream" id=16]
+[ext_resource path="res://Assets/Audio/Letters/Katya/f.wav" type="AudioStream" id=17]
+[ext_resource path="res://Assets/Audio/Letters/Katya/iy.wav" type="AudioStream" id=18]
+[ext_resource path="res://Assets/Audio/Letters/Katya/h.wav" type="AudioStream" id=19]
+[ext_resource path="res://Assets/Audio/Letters/Katya/ia.wav" type="AudioStream" id=20]
+[ext_resource path="res://Assets/Audio/Letters/Katya/ih.wav" type="AudioStream" id=21]
+[ext_resource path="res://Assets/Audio/Letters/Katya/ii.wav" type="AudioStream" id=22]
+[ext_resource path="res://Assets/Audio/Letters/Katya/j.wav" type="AudioStream" id=23]
+[ext_resource path="res://Assets/Audio/Letters/Katya/io.wav" type="AudioStream" id=24]
+[ext_resource path="res://Assets/Audio/Letters/Katya/s.wav" type="AudioStream" id=25]
+[ext_resource path="res://Assets/Audio/Letters/Katya/shh.wav" type="AudioStream" id=26]
+[ext_resource path="res://Assets/Audio/Letters/Katya/c.wav" type="AudioStream" id=27]
+[ext_resource path="res://Assets/Audio/Letters/Katya/ya.wav" type="AudioStream" id=28]
+[ext_resource path="res://Assets/Audio/Letters/Katya/b.wav" type="AudioStream" id=29]
+[ext_resource path="res://Assets/Audio/Letters/Katya/v.wav" type="AudioStream" id=30]
+[ext_resource path="res://Assets/Audio/Letters/Katya/r.wav" type="AudioStream" id=31]
+[ext_resource path="res://Assets/Audio/Letters/Katya/ch.wav" type="AudioStream" id=32]
+[ext_resource path="res://Assets/Audio/Letters/Universal/longBlank.wav" type="AudioStream" id=33]
+[ext_resource path="res://Assets/Audio/Letters/Universal/blank.wav" type="AudioStream" id=34]
+
+[resource]
+script = ExtResource( 1 )
+a_letter_sample = ExtResource( 13 )
+b_letter_sample = ExtResource( 29 )
+v_letter_sample = ExtResource( 30 )
+g_letter_sample = ExtResource( 11 )
+d_letter_sample = ExtResource( 9 )
+e_letter_sample = ExtResource( 12 )
+io_letter_sample = ExtResource( 24 )
+j_letter_sample = ExtResource( 23 )
+z_letter_sample = ExtResource( 14 )
+i_letter_sample = ExtResource( 10 )
+ii_letter_sample = ExtResource( 22 )
+k_letter_sample = ExtResource( 3 )
+l_letter_sample = ExtResource( 2 )
+m_letter_sample = ExtResource( 15 )
+n_letter_sample = ExtResource( 16 )
+o_letter_sample = ExtResource( 5 )
+p_letter_sample = ExtResource( 4 )
+r_letter_sample = ExtResource( 31 )
+s_letter_sample = ExtResource( 25 )
+t_letter_sample = ExtResource( 7 )
+y_letter_sample = ExtResource( 6 )
+f_letter_sample = ExtResource( 17 )
+h_letter_sample = ExtResource( 19 )
+c_letter_sample = ExtResource( 27 )
+ch_letter_sample = ExtResource( 32 )
+sh_letter_sample = ExtResource( 8 )
+shh_letter_sample = ExtResource( 26 )
+ih_letter_sample = ExtResource( 21 )
+ia_letter_sample = ExtResource( 20 )
+iy_letter_sample = ExtResource( 18 )
+ya_letter_sample = ExtResource( 28 )
+blank_letter_sample = ExtResource( 34 )
+long_blank_letter_sample = ExtResource( 33 )
+default_letter_sample = ExtResource( 13 )

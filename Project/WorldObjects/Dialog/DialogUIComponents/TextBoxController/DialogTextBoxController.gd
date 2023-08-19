@@ -2,92 +2,140 @@ extends Node2D
 
 export(String) var dialog_id
 export(NodePath) var interaction_controller_path
+export (Resource) var voice_generator_configuration_file
 export(bool) var is_interaction_active = true
 
 onready var dialogTextBox = $DialogTextBox
+onready var voiceGenerator = $LetterSoundPlayer
+onready var dialogManager = $DialogManager
 
-var dialogManager
+var current_text = ""
+var target_text = ""
+
+# Lifecycle
 
 func _ready():
-	var interaction_controller = get_node(interaction_controller_path)
-	if interaction_controller != null:
-		interaction_controller.connect("on_leave", self, "on_leave")
-		interaction_controller.connect("on_interact", self, "on_interact") 
-	
-	dialogTextBox.connect("pressed_button_number", self, "did_choose_option_number")
-	
-func did_choose_option_number(option_number):
-	process_response_chosen_option(option_number)
+	configure_voice_generator()
+	configure_interaction_controller()
+	configure_dialogTextBox()
+	configure_dialog_manager()
 
-func finish_dialog():
-	Global.is_player_talking = false
-	dialogTextBox.hide()
-	dialogManager = null
-	
 func on_leave():
 	finish_dialog()
 
 func on_interact(_body = null):
 	if dialog_id.empty() or !is_interaction_active:
 		return
-	
-	var phrase
-	if dialogManager == null:
-		dialogManager = DialogManager.new(dialog_id)
-		phrase = dialogManager.get_next_dialog("Initial")
-	else:
-		var next_phrase =  dialogManager.get_next_dialog()
-		if next_phrase == null:
-			finish_dialog()
-			return
-			
-		phrase = next_phrase
-
 	Global.is_player_talking = true
-	process_gialog_interaction(phrase)
-
-func process_gialog_interaction(phrase):
-	if phrase == null:
-		finish_dialog()
+	
+	if current_text != target_text:
+		skip_dialog_animation(target_text)
 		return
 	
-	var phrase_type = phrase["type"]
+	current_text = ""
+	target_text = ""
+	dialogTextBox.show_if_needed()
+	dialogManager.request_dialog()
+
+func did_choose_dialog_option(option_number):
+	dialogManager.did_choose_dialog_option(option_number)
+
+func voice_generator_did_pronounced_text(pronounced_text):
+	current_text += pronounced_text
+	var current_text_length = float(current_text.length())
+	var target_text_length = float(target_text.length())
 	
-	match phrase_type:
-		"response":
-			process_response(phrase)
-			dialogTextBox.set_button_hint_visibility(false)
-		"dialog":
-			process_dialog(phrase)
-			dialogTextBox.set_button_hint_visibility(true)
-		_:
-			finish_dialog()
+	var one_percent = 1.0/target_text_length
+	var pronaunced_percents = one_percent * current_text_length
+	var new_percent = 1.0 - (1.0 - pronaunced_percents)
+	dialogTextBox.set_label_text_percent_visible(new_percent)
 
-func process_response(phrase):
-	var responses = remove_unconditional_responses(phrase)
-	dialogTextBox.show_text(phrase.text, responses)
+func voice_generator_did_start_talking(_phrase_text):
+	reset_dialogTextBox()
 
-func remove_unconditional_responses(phrase):
-	var responses = []
-	for response in phrase["responses"]:
-		if response["conditions"] != null && dialogManager.is_conditions_satisfied(response["conditions"]) == false:
-			continue
-		responses.append(response)
-	
-	return responses
+func voice_generator_did_fibish_talking():
+	current_text = target_text
+	dialogTextBox.show_button_hint()
 
-func process_dialog(phrase):
-	dialogTextBox.show_text(phrase.text)
+func voice_generator_skipped_talking(full_text):
+	skip_dialog_animation(full_text)
 
-func process_response_chosen_option(chosen_option):
-	if dialogManager != null:
-		var phrase = dialogManager.get_next_dialog_by_option(chosen_option)
-		process_gialog_interaction(phrase)
-		
+func did_receive_text_dialog(text):
+	if text == null:
+		finish_dialog()
+		return
+	reset_dialogTextBox()
+	target_text = text
+	voiceGenerator.play(text)
+	dialogTextBox.hide_buttons()
+	dialogTextBox.set_label_text(text)
+
+func did_receive_response_dialog(text, responses):
+	if responses == null:
+		finish_dialog()
+		return
+	reset_dialogTextBox()
+	voiceGenerator.reset()
+	if text:
+		voiceGenerator.play(text)
+	dialogTextBox.show_button_options(responses)
+
+func did_receive_error(text):
+	print(text)
+	finish_dialog()
+
+# Functions
+
+func skip_dialog_animation(full_text):
+	voiceGenerator.reset()
+	current_text = full_text
+	dialogTextBox.set_label_text_percent_visible(1)
+	dialogTextBox.show_button_hint()
+
+func reset_dialogTextBox():
+	dialogTextBox.set_label_text("")
+	dialogTextBox.hide_button_hint()
+
+func set_letter_sounds_resource(stream):
+	voiceGenerator.set_letter_sounds_resource(stream)
+
 func set_dialog_id(new_dialog_id):
 	dialog_id = new_dialog_id
+	dialogManager.set_dialog_id(new_dialog_id)
 	
 func setup_interaction_mode(can_interact):
 	is_interaction_active = can_interact
 	if !can_interact:
 		finish_dialog()
+
+# Private functions
+
+func finish_dialog():
+	Global.is_player_talking = false
+	dialogTextBox.hide()
+	dialogManager.reset()
+	voiceGenerator.reset()
+
+func configure_interaction_controller():
+	var interaction_controller = get_node(interaction_controller_path)
+	if interaction_controller == null:
+		return	
+	interaction_controller.connect("on_leave", self, "on_leave")
+	interaction_controller.connect("on_interact", self, "on_interact")
+
+func configure_voice_generator():
+	voiceGenerator.set_letter_sounds_resource(voice_generator_configuration_file)
+	voiceGenerator.connect("characters_sounded", self, "voice_generator_did_pronounced_text")
+	voiceGenerator.connect("finished_phrase", self, "voice_generator_did_fibish_talking")
+	voiceGenerator.connect("started_talking_phrase", self, "voice_generator_did_start_talking")
+	voiceGenerator.connect("skip_talking", self, "voice_generator_skipped_talking")
+
+func configure_dialogTextBox():
+	dialogTextBox.instant_hide()
+	dialogTextBox.connect("did_press_button_with_text", self, "did_choose_dialog_option")
+
+func configure_dialog_manager():
+	dialogManager.set_dialog_id(dialog_id)
+	dialogManager.connect("did_receive_text_dialog", self, "did_receive_text_dialog")
+	dialogManager.connect("did_receive_response_dialog", self, "did_receive_response_dialog")
+	dialogManager.connect("did_receive_error", self, "did_receive_error")

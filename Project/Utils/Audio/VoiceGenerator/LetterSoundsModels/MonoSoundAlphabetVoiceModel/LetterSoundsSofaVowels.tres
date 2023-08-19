@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=11 format=2]
+
+[ext_resource path="res://Assets/Audio/Letters/Sofa/a.wav" type="AudioStream" id=1]
+[ext_resource path="res://Assets/Audio/Letters/Sofa/ia.wav" type="AudioStream" id=2]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/MonoSoundAlphabetVoiceModel/MonoSoundAlphabetVoiceModel.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Audio/Letters/Sofa/y.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Audio/Letters/Sofa/iy.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Audio/Letters/Sofa/i.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Audio/Letters/Sofa/e.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Audio/Letters/Sofa/ya.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Audio/Letters/Sofa/o.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Audio/Letters/Sofa/io.wav" type="AudioStream" id=10]
+
+[resource]
+script = ExtResource( 3 )
+letter_audio_sample = [ ExtResource( 1 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 4 ), ExtResource( 8 ) ]

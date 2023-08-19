@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/h.wav-fb3f1370ecc0afcc62ee9900827b84ca.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Letters/ExampleLetters/h.wav"
+dest_files=[ "res://.import/h.wav-fb3f1370ecc0afcc62ee9900827b84ca.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

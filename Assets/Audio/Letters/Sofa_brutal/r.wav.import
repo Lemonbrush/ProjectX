@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/r.wav-871916d6aea5bf91aaadf94c495c2009.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Letters/Sofa_brutal/r.wav"
+dest_files=[ "res://.import/r.wav-871916d6aea5bf91aaadf94c495c2009.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
