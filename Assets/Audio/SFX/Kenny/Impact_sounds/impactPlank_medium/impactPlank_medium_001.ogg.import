@@ -11,5 +11,5 @@ dest_files=[ "res://.import/impactPlank_medium_001.ogg-e54ac423970f264dc6cf955b5
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
