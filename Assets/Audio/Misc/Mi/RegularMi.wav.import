@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/RegularMi.wav-41f26f2dbca23acfeb857c441ba0d931.sample"
+path="res://.import/RegularMi.wav-7f864ea6f57530aab574a815ff597115.sample"
 
 [deps]
 
-source_file="res://Assets/Audio/Misc/RegularMi.wav"
-dest_files=[ "res://.import/RegularMi.wav-41f26f2dbca23acfeb857c441ba0d931.sample" ]
+source_file="res://Assets/Audio/Misc/Mi/RegularMi.wav"
+dest_files=[ "res://.import/RegularMi.wav-7f864ea6f57530aab574a815ff597115.sample" ]
 
 [params]
 
