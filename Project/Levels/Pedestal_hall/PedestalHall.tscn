@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=2]
+[gd_scene load_steps=94 format=2]
 
 [ext_resource path="res://Project/Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Project/WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/Tilesets/Animanimated_tiles/WaterSurface/Water_surface/water_surface3.png" type="Texture" id=8]
 [ext_resource path="res://Project/Resources/Shaders/BlurShader.gdshader" type="Shader" id=9]
 [ext_resource path="res://Project/Resources/Tilesets/AnimatedTextures/Water_surface/WaterAnim.tres" type="Texture" id=10]
+[ext_resource path="res://Assets/Audio/Background_music/Pedestal_hall_theme.wav" type="AudioStream" id=11]
 [ext_resource path="res://Assets/BackgroundGradients/PinkEdgeGradient.png" type="Texture" id=12]
 [ext_resource path="res://Project/WorldObjects/Technical/Clouds/Clouds.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Assets/Levels/Pedestal_hall/World_objects/Me_statue/Head.png" type="Texture" id=14]
@@ -1273,6 +1274,7 @@ shader_param/color_over = Color( 0, 0, 0, 1 )
 
 [node name="PedestalHall" instance=ExtResource( 1 )]
 script = ExtResource( 42 )
+background_music = ExtResource( 11 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
 environment = SubResource( 314 )

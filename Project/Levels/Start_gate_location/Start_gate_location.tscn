@@ -39,7 +39,7 @@
 [ext_resource path="res://Project/WorldObjects/Destructables/Vase/Vase.tscn" type="PackedScene" id=37]
 [ext_resource path="res://Project/Characters/NPC/Simple_dweller/Dweller.tscn" type="PackedScene" id=38]
 [ext_resource path="res://Project/Characters/NPC/NpcActions/idle/idle_npc_action.gd" type="Script" id=39]
-[ext_resource path="res://Assets/Audio/Old_home_location/Dark soundtrack/Intro Dark Soundtrack(2).wav" type="AudioStream" id=40]
+[ext_resource path="res://Assets/Audio/Background_music/Start_gate_theme.wav" type="AudioStream" id=40]
 [ext_resource path="res://Project/UI/DebugScreen/GameSpecs.tscn" type="PackedScene" id=41]
 [ext_resource path="res://Project/WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=42]
 [ext_resource path="res://Project/WorldObjects/Decorative/Tree/Regualr_trees/Trees/CurvedTree.tscn" type="PackedScene" id=43]

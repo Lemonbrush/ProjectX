@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=2]
+[gd_scene load_steps=80 format=2]
 
 [ext_resource path="res://Project/Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Levels/Rooms/LightHouse/Lighthouse.png" type="Texture" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Assets/BackgroundGradients/Blue_clouds.png" type="Texture" id=19]
 [ext_resource path="res://Assets/BackgroundGradients/BackgroundGradient1.png" type="Texture" id=20]
 [ext_resource path="res://Project/WorldObjects/Technical/Clouds/Clouds.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Assets/Audio/Background_music/Indoor_theme.wav" type="AudioStream" id=22]
 
 [sub_resource type="Environment" id=118]
 background_mode = 4
@@ -761,6 +762,7 @@ extents = Vector2( 5.5, 35.5 )
 
 [node name="LightgHouse" instance=ExtResource( 1 )]
 script = ExtResource( 9 )
+background_music = ExtResource( 22 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
 environment = SubResource( 118 )
@@ -950,7 +952,7 @@ texture = ExtResource( 6 )
 position = Vector2( 8, 384 )
 z_index = 2
 
-[node name="Light2D2" parent="Player" index="5"]
+[node name="Light2D2" parent="Player" index="6"]
 visible = false
 energy = 0.4
 

@@ -6,6 +6,7 @@ var bookMenu						= preload("res://Project/UI/BookMenu/BookMenu.tscn")
 
 export (AudioStreamSample) var background_music
 export(bool) var dynamic_camera = true
+export(bool) var play_background_music_on_ready = true
 
 onready var player 				= find_node("Player")
 onready var animationPlayer 		= $AnimationPlayer
@@ -15,16 +16,10 @@ onready var camera				= $Camera2D
 
 func _ready():
 	var _connect = EventBus.connect("playerAnimationModeChange", self, "player_animation_mode_change")
-	
-	FileManager.current_level = get_tree().get_current_scene().get_name()
+	configure_file_manager()
 	correct_player_position_by_door()
-	
-	camera.follow_player = dynamic_camera
-	var camera_zoom = GameEventConstants.get_constant("default_camera_zoom")
-	if camera_zoom != null:
-		camera.set_default_camera_zoom(camera_zoom)
-	else:
-		camera.set_default_camera_zoom(0.7)
+	configure_camera()
+	configure_background_music()
 	
 func _unhandled_input(event):
 	if event.is_action_pressed("pause_menu"):
@@ -67,3 +62,18 @@ func play_background_music():
 
 func stop_background_music():
 	MusicPlayer.stop()
+
+func configure_background_music():
+	if play_background_music_on_ready:
+		play_background_music()
+
+func configure_camera():
+	camera.follow_player = dynamic_camera
+	var camera_zoom = GameEventConstants.get_constant("default_camera_zoom")
+	if camera_zoom != null:
+		camera.set_default_camera_zoom(camera_zoom)
+	else:
+		camera.set_default_camera_zoom(0.7)
+
+func configure_file_manager():
+	FileManager.current_level = get_tree().get_current_scene().get_name()
