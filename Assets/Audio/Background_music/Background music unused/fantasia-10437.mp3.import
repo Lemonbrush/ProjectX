@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/fantasia-10437.mp3-60f64351f630fb3c7c545826b3dd1e7c.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Background_music/Background music unused/fantasia-10437.mp3"
+dest_files=[ "res://.import/fantasia-10437.mp3-60f64351f630fb3c7c545826b3dd1e7c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

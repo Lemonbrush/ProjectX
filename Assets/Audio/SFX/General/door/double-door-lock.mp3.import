@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/double-door-lock.mp3-7ef4d89ca37094123b6d590b0e00fd49.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/door/double-door-lock.mp3"
+dest_files=[ "res://.import/double-door-lock.mp3-7ef4d89ca37094123b6d590b0e00fd49.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

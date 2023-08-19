@@ -134,7 +134,7 @@
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsSofa.tres" type="Resource" id=132]
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsSashaBrutal.tres" type="Resource" id=133]
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsSofaBrutal.tres" type="Resource" id=134]
-[ext_resource path="res://Assets/Audio/Background_music/Grand_garden_theme.wav" type="AudioStream" id=135]
+[ext_resource path="res://Assets/Audio/Background_music/Level_themes/Grand_garden_theme.wav" type="AudioStream" id=135]
 
 [sub_resource type="Environment" id=399]
 background_mode = 4

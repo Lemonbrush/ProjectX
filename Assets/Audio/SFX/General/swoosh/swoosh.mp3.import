@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/swoosh.mp3-126a99898231f161b838a710475df6ad.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/swoosh/swoosh.mp3"
+dest_files=[ "res://.import/swoosh.mp3-126a99898231f161b838a710475df6ad.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

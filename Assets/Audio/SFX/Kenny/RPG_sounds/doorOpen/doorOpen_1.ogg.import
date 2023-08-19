@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/doorOpen_1.ogg-923fbe787bfd1d76ec81966ac8ea3cab.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Kenny/RPG_sounds/doorOpen/doorOpen_1.ogg"
+dest_files=[ "res://.import/doorOpen_1.ogg-923fbe787bfd1d76ec81966ac8ea3cab.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

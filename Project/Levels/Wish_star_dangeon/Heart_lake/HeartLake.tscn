@@ -21,7 +21,7 @@
 [ext_resource path="res://Assets/Pickups/LeftHalfHeart/LeftHalfHeartItem-Sheet.png" type="Texture" id=19]
 [ext_resource path="res://Project/WorldObjects/Pick_ups/Items/AssembledHeart/AssembledHeartItem.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Project/Resources/Particles/Crush_particles/Crush_dust/CrushDustProcessMaterial.tres" type="Material" id=21]
-[ext_resource path="res://Assets/Audio/Background_music/Dangeon_lake_theme.wav" type="AudioStream" id=22]
+[ext_resource path="res://Assets/Audio/Background_music/Level_themes/Dangeon_lake_theme.wav" type="AudioStream" id=22]
 [ext_resource path="res://Assets/Pickups/SoulStar/SoulStar-Sheet.png" type="Texture" id=24]
 
 [sub_resource type="Animation" id=17]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/grand-final-orchestral-tutti.mp3-741b8e23e0d753f4451937f7252b9351.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/themed/grand-final-orchestral-tutti.mp3"
+dest_files=[ "res://.import/grand-final-orchestral-tutti.mp3-741b8e23e0d753f4451937f7252b9351.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

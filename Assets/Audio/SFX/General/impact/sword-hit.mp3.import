@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sword-hit.mp3-7bd996cc591aef30990f2fedfd09d716.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/impact/sword-hit.mp3"
+dest_files=[ "res://.import/sword-hit.mp3-7bd996cc591aef30990f2fedfd09d716.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

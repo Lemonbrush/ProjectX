@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/birds-19624.mp3-0752e7f3ab64fb0884c74bda14f0bd6c.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Background_music/Background sound effects/Birds/birds-19624.mp3"
+dest_files=[ "res://.import/birds-19624.mp3-0752e7f3ab64fb0884c74bda14f0bd6c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

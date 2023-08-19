@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/impactSoft_medium_003.ogg-f6e80b07f1628dfb862863a8d53d89a5.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Kenny/Impact_sounds/impactSoft_medium/impactSoft_medium_003.ogg"
+dest_files=[ "res://.import/impactSoft_medium_003.ogg-f6e80b07f1628dfb862863a8d53d89a5.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

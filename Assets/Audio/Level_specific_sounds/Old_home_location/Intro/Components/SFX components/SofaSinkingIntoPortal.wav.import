@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SofaSinkingIntoPortal.wav-4225e7553f1549d2416abc1a0201afe6.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Level_specific_sounds/Old_home_location/Intro/Components/SFX components/SofaSinkingIntoPortal.wav"
+dest_files=[ "res://.import/SofaSinkingIntoPortal.wav-4225e7553f1549d2416abc1a0201afe6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

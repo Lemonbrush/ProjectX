@@ -23,7 +23,7 @@
 [ext_resource path="res://Project/WorldObjects/Sign/Sign.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.gd" type="Script" id=22]
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsSofa.tres" type="Resource" id=23]
-[ext_resource path="res://Assets/Audio/Background_music/Indoor_theme.wav" type="AudioStream" id=24]
+[ext_resource path="res://Assets/Audio/Background_music/Level_themes/Indoor_theme.wav" type="AudioStream" id=24]
 
 [sub_resource type="Environment" id=138]
 background_mode = 4

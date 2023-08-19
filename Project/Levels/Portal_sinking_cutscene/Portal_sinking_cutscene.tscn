@@ -6,9 +6,9 @@
 [ext_resource path="res://Project/WorldObjects/Technical/Lighting/LightSource/LightSource.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Levels/Old_home_location/Portal_sinking_cutscene/Sofa_falling_animation-Sheet.png" type="Texture" id=5]
 [ext_resource path="res://Project/Levels/Portal_sinking_cutscene/Portal_sinking_cutscene.gd" type="Script" id=6]
-[ext_resource path="res://Assets/Audio/Old_home_location/Intro/Components/SFX components/SofaSinkingIntoPortal.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Audio/Level_specific_sounds/Old_home_location/Intro/Components/SFX components/SofaSinkingIntoPortal.wav" type="AudioStream" id=7]
 [ext_resource path="res://Assets/Effects/Particles/particles.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Audio/Misc/Impact_sounds/Sub - Mini Impact.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Audio/SFX/Kenny/Impact_sounds/Sub - Mini Impact/Sub - Mini Impact.wav" type="AudioStream" id=10]
 
 [sub_resource type="Environment" id=9]
 background_mode = 4

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/error_001.ogg-7c2f994891995e50b2772ce60289a695.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Kenny/Interface_sounds/error/error_001.ogg"
+dest_files=[ "res://.import/error_001.ogg-7c2f994891995e50b2772ce60289a695.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

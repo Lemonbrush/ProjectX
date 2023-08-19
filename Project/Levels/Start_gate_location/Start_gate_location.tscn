@@ -39,15 +39,15 @@
 [ext_resource path="res://Project/WorldObjects/Destructables/Vase/Vase.tscn" type="PackedScene" id=37]
 [ext_resource path="res://Project/Characters/NPC/Simple_dweller/Dweller.tscn" type="PackedScene" id=38]
 [ext_resource path="res://Project/Characters/NPC/NpcActions/idle/idle_npc_action.gd" type="Script" id=39]
-[ext_resource path="res://Assets/Audio/Background_music/Start_gate_theme.wav" type="AudioStream" id=40]
+[ext_resource path="res://Assets/Audio/Background_music/Level_themes/Start_gate_theme.wav" type="AudioStream" id=40]
 [ext_resource path="res://Project/UI/DebugScreen/GameSpecs.tscn" type="PackedScene" id=41]
 [ext_resource path="res://Project/WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=42]
 [ext_resource path="res://Project/WorldObjects/Decorative/Tree/Regualr_trees/Trees/CurvedTree.tscn" type="PackedScene" id=43]
 [ext_resource path="res://Project/WorldObjects/Decorative/Tree/Regualr_trees/Trees/BushyTree.tscn" type="PackedScene" id=44]
 [ext_resource path="res://Project/WorldObjects/Decorative/Tree/Regualr_trees/Trees/TallTree.tscn" type="PackedScene" id=45]
 [ext_resource path="res://Project/WorldObjects/Decorative/Tree/Regualr_trees/Trees/SquashedTree.tscn" type="PackedScene" id=46]
-[ext_resource path="res://Assets/Audio/Start_gate_location/FallingIntroMusic.wav" type="AudioStream" id=47]
-[ext_resource path="res://Assets/Audio/Misc/Impact_sounds/impactPlank_medium_004.ogg" type="AudioStream" id=48]
+[ext_resource path="res://Assets/Audio/Level_specific_sounds/Start_gate_location/FallingIntroMusic.wav" type="AudioStream" id=47]
+[ext_resource path="res://Assets/Audio/SFX/Kenny/Impact_sounds/impactPlank_medium/impactPlank_medium_004.ogg" type="AudioStream" id=48]
 
 [sub_resource type="Environment" id=77]
 background_mode = 4

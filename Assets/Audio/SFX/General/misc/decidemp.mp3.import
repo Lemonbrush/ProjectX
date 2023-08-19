@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/decidemp.mp3-9c023bcc8604d3036214c25ff88ec3d2.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/misc/decidemp.mp3"
+dest_files=[ "res://.import/decidemp.mp3-9c023bcc8604d3036214c25ff88ec3d2.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

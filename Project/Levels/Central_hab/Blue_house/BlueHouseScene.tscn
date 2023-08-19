@@ -14,7 +14,7 @@
 [ext_resource path="res://Assets/Effects/Particles/ShineSprincles.png" type="Texture" id=12]
 [ext_resource path="res://Project/WorldObjects/Technical/ItemSpawner/ItemSpawner.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Project/WorldObjects/Pick_ups/Items/Sketch/SketchItem.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Assets/Audio/Background_music/Indoor_theme.wav" type="AudioStream" id=15]
+[ext_resource path="res://Assets/Audio/Background_music/Level_themes/Indoor_theme.wav" type="AudioStream" id=15]
 
 [sub_resource type="Environment" id=137]
 background_mode = 4

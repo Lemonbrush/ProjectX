@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/box-crash.mp3-026773f3e0177cce6f20746fcfe7425f.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/crash/box-crash.mp3"
+dest_files=[ "res://.import/box-crash.mp3-026773f3e0177cce6f20746fcfe7425f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
