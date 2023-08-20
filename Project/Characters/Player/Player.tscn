@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Assets/Characters/Sofa/MainSprite/SofaSpriteSheet.png" type="Texture" id=1]
 [ext_resource path="res://Project/Characters/Player/States/Jump.gd" type="Script" id=2]
@@ -25,6 +25,7 @@
 [ext_resource path="res://Assets/Audio/SFX/Kenny/Impact_sounds/footstep_concrete/footstep_concrete_004.ogg" type="AudioStream" id=23]
 [ext_resource path="res://Assets/Audio/SFX/Kenny/Impact_sounds/footstep_concrete/footstep_concrete_002.ogg" type="AudioStream" id=24]
 [ext_resource path="res://Assets/Audio/SFX/Kenny/Impact_sounds/footstep_concrete/footstep_concrete_000.ogg" type="AudioStream" id=25]
+[ext_resource path="res://Assets/Audio/SFX/General/pop/water_drop.mp3" type="AudioStream" id=26]
 
 [sub_resource type="Animation" id=16]
 resource_name = "Attack"
@@ -191,6 +192,23 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 19, 20, 21, 22 ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath("Audio/JumpAudioPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.05, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "play"
+}, {
+"args": [  ],
+"method": "stop"
+} ]
+}
 
 [sub_resource type="Animation" id=11]
 resource_name = "Jump_top"
@@ -299,58 +317,65 @@ collision_layer = 131
 collision_mask = 108
 script = ExtResource( 3 )
 
-[node name="FootstepAudioPlayer" parent="." instance=ExtResource( 17 )]
+[node name="Audio" type="Node" parent="."]
+
+[node name="FootstepAudioPlayer" parent="Audio" instance=ExtResource( 17 )]
 numberToPlay = 3
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="FootstepAudioPlayer"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/FootstepAudioPlayer"]
 stream = ExtResource( 19 )
 volume_db = -2.0
 bus = "Footsteps"
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="FootstepAudioPlayer"]
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Audio/FootstepAudioPlayer"]
 stream = ExtResource( 18 )
 volume_db = -2.0
 bus = "Footsteps"
 
-[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="FootstepAudioPlayer"]
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Audio/FootstepAudioPlayer"]
 stream = ExtResource( 16 )
 volume_db = -2.0
 bus = "Footsteps"
 
-[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="FootstepAudioPlayer"]
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="Audio/FootstepAudioPlayer"]
 stream = ExtResource( 15 )
 volume_db = -2.0
 bus = "Footsteps"
 
-[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="FootstepAudioPlayer"]
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="Audio/FootstepAudioPlayer"]
 stream = ExtResource( 20 )
 volume_db = -2.0
 bus = "Footsteps"
 
-[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="FootstepAudioPlayer"]
+[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="Audio/FootstepAudioPlayer"]
 stream = ExtResource( 25 )
 volume_db = -2.0
 bus = "Footsteps"
 
-[node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="FootstepAudioPlayer"]
+[node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="Audio/FootstepAudioPlayer"]
 stream = ExtResource( 22 )
 volume_db = -2.0
 bus = "Footsteps"
 
-[node name="AudioStreamPlayer8" type="AudioStreamPlayer" parent="FootstepAudioPlayer"]
+[node name="AudioStreamPlayer8" type="AudioStreamPlayer" parent="Audio/FootstepAudioPlayer"]
 stream = ExtResource( 24 )
 volume_db = -2.0
 bus = "Footsteps"
 
-[node name="AudioStreamPlayer9" type="AudioStreamPlayer" parent="FootstepAudioPlayer"]
+[node name="AudioStreamPlayer9" type="AudioStreamPlayer" parent="Audio/FootstepAudioPlayer"]
 stream = ExtResource( 21 )
 volume_db = -2.0
 bus = "Footsteps"
 
-[node name="AudioStreamPlayer10" type="AudioStreamPlayer" parent="FootstepAudioPlayer"]
+[node name="AudioStreamPlayer10" type="AudioStreamPlayer" parent="Audio/FootstepAudioPlayer"]
 stream = ExtResource( 23 )
 volume_db = -2.0
 bus = "Footsteps"
+
+[node name="JumpAudioPlayer" parent="Audio" instance=ExtResource( 17 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/JumpAudioPlayer"]
+stream = ExtResource( 26 )
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 one_shot = true
@@ -420,7 +445,7 @@ position = Vector2( 8, -16 )
 texture = ExtResource( 1 )
 hframes = 19
 vframes = 14
-frame = 44
+frame = 133
 
 [node name="GroundRay1" type="RayCast2D" parent="Body"]
 visible = false

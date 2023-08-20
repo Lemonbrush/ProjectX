@@ -5,7 +5,7 @@ var footstepParticles   = preload("res://Project/Characters/Player/WorldObjects/
 var appearParticles     = preload("res://Project/Characters/Player/WorldObjects/PlayerAppearParticles/PlayerAppearParticles.tscn")
 var itemPickupScenePath = preload("res://Project/Characters/Player/Animation_scenes/Item_picking_player/Item_picking_player.tscn")
 
-onready var footstep_audio_player = $FootstepAudioPlayer
+onready var footstep_audio_player = $Audio/FootstepAudioPlayer
 onready var ground_ray1 			= $Body/GroundRay1
 onready var ground_ray2 			= $Body/GroundRay2
 onready var ground_ray3 			= $Body/GroundRay3

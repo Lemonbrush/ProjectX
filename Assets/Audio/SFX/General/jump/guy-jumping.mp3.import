@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/guy-jumping.mp3-5befde0efd1d5ffeac3d1b29f6f9f9f2.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/jump/guy-jumping.mp3"
+dest_files=[ "res://.import/guy-jumping.mp3-5befde0efd1d5ffeac3d1b29f6f9f9f2.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

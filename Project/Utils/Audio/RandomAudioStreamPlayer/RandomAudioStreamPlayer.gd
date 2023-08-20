@@ -24,10 +24,20 @@ func play():
 		playerNodes[idx].play()
 		playerNodes.remove(idx)
 
+func stop():
+	for player in get_child_stream_players():
+		player.stop()
 
 func get_idle_stream_players():
 	var validNodes = []
-	for streamPlayer in get_children():
+	for streamPlayer in get_child_stream_players():
 		if !streamPlayer.playing && streamPlayer is AudioStreamPlayer:
 			validNodes.append(streamPlayer)
 	return validNodes
+
+func get_child_stream_players():
+	var players = []
+	for child in get_children():
+		if child is AudioStreamPlayer:
+			players.append(child)
+	return players
