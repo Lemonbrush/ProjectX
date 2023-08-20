@@ -11,5 +11,5 @@ dest_files=[ "res://.import/clean-fast-swooshaiff.mp3-f86455dfd102392aaa72a1e50d
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
