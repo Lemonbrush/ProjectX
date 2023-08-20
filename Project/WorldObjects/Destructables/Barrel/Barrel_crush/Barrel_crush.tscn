@@ -78,6 +78,20 @@ tracks/4/keys = {
 "method": "play"
 } ]
 }
+tracks/5/type = "method"
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 1.8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -239,7 +253,6 @@ frame = 2
 
 [node name="DustParticles" type="Particles2D" parent="."]
 material = SubResource( 5 )
-emitting = false
 amount = 10
 lifetime = 1.5
 one_shot = true
@@ -249,7 +262,6 @@ texture = ExtResource( 1 )
 
 [node name="BarrelParticles" type="Particles2D" parent="."]
 material = SubResource( 13 )
-emitting = false
 amount = 10
 lifetime = 1.5
 one_shot = true

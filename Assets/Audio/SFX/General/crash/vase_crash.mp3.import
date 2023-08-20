@@ -11,5 +11,5 @@ dest_files=[ "res://.import/vase_crash.mp3-e1e397b6d415f637265fce2a56c91ed4.mp3s
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
