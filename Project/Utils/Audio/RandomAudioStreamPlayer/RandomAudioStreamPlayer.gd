@@ -21,6 +21,7 @@ func play():
 		if enablePitchRandomization:
 			playerNodes[idx].pitch_scale = rngNumber.randf_range(minPitchScale, maxPitchScale)
 		
+		playerNodes[idx].stop()
 		playerNodes[idx].play()
 		playerNodes.remove(idx)
 
@@ -30,7 +31,7 @@ func stop():
 
 func get_idle_stream_players():
 	var validNodes = []
-	for streamPlayer in get_child_stream_players():
+	for streamPlayer in get_children():
 		if !streamPlayer.playing && streamPlayer is AudioStreamPlayer:
 			validNodes.append(streamPlayer)
 	return validNodes

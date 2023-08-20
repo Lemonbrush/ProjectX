@@ -1243,7 +1243,7 @@ anims/RESET = SubResource( 79 )
 anims/open_transition = SubResource( 34 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 7 )]
-position = Vector2( -674, -97 )
+position = Vector2( -674, -417 )
 backgroundColor = Color( 0.403922, 0.596078, 0.741176, 1 )
 
 [node name="Stars" parent="Camera2D" instance=ExtResource( 15 )]
@@ -1678,7 +1678,8 @@ pause_mode = 2
 
 [node name="SofaLandingSprite" type="Sprite" parent="ForegroundWorldObjects/SofaLandingIntro"]
 modulate = Color( 0.631373, 0.631373, 0.631373, 1 )
-position = Vector2( -673, -90 )
+position = Vector2( -673, -585 )
+rotation = -0.436332
 texture = ExtResource( 21 )
 hframes = 12
 vframes = 3
@@ -2129,6 +2130,7 @@ position = Vector2( 335.5, 319 )
 shape = SubResource( 41 )
 
 [node name="GodLights" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 material = SubResource( 66 )
 margin_left = -865.0
 margin_top = -697.0

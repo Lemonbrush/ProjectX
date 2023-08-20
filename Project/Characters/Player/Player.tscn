@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://Assets/Characters/Sofa/MainSprite/SofaSpriteSheet.png" type="Texture" id=1]
 [ext_resource path="res://Project/Characters/Player/States/Jump.gd" type="Script" id=2]
@@ -26,6 +26,15 @@
 [ext_resource path="res://Assets/Audio/SFX/Kenny/Impact_sounds/footstep_concrete/footstep_concrete_002.ogg" type="AudioStream" id=24]
 [ext_resource path="res://Assets/Audio/SFX/Kenny/Impact_sounds/footstep_concrete/footstep_concrete_000.ogg" type="AudioStream" id=25]
 [ext_resource path="res://Assets/Audio/SFX/General/pop/water_drop.mp3" type="AudioStream" id=26]
+[ext_resource path="res://Assets/Audio/SFX/General/swoosh/cartoony whooshes/whoosh_9.wav" type="AudioStream" id=27]
+[ext_resource path="res://Assets/Audio/SFX/General/swoosh/cartoony whooshes/whoosh_1.wav" type="AudioStream" id=28]
+[ext_resource path="res://Assets/Audio/SFX/General/swoosh/cartoony whooshes/whoosh_5.wav" type="AudioStream" id=29]
+[ext_resource path="res://Assets/Audio/SFX/General/swoosh/cartoony whooshes/whoosh_2.wav" type="AudioStream" id=30]
+[ext_resource path="res://Assets/Audio/SFX/General/swoosh/cartoony whooshes/whoosh_8.wav" type="AudioStream" id=31]
+[ext_resource path="res://Assets/Audio/SFX/General/swoosh/cartoony whooshes/whoosh_7.wav" type="AudioStream" id=32]
+[ext_resource path="res://Assets/Audio/SFX/General/swoosh/cartoony whooshes/whoosh_6.wav" type="AudioStream" id=33]
+[ext_resource path="res://Assets/Audio/SFX/General/swoosh/cartoony whooshes/whoosh_4.wav" type="AudioStream" id=34]
+[ext_resource path="res://Assets/Audio/SFX/General/swoosh/cartoony whooshes/whoosh_3.wav" type="AudioStream" id=35]
 
 [sub_resource type="Animation" id=16]
 resource_name = "Attack"
@@ -109,6 +118,23 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 171, 172, 173 ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath("Audio/FlightAudioPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.0507596, 0.17222 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "play"
+}, {
+"args": [  ],
+"method": "play"
+} ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "Idle"
@@ -174,6 +200,29 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 76, 77, 78, 79 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Audio/FlightAudioPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "play"
+}, {
+"args": [  ],
+"method": "play"
+}, {
+"args": [  ],
+"method": "play"
+}, {
+"args": [  ],
+"method": "play"
+} ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -376,6 +425,45 @@ bus = "Footsteps"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/JumpAudioPlayer"]
 stream = ExtResource( 26 )
+bus = "SFX"
+
+[node name="FlightAudioPlayer" parent="Audio" instance=ExtResource( 17 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/FlightAudioPlayer"]
+stream = ExtResource( 28 )
+bus = "SFX"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Audio/FlightAudioPlayer"]
+stream = ExtResource( 30 )
+bus = "SFX"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Audio/FlightAudioPlayer"]
+stream = ExtResource( 35 )
+bus = "SFX"
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="Audio/FlightAudioPlayer"]
+stream = ExtResource( 34 )
+bus = "SFX"
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="Audio/FlightAudioPlayer"]
+stream = ExtResource( 29 )
+bus = "SFX"
+
+[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="Audio/FlightAudioPlayer"]
+stream = ExtResource( 33 )
+bus = "SFX"
+
+[node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="Audio/FlightAudioPlayer"]
+stream = ExtResource( 32 )
+bus = "SFX"
+
+[node name="AudioStreamPlayer8" type="AudioStreamPlayer" parent="Audio/FlightAudioPlayer"]
+stream = ExtResource( 31 )
+bus = "SFX"
+
+[node name="AudioStreamPlayer9" type="AudioStreamPlayer" parent="Audio/FlightAudioPlayer"]
+stream = ExtResource( 27 )
+bus = "SFX"
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 one_shot = true
@@ -445,7 +533,7 @@ position = Vector2( 8, -16 )
 texture = ExtResource( 1 )
 hframes = 19
 vframes = 14
-frame = 133
+frame = 172
 
 [node name="GroundRay1" type="RayCast2D" parent="Body"]
 visible = false
