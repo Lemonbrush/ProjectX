@@ -11,5 +11,5 @@ dest_files=[ "res://.import/bonfire_crackles.mp3-1284c04d3ad9224a3d48932a58113e9
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

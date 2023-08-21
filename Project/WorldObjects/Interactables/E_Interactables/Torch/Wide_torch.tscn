@@ -1,11 +1,14 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Project/WorldObjects/Interactables/E_Interactables/Torch/ActivatableTorch.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Effects/Particles/WhiteSquare.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Effects/Particles/particles.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Audio/SFX/General/fire/start-a-fire.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Audio/SFX/General/fire/lighter.mp3" type="AudioStream" id=5]
 [ext_resource path="res://Project/WorldObjects/Dialog/DialogUIComponents/InteractionPopup/InteractionPopup.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Project/WorldObjects/Technical/InteractionController/InteractionController.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Project/WorldObjects/Technical/Lighting/LightSource/LightSource.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Project/Utils/Audio/RandomAudioStreamPlayer/RandomAudioStreamPlayer.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/SharedWorldObjects/Torches/Wide_torch.png" type="Texture" id=10]
 [ext_resource path="res://Project/WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=11]
 
@@ -101,6 +104,16 @@ color_ramp = SubResource( 126 )
 
 [node name="Wide_torch" type="Node2D"]
 script = ExtResource( 1 )
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="IgniteRandomAudioStreamPlayer" parent="Audio" instance=ExtResource( 9 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/IgniteRandomAudioStreamPlayer"]
+stream = ExtResource( 5 )
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Audio/IgniteRandomAudioStreamPlayer"]
+stream = ExtResource( 4 )
 
 [node name="VisibilityChecker" parent="." instance=ExtResource( 11 )]
 visible = false
