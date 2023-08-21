@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/pop_2.mp3-3ac51189514d3da41d67754e7615284f.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/pop/pop_pixabay/pop_2.mp3"
+dest_files=[ "res://.import/pop_2.mp3-3ac51189514d3da41d67754e7615284f.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

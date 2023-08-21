@@ -34,7 +34,7 @@ func on_interact(_body = null):
 	
 	current_text = ""
 	target_text = ""
-	dialogTextBox.show_if_needed()
+	show_dialog_text_box()
 	dialogManager.request_dialog()
 
 func did_choose_dialog_option(option_number):
@@ -109,6 +109,9 @@ func setup_interaction_mode(can_interact):
 		finish_dialog()
 
 # Private functions
+
+func show_dialog_text_box():
+	dialogTextBox.show_if_needed()
 
 func finish_dialog():
 	Global.is_player_talking = false
