@@ -5,6 +5,7 @@ var footstepParticles   = preload("res://Project/Characters/Player/WorldObjects/
 var appearParticles     = preload("res://Project/Characters/Player/WorldObjects/PlayerAppearParticles/PlayerAppearParticles.tscn")
 var itemPickupScenePath = preload("res://Project/Characters/Player/Animation_scenes/Item_picking_player/Item_picking_player.tscn")
 
+onready var punch_audio_player = $Audio/PunchRandomAudioStreamPlayer
 onready var footstep_audio_player = $Audio/FootstepAudioPlayer
 onready var ground_ray1 			= $Body/GroundRay1
 onready var ground_ray2 			= $Body/GroundRay2
@@ -252,6 +253,7 @@ func on_glide_area_exited(area):
 	
 # Attack
 func on_attack_area_entered(attacked_object):
+	punch_audio_player.play()
 	if attacked_object.has_method("change_state"):
 		attacked_object.change_state()
 

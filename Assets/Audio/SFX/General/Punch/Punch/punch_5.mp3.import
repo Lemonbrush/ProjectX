@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/punch_5.mp3-d7c4971d0f767bf0d15b28de7abecad8.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/Punch/Punch/punch_5.mp3"
+dest_files=[ "res://.import/punch_5.mp3-d7c4971d0f767bf0d15b28de7abecad8.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
