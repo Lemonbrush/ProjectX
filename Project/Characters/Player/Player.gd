@@ -6,6 +6,7 @@ var appearParticles     = preload("res://Project/Characters/Player/WorldObjects/
 var itemPickupScenePath = preload("res://Project/Characters/Player/Animation_scenes/Item_picking_player/Item_picking_player.tscn")
 
 onready var punch_audio_player = $Audio/PunchRandomAudioStreamPlayer
+onready var paff_audio_player = $Audio/PaffRandomAudioStreamPlayer
 onready var footstep_audio_player = $Audio/FootstepAudioPlayer
 onready var ground_ray1 			= $Body/GroundRay1
 onready var ground_ray2 			= $Body/GroundRay2
@@ -295,6 +296,7 @@ func spawnFootstepParticles(scale = 1):
 	footstep_audio_player.play()
 
 func spawnAppearParticles():
+	paff_audio_player.play()
 	var particles = appearParticles.instance()
 	get_parent().add_child(particles)
 	particles.scale = Vector2.ONE * scale
