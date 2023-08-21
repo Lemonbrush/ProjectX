@@ -445,7 +445,7 @@ collision_layer = 131
 collision_mask = 108
 script = ExtResource( 3 )
 
-[node name="Audio" type="Node" parent="."]
+[node name="Audio" type="Node2D" parent="."]
 
 [node name="FootstepAudioPlayer" parent="Audio" instance=ExtResource( 17 )]
 numberToPlay = 3
