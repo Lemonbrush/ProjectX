@@ -1387,7 +1387,7 @@ position = Vector2( -283, -9 )
 dialogId = "the_first_mystic_dweller_dialog"
 defaultDirection = -1
 
-[node name="Body" parent="MiddleWorldObjects/NPC/FirstMysticDwellerEncounering/MysticDweller" index="5"]
+[node name="Body" parent="MiddleWorldObjects/NPC/FirstMysticDwellerEncounering/MysticDweller" index="6"]
 scale = Vector2( -1, 1 )
 
 [node name="CollisionShape2D" parent="MiddleWorldObjects/NPC/FirstMysticDwellerEncounering/MysticDweller/Body/InteractionController/Area2D" index="0"]

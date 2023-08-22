@@ -2792,7 +2792,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 4 )]
-position = Vector2( -474, -218 )
+position = Vector2( 46, -949 )
 
 [node name="WaterSurface" type="Node2D" parent="."]
 pause_mode = 2
