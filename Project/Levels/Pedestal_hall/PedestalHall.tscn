@@ -1680,7 +1680,7 @@ dialogId = "pillars_mystic_dweller"
 currentState = SubResource( 313 )
 defaultDirection = -1
 
-[node name="Body" parent="Middle_world_objects/MysticDweller" index="5"]
+[node name="Body" parent="Middle_world_objects/MysticDweller" index="6"]
 scale = Vector2( -1, 1 )
 
 [node name="Pedestals" type="Node2D" parent="Middle_world_objects" index="3"]
