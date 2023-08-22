@@ -14,6 +14,7 @@ extents = Vector2( 7.10806, 13 )
 extents = Vector2( 6.5, 13 )
 
 [node name="BananaItem" instance=ExtResource( 2 )]
+mass = 0.5
 gravity_scale = 0.0
 script = ExtResource( 1 )
 itemScene = ExtResource( 3 )

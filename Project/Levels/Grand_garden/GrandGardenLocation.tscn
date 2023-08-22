@@ -4663,7 +4663,7 @@ process_material = SubResource( 406 )
 position = Vector2( 460, -660 )
 
 [node name="Player" parent="." index="12"]
-position = Vector2( 829, 33 )
+position = Vector2( 550, -1150 )
 z_index = 1
 collision_mask = 252
 
