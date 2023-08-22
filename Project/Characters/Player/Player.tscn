@@ -371,6 +371,23 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 153, 154, 155, 156, 157 ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath("Audio/FootstepAudioPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.15, 0.45 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "play"
+}, {
+"args": [  ],
+"method": "play"
+} ]
+}
 
 [sub_resource type="Animation" id=9]
 resource_name = "Land"
@@ -656,7 +673,7 @@ position = Vector2( 8, -16 )
 texture = ExtResource( 1 )
 hframes = 19
 vframes = 14
-frame = 19
+frame = 156
 
 [node name="GroundRay1" type="RayCast2D" parent="Body"]
 visible = false
