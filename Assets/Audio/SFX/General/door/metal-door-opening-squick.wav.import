@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/metal-door-opening-squick.wav-2e89e3f3dc5c3d3f56c8b2669bb8314f.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/door/metal-door-opening-squick.wav"
+dest_files=[ "res://.import/metal-door-opening-squick.wav-2e89e3f3dc5c3d3f56c8b2669bb8314f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

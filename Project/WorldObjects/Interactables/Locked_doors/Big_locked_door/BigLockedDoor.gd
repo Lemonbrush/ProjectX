@@ -5,6 +5,7 @@ export(String) var nextDoorName
 export(bool) var isLocked = true
 export(String) var keyGameConstant
 
+onready var lockedDoorAudioPlayer = $Audio/LockedSoundRandomAudioStreamPlayer
 onready var interactionController = $InteractionController
 onready var interactionPopup = $InteractionPopup
 onready var animationPlayer = $AnimationPlayer
@@ -54,6 +55,8 @@ func try_to_open_door(could_be_opened):
 	if could_be_opened:
 		isLocked = false
 		animationPlayer.play("Open")
+	else:
+		lockedDoorAudioPlayer.play()
 
 func enter_door(player):
 	Global.door_name = nextDoorName

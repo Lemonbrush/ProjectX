@@ -9,7 +9,7 @@
 [ext_resource path="res://Project/Characters/NPC/Simple_dweller/Dweller.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Levels/Rooms/GreenHouse/Table.png" type="Texture" id=8]
 [ext_resource path="res://Project/Characters/NPC/NpcActions/idle/idle_npc_action.gd" type="Script" id=9]
-[ext_resource path="res://Assets/Audio/Background_music/Indoor_theme.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Audio/Background_music/Level_themes/Indoor_theme.wav" type="AudioStream" id=10]
 
 [sub_resource type="Environment" id=122]
 background_mode = 4

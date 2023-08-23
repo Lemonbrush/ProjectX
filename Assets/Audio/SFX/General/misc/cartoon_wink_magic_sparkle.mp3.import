@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/cartoon_wink_magic_sparkle.mp3-3a37c5bc1a14fe3244707d9980f6a29d.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/misc/cartoon_wink_magic_sparkle.mp3"
+dest_files=[ "res://.import/cartoon_wink_magic_sparkle.mp3-3a37c5bc1a14fe3244707d9980f6a29d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

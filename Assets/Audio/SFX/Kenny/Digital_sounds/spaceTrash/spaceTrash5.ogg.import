@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/spaceTrash5.ogg-3368b8604a9e77a9f7db91f0d1094eac.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Kenny/Digital_sounds/spaceTrash/spaceTrash5.ogg"
+dest_files=[ "res://.import/spaceTrash5.ogg-3368b8604a9e77a9f7db91f0d1094eac.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

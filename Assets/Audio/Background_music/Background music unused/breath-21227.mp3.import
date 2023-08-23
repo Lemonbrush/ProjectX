@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/breath-21227.mp3-7ae0bb22b6299a02042c997ac1aa3cdd.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Background_music/Background music unused/breath-21227.mp3"
+dest_files=[ "res://.import/breath-21227.mp3-7ae0bb22b6299a02042c997ac1aa3cdd.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

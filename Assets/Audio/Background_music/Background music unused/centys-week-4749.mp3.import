@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/centys-week-4749.mp3-93c5eb7219a1269f8a49c668199fae1a.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Background_music/Background music unused/centys-week-4749.mp3"
+dest_files=[ "res://.import/centys-week-4749.mp3-93c5eb7219a1269f8a49c668199fae1a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

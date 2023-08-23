@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/SharedWorldObjects/Destructibles/Vase/vase.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Effects/Particles/particles.png" type="Texture" id=2]
@@ -6,6 +6,13 @@
 [ext_resource path="res://Project/Resources/Particles/Crush_particles/Crush_dust/CrushDustProcessMaterial.tres" type="Material" id=4]
 [ext_resource path="res://Project/Resources/Particles/Crush_particles/Crush_shine/CrushShineProcessMaterial.tres" type="Material" id=5]
 [ext_resource path="res://Project/Resources/Particles/Crush_particles/Vase_crush/VaseCrushProcessMaterial.tres" type="Material" id=6]
+[ext_resource path="res://Project/Utils/Audio/RandomAudioStreamPlayer/RandomAudioStreamPlayer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Audio/SFX/General/crash/rock-smash/rock-smash-2.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Audio/SFX/General/crash/rock-smash/rock-smash-1.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Audio/SFX/General/crash/rock-smash/rock-smash-4-long.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Audio/SFX/General/crash/rock-smash/rock-smash-3.wav" type="AudioStream" id=11]
+[ext_resource path="res://Assets/Audio/SFX/General/crash/vase_crash.mp3" type="AudioStream" id=12]
+[ext_resource path="res://Assets/Audio/SFX/General/crash/tiles-smashing.mp3" type="AudioStream" id=13]
 
 [sub_resource type="Animation" id=17]
 resource_name = "Idle"
@@ -84,6 +91,34 @@ tracks/5/keys = {
 "transitions": PoolRealArray(  ),
 "values": [  ]
 }
+tracks/6/type = "method"
+tracks/6/path = NodePath("Audio/CeashRandomAudioStreamPlayer")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.135 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "play"
+} ]
+}
+tracks/7/type = "method"
+tracks/7/path = NodePath("Audio/VaseCrushRandomAudioStreamPlayer")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.135 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "play"
+} ]
+}
 
 [sub_resource type="Animation" id=18]
 length = 0.001
@@ -155,6 +190,34 @@ particles_anim_loop = false
 
 [node name="VaseCrush" type="Node2D"]
 
+[node name="Audio" type="Node" parent="."]
+
+[node name="CeashRandomAudioStreamPlayer" parent="Audio" instance=ExtResource( 7 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/CeashRandomAudioStreamPlayer"]
+stream = ExtResource( 9 )
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Audio/CeashRandomAudioStreamPlayer"]
+stream = ExtResource( 8 )
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Audio/CeashRandomAudioStreamPlayer"]
+stream = ExtResource( 11 )
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="Audio/CeashRandomAudioStreamPlayer"]
+stream = ExtResource( 10 )
+
+[node name="VaseCrushRandomAudioStreamPlayer" parent="Audio" instance=ExtResource( 7 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/VaseCrushRandomAudioStreamPlayer"]
+stream = ExtResource( 13 )
+volume_db = -20.0
+bus = "SFX"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Audio/VaseCrushRandomAudioStreamPlayer"]
+stream = ExtResource( 12 )
+volume_db = -20.0
+bus = "SFX"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"
 anims/Idle = SubResource( 17 )
@@ -169,7 +232,6 @@ frame = 2
 
 [node name="DustParticles" type="Particles2D" parent="."]
 material = SubResource( 20 )
-emitting = false
 amount = 10
 lifetime = 1.5
 one_shot = true
@@ -179,7 +241,6 @@ texture = ExtResource( 2 )
 
 [node name="BarrelParticles" type="Particles2D" parent="."]
 material = SubResource( 24 )
-emitting = false
 amount = 10
 lifetime = 1.5
 one_shot = true
@@ -188,7 +249,6 @@ process_material = ExtResource( 6 )
 texture = ExtResource( 3 )
 
 [node name="ShineParticles" type="Particles2D" parent="."]
-emitting = false
 amount = 10
 one_shot = true
 explosiveness = 1.0

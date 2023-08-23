@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/mouserelease1.ogg-e037e724894d6a5c7489570f2b724b48.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Kenny/Clicks/mouse/mouserelease1.ogg"
+dest_files=[ "res://.import/mouserelease1.ogg-e037e724894d6a5c7489570f2b724b48.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

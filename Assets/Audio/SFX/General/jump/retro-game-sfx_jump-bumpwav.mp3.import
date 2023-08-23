@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/retro-game-sfx_jump-bumpwav.mp3-a721fd58126111a45e1ba3ac5f1c6ca1.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/jump/retro-game-sfx_jump-bumpwav.mp3"
+dest_files=[ "res://.import/retro-game-sfx_jump-bumpwav.mp3-a721fd58126111a45e1ba3ac5f1c6ca1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

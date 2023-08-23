@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/toy-jump.mp3-4284139d04c424b108ed5630cc6af401.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/jump/toy-jump.mp3"
+dest_files=[ "res://.import/toy-jump.mp3-4284139d04c424b108ed5630cc6af401.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

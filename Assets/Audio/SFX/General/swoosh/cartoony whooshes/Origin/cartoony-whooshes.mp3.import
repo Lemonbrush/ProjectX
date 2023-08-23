@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/cartoony-whooshes.mp3-34c40daa4d9fc092b9d139b0e9eca804.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/swoosh/cartoony whooshes/Origin/cartoony-whooshes.mp3"
+dest_files=[ "res://.import/cartoony-whooshes.mp3-34c40daa4d9fc092b9d139b0e9eca804.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

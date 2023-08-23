@@ -4,7 +4,7 @@
 [ext_resource path="res://Project/Resources/Themes/MainTheme.tres" type="Theme" id=2]
 [ext_resource path="res://Assets/SharedWorldObjects/Clouds/CloudsTransparentBottom.png" type="Texture" id=3]
 [ext_resource path="res://Project/Resources/Fonts/Epilepsy Sans/Resource/EpilepsySans.tres" type="DynamicFont" id=4]
-[ext_resource path="res://Assets/Audio/Background_music/Main_menu_theme.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Audio/Background_music/Level_themes/Main_menu_theme.wav" type="AudioStream" id=5]
 [ext_resource path="res://Assets/UI/MainMenu/KissiesLogo/Letters/T.png" type="Texture" id=6]
 [ext_resource path="res://Assets/UI/MainMenu/KissiesLogo/Background/Kissies_logo_background.png" type="Texture" id=7]
 [ext_resource path="res://Project/WorldObjects/Technical/Stars/Stars.tscn" type="PackedScene" id=8]

@@ -8,6 +8,7 @@ onready var fire_particles = $FireParticles
 onready var ignite_particles = $IgniteParticles
 onready var ignite_light_particles = $IgniteLightParticles
 onready var light_source = $LightSource
+onready var ignite_sound_player = $Audio/IgniteRandomAudioStreamPlayer
 
 func _ready():
 	fire_particles.emitting = is_torch_activated
@@ -26,6 +27,7 @@ func on_interact(_body):
 		activate()
 
 func activate():
+	ignite_sound_player.play()
 	fire_particles.emitting = true
 	ignite_particles.emitting = true
 	ignite_light_particles.emitting = true

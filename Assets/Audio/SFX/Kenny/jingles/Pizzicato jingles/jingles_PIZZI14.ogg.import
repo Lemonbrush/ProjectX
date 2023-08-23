@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/jingles_PIZZI14.ogg-9a7e317082bdbdd7aaedcdd7b6ae293b.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Kenny/jingles/Pizzicato jingles/jingles_PIZZI14.ogg"
+dest_files=[ "res://.import/jingles_PIZZI14.ogg-9a7e317082bdbdd7aaedcdd7b6ae293b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

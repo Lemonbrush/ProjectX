@@ -35,7 +35,7 @@
 [ext_resource path="res://Project/WorldObjects/Destructables/Vase/Background_vase/Background_vase.tscn" type="PackedScene" id=33]
 [ext_resource path="res://Project/WorldObjects/Destructables/Barrel/Background_barrel/Background_barrel.tscn" type="PackedScene" id=34]
 [ext_resource path="res://Assets/Levels/Wish_star_dangeon/Hidden_tower.png" type="Texture" id=35]
-[ext_resource path="res://Assets/Audio/Background_music/Dangeon_theme.wav" type="AudioStream" id=36]
+[ext_resource path="res://Assets/Audio/Background_music/Level_themes/Dangeon_theme.wav" type="AudioStream" id=36]
 
 [sub_resource type="Environment" id=3]
 background_mode = 4

@@ -1,4 +1,4 @@
-[gd_scene load_steps=191 format=2]
+[gd_scene load_steps=192 format=2]
 
 [ext_resource path="res://Project/Levels/Harbor_house/Harbor_house.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Effects/Lighting/shadow.png" type="Texture" id=2]
@@ -70,7 +70,8 @@
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.gd" type="Script" id=68]
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsSashaBrutal.tres" type="Resource" id=69]
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsSofa.tres" type="Resource" id=70]
-[ext_resource path="res://Assets/Audio/Background_music/Central_hub_theme.wav" type="AudioStream" id=71]
+[ext_resource path="res://Assets/Audio/Background_music/Level_themes/Central_hub_theme.wav" type="AudioStream" id=71]
+[ext_resource path="res://Project/Utils/Audio/AudioPlayerNodes/WaterfallAudioPlayer/WaterfallAudioPlayer.tscn" type="PackedScene" id=72]
 
 [sub_resource type="Environment" id=273]
 background_mode = 4
@@ -968,6 +969,11 @@ texture = ExtResource( 17 )
 [node name="Harbor_world_objects" type="Node2D" parent="."]
 position = Vector2( -9, 0 )
 
+[node name="Audio" type="Node2D" parent="Harbor_world_objects"]
+
+[node name="WaterfallAudioPlayer" parent="Harbor_world_objects/Audio" instance=ExtResource( 72 )]
+position = Vector2( -501, -151 )
+
 [node name="VisibilityChecker" parent="Harbor_world_objects" instance=ExtResource( 32 )]
 visible = false
 position = Vector2( -262, -164.5 )
@@ -1359,6 +1365,29 @@ position = Vector2( -497, -639 )
 
 [node name="CreatorHouseIsland" type="Node2D" parent="."]
 position = Vector2( -1023, -701 )
+
+[node name="Audio" type="Node2D" parent="CreatorHouseIsland"]
+
+[node name="WaterfallAudioPlayer" parent="CreatorHouseIsland/Audio" instance=ExtResource( 72 )]
+position = Vector2( -597, -224 )
+
+[node name="WaterfallAudioPlayer2" parent="CreatorHouseIsland/Audio" instance=ExtResource( 72 )]
+position = Vector2( -82, -243 )
+
+[node name="WaterfallAudioPlayer3" parent="CreatorHouseIsland/Audio" instance=ExtResource( 72 )]
+position = Vector2( 237, -261 )
+
+[node name="WaterfallAudioPlayer4" parent="CreatorHouseIsland/Audio" instance=ExtResource( 72 )]
+position = Vector2( 467, -258 )
+
+[node name="WaterfallAudioPlayer5" parent="CreatorHouseIsland/Audio" instance=ExtResource( 72 )]
+position = Vector2( 609, -264 )
+
+[node name="WaterfallAudioPlayer6" parent="CreatorHouseIsland/Audio" instance=ExtResource( 72 )]
+position = Vector2( 679, -242 )
+
+[node name="WaterfallAudioPlayer7" parent="CreatorHouseIsland/Audio" instance=ExtResource( 72 )]
+position = Vector2( 401, -239 )
 
 [node name="VisibilityChecker" parent="CreatorHouseIsland" instance=ExtResource( 32 )]
 visible = false
@@ -1989,7 +2018,7 @@ position = Vector2( -1014, -1273 )
 dialogId = "personal_garden_mystic_dweller_dialog"
 defaultDirection = -1
 
-[node name="Body" parent="CreatorHouseIsland/Middle_world_objects/Dwellers/MysticDweller" index="5"]
+[node name="Body" parent="CreatorHouseIsland/Middle_world_objects/Dwellers/MysticDweller" index="6"]
 scale = Vector2( -1, 1 )
 
 [node name="WelcomingDweller" parent="CreatorHouseIsland/Middle_world_objects/Dwellers" instance=ExtResource( 49 )]
@@ -2516,6 +2545,29 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Audio" type="Node2D" parent="GuardianIsland"]
+
+[node name="WaterfallAudioPlayer" parent="GuardianIsland/Audio" instance=ExtResource( 72 )]
+position = Vector2( 238, -117 )
+
+[node name="WaterfallAudioPlayer2" parent="GuardianIsland/Audio" instance=ExtResource( 72 )]
+position = Vector2( 460, -72 )
+
+[node name="WaterfallAudioPlayer3" parent="GuardianIsland/Audio" instance=ExtResource( 72 )]
+position = Vector2( 541, -120 )
+
+[node name="WaterfallAudioPlayer4" parent="GuardianIsland/Audio" instance=ExtResource( 72 )]
+position = Vector2( 633, -139 )
+
+[node name="WaterfallAudioPlayer5" parent="GuardianIsland/Audio" instance=ExtResource( 72 )]
+position = Vector2( 299, -155 )
+
+[node name="WaterfallAudioPlayer6" parent="GuardianIsland/Audio" instance=ExtResource( 72 )]
+position = Vector2( 678, -165 )
+
+[node name="WaterfallAudioPlayer7" parent="GuardianIsland/Audio" instance=ExtResource( 72 )]
+position = Vector2( 99, -169 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GuardianIsland"]
 position = Vector2( 390, -199 )
 shape = SubResource( 79 )
@@ -2792,7 +2844,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 4 )]
-position = Vector2( -474, -217 )
+position = Vector2( -475, -227 )
 
 [node name="WaterSurface" type="Node2D" parent="."]
 pause_mode = 2

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/tv-glitch.mp3-a60b606dfa5e6e75eb400f54c7885003.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/glitch/tv-glitch.mp3"
+dest_files=[ "res://.import/tv-glitch.mp3-a60b606dfa5e6e75eb400f54c7885003.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

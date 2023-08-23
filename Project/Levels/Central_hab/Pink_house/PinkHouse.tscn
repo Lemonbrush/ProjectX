@@ -13,7 +13,7 @@
 [ext_resource path="res://Assets/Characters/NPC/CentralHub/Witch/PotDwellerAtHome-Sheet.png" type="Texture" id=11]
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.gd" type="Script" id=12]
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsKatya.tres" type="Resource" id=13]
-[ext_resource path="res://Assets/Audio/Background_music/Indoor_theme.wav" type="AudioStream" id=14]
+[ext_resource path="res://Assets/Audio/Background_music/Level_themes/Indoor_theme.wav" type="AudioStream" id=14]
 
 [sub_resource type="Environment" id=111]
 background_mode = 4

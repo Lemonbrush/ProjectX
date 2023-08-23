@@ -79,7 +79,7 @@
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsSashaBrutal.tres" type="Resource" id=77]
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsSofa.tres" type="Resource" id=78]
 [ext_resource path="res://Project/Characters/NPC/Mystic_dweller/MysticDweller.tscn" type="PackedScene" id=79]
-[ext_resource path="res://Assets/Audio/Background_music/Central_hub_theme.wav" type="AudioStream" id=80]
+[ext_resource path="res://Assets/Audio/Background_music/Level_themes/Central_hub_theme.wav" type="AudioStream" id=80]
 
 [sub_resource type="Environment" id=30]
 background_mode = 4

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bookPlace2.ogg-0fe2a4d20a8ad3075dd9feb98a2a98e1.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Kenny/RPG_sounds/Book/bookPlace2.ogg"
+dest_files=[ "res://.import/bookPlace2.ogg-0fe2a4d20a8ad3075dd9feb98a2a98e1.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

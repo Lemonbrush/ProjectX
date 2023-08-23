@@ -17,9 +17,11 @@ func _ready():
 	
 func bird_did_spooken(_body):
 	squickTiner.paused = true
-	visible = false
 	collisionShape.set_deferred("disabled", true)
-	
+	animationPlayer.play("TakeOf")
+
+func did_finish_take_off_animation():
+	visible = false
 	var flyingBirdInstance = flyingBirdScene.instance()
 	flyingBirdInstance.position = position
 	get_parent().add_child_below_node(self, flyingBirdInstance)

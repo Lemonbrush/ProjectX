@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/vase_crash.mp3-e1e397b6d415f637265fce2a56c91ed4.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/crash/vase_crash.mp3"
+dest_files=[ "res://.import/vase_crash.mp3-e1e397b6d415f637265fce2a56c91ed4.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/water_drop.mp3-94bd4ac51bed7901607c3c04f3fc6af8.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/pop/water_drop.mp3"
+dest_files=[ "res://.import/water_drop.mp3-94bd4ac51bed7901607c3c04f3fc6af8.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/interface_click.mp3-6d3fa778e3d839c6c18749a052614fc3.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/interface/interface_click.mp3"
+dest_files=[ "res://.import/interface_click.mp3-6d3fa778e3d839c6c18749a052614fc3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
