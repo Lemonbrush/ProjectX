@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://Project/UI/Screens/GameMenu/GameMenu.gd" type="Script" id=1]
 [ext_resource path="res://Project/Resources/Themes/MainTheme.tres" type="Theme" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Assets/UI/MainMenu/KissiesLogo/Letters/m.png" type="Texture" id=12]
 [ext_resource path="res://Assets/UI/MainMenu/KissiesLogo/Letters/o.png" type="Texture" id=13]
 [ext_resource path="res://Project/Resources/Shaders/PixelateShader.tres" type="Shader" id=14]
+[ext_resource path="res://Project/UI/Components/Animated_dialog_button/AnimatedDialogButton.tscn" type="PackedScene" id=15]
 
 [sub_resource type="CanvasItemMaterial" id=8]
 particles_animation = true
@@ -1113,38 +1114,59 @@ size_flags_horizontal = 0
 size_flags_vertical = 8
 custom_constants/separation = 5
 
-[node name="ContinueButton" type="Button" parent="CanvasLayer/MainMenuMarginContainer/VBoxContainer"]
+[node name="ContinueButton" parent="CanvasLayer/MainMenuMarginContainer/VBoxContainer" instance=ExtResource( 15 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_right = 60.0
 margin_bottom = 14.0
 focus_neighbour_top = NodePath("../ExitButton")
+size_flags_horizontal = 1
+size_flags_vertical = 1
 text = "Продолжить"
+align = 0
 
-[node name="PlayButton" type="Button" parent="CanvasLayer/MainMenuMarginContainer/VBoxContainer"]
+[node name="PlayButton" parent="CanvasLayer/MainMenuMarginContainer/VBoxContainer" instance=ExtResource( 15 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = 19.0
 margin_right = 60.0
 margin_bottom = 33.0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 text = "Новая игра"
 align = 0
 
-[node name="OptionsButton" type="Button" parent="CanvasLayer/MainMenuMarginContainer/VBoxContainer"]
+[node name="OptionsButton" parent="CanvasLayer/MainMenuMarginContainer/VBoxContainer" instance=ExtResource( 15 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = 38.0
 margin_right = 60.0
 margin_bottom = 52.0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 text = "options"
 align = 0
 
-[node name="AboutButton" type="Button" parent="CanvasLayer/MainMenuMarginContainer/VBoxContainer"]
+[node name="AboutButton" parent="CanvasLayer/MainMenuMarginContainer/VBoxContainer" instance=ExtResource( 15 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = 57.0
 margin_right = 60.0
 margin_bottom = 71.0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 text = "about"
 align = 0
 
-[node name="ExitButton" type="Button" parent="CanvasLayer/MainMenuMarginContainer/VBoxContainer"]
+[node name="ExitButton" parent="CanvasLayer/MainMenuMarginContainer/VBoxContainer" instance=ExtResource( 15 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = 76.0
 margin_right = 60.0
 margin_bottom = 90.0
 focus_neighbour_bottom = NodePath("../ContinueButton")
+size_flags_horizontal = 1
+size_flags_vertical = 1
 text = "exit"
 align = 0
 

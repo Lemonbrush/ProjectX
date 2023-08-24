@@ -23,7 +23,7 @@ func _ready():
 	gameConstsEditorButton.connect("pressed", self, "on_special_options_pressed") 
 	
 	setup_ui()
-	quitButton.grab_focus()
+	quitButton.grab_focus_without_animation()
 
 func _unhandled_input(event):
 	if event.is_action_pressed("pause_menu") and mainMarginContainer.visible:
@@ -68,7 +68,7 @@ func on_special_options_pressed():
 
 func on_options_back_pressed():
 	mainMarginContainer.visible = true
-	quitButton.grab_focus()
+	quitButton.grab_focus_without_animation()
 
 func on_reset_game_constants_pressed():
 	GameEventConstants.set_default_constants()

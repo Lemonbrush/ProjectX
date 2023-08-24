@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Project/Resources/Fonts/Epilepsy Sans/Resource/EpilepsySansBold.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Project/UI/Screens/OptionsMenu/OptionsMenu.gd" type="Script" id=2]
 [ext_resource path="res://Project/Resources/Themes/MainTheme.tres" type="Theme" id=3]
+[ext_resource path="res://Project/UI/Components/Animated_dialog_button/AnimatedDialogButton.tscn" type="PackedScene" id=4]
 
 [node name="OptionsMenu" type="CanvasLayer"]
 pause_mode = 2
@@ -49,49 +50,72 @@ margin_bottom = 88.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="SoundButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer"]
+[node name="SoundButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer" instance=ExtResource( 4 )]
 visible = false
-margin_right = 48.0
-margin_bottom = 14.0
-focus_neighbour_top = NodePath("../ExitButton")
-disabled = true
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 36.0
+margin_right = 60.0
+margin_bottom = 50.0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 text = "sound"
 align = 0
 
-[node name="VideoButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer"]
+[node name="VideoButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer" instance=ExtResource( 4 )]
 visible = false
-margin_right = 48.0
-margin_bottom = 14.0
-disabled = true
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 54.0
+margin_right = 60.0
+margin_bottom = 68.0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 text = "Видео"
 align = 0
 
-[node name="LanguageButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer"]
+[node name="LanguageButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer" instance=ExtResource( 4 )]
 visible = false
-margin_right = 48.0
-margin_bottom = 14.0
-disabled = true
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 54.0
+margin_right = 60.0
+margin_bottom = 68.0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 text = "language"
 align = 0
 
-[node name="ControlsButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer"]
+[node name="ControlsButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer" instance=ExtResource( 4 )]
 visible = false
-margin_right = 48.0
-margin_bottom = 14.0
-disabled = true
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 54.0
+margin_right = 60.0
+margin_bottom = 68.0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 text = "controls"
 align = 0
 
-[node name="SpecialOptionButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer"]
+[node name="SpecialOptionButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_right = 42.0
 margin_bottom = 14.0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 text = "special"
 align = 0
 
-[node name="ExitButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer"]
+[node name="ExitButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = 18.0
 margin_right = 42.0
 margin_bottom = 32.0
-focus_neighbour_bottom = NodePath("../SoundButton")
+focus_neighbour_top = NodePath(".")
+size_flags_horizontal = 1
+size_flags_vertical = 1
 text = "exit"
 align = 0

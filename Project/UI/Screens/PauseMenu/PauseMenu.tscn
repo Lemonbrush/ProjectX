@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Project/UI/Screens/PauseMenu/PauseMenu.gd" type="Script" id=1]
 [ext_resource path="res://Project/Resources/Fonts/Epilepsy Sans/Resource/EpilepsySansBold.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Project/Resources/Themes/MainTheme.tres" type="Theme" id=3]
+[ext_resource path="res://Project/UI/Components/Animated_dialog_button/AnimatedDialogButton.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "appear"
@@ -69,31 +70,49 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource( 3 )
 
-[node name="ExitGameButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer"]
+[node name="ExitGameButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_right = 114.0
 margin_bottom = 14.0
-focus_neighbour_top = NodePath("../ContinueButton")
+focus_neighbour_top = NodePath(".")
+size_flags_horizontal = 1
+size_flags_vertical = 1
 text = "exit_game"
 align = 0
 
-[node name="ExitButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer"]
+[node name="ExitButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = 18.0
 margin_right = 114.0
 margin_bottom = 32.0
+focus_neighbour_top = NodePath(".")
+size_flags_horizontal = 1
+size_flags_vertical = 1
 text = "return_to_game_menu"
 align = 0
 
-[node name="OptionsButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer"]
+[node name="OptionsButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = 36.0
 margin_right = 114.0
 margin_bottom = 50.0
+focus_neighbour_top = NodePath(".")
+size_flags_horizontal = 1
+size_flags_vertical = 1
 text = "options"
 align = 0
 
-[node name="ContinueButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer"]
+[node name="ContinueButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = 54.0
 margin_right = 114.0
 margin_bottom = 68.0
-focus_neighbour_bottom = NodePath("../ExitGameButton")
+focus_neighbour_top = NodePath(".")
+size_flags_horizontal = 1
+size_flags_vertical = 1
 text = "continue"
 align = 0

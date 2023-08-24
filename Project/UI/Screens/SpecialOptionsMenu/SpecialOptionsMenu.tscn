@@ -3,7 +3,7 @@
 [ext_resource path="res://Project/Resources/Fonts/Epilepsy Sans/Resource/EpilepsySansBold.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Project/UI/Screens/SpecialOptionsMenu/SpecialOptionsMenu.gd" type="Script" id=2]
 [ext_resource path="res://Project/Resources/Themes/MainTheme.tres" type="Theme" id=3]
-[ext_resource path="res://Project/Resources/Fonts/Epilepsy Sans/Resource/EpilepsySansOutlined.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Project/UI/Components/Animated_dialog_button/AnimatedDialogButton.tscn" type="PackedScene" id=4]
 
 [node name="SpecialOptionsMenu" type="CanvasLayer"]
 pause_mode = 2
@@ -21,7 +21,7 @@ color = Color( 0.0941176, 0.0784314, 0.168627, 0.509804 )
 
 [node name="MarginContainer" type="MarginContainer" parent="MainMarginContainer"]
 margin_right = 512.0
-margin_bottom = 219.0
+margin_bottom = 220.0
 size_flags_vertical = 0
 custom_constants/margin_top = 60
 custom_constants/margin_left = 25
@@ -30,7 +30,7 @@ custom_constants/margin_left = 25
 margin_left = 25.0
 margin_top = 60.0
 margin_right = 163.0
-margin_bottom = 219.0
+margin_bottom = 220.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_constants/separation = 30
@@ -46,58 +46,90 @@ text = "special"
 [node name="OptionsVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer"]
 margin_top = 56.0
 margin_right = 138.0
-margin_bottom = 159.0
+margin_bottom = 160.0
 
-[node name="GameConstsEditorButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
+[node name="GameConstsEditorButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_right = 138.0
-margin_bottom = 13.0
-focus_neighbour_top = NodePath("../ExitButton")
-custom_fonts/font = ExtResource( 4 )
+margin_bottom = 14.0
+focus_neighbour_top = NodePath(".")
+size_flags_horizontal = 1
+size_flags_vertical = 1
 text = "Редактор сохранений"
 align = 0
 
-[node name="DeleteAllSavesButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
-margin_top = 17.0
+[node name="DeleteAllSavesButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 18.0
 margin_right = 138.0
-margin_bottom = 31.0
+margin_bottom = 32.0
+focus_neighbour_top = NodePath(".")
+size_flags_horizontal = 1
+size_flags_vertical = 1
 text = "delete_all_saves"
 align = 0
 
-[node name="ResetGameConstantsButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
+[node name="ResetGameConstantsButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer" instance=ExtResource( 4 )]
 visible = false
-margin_top = 35.0
-margin_right = 156.0
-margin_bottom = 49.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 143.0
+margin_right = 138.0
+margin_bottom = 157.0
+focus_neighbour_top = NodePath(".")
+size_flags_horizontal = 1
+size_flags_vertical = 1
 text = "Сбросить игровые константы"
 align = 0
 
-[node name="DeleteSystemDataButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
-margin_top = 35.0
+[node name="DeleteSystemDataButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 36.0
 margin_right = 138.0
-margin_bottom = 49.0
+margin_bottom = 50.0
+focus_neighbour_top = NodePath(".")
+size_flags_horizontal = 1
+size_flags_vertical = 1
 text = "reset_options"
 align = 0
 
-[node name="DeleteAllSavesAlwaysButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
-margin_top = 53.0
+[node name="DeleteAllSavesAlwaysButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 54.0
 margin_right = 138.0
-margin_bottom = 67.0
+margin_bottom = 68.0
+focus_neighbour_top = NodePath(".")
+size_flags_horizontal = 1
+size_flags_vertical = 1
 toggle_mode = true
 text = "Автоудаление сохранений"
 align = 0
 
-[node name="ActivateDebugScreenButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
-margin_top = 71.0
+[node name="ActivateDebugScreenButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 72.0
 margin_right = 138.0
-margin_bottom = 85.0
+margin_bottom = 86.0
+focus_neighbour_top = NodePath(".")
+size_flags_horizontal = 1
+size_flags_vertical = 1
 toggle_mode = true
 text = "Экран отладки"
 align = 0
 
-[node name="ExitButton" type="Button" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer"]
-margin_top = 89.0
+[node name="ExitButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 90.0
 margin_right = 138.0
-margin_bottom = 103.0
-focus_neighbour_bottom = NodePath("../GameConstsEditorButton")
+margin_bottom = 104.0
+focus_neighbour_top = NodePath(".")
+size_flags_horizontal = 1
+size_flags_vertical = 1
 text = "exit"
 align = 0

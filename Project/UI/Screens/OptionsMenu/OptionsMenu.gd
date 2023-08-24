@@ -11,7 +11,7 @@ var specialOptionsMenuScene = preload("res://Project/UI/Screens/SpecialOptionsMe
 func _ready():
 	quitButton.connect("pressed", self, "on_quit_pressed") 
 	specialOptionsButton.connect("pressed", self, "on_special_options_pressed")
-	quitButton.grab_focus()
+	quitButton.grab_focus_without_animation()
 
 func _unhandled_input(_event):
 	if Input.is_action_just_pressed("pause_menu") and mainMarginContainer.visible:
@@ -29,4 +29,4 @@ func on_special_options_pressed():
 
 func on_options_back_pressed():
 	mainMarginContainer.visible = true
-	quitButton.grab_focus()
+	quitButton.grab_focus_without_animation()

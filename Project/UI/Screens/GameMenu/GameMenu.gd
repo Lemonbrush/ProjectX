@@ -50,7 +50,7 @@ func link_buttons_focus():
 func grab_first_button_focus():
 	for button in buttons_container.get_children():
 		if button is Button and button.visible:
-			button.grab_focus()
+			button.grab_focus_without_animation()
 			return
 
 func on_new_game_button_pressed():

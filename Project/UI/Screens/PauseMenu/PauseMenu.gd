@@ -8,6 +8,7 @@ onready var exitGameButton = $MainMarginContainer/MarginContainer/ContentVBoxCon
 onready var marginContainer = $MainMarginContainer
 
 var optionsMenuScene = preload("res://Project/UI/Screens/OptionsMenu/OptionsMenu.tscn")
+var gameMenuScenePath = "res://Project/UI/Screens/GameMenu/GameMenu.tscn"
 
 func _ready():
 	continueButton.connect("pressed", self, "on_continue_button_pressed")
@@ -16,7 +17,7 @@ func _ready():
 	exitGameButton.connect("pressed", self, "on_exit_game_button_pressed")
 	
 	get_tree().paused = true
-	continueButton.grab_focus()
+	continueButton.grab_focus_without_animation()
 
 func _unhandled_input(_event):
 	if Input.is_action_just_pressed("pause_menu") and marginContainer.visible:
@@ -29,7 +30,7 @@ func on_continue_button_pressed():
 func on_exit_button_pressed():
 	unpause()
 	Global.door_name = null
-	var _scene = get_tree().change_scene("res://UI/GameMenu/GameMenu.tscn")
+	var _scene = get_tree().change_scene(gameMenuScenePath)
 
 func on_exit_game_button_pressed():
 	get_tree().quit()
@@ -48,4 +49,4 @@ func on_options_pressed():
 
 func on_options_back_pressed():
 	marginContainer.visible = true
-	continueButton.grab_focus()
+	continueButton.grab_focus_without_animation()
