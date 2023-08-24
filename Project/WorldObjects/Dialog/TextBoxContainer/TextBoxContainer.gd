@@ -38,6 +38,7 @@ func setup_button_options(button_options):
 	buttonsContainer.visible = true
 	remove_all_buttons()
 	setup_buttons(button_options)
+	setup_buttons_loop_selection_if_needed()
 	grab_button_focuse_if_needed()
 
 func remove_and_hide_buttons():
@@ -84,3 +85,13 @@ func grab_button_focuse_if_needed():
 	
 	if button.has_method("grab_focus_without_animation"):
 		button.grab_focus_without_animation()
+
+func setup_buttons_loop_selection_if_needed():
+	var buttons = buttonsContainer.get_children()
+	if buttons.size() < 2:
+		return
+	
+	var firstButton: Button = buttons[0]
+	var lastButton: Button = buttons[buttons.size() - 1]
+	firstButton.focus_neighbour_top = lastButton.get_path()
+	lastButton.focus_neighbour_bottom = firstButton.get_path()
