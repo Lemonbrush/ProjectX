@@ -6,7 +6,7 @@ onready var marginNode = $MarginNode
 onready var label = $MarginNode/CenterContainer/HBoxContainer/Label
 onready var tween = $Tween
 onready var buttonHint = $MarginNode/CenterContainer/HBoxContainer/ButtonHint
-onready var show_dialog_audio_player = $Audio/ShowDialogAudioStreamPlayer
+onready var show_dialog_audio_player = $Audio/PopRandomAudioStreamPlayer
 
 func _ready():
 	buttonHint.set_hint_action("Interaction")

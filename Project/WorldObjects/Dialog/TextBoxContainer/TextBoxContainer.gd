@@ -6,7 +6,7 @@ onready var label = $PanelContainer/MarginContainer/VBoxContainer/Label
 onready var buttonHint = $PanelContainer/ButtonHint
 onready var buttonsContainer = $PanelContainer/MarginContainer/VBoxContainer/ButtonsContainer
 
-var animated_button_scene_path = preload("res://Project/UI/Animated_dialog_button/AnimatedDialogButton.tscn")
+var animated_button_scene_path = preload("res://Project/UI/Components/Animated_dialog_button/AnimatedDialogButton.tscn")
 
 # Lifecycle
 
@@ -66,7 +66,7 @@ func setup_buttons(button_options):
 		var button = animated_button_scene_path.instance()
 		button.set_text(button_option["text"])
 		buttonsContainer.add_child(button)
-		button.connect("pressed", self, "button_option_pressed", [button.text])
+		button.connect("pressed_and_resolved", self, "button_option_pressed", [button.text])
 
 func remove_all_buttons():
 	for child in buttonsContainer.get_children():

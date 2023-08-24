@@ -1,8 +1,8 @@
 extends Node
 class_name BaseLevel
 
-var pauseMenu 					= preload("res://Project/UI/PauseMenu/PauseMenu.tscn")
-var bookMenu						= preload("res://Project/UI/BookMenu/BookMenu.tscn")
+var pauseMenu 					= preload("res://Project/UI/Screens/PauseMenu/PauseMenu.tscn")
+var bookMenu						= preload("res://Project/UI/Screens/BookMenu/BookMenu.tscn")
 
 export (AudioStreamSample) var background_music
 export(bool) var dynamic_camera = true
