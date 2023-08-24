@@ -6,7 +6,7 @@ onready var label = $PanelContainer/MarginContainer/VBoxContainer/Label
 onready var buttonHint = $PanelContainer/ButtonHint
 onready var buttonsContainer = $PanelContainer/MarginContainer/VBoxContainer/ButtonsContainer
 
-var animated_button_scene_path = preload("res://Project/UI/Animated_dialog_button/AnimatedDialogButton.tscn")
+var animated_button_scene_path = preload("res://Project/UI/Components/Animated_dialog_button/AnimatedDialogButton.tscn")
 
 # Lifecycle
 
@@ -38,6 +38,7 @@ func setup_button_options(button_options):
 	buttonsContainer.visible = true
 	remove_all_buttons()
 	setup_buttons(button_options)
+	setup_buttons_loop_selection_if_needed()
 	grab_button_focuse_if_needed()
 
 func remove_and_hide_buttons():
@@ -66,7 +67,7 @@ func setup_buttons(button_options):
 		var button = animated_button_scene_path.instance()
 		button.set_text(button_option["text"])
 		buttonsContainer.add_child(button)
-		button.connect("pressed", self, "button_option_pressed", [button.text])
+		button.connect("pressed_and_resolved", self, "button_option_pressed", [button.text])
 
 func remove_all_buttons():
 	for child in buttonsContainer.get_children():
@@ -84,3 +85,13 @@ func grab_button_focuse_if_needed():
 	
 	if button.has_method("grab_focus_without_animation"):
 		button.grab_focus_without_animation()
+
+func setup_buttons_loop_selection_if_needed():
+	var buttons = buttonsContainer.get_children()
+	if buttons.size() < 2:
+		return
+	
+	var firstButton: Button = buttons[0]
+	var lastButton: Button = buttons[buttons.size() - 1]
+	firstButton.focus_neighbour_top = lastButton.get_path()
+	lastButton.focus_neighbour_bottom = firstButton.get_path()

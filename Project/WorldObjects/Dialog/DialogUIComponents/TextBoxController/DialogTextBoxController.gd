@@ -45,6 +45,9 @@ func voice_generator_did_pronounced_text(pronounced_text):
 	var current_text_length = float(current_text.length())
 	var target_text_length = float(target_text.length())
 	
+	if target_text_length == 0:
+		target_text_length = 1
+	
 	var one_percent = 1.0/target_text_length
 	var pronaunced_percents = one_percent * current_text_length
 	var new_percent = 1.0 - (1.0 - pronaunced_percents)

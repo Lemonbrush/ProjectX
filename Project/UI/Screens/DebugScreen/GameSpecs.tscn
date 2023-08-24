@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Project/UI/Screens/DebugScreen/GameSpecs.gd" type="Script" id=1]
+[ext_resource path="res://Project/Resources/Themes/MainTheme.tres" type="Theme" id=2]
+[ext_resource path="res://Project/Resources/Fonts/Custom Font ttf 12h 3.0 for Paint/Resource/CFont12H30P.tres" type="DynamicFont" id=3]
+
+[node name="GameSpecs" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 1 )
+
+[node name="MainMarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+margin_bottom = 401.0
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 2
+theme = ExtResource( 2 )
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+
+[node name="SpecsVBoxContainer" type="VBoxContainer" parent="MainMarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 492.0
+margin_bottom = 401.0
+mouse_filter = 2
+custom_constants/separation = 10
+
+[node name="GeneralVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/SpecsVBoxContainer"]
+margin_right = 472.0
+margin_bottom = 26.0
+custom_constants/separation = -2
+
+[node name="GameVersion" type="Label" parent="MainMarginContainer/SpecsVBoxContainer/GeneralVBoxContainer"]
+margin_right = 472.0
+margin_bottom = 14.0
+mouse_filter = 1
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "Version:"
+
+[node name="FPSLabel" type="Label" parent="MainMarginContainer/SpecsVBoxContainer/GeneralVBoxContainer"]
+margin_top = 12.0
+margin_right = 472.0
+margin_bottom = 26.0
+mouse_filter = 1
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "fps: 100"
+
+[node name="GameConsts" type="RichTextLabel" parent="MainMarginContainer/SpecsVBoxContainer"]
+margin_top = 36.0
+margin_right = 472.0
+margin_bottom = 286.0
+rect_min_size = Vector2( 0, 250 )
+mouse_filter = 2
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/line_separation = -3

@@ -141,7 +141,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Kissies"
-run/main_scene="res://Project/UI/SplashScreen/SplashScreen.tscn"
+run/main_scene="res://Project/UI/Screens/SplashScreen/SplashScreen.tscn"
 config/use_custom_user_dir=true
 run/delta_sync_after_draw=true
 boot_splash/show_image=false
