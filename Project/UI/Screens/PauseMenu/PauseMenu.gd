@@ -11,10 +11,10 @@ var optionsMenuScene = preload("res://Project/UI/Screens/OptionsMenu/OptionsMenu
 var gameMenuScenePath = "res://Project/UI/Screens/GameMenu/GameMenu.tscn"
 
 func _ready():
-	continueButton.connect("pressed", self, "on_continue_button_pressed")
-	exitButton.connect("pressed", self, "on_exit_button_pressed") 
-	optionsButton.connect("pressed", self, "on_options_pressed")
-	exitGameButton.connect("pressed", self, "on_exit_game_button_pressed")
+	continueButton.connect("pressed_and_resolved", self, "on_continue_button_pressed")
+	exitButton.connect("pressed_and_resolved", self, "on_exit_button_pressed") 
+	optionsButton.connect("pressed_and_resolved", self, "on_options_pressed")
+	exitGameButton.connect("pressed_and_resolved", self, "on_exit_game_button_pressed")
 	
 	get_tree().paused = true
 	continueButton.grab_focus_without_animation()

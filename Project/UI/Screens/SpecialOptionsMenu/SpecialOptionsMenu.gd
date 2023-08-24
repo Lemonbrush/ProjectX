@@ -14,13 +14,13 @@ onready var gameConstsEditorButton = $MainMarginContainer/MarginContainer/Conten
 var gameConstsEditorMenu = load("res://Project/UI/Screens/GameConstsEditor/GameConstsEditor.tscn")
 
 func _ready():
-	quitButton.connect("pressed", self, "on_quit_pressed") 
-	deleteAllSavesButton.connect("pressed", self, "on_save_delete_pressed") 
-	deleteAllSavesByDefaultRadiobutton.connect("pressed", self, "on_delete_all_saves_by_default_radiobutton_checked")
-	deleteSettingsDataButton.connect("pressed", self, "on_delete_settings_data_pressed")
-	activateDebugScreenRadiobutton.connect("pressed", self, "on_debug_screen_radiobutton_pressed")
-	resetGameConstantsButton.connect("pressed", self, "on_reset_game_constants_pressed")
-	gameConstsEditorButton.connect("pressed", self, "on_special_options_pressed") 
+	quitButton.connect("pressed_and_resolved", self, "on_quit_pressed") 
+	deleteAllSavesButton.connect("pressed_and_resolved", self, "on_save_delete_pressed") 
+	deleteAllSavesByDefaultRadiobutton.connect("pressed_and_resolved", self, "on_delete_all_saves_by_default_radiobutton_checked")
+	deleteSettingsDataButton.connect("pressed_and_resolved", self, "on_delete_settings_data_pressed")
+	activateDebugScreenRadiobutton.connect("pressed_and_resolved", self, "on_debug_screen_radiobutton_pressed")
+	resetGameConstantsButton.connect("pressed_and_resolved", self, "on_reset_game_constants_pressed")
+	gameConstsEditorButton.connect("pressed_and_resolved", self, "on_special_options_pressed") 
 	
 	setup_ui()
 	quitButton.grab_focus_without_animation()

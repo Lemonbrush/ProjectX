@@ -9,8 +9,8 @@ onready var mainMarginContainer = $MainMarginContainer
 var specialOptionsMenuScene = preload("res://Project/UI/Screens/SpecialOptionsMenu/SpecialOptionsMenu.tscn")
 
 func _ready():
-	quitButton.connect("pressed", self, "on_quit_pressed") 
-	specialOptionsButton.connect("pressed", self, "on_special_options_pressed")
+	quitButton.connect("pressed_and_resolved", self, "on_quit_pressed") 
+	specialOptionsButton.connect("pressed_and_resolved", self, "on_special_options_pressed")
 	quitButton.grab_focus_without_animation()
 
 func _unhandled_input(_event):

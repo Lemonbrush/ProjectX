@@ -19,11 +19,11 @@ var changelogMenuScene = preload("res://Project/UI/Screens/DevelopmentLogMenu/De
 func _ready():
 	Global.is_game_loaded = false
 	
-	continue_button.connect("pressed", self, "on_continue_button_pressed") 
-	new_game_button.connect("pressed", self, "on_new_game_button_pressed")
-	exit_button.connect("pressed", self, "on_exit_pressed")
-	options_button.connect("pressed", self, "on_options_pressed")
-	about_button.connect("pressed", self, "on_changelog_pressed")
+	continue_button.connect("pressed_and_resolved", self, "on_continue_button_pressed") 
+	new_game_button.connect("pressed_and_resolved", self, "on_new_game_button_pressed")
+	exit_button.connect("pressed_and_resolved", self, "on_exit_pressed")
+	options_button.connect("pressed_and_resolved", self, "on_options_pressed")
+	about_button.connect("pressed_and_resolved", self, "on_changelog_pressed")
 	update_ui_data()
 	play_background_music()
 	
