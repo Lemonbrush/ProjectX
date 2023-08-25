@@ -1,13 +1,15 @@
-[gd_resource type="Theme" load_steps=18 format=2]
+[gd_resource type="Theme" load_steps=24 format=2]
 
 [ext_resource path="res://Project/Resources/Fonts/Custom Font ttf 12h 3.0 for Paint/Resource/CFont12H30PBold.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Project/Resources/Fonts/Custom Font ttf 12h 3.0 for Paint/Resource/CFont12H30P.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Assets/UI/UIElements/Panrl_container_texture.png" type="Texture" id=3]
 [ext_resource path="res://Assets/UI/UIElements/HSlider/grabber.png" type="Texture" id=4]
-[ext_resource path="res://Assets/UI/UIElements/HSlider/grabberArea.png" type="Texture" id=5]
+[ext_resource path="res://Assets/UI/UIElements/VScrollBar/grabber_small.png" type="Texture" id=5]
 [ext_resource path="res://Assets/UI/UIElements/HSlider/grabber_disabled.png" type="Texture" id=6]
 [ext_resource path="res://Assets/UI/UIElements/HSlider/grabber_highlight.png" type="Texture" id=7]
 [ext_resource path="res://Assets/UI/UIElements/HSlider/grabberAreaBackground.png" type="Texture" id=8]
+[ext_resource path="res://Assets/UI/UIElements/VScrollBar/grabber.png" type="Texture" id=9]
+[ext_resource path="res://Assets/UI/UIElements/VScrollBar/scroll.png" type="Texture" id=10]
 
 [sub_resource type="StyleBoxEmpty" id=14]
 
@@ -21,11 +23,11 @@
 
 [sub_resource type="StyleBoxTexture" id=18]
 texture = ExtResource( 5 )
-region_rect = Rect2( 0, 0, 11.715, 8.27324 )
-margin_left = 4.16434
-margin_right = 5.30818
-margin_top = 4.48093
-margin_bottom = 4.74839
+region_rect = Rect2( 0, 0, 6, 6 )
+margin_left = 3.65191
+margin_right = 3.25849
+margin_top = 3.45609
+margin_bottom = 3.46733
 
 [sub_resource type="StyleBoxTexture" id=19]
 texture = ExtResource( 8 )
@@ -49,6 +51,40 @@ margin_left = 4.5048
 margin_right = 4.00427
 margin_top = 4.37967
 margin_bottom = 3.87913
+
+[sub_resource type="StyleBoxTexture" id=23]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 11, 11 )
+margin_left = 4.6067
+margin_right = 4.6067
+margin_top = 4.9906
+margin_bottom = 4.86263
+modulate_color = Color( 1, 1, 1, 0.517647 )
+
+[sub_resource type="StyleBoxTexture" id=21]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 11, 11 )
+margin_left = 4.6067
+margin_right = 4.6067
+margin_top = 4.9906
+margin_bottom = 4.86263
+
+[sub_resource type="StyleBoxTexture" id=22]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 11.7578, 11.3414 )
+margin_left = 5.34986
+margin_right = 5.08161
+margin_top = 4.44026
+margin_bottom = 4.68865
+modulate_color = Color( 1, 1, 1, 0.258824 )
+
+[sub_resource type="StyleBoxTexture" id=20]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 11, 11 )
+margin_left = 4.77024
+margin_right = 4.89578
+margin_top = 4.89578
+margin_bottom = 4.77025
 
 [resource]
 default_font = ExtResource( 2 )
@@ -76,3 +112,9 @@ HSlider/styles/slider = SubResource( 19 )
 LineEdit/styles/focus = SubResource( 7 )
 LineEdit/styles/normal = SubResource( 7 )
 PanelContainer/styles/panel = SubResource( 5 )
+VScrollBar/styles/grabber = SubResource( 23 )
+VScrollBar/styles/grabber_highlight = SubResource( 21 )
+VScrollBar/styles/grabber_pressed = SubResource( 21 )
+VScrollBar/styles/scroll = SubResource( 22 )
+VScrollBar/styles/scroll_focus = SubResource( 22 )
+VSlider/styles/grabber_area = SubResource( 20 )
