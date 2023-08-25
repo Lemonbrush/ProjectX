@@ -57,7 +57,7 @@ margin_bottom = 32.0
 
 [node name="SFXOptionHSlider" type="HSlider" parent="MainMarginContainer/SettingsMarginContainer/ContentVBoxContainer/ButtonsVBoxContainer/SFXOptionHBoxContainer"]
 margin_right = 126.0
-margin_bottom = 11.0
+margin_bottom = 8.0
 size_flags_horizontal = 3
 max_value = 10.0
 
@@ -82,7 +82,7 @@ margin_bottom = 68.0
 
 [node name="BackgroundMusicOptionHSlider" type="HSlider" parent="MainMarginContainer/SettingsMarginContainer/ContentVBoxContainer/ButtonsVBoxContainer/BackgroundMusicOptionVBoxContainer"]
 margin_right = 126.0
-margin_bottom = 11.0
+margin_bottom = 8.0
 size_flags_horizontal = 3
 max_value = 10.0
 
