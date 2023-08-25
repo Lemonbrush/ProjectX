@@ -11,9 +11,9 @@ var specialOptionsMenuScene = preload("res://Project/UI/Screens/SpecialOptionsMe
 var soundSettingsScreenScene = preload("res://Project/UI/Screens/SoundSettingsScreen/SoundSettingsScreen.tscn")
 
 func _ready():
-	quitButton.connect("pressed_and_resolved", self, "on_quit_pressed") 
-	specialOptionsButton.connect("pressed_and_resolved", self, "on_special_options_pressed")
-	soundOptionsButton.connect("pressed_and_resolved", self, "on_sound_pressed")
+	var _quitButtonConnect = quitButton.connect("pressed_and_resolved", self, "on_quit_pressed") 
+	var _specialOptionsButtonConnect = specialOptionsButton.connect("pressed_and_resolved", self, "on_special_options_pressed")
+	var _soundOptionsButtonConnect = soundOptionsButton.connect("pressed_and_resolved", self, "on_sound_pressed")
 	quitButton.grab_focus_without_animation()
 
 func _unhandled_input(_event):

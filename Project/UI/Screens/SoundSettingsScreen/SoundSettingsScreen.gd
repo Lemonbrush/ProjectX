@@ -14,9 +14,9 @@ onready var exitButton = $MainMarginContainer/SettingsMarginContainer/ContentVBo
 
 func _ready():
 	configure_ui()
-	exitButton.connect("pressed_and_resolved", self, "on_quit_pressed")
-	sfxOptionSlider.connect("value_changed", self, "did_move_sfx_option_slider")
-	backgroundMusicOptionSlider.connect("value_changed", self, "did_move_background_music_option_slider")
+	var _exitConnect = exitButton.connect("pressed_and_resolved", self, "on_quit_pressed")
+	var _sfxConnect = sfxOptionSlider.connect("value_changed", self, "did_move_sfx_option_slider")
+	var _backgroundMusicConnect = backgroundMusicOptionSlider.connect("value_changed", self, "did_move_background_music_option_slider")
 
 func did_move_sfx_option_slider(new_value):
 	popAudioPlayer.play()

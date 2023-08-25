@@ -2,11 +2,13 @@ extends CanvasLayer
 signal back_pressed
 
 onready var mainMarginContainer = $MainMarginContainer
-onready var textLabel = $MainMarginContainer/MarginContainer/RichTextLabel
+onready var textLabel = $MainMarginContainer/MarginContainer/VBoxContainer/RichTextLabel
+onready var exitButton = $MainMarginContainer/MarginContainer/VBoxContainer/AnimatedDialogButton
 
 var changelog_link = "res://ProjectResources/CHANGELOG.md"
 
 func _ready():
+	var _exitConnection = exitButton.connect("pressed_and_resolved", self, "on_quit_pressed")
 	textLabel.append_bbcode(load_file(changelog_link))
 	textLabel.grab_focus()
 
