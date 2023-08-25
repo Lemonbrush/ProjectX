@@ -142,7 +142,7 @@ color_ramp = SubResource( 186 )
 [sub_resource type="Resource" id=192]
 script = ExtResource( 20 )
 letter_sounds_resource = ExtResource( 15 )
-voice_mode = 4
+voice_mode = 3
 
 [sub_resource type="RectangleShape2D" id=108]
 extents = Vector2( 8.25, 1.5 )
@@ -625,92 +625,77 @@ itemScene = ExtResource( 18 )
 
 [node name="Couch_sign" parent="Middle_world_decorations/Inspection_points" index="0" instance=ExtResource( 19 )]
 position = Vector2( -209, 339 )
-texts_array = [ "Видно, что здесь сидела чья-то попка" ]
+dialogId = "harborHouse_creatorHouse_couchSign"
 
 [node name="Sprite" parent="Middle_world_decorations/Inspection_points/Couch_sign" index="0"]
 visible = false
 
 [node name="Bottom_table_sign" parent="Middle_world_decorations/Inspection_points" index="1" instance=ExtResource( 19 )]
 position = Vector2( -51, 339 )
-texts_array = [ "Какой низкий стол. Наверно здесь
-очень атмосферно кушать", "Хм, он рассчитан на двоих" ]
+dialogId = "harborHouse_creatorHouse_bottomTableSign"
 
 [node name="Sprite" parent="Middle_world_decorations/Inspection_points/Bottom_table_sign" index="0"]
 visible = false
 
 [node name="Calligraphy_books_sign" parent="Middle_world_decorations/Inspection_points" index="2" instance=ExtResource( 19 )]
 position = Vector2( -93, 249 )
-texts_array = [ "Этот шкаф полностью забит
-книгами по каллиграфии", "Некоторые из них ещё даже
-не распечатаны" ]
+dialogId = "harborHouse_creatorHouse_calligraphyBooksSign"
 
 [node name="Sprite" parent="Middle_world_decorations/Inspection_points/Calligraphy_books_sign" index="0"]
 visible = false
 
 [node name="Top_art_books_sign" parent="Middle_world_decorations/Inspection_points" index="3" instance=ExtResource( 19 )]
 position = Vector2( -171, 212 )
-texts_array = [ "На антрисоли много книг
-по типографии" ]
+dialogId = "harborHouse_creatorHouse_topArtBooksSign"
 
 [node name="Sprite" parent="Middle_world_decorations/Inspection_points/Top_art_books_sign" index="0"]
 visible = false
 
 [node name="Work_room_snacks_sign" parent="Middle_world_decorations/Inspection_points" index="4" instance=ExtResource( 19 )]
 position = Vector2( -10, 249 )
-texts_array = [ "Чипсики. Кажется эту тарелку
-недавно обновили" ]
+dialogId = "harborHouse_creatorHouse_workRoomSnacksSign"
 
 [node name="Sprite" parent="Middle_world_decorations/Inspection_points/Work_room_snacks_sign" index="0"]
 visible = false
 
 [node name="Under_stairs_seat_sign" parent="Middle_world_decorations/Inspection_points" index="5" instance=ExtResource( 19 )]
 position = Vector2( 169, 249 )
-texts_array = [ "Отдельное место для рассматривания
-альбомов со старыми фотографиями", "Удобно" ]
+dialogId = "harborHouse_creatorHouse_underStairsSeatSign"
 
 [node name="Sprite" parent="Middle_world_decorations/Inspection_points/Under_stairs_seat_sign" index="0"]
 visible = false
 
 [node name="Old_photos_album_sign" parent="Middle_world_decorations/Inspection_points" index="6" instance=ExtResource( 19 )]
 position = Vector2( 149, 219 )
-texts_array = [ "Ого, здесь собрание альбомов
-с фотографиями с поларойда", "Милые фотографии" ]
+dialogId = "harborHouse_creatorHouse_oldPhotosAlbumSign"
 
 [node name="Sprite" parent="Middle_world_decorations/Inspection_points/Old_photos_album_sign" index="0"]
 visible = false
 
 [node name="Girl_art_sign" parent="Middle_world_decorations/Inspection_points" index="7" instance=ExtResource( 19 )]
 position = Vector2( 15, 159 )
-texts_array = [ "Хммм... эта принцесса кого-то
-мне напоминает" ]
+dialogId = "harborHouse_creatorHouse_girlArtSign"
 
 [node name="Sprite" parent="Middle_world_decorations/Inspection_points/Girl_art_sign" index="0"]
 visible = false
 
 [node name="Kitchen_sign" parent="Middle_world_decorations/Inspection_points" index="8" instance=ExtResource( 19 )]
 position = Vector2( 42, 73 )
-texts_array = [ "На кухне нет холодильника
-и плиты", "Похоже, киси-работники просто
-приносят всю еду сразу готовой" ]
+dialogId = "harborHouse_creatorHouse_kitchenSign"
 
 [node name="Sprite" parent="Middle_world_decorations/Inspection_points/Kitchen_sign" index="0"]
 visible = false
 
 [node name="Blue_sky_seat_sign" parent="Middle_world_decorations/Inspection_points" index="9" instance=ExtResource( 19 )]
 position = Vector2( 108, -9 )
-texts_array = [ "Судя по следам от лапок,
-котятки-работники недавно
-прыгали на этом кресле", "Они думали, что смогут скрыть
-их, положив сверху книгу" ]
+dialogId = "harborHouse_creatorHouse_blueSkySeatSign"
 
 [node name="Sprite" parent="Middle_world_decorations/Inspection_points/Blue_sky_seat_sign" index="0"]
 visible = false
 
 [node name="Top_couch_sign" parent="Middle_world_decorations/Inspection_points" index="10" instance=ExtResource( 19 )]
 position = Vector2( 115, -212 )
-texts_array = [ "Коллекция манги, диван, плед,
-широкое окношко с цветочками
-и камин?", "Это особая комната" ]
+dialogId = "harborHouse_creatorHouse_topCouchSign"
 
 [node name="Sprite" parent="Middle_world_decorations/Inspection_points/Top_couch_sign" index="0"]
 visible = false
@@ -1667,27 +1652,38 @@ __meta__ = {
 [editable path="Middle_world_decorations/Doors/CreatorHouseFirstFloorDoorTwo"]
 [editable path="Middle_world_decorations/Doors/CreatorHouseFirstFloorDoorTwo/InteractionController"]
 [editable path="Middle_world_decorations/Inspection_points/Couch_sign"]
-[editable path="Middle_world_decorations/Inspection_points/Couch_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Couch_sign/AbstractDialogInteractionObject"]
+[editable path="Middle_world_decorations/Inspection_points/Couch_sign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="Middle_world_decorations/Inspection_points/Bottom_table_sign"]
-[editable path="Middle_world_decorations/Inspection_points/Bottom_table_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Bottom_table_sign/AbstractDialogInteractionObject"]
+[editable path="Middle_world_decorations/Inspection_points/Bottom_table_sign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="Middle_world_decorations/Inspection_points/Calligraphy_books_sign"]
-[editable path="Middle_world_decorations/Inspection_points/Calligraphy_books_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Calligraphy_books_sign/AbstractDialogInteractionObject"]
+[editable path="Middle_world_decorations/Inspection_points/Calligraphy_books_sign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="Middle_world_decorations/Inspection_points/Top_art_books_sign"]
-[editable path="Middle_world_decorations/Inspection_points/Top_art_books_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Top_art_books_sign/AbstractDialogInteractionObject"]
+[editable path="Middle_world_decorations/Inspection_points/Top_art_books_sign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="Middle_world_decorations/Inspection_points/Work_room_snacks_sign"]
-[editable path="Middle_world_decorations/Inspection_points/Work_room_snacks_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Work_room_snacks_sign/AbstractDialogInteractionObject"]
+[editable path="Middle_world_decorations/Inspection_points/Work_room_snacks_sign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="Middle_world_decorations/Inspection_points/Under_stairs_seat_sign"]
-[editable path="Middle_world_decorations/Inspection_points/Under_stairs_seat_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Under_stairs_seat_sign/AbstractDialogInteractionObject"]
+[editable path="Middle_world_decorations/Inspection_points/Under_stairs_seat_sign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="Middle_world_decorations/Inspection_points/Old_photos_album_sign"]
-[editable path="Middle_world_decorations/Inspection_points/Old_photos_album_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Old_photos_album_sign/AbstractDialogInteractionObject"]
+[editable path="Middle_world_decorations/Inspection_points/Old_photos_album_sign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="Middle_world_decorations/Inspection_points/Girl_art_sign"]
-[editable path="Middle_world_decorations/Inspection_points/Girl_art_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Girl_art_sign/AbstractDialogInteractionObject"]
+[editable path="Middle_world_decorations/Inspection_points/Girl_art_sign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="Middle_world_decorations/Inspection_points/Kitchen_sign"]
-[editable path="Middle_world_decorations/Inspection_points/Kitchen_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Kitchen_sign/AbstractDialogInteractionObject"]
+[editable path="Middle_world_decorations/Inspection_points/Kitchen_sign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="Middle_world_decorations/Inspection_points/Blue_sky_seat_sign"]
-[editable path="Middle_world_decorations/Inspection_points/Blue_sky_seat_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Blue_sky_seat_sign/AbstractDialogInteractionObject"]
+[editable path="Middle_world_decorations/Inspection_points/Blue_sky_seat_sign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="Middle_world_decorations/Inspection_points/Top_couch_sign"]
-[editable path="Middle_world_decorations/Inspection_points/Top_couch_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Top_couch_sign/AbstractDialogInteractionObject"]
+[editable path="Middle_world_decorations/Inspection_points/Top_couch_sign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="Collisions/PassTrough/PassThroughBody60"]
 [editable path="Collisions/PassTrough/PassThroughBody90"]
 [editable path="Collisions/PassTrough/PassThroughBody91"]

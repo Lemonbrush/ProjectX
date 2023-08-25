@@ -25,3 +25,7 @@ func on_npc_approach(_body):
 	
 func finish_talking():
 	interactionPopup.hide()
+
+func set_dialog_id(newDialogId):
+	dialogId = newDialogId
+	dialogTextBoxController.set_dialog_id(newDialogId)
