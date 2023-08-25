@@ -13,10 +13,10 @@ onready var backgroundMusicValueLabel = $MainMarginContainer/SettingsMarginConta
 onready var exitButton = $MainMarginContainer/SettingsMarginContainer/ContentVBoxContainer/ButtonsVBoxContainer/ExitButton
 
 func _ready():
+	configure_ui()
 	exitButton.connect("pressed_and_resolved", self, "on_quit_pressed")
 	sfxOptionSlider.connect("value_changed", self, "did_move_sfx_option_slider")
 	backgroundMusicOptionSlider.connect("value_changed", self, "did_move_background_music_option_slider")
-	configure_ui()
 
 func did_move_sfx_option_slider(new_value):
 	popAudioPlayer.play()
@@ -42,4 +42,4 @@ func configure_ui():
 	sfxOptionValueLabel.text = str(sfx_value)
 	backgroundMusicValueLabel.text = str(background_music_value)
 	
-	#exitButton.grab_focus_without_animation()
+	exitButton.grab_focus_without_animation()
