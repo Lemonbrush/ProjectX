@@ -59,7 +59,7 @@ margin_left = 4.6067
 margin_right = 4.6067
 margin_top = 4.9906
 margin_bottom = 4.86263
-modulate_color = Color( 1, 1, 1, 0.517647 )
+modulate_color = Color( 0.580392, 0.580392, 0.580392, 1 )
 
 [sub_resource type="StyleBoxTexture" id=21]
 texture = ExtResource( 9 )
