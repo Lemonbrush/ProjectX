@@ -25,6 +25,12 @@ func load_settings():
 	
 	if has_settings_file():
 		settings = load(save_path)
+	if settings == null:
+		pass
+	
+	_change_volume("Music", settings.background_music_volume)
+	_change_volume("SFX", settings.sfx_volume)
+	
 
 func has_settings_file():
 	var file = File.new()
