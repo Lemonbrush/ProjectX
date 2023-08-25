@@ -47,6 +47,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [ false, true ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("GatesText/AbstractDialogInteractionObject/InteractionController/Area2D/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "Opened"
@@ -74,6 +86,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 57, -80 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("GatesText/AbstractDialogInteractionObject/InteractionController/Area2D/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=7]
 length = 0.001
@@ -89,11 +113,23 @@ tracks/0/keys = {
 "update": 0,
 "values": [ false ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("GatesText/AbstractDialogInteractionObject/InteractionController/Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="ShaderMaterial" id=6]
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 11.75, 16.5 )
+extents = Vector2( 10.5, 15.5 )
 
 [node name="Gates" type="Node2D"]
 script = ExtResource( 3 )
@@ -128,21 +164,15 @@ labelText = "войти"
 
 [node name="GatesText" parent="." instance=ExtResource( 7 )]
 position = Vector2( -16, -7 )
-texts_array = [ "Войдет лишь тот, кто ключ 
-от сердца подберет" ]
+dialogId = "startGateGatesTextSign"
 
 [node name="Sprite" parent="GatesText" index="0"]
 texture = null
 
-[node name="InteractionPopup" parent="GatesText" index="1"]
-position = Vector2( 0, -26 )
-
-[node name="TextBoxPopup" parent="GatesText" index="2"]
-position = Vector2( 0, -39 )
-
-[node name="CollisionShape2D" parent="GatesText/InteractionController/Area2D" index="0"]
-position = Vector2( 0, -6 )
+[node name="CollisionShape2D" parent="GatesText/AbstractDialogInteractionObject/InteractionController/Area2D" index="0"]
+position = Vector2( 0.5, -4.5 )
 shape = SubResource( 8 )
 
 [editable path="GatesText"]
-[editable path="GatesText/InteractionController"]
+[editable path="GatesText/AbstractDialogInteractionObject"]
+[editable path="GatesText/AbstractDialogInteractionObject/InteractionController"]

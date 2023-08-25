@@ -1545,32 +1545,28 @@ __meta__ = {
 
 [node name="Always_bloom_forest_sign" parent="CreatorHouseIsland/Middle_world_objects/Inspection_points" instance=ExtResource( 61 )]
 position = Vector2( 544, -383 )
-texts_array = [ "Маленький лесок с вечно цветущими
-яблонями и озеро. А это удобно" ]
+dialogId = "harborHouse_alwaysBloomForestSign"
 
 [node name="Sprite" parent="CreatorHouseIsland/Middle_world_objects/Inspection_points/Always_bloom_forest_sign" index="0"]
 visible = false
 
 [node name="Flowers_sign" parent="CreatorHouseIsland/Middle_world_objects/Inspection_points" instance=ExtResource( 61 )]
 position = Vector2( 1027, -383 )
-texts_array = [ "Котятки потрудились на славу" ]
+dialogId = "harborHouse_flowersSign"
 
 [node name="Sprite" parent="CreatorHouseIsland/Middle_world_objects/Inspection_points/Flowers_sign" index="0"]
 visible = false
 
 [node name="Flowers_bench_sign" parent="CreatorHouseIsland/Middle_world_objects/Inspection_points" instance=ExtResource( 61 )]
 position = Vector2( 1094, -383 )
-texts_array = [ "Похоже кто-то любит сидеть здесь
-и просто любоваться цветочками" ]
+dialogId = "harborHouse_flowersBenchSign"
 
 [node name="Sprite" parent="CreatorHouseIsland/Middle_world_objects/Inspection_points/Flowers_bench_sign" index="0"]
 visible = false
 
 [node name="Sushi_sign" parent="CreatorHouseIsland/Middle_world_objects/Inspection_points" instance=ExtResource( 61 )]
 position = Vector2( -363, -383 )
-texts_array = [ "Кто-то устроил пикник", "В этой корзинке находится
-бесконечный источник вечно
-свежих роллов", "*завидует*" ]
+dialogId = "harborHouse_sushiSign"
 
 [node name="Sprite" parent="CreatorHouseIsland/Middle_world_objects/Inspection_points/Sushi_sign" index="0"]
 visible = false
@@ -2914,13 +2910,17 @@ margin_bottom = 344.0
 [editable path="Harbor_world_objects/Collisions/Solid/PassThroughBody_ex2"]
 [editable path="Harbor_world_objects/Collisions/Solid/PassThroughBody_ex3"]
 [editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Always_bloom_forest_sign"]
-[editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Always_bloom_forest_sign/InteractionController"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Always_bloom_forest_sign/AbstractDialogInteractionObject"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Always_bloom_forest_sign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Flowers_sign"]
-[editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Flowers_sign/InteractionController"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Flowers_sign/AbstractDialogInteractionObject"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Flowers_sign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Flowers_bench_sign"]
-[editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Flowers_bench_sign/InteractionController"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Flowers_bench_sign/AbstractDialogInteractionObject"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Flowers_bench_sign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Sushi_sign"]
-[editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Sushi_sign/InteractionController"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Sushi_sign/AbstractDialogInteractionObject"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Sushi_sign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseTopWindowDoor"]
 [editable path="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseTopWindowDoor/InteractionController"]
 [editable path="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseTopFloorDoor"]

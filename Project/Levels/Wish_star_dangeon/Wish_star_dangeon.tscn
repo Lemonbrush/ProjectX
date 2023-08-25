@@ -1231,72 +1231,35 @@ innerItemScene = ExtResource( 30 )
 
 [node name="Sign_1" parent="Cave_objects/Middle_world_objects/Flag_captions" index="0" instance=ExtResource( 32 )]
 position = Vector2( 281, -3 )
-texts_array = [ "˜ЛЕГЕНДА О КИСЕЛЯЧЬЕМ ЦАРСТВЕ˜", "Эта история о том,
-как появились котики", "Давным-давно, когда цветочки
-не танцевали, бабочки не пархали,
-а котики не грелись на солнышке,
-был только он", "Мы не знаем кто он был.
-Да это и не важно, ведь с него
-всё началось", "Хотя нет...", "Всё началось когда
-он встретил её", "Первую кису" ]
+dialogId = "wishStar_WorldPlotFlag_1_sign"
 
 [node name="Sprite" parent="Cave_objects/Middle_world_objects/Flag_captions/Sign_1" index="0"]
 visible = false
 
-[node name="TextBoxPopup" parent="Cave_objects/Middle_world_objects/Flag_captions/Sign_1" index="2"]
-light_mask = 0
-
 [node name="Sign_2" parent="Cave_objects/Middle_world_objects/Flag_captions" index="1" instance=ExtResource( 32 )]
 position = Vector2( 440, -3 )
-texts_array = [ "Каждый раз, когда она улыбалась,
-вырастал цветочек. Каждый вздох
-появлялась новая бабочка", "И каждое мгновение, проведённое
-с ней было как зефирка. А зефирка
-становилась облачком", "Однажды она подарила ему тьмок", "Это было волнительно,
-но взамен он украл её
-первый настоящий поцелуй", "И тогда произошёл БУМ!" ]
+dialogId = "wishStar_WorldPlotFlag_2_sign"
 
 [node name="Sprite" parent="Cave_objects/Middle_world_objects/Flag_captions/Sign_2" index="0"]
 visible = false
 
 [node name="Sign_3" parent="Cave_objects/Middle_world_objects/Flag_captions" index="2" instance=ExtResource( 32 )]
 position = Vector2( 601, -3 )
-texts_array = [ "Тьмок за тьмоком, обнимак
-за обнимаком", "Среди облачков появлялись
-островки, а на островках стали
-нежиться первые котики", "Изо дня в день, их чувства
-становились сильней и сильней,
-а котиков всё больше и больше..." ]
+dialogId = "wishStar_WishPlotFlag_3_sign"
 
 [node name="Sprite" parent="Cave_objects/Middle_world_objects/Flag_captions/Sign_3" index="0"]
 visible = false
 
 [node name="Sign_4" parent="Cave_objects/Middle_world_objects/Flag_captions" index="3" instance=ExtResource( 32 )]
 position = Vector2( 1432, -3 )
-texts_array = [ "В каждом из нас есть место,
-которое предназначено только
-для него", "Тайный остров, о котором
-никто не знает", "Туда не так просто попасть.
-Но бывает так, что два мира
-сталкиваются друг с другом", "Котики из одного мира
-перемешиваются с котиками
-из другого", "И уже не понять чьи
-бабочки здесь пархают
-Они все становятся родными", "Появляется целый маленький
-мир, который растёт и развивается
-совместными усилиями всех котиков" ]
+dialogId = "wishStar_WishPlotFlag_4_sign"
 
 [node name="Sprite" parent="Cave_objects/Middle_world_objects/Flag_captions/Sign_4" index="0"]
 visible = false
 
 [node name="Sign_5" parent="Cave_objects/Middle_world_objects/Flag_captions" index="4" instance=ExtResource( 32 )]
 position = Vector2( 1592, -3 )
-texts_array = [ "Котики из одного мира встречаются
-с котиками из другого, и потихоньку
-начинают дружить и любить", "Если их хозяева любят друг друга,
-то и их котики счастливы", "С каждым новым впечатлением
-появляется новый котик, деревня
-котиков, острова котиков...", "Так появились мы - котята" ]
+dialogId = "wishStar_WishPlotFlag_5_sign"
 
 [node name="Sprite" parent="Cave_objects/Middle_world_objects/Flag_captions/Sign_5" index="0"]
 visible = false
@@ -1971,15 +1934,20 @@ margin_bottom = 344.0
 [editable path="Cave_objects/Middle_world_objects/Doors/Heart_lake_door"]
 [editable path="Cave_objects/Middle_world_objects/Doors/Heart_lake_door/InteractionController"]
 [editable path="Cave_objects/Middle_world_objects/Flag_captions/Sign_1"]
-[editable path="Cave_objects/Middle_world_objects/Flag_captions/Sign_1/InteractionController"]
+[editable path="Cave_objects/Middle_world_objects/Flag_captions/Sign_1/AbstractDialogInteractionObject"]
+[editable path="Cave_objects/Middle_world_objects/Flag_captions/Sign_1/AbstractDialogInteractionObject/InteractionController"]
 [editable path="Cave_objects/Middle_world_objects/Flag_captions/Sign_2"]
-[editable path="Cave_objects/Middle_world_objects/Flag_captions/Sign_2/InteractionController"]
+[editable path="Cave_objects/Middle_world_objects/Flag_captions/Sign_2/AbstractDialogInteractionObject"]
+[editable path="Cave_objects/Middle_world_objects/Flag_captions/Sign_2/AbstractDialogInteractionObject/InteractionController"]
 [editable path="Cave_objects/Middle_world_objects/Flag_captions/Sign_3"]
-[editable path="Cave_objects/Middle_world_objects/Flag_captions/Sign_3/InteractionController"]
+[editable path="Cave_objects/Middle_world_objects/Flag_captions/Sign_3/AbstractDialogInteractionObject"]
+[editable path="Cave_objects/Middle_world_objects/Flag_captions/Sign_3/AbstractDialogInteractionObject/InteractionController"]
 [editable path="Cave_objects/Middle_world_objects/Flag_captions/Sign_4"]
-[editable path="Cave_objects/Middle_world_objects/Flag_captions/Sign_4/InteractionController"]
+[editable path="Cave_objects/Middle_world_objects/Flag_captions/Sign_4/AbstractDialogInteractionObject"]
+[editable path="Cave_objects/Middle_world_objects/Flag_captions/Sign_4/AbstractDialogInteractionObject/InteractionController"]
 [editable path="Cave_objects/Middle_world_objects/Flag_captions/Sign_5"]
-[editable path="Cave_objects/Middle_world_objects/Flag_captions/Sign_5/InteractionController"]
+[editable path="Cave_objects/Middle_world_objects/Flag_captions/Sign_5/AbstractDialogInteractionObject"]
+[editable path="Cave_objects/Middle_world_objects/Flag_captions/Sign_5/AbstractDialogInteractionObject/InteractionController"]
 [editable path="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_1/PassThroughBody15"]
 [editable path="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_2/PassThroughBody15"]
 [editable path="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_3/PassThroughBody15"]
