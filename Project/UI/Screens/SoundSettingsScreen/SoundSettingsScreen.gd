@@ -13,23 +13,29 @@ onready var exitButton = $MainMarginContainer/SettingsMarginContainer/ContentVBo
 func _ready():
 	exitButton.connect("pressed_and_resolved", self, "on_quit_pressed")
 	sfxOptionSlider.connect("value_changed", self, "did_move_sfx_option_slider")
-	sfxOptionSlider.connect("drag_ended", self, "did_finish_drag_sfx_option_slider")
 	backgroundMusicOptionSlider.connect("value_changed", self, "did_move_background_music_option_slider")
-	backgroundMusicOptionSlider.connect("drag_ended", self, "did_finish_drag_background_music_option_slider")
-	exitButton.grab_focus()
-
-func did_finish_drag_sfx_option_slider(_value_changed):
-	pass
+	configure_ui()
 
 func did_move_sfx_option_slider(new_value):
 	sfxOptionValueLabel.text = str(new_value)
-
-func did_finish_drag_background_music_option_slider(_value_changed):
-	pass
+	SettingsManager.update_sfx_volume(new_value)
 
 func did_move_background_music_option_slider(new_value):
 	backgroundMusicValueLabel.text = str(new_value)
+	SettingsManager.update_background_music_volume(new_value)
 
 func on_quit_pressed():
 	queue_free()
 	emit_signal("back_pressed")
+
+func configure_ui():
+	var sfx_value = SettingsManager.settings.sfx_volume
+	var background_music_value = SettingsManager.settings.background_music_volume
+	
+	sfxOptionSlider.value = sfx_value
+	backgroundMusicOptionSlider.value = background_music_value
+	
+	sfxOptionValueLabel.text = str(sfx_value)
+	backgroundMusicValueLabel.text = str(background_music_value)
+	
+	exitButton.grab_focus()

@@ -20,7 +20,7 @@ color = Color( 0.0941176, 0.0784314, 0.168627, 0.509804 )
 
 [node name="SettingsMarginContainer" type="MarginContainer" parent="MainMarginContainer"]
 margin_right = 175.0
-margin_bottom = 170.0
+margin_bottom = 206.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_constants/margin_top = 60
@@ -30,7 +30,7 @@ custom_constants/margin_left = 25
 margin_left = 25.0
 margin_top = 60.0
 margin_right = 175.0
-margin_bottom = 170.0
+margin_bottom = 206.0
 custom_constants/separation = 30
 
 [node name="Label" type="Label" parent="MainMarginContainer/SettingsMarginContainer/ContentVBoxContainer"]
@@ -42,17 +42,24 @@ text = "Звук"
 [node name="ButtonsVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/SettingsMarginContainer/ContentVBoxContainer"]
 margin_top = 56.0
 margin_right = 150.0
-margin_bottom = 110.0
+margin_bottom = 146.0
 rect_min_size = Vector2( 150, 0 )
 
-[node name="SFXOptionHBoxContainer" type="HBoxContainer" parent="MainMarginContainer/SettingsMarginContainer/ContentVBoxContainer/ButtonsVBoxContainer"]
+[node name="SFXLabel" type="Label" parent="MainMarginContainer/SettingsMarginContainer/ContentVBoxContainer/ButtonsVBoxContainer"]
 margin_right = 150.0
-margin_bottom = 16.0
+margin_bottom = 14.0
+text = "Звуковые эффекты"
+
+[node name="SFXOptionHBoxContainer" type="HBoxContainer" parent="MainMarginContainer/SettingsMarginContainer/ContentVBoxContainer/ButtonsVBoxContainer"]
+margin_top = 18.0
+margin_right = 150.0
+margin_bottom = 34.0
 
 [node name="SFXOptionHSlider" type="HSlider" parent="MainMarginContainer/SettingsMarginContainer/ContentVBoxContainer/ButtonsVBoxContainer/SFXOptionHBoxContainer"]
 margin_right = 126.0
 margin_bottom = 16.0
 size_flags_horizontal = 3
+max_value = 10.0
 
 [node name="SFXOptionValueLabel" type="Label" parent="MainMarginContainer/SettingsMarginContainer/ContentVBoxContainer/ButtonsVBoxContainer/SFXOptionHBoxContainer"]
 margin_left = 130.0
@@ -63,15 +70,22 @@ rect_min_size = Vector2( 20, 0 )
 text = "0"
 align = 1
 
-[node name="BackgroundMusicOptionVBoxContainer" type="HBoxContainer" parent="MainMarginContainer/SettingsMarginContainer/ContentVBoxContainer/ButtonsVBoxContainer"]
-margin_top = 20.0
+[node name="BackgroundMusicLabel" type="Label" parent="MainMarginContainer/SettingsMarginContainer/ContentVBoxContainer/ButtonsVBoxContainer"]
+margin_top = 38.0
 margin_right = 150.0
-margin_bottom = 36.0
+margin_bottom = 52.0
+text = "Музыка"
+
+[node name="BackgroundMusicOptionVBoxContainer" type="HBoxContainer" parent="MainMarginContainer/SettingsMarginContainer/ContentVBoxContainer/ButtonsVBoxContainer"]
+margin_top = 56.0
+margin_right = 150.0
+margin_bottom = 72.0
 
 [node name="BackgroundMusicOptionHSlider" type="HSlider" parent="MainMarginContainer/SettingsMarginContainer/ContentVBoxContainer/ButtonsVBoxContainer/BackgroundMusicOptionVBoxContainer"]
 margin_right = 126.0
 margin_bottom = 16.0
 size_flags_horizontal = 3
+max_value = 10.0
 
 [node name="BackgroundMusicValueLabel" type="Label" parent="MainMarginContainer/SettingsMarginContainer/ContentVBoxContainer/ButtonsVBoxContainer/BackgroundMusicOptionVBoxContainer"]
 margin_left = 130.0
@@ -85,9 +99,9 @@ align = 1
 [node name="ExitButton" parent="MainMarginContainer/SettingsMarginContainer/ContentVBoxContainer/ButtonsVBoxContainer" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 40.0
+margin_top = 76.0
 margin_right = 24.0
-margin_bottom = 54.0
+margin_bottom = 90.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "exit"
