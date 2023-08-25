@@ -2,6 +2,8 @@ extends CanvasLayer
 
 signal back_pressed()
 
+onready var popAudioPlayer = $Audio/PopRandomAudioStreamPlayer
+
 onready var sfxOptionSlider = $MainMarginContainer/SettingsMarginContainer/ContentVBoxContainer/ButtonsVBoxContainer/SFXOptionHBoxContainer/SFXOptionHSlider
 onready var sfxOptionValueLabel = $MainMarginContainer/SettingsMarginContainer/ContentVBoxContainer/ButtonsVBoxContainer/SFXOptionHBoxContainer/SFXOptionValueLabel
 
@@ -17,10 +19,12 @@ func _ready():
 	configure_ui()
 
 func did_move_sfx_option_slider(new_value):
+	popAudioPlayer.play()
 	sfxOptionValueLabel.text = str(new_value)
 	SettingsManager.update_sfx_volume(new_value)
 
 func did_move_background_music_option_slider(new_value):
+	popAudioPlayer.play()
 	backgroundMusicValueLabel.text = str(new_value)
 	SettingsManager.update_background_music_volume(new_value)
 
@@ -38,4 +42,4 @@ func configure_ui():
 	sfxOptionValueLabel.text = str(sfx_value)
 	backgroundMusicValueLabel.text = str(background_music_value)
 	
-	exitButton.grab_focus()
+	#exitButton.grab_focus_without_animation()
