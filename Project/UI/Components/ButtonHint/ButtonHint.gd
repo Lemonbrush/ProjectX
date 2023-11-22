@@ -1,12 +1,14 @@
-extends Control
+extends MarginContainer
 
 export (String) var button_action = ""
+export (String) var text = ""
 
 onready var label = $PanelContainer/MarginContainer/Label
 onready var appear_animator = $ButtonHintAppearAnimator
 
 func _ready():
-	setup_hint()
+	setup_ui()
+	#setup_hint()
 
 func show():
 	appear_animator.show()
@@ -19,6 +21,15 @@ func instant_show():
 
 func instant_hide():
 	appear_animator.instant_hide()
+
+func set_text(text):
+	if text:
+		self.text = text
+		return
+	self.text = "?"
+
+func setup_ui():
+	label.text = text
 
 func set_hint_action(new_button_action):
 	button_action = new_button_action
