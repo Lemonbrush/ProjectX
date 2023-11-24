@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Assets/Levels/Start_gate_location/World_objects/LoveGate/LoveGateLeft.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/Start_gate_location/World_objects/LoveGate/LoveGateRight.png" type="Texture" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://Project/WorldObjects/Dialog/AbstractDialogInteractionObject/AbstractDialogInteractionObject.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Project/WorldObjects/Technical/InteractionController/InteractionController.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Project/WorldObjects/Dialog/DialogUIComponents/InteractionPopup/InteractionPopup.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Project/Resources/Shaders/StarsShader.tres" type="Shader" id=7]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/MonoSoundAlphabetVoiceModel/LetterSoundsMi.tres" type="Resource" id=8]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.gd" type="Script" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Open"
@@ -91,6 +94,13 @@ tracks/1/keys = {
 }
 
 [sub_resource type="ShaderMaterial" id=6]
+shader = ExtResource( 7 )
+shader_param/bg_color = null
+
+[sub_resource type="Resource" id=8]
+script = ExtResource( 9 )
+letter_sounds_resource = ExtResource( 8 )
+voice_mode = 3
 
 [node name="Gates" type="Node2D"]
 script = ExtResource( 3 )
@@ -121,8 +131,10 @@ texture = ExtResource( 2 )
 
 [node name="InteractionPopup" parent="." instance=ExtResource( 6 )]
 position = Vector2( 0, -22 )
-labelText = "войти"
+labelText = "Войти"
 
 [node name="GatesSign" parent="." instance=ExtResource( 4 )]
+position = Vector2( -16, 0 )
 dialogId = "startGateGatesTextSign"
-label_text = "interaction"
+label_text = "inspect"
+voice_generator_configuration_file = SubResource( 8 )

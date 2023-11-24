@@ -64,6 +64,7 @@ func throw_error(text):
 func get_next_dialog_model():
 	if dialogManager == null:
 		dialogManager = DialogService.new(dialog_id)
-		return dialogManager.get_next_dialog("Initial")
+		var initial_phrase = dialogManager.get_next_dialog("Initial")
+		return initial_phrase
 	else:
 		return dialogManager.get_next_dialog()

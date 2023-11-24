@@ -24,8 +24,9 @@ func get_next_dialog(phrase_id = null):
 		var next_phrase_id = get_next_phrase_id()
 		if next_phrase_id == null:
 			return
-			
-		return get_validated_phrase(current_dialog[next_phrase_id])
+		
+		var phrase_for_validation = current_dialog[next_phrase_id]
+		return get_validated_phrase(phrase_for_validation)
 	
 func get_next_dialog_by_option(button_option):
 	for response in current_dialog[current_phrase_id]["responses"]:
