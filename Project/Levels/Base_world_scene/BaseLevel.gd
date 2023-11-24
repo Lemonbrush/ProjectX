@@ -66,7 +66,7 @@ func stop_background_music():
 func set_background_music_volumeDB(volumeDB):
 	MusicPlayer.set_background_music_volumeDB(volumeDB)
 
-func reset_background_music_volumeDB(volumeDB):
+func reset_background_music_volumeDB():
 	set_background_music_volumeDB(0.0)
 
 func configure_background_music():

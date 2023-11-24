@@ -372,8 +372,8 @@ tracks/5/keys = {
 "args": [ -30.0 ],
 "method": "set_background_music_volumeDB"
 }, {
-"args": [ 0.0 ],
-"method": "set_background_music_volumeDB"
+"args": [  ],
+"method": "reset_background_music_volumeDB"
 } ]
 }
 
