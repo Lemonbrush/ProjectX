@@ -6,7 +6,7 @@ export(String) var nextDoorName = "-"
 onready var interactionController = $InteractionController
 onready var interactionPopup = $InteractionPopup
 onready var animationPlayer = $AnimationPlayer
-onready var gateSign = $GatesText
+onready var gateSign = $GatesSign
 
 export var isAbleToTransition = false
 
@@ -20,6 +20,8 @@ func _ready():
 	if GameEventConstants.constants.has("is_start_gate_open") and GameEventConstants.constants["is_start_gate_open"]:
 		animationPlayer.play("Opened")
 		set_gate_opened()
+	else:
+		gateSign.enable_interaction()
 
 func on_open_gates_call():
 	GameEventConstants.set_constant("is_start_gate_open", true)
@@ -27,6 +29,7 @@ func on_open_gates_call():
 	set_gate_opened()
 
 func set_gate_opened():
+	gateSign.disable_interaction()
 	gateSign.visible = false
 	interactionController.disabled(false)
 	

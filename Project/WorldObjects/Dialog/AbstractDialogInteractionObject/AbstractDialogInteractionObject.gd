@@ -29,3 +29,9 @@ func finish_talking():
 func set_dialog_id(newDialogId):
 	dialogId = newDialogId
 	dialogTextBoxController.set_dialog_id(newDialogId)
+
+func disable_interaction():
+	interactionController.disabled(true)
+
+func enable_interaction():
+	interactionController.disabled(false)
