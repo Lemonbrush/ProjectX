@@ -274,7 +274,7 @@ bus = "SFX"
 
 [node name="ImpactSFXAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 9 )
-volume_db = -20.0
+volume_db = -15.0
 pitch_scale = 0.8
 bus = "SFX"
 

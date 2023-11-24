@@ -10,15 +10,15 @@ script = ExtResource( 4 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = 5.0
+volume_db = -14.0
 bus = "SFX"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
-volume_db = 5.0
+volume_db = -14.0
 bus = "SFX"
 
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
-volume_db = 5.0
+volume_db = -14.0
 bus = "SFX"
