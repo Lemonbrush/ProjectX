@@ -12,3 +12,6 @@ func play():
 
 func stop():
 	audioStreamPlayer.stop()
+
+func set_background_music_volumeDB(volumeDB):
+	audioStreamPlayer.set_volume_db(volumeDB)
