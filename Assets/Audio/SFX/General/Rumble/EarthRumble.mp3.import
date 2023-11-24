@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/EarthRumble.mp3-7e887242a98208ba9996d159bd18f972.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/Rumble/EarthRumble.mp3"
+dest_files=[ "res://.import/EarthRumble.mp3-7e887242a98208ba9996d159bd18f972.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

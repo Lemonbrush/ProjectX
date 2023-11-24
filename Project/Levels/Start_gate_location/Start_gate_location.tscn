@@ -284,7 +284,7 @@ tracks/13/keys = {
 
 [sub_resource type="Animation" id=35]
 resource_name = "Gate_opening_cut_scene"
-length = 5.0
+length = 8.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera2D:position")
 tracks/0/interp = 2
@@ -304,7 +304,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 5 ),
+"times": PoolRealArray( 0, 8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -321,7 +321,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 5 ),
+"times": PoolRealArray( 8 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -335,7 +335,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 2 ),
+"times": PoolRealArray( 2.6 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -349,7 +349,7 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 1.9, 4.3 ),
+"times": PoolRealArray( 2.5, 6.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -357,6 +357,23 @@ tracks/4/keys = {
 }, {
 "args": [  ],
 "method": "_stop_screen_shake"
+} ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 1.2, 7.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ -30.0 ],
+"method": "set_background_music_volumeDB"
+}, {
+"args": [ 0.0 ],
+"method": "set_background_music_volumeDB"
 } ]
 }
 
@@ -1235,7 +1252,6 @@ anims/RESET = SubResource( 79 )
 anims/open_transition = SubResource( 34 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 7 )]
-position = Vector2( -674, -417 )
 backgroundColor = Color( 0.403922, 0.596078, 0.741176, 1 )
 
 [node name="Stars" parent="Camera2D" instance=ExtResource( 15 )]
@@ -1672,7 +1688,7 @@ texture = ExtResource( 22 )
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 5 )]
 modulate = Color( 0.631373, 0.631373, 0.631373, 1 )
-position = Vector2( -672, -74 )
+position = Vector2( 16, -590 )
 collision_mask = 124
 
 [node name="Sprite" parent="Player/Body" index="0"]
