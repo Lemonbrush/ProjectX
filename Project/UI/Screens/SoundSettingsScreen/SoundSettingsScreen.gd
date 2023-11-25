@@ -20,12 +20,12 @@ func _ready():
 
 func did_move_sfx_option_slider(new_value):
 	popAudioPlayer.play()
-	sfxOptionValueLabel.text = str(new_value)
+	sfxOptionValueLabel.text = format_setting_value(new_value)
 	SettingsManager.update_sfx_volume(new_value)
 
 func did_move_background_music_option_slider(new_value):
 	popAudioPlayer.play()
-	backgroundMusicValueLabel.text = str(new_value)
+	backgroundMusicValueLabel.text = format_setting_value(new_value)
 	SettingsManager.update_background_music_volume(new_value)
 
 func on_quit_pressed():
@@ -39,7 +39,10 @@ func configure_ui():
 	sfxOptionSlider.value = sfx_value
 	backgroundMusicOptionSlider.value = background_music_value
 	
-	sfxOptionValueLabel.text = str(sfx_value)
-	backgroundMusicValueLabel.text = str(background_music_value)
+	sfxOptionValueLabel.text = format_setting_value(sfx_value)
+	backgroundMusicValueLabel.text = format_setting_value(background_music_value)
 	
 	exitButton.grab_focus_without_animation()
+
+func format_setting_value(setting_value):
+	return str(setting_value * 50)
