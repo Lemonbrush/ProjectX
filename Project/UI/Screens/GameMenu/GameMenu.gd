@@ -15,6 +15,7 @@ onready var logo_animation_player = $AnimationPlayer
 
 var optionsMenuScene = preload("res://Project/UI/Screens/OptionsMenu/OptionsMenu.tscn")
 var changelogMenuScene = preload("res://Project/UI/Screens/DevelopmentLogMenu/DevelopmentLogMenu.tscn")
+var transition_background_music = preload("res://Assets/Audio/SFX/General/Jingles/red_star_magic_planet_first_part.wav")
 
 func _ready():
 	Global.is_game_loaded = false
@@ -90,8 +91,8 @@ func on_options_back_pressed():
 func play_background_music():
 	MusicPlayer.play_stream(background_music)
 
-func smooth_stop_music():
-	MusicPlayer.smooth_stop_music()
+func play_transition_music():
+	MusicPlayer.smooth_music_change(transition_background_music)
 
 func stop_background_music():
 	MusicPlayer.stop()
