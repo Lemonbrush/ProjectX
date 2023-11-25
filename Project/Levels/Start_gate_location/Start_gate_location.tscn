@@ -1271,7 +1271,6 @@ shader_param/seed = 10.0
 position = Vector2( -3, -62 )
 script = ExtResource( 10 )
 background_music = ExtResource( 40 )
-play_background_music_on_ready = false
 
 [node name="Audio" type="Node" parent="."]
 
@@ -1307,7 +1306,7 @@ anims/RESET = SubResource( 79 )
 anims/open_transition = SubResource( 34 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 7 )]
-position = Vector2( -674, -97 )
+position = Vector2( -674, -417 )
 backgroundColor = Color( 0.403922, 0.596078, 0.741176, 1 )
 
 [node name="Stars" parent="Camera2D" instance=ExtResource( 15 )]
@@ -1719,7 +1718,8 @@ pause_mode = 2
 
 [node name="SofaLandingSprite" type="Sprite" parent="ForegroundWorldObjects/SofaLandingIntro"]
 modulate = Color( 0.631373, 0.631373, 0.631373, 1 )
-position = Vector2( -673, -90 )
+position = Vector2( -673, -585 )
+rotation = -0.436332
 texture = ExtResource( 21 )
 hframes = 12
 vframes = 3
@@ -1743,7 +1743,7 @@ texture = ExtResource( 22 )
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 5 )]
 modulate = Color( 0.631373, 0.631373, 0.631373, 1 )
-position = Vector2( 23, -568 )
+position = Vector2( -672, -74 )
 collision_mask = 124
 
 [node name="Sprite" parent="Player/Body" index="0"]
@@ -2170,6 +2170,7 @@ position = Vector2( 335.5, 319 )
 shape = SubResource( 41 )
 
 [node name="GodLights" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 material = SubResource( 66 )
 margin_left = -865.0
 margin_top = -697.0
