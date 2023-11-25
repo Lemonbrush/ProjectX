@@ -1742,7 +1742,7 @@ texture = ExtResource( 22 )
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 5 )]
 modulate = Color( 0.631373, 0.631373, 0.631373, 1 )
-position = Vector2( -672, -74 )
+position = Vector2( 23, -568 )
 collision_mask = 124
 
 [node name="Sprite" parent="Player/Body" index="0"]
