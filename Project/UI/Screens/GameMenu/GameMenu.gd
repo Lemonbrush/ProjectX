@@ -90,5 +90,8 @@ func on_options_back_pressed():
 func play_background_music():
 	MusicPlayer.play_stream(background_music)
 
+func smooth_stop_music():
+	MusicPlayer.smooth_stop_music()
+
 func stop_background_music():
 	MusicPlayer.stop()
