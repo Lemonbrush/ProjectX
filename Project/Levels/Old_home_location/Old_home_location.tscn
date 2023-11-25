@@ -2651,6 +2651,23 @@ tracks/16/keys = {
 "method": "play"
 } ]
 }
+tracks/17/type = "method"
+tracks/17/path = NodePath("..")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ -12.0 ],
+"method": "set_background_music_volumeDB"
+}, {
+"args": [ null ],
+"method": "reset_background_music_volumeDB"
+} ]
+}
 
 [sub_resource type="Animation" id=87]
 length = 0.001
@@ -3090,18 +3107,24 @@ play_background_music_on_ready = false
 
 [node name="SofaJumpingOutOfBlanketPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroFirstPart/SFX"]
 stream = ExtResource( 30 )
+bus = "SFX"
 
 [node name="PortalAppearingPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroFirstPart/SFX"]
 stream = ExtResource( 31 )
+volume_db = -5.537
+bus = "SFX"
 
 [node name="CosmicSoundPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroFirstPart/SFX"]
 stream = ExtResource( 29 )
+bus = "SFX"
 
 [node name="CosmicLasersPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroFirstPart/SFX"]
 stream = ExtResource( 27 )
+bus = "SFX"
 
 [node name="BackgroundRainPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroFirstPart/SFX"]
 stream = ExtResource( 28 )
+bus = "SFX"
 
 [node name="NoratorAudioStreamPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroFirstPart"]
 pause_mode = 2
@@ -3114,6 +3137,8 @@ stream = ExtResource( 33 )
 [node name="IntroMusicAudioStreamPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroFirstPart"]
 pause_mode = 2
 stream = ExtResource( 26 )
+volume_db = -5.0
+bus = "Music"
 
 [node name="IntroSecondPart" type="Node" parent="MusicPlayer"]
 
@@ -3122,6 +3147,7 @@ stream = ExtResource( 26 )
 [node name="SofaEnteringPortalPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroSecondPart/SFX"]
 pause_mode = 2
 stream = ExtResource( 32 )
+bus = "SFX"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 3 )

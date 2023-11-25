@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/scrampunk__charm.ogg-bd820c160fe6e5d3d1bf49bb4d960ee3.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/Jingles/scrampunk__charm.ogg"
+dest_files=[ "res://.import/scrampunk__charm.ogg-bd820c160fe6e5d3d1bf49bb4d960ee3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
