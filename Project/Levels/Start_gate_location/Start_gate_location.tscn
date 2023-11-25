@@ -1271,6 +1271,7 @@ shader_param/seed = 10.0
 position = Vector2( -3, -62 )
 script = ExtResource( 10 )
 background_music = ExtResource( 40 )
+play_background_music_on_ready = false
 
 [node name="Audio" type="Node" parent="."]
 
