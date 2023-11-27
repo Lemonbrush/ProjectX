@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/371516__mrthenoronha__space-game-theme-loop.wav-ba5e1aae401045f3b35b6bebc7ff7889.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Background_music/371516__mrthenoronha__space-game-theme-loop.wav"
+dest_files=[ "res://.import/371516__mrthenoronha__space-game-theme-loop.wav-ba5e1aae401045f3b35b6bebc7ff7889.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
