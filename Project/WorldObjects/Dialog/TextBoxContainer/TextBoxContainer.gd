@@ -24,6 +24,9 @@ func set_label_text_percent_visible(new_percent):
 	label.percent_visible = new_percent
 
 func set_label_text(new_text):
+	if new_text == null:
+		return
+	
 	label.text = new_text
 	
 	if label.text == "":

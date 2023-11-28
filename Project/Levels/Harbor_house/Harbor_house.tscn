@@ -187,7 +187,7 @@ color_ramp = SubResource( 102 )
 [sub_resource type="Resource" id=281]
 script = ExtResource( 68 )
 letter_sounds_resource = ExtResource( 70 )
-voice_mode = 3
+voice_mode = 4
 
 [sub_resource type="Resource" id=223]
 resource_local_to_scene = true
@@ -930,7 +930,6 @@ shader_param/color_over = Color( 0, 0, 0, 1 )
 [node name="Harbor_house" type="Node2D"]
 script = ExtResource( 1 )
 background_music = ExtResource( 71 )
-play_background_music_on_ready = false
 
 [node name="GameSpecs" parent="." instance=ExtResource( 63 )]
 
@@ -2840,7 +2839,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 4 )]
-position = Vector2( -475, -227 )
+position = Vector2( -586, -153 )
 
 [node name="WaterSurface" type="Node2D" parent="."]
 pause_mode = 2

@@ -81,7 +81,7 @@ func did_receive_response_dialog(text, responses):
 	voiceGenerator.reset()
 	if text:
 		voiceGenerator.play(text)
-	dialogTextBox.set_label_text(text)
+		dialogTextBox.set_label_text(text)
 	dialogTextBox.show_button_options(responses)
 
 func did_receive_error(text):
