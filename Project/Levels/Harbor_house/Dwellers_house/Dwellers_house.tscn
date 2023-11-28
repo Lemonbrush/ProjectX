@@ -271,38 +271,24 @@ nextDoorName = "DwellersHouseDoor"
 
 [node name="Crate2" parent="Middle_world_objects/Desctructable_objects/Crates" index="0" instance=ExtResource( 5 )]
 position = Vector2( 79, -7 )
-collision_layer = 3
-collision_mask = 3
 
 [node name="Crate3" parent="Middle_world_objects/Desctructable_objects/Crates" index="1" instance=ExtResource( 5 )]
 position = Vector2( 81, -28 )
-collision_layer = 3
-collision_mask = 3
 
 [node name="Crate4" parent="Middle_world_objects/Desctructable_objects/Crates" index="2" instance=ExtResource( 5 )]
 position = Vector2( 27, -42 )
-collision_layer = 3
-collision_mask = 3
 
 [node name="Crate5" parent="Middle_world_objects/Desctructable_objects/Crates" index="3" instance=ExtResource( 5 )]
 position = Vector2( 44, -42 )
-collision_layer = 3
-collision_mask = 3
 
 [node name="Crate6" parent="Middle_world_objects/Desctructable_objects/Crates" index="4" instance=ExtResource( 5 )]
 position = Vector2( 44, -7 )
-collision_layer = 3
-collision_mask = 3
 
 [node name="Crate8" parent="Middle_world_objects/Desctructable_objects/Crates" index="5" instance=ExtResource( 5 )]
 position = Vector2( 34, -24 )
-collision_layer = 3
-collision_mask = 3
 
 [node name="Crate7" parent="Middle_world_objects/Desctructable_objects/Crates" index="6" instance=ExtResource( 5 )]
 position = Vector2( 61, -7 )
-collision_layer = 3
-collision_mask = 3
 
 [node name="Crate" parent="Middle_world_objects/Desctructable_objects/Crates" index="7" instance=ExtResource( 7 )]
 position = Vector2( 27, -7 )
@@ -377,7 +363,7 @@ visible = false
 
 [node name="Sleeping_dweller_sign" parent="Middle_world_objects" index="5" instance=ExtResource( 21 )]
 position = Vector2( -193, 0 )
-texts_array = [ "Ми-ми-ми...", "Сосисочки...", "Много сосисочек...", "Много сосисочек падает с неба" ]
+dialogId = "harborHouse_dwellersHouse_sleepingDwellerSign"
 
 [node name="Sprite" parent="Middle_world_objects/Sleeping_dweller_sign" index="0"]
 visible = false
@@ -594,7 +580,8 @@ __meta__ = {
 [editable path="Middle_world_objects/Dwellers/AbstractDweller"]
 [editable path="Middle_world_objects/Dwellers/AbstractDweller/Body/InteractionController"]
 [editable path="Middle_world_objects/Sleeping_dweller_sign"]
-[editable path="Middle_world_objects/Sleeping_dweller_sign/InteractionController"]
+[editable path="Middle_world_objects/Sleeping_dweller_sign/AbstractDialogInteractionObject"]
+[editable path="Middle_world_objects/Sleeping_dweller_sign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="Collisions/PassTrough/PassThroughBody14"]
 [editable path="Collisions/PassTrough/PassThroughBody17"]
 [editable path="Collisions/PassTrough/PassThroughBody18"]
