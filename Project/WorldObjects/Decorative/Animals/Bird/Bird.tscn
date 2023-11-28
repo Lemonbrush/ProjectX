@@ -12,7 +12,7 @@
 [ext_resource path="res://Assets/Audio/SFX/General/Animals/Bird/Squick/squick_3.wav" type="AudioStream" id=10]
 [ext_resource path="res://Assets/Audio/SFX/General/Animals/Bird/Squick/squick_2.mp3" type="AudioStream" id=11]
 [ext_resource path="res://Assets/Audio/SFX/General/Animals/Bird/Squick/squick_1.wav" type="AudioStream" id=12]
-[ext_resource path="res://Project/WorldObjects/Technical/VisibilityChecker/VisibilityChecker.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Project/WorldObjects/Decorative/Animals/Bird/VisibilityNotifier2D.gd" type="Script" id=13]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Fly"
@@ -158,10 +158,9 @@ extents = Vector2( 22, 10.5 )
 script = ExtResource( 2 )
 flyingBirdScene = ExtResource( 3 )
 
-[node name="VisibilityChecker" parent="." instance=ExtResource( 13 )]
-visible = false
-position = Vector2( 2.38419e-07, -5 )
-scale = Vector2( 0.95, 0.95 )
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 0, -5 )
+script = ExtResource( 13 )
 
 [node name="Audio" type="Node2D" parent="."]
 
