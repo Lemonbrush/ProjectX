@@ -36,3 +36,9 @@ func lower_background_music():
 
 func reset_background_music():
 	MusicPlayer.reset_background_music_volumeDB()
+
+func focus_camera_on_guardian():
+	EventBus.focus_camera_on_group_node_named("GuardianStatueFocusPoint")
+
+func reset_camera_focus():
+	EventBus.reset_camera_focus()

@@ -179,6 +179,23 @@ tracks/11/keys = {
 "method": "reset_background_music"
 } ]
 }
+tracks/12/type = "method"
+tracks/12/path = NodePath(".")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "focus_camera_on_guardian"
+}, {
+"args": [  ],
+"method": "reset_camera_focus"
+} ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "Idle"
@@ -405,6 +422,9 @@ visible = false
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0, -172 )
 texture = ExtResource( 6 )
+
+[node name="FocusPointPosition2D" type="Position2D" parent="." groups=["GuardianStatueFocusPoint"]]
+position = Vector2( 0, -94 )
 
 [editable path="DialogController"]
 [editable path="DialogController/InteractionController"]
