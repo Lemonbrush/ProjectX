@@ -137,7 +137,7 @@ tracks/6/keys = {
 
 [sub_resource type="Animation" id=101]
 resource_name = "Platforms_lift_cutscene"
-length = 10.0
+length = 12.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera2D:position")
 tracks/0/interp = 1
@@ -145,7 +145,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 1, 4.1, 5.1, 10.1 ),
+"times": PoolRealArray( 1, 5.9, 7, 12 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1057, 10 ), Vector2( 1057, 10 ), Vector2( -357, 54 ), Vector2( -357, 54 ) ]
@@ -157,7 +157,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1.7, 3.3 ),
+"times": PoolRealArray( 1.7, 5.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -1, -45 ), Vector2( -1, -61 ) ]
@@ -169,7 +169,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 1.9, 3 ),
+"times": PoolRealArray( 1.9, 4.9 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 119, -17 ), Vector2( 119, -61 ) ]
@@ -181,7 +181,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 1.4, 3.6 ),
+"times": PoolRealArray( 1.4, 5.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 220, 31 ), Vector2( 220, -61 ) ]
@@ -193,7 +193,7 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 1.7, 3.2 ),
+"times": PoolRealArray( 1.7, 5.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 325, 85 ), Vector2( 325, -61 ) ]
@@ -205,7 +205,7 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 6.1, 8 ),
+"times": PoolRealArray( 0, 8, 9.9 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -431, 980 ), Vector2( -431, 980 ), Vector2( -431, 252 ) ]
@@ -217,7 +217,7 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 6, 8.1 ),
+"times": PoolRealArray( 7.9, 10 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [ null, null, null, null ],
@@ -234,7 +234,7 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0, 10 ),
+"times": PoolRealArray( 0, 12 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -251,7 +251,7 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0, 10 ),
+"times": PoolRealArray( 0, 12 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -1481,7 +1481,7 @@ anims/RESET = SubResource( 86 )
 [node name="Interactive_platforms" type="Node2D" parent="Cave_objects/Middle_world_objects/Moving_platforms" index="1"]
 
 [node name="Interactive_platform_1" type="Node2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms" index="0"]
-position = Vector2( -1, -45.5898 )
+position = Vector2( -1, -45 )
 
 [node name="Sprite" type="Sprite" parent="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_1" index="0"]
 position = Vector2( 906, 74 )
@@ -1497,7 +1497,7 @@ shape = SubResource( 18 )
 position = Vector2( 906, 52 )
 
 [node name="Interactive_platform_2" type="Node2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms" index="1"]
-position = Vector2( 119, -22.9174 )
+position = Vector2( 119, -17 )
 
 [node name="Sprite" type="Sprite" parent="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_2" index="0"]
 position = Vector2( 906, 74 )
@@ -1529,7 +1529,7 @@ shape = SubResource( 18 )
 position = Vector2( 906, 52 )
 
 [node name="Interactive_platform_4" type="Node2D" parent="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms" index="3"]
-position = Vector2( 325, 79.2033 )
+position = Vector2( 325, 85 )
 
 [node name="Sprite" type="Sprite" parent="Cave_objects/Middle_world_objects/Moving_platforms/Interactive_platforms/Interactive_platform_4" index="0"]
 position = Vector2( 906, 74 )
