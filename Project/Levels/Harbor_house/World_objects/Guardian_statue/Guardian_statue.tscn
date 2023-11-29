@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Assets/Levels/Harbor_house/World_objects/Guardian_statue-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Effects/Particles/particles.png" type="Texture" id=2]
@@ -6,10 +6,14 @@
 [ext_resource path="res://Project/Levels/Harbor_house/World_objects/Guardian_statue/Guardian_statue.gd" type="Script" id=4]
 [ext_resource path="res://Project/WorldObjects/Dialog/DialogController/DialogController.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Levels/Harbor_house/Guardian_blush.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Audio/SFX/General/Shine/opticaillusions__jewel-glitter.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Audio/SFX/General/swoosh/clean-fast-swooshaiff.mp3" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Audio/SFX/General/crash/rock-smash/rock-smash-2.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Audio/SFX/General/Rumble/EarthRumble.mp3" type="AudioStream" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Act"
-length = 5.0
+length = 10.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Guardian_statue_sprite:frame")
 tracks/0/interp = 1
@@ -83,6 +87,114 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath("Audio/SwingAudioStreamPlayer")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 3.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/7/type = "method"
+tracks/7/path = NodePath("Audio/SwordHitAudioStreamPlayer")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 3.8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/8/type = "method"
+tracks/8/path = NodePath("Audio/SparklesAudioStreamPlayer")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 3.3, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Audio/SparklesAudioStreamPlayer:volume_db")
+tracks/9/interp = 2
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 3.3, 4.2, 9, 10 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -80.0, 0.0, 0.0, -80.0 ]
+}
+tracks/10/type = "method"
+tracks/10/path = NodePath("Audio/RumbleAudioStreamPlayer")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 3, 3.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/11/type = "method"
+tracks/11/path = NodePath(".")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "lower_background_music"
+}, {
+"args": [  ],
+"method": "reset_background_music"
+} ]
+}
+tracks/12/type = "method"
+tracks/12/path = NodePath(".")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "focus_camera_on_guardian"
+}, {
+"args": [  ],
+"method": "reset_camera_focus"
+} ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -229,6 +341,31 @@ extents = Vector2( 81, 10 )
 [node name="Guardian_statue" type="Node2D"]
 script = ExtResource( 4 )
 
+[node name="Audio" type="Node" parent="."]
+
+[node name="SwingAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 8 )
+pitch_scale = 0.5
+bus = "SFX"
+
+[node name="SwordHitAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 9 )
+bus = "SFX"
+
+[node name="SparklesAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 7 )
+volume_db = 6.59722
+bus = "SFX"
+
+[node name="RumbleAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 10 )
+volume_db = 5.0
+pitch_scale = 2.0
+bus = "SFX"
+
+[node name="BackgroundMusicStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
+bus = "Music"
+
 [node name="Guardian_statue_sprite" type="Sprite" parent="."]
 position = Vector2( -1, -104 )
 texture = ExtResource( 1 )
@@ -285,6 +422,9 @@ visible = false
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0, -172 )
 texture = ExtResource( 6 )
+
+[node name="FocusPointPosition2D" type="Position2D" parent="." groups=["GuardianStatueFocusPoint"]]
+position = Vector2( 0, -94 )
 
 [editable path="DialogController"]
 [editable path="DialogController/InteractionController"]

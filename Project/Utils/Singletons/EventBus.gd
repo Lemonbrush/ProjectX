@@ -55,6 +55,11 @@ signal lighthouse_mystic_dweller_finish_quest_cutscene()
 signal show_cauldron_giving_empty_jur()
 signal show_harvest_kiss_spirit_cutscene()
 
+signal did_figure_out_guardian_secret()
+
+signal focus_camera_on_group_node_named(name_string)
+signal reset_camera_focus()
+
 func start_shake_screen(duration = 0.2, frequency = 16, amplitude = 2, infinity = true):
 	emit_signal("start_shake_screen", duration, frequency, amplitude, infinity)
 
@@ -175,3 +180,12 @@ func show_cauldron_giving_empty_jur():
 
 func show_harvest_kiss_spirit_cutscene():
 	emit_signal("show_harvest_kiss_spirit_cutscene")
+
+func did_figure_out_guardian_secret():
+	emit_signal("did_figure_out_guardian_secret")
+
+func focus_camera_on_group_node_named(new_target_name):
+	emit_signal("focus_camera_on_group_node_named", new_target_name)
+
+func reset_camera_focus():
+	emit_signal("reset_camera_focus")

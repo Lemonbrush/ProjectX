@@ -67,11 +67,12 @@ func set_background_music_volumeDB(volumeDB):
 	MusicPlayer.set_background_music_volumeDB(volumeDB)
 
 func reset_background_music_volumeDB():
-	set_background_music_volumeDB(0.0)
+	MusicPlayer.reset_background_music_volumeDB()
 
 func configure_background_music():
 	if play_background_music_on_ready:
 		play_background_music()
+		MusicPlayer.reset_background_music_volumeDB()
 
 func configure_camera():
 	camera.follow_player = dynamic_camera

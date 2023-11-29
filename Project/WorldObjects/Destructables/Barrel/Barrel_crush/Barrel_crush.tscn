@@ -222,6 +222,7 @@ anim_offset_random = 1.0
 
 [node name="CrashAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 9 )
+bus = "SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"
