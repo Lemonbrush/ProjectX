@@ -13,7 +13,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "Act"
-length = 20.0
+length = 10.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Guardian_statue_sprite:frame")
 tracks/0/interp = 1
@@ -123,7 +123,7 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 3.8, 10 ),
+"times": PoolRealArray( 3.3, 10 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [ 0.0 ],
@@ -140,7 +140,7 @@ tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 3.8, 4.7, 9, 10 ),
+"times": PoolRealArray( 3.3, 4.2, 9, 10 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ -80.0, 0.0, 0.0, -80.0 ]
@@ -160,6 +160,23 @@ tracks/10/keys = {
 }, {
 "args": [  ],
 "method": "stop"
+} ]
+}
+tracks/11/type = "method"
+tracks/11/path = NodePath(".")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "lower_background_music"
+}, {
+"args": [  ],
+"method": "reset_background_music"
 } ]
 }
 
@@ -312,18 +329,25 @@ script = ExtResource( 4 )
 [node name="SwingAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 8 )
 pitch_scale = 0.5
+bus = "SFX"
 
 [node name="SwordHitAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 9 )
+bus = "SFX"
 
 [node name="SparklesAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 7 )
-volume_db = -80.0
+volume_db = 6.59722
+bus = "SFX"
 
 [node name="RumbleAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 10 )
 volume_db = 5.0
 pitch_scale = 2.0
+bus = "SFX"
+
+[node name="BackgroundMusicStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
+bus = "Music"
 
 [node name="Guardian_statue_sprite" type="Sprite" parent="."]
 position = Vector2( -1, -104 )

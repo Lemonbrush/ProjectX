@@ -30,3 +30,9 @@ func lift_island():
 func configure_constants():
 	var did_say_where_special_flower_is_constant = GameEventConstants.get_constant("did_say_where_special_flower_is")
 	dialogController.set_player_interaction(did_say_where_special_flower_is_constant)
+
+func lower_background_music():
+	MusicPlayer.set_background_music_volumeDB(-20.0)
+
+func reset_background_music():
+	MusicPlayer.reset_background_music_volumeDB()

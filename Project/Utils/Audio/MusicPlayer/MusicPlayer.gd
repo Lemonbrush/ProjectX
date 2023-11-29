@@ -18,6 +18,9 @@ func stop():
 func set_background_music_volumeDB(volumeDB):
 	audioStreamPlayer.set_volume_db(volumeDB)
 
+func reset_background_music_volumeDB():
+	audioStreamPlayer.set_volume_db(0.0)
+
 func smooth_stop_music():
 	var tween = get_tree().create_tween()
 	tween.tween_property(audioStreamPlayer, "volume_db", -30.0, 1)
