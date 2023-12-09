@@ -2602,7 +2602,7 @@ position = Vector2( -290, -92 )
 itemScene = ExtResource( 74 )
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 5 )]
-position = Vector2( -687, 367 )
+position = Vector2( 47, -75 )
 z_index = 2
 
 [node name="Light2D2" type="Light2D" parent="Player"]
