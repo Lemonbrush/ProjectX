@@ -1249,19 +1249,21 @@ background_music = ExtResource( 22 )
 
 [node name="Audio" type="Node2D" parent="." index="0"]
 
-[node name="WaterfallAudioPlayer" parent="Audio" index="0" instance=ExtResource( 23 )]
+[node name="WaterfallAudioPlayers" type="Node2D" parent="Audio" index="0"]
+
+[node name="WaterfallAudioPlayer" parent="Audio/WaterfallAudioPlayers" index="0" instance=ExtResource( 23 )]
 position = Vector2( -490, -4 )
 
-[node name="WaterfallAudioPlayer2" parent="Audio" index="1" instance=ExtResource( 23 )]
+[node name="WaterfallAudioPlayer2" parent="Audio/WaterfallAudioPlayers" index="1" instance=ExtResource( 23 )]
 position = Vector2( -423, -1 )
 
-[node name="WaterfallAudioPlayer3" parent="Audio" index="2" instance=ExtResource( 23 )]
+[node name="WaterfallAudioPlayer3" parent="Audio/WaterfallAudioPlayers" index="2" instance=ExtResource( 23 )]
 position = Vector2( -234, -1 )
 
-[node name="WaterfallAudioPlayer4" parent="Audio" index="3" instance=ExtResource( 23 )]
+[node name="WaterfallAudioPlayer4" parent="Audio/WaterfallAudioPlayers" index="3" instance=ExtResource( 23 )]
 position = Vector2( 155, -1 )
 
-[node name="WaterfallAudioPlayer5" parent="Audio" index="4" instance=ExtResource( 23 )]
+[node name="WaterfallAudioPlayer5" parent="Audio/WaterfallAudioPlayers" index="4" instance=ExtResource( 23 )]
 position = Vector2( 322, -1 )
 
 [node name="LightingCanvasLayer" type="CanvasLayer" parent="." index="1"]
