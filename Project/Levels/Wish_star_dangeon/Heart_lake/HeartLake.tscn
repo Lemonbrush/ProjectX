@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://Project/Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Project/WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=2]
@@ -35,7 +35,6 @@
 [ext_resource path="res://Assets/Audio/SFX/General/Magic/magic-sfx-for-games.mp3" type="AudioStream" id=33]
 [ext_resource path="res://Assets/Effects/Particles/ShineSprincles.png" type="Texture" id=34]
 [ext_resource path="res://Project/Utils/Audio/RandomAudioStreamPlayerNodes/PaffRandomAudioStreamPlayer.tscn" type="PackedScene" id=35]
-[ext_resource path="res://Assets/Audio/Level_specific_sounds/Old_home_location/Intro/Components/SFX components/CosmicSound.wav" type="AudioStream" id=36]
 [ext_resource path="res://Assets/Audio/SFX/General/Bell/success_bell.wav" type="AudioStream" id=37]
 
 [sub_resource type="Animation" id=17]
@@ -571,26 +570,12 @@ tracks/39/keys = {
 } ]
 }
 tracks/40/type = "method"
-tracks/40/path = NodePath("Audio/LasersAudioStreamPlayer")
+tracks/40/path = NodePath("Audio/SuccessBellAudioStreamPlayer")
 tracks/40/interp = 1
 tracks/40/loop_wrap = true
 tracks/40/imported = false
 tracks/40/enabled = true
 tracks/40/keys = {
-"times": PoolRealArray( 18 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [ 0.0 ],
-"method": "play"
-} ]
-}
-tracks/41/type = "method"
-tracks/41/path = NodePath("Audio/SuccessBellAudioStreamPlayer")
-tracks/41/interp = 1
-tracks/41/loop_wrap = true
-tracks/41/imported = false
-tracks/41/enabled = true
-tracks/41/keys = {
 "times": PoolRealArray( 20 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -1544,11 +1529,7 @@ bus = "SFX"
 
 [node name="PaffRandomAudioStreamPlayer" parent="Audio" index="6" instance=ExtResource( 35 )]
 
-[node name="LasersAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" index="7"]
-stream = ExtResource( 36 )
-bus = "SFX"
-
-[node name="SuccessBellAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" index="8"]
+[node name="SuccessBellAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" index="7"]
 stream = ExtResource( 37 )
 volume_db = -5.0
 bus = "SFX"
