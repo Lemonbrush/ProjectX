@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://Project/Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Project/WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=2]
@@ -26,6 +26,13 @@
 [ext_resource path="res://Assets/Pickups/SoulStar/SoulStar-Sheet.png" type="Texture" id=24]
 [ext_resource path="res://Assets/Levels/Wish_star_dangeon/Heart_assembling_lake/Heart_assembling_lake_pillar.png" type="Texture" id=25]
 [ext_resource path="res://Assets/Audio/SFX/General/Rumble/EarthRumble.mp3" type="AudioStream" id=26]
+[ext_resource path="res://Assets/Audio/Background_music/Level_themes/peaceful-fantasy-music.wav" type="AudioStream" id=27]
+[ext_resource path="res://Assets/Audio/SFX/General/Magic/crystal-magic.wav" type="AudioStream" id=28]
+[ext_resource path="res://Project/Utils/Audio/RandomAudioStreamPlayer/RandomAudioStreamPlayer.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Assets/Audio/SFX/Kenny/RPG_sounds/drawKnife/drawKnife3.ogg" type="AudioStream" id=30]
+[ext_resource path="res://Assets/Audio/SFX/Kenny/RPG_sounds/drawKnife/drawKnife1.ogg" type="AudioStream" id=31]
+[ext_resource path="res://Assets/Audio/SFX/Kenny/RPG_sounds/drawKnife/drawKnife2.ogg" type="AudioStream" id=32]
+[ext_resource path="res://Assets/Audio/SFX/General/Magic/magic-sfx-for-games.mp3" type="AudioStream" id=33]
 
 [sub_resource type="Animation" id=17]
 resource_name = "Heart_assembling_cutscene"
@@ -409,7 +416,7 @@ tracks/29/loop_wrap = true
 tracks/29/imported = false
 tracks/29/enabled = true
 tracks/29/keys = {
-"times": PoolRealArray( 0, 3.8, 15.5 ),
+"times": PoolRealArray( 0, 3.8, 19.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
@@ -430,6 +437,108 @@ tracks/30/keys = {
 "args": [  ],
 "method": "reset_state"
 } ]
+}
+tracks/31/type = "method"
+tracks/31/path = NodePath("Audio/MagicAudioStreamPlayer")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/keys = {
+"times": PoolRealArray( 3.8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/32/type = "method"
+tracks/32/path = NodePath(".")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/keys = {
+"times": PoolRealArray( 0, 22 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop_background_music"
+}, {
+"args": [  ],
+"method": "play_background_music"
+} ]
+}
+tracks/33/type = "method"
+tracks/33/path = NodePath("Audio/HeartAssemblingBackgroundThemeAudioStreamPlayer")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/keys = {
+"times": PoolRealArray( 0, 22 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/34/type = "method"
+tracks/34/path = NodePath("Audio/RandomAudioStreamPlayer")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/keys = {
+"times": PoolRealArray( 12.8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "play"
+} ]
+}
+tracks/35/type = "method"
+tracks/35/path = NodePath("Audio/RandomAudioStreamPlayer")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/keys = {
+"times": PoolRealArray( 13 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "play"
+} ]
+}
+tracks/36/type = "method"
+tracks/36/path = NodePath("Audio/SoulPopAudioStreamPlayer")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/keys = {
+"times": PoolRealArray( 15.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/37/type = "value"
+tracks/37/path = NodePath("Audio/MagicAudioStreamPlayer:volume_db")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/keys = {
+"times": PoolRealArray( 0, 12.9, 19.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -20.0, -20.0, -80.0 ]
 }
 
 [sub_resource type="Animation" id=37]
@@ -910,6 +1019,18 @@ tracks/26/keys = {
 "update": 0,
 "values": [ Vector2( -20, -197 ) ]
 }
+tracks/27/type = "value"
+tracks/27/path = NodePath("Audio/MagicAudioStreamPlayer:volume_db")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -20.0 ]
+}
 
 [sub_resource type="RectangleShape2D" id=38]
 extents = Vector2( 72, 352 )
@@ -1266,6 +1387,7 @@ script = ExtResource( 17 )
 background_music = ExtResource( 22 )
 
 [node name="Audio" type="Node2D" parent="." index="0"]
+pause_mode = 2
 
 [node name="WaterfallAudioPlayers" type="Node2D" parent="Audio" index="0"]
 
@@ -1289,6 +1411,36 @@ pause_mode = 2
 stream = ExtResource( 26 )
 volume_db = 1.0
 pitch_scale = 2.0
+bus = "SFX"
+
+[node name="HeartAssemblingBackgroundThemeAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" index="2"]
+stream = ExtResource( 27 )
+volume_db = 5.0
+
+[node name="MagicAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" index="3"]
+stream = ExtResource( 28 )
+volume_db = -20.0
+pitch_scale = 0.5
+
+[node name="RandomAudioStreamPlayer" parent="Audio" index="4" instance=ExtResource( 29 )]
+
+[node name="HeartPartSwingAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/RandomAudioStreamPlayer" index="0"]
+stream = ExtResource( 32 )
+volume_db = 10.0
+bus = "SFX"
+
+[node name="HeartPartSwingAudioStreamPlayer2" type="AudioStreamPlayer" parent="Audio/RandomAudioStreamPlayer" index="1"]
+stream = ExtResource( 31 )
+volume_db = 10.0
+bus = "SFX"
+
+[node name="HeartPartSwingAudioStreamPlayer3" type="AudioStreamPlayer" parent="Audio/RandomAudioStreamPlayer" index="2"]
+stream = ExtResource( 30 )
+volume_db = 10.0
+bus = "SFX"
+
+[node name="SoulPopAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" index="5"]
+stream = ExtResource( 33 )
 bus = "SFX"
 
 [node name="LightingCanvasLayer" type="CanvasLayer" parent="." index="1"]
@@ -1365,7 +1517,7 @@ format = 1
 tile_data = PoolIntArray( -44827185, 11, 0, -44237038, 8, 0, -44171767, 8, 0, -44236540, 8, 0, -43975095, 1, 0, -44040064, 11, 0, -44040038, 1, 0, -43974260, 11, 0, -43778609, 11, 0, -42991488, 11, 0, -42925684, 11, 0, -42730033, 11, 0, -42598638, 8, 0, -42663676, 8, 0, -42533367, 8, 0, -41877943, 1, 0, -41942912, 11, 0, -41942886, 1, 0, -41942644, 11, 0, -41681457, 11, 0, -41025276, 8, 0, -40894967, 8, 0, -40894702, 8, 0, -40894336, 11, 0, -40894068, 11, 0, -40632881, 11, 0, -39780791, 1, 0, -39845760, 11, 0, -39845734, 1, 0, -39845492, 11, 0, -39584305, 11, 0, -39322103, 8, 0, -39386876, 8, 0, -39256302, 8, 0, -38797184, 11, 0, -38796916, 11, 0, -38535729, 11, 0, -37683703, 8, 0, -37683639, 1, 0, -37748608, 11, 0, -37748582, 1, 0, -37748476, 8, 0, -37748340, 11, 0, -37617902, 8, 0, -37487153, 11, 0, -36700032, 11, 0, -36699764, 11, 0, -36438577, 11, 0, -36045303, 8, 0, -36110076, 8, 0, -35979502, 8, 0, -35586487, 1, 0, -35651456, 11, 0, -35651430, 1, 0, -35651188, 11, 0, -35390001, 11, 0, -34602880, 11, 0, -34602612, 11, 0, -34406903, 8, 0, -34406638, 8, 0, -34471676, 8, 0, -34341425, 11, 0, -33489335, 1, 0, -33554304, 11, 0, -33554278, 1, 0, -33554036, 11, 0, -33292849, 11, 0, -32768503, 8, 0, -32768238, 8, 0, -32833276, 8, 0, -32505728, 11, 0, -32505460, 11, 0, -32244273, 11, 0, -31392183, 1, 0, -31457152, 11, 0, -31457126, 1, 0, -31456884, 11, 0, -31195697, 11, 0, -31130103, 8, 0, -31129838, 8, 0, -31194876, 8, 0, -30408576, 11, 0, -30408308, 11, 0, -30147121, 11, 0, -29491703, 8, 0, -29491438, 8, 0, -29556476, 8, 0, -29295031, 1, 0, -29360000, 11, 0, -29359974, 1, 0, -29359732, 11, 0, -29098545, 11, 0, -28311424, 11, 0, -28311156, 11, 0, -28049969, 11, 0, -27853303, 8, 0, -27853038, 8, 0, -27918076, 8, 0, -27197879, 1, 0, -27262848, 11, 0, -27262822, 1, 0, -27262580, 11, 0, -27001393, 11, 0, -26214903, 8, 0, -26214638, 8, 0, -26279676, 8, 0, -26214272, 11, 0, -26214004, 11, 0, -26018353, 11, 0, -25100727, 1, 0, -25165696, 11, 0, -25165670, 1, 0, -25165428, 11, 0, -24969777, 11, 0, -24576503, 8, 0, -24576238, 8, 0, -24641276, 8, 0, -24117120, 11, 0, -24116852, 11, 0, -23921201, 11, 0, -23003575, 1, 0, -23068544, 11, 0, -23068518, 1, 0, -23068276, 11, 0, -22938103, 8, 0, -22937838, 8, 0, -23002876, 8, 0, -22872625, 11, 0, -22019968, 11, 0, -22019700, 11, 0, -21824049, 11, 0, -21299703, 8, 0, -21299438, 8, 0, -21364476, 8, 0, -20906423, 1, 0, -20971392, 11, 0, -20971366, 1, 0, -20971124, 11, 0, -20841009, 11, 0, -19922816, 11, 0, -19922548, 11, 0, -19792433, 11, 0, -19661303, 8, 0, -19661038, 8, 0, -19726076, 8, 0, -18809271, 1, 0, -18874240, 11, 0, -18874214, 1, 0, -18873972, 11, 0, -18743857, 11, 0, -18022903, 8, 0, -18022638, 8, 0, -18087676, 8, 0, -17760817, 11, 0, -17825664, 11, 0, -17825396, 11, 0, -16712241, 11, 0, -16712119, 1, 0, -16777088, 11, 0, -16777062, 1, 0, -16776820, 11, 0, -16384503, 8, 0, -16384238, 8, 0, -16449276, 8, 0, -15663665, 11, 0, -15728512, 11, 0, -15728244, 11, 0, -14746103, 8, 0, -14745838, 8, 0, -14810876, 8, 0, -14615089, 11, 0, -14614967, 1, 0, -14679936, 11, 0, -14679910, 1, 0, -14679668, 11, 0, -13566513, 11, 0, -13631360, 11, 0, -13631092, 11, 0, -13107703, 8, 0, -13107438, 8, 0, -13172476, 8, 0, -12517937, 11, 0, -12517815, 1, 0, -12582784, 11, 0, -12582758, 1, 0, -12582516, 11, 0, -11534574, 8, 0, -11469361, 11, 0, -11469303, 8, 0, -11534208, 11, 0, -11534076, 8, 0, -11533940, 11, 0, -10420785, 11, 0, -10420663, 1, 0, -10485632, 11, 0, -10485606, 1, 0, -10485364, 11, 0, -9896174, 8, 0, -9830903, 8, 0, -9895676, 8, 0, -9372209, 11, 0, -9437056, 11, 0, -9436788, 11, 0, -8323633, 11, 0, -8323511, 1, 0, -8388480, 11, 0, -8388454, 1, 0, -8388212, 11, 0, -8257774, 8, 0, -8192503, 8, 0, -8257276, 8, 0, -7275057, 11, 0, -7339904, 11, 0, -7339636, 11, 0, -6619374, 8, 0, -6554103, 8, 0, -6618876, 8, 0, -6226481, 11, 0, -6226359, 1, 0, -6291328, 11, 0, -6291302, 1, 0, -6291060, 11, 0, -5177905, 11, 0, -5242752, 11, 0, -5242484, 11, 0, -4980974, 8, 0, -4915703, 8, 0, -4980476, 8, 0, -4129329, 11, 0, -4129207, 1, 0, -4194176, 11, 0, -4194150, 1, 0, -4193908, 11, 0, -3342574, 8, 0, -3277303, 8, 0, -3342076, 8, 0, -3080753, 11, 0, -3145600, 11, 0, -3145332, 11, 0, -2032177, 11, 0, -2032055, 2, 0, -2097024, 11, 0, -2096998, 2, 0, -2096756, 11, 0, -1638903, 7, 0, -1638638, 7, 0, -1703676, 7, 0, -983601, 10, 0, -1048448, 10, 0, -1048180, 10, 0 )
 
 [node name="Pillar" type="Node2D" parent="Foreground_world_objects" index="4"]
-position = Vector2( 467, 300 )
+position = Vector2( 467, 0 )
 
 [node name="Sprite" type="Sprite" parent="Foreground_world_objects/Pillar" index="0"]
 texture = ExtResource( 25 )
@@ -1527,8 +1679,8 @@ format = 1
 tile_data = PoolIntArray( -44827185, 11, 0, -44171767, 8, 0, -44236540, 8, 0, -43975095, 1, 0, -44040064, 11, 0, -44040038, 1, 0, -43974260, 11, 0, -43778609, 11, 0, -42991488, 11, 0, -42925684, 11, 0, -42730033, 11, 0, -42663676, 8, 0, -42533367, 8, 0, -41877943, 1, 0, -41942912, 11, 0, -41942886, 1, 0, -41942644, 11, 0, -41681457, 11, 0, -41025276, 8, 0, -40894967, 8, 0, -40894336, 11, 0, -40894068, 11, 0, -40632881, 11, 0, -39780791, 1, 0, -39845760, 11, 0, -39845734, 1, 0, -39845492, 11, 0, -39584305, 11, 0, -39322103, 8, 0, -39386876, 8, 0, -38797184, 11, 0, -38796916, 11, 0, -38535729, 11, 0, -37683703, 8, 0, -37683639, 1, 0, -37748608, 11, 0, -37748582, 1, 0, -37748476, 8, 0, -37748340, 11, 0, -37487153, 11, 0, -36700032, 11, 0, -36699764, 11, 0, -36438577, 11, 0, -36045303, 8, 0, -36110076, 8, 0, -35586487, 1, 0, -35651456, 11, 0, -35651430, 1, 0, -35651188, 11, 0, -35390001, 11, 0, -34602880, 11, 0, -34602612, 11, 0, -34406903, 8, 0, -34471676, 8, 0, -34341425, 11, 0, -33489335, 1, 0, -33554304, 11, 0, -33554278, 1, 0, -33554036, 11, 0, -33292849, 11, 0, -32768503, 8, 0, -32833276, 8, 0, -32505728, 11, 0, -32505460, 11, 0, -32244273, 11, 0, -31392183, 1, 0, -31457152, 11, 0, -31457126, 1, 0, -31456884, 11, 0, -31195697, 11, 0, -31130103, 8, 0, -31194876, 8, 0, -30408576, 11, 0, -30408308, 11, 0, -30147121, 11, 0, -29491703, 8, 0, -29556476, 8, 0, -29295031, 1, 0, -29360000, 11, 0, -29359974, 1, 0, -29359732, 11, 0, -29098545, 11, 0, -28311424, 11, 0, -28311156, 11, 0, -28049969, 11, 0, -27853303, 8, 0, -27918076, 8, 0, -27197879, 1, 0, -27262848, 11, 0, -27262822, 1, 0, -27262580, 11, 0, -27001393, 11, 0, -26214903, 8, 0, -26279676, 8, 0, -26214272, 11, 0, -26214004, 11, 0, -26018353, 11, 0, -25100727, 1, 0, -25165696, 11, 0, -25165670, 1, 0, -25165428, 11, 0, -24969777, 11, 0, -24576503, 8, 0, -24641276, 8, 0, -24117120, 11, 0, -24116852, 11, 0, -23921201, 11, 0, -23003575, 1, 0, -23068544, 11, 0, -23068518, 1, 0, -23068276, 11, 0, -22938103, 8, 0, -23002876, 8, 0, -22872625, 11, 0, -22019968, 11, 0, -22019700, 11, 0, -21824049, 11, 0, -21299703, 8, 0, -21364476, 8, 0, -20906423, 1, 0, -20971392, 11, 0, -20971366, 1, 0, -20971124, 11, 0, -20841009, 11, 0, -19922816, 11, 0, -19922548, 11, 0, -19792433, 11, 0, -19661303, 8, 0, -19726076, 8, 0, -18809271, 1, 0, -18874240, 11, 0, -18874214, 1, 0, -18873972, 11, 0, -18743857, 11, 0, -18022903, 8, 0, -18087676, 8, 0, -17760817, 11, 0, -17825664, 11, 0, -17825396, 11, 0, -16712241, 11, 0, -16712119, 1, 0, -16777088, 11, 0, -16777062, 1, 0, -16776820, 11, 0, -16384503, 8, 0, -16449276, 8, 0, -15663665, 11, 0, -15728512, 11, 0, -15728244, 11, 0, -14746103, 8, 0, -14810876, 8, 0, -14615089, 11, 0, -14614967, 1, 0, -14679936, 11, 0, -14679910, 1, 0, -14679668, 11, 0, -13566513, 11, 0, -13631360, 11, 0, -13631092, 11, 0, -13107703, 8, 0, -13172476, 8, 0, -12517937, 11, 0, -12517815, 1, 0, -12582784, 11, 0, -12582758, 1, 0, -12582516, 11, 0, -11469361, 11, 0, -11469303, 8, 0, -11534208, 11, 0, -11534076, 8, 0, -11533940, 11, 0, -10420785, 11, 0, -10420663, 1, 0, -10485632, 11, 0, -10485606, 1, 0, -10485364, 11, 0, -9830903, 8, 0, -9895676, 8, 0, -9372209, 11, 0, -9437056, 11, 0, -9436788, 11, 0, -8323633, 11, 0, -8323511, 1, 0, -8388480, 11, 0, -8388454, 1, 0, -8388212, 11, 0, -8192503, 8, 0, -8257276, 8, 0, -7340197, 536870920, 0, -7275057, 11, 0, -7339904, 11, 0, -7339636, 11, 0, -6554103, 8, 0, -6618876, 8, 0, -6226481, 11, 0, -6226359, 1, 0, -6291328, 11, 0, -6291302, 1, 0, -6291060, 11, 0, -5701797, 536870920, 0, -5439760, 8, 0, -5177905, 11, 0, -5242752, 11, 0, -5242484, 11, 0, -4915703, 8, 0, -4980476, 8, 0, -4129329, 11, 0, -4129207, 1, 0, -4194176, 11, 0, -4194150, 1, 0, -4193908, 11, 0, -3866896, 8, 0, -3277303, 8, 0, -3342076, 8, 0, -3080753, 11, 0, -3145600, 11, 0, -3145332, 11, 0, -2228496, 8, 0, -2032177, 11, 0, -2032055, 2, 0, -2097024, 11, 0, -2096998, 2, 0, -2096756, 11, 0, -1638903, 7, 0, -1703676, 7, 0, -983601, 10, 0, -1048448, 10, 0, -1048180, 10, 0 )
 
 [node name="Player" parent="." index="10"]
-position = Vector2( -54, -207 )
-rotation = -0.0827722
+position = Vector2( -54, -208.263 )
+rotation = 0.0823796
 
 [node name="Sprite" parent="Player/Body" index="0"]
 frame = 76

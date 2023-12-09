@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/magic-sfx-for-games.mp3-b090b6699c9c30f4bbdaeff2ea628722.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/Magic/magic-sfx-for-games.mp3"
+dest_files=[ "res://.import/magic-sfx-for-games.mp3-b090b6699c9c30f4bbdaeff2ea628722.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
