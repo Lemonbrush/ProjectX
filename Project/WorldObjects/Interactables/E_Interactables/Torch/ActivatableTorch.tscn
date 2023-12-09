@@ -108,9 +108,11 @@ script = ExtResource( 7 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/IgniteRandomAudioStreamPlayer"]
 stream = ExtResource( 10 )
+bus = "SFX"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Audio/IgniteRandomAudioStreamPlayer"]
 stream = ExtResource( 9 )
+bus = "SFX"
 
 [node name="VisibilityChecker" parent="." instance=ExtResource( 8 )]
 visible = false
