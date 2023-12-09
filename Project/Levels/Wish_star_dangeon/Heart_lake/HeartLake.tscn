@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://Project/Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Project/WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=2]
@@ -388,6 +388,47 @@ tracks/27/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ -6.0, 6.0, -6.0, 6.0, -6.0 ]
+}
+tracks/28/type = "value"
+tracks/28/path = NodePath("Main_world_objects/MysticDweller/Body/Sprite:frame")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"times": PoolRealArray( 3, 3.1, 3.6, 3.8, 4, 4.4, 4.6, 4.8, 5.2, 5.4, 5.6, 6, 6.2, 6.4, 6.8, 7, 7.2, 7.6, 7.8, 8, 8.4, 8.6, 8.8, 9.2, 9.4, 9.6, 10, 10.2, 10.4, 10.8, 11, 11.2, 11.6, 11.8, 12, 12.4, 12.6, 12.8, 13.2, 13.4, 13.6, 14, 14.2, 14.4, 14.8, 15, 15.2, 15.4, 15.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 52, 78, 79, 80, 81, 82, 80, 81, 82, 80, 81, 82, 80, 81, 82, 80, 81, 82, 80, 81, 82, 80, 81, 82, 80, 81, 82, 80, 81, 82, 80, 81, 82, 80, 81, 82, 80, 81, 82, 80, 81, 82, 80, 81, 82, 80, 81, 79, 78 ]
+}
+tracks/29/type = "value"
+tracks/29/path = NodePath("Main_world_objects/CutsceneObjects/MagicParticles2D:emitting")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"times": PoolRealArray( 3.8, 15.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/30/type = "method"
+tracks/30/path = NodePath("Main_world_objects/MysticDweller")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/keys = {
+"times": PoolRealArray( 3, 15.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "custome" ],
+"method": "setup_custome_animation"
+}, {
+"args": [  ],
+"method": "reset_state"
+} ]
 }
 
 [sub_resource type="Animation" id=37]
@@ -827,6 +868,18 @@ tracks/24/keys = {
 "update": 0,
 "values": [ -6.0 ]
 }
+tracks/25/type = "value"
+tracks/25/path = NodePath("Main_world_objects/CutsceneObjects/MagicParticles2D:emitting")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [sub_resource type="RectangleShape2D" id=38]
 extents = Vector2( 72, 352 )
@@ -1100,6 +1153,36 @@ orbit_velocity_random = 0.0
 scale = 3.0
 scale_random = 1.0
 scale_curve = SubResource( 31 )
+anim_offset = 1.0
+anim_offset_random = 1.0
+
+[sub_resource type="Gradient" id=43]
+offsets = PoolRealArray( 0.00518135, 1 )
+
+[sub_resource type="GradientTexture" id=44]
+gradient = SubResource( 43 )
+
+[sub_resource type="ParticlesMaterial" id=45]
+lifetime_randomness = 1.0
+trail_divisor = 3
+emission_shape = 2
+emission_box_extents = Vector3( 10, 1, 1 )
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 50.0
+initial_velocity_random = 1.0
+angular_velocity = 180.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.2
+orbit_velocity_random = 0.0
+scale = 2.0
+scale_random = 1.0
+scale_curve = SubResource( 31 )
+color = Color( 0.564706, 0.776471, 1, 1 )
+color_ramp = SubResource( 44 )
+hue_variation = 1.0
 anim_offset = 1.0
 anim_offset_random = 1.0
 
@@ -1384,6 +1467,15 @@ explosiveness = 1.0
 randomness = 1.0
 process_material = SubResource( 42 )
 
+[node name="MagicParticles2D" type="Particles2D" parent="Main_world_objects/CutsceneObjects" index="6"]
+position = Vector2( -21, -189 )
+z_index = 1
+emitting = false
+amount = 100
+explosiveness = 0.5
+randomness = 1.0
+process_material = SubResource( 45 )
+
 [node name="Background_world_objects" type="Node2D" parent="." index="9"]
 z_index = -1
 
@@ -1396,7 +1488,8 @@ format = 1
 tile_data = PoolIntArray( -44827185, 11, 0, -44171767, 8, 0, -44236540, 8, 0, -43975095, 1, 0, -44040064, 11, 0, -44040038, 1, 0, -43974260, 11, 0, -43778609, 11, 0, -42991488, 11, 0, -42925684, 11, 0, -42730033, 11, 0, -42663676, 8, 0, -42533367, 8, 0, -41877943, 1, 0, -41942912, 11, 0, -41942886, 1, 0, -41942644, 11, 0, -41681457, 11, 0, -41025276, 8, 0, -40894967, 8, 0, -40894336, 11, 0, -40894068, 11, 0, -40632881, 11, 0, -39780791, 1, 0, -39845760, 11, 0, -39845734, 1, 0, -39845492, 11, 0, -39584305, 11, 0, -39322103, 8, 0, -39386876, 8, 0, -38797184, 11, 0, -38796916, 11, 0, -38535729, 11, 0, -37683703, 8, 0, -37683639, 1, 0, -37748608, 11, 0, -37748582, 1, 0, -37748476, 8, 0, -37748340, 11, 0, -37487153, 11, 0, -36700032, 11, 0, -36699764, 11, 0, -36438577, 11, 0, -36045303, 8, 0, -36110076, 8, 0, -35586487, 1, 0, -35651456, 11, 0, -35651430, 1, 0, -35651188, 11, 0, -35390001, 11, 0, -34602880, 11, 0, -34602612, 11, 0, -34406903, 8, 0, -34471676, 8, 0, -34341425, 11, 0, -33489335, 1, 0, -33554304, 11, 0, -33554278, 1, 0, -33554036, 11, 0, -33292849, 11, 0, -32768503, 8, 0, -32833276, 8, 0, -32505728, 11, 0, -32505460, 11, 0, -32244273, 11, 0, -31392183, 1, 0, -31457152, 11, 0, -31457126, 1, 0, -31456884, 11, 0, -31195697, 11, 0, -31130103, 8, 0, -31194876, 8, 0, -30408576, 11, 0, -30408308, 11, 0, -30147121, 11, 0, -29491703, 8, 0, -29556476, 8, 0, -29295031, 1, 0, -29360000, 11, 0, -29359974, 1, 0, -29359732, 11, 0, -29098545, 11, 0, -28311424, 11, 0, -28311156, 11, 0, -28049969, 11, 0, -27853303, 8, 0, -27918076, 8, 0, -27197879, 1, 0, -27262848, 11, 0, -27262822, 1, 0, -27262580, 11, 0, -27001393, 11, 0, -26214903, 8, 0, -26279676, 8, 0, -26214272, 11, 0, -26214004, 11, 0, -26018353, 11, 0, -25100727, 1, 0, -25165696, 11, 0, -25165670, 1, 0, -25165428, 11, 0, -24969777, 11, 0, -24576503, 8, 0, -24641276, 8, 0, -24117120, 11, 0, -24116852, 11, 0, -23921201, 11, 0, -23003575, 1, 0, -23068544, 11, 0, -23068518, 1, 0, -23068276, 11, 0, -22938103, 8, 0, -23002876, 8, 0, -22872625, 11, 0, -22019968, 11, 0, -22019700, 11, 0, -21824049, 11, 0, -21299703, 8, 0, -21364476, 8, 0, -20906423, 1, 0, -20971392, 11, 0, -20971366, 1, 0, -20971124, 11, 0, -20841009, 11, 0, -19922816, 11, 0, -19922548, 11, 0, -19792433, 11, 0, -19661303, 8, 0, -19726076, 8, 0, -18809271, 1, 0, -18874240, 11, 0, -18874214, 1, 0, -18873972, 11, 0, -18743857, 11, 0, -18022903, 8, 0, -18087676, 8, 0, -17760817, 11, 0, -17825664, 11, 0, -17825396, 11, 0, -16712241, 11, 0, -16712119, 1, 0, -16777088, 11, 0, -16777062, 1, 0, -16776820, 11, 0, -16384503, 8, 0, -16449276, 8, 0, -15663665, 11, 0, -15728512, 11, 0, -15728244, 11, 0, -14746103, 8, 0, -14810876, 8, 0, -14615089, 11, 0, -14614967, 1, 0, -14679936, 11, 0, -14679910, 1, 0, -14679668, 11, 0, -13566513, 11, 0, -13631360, 11, 0, -13631092, 11, 0, -13107703, 8, 0, -13172476, 8, 0, -12517937, 11, 0, -12517815, 1, 0, -12582784, 11, 0, -12582758, 1, 0, -12582516, 11, 0, -11469361, 11, 0, -11469303, 8, 0, -11534208, 11, 0, -11534076, 8, 0, -11533940, 11, 0, -10420785, 11, 0, -10420663, 1, 0, -10485632, 11, 0, -10485606, 1, 0, -10485364, 11, 0, -9830903, 8, 0, -9895676, 8, 0, -9372209, 11, 0, -9437056, 11, 0, -9436788, 11, 0, -8323633, 11, 0, -8323511, 1, 0, -8388480, 11, 0, -8388454, 1, 0, -8388212, 11, 0, -8192503, 8, 0, -8257276, 8, 0, -7340197, 536870920, 0, -7275057, 11, 0, -7339904, 11, 0, -7339636, 11, 0, -6554103, 8, 0, -6618876, 8, 0, -6226481, 11, 0, -6226359, 1, 0, -6291328, 11, 0, -6291302, 1, 0, -6291060, 11, 0, -5701797, 536870920, 0, -5439760, 8, 0, -5177905, 11, 0, -5242752, 11, 0, -5242484, 11, 0, -4915703, 8, 0, -4980476, 8, 0, -4129329, 11, 0, -4129207, 1, 0, -4194176, 11, 0, -4194150, 1, 0, -4193908, 11, 0, -3866896, 8, 0, -3277303, 8, 0, -3342076, 8, 0, -3080753, 11, 0, -3145600, 11, 0, -3145332, 11, 0, -2228496, 8, 0, -2032177, 11, 0, -2032055, 2, 0, -2097024, 11, 0, -2096998, 2, 0, -2096756, 11, 0, -1638903, 7, 0, -1703676, 7, 0, -983601, 10, 0, -1048448, 10, 0, -1048180, 10, 0 )
 
 [node name="Player" parent="." index="10"]
-position = Vector2( -54, -178.246 )
+position = Vector2( -55, -175 )
+rotation = 0.00646418
 
 [node name="Sprite" parent="Player/Body" index="0"]
 frame = 76

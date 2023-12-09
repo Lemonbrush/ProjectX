@@ -159,6 +159,8 @@ func process_custome_animation(delta):
 	if is_state_new:
 		if animationPlayer.has_animation(custome_animation):
 			animationPlayer.play(custome_animation)
+		else:
+			animationPlayer.stop()
 		is_state_new = false
 	
 	process_still(delta)
