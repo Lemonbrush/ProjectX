@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Levels/Rooms/Mill/Shaft-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Project/Levels/Central_hab/Mill/Shaft/Shaft.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Audio/SFX/General/mechanisms/windmill-cog-wheel.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Audio/SFX/General/Bell/success_bell.wav" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=3]
 resource_name = "Locked"
@@ -60,6 +61,9 @@ script = ExtResource( 2 )
 [node name="WorkingGearAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 3 )
 volume_db = -5.0
+
+[node name="SuccessAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
