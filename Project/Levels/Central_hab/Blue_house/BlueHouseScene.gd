@@ -1,6 +1,6 @@
 extends BaseLevel
 
-onready var artwork_sprite = $ArtworkSprite
+onready var artwork_sprite = $Artwork
 onready var artistDweller = $ArtistDweller
 
 func _ready():
