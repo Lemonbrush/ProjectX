@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=2]
+[gd_scene load_steps=88 format=2]
 
 [ext_resource path="res://Project/Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Levels/Rooms/LightHouse/Lighthouse.png" type="Texture" id=2]
@@ -25,6 +25,11 @@
 [ext_resource path="res://Assets/Audio/SFX/General/Steam/steam-looped.wav" type="AudioStream" id=23]
 [ext_resource path="res://Project/WorldObjects/Destructables/Pot/Pot.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Project/WorldObjects/Destructables/Crate/Crate.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Assets/Audio/SFX/General/pop/water_drop.mp3" type="AudioStream" id=26]
+[ext_resource path="res://Assets/Audio/SFX/General/Charge/sci-fi-weapon-charging.wav" type="AudioStream" id=27]
+[ext_resource path="res://Assets/Audio/SFX/General/Charge/teleport-activate.wav" type="AudioStream" id=28]
+[ext_resource path="res://Assets/Audio/SFX/General/Charge/electricety_charge.wav" type="AudioStream" id=29]
+[ext_resource path="res://Assets/Audio/SFX/General/Shine/opticaillusions__jewel-glitter.wav" type="AudioStream" id=30]
 
 [sub_resource type="Environment" id=118]
 background_mode = 4
@@ -36,7 +41,7 @@ adjustment_saturation = 1.3
 
 [sub_resource type="Animation" id=120]
 resource_name = "Lamp_ignition_cutscene"
-length = 8.0
+length = 14.0
 tracks/0/type = "method"
 tracks/0/path = NodePath(".")
 tracks/0/interp = 1
@@ -44,7 +49,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 7 ),
+"times": PoolRealArray( 0, 14 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -73,10 +78,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 6, 9.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 8, -255 ) ]
+"values": [ Vector2( 8, -255 ), Vector2( 8, -255 ), Vector2( 8, -353 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("MiddleWorldObjects/Buth_light_turned_off:visible")
@@ -231,10 +236,10 @@ tracks/15/loop_wrap = true
 tracks/15/imported = false
 tracks/15/enabled = true
 tracks/15/keys = {
-"times": PoolRealArray( 2.9, 3.9 ),
+"times": PoolRealArray( 2.3, 3.9 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, 1.0 ]
+"values": [ 0.0, 2.0 ]
 }
 tracks/16/type = "method"
 tracks/16/path = NodePath("Camera2D")
@@ -243,7 +248,7 @@ tracks/16/loop_wrap = true
 tracks/16/imported = false
 tracks/16/enabled = true
 tracks/16/keys = {
-"times": PoolRealArray( 3.7, 4.1, 8 ),
+"times": PoolRealArray( 2.7, 4.1, 14 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "values": [ {
 "args": [ null, null, null, null ],
@@ -263,7 +268,7 @@ tracks/17/loop_wrap = true
 tracks/17/imported = false
 tracks/17/enabled = true
 tracks/17/keys = {
-"times": PoolRealArray( 0, 6, 7 ),
+"times": PoolRealArray( 0, 8, 9 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
@@ -289,10 +294,10 @@ tracks/19/loop_wrap = true
 tracks/19/imported = false
 tracks/19/enabled = true
 tracks/19/keys = {
-"times": PoolRealArray( 0, 2.7, 4.1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 2.7, 4.1, 6, 10 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.7, 0.7 ), Vector2( 0.7, 0.7 ), Vector2( 0.3, 0.3 ) ]
+"values": [ Vector2( 0.7, 0.7 ), Vector2( 0.7, 0.7 ), Vector2( 0.3, 0.3 ), Vector2( 0.3, 0.3 ), Vector2( 1, 1 ) ]
 }
 tracks/20/type = "value"
 tracks/20/path = NodePath("Player:position")
@@ -325,10 +330,139 @@ tracks/22/loop_wrap = true
 tracks/22/imported = false
 tracks/22/enabled = true
 tracks/22/keys = {
-"times": PoolRealArray( 5, 7, 8 ),
+"times": PoolRealArray( 5, 13, 14 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/23/type = "method"
+tracks/23/path = NodePath("Audio/JumpAudioStreamPlayer")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 2.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/24/type = "method"
+tracks/24/path = NodePath("Audio/LightExplosionAudioStreamPlayer")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/25/type = "method"
+tracks/25/path = NodePath("Audio/LightPostEffectExplosionAudioStreamPlayer2")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"times": PoolRealArray( 4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/26/type = "method"
+tracks/26/path = NodePath("Audio/RumbleAudioStreamPlayer")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"times": PoolRealArray( 3.3, 4.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("Audio/LightExplosionAudioStreamPlayer:volume_db")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 0, 3.9, 4.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 5.0, 10.0, -80.0 ]
+}
+tracks/28/type = "value"
+tracks/28/path = NodePath("Audio/LightPostEffectExplosionAudioStreamPlayer2:volume_db")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"times": PoolRealArray( 0, 6, 14 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -5.0, -5.0, -80.0 ]
+}
+tracks/29/type = "method"
+tracks/29/path = NodePath(".")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"times": PoolRealArray( 4, 14 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop_background_music"
+}, {
+"args": [  ],
+"method": "play_background_music"
+} ]
+}
+tracks/30/type = "method"
+tracks/30/path = NodePath("Audio/LightSprinklingExplosionAudioStreamPlayer3")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/keys = {
+"times": PoolRealArray( 5.9, 14 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/31/type = "value"
+tracks/31/path = NodePath("Audio/LightSprinklingExplosionAudioStreamPlayer3:volume_db")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/keys = {
+"times": PoolRealArray( 5.9, 13, 14 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, -80.0 ]
 }
 
 [sub_resource type="Animation" id=119]
@@ -370,7 +504,7 @@ tracks/2/keys = {
 "values": [ 0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("MiddleWorldObjects/SofaIgnitingLight/Sprite:position")
+tracks/3/path = NodePath("MiddleWorldObjects/SofaIgnitingLight/Particles2D:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -379,10 +513,10 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 1, -35 ) ]
+"values": [ Vector2( -1, -29 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("MiddleWorldObjects/SofaIgnitingLight/Particles2D:position")
+tracks/4/path = NodePath("MiddleWorldObjects/SofaIgnitingLight/Particles2D:emitting")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -391,10 +525,10 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -1, -29 ) ]
+"values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("MiddleWorldObjects/SofaIgnitingLight/Particles2D:emitting")
+tracks/5/path = NodePath("MiddleWorldObjects/SofaIgnitingLight/Particles2D:amount")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -403,10 +537,10 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ 40 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("MiddleWorldObjects/SofaIgnitingLight/Particles2D:amount")
+tracks/6/path = NodePath("MiddleWorldObjects/SofaIgnitingLight/Light2D:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -414,11 +548,11 @@ tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 40 ]
+"update": 1,
+"values": [ false ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("MiddleWorldObjects/SofaIgnitingLight/Light2D:visible")
+tracks/7/path = NodePath("Camera2D:scale")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -426,11 +560,11 @@ tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Camera2D:scale")
+tracks/8/path = NodePath("Camera2D:zoom")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -439,10 +573,10 @@ tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"values": [ Vector2( 0.7, 0.7 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Camera2D:zoom")
+tracks/9/path = NodePath("MiddleWorldObjects/Buth_light_turned_on/Particles2D:emitting")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -451,10 +585,10 @@ tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0.7, 0.7 ) ]
+"values": [ false ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("MiddleWorldObjects/Buth_light_turned_on/Particles2D:emitting")
+tracks/10/path = NodePath("Player:modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -463,10 +597,10 @@ tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Player:modulate")
+tracks/11/path = NodePath("Player:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -475,10 +609,10 @@ tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [ Vector2( 8, 384 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Player:position")
+tracks/12/path = NodePath("Audio/LightPostEffectExplosionAudioStreamPlayer2:playing")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -487,7 +621,79 @@ tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 8, 384 ) ]
+"values": [ false ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Audio/LightExplosionAudioStreamPlayer:playing")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Audio/LightExplosionAudioStreamPlayer:volume_db")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Audio/LightPostEffectExplosionAudioStreamPlayer2:volume_db")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Audio/LightSprinklingExplosionAudioStreamPlayer3:stream")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 30 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Audio/LightSprinklingExplosionAudioStreamPlayer3:volume_db")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Camera2D:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 8, -353 ) ]
 }
 
 [sub_resource type="CurveTexture" id=7]
@@ -767,10 +973,36 @@ extents = Vector2( 5.5, 35.5 )
 script = ExtResource( 9 )
 background_music = ExtResource( 22 )
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
+[node name="Audio" type="Node" parent="." index="0"]
+pause_mode = 2
+
+[node name="LightExplosionAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" index="0"]
+stream = ExtResource( 27 )
+bus = "SFX"
+
+[node name="LightPostEffectExplosionAudioStreamPlayer2" type="AudioStreamPlayer" parent="Audio" index="1"]
+stream = ExtResource( 28 )
+bus = "SFX"
+
+[node name="LightSprinklingExplosionAudioStreamPlayer3" type="AudioStreamPlayer" parent="Audio" index="2"]
+stream = ExtResource( 30 )
+bus = "SFX"
+
+[node name="JumpAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" index="3"]
+stream = ExtResource( 26 )
+volume_db = 10.0
+bus = "SFX"
+
+[node name="RumbleAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" index="4"]
+stream = ExtResource( 29 )
+volume_db = -5.0
+pitch_scale = 0.7
+bus = "SFX"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="1"]
 environment = SubResource( 118 )
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="1"]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="2"]
 scroll_limit_end = Vector2( 0, 320 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
@@ -786,23 +1018,10 @@ position = Vector2( 380, 3 )
 scale = Vector2( 0.77, 0.77 )
 texture = ExtResource( 19 )
 
-[node name="AnimationPlayer" parent="." index="3"]
+[node name="AnimationPlayer" parent="." index="4"]
 autoplay = ""
 anims/Lamp_ignition_cutscene = SubResource( 120 )
 anims/RESET = SubResource( 119 )
-
-[node name="Camera2D" parent="." index="4"]
-position = Vector2( 8, -255 )
-zoom = Vector2( 0.7, 0.7 )
-zoom_based_on_editor_value = true
-
-[node name="Clouds" parent="Camera2D" index="2" instance=ExtResource( 21 )]
-position = Vector2( -2, 2 )
-z_index = -2
-
-[node name="Particles2D" parent="Camera2D/Clouds" index="0"]
-amount = 100
-process_material = SubResource( 125 )
 
 [node name="BackgroundWorldObjects" type="Node2D" parent="." index="5"]
 
@@ -823,8 +1042,18 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="WorldSprite" parent="." index="6"]
-texture = ExtResource( 2 )
+[node name="Camera2D" parent="." index="6"]
+position = Vector2( 8, -353 )
+zoom = Vector2( 0.7, 0.7 )
+zoom_based_on_editor_value = true
+
+[node name="Clouds" parent="Camera2D" index="2" instance=ExtResource( 21 )]
+position = Vector2( -2, 2 )
+z_index = -2
+
+[node name="Particles2D" parent="Camera2D/Clouds" index="0"]
+amount = 100
+process_material = SubResource( 125 )
 
 [node name="MiddleWorldObjects" type="Node2D" parent="." index="7"]
 
@@ -853,6 +1082,7 @@ script = ExtResource( 13 )
 texture = ExtResource( 10 )
 
 [node name="InteractionEmitterObject" parent="MiddleWorldObjects/Buth_light_turned_off" index="1" instance=ExtResource( 11 )]
+visible = false
 position = Vector2( -2, 35 )
 labelText = "Осмотреть"
 
@@ -886,9 +1116,7 @@ process_material = SubResource( 123 )
 texture = ExtResource( 16 )
 
 [node name="Sprite" type="Sprite" parent="MiddleWorldObjects/SofaIgnitingLight" index="1"]
-position = Vector2( 1, -35 )
-rotation = 1.5708
-scale = Vector2( 100, 100 )
+position = Vector2( 0, -14 )
 z_index = 3
 texture = ExtResource( 15 )
 offset = Vector2( 8.54102, -1.25656 )
@@ -898,6 +1126,7 @@ vframes = 2
 [node name="Light2D" type="Light2D" parent="MiddleWorldObjects/SofaIgnitingLight" index="2"]
 visible = false
 texture = ExtResource( 17 )
+energy = 0.0
 
 [node name="Destructibles" type="Node2D" parent="MiddleWorldObjects" index="4"]
 
@@ -1020,7 +1249,10 @@ autoplay = true
 max_distance = 100.0
 area_mask = 32
 
-[node name="Player" parent="." index="9"]
+[node name="WorldSprite" parent="." index="9"]
+texture = ExtResource( 2 )
+
+[node name="Player" parent="." index="10"]
 position = Vector2( 8, 384 )
 z_index = 2
 collision_mask = 108
