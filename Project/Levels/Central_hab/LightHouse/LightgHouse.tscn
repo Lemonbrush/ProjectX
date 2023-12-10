@@ -41,7 +41,7 @@ adjustment_saturation = 1.3
 
 [sub_resource type="Animation" id=120]
 resource_name = "Lamp_ignition_cutscene"
-length = 13.0
+length = 14.0
 tracks/0/type = "method"
 tracks/0/path = NodePath(".")
 tracks/0/interp = 1
@@ -49,7 +49,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 13 ),
+"times": PoolRealArray( 0, 14 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -78,7 +78,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 6, 8.9 ),
+"times": PoolRealArray( 0, 6, 9.9 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 8, -255 ), Vector2( 8, -255 ), Vector2( 8, -353 ) ]
@@ -248,7 +248,7 @@ tracks/16/loop_wrap = true
 tracks/16/imported = false
 tracks/16/enabled = true
 tracks/16/keys = {
-"times": PoolRealArray( 2.7, 4.1, 13 ),
+"times": PoolRealArray( 2.7, 4.1, 14 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "values": [ {
 "args": [ null, null, null, null ],
@@ -268,7 +268,7 @@ tracks/17/loop_wrap = true
 tracks/17/imported = false
 tracks/17/enabled = true
 tracks/17/keys = {
-"times": PoolRealArray( 0, 7, 8 ),
+"times": PoolRealArray( 0, 8, 9 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
@@ -294,7 +294,7 @@ tracks/19/loop_wrap = true
 tracks/19/imported = false
 tracks/19/enabled = true
 tracks/19/keys = {
-"times": PoolRealArray( 0, 2.7, 4.1, 6, 9 ),
+"times": PoolRealArray( 0, 2.7, 4.1, 6, 10 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0.7, 0.7 ), Vector2( 0.7, 0.7 ), Vector2( 0.3, 0.3 ), Vector2( 0.3, 0.3 ), Vector2( 1, 1 ) ]
@@ -330,7 +330,7 @@ tracks/22/loop_wrap = true
 tracks/22/imported = false
 tracks/22/enabled = true
 tracks/22/keys = {
-"times": PoolRealArray( 5, 12, 13 ),
+"times": PoolRealArray( 5, 13, 14 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
@@ -413,7 +413,7 @@ tracks/28/loop_wrap = true
 tracks/28/imported = false
 tracks/28/enabled = true
 tracks/28/keys = {
-"times": PoolRealArray( 0, 6, 13 ),
+"times": PoolRealArray( 0, 6, 14 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ -5.0, -5.0, -80.0 ]
@@ -425,7 +425,7 @@ tracks/29/loop_wrap = true
 tracks/29/imported = false
 tracks/29/enabled = true
 tracks/29/keys = {
-"times": PoolRealArray( 4, 13 ),
+"times": PoolRealArray( 4, 14 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -442,7 +442,7 @@ tracks/30/loop_wrap = true
 tracks/30/imported = false
 tracks/30/enabled = true
 tracks/30/keys = {
-"times": PoolRealArray( 5.9, 13 ),
+"times": PoolRealArray( 5.9, 14 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [ 0.0 ],
@@ -459,7 +459,7 @@ tracks/31/loop_wrap = true
 tracks/31/imported = false
 tracks/31/enabled = true
 tracks/31/keys = {
-"times": PoolRealArray( 5.9, 12, 13 ),
+"times": PoolRealArray( 5.9, 13, 14 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0, -80.0 ]
@@ -1106,8 +1106,7 @@ process_material = SubResource( 123 )
 texture = ExtResource( 16 )
 
 [node name="Sprite" type="Sprite" parent="MiddleWorldObjects/SofaIgnitingLight" index="1"]
-position = Vector2( -0.333333, -23.6667 )
-rotation = 0.2618
+position = Vector2( 0, -14 )
 z_index = 3
 texture = ExtResource( 15 )
 offset = Vector2( 8.54102, -1.25656 )
@@ -1117,7 +1116,7 @@ vframes = 2
 [node name="Light2D" type="Light2D" parent="MiddleWorldObjects/SofaIgnitingLight" index="2"]
 visible = false
 texture = ExtResource( 17 )
-energy = 0.5
+energy = 0.0
 
 [node name="Destructibles" type="Node2D" parent="MiddleWorldObjects" index="4"]
 
@@ -1241,7 +1240,7 @@ max_distance = 100.0
 area_mask = 32
 
 [node name="Player" parent="." index="9"]
-position = Vector2( 9, -247 )
+position = Vector2( 9, -248 )
 z_index = 2
 collision_mask = 108
 
