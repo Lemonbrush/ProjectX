@@ -196,7 +196,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 3.2, 3.5, 3.6, 3.7, 4.2, 4.3, 4.8, 4.9, 5.4, 8.8, 8.9, 9.1, 9.2, 9.3, 9.4, 9.5, 9.6, 9.7, 9.8, 9.9 ),
+"times": PoolRealArray( 3.2, 3.5, 3.6, 3.7, 4.2, 4.3, 4.8, 4.9, 5.5, 8.8, 8.9, 9.1, 9.2, 9.3, 9.4, 9.5, 9.6, 9.7, 9.8, 9.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 12, 13, 14, 15, 16, 17, 18, 19, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 37 ]
@@ -208,7 +208,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 5.4, 11 ),
+"times": PoolRealArray( 0, 5.5, 11 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
@@ -220,10 +220,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 7.5, 8.8, 10.6, 13 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 7.5, 8.8, 10.6, 12, 13 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 27 ), Vector2( 0, 27 ), Vector2( -7, 20 ), Vector2( -7, 20 ), Vector2( -7, 20 ) ]
+"values": [ Vector2( 0, 27 ), Vector2( 0, 27 ), Vector2( -7, 20 ), Vector2( -7, 20 ), Vector2( -7, 20 ), Vector2( 0, -13 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Camera2D:zoom")
@@ -258,7 +258,7 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 13 ),
+"times": PoolRealArray( 12 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ null ],
@@ -306,7 +306,7 @@ tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 5.4 ),
+"times": PoolRealArray( 5.5 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
