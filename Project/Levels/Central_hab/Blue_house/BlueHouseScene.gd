@@ -1,6 +1,6 @@
 extends BaseLevel
 
-onready var artwork_sprite = $Artwork
+onready var artwork_animation_player = $Artwork/AnimationPlayer
 onready var artistDweller = $ArtistDweller
 
 func _ready():
@@ -8,10 +8,10 @@ func _ready():
 	var _brush_connection = EventBus.connect("show_artist_brush_gift_scene", self, "show_artist_brush_gift_scene")
 	
 	if GameEventConstants.constants.has("artist_created_artwork") && GameEventConstants.constants["artist_created_artwork"]:
-		artwork_sprite.visible = true
 		artistDweller.setup_custome_animation("idle_normal")
+		artwork_animation_player.play("Idle")
 	else:
-		artwork_sprite.visible = false
+		artwork_animation_player.play("RESET")
 		artistDweller.setup_custome_animation("idle_sad")
 
 func show_art_creation_cut_scene():
