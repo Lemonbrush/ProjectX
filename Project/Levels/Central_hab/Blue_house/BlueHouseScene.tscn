@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=70 format=2]
 
 [ext_resource path="res://Assets/Levels/Rooms/BlueHouse/Blue_house_interior.png" type="Texture" id=1]
 [ext_resource path="res://Project/Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
@@ -15,6 +15,17 @@
 [ext_resource path="res://Project/WorldObjects/Technical/ItemSpawner/ItemSpawner.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Project/WorldObjects/Pick_ups/Items/Sketch/SketchItem.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/Audio/Background_music/Level_themes/Indoor_theme.wav" type="AudioStream" id=15]
+[ext_resource path="res://Project/Utils/Audio/RandomAudioStreamPlayerNodes/PaffRandomAudioStreamPlayer.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Project/Utils/Audio/RandomAudioStreamPlayer/RandomAudioStreamPlayer.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Assets/Audio/SFX/General/swoosh/clean-fast-swooshaiff.mp3" type="AudioStream" id=18]
+[ext_resource path="res://Assets/Audio/SFX/General/Splat/breviceps__cartoon-splat.wav" type="AudioStream" id=19]
+[ext_resource path="res://Assets/Audio/SFX/General/Splat/benboncan__splat_ish.wav" type="AudioStream" id=20]
+[ext_resource path="res://Assets/Audio/SFX/General/Bell/success_bell.wav" type="AudioStream" id=21]
+[ext_resource path="res://Assets/Audio/SFX/General/Splat/cribbler__toon-splat.wav" type="AudioStream" id=22]
+[ext_resource path="res://Assets/Audio/SFX/General/Splat/jameswrowles__splat.wav" type="AudioStream" id=23]
+[ext_resource path="res://Assets/Audio/SFX/General/Bell/Lincore bells/Lincore bell 2.wav" type="AudioStream" id=24]
+[ext_resource path="res://Assets/Audio/SFX/General/Bell/Lincore bells/Lincore bell 1.wav" type="AudioStream" id=25]
+[ext_resource path="res://Assets/Audio/SFX/General/Bell/Lincore bells/Lincore bell 3.wav" type="AudioStream" id=26]
 
 [sub_resource type="Environment" id=137]
 background_mode = 4
@@ -51,7 +62,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("ArtShineParticles:emitting")
+tracks/2/path = NodePath("Artwork/ArtShineParticles:emitting")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -74,9 +85,34 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Vector2( 0, -13 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("ArtistDweller/Body/Sprite:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 44 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Player:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -18, 61 ) ]
+}
 
 [sub_resource type="Animation" id=133]
 resource_name = "artist_brush_gift_scene"
+length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Player:position")
 tracks/0/interp = 1
@@ -87,7 +123,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -40, 61 ) ]
+"values": [ Vector2( -18, 61 ) ]
 }
 tracks/1/type = "method"
 tracks/1/path = NodePath("Player")
@@ -96,7 +132,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.1, 0.9 ),
+"times": PoolRealArray( 0.1, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -123,7 +159,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id=122]
 resource_name = "place_artwork_cut_scene"
-length = 6.0
+length = 13.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Player:position")
 tracks/0/interp = 1
@@ -143,7 +179,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1.2, 6 ),
+"times": PoolRealArray( 3.2, 13 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -160,10 +196,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 1.2, 1.5, 1.6, 1.7, 2, 2.1, 2.4, 2.5, 2.7, 3.9, 4, 4.2, 4.9 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 3.2, 3.5, 3.6, 3.7, 4.2, 4.3, 4.8, 4.9, 5.5, 8.8, 8.9, 9.1, 9.2, 9.3, 9.4, 9.5, 9.6, 9.7, 9.8, 9.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 12, 13, 14, 15, 16, 17, 18, 19, 39, 40, 41, 42, 37 ]
+"values": [ 12, 13, 14, 15, 16, 17, 18, 19, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 37 ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("ArtistParticles:emitting")
@@ -172,130 +208,156 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 2.7, 6 ),
+"times": PoolRealArray( 0, 5.5, 11 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("ArtworkSprite:scale")
-tracks/4/interp = 2
+tracks/4/path = NodePath("Camera2D:position")
+tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 4.4, 4.6, 4.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 7.5, 8.8, 10.6, 12, 13 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1e-05, 1e-05 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 0, 27 ), Vector2( 0, 27 ), Vector2( -7, 20 ), Vector2( -7, 20 ), Vector2( -7, 20 ), Vector2( 0, -13 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("ArtworkSprite:visible")
-tracks/5/interp = 1
+tracks/5/path = NodePath("Camera2D:zoom")
+tracks/5/interp = 2
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 4.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("ArtShineParticles:emitting")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0, 4.5, 5.8 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ false, true, false ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("Camera2D:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0, 5.7, 6 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 27 ), Vector2( 0, 27 ), Vector2( 0, -13 ) ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("Camera2D:zoom")
-tracks/8/interp = 2
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
 "times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0.6, 0.6 ), Vector2( 0.3, 0.3 ) ]
 }
-tracks/9/type = "method"
-tracks/9/path = NodePath("ArtistDweller")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 4.95 ),
+tracks/6/type = "method"
+tracks/6/path = NodePath("ArtistDweller")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 10 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ "idle_normal" ],
 "method": "setup_custome_animation"
 } ]
 }
-tracks/10/type = "method"
-tracks/10/path = NodePath("Camera2D")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 6 ),
+tracks/7/type = "method"
+tracks/7/path = NodePath("Camera2D")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 12 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ null ],
 "method": "scale_to_default_zoom_with_animation"
 } ]
 }
-
-[sub_resource type="CurveTexture" id=112]
-
-[sub_resource type="Gradient" id=115]
-offsets = PoolRealArray( 0, 0.00285307, 0.248217, 0.774608, 0.997147, 1 )
-colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.239024, 1, 1, 1, 0 )
-
-[sub_resource type="GradientTexture" id=113]
-gradient = SubResource( 115 )
-
-[sub_resource type="Curve" id=116]
-_data = [ Vector2( 0, 0.840033 ), 0.0, 0.0, 0, 0, Vector2( 0.103806, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.571868 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=114]
-curve = SubResource( 116 )
-
-[sub_resource type="ParticlesMaterial" id=117]
-emission_shape = 2
-emission_box_extents = Vector3( 500, 500, 1 )
-flag_disable_z = true
-spread = 0.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 10.0
-initial_velocity_random = 0.5
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale_curve = SubResource( 114 )
-color_ramp = SubResource( 113 )
-anim_offset = 1.0
-anim_offset_random = 1.0
-anim_offset_curve = SubResource( 112 )
+tracks/8/type = "method"
+tracks/8/path = NodePath("Artwork/AnimationPlayer")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 9.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "Appear", -1, 1.0, false ],
+"method": "play"
+} ]
+}
+tracks/9/type = "method"
+tracks/9/path = NodePath("Audio/RandomAudioStreamPlayer")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 3.5, 4.2, 4.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "play"
+}, {
+"args": [  ],
+"method": "play"
+}, {
+"args": [  ],
+"method": "play"
+} ]
+}
+tracks/10/type = "method"
+tracks/10/path = NodePath("Audio/PaffRandomAudioStreamPlayer")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 5.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "play"
+} ]
+}
+tracks/11/type = "method"
+tracks/11/path = NodePath("Audio/SuccessAudioStreamPlayer")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 6.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/12/type = "method"
+tracks/12/path = NodePath(".")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 13 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ -10.0 ],
+"method": "set_background_music_volumeDB"
+}, {
+"args": [  ],
+"method": "reset_background_music_volumeDB"
+} ]
+}
+tracks/13/type = "method"
+tracks/13/path = NodePath("Audio/SwooshAudioStreamPlayer")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 9.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 11.5, 3.5 )
@@ -335,6 +397,133 @@ extents = Vector2( 4, 63.5 )
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 4, 83 )
+
+[sub_resource type="CanvasItemMaterial" id=130]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticlesMaterial" id=131]
+emission_shape = 2
+emission_box_extents = Vector3( 20, 20, 20 )
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+anim_speed = 1.0
+
+[sub_resource type="Animation" id=138]
+resource_name = "Appear"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ArtworkSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ArtShineParticles:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("../Audio/Bells/AudioStreamPlayer3")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("../Audio/Bells/AudioStreamPlayer2")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("../Audio/Bells/AudioStreamPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+
+[sub_resource type="Animation" id=139]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ArtworkSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 9 ]
+}
+
+[sub_resource type="Animation" id=140]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ArtworkSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ArtShineParticles:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=118]
 length = 0.001
@@ -420,37 +609,22 @@ _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.240876, 1 ), 0.0, 0.0, 0, 
 [sub_resource type="CurveTexture" id=136]
 curve = SubResource( 127 )
 
-[sub_resource type="ParticlesMaterial" id=134]
+[sub_resource type="ParticlesMaterial" id=141]
+lifetime_randomness = 1.0
 emission_shape = 1
 emission_sphere_radius = 3.0
 flag_disable_z = true
 spread = 180.0
 gravity = Vector3( 0, 0, 0 )
-initial_velocity = 25.0
+initial_velocity = 30.0
 initial_velocity_random = 1.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 angle = 720.0
 angle_random = 1.0
-scale = 0.1
 scale_random = 1.0
 scale_curve = SubResource( 136 )
 color_ramp = SubResource( 135 )
-
-[sub_resource type="CanvasItemMaterial" id=130]
-particles_animation = true
-particles_anim_h_frames = 4
-particles_anim_v_frames = 1
-particles_anim_loop = false
-
-[sub_resource type="ParticlesMaterial" id=131]
-emission_shape = 2
-emission_box_extents = Vector3( 20, 20, 20 )
-flag_disable_z = true
-gravity = Vector3( 0, 0, 0 )
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-anim_speed = 1.0
 
 [sub_resource type="Gradient" id=99]
 offsets = PoolRealArray( 0.00294118, 0.147059, 0.467647, 0.835294, 0.997059, 1 )
@@ -485,51 +659,108 @@ scale = 1.5
 scale_curve = SubResource( 108 )
 color_ramp = SubResource( 107 )
 
+[sub_resource type="CurveTexture" id=112]
+
+[sub_resource type="Gradient" id=115]
+offsets = PoolRealArray( 0, 0.00285307, 0.248217, 0.774608, 0.997147, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.239024, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=113]
+gradient = SubResource( 115 )
+
+[sub_resource type="Curve" id=116]
+_data = [ Vector2( 0, 0.840033 ), 0.0, 0.0, 0, 0, Vector2( 0.103806, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.571868 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=114]
+curve = SubResource( 116 )
+
+[sub_resource type="ParticlesMaterial" id=117]
+emission_shape = 2
+emission_box_extents = Vector3( 500, 500, 1 )
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 114 )
+color_ramp = SubResource( 113 )
+anim_offset = 1.0
+anim_offset_random = 1.0
+anim_offset_curve = SubResource( 112 )
+
 [node name="BlueHouseScene" instance=ExtResource( 2 )]
 script = ExtResource( 10 )
 background_music = ExtResource( 15 )
 dynamic_camera = false
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
+[node name="Audio" type="Node" parent="." index="0"]
+pause_mode = 2
+
+[node name="BrushSwingAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" index="0"]
+stream = ExtResource( 20 )
+bus = "SFX"
+
+[node name="SuccessAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" index="1"]
+stream = ExtResource( 21 )
+bus = "SFX"
+
+[node name="PaffRandomAudioStreamPlayer" parent="Audio" index="2" instance=ExtResource( 16 )]
+
+[node name="RandomAudioStreamPlayer" parent="Audio" index="3" instance=ExtResource( 17 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/RandomAudioStreamPlayer" index="0"]
+stream = ExtResource( 22 )
+bus = "SFX"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Audio/RandomAudioStreamPlayer" index="1"]
+stream = ExtResource( 23 )
+bus = "SFX"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Audio/RandomAudioStreamPlayer" index="2"]
+stream = ExtResource( 19 )
+bus = "SFX"
+
+[node name="Bells" type="Node" parent="Audio" index="4"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/Bells" index="0"]
+stream = ExtResource( 25 )
+bus = "SFX"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Audio/Bells" index="1"]
+stream = ExtResource( 24 )
+bus = "SFX"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Audio/Bells" index="2"]
+stream = ExtResource( 26 )
+bus = "SFX"
+
+[node name="SwooshAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" index="5"]
+stream = ExtResource( 18 )
+volume_db = -10.0
+pitch_scale = 2.0
+bus = "SFX"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="1"]
 environment = SubResource( 137 )
 
-[node name="AnimationPlayer" parent="." index="2"]
+[node name="AnimationPlayer" parent="." index="3"]
 autoplay = "RESET"
 anims/RESET = SubResource( 123 )
 anims/artist_brush_gift_scene = SubResource( 133 )
 anims/place_artwork_cut_scene = SubResource( 122 )
 
-[node name="Camera2D" parent="." index="3"]
-position = Vector2( 0, -13 )
-zoom = Vector2( 0.6, 0.6 )
-zoom_based_on_editor_value = true
-default_zoom = 0.6
-
-[node name="Clouds2" parent="Camera2D" index="2" instance=ExtResource( 6 )]
-position = Vector2( -2, -19 )
-z_index = -2
-
-[node name="Particles2D" parent="Camera2D/Clouds2" index="0"]
-amount = 100
-lifetime = 10.0
-process_material = SubResource( 117 )
-
 [node name="WorldSprite" parent="." index="4"]
 texture = ExtResource( 1 )
 
-[node name="ArtworkSprite" type="Sprite" parent="." index="5"]
-visible = false
-position = Vector2( -7, 15 )
-scale = Vector2( 1e-05, 1e-05 )
-texture = ExtResource( 9 )
-
-[node name="BlueHouseDoor" parent="." index="6" instance=ExtResource( 5 )]
+[node name="BlueHouseDoor" parent="." index="5" instance=ExtResource( 5 )]
 position = Vector2( 6, -18 )
 nextScenePath = "res://Project/Levels/Central_hab/Central_hab.tscn"
 nextDoorName = "BlueHouseDoor"
 
-[node name="Player" parent="." index="7"]
-position = Vector2( -40, 61 )
+[node name="Player" parent="." index="6"]
+position = Vector2( -18, 61 )
 z_index = 1
 
 [node name="Light2D2" parent="Player" index="6"]
@@ -697,6 +928,29 @@ collision_mask = 17
 position = Vector2( -49, -83 )
 shape = SubResource( 6 )
 
+[node name="Artwork" type="Node2D" parent="." index="12"]
+pause_mode = 2
+
+[node name="ArtShineParticles" type="Particles2D" parent="Artwork" index="0"]
+pause_mode = 2
+material = SubResource( 130 )
+position = Vector2( -7, 15 )
+z_index = 100
+emitting = false
+amount = 5
+process_material = SubResource( 131 )
+texture = ExtResource( 12 )
+
+[node name="ArtworkSprite" type="Sprite" parent="Artwork" index="1"]
+position = Vector2( -7, 15 )
+texture = ExtResource( 9 )
+hframes = 10
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Artwork" index="2"]
+anims/Appear = SubResource( 138 )
+anims/Idle = SubResource( 139 )
+anims/RESET = SubResource( 140 )
+
 [node name="ArtistDweller" parent="." index="13" instance=ExtResource( 7 )]
 position = Vector2( 18, 61 )
 dialogId = "artist_dweller"
@@ -707,6 +961,7 @@ position = Vector2( 0, -16 )
 texture = ExtResource( 8 )
 hframes = 13
 vframes = 4
+frame = 44
 
 [node name="DialogTextBoxController" parent="ArtistDweller" index="5"]
 pause_mode = 2
@@ -723,23 +978,14 @@ pause_mode = 2
 material = SubResource( 124 )
 position = Vector2( 10, 51 )
 emitting = false
-amount = 30
+amount = 20
 one_shot = true
 explosiveness = 1.0
-process_material = SubResource( 134 )
+randomness = 1.0
+process_material = SubResource( 141 )
 texture = ExtResource( 11 )
 
-[node name="ArtShineParticles" type="Particles2D" parent="." index="15"]
-pause_mode = 2
-material = SubResource( 130 )
-position = Vector2( -7, 15 )
-z_index = 100
-emitting = false
-amount = 5
-process_material = SubResource( 131 )
-texture = ExtResource( 12 )
-
-[node name="fire" type="Particles2D" parent="." index="16"]
+[node name="fire" type="Particles2D" parent="." index="15"]
 pause_mode = 2
 position = Vector2( 45, 57 )
 amount = 20
@@ -747,11 +993,25 @@ randomness = 1.0
 process_material = SubResource( 101 )
 texture = ExtResource( 4 )
 
-[node name="SketchItemSpawner" parent="." index="17" instance=ExtResource( 13 )]
-position = Vector2( -12, 51 )
+[node name="SketchItemSpawner" parent="." index="16" instance=ExtResource( 13 )]
+position = Vector2( -18, 53 )
 itemScene = ExtResource( 14 )
 
-[editable path="Camera2D/Clouds2"]
+[node name="Camera2D" parent="." index="17"]
+position = Vector2( 0, -13 )
+zoom = Vector2( 0.6, 0.6 )
+zoom_based_on_editor_value = true
+default_zoom = 0.6
+
+[node name="Clouds2" parent="Camera2D" index="2" instance=ExtResource( 6 )]
+position = Vector2( -2, -19 )
+z_index = -2
+
+[node name="Particles2D" parent="Camera2D/Clouds2" index="0"]
+amount = 100
+lifetime = 10.0
+process_material = SubResource( 117 )
+
 [editable path="Collisions/PassThrough/PassThroughBody6"]
 [editable path="Collisions/PassThrough/PassThroughBody11"]
 [editable path="Collisions/PassThrough/PassThroughBody12"]
@@ -773,3 +1033,4 @@ itemScene = ExtResource( 14 )
 [editable path="Collisions/Solid/PassThroughBody4"]
 [editable path="ArtistDweller"]
 [editable path="ArtistDweller/Body/InteractionController"]
+[editable path="Camera2D/Clouds2"]
