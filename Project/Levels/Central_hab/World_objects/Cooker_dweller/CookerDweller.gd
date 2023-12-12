@@ -1,5 +1,8 @@
 extends Node2D
 
+signal set_background_music_volume(newVolume)
+signal reset_background_music_volume()
+
 onready var animationPlayer = $AnimationPlayer
 onready var airBeamCollisionShape = $AirBeam/Area2D/CollisionShape2D
 onready var dweller = $AbstractDweller
@@ -35,3 +38,9 @@ func set_cauldron_animation(is_working):
 	
 	if is_working:
 		dweller.setup_custome_animation("Happy")
+
+func lower_music_volume():
+	emit_signal("set_background_music_volume", -20)
+
+func reset_background_music_volume():
+	emit_signal("reset_background_music_volume")
