@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Project/Characters/NPC/NpcActions/idle/idle_npc_action.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Levels/Central_hub/World_objects/Lovers/LoversFurniture.png" type="Texture" id=2]
@@ -13,10 +13,12 @@
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsSofa.tres" type="Resource" id=11]
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsSasha.tres" type="Resource" id=12]
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.gd" type="Script" id=13]
+[ext_resource path="res://Assets/Audio/SFX/General/Shine/shiny-object.wav" type="AudioStream" id=14]
+[ext_resource path="res://Assets/Audio/SFX/General/misc/cat-purr.wav" type="AudioStream" id=15]
 
 [sub_resource type="Animation" id=217]
 resource_name = "First_kiss_spirit_appear"
-length = 4.0
+length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("FirstKissSpirit/Sprite:position")
 tracks/0/interp = 2
@@ -24,7 +26,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 1, 2.2, 4 ),
+"times": PoolRealArray( 1, 2, 5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, -9 ), Vector2( 0, -63 ), Vector2( 67, -1 ) ]
@@ -36,7 +38,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1, 2.2 ),
+"times": PoolRealArray( 1, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1, 1 ) ]
@@ -48,7 +50,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 1, 4 ),
+"times": PoolRealArray( 1, 5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -60,11 +62,68 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 4 ),
+"times": PoolRealArray( 5 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
 "method": "start_spirit_floating_animation"
+} ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("Audio/PurrAudioStreamPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("Audio/HeartSwingAudioStreamPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Audio/PurrAudioStreamPlayer:volume_db")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, -80.0 ]
+}
+tracks/7/type = "method"
+tracks/7/path = NodePath(".")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "lower_music_volume"
+}, {
+"args": [  ],
+"method": "reset_background_music_volume"
 } ]
 }
 
@@ -81,6 +140,30 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Audio/PurrAudioStreamPlayer:pitch_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Audio/PurrAudioStreamPlayer:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
 }
 
 [sub_resource type="Curve" id=213]
@@ -117,6 +200,16 @@ voice_mode = 3
 
 [node name="Lovers" type="Node2D"]
 script = ExtResource( 8 )
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="PurrAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 15 )
+bus = "SFX"
+
+[node name="HeartSwingAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 14 )
+bus = "SFX"
 
 [node name="VisibilityChecker" parent="." instance=ExtResource( 7 )]
 visible = false
