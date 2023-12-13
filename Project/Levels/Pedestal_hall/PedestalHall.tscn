@@ -955,7 +955,7 @@ tracks/29/keys = {
 "values": [ false ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("Middle_world_objects/MysticDweller/Body/Sprite:frame")
+tracks/30/path = NodePath("Camera2D:zoom")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/imported = false
@@ -964,10 +964,10 @@ tracks/30/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 78 ]
+"values": [ Vector2( 0.5, 0.5 ) ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Camera2D:zoom")
+tracks/31/path = NodePath("Middle_world_objects/MagicParticles2D:emitting")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/imported = false
@@ -976,31 +976,7 @@ tracks/31/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0.5, 0.5 ) ]
-}
-tracks/32/type = "value"
-tracks/32/path = NodePath("Middle_world_objects/MagicParticles2D:emitting")
-tracks/32/interp = 1
-tracks/32/loop_wrap = true
-tracks/32/imported = false
-tracks/32/enabled = true
-tracks/32/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
 "values": [ false ]
-}
-tracks/33/type = "value"
-tracks/33/path = NodePath("Player:position")
-tracks/33/interp = 1
-tracks/33/loop_wrap = true
-tracks/33/imported = false
-tracks/33/enabled = true
-tracks/33/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -50, -95 ) ]
 }
 
 [sub_resource type="Animation" id=312]
@@ -1158,7 +1134,7 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 2.5, 8 ),
+"times": PoolRealArray( 0, 8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -1480,7 +1456,7 @@ anims/Show_mystic_dweller = SubResource( 312 )
 anims/pedestals_activation_scene = SubResource( 304 )
 
 [node name="Camera2D" parent="." index="6"]
-position = Vector2( -24, -109 )
+position = Vector2( -49.0714, -44.8862 )
 zoom = Vector2( 0.5, 0.5 )
 
 [node name="Clouds" parent="Camera2D" index="2" instance=ExtResource( 5 )]
