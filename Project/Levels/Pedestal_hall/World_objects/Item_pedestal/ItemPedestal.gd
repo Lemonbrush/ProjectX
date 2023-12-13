@@ -25,6 +25,7 @@ func _ready():
 		var item_instance = itemScene.instance()
 		itemBaseNode.add_child(item_instance)
 		item_instance.global_position = itemBaseNode.global_position
+		item_instance.z_index = itemBaseNode.z_index
 	
 	_update_initial_animation_state()
 	_update_pedestal_state()
