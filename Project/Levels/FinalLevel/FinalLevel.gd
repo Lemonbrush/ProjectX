@@ -5,8 +5,7 @@ onready var final_cutscene_start_interaction_emitter = $SkyIsland/Middle_world_o
 onready var yes_button = $SkyIsland/ProposalControl/VBoxContainer/HBoxContainer/YesButton
 onready var no_button = $SkyIsland/ProposalControl/VBoxContainer/HBoxContainer/NoButton
 
-var credits_scene = ""
-var game_menu_path = "res://Project/UI/GameMenu/GameMenu.tscn"
+var game_menu_path = "res://Project/UI/Screens/GameMenu/GameMenu.tscn"
 
 func _ready():
 	var _elevator_connection = platform_approachDetector.connect("player_did_enter_elevator", self, "player_did_enter_elevator")
