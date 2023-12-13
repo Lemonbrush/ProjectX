@@ -534,10 +534,10 @@ tracks/37/loop_wrap = true
 tracks/37/imported = false
 tracks/37/enabled = true
 tracks/37/keys = {
-"times": PoolRealArray( 2 ),
+"times": PoolRealArray( 1.975 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [ "custome" ],
+"args": [ "\"\"" ],
 "method": "setup_custome_animation"
 } ]
 }
@@ -1039,6 +1039,20 @@ tracks/3/keys = {
 "method": "set_interaction_mode"
 } ]
 }
+tracks/4/type = "method"
+tracks/4/path = NodePath("Middle_world_objects/MysticDweller")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "\"\"" ],
+"method": "setup_custome_animation"
+} ]
+}
 
 [sub_resource type="Animation" id=304]
 resource_name = "pedestals_activation_scene"
@@ -1456,7 +1470,7 @@ anims/Show_mystic_dweller = SubResource( 312 )
 anims/pedestals_activation_scene = SubResource( 304 )
 
 [node name="Camera2D" parent="." index="6"]
-position = Vector2( -49.0714, -44.8862 )
+position = Vector2( -23.4286, -106.543 )
 zoom = Vector2( 0.5, 0.5 )
 
 [node name="Clouds" parent="Camera2D" index="2" instance=ExtResource( 5 )]
