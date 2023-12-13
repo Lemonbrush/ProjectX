@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Assets/Levels/Pedestal_hall/World_objects/Pedestal/ItemPedestal-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Project/Levels/Pedestal_hall/World_objects/Item_pedestal/ItemPedestal.gd" type="Script" id=2]
@@ -8,6 +8,12 @@
 [ext_resource path="res://Assets/Effects/Particles/particles.png" type="Texture" id=6]
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.gd" type="Script" id=7]
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/MonoSoundAlphabetVoiceModel/LetterSoundsMi.tres" type="Resource" id=8]
+[ext_resource path="res://Assets/Audio/SFX/General/mechanisms/single-windmill-cog-wheel.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Audio/SFX/General/mechanisms/chair-piston-moving-up.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Audio/SFX/General/Cloth/Flag/flag-flicking-on-strong-wind-isolated.wav" type="AudioStream" id=11]
+[ext_resource path="res://Project/Utils/Audio/RandomAudioStreamPlayerNodes/PaffRandomAudioStreamPlayer.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/Audio/SFX/General/Button/switchlight.wav" type="AudioStream" id=13]
+[ext_resource path="res://Assets/Audio/SFX/General/Bell/success_bell.wav" type="AudioStream" id=14]
 
 [sub_resource type="Animation" id=23]
 resource_name = "Activated"
@@ -39,6 +45,57 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath("Audio/Activation/TopClickAudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5, 1.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Audio/Activation/LiftPistonAudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Audio/Activation/ClothAudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.8, 1.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [  ],
+"method": "stop"
+} ]
+}
 
 [sub_resource type="Animation" id=24]
 resource_name = "Inactive"
@@ -57,7 +114,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=2]
 resource_name = "ItemPlace"
-length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -77,7 +133,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -89,7 +145,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.3 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -106,6 +162,62 @@ tracks/3/keys = {
 "values": [ {
 "args": [  ],
 "method": "_emit_did_place_item_at_pedestal"
+} ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("Audio/ItemPlacing/PaffRandomAudioStreamPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "play"
+} ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("Audio/ItemPlacing/LiftAudioStreamPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath("Audio/ItemPlacing/ItemPlaceAudioStreamPlayer")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/7/type = "method"
+tracks/7/path = NodePath("Audio/ItemPlacing/SuccessAudioStreamPlayer")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
 } ]
 }
 
@@ -173,12 +285,47 @@ color_ramp = SubResource( 26 )
 [node name="ItemPedestal" type="Node2D"]
 script = ExtResource( 2 )
 
+[node name="Audio" type="Node" parent="."]
+
+[node name="Activation" type="Node" parent="Audio"]
+
+[node name="TopClickAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/Activation"]
+stream = ExtResource( 9 )
+bus = "SFX"
+
+[node name="ClothAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/Activation"]
+stream = ExtResource( 11 )
+bus = "SFX"
+
+[node name="LiftPistonAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/Activation"]
+stream = ExtResource( 10 )
+bus = "SFX"
+
+[node name="ItemPlacing" type="Node" parent="Audio"]
+
+[node name="PaffRandomAudioStreamPlayer" parent="Audio/ItemPlacing" instance=ExtResource( 12 )]
+numberToPlay = 1
+minPitchScale = 1.0
+maxPitchScale = 1.0
+
+[node name="ItemPlaceAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/ItemPlacing"]
+stream = ExtResource( 13 )
+bus = "SFX"
+
+[node name="SuccessAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/ItemPlacing"]
+stream = ExtResource( 14 )
+bus = "SFX"
+
+[node name="LiftAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/ItemPlacing"]
+stream = ExtResource( 10 )
+bus = "SFX"
+
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -2 )
 texture = ExtResource( 1 )
 hframes = 17
 vframes = 2
-frame = 17
+frame = 22
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Activated = SubResource( 23 )
@@ -206,7 +353,6 @@ interaction_popup_label_text = "Осмотреть"
 voice_generator_configuration_file = SubResource( 28 )
 
 [node name="Item" type="Node2D" parent="."]
-visible = false
 position = Vector2( 0, -23 )
 
 [node name="DustParticles" type="Particles2D" parent="."]
