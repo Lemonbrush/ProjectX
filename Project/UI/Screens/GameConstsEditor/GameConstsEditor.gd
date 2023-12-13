@@ -80,7 +80,6 @@ func autochange_bool_value_if_can(constant_name, value):
 		execute_command(command)
 
 func execute_command(command_line):
-	on_quit_pressed()
 	CommandHandler.execute(command_line)
 
 func update_command_with_base(base):
