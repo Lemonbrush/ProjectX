@@ -89,6 +89,7 @@ func on_options_back_pressed():
 	mainMenuCanvasLayer.visible = true
 
 func play_background_music():
+	MusicPlayer.reset_background_music_volumeDB()
 	MusicPlayer.play_stream(background_music)
 
 func play_transition_music():

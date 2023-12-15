@@ -1,4 +1,4 @@
-[gd_scene load_steps=146 format=2]
+[gd_scene load_steps=148 format=2]
 
 [ext_resource path="res://Project/Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Project/WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=2]
@@ -357,6 +357,30 @@ tracks/11/keys = {
 "args": [  ],
 "method": "play"
 } ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Camera2D/LoveParticles:emitting")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("TransitionCircle:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=75]
@@ -760,6 +784,30 @@ tracks/16/keys = {
 "update": 0,
 "values": [ -15.0 ]
 }
+tracks/17/type = "value"
+tracks/17/path = NodePath("TransitionCircle:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("TransitionCircle:material:shader_param/circle_size")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.5 ]
+}
 
 [sub_resource type="Animation" id=111]
 resource_name = "She_said_yes_cutscene"
@@ -868,29 +916,12 @@ tracks/7/keys = {
 } ]
 }
 tracks/8/type = "method"
-tracks/8/path = NodePath(".")
+tracks/8/path = NodePath("Audio/EndingStage/HugImpactAudioStreamPlayer")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0.5, 28 ),
-"transitions": PoolRealArray( 1, 1 ),
-"values": [ {
-"args": [ -80.0 ],
-"method": "set_background_music_volumeDB"
-}, {
-"args": [  ],
-"method": "reset_background_music_volumeDB"
-} ]
-}
-tracks/9/type = "method"
-tracks/9/path = NodePath("Audio/EndingStage/HugImpactAudioStreamPlayer")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
 "times": PoolRealArray( 0.9 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -898,13 +929,13 @@ tracks/9/keys = {
 "method": "play"
 } ]
 }
-tracks/10/type = "method"
-tracks/10/path = NodePath("Audio/ProposalStage/ShineAmbienceAudioStreamPlayer")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
+tracks/9/type = "method"
+tracks/9/path = NodePath("Audio/ProposalStage/ShineAmbienceAudioStreamPlayer")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -912,13 +943,13 @@ tracks/10/keys = {
 "method": "stop"
 } ]
 }
-tracks/11/type = "method"
-tracks/11/path = NodePath("Audio/EndingStage/MellowThemeAudioStreamPlayer")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
+tracks/10/type = "method"
+tracks/10/path = NodePath("Audio/EndingStage/MellowThemeAudioStreamPlayer")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
 "times": PoolRealArray( 0.8 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -926,13 +957,13 @@ tracks/11/keys = {
 "method": "play"
 } ]
 }
-tracks/12/type = "method"
-tracks/12/path = NodePath("Audio/EndingStage/Arpeggio/ArpeggioAudioStreamPlayer")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/keys = {
+tracks/11/type = "method"
+tracks/11/path = NodePath("Audio/EndingStage/Arpeggio/ArpeggioAudioStreamPlayer")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
 "times": PoolRealArray( 2 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -940,13 +971,13 @@ tracks/12/keys = {
 "method": "play"
 } ]
 }
-tracks/13/type = "method"
-tracks/13/path = NodePath("Audio/EndingStage/Arpeggio/ArpeggioAudioStreamPlayer2")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/keys = {
+tracks/12/type = "method"
+tracks/12/path = NodePath("Audio/EndingStage/Arpeggio/ArpeggioAudioStreamPlayer2")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
 "times": PoolRealArray( 2.5 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -954,19 +985,43 @@ tracks/13/keys = {
 "method": "play"
 } ]
 }
-tracks/14/type = "method"
-tracks/14/path = NodePath("Audio/EndingStage/Arpeggio/ArpeggioAudioStreamPlayer3")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/keys = {
+tracks/13/type = "method"
+tracks/13/path = NodePath("Audio/EndingStage/Arpeggio/ArpeggioAudioStreamPlayer3")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
 "times": PoolRealArray( 3 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ 0.0 ],
 "method": "play"
 } ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("TransitionCircle:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 18.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("TransitionCircle:material:shader_param/circle_size")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 18.9, 26.6, 27.2, 28 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.5, 0.015, 0.015, 0.0 ]
 }
 
 [sub_resource type="Animation" id=110]
@@ -1167,6 +1222,29 @@ tracks/14/keys = {
 } ]
 }
 
+[sub_resource type="Curve" id=215]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.282238, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.823529, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=214]
+curve = SubResource( 215 )
+
+[sub_resource type="ParticlesMaterial" id=227]
+emission_shape = 2
+emission_box_extents = Vector3( 100, 1, 1 )
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 90.0
+gravity = Vector3( 0, -3, 0 )
+initial_velocity = 40.0
+initial_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 2.0
+scale_random = 1.0
+scale_curve = SubResource( 214 )
+hue_variation = 1.0
+hue_variation_random = 1.0
+
 [sub_resource type="CurveTexture" id=7]
 
 [sub_resource type="Gradient" id=3]
@@ -1197,29 +1275,6 @@ color_ramp = SubResource( 8 )
 anim_offset = 1.0
 anim_offset_random = 1.0
 anim_offset_curve = SubResource( 7 )
-
-[sub_resource type="Curve" id=215]
-_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.282238, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.823529, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=214]
-curve = SubResource( 215 )
-
-[sub_resource type="ParticlesMaterial" id=227]
-emission_shape = 2
-emission_box_extents = Vector3( 100, 1, 1 )
-flag_disable_z = true
-direction = Vector3( 0, -1, 0 )
-spread = 90.0
-gravity = Vector3( 0, -3, 0 )
-initial_velocity = 40.0
-initial_velocity_random = 1.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale = 2.0
-scale_random = 1.0
-scale_curve = SubResource( 214 )
-hue_variation = 1.0
-hue_variation_random = 1.0
 
 [sub_resource type="CanvasItemMaterial" id=225]
 particles_animation = true
@@ -1867,6 +1922,21 @@ extents = Vector2( 7014.5, 150 )
 [sub_resource type="RectangleShape2D" id=222]
 extents = Vector2( 85, 1381 )
 
+[sub_resource type="Shader" id=228]
+code = "shader_type canvas_item;
+
+uniform float circle_size : hint_range(0,1) = 0.5f;
+
+void fragment() {
+	if (distance(vec2(0.5,0.5), UV) < circle_size) {
+		COLOR.a = 0.0;
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id=229]
+shader = SubResource( 228 )
+shader_param/circle_size = 0.5
+
 [node name="FinalLevel" instance=ExtResource( 1 )]
 script = ExtResource( 22 )
 background_music = ExtResource( 20 )
@@ -2053,7 +2123,22 @@ anims/RESET = SubResource( 94 )
 anims/She_said_yes_cutscene = SubResource( 111 )
 anims/Start_proposal_stage = SubResource( 110 )
 
-[node name="Stars" type="Node2D" parent="." index="5"]
+[node name="Camera2D" parent="." index="5"]
+position = Vector2( 8, -250 )
+zoom = Vector2( 0.223529, 0.223529 )
+follow_player = false
+
+[node name="LoveParticles" type="Particles2D" parent="Camera2D" index="2"]
+position = Vector2( -1, 96 )
+emitting = false
+amount = 400
+lifetime = 10.0
+randomness = 1.0
+visibility_rect = Rect2( -500, -500, 1000, 1000 )
+process_material = SubResource( 227 )
+texture = ExtResource( 33 )
+
+[node name="Stars" type="Node2D" parent="." index="6"]
 pause_mode = 2
 modulate = Color( 1, 1, 1, 0.729412 )
 position = Vector2( 6, -249 )
@@ -2068,21 +2153,6 @@ randomness = 1.0
 visibility_rect = Rect2( -100, -100, 2000, 2500 )
 local_coords = false
 process_material = SubResource( 93 )
-
-[node name="Camera2D" parent="." index="6"]
-position = Vector2( 8, -250 )
-zoom = Vector2( 0.223529, 0.223529 )
-follow_player = false
-
-[node name="LoveParticles" type="Particles2D" parent="Camera2D" index="2"]
-position = Vector2( -1, 96 )
-emitting = false
-amount = 400
-lifetime = 10.0
-randomness = 1.0
-visibility_rect = Rect2( -500, -500, 1000, 1000 )
-process_material = SubResource( 227 )
-texture = ExtResource( 33 )
 
 [node name="SkyIsland" type="Node2D" parent="." index="7"]
 
@@ -2371,7 +2441,6 @@ texture = ExtResource( 28 )
 hframes = 36
 
 [node name="IndependantDialogController" parent="SkyIsland/Middle_world_objects" index="6" instance=ExtResource( 29 )]
-visible = false
 position = Vector2( 1, -2145 )
 dialog_id = "my_final_dialog"
 
@@ -3239,6 +3308,19 @@ collision_mask = 64
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HazardArea/Hazard_area3" index="0"]
 position = Vector2( 647, -1229 )
 shape = SubResource( 222 )
+
+[node name="TransitionCircle" type="ColorRect" parent="." index="18"]
+visible = false
+material = SubResource( 229 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -493.0
+margin_top = -2622.0
+margin_right = 507.0
+margin_bottom = -1622.0
+color = Color( 0, 0, 0, 1 )
 
 [editable path="SkyIsland/Middle_world_objects/Me/InteractionEmitterObject"]
 [editable path="SkyIsland/Middle_world_objects/Me/InteractionEmitterObject/InteractionController"]
