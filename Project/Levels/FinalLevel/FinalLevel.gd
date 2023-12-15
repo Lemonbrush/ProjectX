@@ -7,6 +7,7 @@ onready var no_button = $SkyIsland/ProposalControl/VBoxContainer/HBoxContainer/N
 onready var answer_button_audio_player = $Audio/ProposalStage/AnswerButtonAudioStreamPlayer
 onready var yes_button_shine = $SkyIsland/ProposalControl/VBoxContainer/HBoxContainer/YesButton/ShineParticles2D
 onready var heartbeat_audioPlayer = $Audio/ProposalStage/HeartBeatAudioStreamPlayer
+onready var me_interaction_object = $SkyIsland/Middle_world_objects/IndependantDialogController
 
 var game_menu_path = "res://Project/UI/Screens/GameMenu/GameMenu.tscn"
 
@@ -24,6 +25,7 @@ func did_start_final_cutscene(_args):
 	animationPlayer.play("Awakening_cutscene")
 
 func start_proposal_stage():
+	me_interaction_object.finish_dialog()
 	animationPlayer.play("Start_proposal_stage")
 
 func she_said_yes():
