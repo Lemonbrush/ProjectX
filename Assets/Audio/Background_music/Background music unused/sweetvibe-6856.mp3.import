@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sweetvibe-6856.mp3-ed7e6369227eaeef17808b40f8799046.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Background_music/Background music unused/sweetvibe-6856.mp3"
+dest_files=[ "res://.import/sweetvibe-6856.mp3-ed7e6369227eaeef17808b40f8799046.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

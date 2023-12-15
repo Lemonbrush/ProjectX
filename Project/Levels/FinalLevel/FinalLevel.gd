@@ -6,6 +6,7 @@ onready var yes_button = $SkyIsland/ProposalControl/VBoxContainer/HBoxContainer/
 onready var no_button = $SkyIsland/ProposalControl/VBoxContainer/HBoxContainer/NoButton
 onready var answer_button_audio_player = $Audio/ProposalStage/AnswerButtonAudioStreamPlayer
 onready var yes_button_shine = $SkyIsland/ProposalControl/VBoxContainer/HBoxContainer/YesButton/ShineParticles2D
+onready var heartbeat_audioPlayer = $Audio/ProposalStage/HeartBeatAudioStreamPlayer
 
 var game_menu_path = "res://Project/UI/Screens/GameMenu/GameMenu.tscn"
 
@@ -26,6 +27,7 @@ func start_proposal_stage():
 	animationPlayer.play("Start_proposal_stage")
 
 func she_said_yes():
+	heartbeat_audioPlayer.stop()
 	answer_button_audio_player.play()
 	yes_button_shine.emitting = true
 	animationPlayer.play("She_said_yes_cutscene")
@@ -34,4 +36,5 @@ func show_she_said_yes_cutscene():
 	LevelManager.transition_to_scene(load(game_menu_path))
 
 func she_said_no():
+	heartbeat_audioPlayer.stop()
 	LevelManager.transition_to_scene(load(game_menu_path))
