@@ -32,7 +32,7 @@ func she_said_yes():
 	yes_button_shine.emitting = true
 	animationPlayer.play("She_said_yes_cutscene")
 
-func show_she_said_yes_cutscene():
+func transition_to_main_menu():
 	LevelManager.transition_to_scene(load(game_menu_path))
 
 func she_said_no():

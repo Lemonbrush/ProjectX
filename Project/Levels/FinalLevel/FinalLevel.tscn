@@ -737,7 +737,7 @@ tracks/14/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("SkyIsland/Middle_world_objects/LoveParticles:emitting")
+tracks/15/path = NodePath("Camera2D/LoveParticles:emitting")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/imported = false
@@ -763,7 +763,7 @@ tracks/16/keys = {
 
 [sub_resource type="Animation" id=111]
 resource_name = "She_said_yes_cutscene"
-length = 10.5
+length = 30.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("SkyIsland/Middle_world_objects/WeSprite:frame")
 tracks/0/interp = 1
@@ -777,7 +777,7 @@ tracks/0/keys = {
 "values": [ 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 33, 35 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("SkyIsland/Middle_world_objects/LoveParticles:emitting")
+tracks/1/path = NodePath("Camera2D/LoveParticles:emitting")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -795,10 +795,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.5, 4.5, 10.5 ),
+"times": PoolRealArray( 0.5, 4.5, 30 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 9, -2183 ), Vector2( 9, -2183 ), Vector2( 9, -2343 ) ]
+"values": [ Vector2( 9, -2183 ), Vector2( 9, -2183 ), Vector2( 9, -2602 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Camera2D:zoom")
@@ -843,11 +843,11 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 7.5 ),
+"times": PoolRealArray( 28 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "show_she_said_yes_cutscene"
+"method": "transition_to_main_menu"
 } ]
 }
 tracks/7/type = "method"
@@ -917,6 +917,48 @@ tracks/11/imported = false
 tracks/11/enabled = true
 tracks/11/keys = {
 "times": PoolRealArray( 0.8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/12/type = "method"
+tracks/12/path = NodePath("Audio/EndingStage/Arpeggio/ArpeggioAudioStreamPlayer")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/13/type = "method"
+tracks/13/path = NodePath("Audio/EndingStage/Arpeggio/ArpeggioAudioStreamPlayer2")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 2.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/14/type = "method"
+tracks/14/path = NodePath("Audio/EndingStage/Arpeggio/ArpeggioAudioStreamPlayer3")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 3 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ 0.0 ],
@@ -1164,6 +1206,29 @@ color_ramp = SubResource( 8 )
 anim_offset = 1.0
 anim_offset_random = 1.0
 anim_offset_curve = SubResource( 7 )
+
+[sub_resource type="Curve" id=215]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.282238, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.823529, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=214]
+curve = SubResource( 215 )
+
+[sub_resource type="ParticlesMaterial" id=227]
+emission_shape = 2
+emission_box_extents = Vector3( 100, 1, 1 )
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 90.0
+gravity = Vector3( 0, -3, 0 )
+initial_velocity = 40.0
+initial_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 2.0
+scale_random = 1.0
+scale_curve = SubResource( 214 )
+hue_variation = 1.0
+hue_variation_random = 1.0
 
 [sub_resource type="CanvasItemMaterial" id=225]
 particles_animation = true
@@ -1429,26 +1494,6 @@ tracks/0/keys = {
 
 [sub_resource type="RectangleShape2D" id=107]
 extents = Vector2( 15, 10 )
-
-[sub_resource type="Curve" id=215]
-_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.282238, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.890511, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=214]
-curve = SubResource( 215 )
-
-[sub_resource type="ParticlesMaterial" id=216]
-emission_shape = 2
-emission_box_extents = Vector3( 4, 1, 1 )
-flag_disable_z = true
-spread = 180.0
-gravity = Vector3( 0, -10, 0 )
-initial_velocity = 40.0
-initial_velocity_random = 0.5
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale = 0.1
-scale_random = 1.0
-scale_curve = SubResource( 214 )
 
 [sub_resource type="ShaderMaterial" id=86]
 shader = ExtResource( 24 )
@@ -2035,8 +2080,17 @@ process_material = SubResource( 93 )
 
 [node name="Camera2D" parent="." index="6"]
 position = Vector2( 8, -250 )
-zoom = Vector2( 0.5, 0.5 )
+zoom = Vector2( 0.7, 0.7 )
 follow_player = false
+
+[node name="LoveParticles" type="Particles2D" parent="Camera2D" index="2"]
+position = Vector2( -2, 147 )
+emitting = false
+amount = 400
+lifetime = 10.0
+randomness = 1.0
+process_material = SubResource( 227 )
+texture = ExtResource( 33 )
 
 [node name="WorldSprite" parent="." index="7"]
 visible = false
@@ -2322,24 +2376,13 @@ labelText = "Поцеловать"
 [node name="CollisionShape2D" parent="SkyIsland/Middle_world_objects/Me/InteractionEmitterObject/InteractionController/Area2D" index="0"]
 shape = SubResource( 107 )
 
-[node name="LoveParticles" type="Particles2D" parent="SkyIsland/Middle_world_objects" index="5"]
-position = Vector2( 7, -2120 )
-emitting = false
-amount = 100
-lifetime = 5.0
-one_shot = true
-explosiveness = 1.0
-randomness = 1.0
-process_material = SubResource( 216 )
-texture = ExtResource( 33 )
-
-[node name="WeSprite" type="Sprite" parent="SkyIsland/Middle_world_objects" index="6"]
+[node name="WeSprite" type="Sprite" parent="SkyIsland/Middle_world_objects" index="5"]
 visible = false
 position = Vector2( 4, -2127 )
 texture = ExtResource( 28 )
 hframes = 36
 
-[node name="IndependantDialogController" parent="SkyIsland/Middle_world_objects" index="7" instance=ExtResource( 29 )]
+[node name="IndependantDialogController" parent="SkyIsland/Middle_world_objects" index="6" instance=ExtResource( 29 )]
 position = Vector2( 1, -2145 )
 dialog_id = "my_final_dialog"
 
