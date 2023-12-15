@@ -272,6 +272,9 @@ func on_hazard_entered(_area):
 		global_position = respawn_position
 	spawnAppearParticles()
 
+func save_respawn_checkpoint():
+	respawn_position = global_position
+
 ############################## Helper Functions ##############################
 
 func ray_ground_update():
