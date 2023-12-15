@@ -4,6 +4,8 @@ onready var platform_approachDetector = $PlatformApproachDetector
 onready var final_cutscene_start_interaction_emitter = $SkyIsland/Middle_world_objects/Me/InteractionEmitterObject
 onready var yes_button = $SkyIsland/ProposalControl/VBoxContainer/HBoxContainer/YesButton
 onready var no_button = $SkyIsland/ProposalControl/VBoxContainer/HBoxContainer/NoButton
+onready var answer_button_audio_player = $Audio/ProposalStage/AnswerButtonAudioStreamPlayer
+onready var yes_button_shine = $SkyIsland/ProposalControl/VBoxContainer/HBoxContainer/YesButton/ShineParticles2D
 
 var game_menu_path = "res://Project/UI/Screens/GameMenu/GameMenu.tscn"
 
@@ -24,6 +26,8 @@ func start_proposal_stage():
 	animationPlayer.play("Start_proposal_stage")
 
 func she_said_yes():
+	answer_button_audio_player.play()
+	yes_button_shine.emitting = true
 	animationPlayer.play("She_said_yes_cutscene")
 
 func show_she_said_yes_cutscene():

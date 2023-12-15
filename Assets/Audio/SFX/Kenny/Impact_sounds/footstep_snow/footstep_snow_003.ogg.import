@@ -11,5 +11,5 @@ dest_files=[ "res://.import/footstep_snow_003.ogg-3330cefac172bfd42c865d4c072594
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
