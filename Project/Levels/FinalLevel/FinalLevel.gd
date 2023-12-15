@@ -29,6 +29,7 @@ func start_proposal_stage():
 	animationPlayer.play("Start_proposal_stage")
 
 func she_said_yes():
+	yes_button.disabled = true
 	heartbeat_audioPlayer.stop()
 	answer_button_audio_player.play()
 	yes_button_shine.emitting = true
