@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Kiss_13.wav-12040cbdc88f0ec389aa7992f7e902ae.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/Kisses/Kiss_13.wav"
+dest_files=[ "res://.import/Kiss_13.wav-12040cbdc88f0ec389aa7992f7e902ae.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
