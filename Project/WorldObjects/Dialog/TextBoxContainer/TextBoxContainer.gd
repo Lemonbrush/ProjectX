@@ -55,8 +55,7 @@ func show_label():
 	label.visible = true
 
 func show_button_hint():
-	if !buttonsContainer.get_child_count():
-		buttonHint.show()
+	buttonHint.show()
 
 func hide_button_hint():
 	buttonHint.instant_hide()
@@ -98,5 +97,6 @@ func setup_buttons_loop_selection_if_needed():
 	lastButton.focus_neighbour_bottom = firstButton.get_path()
 
 func reset_content():
-	remove_all_buttons()
+	set_label_text("")
+	remove_and_hide_buttons()
 	hide_button_hint()
