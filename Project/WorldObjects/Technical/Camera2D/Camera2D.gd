@@ -4,6 +4,8 @@ onready var tween = $Tween
 onready var screenShaker = $ScreenShaker
 
 var targetPosition = Vector2.ZERO
+var default_camera_speed = -5
+var current_camera_speed = default_camera_speed
 
 export(Color, RGB) var backgroundColor
 export(bool) var zoom_based_on_editor_value = false
@@ -29,11 +31,13 @@ func _ready():
 func _process(delta):
 	if follow_player:
 		acquire_target_position()
-		global_position = lerp(targetPosition, global_position, pow(2, -15 * delta))
+		global_position = lerp(targetPosition, global_position, pow(2, current_camera_speed * delta))
 
 func instant_focuse_on_target():
 	acquire_target_position()
+	current_camera_speed = -100
 	global_position = targetPosition
+	current_camera_speed = default_camera_speed
 
 func acquire_target_position():
 	var acquired = get_target_position_from_node_group(target_node_group_name)
