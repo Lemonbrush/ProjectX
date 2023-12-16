@@ -21,12 +21,8 @@ func instant_show():
 func instant_hide():
 	target_node.modulate.a = 0.0
 
-func show_if_needed():
-	if target_node.modulate.a == 0.0:
-		show()
-
 func show():
-	if target_node == null:
+	if target_node == null || target_node.modulate.a == 1.0:
 		return
 	showTween.stop(target_node)
 	showTween.interpolate_property(target_node, 'modulate:a', target_node.get_modulate().a, 1.0, 0.25, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0)

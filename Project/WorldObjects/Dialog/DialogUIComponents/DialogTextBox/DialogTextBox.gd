@@ -22,9 +22,6 @@ func did_press_button_with_text(button_text):
 func set_label_text_percent_visible(new_percent):
 	textBoxContainer.set_label_text_percent_visible(new_percent)
 
-func show_if_needed():
-	appearAnimator.show_if_needed()
-
 func set_label_text(new_text):
 	textBoxContainer.set_label_text(new_text)
 
