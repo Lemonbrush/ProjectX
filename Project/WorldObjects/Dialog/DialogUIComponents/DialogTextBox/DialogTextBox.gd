@@ -51,3 +51,6 @@ func instant_hide():
 
 func did_finish_textBox_hide_animation():
 	textBoxContainer.reset_content()
+
+func reset_textBox():
+	textBoxContainer.reset_content()

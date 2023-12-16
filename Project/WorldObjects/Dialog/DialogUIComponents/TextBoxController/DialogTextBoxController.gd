@@ -1,5 +1,10 @@
 extends Node2D
 
+enum DIALOG_TYPE {
+	DIALOG,
+	CHOICE
+}
+
 export(String) var dialog_id
 export(NodePath) var interaction_controller_path
 export (Resource) var voice_generator_configuration_file
@@ -11,6 +16,7 @@ onready var dialogManager = $DialogManager
 
 var current_text = ""
 var target_text = ""
+var current_dialog_type = DIALOG_TYPE.DIALOG
 
 # Lifecycle
 
@@ -58,7 +64,7 @@ func voice_generator_did_start_talking(_phrase_text):
 
 func voice_generator_did_fibish_talking():
 	current_text = target_text
-	dialogTextBox.show_button_hint()
+	show_button_hint_if_needed()
 
 func voice_generator_skipped_talking(full_text):
 	skip_dialog_animation(full_text)
@@ -67,16 +73,17 @@ func did_receive_text_dialog(text):
 	if text == null:
 		finish_dialog()
 		return
+	current_dialog_type = DIALOG_TYPE.DIALOG
 	reset_dialogTextBox()
 	target_text = text
 	voiceGenerator.play(text)
-	dialogTextBox.hide_buttons()
 	dialogTextBox.set_label_text(text)
 
 func did_receive_response_dialog(text, responses):
 	if responses == null:
 		finish_dialog()
 		return
+	current_dialog_type = DIALOG_TYPE.CHOICE
 	reset_dialogTextBox()
 	voiceGenerator.reset()
 	if text:
@@ -90,15 +97,18 @@ func did_receive_error(text):
 
 # Functions
 
+func show_button_hint_if_needed():
+	if current_dialog_type != DIALOG_TYPE.CHOICE:
+		dialogTextBox.show_button_hint()
+
 func skip_dialog_animation(full_text):
 	voiceGenerator.reset()
 	current_text = full_text
 	dialogTextBox.set_label_text_percent_visible(1)
-	dialogTextBox.show_button_hint()
+	show_button_hint_if_needed()
 
 func reset_dialogTextBox():
-	dialogTextBox.set_label_text("")
-	dialogTextBox.hide_button_hint()
+	dialogTextBox.reset_textBox()
 
 func set_letter_sounds_resource(stream):
 	voiceGenerator.set_letter_sounds_resource(stream)
