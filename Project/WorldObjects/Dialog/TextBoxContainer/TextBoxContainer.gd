@@ -55,12 +55,10 @@ func show_label():
 	label.visible = true
 
 func show_button_hint():
-	buttonHint.show()
+	if !buttonsContainer.get_child_count():
+		buttonHint.show()
 
 func hide_button_hint():
-	buttonHint.hide()
-
-func instant_hide_button_hint():
 	buttonHint.instant_hide()
 
 # Private functions
@@ -101,4 +99,4 @@ func setup_buttons_loop_selection_if_needed():
 
 func reset_content():
 	remove_all_buttons()
-	instant_hide_button_hint()
+	hide_button_hint()
