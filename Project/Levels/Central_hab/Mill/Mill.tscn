@@ -507,7 +507,7 @@ offset = Vector2( -37, 214 )
 
 [node name="Camera2D" parent="." index="6"]
 position = Vector2( 35, -147 )
-zoom = Vector2( 0.8, 0.8 )
+zoom = Vector2( 0.5, 0.5 )
 
 [node name="Clouds" parent="Camera2D" index="2" instance=ExtResource( 8 )]
 position = Vector2( -2, -19 )
