@@ -18,15 +18,12 @@ func _ready():
 	item_instance.global_position = global_position
 	viewScene = item_instance
 
-func on_area_entered(body):
-	if body.has_method("start_item_pickup_animation"):
-		body.start_item_pickup_animation(itemScene, use_player_pick_up_scale_animation)
-	EventBus.player_picked_up_item(get_name())
-	pickedUp()
-	queue_free()
+func on_area_entered(_body):
+	pick_up_item()
 
-func pickedUp():
-	CommandHandler.execute("set %s %s" %[toggleGameConstant, true])
+func pick_up_item():
+	EventBus.dispatch_item_to_player(toggleGameConstant, get_name(), itemScene, use_player_pick_up_scale_animation)
+	queue_free()
 
 func play_view_animation(animation_name):
 	if viewScene.has_method("play_animation"):

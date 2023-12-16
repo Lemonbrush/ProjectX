@@ -65,13 +65,13 @@
 [ext_resource path="res://Project/UI/Screens/DebugScreen/GameSpecs.tscn" type="PackedScene" id=63]
 [ext_resource path="res://Project/WorldObjects/Pick_ups/Items/RedThred/RedThredItem.tscn" type="PackedScene" id=64]
 [ext_resource path="res://Project/Characters/NPC/Mystic_dweller/MysticDweller.tscn" type="PackedScene" id=65]
-[ext_resource path="res://Project/WorldObjects/Technical/ItemSpawner/ItemSpawner.tscn" type="PackedScene" id=66]
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsSasha.tres" type="Resource" id=67]
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.gd" type="Script" id=68]
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsSashaBrutal.tres" type="Resource" id=69]
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsSofa.tres" type="Resource" id=70]
 [ext_resource path="res://Assets/Audio/Background_music/Level_themes/Central_hub_theme.wav" type="AudioStream" id=71]
 [ext_resource path="res://Project/Utils/Audio/AudioPlayerNodes/WaterfallAudioPlayer/WaterfallAudioPlayer.tscn" type="PackedScene" id=72]
+[ext_resource path="res://Project/WorldObjects/Technical/ItemDispatcher/ItemDispatcher.tscn" type="PackedScene" id=73]
 
 [sub_resource type="Environment" id=273]
 background_mode = 4
@@ -968,6 +968,9 @@ texture = ExtResource( 17 )
 [node name="Harbor_world_objects" type="Node2D" parent="."]
 position = Vector2( -9, 0 )
 
+[node name="RedThreadItemDispatcher" parent="Harbor_world_objects" instance=ExtResource( 73 )]
+itemScene = ExtResource( 64 )
+
 [node name="Audio" type="Node2D" parent="Harbor_world_objects"]
 
 [node name="WaterfallAudioPlayer" parent="Harbor_world_objects/Audio" instance=ExtResource( 72 )]
@@ -1201,10 +1204,6 @@ pause_mode = 2
 autoplay = "Idle"
 anims/Idle = SubResource( 216 )
 anims/RESET = SubResource( 217 )
-
-[node name="RedThredItemSpawner" parent="Harbor_world_objects/Middle_world_objects" instance=ExtResource( 66 )]
-position = Vector2( -639, 71 )
-itemScene = ExtResource( 64 )
 
 [node name="Foreground_world_objects" type="Node2D" parent="Harbor_world_objects"]
 position = Vector2( -20, -192 )
@@ -2836,7 +2835,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 4 )]
-position = Vector2( -163, -983 )
+position = Vector2( -589, -115 )
 
 [node name="WaterSurface" type="Node2D" parent="."]
 pause_mode = 2
