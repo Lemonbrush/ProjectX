@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=2]
+[gd_scene load_steps=107 format=2]
 
 [ext_resource path="res://Project/Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Project/WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=2]
@@ -56,6 +56,7 @@
 [ext_resource path="res://Assets/Audio/SFX/General/Stone/rockfall-8lrsgrnlzreq-1.wav" type="AudioStream" id=54]
 [ext_resource path="res://Assets/Audio/SFX/Kenny/Impact_sounds/footstep_carpet/footstep_carpet_000.ogg" type="AudioStream" id=55]
 [ext_resource path="res://Assets/Audio/SFX/General/Bell/success_bell.wav" type="AudioStream" id=56]
+[ext_resource path="res://Assets/Audio/SFX/General/Magic/magic-sfx-for-games.mp3" type="AudioStream" id=57]
 
 [sub_resource type="Environment" id=314]
 background_mode = 4
@@ -674,6 +675,20 @@ tracks/46/imported = false
 tracks/46/enabled = true
 tracks/46/keys = {
 "times": PoolRealArray( 20 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/47/type = "method"
+tracks/47/path = NodePath("Audio/MagicPaffAudioStreamPlayer")
+tracks/47/interp = 1
+tracks/47/loop_wrap = true
+tracks/47/imported = false
+tracks/47/enabled = true
+tracks/47/keys = {
+"times": PoolRealArray( 2.8 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ 0.0 ],
@@ -1544,6 +1559,10 @@ stream = ExtResource( 55 )
 [node name="SuccessAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" index="6"]
 stream = ExtResource( 56 )
 
+[node name="MagicPaffAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" index="7"]
+stream = ExtResource( 57 )
+bus = "SFX"
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="1"]
 environment = SubResource( 314 )
 
@@ -1583,7 +1602,7 @@ anims/Show_mystic_dweller = SubResource( 312 )
 anims/pedestals_activation_scene = SubResource( 304 )
 
 [node name="Camera2D" parent="." index="6"]
-position = Vector2( -49, -47 )
+position = Vector2( -23.04, -104.872 )
 zoom = Vector2( 0.5, 0.5 )
 
 [node name="Clouds" parent="Camera2D" index="2" instance=ExtResource( 5 )]
