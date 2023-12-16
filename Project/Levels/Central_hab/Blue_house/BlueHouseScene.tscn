@@ -746,7 +746,7 @@ bus = "SFX"
 environment = SubResource( 137 )
 
 [node name="AnimationPlayer" parent="." index="3"]
-autoplay = "RESET"
+autoplay = ""
 anims/RESET = SubResource( 123 )
 anims/artist_brush_gift_scene = SubResource( 133 )
 anims/place_artwork_cut_scene = SubResource( 122 )
