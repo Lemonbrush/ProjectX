@@ -1,9 +1,8 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/Levels/Rooms/Mill/Shaft-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Project/Levels/Central_hab/Mill/Shaft/Shaft.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Audio/SFX/General/mechanisms/windmill-cog-wheel.mp3" type="AudioStream" id=3]
-[ext_resource path="res://Assets/Audio/SFX/General/Bell/success_bell.wav" type="AudioStream" id=4]
 [ext_resource path="res://Project/Utils/Audio/RandomAudioStreamPlayer/RandomAudioStreamPlayer.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Audio/SFX/Kenny/Impact_sounds/impactPlank_medium/impactPlank_medium_000.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Audio/SFX/Kenny/Impact_sounds/impactPlank_medium/impactPlank_medium_002.ogg" type="AudioStream" id=7]
@@ -81,9 +80,6 @@ script = ExtResource( 2 )
 [node name="WorkingGearAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 3 )
 volume_db = -5.0
-
-[node name="SuccessAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource( 4 )
 
 [node name="RandomAudioStreamPlayer" parent="Audio" instance=ExtResource( 5 )]
 

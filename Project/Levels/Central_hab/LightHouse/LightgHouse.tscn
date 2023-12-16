@@ -1056,6 +1056,7 @@ amount = 100
 process_material = SubResource( 125 )
 
 [node name="MiddleWorldObjects" type="Node2D" parent="." index="7"]
+z_index = 1
 
 [node name="Buth_light_turned_on" type="Node2D" parent="MiddleWorldObjects" index="0"]
 visible = false
@@ -1164,6 +1165,7 @@ position = Vector2( 49, 115 )
 position = Vector2( 47, -109 )
 
 [node name="Steam" type="Node2D" parent="." index="8"]
+z_index = 1
 
 [node name="Particles2D2" type="Particles2D" parent="Steam" index="0"]
 material = SubResource( 98 )
@@ -1255,7 +1257,6 @@ texture = ExtResource( 2 )
 [node name="Player" parent="." index="10"]
 position = Vector2( 8, 384 )
 z_index = 2
-collision_mask = 108
 
 [node name="Light2D2" parent="Player" index="6"]
 visible = false

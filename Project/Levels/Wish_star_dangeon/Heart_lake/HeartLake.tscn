@@ -1536,7 +1536,6 @@ bus = "SFX"
 
 [node name="LightingCanvasLayer" type="CanvasLayer" parent="." index="1"]
 pause_mode = 2
-visible = false
 
 [node name="LightingRect" parent="LightingCanvasLayer" index="0" instance=ExtResource( 5 )]
 anchor_right = 1.0
