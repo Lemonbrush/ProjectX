@@ -59,6 +59,7 @@ signal did_figure_out_guardian_secret()
 
 signal focus_camera_on_group_node_named(name_string)
 signal reset_camera_focus()
+signal dispatch_item_to_player(toggleGameConstant, itemName, itemScene, use_scale_animation)
 
 func start_shake_screen(duration = 0.2, frequency = 16, amplitude = 2, infinity = true):
 	emit_signal("start_shake_screen", duration, frequency, amplitude, infinity)
@@ -80,9 +81,6 @@ func camera_focus_default_zoom(time):
 
 func player_animation_mode_change(isPlayerAnimating):
 	emit_signal("playerAnimationModeChange", isPlayerAnimating)
-	
-func player_picked_up_item(item_name):
-	emit_signal("player_picked_up_item", item_name)
 
 func player_entered_door(nextScenePath):
 	FileManager.save_game()
@@ -189,3 +187,7 @@ func focus_camera_on_group_node_named(new_target_name):
 
 func reset_camera_focus():
 	emit_signal("reset_camera_focus")
+
+func dispatch_item_to_player(toggleGameConstant, itemName, itemScene, use_scale_animation):
+	emit_signal("dispatch_item_to_player", toggleGameConstant, itemName, itemScene, use_scale_animation)
+	emit_signal("player_picked_up_item", itemName)

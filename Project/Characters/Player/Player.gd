@@ -92,6 +92,7 @@ func _ready():
 	hazard_area.connect("area_entered", self, "on_hazard_entered")
 	
 	var _connection = EventBus.connect("player_entered_door", self, "start_door_entering_animation")
+	var _event_dispatch = EventBus.connect("dispatch_item_to_player", self, "did_receive_item")
 	
 ############################## State Machine Functions ##############################
 
@@ -225,6 +226,7 @@ func check_for_action_release():
 			is_able_to_glide = true
 		else:
 			glide = false
+
 ############################## Actions #######################################
 
 # Climb
@@ -275,7 +277,27 @@ func on_hazard_entered(_area):
 func save_respawn_checkpoint():
 	respawn_position = global_position
 
+func did_receive_item(toggleGameConstant, itemName, itemScene, use_scale_animation):
+	CommandHandler.execute("set %s %s" %[toggleGameConstant, true])
+	start_item_pickup_animation(itemScene, use_scale_animation)
+
 ############################## Helper Functions ##############################
+
+func start_item_pickup_animation(itemScene, use_scale_animation = true):
+	EventBus.player_animation_mode_change(true)
+	
+	var itemPickupScene = itemPickupScenePath.instance()
+	itemPickupScene.itemScene = itemScene
+	get_parent().add_child(itemPickupScene)
+	itemPickupScene.global_position = global_position
+	itemPickupScene.scale = Vector2.ONE * body.scale
+	itemPickupScene.connect("animationFinished", self, "on_pickup_animation_finished", [use_scale_animation])
+	
+	body.visible = false
+	
+	if use_scale_animation:
+		EventBus.camera_set_y_offset(10)
+		EventBus.camera_focus_animation(0.3, 1)
 
 func ray_ground_update():
 	var is_colliding = false
@@ -304,22 +326,6 @@ func spawnAppearParticles():
 	get_parent().add_child(particles)
 	particles.scale = Vector2.ONE * scale
 	particles.global_position = global_position
-
-func start_item_pickup_animation(itemScene, use_scale_animation = true):
-	EventBus.player_animation_mode_change(true)
-	
-	var itemPickupScene = itemPickupScenePath.instance()
-	itemPickupScene.itemScene = itemScene
-	get_parent().add_child(itemPickupScene)
-	itemPickupScene.global_position = global_position
-	itemPickupScene.scale = Vector2.ONE * body.scale
-	itemPickupScene.connect("animationFinished", self, "on_pickup_animation_finished", [use_scale_animation])
-	
-	body.visible = false
-	
-	if use_scale_animation:
-		EventBus.camera_set_y_offset(10)
-		EventBus.camera_focus_animation(0.3, 1)
 
 func start_door_entering_animation(nextScenePath):
 	entering_scene_path = nextScenePath
