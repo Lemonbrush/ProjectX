@@ -19,6 +19,9 @@ func _ready():
 	viewScene = item_instance
 
 func on_area_entered(_body):
+	pick_up_item()
+
+func pick_up_item():
 	EventBus.dispatch_item_to_player(toggleGameConstant, get_name(), itemScene, use_player_pick_up_scale_animation)
 	queue_free()
 

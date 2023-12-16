@@ -277,7 +277,7 @@ func on_hazard_entered(_area):
 func save_respawn_checkpoint():
 	respawn_position = global_position
 
-func did_receive_item(toggleGameConstant, itemName, itemScene, use_scale_animation):
+func did_receive_item(toggleGameConstant, _itemName, itemScene, use_scale_animation):
 	CommandHandler.execute("set %s %s" %[toggleGameConstant, true])
 	start_item_pickup_animation(itemScene, use_scale_animation)
 
