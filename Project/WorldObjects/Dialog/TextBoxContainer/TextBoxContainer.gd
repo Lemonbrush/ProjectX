@@ -98,3 +98,7 @@ func setup_buttons_loop_selection_if_needed():
 	var lastButton: Button = buttons[buttons.size() - 1]
 	firstButton.focus_neighbour_top = lastButton.get_path()
 	lastButton.focus_neighbour_bottom = firstButton.get_path()
+
+func reset_content():
+	remove_all_buttons()
+	instant_hide_button_hint()

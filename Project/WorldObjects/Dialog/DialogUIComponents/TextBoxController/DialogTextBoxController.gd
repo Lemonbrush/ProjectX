@@ -115,7 +115,7 @@ func setup_interaction_mode(can_interact):
 # Private functions
 
 func show_dialog_text_box():
-	dialogTextBox.show_if_needed()
+	dialogTextBox.show()
 
 func finish_dialog():
 	Global.is_player_talking = false
