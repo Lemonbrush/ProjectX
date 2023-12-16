@@ -12,6 +12,7 @@ func _ready():
 	appearAnimator.instant_hide()
 	floatingContainer.start()
 	textBoxContainer.connect("did_press_button_with_text", self, "did_press_button_with_text")
+	appearAnimator.connect("did_finish_hide_animation", self, "did_finish_textBox_hide_animation")
 
 func did_press_button_with_text(button_text):
 	emit_signal("did_press_button_with_text", button_text)
@@ -50,3 +51,6 @@ func hide():
 
 func instant_hide():
 	appearAnimator.instant_hide()
+
+func did_finish_textBox_hide_animation():
+	textBoxContainer.reset_content()
