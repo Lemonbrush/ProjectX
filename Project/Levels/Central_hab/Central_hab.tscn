@@ -1726,6 +1726,7 @@ script = ExtResource( 10 )
 background_music = ExtResource( 80 )
 
 [node name="Audio" type="Node2D" parent="."]
+pause_mode = 2
 
 [node name="PaffRandomAudioStreamPlayer" parent="Audio" instance=ExtResource( 81 )]
 
@@ -1987,7 +1988,7 @@ __meta__ = {
 [node name="New_island_house" parent="Middle_world_objects" instance=ExtResource( 71 )]
 visible = false
 modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 166.968, 519.122 )
+position = Vector2( 164.808, 518.188 )
 
 [node name="Doors" type="Node2D" parent="Middle_world_objects"]
 position = Vector2( -140, -191 )
@@ -2769,7 +2770,7 @@ position = Vector2( 54, -768 )
 texture = ExtResource( 66 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 7 )]
-position = Vector2( -199, 374 )
+position = Vector2( 52, -809 )
 
 [node name="Clouds" parent="Camera2D" instance=ExtResource( 15 )]
 position = Vector2( -2, 2 )
