@@ -184,68 +184,13 @@ tracks/11/keys = {
 "update": 0,
 "values": [ Vector2( -56, -240 ), Vector2( -20, -197 ), Vector2( -20, -197 ), Vector2( -56, -240 ), Vector2( -56, -240 ) ]
 }
-tracks/12/type = "value"
-tracks/12/path = NodePath("Main_world_objects/MysticDweller:is_player_interaction_active")
+tracks/12/type = "method"
+tracks/12/path = NodePath("Player")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
 tracks/12/enabled = true
 tracks/12/keys = {
-"times": PoolRealArray( 0, 22 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/13/type = "method"
-tracks/13/path = NodePath("Main_world_objects/MysticDweller")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "hide_popup"
-} ]
-}
-tracks/14/type = "method"
-tracks/14/path = NodePath("Main_world_objects/MysticDweller/Body/InteractionController")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/keys = {
-"times": PoolRealArray( 0, 22 ),
-"transitions": PoolRealArray( 1, 1 ),
-"values": [ {
-"args": [ true ],
-"method": "disabled"
-}, {
-"args": [ false ],
-"method": "disabled"
-} ]
-}
-tracks/15/type = "value"
-tracks/15/path = NodePath("Main_world_objects/MysticDweller/Body/InteractionController:action_type")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/keys = {
-"times": PoolRealArray( 22 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
-}
-tracks/16/type = "method"
-tracks/16/path = NodePath("Player")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/keys = {
 "times": PoolRealArray( 0, 22 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
@@ -256,25 +201,13 @@ tracks/16/keys = {
 "method": "unpouse_level"
 } ]
 }
-tracks/17/type = "value"
-tracks/17/path = NodePath("Main_world_objects/MysticDweller/DialogTextBoxController:visible")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/keys = {
-"times": PoolRealArray( 0, 22 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/18/type = "method"
-tracks/18/path = NodePath("Main_world_objects/MysticDweller/Body/InteractionController")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/keys = {
+tracks/13/type = "method"
+tracks/13/path = NodePath("Main_world_objects/MysticDweller/Body/InteractionController")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
 "times": PoolRealArray( 0, 22 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
@@ -285,13 +218,13 @@ tracks/18/keys = {
 "method": "force_leave"
 } ]
 }
-tracks/19/type = "method"
-tracks/19/path = NodePath("Main_world_objects/CutsceneObjects/ItemSpawner")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/keys = {
+tracks/14/type = "method"
+tracks/14/path = NodePath("Main_world_objects/CutsceneObjects/ItemSpawner")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
 "times": PoolRealArray( 19.9 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -299,13 +232,13 @@ tracks/19/keys = {
 "method": "spawn_item"
 } ]
 }
-tracks/20/type = "method"
-tracks/20/path = NodePath("Camera2D")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/keys = {
+tracks/15/type = "method"
+tracks/15/path = NodePath("Camera2D")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
 "times": PoolRealArray( 0, 22 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
@@ -316,121 +249,121 @@ tracks/20/keys = {
 "method": "scale_to_default_zoom_with_animation"
 } ]
 }
-tracks/21/type = "value"
-tracks/21/path = NodePath("Lighting/LightSource3:position")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/keys = {
+tracks/16/type = "value"
+tracks/16/path = NodePath("Lighting/LightSource3:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -56, -305 ), Vector2( 52, -178 ) ]
 }
-tracks/22/type = "value"
-tracks/22/path = NodePath("Camera2D:zoom")
-tracks/22/interp = 2
-tracks/22/loop_wrap = true
-tracks/22/imported = false
-tracks/22/enabled = false
-tracks/22/keys = {
+tracks/17/type = "value"
+tracks/17/path = NodePath("Camera2D:zoom")
+tracks/17/interp = 2
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = false
+tracks/17/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 0.5, 0.5 ) ]
 }
-tracks/23/type = "value"
-tracks/23/path = NodePath("Main_world_objects/CutsceneObjects/GodLights:modulate")
-tracks/23/interp = 1
-tracks/23/loop_wrap = true
-tracks/23/imported = false
-tracks/23/enabled = true
-tracks/23/keys = {
+tracks/18/type = "value"
+tracks/18/path = NodePath("Main_world_objects/CutsceneObjects/GodLights:modulate")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
 "times": PoolRealArray( 9.1, 12.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
-tracks/24/type = "value"
-tracks/24/path = NodePath("Player:rotation_degrees")
-tracks/24/interp = 2
-tracks/24/loop_wrap = true
-tracks/24/imported = false
-tracks/24/enabled = true
-tracks/24/keys = {
+tracks/19/type = "value"
+tracks/19/path = NodePath("Player:rotation_degrees")
+tracks/19/interp = 2
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
 "times": PoolRealArray( 0, 9.5, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 21.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0, -5.0, 5.0, -5.0, 5.0, -5.0, 5.0, -5.0, 5.0, -5.0, 5.0, -5.0, 5.0, 0.0 ]
 }
-tracks/25/type = "value"
-tracks/25/path = NodePath("Main_world_objects/CutsceneObjects/SoulAppearParticles2D:emitting")
-tracks/25/interp = 1
-tracks/25/loop_wrap = true
-tracks/25/imported = false
-tracks/25/enabled = true
-tracks/25/keys = {
+tracks/20/type = "value"
+tracks/20/path = NodePath("Main_world_objects/CutsceneObjects/SoulAppearParticles2D:emitting")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
 "times": PoolRealArray( 0, 15.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
 }
-tracks/26/type = "value"
-tracks/26/path = NodePath("Main_world_objects/CutsceneObjects/SoulStarSprite:z_index")
-tracks/26/interp = 1
-tracks/26/loop_wrap = true
-tracks/26/imported = false
-tracks/26/enabled = true
-tracks/26/keys = {
+tracks/21/type = "value"
+tracks/21/path = NodePath("Main_world_objects/CutsceneObjects/SoulStarSprite:z_index")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
 "times": PoolRealArray( 0, 19.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 1, 0 ]
 }
-tracks/27/type = "value"
-tracks/27/path = NodePath("Main_world_objects/CutsceneObjects/SoulStarSprite:rotation_degrees")
-tracks/27/interp = 1
-tracks/27/loop_wrap = true
-tracks/27/imported = false
-tracks/27/enabled = true
-tracks/27/keys = {
+tracks/22/type = "value"
+tracks/22/path = NodePath("Main_world_objects/CutsceneObjects/SoulStarSprite:rotation_degrees")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
 "times": PoolRealArray( 15.6, 17, 18, 19, 20 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ -6.0, 6.0, -6.0, 6.0, -6.0 ]
 }
-tracks/28/type = "value"
-tracks/28/path = NodePath("Main_world_objects/MysticDweller/Body/Sprite:frame")
-tracks/28/interp = 1
-tracks/28/loop_wrap = true
-tracks/28/imported = false
-tracks/28/enabled = true
-tracks/28/keys = {
+tracks/23/type = "value"
+tracks/23/path = NodePath("Main_world_objects/MysticDweller/Body/Sprite:frame")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
 "times": PoolRealArray( 3, 3.1, 3.6, 3.8, 4, 4.4, 4.6, 4.8, 5.2, 5.4, 5.6, 6, 6.2, 6.4, 6.8, 7, 7.2, 7.6, 7.8, 8, 8.4, 8.6, 8.8, 9.2, 9.4, 9.6, 10, 10.2, 10.4, 10.8, 11, 11.2, 11.6, 11.8, 12, 12.4, 12.6, 12.8, 13.2, 13.4, 13.6, 14, 14.2, 14.4, 14.8, 15, 15.2, 15.6, 15.8, 16, 16.4, 16.6, 16.8, 17.2, 17.4, 17.6, 18, 18.2, 18.4, 18.8, 19, 19.2, 19.6, 19.8, 20, 20.2, 20.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 52, 78, 79, 80, 81, 82, 80, 81, 82, 80, 81, 82, 80, 81, 82, 80, 81, 82, 80, 81, 82, 80, 81, 82, 80, 81, 82, 80, 81, 82, 80, 81, 82, 80, 81, 82, 80, 81, 82, 80, 81, 82, 80, 81, 82, 80, 81, 82, 80, 81, 82, 80, 81, 82, 80, 81, 82, 80, 81, 82, 80, 81, 82, 80, 81, 79, 78 ]
 }
-tracks/29/type = "value"
-tracks/29/path = NodePath("Main_world_objects/CutsceneObjects/MagicParticles2D:emitting")
-tracks/29/interp = 1
-tracks/29/loop_wrap = true
-tracks/29/imported = false
-tracks/29/enabled = true
-tracks/29/keys = {
+tracks/24/type = "value"
+tracks/24/path = NodePath("Main_world_objects/CutsceneObjects/MagicParticles2D:emitting")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
 "times": PoolRealArray( 0, 3.8, 19.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
 }
-tracks/30/type = "method"
-tracks/30/path = NodePath("Main_world_objects/MysticDweller")
-tracks/30/interp = 1
-tracks/30/loop_wrap = true
-tracks/30/imported = false
-tracks/30/enabled = true
-tracks/30/keys = {
+tracks/25/type = "method"
+tracks/25/path = NodePath("Main_world_objects/MysticDweller")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
 "times": PoolRealArray( 3, 22 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
@@ -441,13 +374,13 @@ tracks/30/keys = {
 "method": "reset_state"
 } ]
 }
-tracks/31/type = "method"
-tracks/31/path = NodePath("Audio/MagicAudioStreamPlayer")
-tracks/31/interp = 1
-tracks/31/loop_wrap = true
-tracks/31/imported = false
-tracks/31/enabled = true
-tracks/31/keys = {
+tracks/26/type = "method"
+tracks/26/path = NodePath("Audio/MagicAudioStreamPlayer")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
 "times": PoolRealArray( 3.8 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -455,13 +388,13 @@ tracks/31/keys = {
 "method": "play"
 } ]
 }
-tracks/32/type = "method"
-tracks/32/path = NodePath(".")
-tracks/32/interp = 1
-tracks/32/loop_wrap = true
-tracks/32/imported = false
-tracks/32/enabled = true
-tracks/32/keys = {
+tracks/27/type = "method"
+tracks/27/path = NodePath(".")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
 "times": PoolRealArray( 0, 22 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
@@ -472,13 +405,13 @@ tracks/32/keys = {
 "method": "play_background_music"
 } ]
 }
-tracks/33/type = "method"
-tracks/33/path = NodePath("Audio/HeartAssemblingBackgroundThemeAudioStreamPlayer")
-tracks/33/interp = 1
-tracks/33/loop_wrap = true
-tracks/33/imported = false
-tracks/33/enabled = true
-tracks/33/keys = {
+tracks/28/type = "method"
+tracks/28/path = NodePath("Audio/HeartAssemblingBackgroundThemeAudioStreamPlayer")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
 "times": PoolRealArray( 0, 22 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
@@ -489,13 +422,13 @@ tracks/33/keys = {
 "method": "stop"
 } ]
 }
-tracks/34/type = "method"
-tracks/34/path = NodePath("Audio/RandomAudioStreamPlayer")
-tracks/34/interp = 1
-tracks/34/loop_wrap = true
-tracks/34/imported = false
-tracks/34/enabled = true
-tracks/34/keys = {
+tracks/29/type = "method"
+tracks/29/path = NodePath("Audio/RandomAudioStreamPlayer")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
 "times": PoolRealArray( 12.8 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -503,13 +436,13 @@ tracks/34/keys = {
 "method": "play"
 } ]
 }
-tracks/35/type = "method"
-tracks/35/path = NodePath("Audio/RandomAudioStreamPlayer")
-tracks/35/interp = 1
-tracks/35/loop_wrap = true
-tracks/35/imported = false
-tracks/35/enabled = true
-tracks/35/keys = {
+tracks/30/type = "method"
+tracks/30/path = NodePath("Audio/RandomAudioStreamPlayer")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/keys = {
 "times": PoolRealArray( 13 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -517,13 +450,13 @@ tracks/35/keys = {
 "method": "play"
 } ]
 }
-tracks/36/type = "method"
-tracks/36/path = NodePath("Audio/SoulPopAudioStreamPlayer")
-tracks/36/interp = 1
-tracks/36/loop_wrap = true
-tracks/36/imported = false
-tracks/36/enabled = true
-tracks/36/keys = {
+tracks/31/type = "method"
+tracks/31/path = NodePath("Audio/SoulPopAudioStreamPlayer")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/keys = {
 "times": PoolRealArray( 15.6 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -531,37 +464,37 @@ tracks/36/keys = {
 "method": "play"
 } ]
 }
-tracks/37/type = "value"
-tracks/37/path = NodePath("Audio/MagicAudioStreamPlayer:volume_db")
-tracks/37/interp = 1
-tracks/37/loop_wrap = true
-tracks/37/imported = false
-tracks/37/enabled = true
-tracks/37/keys = {
+tracks/32/type = "value"
+tracks/32/path = NodePath("Audio/MagicAudioStreamPlayer:volume_db")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/keys = {
 "times": PoolRealArray( 0, 12.9, 19.9 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ -20.0, -20.0, -80.0 ]
 }
-tracks/38/type = "value"
-tracks/38/path = NodePath("Player/ShineParticles2D:emitting")
-tracks/38/interp = 1
-tracks/38/loop_wrap = true
-tracks/38/imported = false
-tracks/38/enabled = true
-tracks/38/keys = {
+tracks/33/type = "value"
+tracks/33/path = NodePath("Player/ShineParticles2D:emitting")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/keys = {
 "times": PoolRealArray( 0.1, 5, 21.7 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
 }
-tracks/39/type = "method"
-tracks/39/path = NodePath("Audio/PaffRandomAudioStreamPlayer")
-tracks/39/interp = 1
-tracks/39/loop_wrap = true
-tracks/39/imported = false
-tracks/39/enabled = true
-tracks/39/keys = {
+tracks/34/type = "method"
+tracks/34/path = NodePath("Audio/PaffRandomAudioStreamPlayer")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/keys = {
 "times": PoolRealArray( 19.9 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -569,18 +502,35 @@ tracks/39/keys = {
 "method": "play"
 } ]
 }
-tracks/40/type = "method"
-tracks/40/path = NodePath("Audio/SuccessBellAudioStreamPlayer")
-tracks/40/interp = 1
-tracks/40/loop_wrap = true
-tracks/40/imported = false
-tracks/40/enabled = true
-tracks/40/keys = {
+tracks/35/type = "method"
+tracks/35/path = NodePath("Audio/SuccessBellAudioStreamPlayer")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/keys = {
 "times": PoolRealArray( 20 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [ 0.0 ],
 "method": "play"
+} ]
+}
+tracks/36/type = "method"
+tracks/36/path = NodePath("Main_world_objects/MysticDweller")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/keys = {
+"times": PoolRealArray( 0, 22 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ false ],
+"method": "set_interaction_mode"
+}, {
+"args": [ true ],
+"method": "set_interaction_mode"
 } ]
 }
 
@@ -1770,7 +1720,7 @@ format = 1
 tile_data = PoolIntArray( -44827185, 11, 0, -44171767, 8, 0, -44236540, 8, 0, -43975095, 1, 0, -44040064, 11, 0, -44040038, 1, 0, -43974260, 11, 0, -43778609, 11, 0, -42991488, 11, 0, -42925684, 11, 0, -42730033, 11, 0, -42663676, 8, 0, -42533367, 8, 0, -41877943, 1, 0, -41942912, 11, 0, -41942886, 1, 0, -41942644, 11, 0, -41681457, 11, 0, -41025276, 8, 0, -40894967, 8, 0, -40894336, 11, 0, -40894068, 11, 0, -40632881, 11, 0, -39780791, 1, 0, -39845760, 11, 0, -39845734, 1, 0, -39845492, 11, 0, -39584305, 11, 0, -39322103, 8, 0, -39386876, 8, 0, -38797184, 11, 0, -38796916, 11, 0, -38535729, 11, 0, -37683703, 8, 0, -37683639, 1, 0, -37748608, 11, 0, -37748582, 1, 0, -37748476, 8, 0, -37748340, 11, 0, -37487153, 11, 0, -36700032, 11, 0, -36699764, 11, 0, -36438577, 11, 0, -36045303, 8, 0, -36110076, 8, 0, -35586487, 1, 0, -35651456, 11, 0, -35651430, 1, 0, -35651188, 11, 0, -35390001, 11, 0, -34602880, 11, 0, -34602612, 11, 0, -34406903, 8, 0, -34471676, 8, 0, -34341425, 11, 0, -33489335, 1, 0, -33554304, 11, 0, -33554278, 1, 0, -33554036, 11, 0, -33292849, 11, 0, -32768503, 8, 0, -32833276, 8, 0, -32505728, 11, 0, -32505460, 11, 0, -32244273, 11, 0, -31392183, 1, 0, -31457152, 11, 0, -31457126, 1, 0, -31456884, 11, 0, -31195697, 11, 0, -31130103, 8, 0, -31194876, 8, 0, -30408576, 11, 0, -30408308, 11, 0, -30147121, 11, 0, -29491703, 8, 0, -29556476, 8, 0, -29295031, 1, 0, -29360000, 11, 0, -29359974, 1, 0, -29359732, 11, 0, -29098545, 11, 0, -28311424, 11, 0, -28311156, 11, 0, -28049969, 11, 0, -27853303, 8, 0, -27918076, 8, 0, -27197879, 1, 0, -27262848, 11, 0, -27262822, 1, 0, -27262580, 11, 0, -27001393, 11, 0, -26214903, 8, 0, -26279676, 8, 0, -26214272, 11, 0, -26214004, 11, 0, -26018353, 11, 0, -25100727, 1, 0, -25165696, 11, 0, -25165670, 1, 0, -25165428, 11, 0, -24969777, 11, 0, -24576503, 8, 0, -24641276, 8, 0, -24117120, 11, 0, -24116852, 11, 0, -23921201, 11, 0, -23003575, 1, 0, -23068544, 11, 0, -23068518, 1, 0, -23068276, 11, 0, -22938103, 8, 0, -23002876, 8, 0, -22872625, 11, 0, -22019968, 11, 0, -22019700, 11, 0, -21824049, 11, 0, -21299703, 8, 0, -21364476, 8, 0, -20906423, 1, 0, -20971392, 11, 0, -20971366, 1, 0, -20971124, 11, 0, -20841009, 11, 0, -19922816, 11, 0, -19922548, 11, 0, -19792433, 11, 0, -19661303, 8, 0, -19726076, 8, 0, -18809271, 1, 0, -18874240, 11, 0, -18874214, 1, 0, -18873972, 11, 0, -18743857, 11, 0, -18022903, 8, 0, -18087676, 8, 0, -17760817, 11, 0, -17825664, 11, 0, -17825396, 11, 0, -16712241, 11, 0, -16712119, 1, 0, -16777088, 11, 0, -16777062, 1, 0, -16776820, 11, 0, -16384503, 8, 0, -16449276, 8, 0, -15663665, 11, 0, -15728512, 11, 0, -15728244, 11, 0, -14746103, 8, 0, -14810876, 8, 0, -14615089, 11, 0, -14614967, 1, 0, -14679936, 11, 0, -14679910, 1, 0, -14679668, 11, 0, -13566513, 11, 0, -13631360, 11, 0, -13631092, 11, 0, -13107703, 8, 0, -13172476, 8, 0, -12517937, 11, 0, -12517815, 1, 0, -12582784, 11, 0, -12582758, 1, 0, -12582516, 11, 0, -11469361, 11, 0, -11469303, 8, 0, -11534208, 11, 0, -11534076, 8, 0, -11533940, 11, 0, -10420785, 11, 0, -10420663, 1, 0, -10485632, 11, 0, -10485606, 1, 0, -10485364, 11, 0, -9830903, 8, 0, -9895676, 8, 0, -9372209, 11, 0, -9437056, 11, 0, -9436788, 11, 0, -8323633, 11, 0, -8323511, 1, 0, -8388480, 11, 0, -8388454, 1, 0, -8388212, 11, 0, -8192503, 8, 0, -8257276, 8, 0, -7340197, 536870920, 0, -7275057, 11, 0, -7339904, 11, 0, -7339636, 11, 0, -6554103, 8, 0, -6618876, 8, 0, -6226481, 11, 0, -6226359, 1, 0, -6291328, 11, 0, -6291302, 1, 0, -6291060, 11, 0, -5701797, 536870920, 0, -5439760, 8, 0, -5177905, 11, 0, -5242752, 11, 0, -5242484, 11, 0, -4915703, 8, 0, -4980476, 8, 0, -4129329, 11, 0, -4129207, 1, 0, -4194176, 11, 0, -4194150, 1, 0, -4193908, 11, 0, -3866896, 8, 0, -3277303, 8, 0, -3342076, 8, 0, -3080753, 11, 0, -3145600, 11, 0, -3145332, 11, 0, -2228496, 8, 0, -2032177, 11, 0, -2032055, 2, 0, -2097024, 11, 0, -2096998, 2, 0, -2096756, 11, 0, -1638903, 7, 0, -1703676, 7, 0, -983601, 10, 0, -1048448, 10, 0, -1048180, 10, 0 )
 
 [node name="Player" parent="." index="10"]
-position = Vector2( -54, -240 )
+position = Vector2( -55, -175 )
 
 [node name="Sprite" parent="Player/Body" index="0"]
 frame = 76
