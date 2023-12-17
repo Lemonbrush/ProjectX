@@ -18,6 +18,7 @@ onready var glider_area			= $Body/Glider
 onready var attack_area			= $Body/AttackArea
 onready var hazard_area			= $Body/HazardArea
 onready var attack_area_collision_shape = $Body/AttackArea/CollisionShape2D
+onready var state_machine = $StateMachine
 
 onready var body 				= $Body
 onready var coyoteTimer 			= $CoyoteTimer
@@ -227,6 +228,10 @@ func check_for_action_release():
 		else:
 			glide = false
 
+func play_door_entering_out_action():
+	is_entering_out = true
+	state_machine.transition_to_door_interaction_state_if_needed()
+
 ############################## Actions #######################################
 
 # Climb
@@ -329,6 +334,7 @@ func spawnAppearParticles():
 
 func start_door_entering_animation(nextScenePath):
 	entering_scene_path = nextScenePath
+	state_machine.transition_to_door_interaction_state_if_needed()
 	
 func on_pickup_animation_finished(use_scale_animation = true):
 	EventBus.player_animation_mode_change(false)

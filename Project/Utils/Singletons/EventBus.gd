@@ -83,7 +83,6 @@ func player_animation_mode_change(isPlayerAnimating):
 	emit_signal("playerAnimationModeChange", isPlayerAnimating)
 
 func player_entered_door(nextScenePath):
-	FileManager.save_game()
 	emit_signal("player_entered_door", nextScenePath)
 
 func debug_screen_visibility_updated():
