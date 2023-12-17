@@ -66,6 +66,7 @@ func setup_buttons(button_options):
 	for button_option in button_options:
 		var button = animated_button_scene_path.instance()
 		button.set_text(button_option["text"])
+		button.configure_dialog_button()
 		buttonsContainer.add_child(button)
 		button.connect("pressed_and_resolved", self, "button_option_pressed", [button.text])
 
