@@ -17,6 +17,8 @@ func transition_to_level(scenePath):
 	
 	print("Location ", nextScene.get_name(), " loaded")
 	
+	get_tree().paused = false
+	
 	if FileManager.save_file_resource.savedLevelScenes.has(nextScene.get_name()):
 		# check if there is a save file for this scene
 		var _scene = get_tree().change_scene_to(FileManager.save_file_resource.savedLevelScenes[nextScene.get_name()])

@@ -64,8 +64,8 @@ align = 1
 
 [node name="MenuVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer"]
 margin_top = 56.0
-margin_right = 114.0
-margin_bottom = 124.0
+margin_right = 180.0
+margin_bottom = 142.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource( 3 )
@@ -100,12 +100,22 @@ size_flags_vertical = 1
 text = "options"
 align = 0
 
-[node name="ContinueButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer" instance=ExtResource( 4 )]
+[node name="ReturnToPedestalHallButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 54.0
-margin_right = 48.0
+margin_right = 180.0
 margin_bottom = 68.0
+size_flags_vertical = 1
+text = "Вернуться к загадочным статуям"
+align = 0
+
+[node name="ContinueButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 72.0
+margin_right = 48.0
+margin_bottom = 86.0
 focus_neighbour_bottom = NodePath("../ExitGameButton")
 size_flags_vertical = 1
 text = "continue"
