@@ -38,7 +38,7 @@ theme = ExtResource( 3 )
 [node name="ColorRect" type="ColorRect" parent="MainMarginContainer"]
 margin_right = 512.0
 margin_bottom = 290.0
-color = Color( 0.0823529, 0.0823529, 0.0823529, 0.509804 )
+color = Color( 0.0941176, 0.0784314, 0.168627, 0.368627 )
 
 [node name="MarginContainer" type="MarginContainer" parent="MainMarginContainer"]
 margin_right = 512.0
@@ -64,13 +64,14 @@ align = 1
 
 [node name="MenuVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer"]
 margin_top = 56.0
-margin_right = 114.0
+margin_right = 180.0
 margin_bottom = 124.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource( 3 )
 
 [node name="ExitGameButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer" instance=ExtResource( 4 )]
+visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 54.0
@@ -83,21 +84,31 @@ align = 0
 [node name="ExitButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 18.0
-margin_right = 114.0
-margin_bottom = 32.0
+margin_right = 120.0
+margin_bottom = 14.0
+focus_neighbour_top = NodePath("../ContinueButton")
 size_flags_vertical = 1
-text = "return_to_game_menu"
+text = "Выйти в главное меню"
 align = 0
 
 [node name="OptionsButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 36.0
+margin_top = 18.0
 margin_right = 42.0
-margin_bottom = 50.0
+margin_bottom = 32.0
 size_flags_vertical = 1
 text = "options"
+align = 0
+
+[node name="ReturnToPedestalHallButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 36.0
+margin_right = 180.0
+margin_bottom = 50.0
+size_flags_vertical = 1
+text = "Вернуться к загадочным статуям"
 align = 0
 
 [node name="ContinueButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/MenuVBoxContainer" instance=ExtResource( 4 )]

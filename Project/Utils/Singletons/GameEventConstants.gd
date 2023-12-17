@@ -71,7 +71,8 @@ func set_default_constants():
 		player_knows_about_the_first_kiss_ghost = false,
 		picked_up_empty_jur = false,
 		did_show_empty_jur = false,
-		did_harvest_heart_jur_cutscene_played = false
+		did_harvest_heart_jur_cutscene_played = false,
+		did_open_pedestal_hall_right_door = false
 	}
 
 func set_constant(constant_name, value):
