@@ -22,7 +22,7 @@ theme = ExtResource( 2 )
 [node name="ColorRect" type="ColorRect" parent="MainMarginContainer"]
 margin_right = 512.0
 margin_bottom = 290.0
-color = Color( 0.0941176, 0.0784314, 0.168627, 0.509804 )
+color = Color( 0.0941176, 0.0784314, 0.168627, 0.368627 )
 
 [node name="SettingsMarginContainer" type="MarginContainer" parent="MainMarginContainer"]
 margin_right = 175.0
@@ -108,7 +108,6 @@ anchor_bottom = 0.0
 margin_top = 72.0
 margin_right = 24.0
 margin_bottom = 86.0
-size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "exit"
 align = 0
