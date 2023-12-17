@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=2]
+[gd_scene load_steps=111 format=2]
 
 [ext_resource path="res://Project/Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Project/WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=2]
@@ -59,6 +59,7 @@
 [ext_resource path="res://Assets/Audio/SFX/General/Magic/magic-sfx-for-games.mp3" type="AudioStream" id=57]
 [ext_resource path="res://Assets/Levels/Pedestal_hall/World_objects/RightDoor/LeftDoor.png" type="Texture" id=58]
 [ext_resource path="res://Assets/Levels/Pedestal_hall/World_objects/RightDoor/RightDoor.png" type="Texture" id=59]
+[ext_resource path="res://Project/WorldObjects/AppearingHintLabels/TriggeringLabelNode/TriggeringControlHintLabel.tscn" type="PackedScene" id=60]
 
 [sub_resource type="Environment" id=314]
 background_mode = 4
@@ -1132,6 +1133,18 @@ tracks/35/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/36/type = "value"
+tracks/36/path = NodePath("Middle_world_objects/TriggeringControlReturnHintLabel:is_active")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=318]
 resource_name = "Right_door_open_animation"
@@ -1244,6 +1257,20 @@ tracks/7/keys = {
 "values": [ {
 "args": [  ],
 "method": "did_finish_opening_right_door"
+} ]
+}
+tracks/8/type = "method"
+tracks/8/path = NodePath("Middle_world_objects/TriggeringControlReturnHintLabel")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "set_active"
 } ]
 }
 
@@ -2194,6 +2221,21 @@ explosiveness = 1.0
 randomness = 1.0
 process_material = SubResource( 317 )
 
+[node name="TriggeringControlReturnHintLabel" parent="Middle_world_objects" index="5" instance=ExtResource( 60 )]
+position = Vector2( 248, -20 )
+is_active = false
+
+[node name="AppearingHintLabel" parent="Middle_world_objects/TriggeringControlReturnHintLabel" index="0"]
+showing_time = 10
+
+[node name="Label" parent="Middle_world_objects/TriggeringControlReturnHintLabel/AppearingHintLabel" index="0"]
+margin_left = -78.0
+margin_top = -46.0
+margin_right = 139.0
+margin_bottom = 62.0
+text = "Ты всегда можешь вернуться сюда
+через меню паузы [Esc]"
+
 [node name="Player" parent="." index="10"]
 position = Vector2( -50, -95 )
 
@@ -2491,6 +2533,8 @@ margin_bottom = 344.0
 [editable path="Background_world_objects/Hidden_door_bricks/5/collision"]
 [editable path="Middle_world_objects/MysticDweller"]
 [editable path="Middle_world_objects/MysticDweller/Body/InteractionController"]
+[editable path="Middle_world_objects/TriggeringControlReturnHintLabel"]
+[editable path="Middle_world_objects/TriggeringControlReturnHintLabel/AppearingHintLabel"]
 [editable path="Collisions/PassTrough/PassThroughBody5"]
 [editable path="Collisions/PassTrough/PassThroughBody6"]
 [editable path="Collisions/PassTrough/PassThroughBody12"]
