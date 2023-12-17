@@ -102,7 +102,6 @@ func physics_process(delta):
 	collision_logic()
 	ground_update_logic()
 	check_for_action_release()
-	print(delta)
 	
 ############################## Functions ##############################
 

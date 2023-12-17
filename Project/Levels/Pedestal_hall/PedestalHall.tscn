@@ -1232,6 +1232,20 @@ tracks/6/keys = {
 "update": 1,
 "values": [ true, false ]
 }
+tracks/7/type = "method"
+tracks/7/path = NodePath(".")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "did_finish_opening_right_door"
+} ]
+}
 
 [sub_resource type="Animation" id=312]
 resource_name = "Show_mystic_dweller"

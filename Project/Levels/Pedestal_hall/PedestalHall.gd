@@ -27,3 +27,6 @@ func _show_final_level_door_opening_cutscene():
 func update_hidden_door_state():
 	var isHiddenDoorCollisionShapeActive = GameEventConstants.get_constant("did_put_all_all_items_on_pedestals")
 	hiddenDoorCollisionShape.disabled = !isHiddenDoorCollisionShapeActive
+
+func did_finish_opening_right_door():
+	GameEventConstants.set_constant("did_open_pedestal_hall_right_door", true)
