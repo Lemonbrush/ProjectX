@@ -1181,6 +1181,7 @@ texture = ExtResource( 6 )
 stream = ExtResource( 23 )
 autoplay = true
 max_distance = 100.0
+bus = "SFX"
 area_mask = 32
 
 [node name="Particles2D3" type="Particles2D" parent="Steam" index="1"]
@@ -1198,6 +1199,7 @@ position = Vector2( -1, -6 )
 stream = ExtResource( 23 )
 autoplay = true
 max_distance = 100.0
+bus = "SFX"
 area_mask = 32
 
 [node name="Particles2D4" type="Particles2D" parent="Steam" index="2"]
@@ -1215,6 +1217,7 @@ position = Vector2( -1, -6 )
 stream = ExtResource( 23 )
 autoplay = true
 max_distance = 100.0
+bus = "SFX"
 area_mask = 32
 
 [node name="Particles2D5" type="Particles2D" parent="Steam" index="3"]
@@ -1232,6 +1235,7 @@ position = Vector2( -1, -6 )
 stream = ExtResource( 23 )
 autoplay = true
 max_distance = 100.0
+bus = "SFX"
 area_mask = 32
 
 [node name="Particles2D6" type="Particles2D" parent="Steam" index="4"]
@@ -1249,6 +1253,7 @@ position = Vector2( -1, -6 )
 stream = ExtResource( 23 )
 autoplay = true
 max_distance = 100.0
+bus = "SFX"
 area_mask = 32
 
 [node name="WorldSprite" parent="." index="9"]

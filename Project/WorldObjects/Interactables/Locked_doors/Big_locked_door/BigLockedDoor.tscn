@@ -114,12 +114,15 @@ numberToPlay = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/LockedSoundRandomAudioStreamPlayer"]
 stream = ExtResource( 6 )
+bus = "SFX"
 
 [node name="DoorOpenSquickAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 7 )
+bus = "SFX"
 
 [node name="KeyOpenAudioStreamPlayer2" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 9 )
+bus = "SFX"
 
 [node name="VisibilityChecker" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, -17 )

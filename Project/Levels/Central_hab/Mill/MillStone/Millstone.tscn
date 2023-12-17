@@ -244,6 +244,7 @@ bus = "SFX"
 stream = ExtResource( 4 )
 volume_db = 5.0
 pitch_scale = 3.0
+bus = "SFX"
 
 [node name="Top" type="Sprite" parent="."]
 position = Vector2( 0, -40 )

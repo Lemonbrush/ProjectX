@@ -80,23 +80,29 @@ script = ExtResource( 2 )
 [node name="WorkingGearAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 3 )
 volume_db = -5.0
+bus = "SFX"
 
 [node name="RandomAudioStreamPlayer" parent="Audio" instance=ExtResource( 5 )]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/RandomAudioStreamPlayer"]
 stream = ExtResource( 6 )
+bus = "SFX"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Audio/RandomAudioStreamPlayer"]
 stream = ExtResource( 8 )
+bus = "SFX"
 
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Audio/RandomAudioStreamPlayer"]
 stream = ExtResource( 7 )
+bus = "SFX"
 
 [node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="Audio/RandomAudioStreamPlayer"]
 stream = ExtResource( 10 )
+bus = "SFX"
 
 [node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="Audio/RandomAudioStreamPlayer"]
 stream = ExtResource( 9 )
+bus = "SFX"
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
