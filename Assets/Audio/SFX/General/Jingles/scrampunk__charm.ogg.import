@@ -11,5 +11,5 @@ dest_files=[ "res://.import/scrampunk__charm.ogg-bd820c160fe6e5d3d1bf49bb4d960ee
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

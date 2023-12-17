@@ -1,10 +1,10 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://Project/UI/Screens/GameMenu/GameMenu.gd" type="Script" id=1]
 [ext_resource path="res://Project/Resources/Themes/MainTheme.tres" type="Theme" id=2]
 [ext_resource path="res://Assets/SharedWorldObjects/Clouds/CloudsTransparentBottom.png" type="Texture" id=3]
 [ext_resource path="res://Project/Resources/Fonts/Epilepsy Sans/Resource/EpilepsySans.tres" type="DynamicFont" id=4]
-[ext_resource path="res://Assets/Audio/Background_music/Level_themes/Main_menu_theme.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Audio/SFX/General/Jingles/scrampunk__charm.ogg" type="AudioStream" id=5]
 [ext_resource path="res://Assets/UI/MainMenu/KissiesLogo/Letters/T.png" type="Texture" id=6]
 [ext_resource path="res://Assets/UI/MainMenu/KissiesLogo/Background/Kissies_logo_background.png" type="Texture" id=7]
 [ext_resource path="res://Project/WorldObjects/Technical/Stars/Stars.tscn" type="PackedScene" id=8]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Assets/UI/MainMenu/KissiesLogo/Letters/o.png" type="Texture" id=13]
 [ext_resource path="res://Project/Resources/Shaders/PixelateShader.tres" type="Shader" id=14]
 [ext_resource path="res://Project/UI/Components/Animated_dialog_button/AnimatedDialogButton.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/Audio/Background_music/emotional-orchestra-korean-drama.wav" type="AudioStream" id=16]
 
 [sub_resource type="CanvasItemMaterial" id=8]
 particles_animation = true
@@ -812,6 +813,20 @@ tracks/5/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( 0, 30 ), Vector2( 0, -250 ) ]
 }
+tracks/6/type = "method"
+tracks/6/path = NodePath("../Audio/GameStartJingleAudioStreamPlayer")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
 
 [sub_resource type="Animation" id=35]
 length = 0.001
@@ -1084,7 +1099,14 @@ anim_offset_curve = SubResource( 13 )
 [node name="GameMenu" type="Node2D"]
 position = Vector2( 266, 154 )
 script = ExtResource( 1 )
-background_music = ExtResource( 5 )
+background_music = ExtResource( 16 )
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="GameStartJingleAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 5 )
+volume_db = -5.0
+pitch_scale = 0.7
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true

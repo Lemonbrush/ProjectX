@@ -15,7 +15,7 @@ onready var logo_animation_player = $AnimationPlayer
 
 var optionsMenuScene = preload("res://Project/UI/Screens/OptionsMenu/OptionsMenu.tscn")
 var changelogMenuScene = preload("res://Project/UI/Screens/DevelopmentLogMenu/DevelopmentLogMenu.tscn")
-var transition_background_music = preload("res://Assets/Audio/SFX/General/Jingles/red_star_magic_planet_first_part.wav")
+var transition_background_music = preload("res://Assets/Audio/SFX/General/Shine/shiny-object.wav")
 
 func _ready():
 	Global.is_game_loaded = false
