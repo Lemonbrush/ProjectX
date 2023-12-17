@@ -405,8 +405,8 @@ tracks/28/keys = {
 "update": 0,
 "values": [ Vector2( -59, -22 ) ]
 }
-tracks/29/type = "value"
-tracks/29/path = NodePath(".:is_able_to_skip_cutscene")
+tracks/29/type = "method"
+tracks/29/path = NodePath("MusicPlayer/IntroFirstPart/NoratorAudioStreamPlayer")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/imported = false
@@ -414,28 +414,27 @@ tracks/29/enabled = true
 tracks/29/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
 }
 tracks/30/type = "method"
-tracks/30/path = NodePath("SkipHintInteractionPopup")
+tracks/30/path = NodePath("MusicPlayer/IntroFirstPart/IntroMusicAudioStreamPlayer")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/imported = false
 tracks/30/enabled = true
 tracks/30/keys = {
-"times": PoolRealArray( 0.5, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [  ],
-"method": "show"
-}, {
-"args": [  ],
-"method": "hide"
+"args": [ 0.0 ],
+"method": "play"
 } ]
 }
 tracks/31/type = "method"
-tracks/31/path = NodePath("MusicPlayer/IntroFirstPart/NoratorAudioStreamPlayer")
+tracks/31/path = NodePath(".")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/imported = false
@@ -444,37 +443,38 @@ tracks/31/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [ 0.0 ],
-"method": "play"
+"args": [  ],
+"method": "stop_background_music"
 } ]
 }
 tracks/32/type = "method"
-tracks/32/path = NodePath("MusicPlayer/IntroFirstPart/IntroMusicAudioStreamPlayer")
+tracks/32/path = NodePath(".")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/imported = false
 tracks/32/enabled = true
 tracks/32/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.5, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
-"args": [ 0.0 ],
-"method": "play"
+"args": [  ],
+"method": "show_skip_popup_if_needed"
+}, {
+"args": [  ],
+"method": "hide_skip_intro_popup"
 } ]
 }
-tracks/33/type = "method"
-tracks/33/path = NodePath(".")
+tracks/33/type = "value"
+tracks/33/path = NodePath(".:is_skippable_part_finished")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/imported = false
 tracks/33/enabled = true
 tracks/33/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "stop_background_music"
-} ]
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
 }
 
 [sub_resource type="Animation" id=40]
@@ -802,6 +802,18 @@ tracks/26/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0 ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath(".:is_skippable_part_finished")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=84]

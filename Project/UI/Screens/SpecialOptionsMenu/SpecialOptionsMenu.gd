@@ -10,6 +10,7 @@ onready var resetGameConstantsButton = $MainMarginContainer/MarginContainer/Cont
 onready var deleteAllSavesByDefaultRadiobutton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/DeleteAllSavesAlwaysButton
 onready var activateDebugScreenRadiobutton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/ActivateDebugScreenButton
 onready var gameConstsEditorButton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/GameConstsEditorButton
+onready var ableToSkipIntroButton = $MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer/AbleToSkipIntroButton
 
 var gameConstsEditorMenu = load("res://Project/UI/Screens/GameConstsEditor/GameConstsEditor.tscn")
 
@@ -21,6 +22,7 @@ func _ready():
 	activateDebugScreenRadiobutton.connect("pressed_and_resolved", self, "on_debug_screen_radiobutton_pressed")
 	resetGameConstantsButton.connect("pressed_and_resolved", self, "on_reset_game_constants_pressed")
 	gameConstsEditorButton.connect("pressed_and_resolved", self, "on_special_options_pressed") 
+	ableToSkipIntroButton.connect("pressed_and_resolved", self, "on_intro_skip_option_pressed")
 	
 	setup_ui()
 	quitButton.grab_focus_without_animation()
@@ -35,6 +37,7 @@ func setup_ui():
 	
 	deleteAllSavesByDefaultRadiobutton.pressed = SettingsManager.settings.should_delete_all_saves_on_start_session
 	activateDebugScreenRadiobutton.pressed = SettingsManager.settings.is_debug_screen_active
+	ableToSkipIntroButton.pressed = SettingsManager.settings.is_intro_skip_option_available
 	
 	EventBus.did_update_cursor_setting()
 	EventBus.debug_screen_visibility_updated()
@@ -42,6 +45,10 @@ func setup_ui():
 func on_quit_pressed():
 	queue_free()
 	emit_signal("back_pressed")
+
+func on_intro_skip_option_pressed():
+	SettingsManager.toggle_intro_skip_option()
+	setup_ui()
 
 func on_save_delete_pressed():
 	FileManager.delete_save()

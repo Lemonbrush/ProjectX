@@ -38,6 +38,11 @@ func has_settings_file():
 	
 ################### Update properties functions ##################
 
+func toggle_intro_skip_option():
+	settings.is_intro_skip_option_available = !settings.is_intro_skip_option_available
+	print("Toggle - ", settings.is_intro_skip_option_available)
+	save_settings()
+
 func update_cursor_active_option():
 	settings.is_cursor_active = !settings.is_cursor_active
 	save_settings()

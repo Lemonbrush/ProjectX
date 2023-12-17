@@ -21,7 +21,7 @@ color = Color( 0.0941176, 0.0784314, 0.168627, 0.509804 )
 
 [node name="MarginContainer" type="MarginContainer" parent="MainMarginContainer"]
 margin_right = 512.0
-margin_bottom = 220.0
+margin_bottom = 238.0
 size_flags_vertical = 0
 custom_constants/margin_top = 60
 custom_constants/margin_left = 25
@@ -29,8 +29,8 @@ custom_constants/margin_left = 25
 [node name="ContentVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer"]
 margin_left = 25.0
 margin_top = 60.0
-margin_right = 163.0
-margin_bottom = 220.0
+margin_right = 193.0
+margin_bottom = 238.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_constants/separation = 30
@@ -45,13 +45,13 @@ text = "special"
 
 [node name="OptionsVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer"]
 margin_top = 56.0
-margin_right = 138.0
-margin_bottom = 160.0
+margin_right = 168.0
+margin_bottom = 178.0
 
 [node name="GameConstsEditorButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 138.0
+margin_right = 168.0
 margin_bottom = 14.0
 focus_neighbour_top = NodePath("../ExitButton")
 size_flags_horizontal = 1
@@ -63,7 +63,7 @@ align = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 18.0
-margin_right = 138.0
+margin_right = 168.0
 margin_bottom = 32.0
 size_flags_horizontal = 1
 size_flags_vertical = 1
@@ -86,7 +86,7 @@ align = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 36.0
-margin_right = 138.0
+margin_right = 168.0
 margin_bottom = 50.0
 size_flags_horizontal = 1
 size_flags_vertical = 1
@@ -97,7 +97,7 @@ align = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 54.0
-margin_right = 138.0
+margin_right = 168.0
 margin_bottom = 68.0
 size_flags_horizontal = 1
 size_flags_vertical = 1
@@ -109,7 +109,7 @@ align = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 72.0
-margin_right = 138.0
+margin_right = 168.0
 margin_bottom = 86.0
 size_flags_horizontal = 1
 size_flags_vertical = 1
@@ -117,12 +117,24 @@ toggle_mode = true
 text = "Экран отладки"
 align = 0
 
-[node name="ExitButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer" instance=ExtResource( 4 )]
+[node name="AbleToSkipIntroButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 90.0
-margin_right = 138.0
+margin_right = 168.0
 margin_bottom = 104.0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = true
+text = "Возможность пропустить интро"
+align = 0
+
+[node name="ExitButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 108.0
+margin_right = 168.0
+margin_bottom = 122.0
 focus_neighbour_bottom = NodePath("../GameConstsEditorButton")
 size_flags_horizontal = 1
 size_flags_vertical = 1
