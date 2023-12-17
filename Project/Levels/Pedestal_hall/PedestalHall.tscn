@@ -1740,12 +1740,15 @@ bus = "SFX"
 stream = ExtResource( 50 )
 volume_db = -20.0
 pitch_scale = 0.6
+bus = "SFX"
 
 [node name="StoneKissAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" index="5"]
 stream = ExtResource( 55 )
+bus = "SFX"
 
 [node name="SuccessAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" index="6"]
 stream = ExtResource( 56 )
+bus = "SFX"
 
 [node name="MagicPaffAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" index="7"]
 stream = ExtResource( 57 )
