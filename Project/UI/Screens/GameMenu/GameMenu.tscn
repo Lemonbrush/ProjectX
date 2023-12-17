@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://Project/UI/Screens/GameMenu/GameMenu.gd" type="Script" id=1]
 [ext_resource path="res://Project/Resources/Themes/MainTheme.tres" type="Theme" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Assets/UI/MainMenu/KissiesLogo/Letters/o.png" type="Texture" id=13]
 [ext_resource path="res://Project/Resources/Shaders/PixelateShader.tres" type="Shader" id=14]
 [ext_resource path="res://Project/UI/Components/Animated_dialog_button/AnimatedDialogButton.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/Audio/SFX/General/Jingles/scrampunk__charm.ogg" type="AudioStream" id=16]
 
 [sub_resource type="CanvasItemMaterial" id=8]
 particles_animation = true
@@ -812,6 +813,20 @@ tracks/5/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( 0, 30 ), Vector2( 0, -250 ) ]
 }
+tracks/6/type = "method"
+tracks/6/path = NodePath("../Audio/GameStartJingleAudioStreamPlayer")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
 
 [sub_resource type="Animation" id=35]
 length = 0.001
@@ -1085,6 +1100,12 @@ anim_offset_curve = SubResource( 13 )
 position = Vector2( 266, 154 )
 script = ExtResource( 1 )
 background_music = ExtResource( 5 )
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="GameStartJingleAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 16 )
+pitch_scale = 0.7
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
