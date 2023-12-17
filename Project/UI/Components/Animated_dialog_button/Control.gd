@@ -31,3 +31,5 @@ func grab_focus_without_animation():
 func did_finish_press_animation():
 	emit_signal("pressed_and_resolved")
 
+func configure_dialog_button():
+	size_flags_horizontal = SIZE_FILL
