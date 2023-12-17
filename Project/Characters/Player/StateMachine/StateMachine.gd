@@ -27,19 +27,18 @@ func _unhandled_input(event):
 
 func _process(delta):
 	state.process(delta)
-	state_check()
 
 func _physics_process(delta):
 	state.physics_process(delta)
+		
+# Functions
 
-func state_check():
+func transition_to_door_interaction_state_if_needed():
 	if owner.is_entering_out:
 		transition_to("Door_enter_out", {})
 	if owner.entering_scene_path:
 		transition_to("Door_enter_in", { next_scene = owner.entering_scene_path})
 		owner.entering_scene_path = null
-		
-# Functions
 
 func transition_to(target_state: String, msg: Dictionary = {}):
 	if !states.has(target_state):

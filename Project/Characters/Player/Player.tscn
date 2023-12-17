@@ -114,7 +114,7 @@ tracks/1/path = NodePath("Audio/FootstepAudioPlayer")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/keys = {
 "times": PoolRealArray( 0.1, 0.3, 0.5, 0.7, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
@@ -133,6 +133,20 @@ tracks/1/keys = {
 }, {
 "args": [  ],
 "method": "play"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("StateMachine/Door_enter_in")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.9 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "on_animation_finished"
 } ]
 }
 
@@ -175,6 +189,20 @@ tracks/1/keys = {
 }, {
 "args": [  ],
 "method": "play"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("StateMachine/Door_enter_out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.9 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "on_animation_finished"
 } ]
 }
 
@@ -685,6 +713,7 @@ position = Vector2( 8, -16 )
 texture = ExtResource( 1 )
 hframes = 19
 vframes = 14
+frame = 237
 
 [node name="GroundRay1" type="RayCast2D" parent="Body"]
 visible = false

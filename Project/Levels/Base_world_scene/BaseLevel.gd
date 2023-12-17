@@ -40,7 +40,7 @@ func correct_player_position_by_door():
 		var door_node = find_node(Global.door_name)
 		if door_node && player:
 			player.global_position = door_node.global_position
-			player.is_entering_out = true
+			player.play_door_entering_out_action()
 			if dynamic_camera:
 				camera.instant_focuse_on_target()
 			
