@@ -4,7 +4,7 @@
 [ext_resource path="res://Project/Resources/Themes/MainTheme.tres" type="Theme" id=2]
 [ext_resource path="res://Assets/SharedWorldObjects/Clouds/CloudsTransparentBottom.png" type="Texture" id=3]
 [ext_resource path="res://Project/Resources/Fonts/Epilepsy Sans/Resource/EpilepsySans.tres" type="DynamicFont" id=4]
-[ext_resource path="res://Assets/Audio/Background_music/Level_themes/Main_menu_theme.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Audio/SFX/General/Jingles/scrampunk__charm.ogg" type="AudioStream" id=5]
 [ext_resource path="res://Assets/UI/MainMenu/KissiesLogo/Letters/T.png" type="Texture" id=6]
 [ext_resource path="res://Assets/UI/MainMenu/KissiesLogo/Background/Kissies_logo_background.png" type="Texture" id=7]
 [ext_resource path="res://Project/WorldObjects/Technical/Stars/Stars.tscn" type="PackedScene" id=8]
@@ -15,7 +15,7 @@
 [ext_resource path="res://Assets/UI/MainMenu/KissiesLogo/Letters/o.png" type="Texture" id=13]
 [ext_resource path="res://Project/Resources/Shaders/PixelateShader.tres" type="Shader" id=14]
 [ext_resource path="res://Project/UI/Components/Animated_dialog_button/AnimatedDialogButton.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Assets/Audio/SFX/General/Jingles/scrampunk__charm.ogg" type="AudioStream" id=16]
+[ext_resource path="res://Assets/Audio/Background_music/emotional-orchestra-korean-drama.wav" type="AudioStream" id=16]
 
 [sub_resource type="CanvasItemMaterial" id=8]
 particles_animation = true
@@ -1099,12 +1099,13 @@ anim_offset_curve = SubResource( 13 )
 [node name="GameMenu" type="Node2D"]
 position = Vector2( 266, 154 )
 script = ExtResource( 1 )
-background_music = ExtResource( 5 )
+background_music = ExtResource( 16 )
 
 [node name="Audio" type="Node" parent="."]
 
 [node name="GameStartJingleAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource( 16 )
+stream = ExtResource( 5 )
+volume_db = -5.0
 pitch_scale = 0.7
 
 [node name="Camera2D" type="Camera2D" parent="."]
