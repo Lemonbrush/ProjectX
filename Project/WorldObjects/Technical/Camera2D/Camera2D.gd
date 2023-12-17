@@ -28,16 +28,17 @@ func _ready():
 	VisualServer.set_default_clear_color(backgroundColor)
 	reset_target_node_group_name()
 
-func _process(delta):
+func _process(_delta):
 	if follow_player:
 		acquire_target_position()
-		global_position = lerp(targetPosition, global_position, pow(2, current_camera_speed * delta))
+		global_position = targetPosition
 
 func instant_focuse_on_target():
-	acquire_target_position()
-	current_camera_speed = -100
+	smoothing_enabled = false
 	global_position = targetPosition
-	current_camera_speed = default_camera_speed
+	yield(get_tree(), "idle_frame")
+	yield(get_tree(), "idle_frame")
+	smoothing_enabled = true
 
 func acquire_target_position():
 	var acquired = get_target_position_from_node_group(target_node_group_name)
