@@ -196,15 +196,19 @@ particles_anim_loop = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/CeashRandomAudioStreamPlayer"]
 stream = ExtResource( 9 )
+bus = "SFX"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Audio/CeashRandomAudioStreamPlayer"]
 stream = ExtResource( 8 )
+bus = "SFX"
 
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Audio/CeashRandomAudioStreamPlayer"]
 stream = ExtResource( 11 )
+bus = "SFX"
 
 [node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="Audio/CeashRandomAudioStreamPlayer"]
 stream = ExtResource( 10 )
+bus = "SFX"
 
 [node name="VaseCrushRandomAudioStreamPlayer" parent="Audio" instance=ExtResource( 7 )]
 
@@ -232,6 +236,7 @@ frame = 2
 
 [node name="DustParticles" type="Particles2D" parent="."]
 material = SubResource( 20 )
+emitting = false
 amount = 10
 lifetime = 1.5
 one_shot = true
@@ -241,6 +246,7 @@ texture = ExtResource( 2 )
 
 [node name="BarrelParticles" type="Particles2D" parent="."]
 material = SubResource( 24 )
+emitting = false
 amount = 10
 lifetime = 1.5
 one_shot = true
@@ -249,6 +255,7 @@ process_material = ExtResource( 6 )
 texture = ExtResource( 3 )
 
 [node name="ShineParticles" type="Particles2D" parent="."]
+emitting = false
 amount = 10
 one_shot = true
 explosiveness = 1.0

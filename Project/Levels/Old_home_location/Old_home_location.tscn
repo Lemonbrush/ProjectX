@@ -3141,10 +3141,12 @@ bus = "SFX"
 [node name="NoratorAudioStreamPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroFirstPart"]
 pause_mode = 2
 stream = ExtResource( 25 )
+bus = "Speech"
 
 [node name="NoratorSecondPartAudioStreamPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroFirstPart"]
 pause_mode = 2
 stream = ExtResource( 33 )
+bus = "Speech"
 
 [node name="IntroMusicAudioStreamPlayer" type="AudioStreamPlayer" parent="MusicPlayer/IntroFirstPart"]
 pause_mode = 2

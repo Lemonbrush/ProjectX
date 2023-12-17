@@ -830,10 +830,12 @@ pause_mode = 2
 stream = ExtResource( 37 )
 volume_db = -80.0
 pitch_scale = 2.0
+bus = "SFX"
 
 [node name="PillarAscendingAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" index="1"]
 stream = ExtResource( 38 )
 pitch_scale = 2.0
+bus = "SFX"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="1"]
 environment = SubResource( 3 )

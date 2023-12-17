@@ -456,6 +456,7 @@ pause_mode = 2
 
 [node name="SuccessAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" index="1"]
 stream = ExtResource( 25 )
+bus = "SFX"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="1"]
 environment = SubResource( 124 )

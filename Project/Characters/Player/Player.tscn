@@ -568,41 +568,52 @@ bus = "SFX"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/HitRandomAudioStreamPlayer"]
 stream = ExtResource( 36 )
+bus = "SFX"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Audio/HitRandomAudioStreamPlayer"]
 stream = ExtResource( 27 )
 volume_db = 5.0
+bus = "SFX"
 
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Audio/HitRandomAudioStreamPlayer"]
 stream = ExtResource( 31 )
 volume_db = 5.0
+bus = "SFX"
 
 [node name="PunchRandomAudioStreamPlayer" parent="Audio" instance=ExtResource( 17 )]
 numberToPlay = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/PunchRandomAudioStreamPlayer"]
 stream = ExtResource( 41 )
+bus = "SFX"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Audio/PunchRandomAudioStreamPlayer"]
 stream = ExtResource( 39 )
+bus = "SFX"
 
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Audio/PunchRandomAudioStreamPlayer"]
 stream = ExtResource( 40 )
+bus = "SFX"
 
 [node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="Audio/PunchRandomAudioStreamPlayer"]
 stream = ExtResource( 42 )
+bus = "SFX"
 
 [node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="Audio/PunchRandomAudioStreamPlayer"]
 stream = ExtResource( 43 )
+bus = "SFX"
 
 [node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="Audio/PunchRandomAudioStreamPlayer"]
 stream = ExtResource( 37 )
+bus = "SFX"
 
 [node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="Audio/PunchRandomAudioStreamPlayer"]
 stream = ExtResource( 38 )
+bus = "SFX"
 
 [node name="AudioStreamPlayer8" type="AudioStreamPlayer" parent="Audio/PunchRandomAudioStreamPlayer"]
 stream = ExtResource( 44 )
+bus = "SFX"
 
 [node name="PaffRandomAudioStreamPlayer" parent="Audio" instance=ExtResource( 45 )]
 

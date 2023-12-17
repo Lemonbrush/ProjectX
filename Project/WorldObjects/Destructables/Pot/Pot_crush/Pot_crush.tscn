@@ -208,25 +208,31 @@ anim_offset_random = 1.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/CeashRandomAudioStreamPlayer"]
 stream = ExtResource( 6 )
+bus = "SFX"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Audio/CeashRandomAudioStreamPlayer"]
 stream = ExtResource( 5 )
+bus = "SFX"
 
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Audio/CeashRandomAudioStreamPlayer"]
 stream = ExtResource( 8 )
+bus = "SFX"
 
 [node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="Audio/CeashRandomAudioStreamPlayer"]
 stream = ExtResource( 7 )
+bus = "SFX"
 
 [node name="VaseCrushRandomAudioStreamPlayer" parent="Audio" instance=ExtResource( 4 )]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/VaseCrushRandomAudioStreamPlayer"]
 stream = ExtResource( 10 )
 volume_db = -20.0
+bus = "SFX"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Audio/VaseCrushRandomAudioStreamPlayer"]
 stream = ExtResource( 9 )
 volume_db = -20.0
+bus = "SFX"
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
