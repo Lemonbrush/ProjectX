@@ -27,15 +27,14 @@ func transition_to_level(scenePath):
 		var _scene = get_tree().change_scene_to(packedScene)
 
 func transition_to_scene(scene):
-	if scene == null:
-		print("Failed to transition. Scene value is null")
-		return
-	
 	yield(get_tree().create_timer(.1),"timeout")
 	var screenTransition = fade_transition.instance()
 	add_child(screenTransition)
-	
 	yield(screenTransition, "screen_covered") 
+	
+	if scene == null:
+		print("Failed to transition. Scene value is null")
+		return
 	
 	print("Location ", scene.get_name(), " loaded")
 	

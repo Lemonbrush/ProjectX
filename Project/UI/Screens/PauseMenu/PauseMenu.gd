@@ -39,11 +39,11 @@ func on_continue_button_pressed():
 	unpause()
 
 func on_exit_button_pressed():
-	unpause()
-	Global.door_name = null
-	var _scene = get_tree().change_scene(gameMenuScenePath)
+	Global.reset_state()
+	LevelManager.transition_to_level(gameMenuScenePath)
 
 func on_exit_game_button_pressed():
+	Global.reset_state()
 	get_tree().quit()
 
 func unpause():
