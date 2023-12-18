@@ -27,7 +27,6 @@ func _ready():
 	var _about_button_connection = about_button.connect("pressed_and_resolved", self, "on_changelog_pressed")
 	update_ui_data()
 	play_background_music()
-	
 
 func update_ui_data():
 	version_label.text = FileManager.get_project_version()
@@ -55,12 +54,14 @@ func grab_first_button_focus():
 			return
 
 func on_new_game_button_pressed():
+	set_cursor_visibility(false)
 	new_game_button.disabled = true
 	FileManager.delete_save()
 	EventBus.did_reset_game_constants()
 	logo_animation_player.play("Play")
 	
 func on_continue_button_pressed():
+	set_cursor_visibility(false)
 	continue_button.disabled = true
 	logo_animation_player.play("Play")
 
@@ -88,6 +89,9 @@ func on_options_back_pressed():
 	update_ui_data()
 	mainMenuCanvasLayer.visible = true
 
+func did_finish_intro_animation():
+	set_cursor_visibility(true)
+
 func play_background_music():
 	MusicPlayer.reset_background_music_volumeDB()
 	MusicPlayer.play_stream(background_music)
@@ -97,3 +101,6 @@ func play_transition_music():
 
 func stop_background_music():
 	MusicPlayer.stop()
+
+func set_cursor_visibility(visible):
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if visible else Input.MOUSE_MODE_HIDDEN)

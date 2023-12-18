@@ -11,6 +11,7 @@ export(bool) var play_background_music_on_ready = true
 onready var player 				= find_node("Player")
 onready var animationPlayer 		= $AnimationPlayer
 onready var camera				= $Camera2D
+var cursor_visibility_timer = Timer.new()
 
 ######## LifeCycle ########
 
@@ -20,7 +21,13 @@ func _ready():
 	correct_player_position_by_door()
 	configure_camera()
 	configure_background_music()
-	
+	setup_mouse_visibility_timer()
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		cursor_visibility_timer.start()
+
 func _unhandled_input(event):
 	if event.is_action_pressed("pause_menu"):
 		var pauseInstance = pauseMenu.instance()
@@ -83,3 +90,13 @@ func configure_camera():
 
 func configure_file_manager():
 	FileManager.current_level = get_tree().get_current_scene().get_name()
+
+func setup_mouse_visibility_timer():
+	cursor_visibility_timer.one_shot = true
+	cursor_visibility_timer.wait_time = 1.2
+	cursor_visibility_timer.connect("timeout", self, "hide_cursor")
+	add_child(cursor_visibility_timer)
+	cursor_visibility_timer.start()
+
+func hide_cursor() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
