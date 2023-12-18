@@ -713,7 +713,6 @@ position = Vector2( 8, -16 )
 texture = ExtResource( 1 )
 hframes = 19
 vframes = 14
-frame = 237
 
 [node name="GroundRay1" type="RayCast2D" parent="Body"]
 visible = false
