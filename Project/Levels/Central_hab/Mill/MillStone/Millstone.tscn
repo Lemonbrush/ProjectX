@@ -150,7 +150,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id=7]
 resource_name = "MillStale"
-length = 0.05
+length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("Particles2D:emitting")
 tracks/0/interp = 1
