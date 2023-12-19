@@ -55,6 +55,8 @@ func unpause():
 ### Options menu ###
 
 func on_return_to_the_pedestals_pressed():
+	Global.reset_state()
+	unpause()
 	LevelManager.transition_to_level(pedestal_hall_scene_path)
 	
 func on_options_pressed():

@@ -180,6 +180,10 @@ func act_timer_timeout():
 func hide_popup():
 	interactionPopup.hide()
 
+func instant_hide_dialog():
+	hide_popup()
+	dialogTextBoxController.instant_hide()
+
 func process_still(delta):
 	velocity.y += gravity * delta
 	velocity.x = 0
