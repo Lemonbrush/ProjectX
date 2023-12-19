@@ -28,6 +28,7 @@ func _unhandled_input(_event):
 		get_tree().set_input_as_handled()
 
 func setup_ui():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	continueButton.grab_focus_without_animation()
 	returnToPedestalHallButton.disabled = get_parent().name == "PedestalHall"
 	var is_return_to_pedestal_hall_button_visible = GameEventConstants.get_constant("did_open_pedestal_hall_right_door")
@@ -47,6 +48,7 @@ func on_exit_game_button_pressed():
 	get_tree().quit()
 
 func unpause():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	queue_free()
 	get_tree().paused = false
 	
