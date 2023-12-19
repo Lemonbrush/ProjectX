@@ -20,6 +20,7 @@ func show_create_love_potion_cut_scene():
 	animationPlayer.play("Show_create_potion_cut_scene")
 
 func show_cauldron_giving_empty_jur():
+	dweller.instant_hide_dialog()
 	empty_jar_dispatcher.dispatch()
 
 func configure_scene():

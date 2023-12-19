@@ -97,6 +97,9 @@ func did_receive_error(text):
 
 # Functions
 
+func instant_hide():
+	finish_dialog(true)
+
 func show_button_hint_if_needed():
 	if current_dialog_type != DIALOG_TYPE.CHOICE:
 		dialogTextBox.show_button_hint()
@@ -127,9 +130,12 @@ func setup_interaction_mode(can_interact):
 func show_dialog_text_box():
 	dialogTextBox.show()
 
-func finish_dialog():
+func finish_dialog(finish_instantly = false):
 	Global.is_player_talking = false
-	dialogTextBox.hide()
+	if finish_instantly:
+		dialogTextBox.instant_hide()
+	else:
+		dialogTextBox.hide()
 	dialogManager.reset()
 	voiceGenerator.reset()
 
