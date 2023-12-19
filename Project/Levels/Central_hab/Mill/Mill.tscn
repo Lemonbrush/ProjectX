@@ -250,6 +250,23 @@ tracks/4/keys = {
 "method": "unpouse_level"
 } ]
 }
+tracks/5/type = "method"
+tracks/5/path = NodePath("AbstractDweller")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ false ],
+"method": "set_interaction_mode"
+}, {
+"args": [ true ],
+"method": "set_interaction_mode"
+} ]
+}
 
 [sub_resource type="CurveTexture" id=112]
 
