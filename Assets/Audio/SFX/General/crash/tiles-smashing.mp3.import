@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/tiles-smashing.mp3-8fd2e4e25d3a110125f17f48247c01bb.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/crash/tiles-smashing.mp3"
+dest_files=[ "res://.import/tiles-smashing.mp3-8fd2e4e25d3a110125f17f48247c01bb.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

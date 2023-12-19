@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/bonfire_crackles.mp3-1284c04d3ad9224a3d48932a58113e92.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/fire/bonfire_crackles.mp3"
+dest_files=[ "res://.import/bonfire_crackles.mp3-1284c04d3ad9224a3d48932a58113e92.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

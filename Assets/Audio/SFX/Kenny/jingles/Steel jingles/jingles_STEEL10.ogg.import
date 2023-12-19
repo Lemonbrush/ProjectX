@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/jingles_STEEL10.ogg-d77d5ba4e724cb7bbf55decb169c5b4b.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Kenny/jingles/Steel jingles/jingles_STEEL10.ogg"
+dest_files=[ "res://.import/jingles_STEEL10.ogg-d77d5ba4e724cb7bbf55decb169c5b4b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

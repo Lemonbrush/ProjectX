@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/laser1.ogg-461a46ac8d87445a49973bff5298d287.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Kenny/Digital_sounds/laser/laser1.ogg"
+dest_files=[ "res://.import/laser1.ogg-461a46ac8d87445a49973bff5298d287.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

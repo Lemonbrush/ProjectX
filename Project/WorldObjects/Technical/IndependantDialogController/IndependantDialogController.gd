@@ -18,3 +18,6 @@ func traverse_dialog():
 func start_dialog():
 	is_dialog_active = true
 	traverse_dialog()
+
+func finish_dialog():
+	is_dialog_active = false

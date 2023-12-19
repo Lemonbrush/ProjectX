@@ -4,6 +4,7 @@ enum State { IDLE, WALKING, TALKING, ACTING }
 enum Direction { LEFT = 1, RIGHT = -1 }
 
 export(String) var dialogId
+export (Resource) var voice_generator_configuration_file
 export(Array, Resource) var actions
 export(Resource) var currentState 
 export var currentActionIndex = 0
@@ -29,6 +30,7 @@ var current_animation_name
 
 func _ready():
 	dialogTextBoxController.set_dialog_id(dialogId)
+	dialogTextBoxController.set_letter_sounds_resource(voice_generator_configuration_file)
 	
 	if !actions:
 		var idleAction = IdleNpcAction.new()

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/waves-6907.mp3-af97a8b5f9546f9ab6a744a0334c9821.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Background_music/Background sound effects/Shore/waves-6907.mp3"
+dest_files=[ "res://.import/waves-6907.mp3-af97a8b5f9546f9ab6a744a0334c9821.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

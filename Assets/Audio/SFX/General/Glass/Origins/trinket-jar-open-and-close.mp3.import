@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/trinket-jar-open-and-close.mp3-f0b111c4e611c827700f4c0062b452cf.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/Glass/Origins/trinket-jar-open-and-close.mp3"
+dest_files=[ "res://.import/trinket-jar-open-and-close.mp3-f0b111c4e611c827700f4c0062b452cf.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

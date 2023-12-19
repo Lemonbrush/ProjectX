@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/opticaillusions__jewel-glitter.wav-94dd14762bd5835b48e5c6f311e506ae.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/Shine/opticaillusions__jewel-glitter.wav"
+dest_files=[ "res://.import/opticaillusions__jewel-glitter.wav-94dd14762bd5835b48e5c6f311e506ae.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Audio/SFX/Kenny/Clicks/click/click2.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Assets/Audio/SFX/Kenny/Clicks/click/click1.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Project/Utils/Audio/RandomAudioStreamPlayer/RandomAudioStreamPlayer.gd" type="Script" id=3]
+
+[node name="HoverRandomAudioStreamPlayer" type="Node2D"]
+script = ExtResource( 3 )
+numberToPlay = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+bus = "SFX"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+bus = "SFX"

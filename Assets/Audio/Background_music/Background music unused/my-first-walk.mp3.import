@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/my-first-walk.mp3-e6efea6394b0af31286607d15384e6bc.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Background_music/Background music unused/my-first-walk.mp3"
+dest_files=[ "res://.import/my-first-walk.mp3-e6efea6394b0af31286607d15384e6bc.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

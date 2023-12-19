@@ -1,4 +1,4 @@
-[gd_scene load_steps=222 format=2]
+[gd_scene load_steps=240 format=2]
 
 [ext_resource path="res://Assets/Levels/Central_hub/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Effects/Lighting/playerLight.png" type="Texture" id=2]
@@ -35,7 +35,7 @@
 [ext_resource path="res://Project/WorldObjects/Moving_platforms/MovingPlatform.gd" type="Script" id=33]
 [ext_resource path="res://Assets/SharedWorldObjects/FloatingBlocks/Floating_block.png" type="Texture" id=34]
 [ext_resource path="res://Project/WorldObjects/Moving_platforms/Paths/VerticalPath.tres" type="Curve2D" id=35]
-[ext_resource path="res://Project/UI/DebugScreen/GameSpecs.tscn" type="PackedScene" id=36]
+[ext_resource path="res://Project/UI/Screens/DebugScreen/GameSpecs.tscn" type="PackedScene" id=36]
 [ext_resource path="res://Project/WorldObjects/Decorative/Tree/Regualr_trees/Trees/TallTree.tscn" type="PackedScene" id=37]
 [ext_resource path="res://Project/WorldObjects/Decorative/Tree/Regualr_trees/Background_trees/BackgroundSmallWideTree.tscn" type="PackedScene" id=38]
 [ext_resource path="res://Project/WorldObjects/Decorative/Tree/Regualr_trees/Trees/BushyTree.tscn" type="PackedScene" id=39]
@@ -71,10 +71,19 @@
 [ext_resource path="res://Project/WorldObjects/Sign/Sign.tscn" type="PackedScene" id=69]
 [ext_resource path="res://Assets/Levels/Central_hub/World_objects/WishShrineEntrance/Stone_tumb_sign.png" type="Texture" id=70]
 [ext_resource path="res://Project/Levels/Central_hab/World_objects/New_island_house/New_island_house.tscn" type="PackedScene" id=71]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsSasha.tres" type="Resource" id=72]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.gd" type="Script" id=73]
 [ext_resource path="res://Project/WorldObjects/Pick_ups/Items/LighthouseKey/LighthouseKeyItem.tscn" type="PackedScene" id=74]
 [ext_resource path="res://Project/Resources/Tilesets/Resources/Decorations/Decorations.tres" type="TileSet" id=75]
 [ext_resource path="res://Project/Levels/Central_hab/World_objects/Lighthouse_buth/Lighthouse_buth.tscn" type="PackedScene" id=76]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsSashaBrutal.tres" type="Resource" id=77]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsSofa.tres" type="Resource" id=78]
 [ext_resource path="res://Project/Characters/NPC/Mystic_dweller/MysticDweller.tscn" type="PackedScene" id=79]
+[ext_resource path="res://Assets/Audio/Background_music/Level_themes/Central_hub_theme.wav" type="AudioStream" id=80]
+[ext_resource path="res://Project/Utils/Audio/RandomAudioStreamPlayerNodes/PaffRandomAudioStreamPlayer.tscn" type="PackedScene" id=81]
+[ext_resource path="res://Assets/Audio/SFX/General/Bell/success_bell.wav" type="AudioStream" id=82]
+[ext_resource path="res://Assets/Audio/SFX/Kenny/Impact_sounds/impactWood_medium/impactWood_medium_004.ogg" type="AudioStream" id=83]
+[ext_resource path="res://Assets/Audio/SFX/General/misc/plane-flying-by.wav" type="AudioStream" id=84]
 
 [sub_resource type="Environment" id=30]
 background_mode = 4
@@ -86,7 +95,7 @@ adjustment_saturation = 1.3
 
 [sub_resource type="Animation" id=224]
 resource_name = "Lighthouse_mystic_dweller_finish_quest_cutscene"
-length = 15.0
+length = 16.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Middle_world_objects/New_island_house:visible")
 tracks/0/interp = 1
@@ -106,7 +115,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 15 ),
+"times": PoolRealArray( 0.1, 16 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -123,7 +132,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 1, 15 ),
+"times": PoolRealArray( 1, 16 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -140,7 +149,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 2, 4, 15 ),
+"times": PoolRealArray( 0, 2, 4, 16 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 52, -809 ), Vector2( 52, -809 ), Vector2( -199, 374 ), Vector2( -199, 374 ) ]
@@ -209,6 +218,85 @@ tracks/8/keys = {
 "values": [ {
 "args": [  ],
 "method": "finish_talking"
+} ]
+}
+tracks/9/type = "method"
+tracks/9/path = NodePath("Audio/Island_sounds/IslandFlyAudioStreamPlayer")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 5, 14 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/10/type = "method"
+tracks/10/path = NodePath("Audio/Island_sounds/IslandHitAudioStreamPlayer")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 14 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/11/type = "method"
+tracks/11/path = NodePath("Camera2D")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 14, 14.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ null, null, null, null ],
+"method": "_screen_shake"
+}, {
+"args": [  ],
+"method": "_stop_screen_shake"
+} ]
+}
+tracks/12/type = "method"
+tracks/12/path = NodePath("Audio/SuccessAudioStreamPlayer")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 15 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/13/type = "method"
+tracks/13/path = NodePath(".")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 4.4, 16 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ -20.0 ],
+"method": "set_background_music_volumeDB"
+}, {
+"args": [  ],
+"method": "reset_background_music_volumeDB"
 } ]
 }
 
@@ -290,6 +378,34 @@ tracks/4/keys = {
 "values": [ {
 "args": [  ],
 "method": "spawn_item"
+} ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("Audio/PaffRandomAudioStreamPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 2.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "play"
+} ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath("Audio/SuccessAudioStreamPlayer")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 2.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
 } ]
 }
 
@@ -733,6 +849,11 @@ extents = Vector2( 5.5, 27 )
 29/shapes = [  ]
 29/z_index = 0
 
+[sub_resource type="Resource" id=247]
+script = ExtResource( 73 )
+letter_sounds_resource = ExtResource( 72 )
+voice_mode = 3
+
 [sub_resource type="Animation" id=200]
 resource_name = "Idle"
 length = 2.2
@@ -749,6 +870,11 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
 }
+
+[sub_resource type="Resource" id=248]
+script = ExtResource( 73 )
+letter_sounds_resource = ExtResource( 72 )
+voice_mode = 4
 
 [sub_resource type="Animation" id=156]
 resource_name = "Idle"
@@ -799,6 +925,11 @@ tracks/0/keys = {
 "values": [ 13, 14, 15, 16, 17, 18 ]
 }
 
+[sub_resource type="Resource" id=250]
+script = ExtResource( 73 )
+letter_sounds_resource = ExtResource( 72 )
+voice_mode = 5
+
 [sub_resource type="Resource" id=175]
 resource_local_to_scene = true
 script = ExtResource( 23 )
@@ -811,6 +942,11 @@ script = ExtResource( 23 )
 move_speed = 50
 target_x_position = 225
 
+[sub_resource type="Resource" id=255]
+script = ExtResource( 73 )
+letter_sounds_resource = ExtResource( 78 )
+voice_mode = 5
+
 [sub_resource type="Resource" id=177]
 resource_local_to_scene = true
 script = ExtResource( 23 )
@@ -822,6 +958,11 @@ resource_local_to_scene = true
 script = ExtResource( 23 )
 move_speed = 40
 target_x_position = 225
+
+[sub_resource type="Resource" id=249]
+script = ExtResource( 73 )
+letter_sounds_resource = ExtResource( 72 )
+voice_mode = 2
 
 [sub_resource type="Resource" id=172]
 resource_local_to_scene = true
@@ -904,6 +1045,11 @@ script = ExtResource( 23 )
 move_speed = 25
 target_x_position = -750
 
+[sub_resource type="Resource" id=256]
+script = ExtResource( 73 )
+letter_sounds_resource = ExtResource( 77 )
+voice_mode = 4
+
 [sub_resource type="Resource" id=196]
 resource_local_to_scene = true
 script = ExtResource( 22 )
@@ -933,6 +1079,11 @@ resource_local_to_scene = true
 script = ExtResource( 22 )
 wait_time = 0.0
 is_infinite = false
+
+[sub_resource type="Resource" id=254]
+script = ExtResource( 73 )
+letter_sounds_resource = ExtResource( 78 )
+voice_mode = 3
 
 [sub_resource type="Resource" id=182]
 resource_local_to_scene = true
@@ -976,11 +1127,21 @@ script = ExtResource( 22 )
 wait_time = 3.0
 is_infinite = false
 
+[sub_resource type="Resource" id=251]
+script = ExtResource( 73 )
+letter_sounds_resource = ExtResource( 77 )
+voice_mode = 0
+
 [sub_resource type="Resource" id=238]
 resource_local_to_scene = true
 script = ExtResource( 22 )
 wait_time = 0.0
 is_infinite = true
+
+[sub_resource type="Resource" id=252]
+script = ExtResource( 73 )
+letter_sounds_resource = ExtResource( 77 )
+voice_mode = 3
 
 [sub_resource type="Resource" id=241]
 resource_local_to_scene = true
@@ -999,6 +1160,11 @@ resource_local_to_scene = true
 script = ExtResource( 23 )
 move_speed = 10
 target_x_position = -850
+
+[sub_resource type="Resource" id=253]
+script = ExtResource( 73 )
+letter_sounds_resource = ExtResource( 77 )
+voice_mode = 4
 
 [sub_resource type="Resource" id=188]
 resource_local_to_scene = true
@@ -1328,9 +1494,6 @@ orbit_velocity_random = 0.0
 scale = 2.0
 color_ramp = SubResource( 220 )
 
-[sub_resource type="RectangleShape2D" id=202]
-extents = Vector2( 14.75, 16.625 )
-
 [sub_resource type="CurveTexture" id=244]
 
 [sub_resource type="Gradient" id=3]
@@ -1560,6 +1723,28 @@ extents = Vector2( 7014.5, 150 )
 [node name="Central_hab" type="Node2D"]
 position = Vector2( -4, -62 )
 script = ExtResource( 10 )
+background_music = ExtResource( 80 )
+
+[node name="Audio" type="Node2D" parent="."]
+pause_mode = 2
+
+[node name="PaffRandomAudioStreamPlayer" parent="Audio" instance=ExtResource( 81 )]
+
+[node name="SuccessAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 82 )
+bus = "SFX"
+
+[node name="Island_sounds" type="Node2D" parent="Audio"]
+
+[node name="IslandFlyAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/Island_sounds"]
+stream = ExtResource( 84 )
+bus = "SFX"
+
+[node name="IslandHitAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/Island_sounds"]
+stream = ExtResource( 83 )
+volume_db = 10.0
+pitch_scale = 0.5
+bus = "SFX"
 
 [node name="GameSpecs" parent="." instance=ExtResource( 36 )]
 
@@ -1803,7 +1988,7 @@ __meta__ = {
 [node name="New_island_house" parent="Middle_world_objects" instance=ExtResource( 71 )]
 visible = false
 modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 169, 520 )
+position = Vector2( 164.808, 518.188 )
 
 [node name="Doors" type="Node2D" parent="Middle_world_objects"]
 position = Vector2( -140, -191 )
@@ -1944,6 +2129,7 @@ position = Vector2( -1249, -36 )
 [node name="FiresideDwellerLeft" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
 position = Vector2( 416, -4 )
 dialogId = "green_band_dweller"
+voice_generator_configuration_file = SubResource( 247 )
 actions = [  ]
 currentState = ExtResource( 19 )
 watch_player_on_talk = false
@@ -1959,6 +2145,7 @@ texture = ExtResource( 45 )
 pause_mode = 2
 position = Vector2( 468, -4 )
 dialogId = "red_band_dweller"
+voice_generator_configuration_file = SubResource( 248 )
 actions = [  ]
 currentState = ExtResource( 19 )
 watch_player_on_talk = false
@@ -1978,6 +2165,7 @@ texture = ExtResource( 44 )
 [node name="DwellerKidBoy" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
 position = Vector2( 204, -244 )
 dialogId = "boy_dweller"
+voice_generator_configuration_file = SubResource( 250 )
 actions = [ SubResource( 175 ), SubResource( 176 ) ]
 
 [node name="Sprite" parent="Middle_world_objects/Dwellers/DwellerKidBoy/Body" index="2"]
@@ -1986,6 +2174,7 @@ texture = ExtResource( 47 )
 [node name="DwellerKidGirl" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
 position = Vector2( 95, -244 )
 dialogId = "girl_dweller"
+voice_generator_configuration_file = SubResource( 255 )
 actions = [ SubResource( 177 ), SubResource( 178 ) ]
 
 [node name="Sprite" parent="Middle_world_objects/Dwellers/DwellerKidGirl/Body" index="2"]
@@ -1997,6 +2186,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 dialogId = "old_dweller"
+voice_generator_configuration_file = SubResource( 249 )
 actions = [ SubResource( 172 ), SubResource( 173 ), SubResource( 172 ), SubResource( 174 ) ]
 
 [node name="AnimationPlayer" parent="Middle_world_objects/Dwellers/ForestOlderDweller" index="0"]
@@ -2032,6 +2222,7 @@ texture = ExtResource( 48 )
 [node name="MiddleMillBalconyDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -952, 152 )
 dialogId = "mill_wife_dweller"
+voice_generator_configuration_file = SubResource( 256 )
 actions = [ SubResource( 196 ), SubResource( 197 ), SubResource( 199 ), SubResource( 198 ) ]
 
 [node name="Sprite" parent="Middle_world_objects/Dwellers/MiddleMillBalconyDweller/Body" index="2"]
@@ -2053,6 +2244,7 @@ texture = ExtResource( 62 )
 [node name="GrannyDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -1234, 380 )
 dialogId = "chinise_wife_dweller"
+voice_generator_configuration_file = SubResource( 254 )
 actions = [ SubResource( 182 ), SubResource( 183 ), SubResource( 184 ), SubResource( 185 ) ]
 
 [node name="Sprite" parent="Middle_world_objects/Dwellers/GrannyDweller/Body" index="2"]
@@ -2069,6 +2261,7 @@ texture = ExtResource( 53 )
 [node name="BlueTraderDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -635, 380 )
 dialogId = "fat_dweller"
+voice_generator_configuration_file = SubResource( 251 )
 actions = [ SubResource( 238 ) ]
 currentState = null
 
@@ -2083,6 +2276,7 @@ texture = ExtResource( 63 )
 [node name="PinkTraderDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -533, 380 )
 dialogId = "eary_dweller"
+voice_generator_configuration_file = SubResource( 252 )
 actions = [ SubResource( 241 ) ]
 currentState = null
 
@@ -2108,6 +2302,7 @@ texture = ExtResource( 49 )
 [node name="DwellerPeasant2" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -808, 380 )
 dialogId = "walking_peasant_dweller"
+voice_generator_configuration_file = SubResource( 253 )
 actions = [ SubResource( 188 ), SubResource( 189 ) ]
 
 [node name="Sprite" parent="Middle_world_objects/Dwellers/DwellerPeasant2/Body" index="2"]
@@ -2503,45 +2698,27 @@ texture = ExtResource( 28 )
 
 [node name="MillSign" parent="Middle_world_objects/Signs" instance=ExtResource( 69 )]
 position = Vector2( -829, -4 )
-texts_array = [ "Кисельск", "Население 21 кися " ]
+dialogId = "centralHub_millSign"
 
 [node name="LoversSign" parent="Middle_world_objects/Signs" instance=ExtResource( 69 )]
 position = Vector2( -1075, 170 )
-texts_array = [ "Не мешайте влюблённым", "Свидание в процессе" ]
+dialogId = "centralHub_loversSign"
 
 [node name="CaveTopSign" parent="Middle_world_objects/Signs" instance=ExtResource( 69 )]
 position = Vector2( -328, -100 )
-texts_array = [ " Ми!" ]
+dialogId = "centralHub_caveTopSign"
 
 [node name="StoneSign" parent="Middle_world_objects/Signs" instance=ExtResource( 69 )]
 position = Vector2( -1091, -276 )
-texts_array = [ "Добрый путник,
-коли ты читаешь сие письмена,
-значит это, что ты проделал долгий
-путь в поисках истины", "Впереди тебя ждёт проход в потайной
-зал, где ты всё узнаешь", "Благодаря тебе были соединены
-сердца любящих. Но сможешь ли ты
-соединить это... *не разборчиво*" ]
+dialogId = "centralHub_stoneSign"
 
 [node name="Sprite" parent="Middle_world_objects/Signs/StoneSign" index="0"]
 position = Vector2( 0, -20 )
 texture = ExtResource( 70 )
 
-[node name="InteractionPopup" parent="Middle_world_objects/Signs/StoneSign" index="1"]
-position = Vector2( 0, -30 )
-
-[node name="TextBoxPopup" parent="Middle_world_objects/Signs/StoneSign" index="2"]
-position = Vector2( 0, -47 )
-
-[node name="CollisionShape2D" parent="Middle_world_objects/Signs/StoneSign/InteractionController/Area2D" index="0"]
-position = Vector2( -6.25, -6.375 )
-shape = SubResource( 202 )
-
 [node name="BranchSign" parent="Middle_world_objects/Signs" instance=ExtResource( 69 )]
 position = Vector2( 610, -31 )
-texts_array = [ "Внимание!
-Дальше прохода нет!", "Впереди секретный проход
-Он мой! Я его нашел!", "И вообще там ничего нет" ]
+dialogId = "centralHub_branchSign"
 
 [node name="Sprite" parent="Middle_world_objects/Signs/BranchSign" index="0"]
 position = Vector2( 3, -4 )
@@ -2557,7 +2734,7 @@ position = Vector2( -290, -92 )
 itemScene = ExtResource( 74 )
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 5 )]
-position = Vector2( 51, -39 )
+position = Vector2( -1116, 150 )
 z_index = 2
 
 [node name="Light2D2" type="Light2D" parent="Player"]
@@ -3454,9 +3631,11 @@ __meta__ = {
 [editable path="Middle_world_objects/Dwellers/DwellerPeasant2"]
 [editable path="Middle_world_objects/Dwellers/DwellerPeasant2/Body/InteractionController"]
 [editable path="Middle_world_objects/Signs/StoneSign"]
-[editable path="Middle_world_objects/Signs/StoneSign/InteractionController"]
+[editable path="Middle_world_objects/Signs/StoneSign/AbstractDialogInteractionObject"]
+[editable path="Middle_world_objects/Signs/StoneSign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="Middle_world_objects/Signs/BranchSign"]
-[editable path="Middle_world_objects/Signs/BranchSign/InteractionController"]
+[editable path="Middle_world_objects/Signs/BranchSign/AbstractDialogInteractionObject"]
+[editable path="Middle_world_objects/Signs/BranchSign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="Camera2D/Clouds"]
 [editable path="Collisions/AirBlowers/AirBeam3"]
 [editable path="Collisions/AirBlowers/AirBeam5"]

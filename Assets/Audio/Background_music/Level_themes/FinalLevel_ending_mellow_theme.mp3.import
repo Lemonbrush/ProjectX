@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/FinalLevel_ending_mellow_theme.mp3-3cbf81fea85e7a9d8efa5fff0528b769.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Background_music/Level_themes/FinalLevel_ending_mellow_theme.mp3"
+dest_files=[ "res://.import/FinalLevel_ending_mellow_theme.mp3-3cbf81fea85e7a9d8efa5fff0528b769.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -5,7 +5,9 @@ var footstepParticles   = preload("res://Project/Characters/Player/WorldObjects/
 var appearParticles     = preload("res://Project/Characters/Player/WorldObjects/PlayerAppearParticles/PlayerAppearParticles.tscn")
 var itemPickupScenePath = preload("res://Project/Characters/Player/Animation_scenes/Item_picking_player/Item_picking_player.tscn")
 
-onready var footstep_audio_player = $FootstepAudioPlayer
+onready var punch_audio_player = $Audio/PunchRandomAudioStreamPlayer
+onready var paff_audio_player = $Audio/PaffRandomAudioStreamPlayer
+onready var footstep_audio_player = $Audio/FootstepAudioPlayer
 onready var ground_ray1 			= $Body/GroundRay1
 onready var ground_ray2 			= $Body/GroundRay2
 onready var ground_ray3 			= $Body/GroundRay3
@@ -16,6 +18,7 @@ onready var glider_area			= $Body/Glider
 onready var attack_area			= $Body/AttackArea
 onready var hazard_area			= $Body/HazardArea
 onready var attack_area_collision_shape = $Body/AttackArea/CollisionShape2D
+onready var state_machine = $StateMachine
 
 onready var body 				= $Body
 onready var coyoteTimer 			= $CoyoteTimer
@@ -90,6 +93,7 @@ func _ready():
 	hazard_area.connect("area_entered", self, "on_hazard_entered")
 	
 	var _connection = EventBus.connect("player_entered_door", self, "start_door_entering_animation")
+	var _event_dispatch = EventBus.connect("dispatch_item_to_player", self, "did_receive_item")
 	
 ############################## State Machine Functions ##############################
 
@@ -223,6 +227,11 @@ func check_for_action_release():
 			is_able_to_glide = true
 		else:
 			glide = false
+
+func play_door_entering_out_action():
+	is_entering_out = true
+	state_machine.transition_to_door_interaction_state_if_needed()
+
 ############################## Actions #######################################
 
 # Climb
@@ -252,6 +261,7 @@ func on_glide_area_exited(area):
 	
 # Attack
 func on_attack_area_entered(attacked_object):
+	punch_audio_player.play()
 	if attacked_object.has_method("change_state"):
 		attacked_object.change_state()
 
@@ -269,7 +279,30 @@ func on_hazard_entered(_area):
 		global_position = respawn_position
 	spawnAppearParticles()
 
+func save_respawn_checkpoint():
+	respawn_position = global_position
+
+func did_receive_item(toggleGameConstant, _itemName, itemScene, use_scale_animation):
+	CommandHandler.execute("set %s %s" %[toggleGameConstant, true])
+	start_item_pickup_animation(itemScene, use_scale_animation)
+
 ############################## Helper Functions ##############################
+
+func start_item_pickup_animation(itemScene, use_scale_animation = true):
+	EventBus.player_animation_mode_change(true)
+	
+	var itemPickupScene = itemPickupScenePath.instance()
+	itemPickupScene.itemScene = itemScene
+	get_parent().add_child(itemPickupScene)
+	itemPickupScene.global_position = global_position
+	itemPickupScene.scale = Vector2.ONE * body.scale
+	itemPickupScene.connect("animationFinished", self, "on_pickup_animation_finished", [use_scale_animation])
+	
+	body.visible = false
+	
+	if use_scale_animation:
+		EventBus.camera_set_y_offset(10)
+		EventBus.camera_focus_animation(0.3, 1)
 
 func ray_ground_update():
 	var is_colliding = false
@@ -293,29 +326,15 @@ func spawnFootstepParticles(scale = 1):
 	footstep_audio_player.play()
 
 func spawnAppearParticles():
+	paff_audio_player.play()
 	var particles = appearParticles.instance()
 	get_parent().add_child(particles)
 	particles.scale = Vector2.ONE * scale
 	particles.global_position = global_position
 
-func start_item_pickup_animation(itemScene, use_scale_animation = true):
-	EventBus.player_animation_mode_change(true)
-	
-	var itemPickupScene = itemPickupScenePath.instance()
-	itemPickupScene.itemScene = itemScene
-	get_parent().add_child(itemPickupScene)
-	itemPickupScene.global_position = global_position
-	itemPickupScene.scale = Vector2.ONE * body.scale
-	itemPickupScene.connect("animationFinished", self, "on_pickup_animation_finished", [use_scale_animation])
-	
-	body.visible = false
-	
-	if use_scale_animation:
-		EventBus.camera_set_y_offset(10)
-		EventBus.camera_focus_animation(0.3, 1)
-
 func start_door_entering_animation(nextScenePath):
 	entering_scene_path = nextScenePath
+	state_machine.transition_to_door_interaction_state_if_needed()
 	
 func on_pickup_animation_finished(use_scale_animation = true):
 	EventBus.player_animation_mode_change(false)

@@ -1,11 +1,12 @@
 extends Node2D
 
+export(String) var labelText = ""
+
 onready var marginNode = $MarginNode
 onready var label = $MarginNode/CenterContainer/HBoxContainer/Label
 onready var tween = $Tween
 onready var buttonHint = $MarginNode/CenterContainer/HBoxContainer/ButtonHint
-
-export(String) var labelText = ""
+onready var show_dialog_audio_player = $Audio/PopRandomAudioStreamPlayer
 
 func _ready():
 	buttonHint.set_hint_action("Interaction")
@@ -20,6 +21,8 @@ func show(new_text = null):
 	label.text = labelText
 	
 	if modulate.a != 1.0:
+		show_dialog_audio_player.play()
+		
 		marginNode.position.y = 10
 		tween.stop(self)
 		tween.interpolate_property(self, 'modulate:a', get_modulate().a, 1.0, 0.25, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0)

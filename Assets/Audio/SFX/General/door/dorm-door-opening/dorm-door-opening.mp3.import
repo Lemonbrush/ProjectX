@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/dorm-door-opening.mp3-30b5512fb7421baf1aa75d52afafabd4.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/door/dorm-door-opening/dorm-door-opening.mp3"
+dest_files=[ "res://.import/dorm-door-opening.mp3-30b5512fb7421baf1aa75d52afafabd4.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

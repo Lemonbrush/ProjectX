@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/epic-metal-gate.mp3-25591a5e087fb3e2e2571b2da8bd4762.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/door/epic-metal-gate.mp3"
+dest_files=[ "res://.import/epic-metal-gate.mp3-25591a5e087fb3e2e2571b2da8bd4762.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

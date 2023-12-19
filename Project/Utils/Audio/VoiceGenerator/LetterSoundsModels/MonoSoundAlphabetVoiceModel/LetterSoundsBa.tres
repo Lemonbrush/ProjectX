@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=12 format=2]
+
+[ext_resource path="res://Assets/Audio/Letters/Mono_sounds/Ba/bio.wav" type="AudioStream" id=1]
+[ext_resource path="res://Assets/Audio/Letters/Mono_sounds/Ba/bi.wav" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Audio/Letters/Mono_sounds/Ba/biy.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Audio/Letters/Mono_sounds/Ba/ba.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Audio/Letters/Mono_sounds/Ba/bih.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Audio/Letters/Mono_sounds/Ba/bo.wav" type="AudioStream" id=6]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/MonoSoundAlphabetVoiceModel/MonoSoundAlphabetVoiceModel.gd" type="Script" id=7]
+[ext_resource path="res://Assets/Audio/Letters/Mono_sounds/Ba/by.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Audio/Letters/Mono_sounds/Ba/bya.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Audio/Letters/Mono_sounds/Ba/be.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Audio/Letters/Mono_sounds/Ba/bia.wav" type="AudioStream" id=11]
+
+[resource]
+script = ExtResource( 7 )
+letter_audio_sample = [ ExtResource( 4 ), ExtResource( 10 ), ExtResource( 2 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 9 ) ]

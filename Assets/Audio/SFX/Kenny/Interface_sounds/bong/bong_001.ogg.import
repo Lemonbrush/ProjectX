@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bong_001.ogg-59c6af0baafe60ec7d9df297e2b0b2d8.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Kenny/Interface_sounds/bong/bong_001.ogg"
+dest_files=[ "res://.import/bong_001.ogg-59c6af0baafe60ec7d9df297e2b0b2d8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

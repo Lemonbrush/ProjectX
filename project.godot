@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "ACVoiceBox",
+"language": "GDScript",
+"path": "res://Project/Utils/Audio/LetterSoundPlayer/LetterSoundPlayer.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "AbstractDweller",
 "language": "GDScript",
@@ -30,9 +35,9 @@ _global_script_classes=[ {
 "path": "res://Project/Utils/CommandHandler/CommandHandler.gd"
 }, {
 "base": "Node",
-"class": "DialogManager",
+"class": "DialogService",
 "language": "GDScript",
-"path": "res://Project/WorldObjects/Dialog/DialogManager/DialogManager.gd"
+"path": "res://Project/WorldObjects/Dialog/DialogManager/DialogService.gd"
 }, {
 "base": "NpcAction",
 "class": "IdleNpcAction",
@@ -43,6 +48,11 @@ _global_script_classes=[ {
 "class": "InteractionController",
 "language": "GDScript",
 "path": "res://Project/WorldObjects/Technical/InteractionController/InteractionController.gd"
+}, {
+"base": "Resource",
+"class": "LetterSoundsModel",
+"language": "GDScript",
+"path": "res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/LetterSoundsModel.gd"
 }, {
 "base": "Position2D",
 "class": "LightSource",
@@ -98,15 +108,22 @@ _global_script_classes=[ {
 "class": "TalkNpcAction",
 "language": "GDScript",
 "path": "res://Project/Characters/NPC/NpcActions/talk/talk_npc_action.gd"
+}, {
+"base": "Resource",
+"class": "VoiceGeneratorConfigurationModel",
+"language": "GDScript",
+"path": "res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.gd"
 } ]
 _global_script_class_icons={
+"ACVoiceBox": "",
 "AbstractDweller": "",
 "Barrel": "",
 "BaseLevel": "",
 "CommandHandler": "",
-"DialogManager": "",
+"DialogService": "",
 "IdleNpcAction": "",
 "InteractionController": "",
+"LetterSoundsModel": "",
 "LightSource": "",
 "NpcAction": "",
 "OpenableContainerOpenSceneObject": "",
@@ -117,13 +134,14 @@ _global_script_class_icons={
 "SettingsResource": "",
 "State": "",
 "StateMachine": "",
-"TalkNpcAction": ""
+"TalkNpcAction": "",
+"VoiceGeneratorConfigurationModel": ""
 }
 
 [application]
 
 config/name="Kissies"
-run/main_scene="res://Project/UI/SplashScreen/SplashScreen.tscn"
+run/main_scene="res://Project/UI/Screens/SplashScreen/SplashScreen.tscn"
 config/use_custom_user_dir=true
 run/delta_sync_after_draw=true
 boot_splash/show_image=false
@@ -152,6 +170,7 @@ window/size/width=512
 window/size/height=290
 window/size/test_width=2048
 window/size/test_height=1200
+mouse_cursor/custom_image="res://Assets/UI/MenuCursor/CustomMouseCursor.png"
 window/stretch/mode="2d"
 
 [global]

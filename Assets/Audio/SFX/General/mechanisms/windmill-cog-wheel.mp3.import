@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/windmill-cog-wheel.mp3-6dd70d4ab88e99661c5eaa6a1603716e.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/mechanisms/windmill-cog-wheel.mp3"
+dest_files=[ "res://.import/windmill-cog-wheel.mp3-6dd70d4ab88e99661c5eaa6a1603716e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

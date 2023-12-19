@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/videogame-death-sound.mp3-2fb32e9be976045322d215b3191e3596.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/misc/videogame-death-sound.mp3"
+dest_files=[ "res://.import/videogame-death-sound.mp3-2fb32e9be976045322d215b3191e3596.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

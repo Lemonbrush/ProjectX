@@ -1,11 +1,15 @@
 extends Node2D
 
+signal set_background_music_volume(newVolume)
+signal reset_background_music_volume()
+
 onready var animationPlayer = $AnimationPlayer
 onready var airBeamCollisionShape = $AirBeam/Area2D/CollisionShape2D
 onready var dweller = $AbstractDweller
 onready var cauldronSteamParticles = $CauldronSteam
 onready var fireParticles = $FireParticles
 onready var spittingParticles = $SpittingParticles
+onready var empty_jar_dispatcher = $EmptyJarItemDispatcher
 
 func _ready():
 	var _connection = EventBus.connect("show_create_love_potion_cut_scene", self, "show_create_love_potion_cut_scene")
@@ -16,7 +20,8 @@ func show_create_love_potion_cut_scene():
 	animationPlayer.play("Show_create_potion_cut_scene")
 
 func show_cauldron_giving_empty_jur():
-	animationPlayer.play("Show_cauldron_giving_empty_jur")
+	dweller.instant_hide_dialog()
+	empty_jar_dispatcher.dispatch()
 
 func configure_scene():
 	var isLovePotionCreatedConstantExists = GameEventConstants.constants.has("is_love_potion_created")
@@ -35,3 +40,9 @@ func set_cauldron_animation(is_working):
 	
 	if is_working:
 		dweller.setup_custome_animation("Happy")
+
+func lower_music_volume():
+	emit_signal("set_background_music_volume", -20)
+
+func reset_background_music_volume():
+	emit_signal("reset_background_music_volume")

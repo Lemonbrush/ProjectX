@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/footstep_snow_003.ogg-3330cefac172bfd42c865d4c072594fe.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Kenny/Impact_sounds/footstep_snow/footstep_snow_003.ogg"
+dest_files=[ "res://.import/footstep_snow_003.ogg-3330cefac172bfd42c865d4c072594fe.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

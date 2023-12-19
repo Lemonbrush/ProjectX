@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/drop-impact.mp3-fae1aed7743c7bf84ffd2a7477e27f3d.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/crash/drop-impact.mp3"
+dest_files=[ "res://.import/drop-impact.mp3-fae1aed7743c7bf84ffd2a7477e27f3d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

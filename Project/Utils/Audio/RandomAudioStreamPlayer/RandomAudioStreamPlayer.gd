@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 export(int) var numberToPlay = 2
 export(bool) var enablePitchRandomization = true
@@ -21,13 +21,23 @@ func play():
 		if enablePitchRandomization:
 			playerNodes[idx].pitch_scale = rngNumber.randf_range(minPitchScale, maxPitchScale)
 		
+		playerNodes[idx].stop()
 		playerNodes[idx].play()
 		playerNodes.remove(idx)
 
+func stop():
+	for player in get_child_stream_players():
+		player.stop()
 
 func get_idle_stream_players():
 	var validNodes = []
 	for streamPlayer in get_children():
-		if !streamPlayer.playing && streamPlayer is AudioStreamPlayer:
+		if !streamPlayer.playing && streamPlayer:
 			validNodes.append(streamPlayer)
 	return validNodes
+
+func get_child_stream_players():
+	var players = []
+	for child in get_children():
+		players.append(child)
+	return players

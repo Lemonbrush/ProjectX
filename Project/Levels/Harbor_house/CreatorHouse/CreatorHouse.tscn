@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=2]
+[gd_scene load_steps=113 format=2]
 
 [ext_resource path="res://Assets/Levels/Harbor_house/Rooms/Creator_house_rooms.png" type="Texture" id=1]
 [ext_resource path="res://Project/Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
@@ -13,11 +13,14 @@
 [ext_resource path="res://Assets/Effects/Lighting/playerLight.png" type="Texture" id=11]
 [ext_resource path="res://Project/WorldObjects/Destructables/Crate/Crate.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Project/WorldObjects/Destructables/Crate/Background_crate/Background_crate.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Project/WorldObjects/Technical/ItemSpawner/ItemSpawner.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Project/WorldObjects/Technical/ItemDispatcher/ItemDispatcher.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/MonoSoundAlphabetVoiceModel/LetterSoundsMi.tres" type="Resource" id=15]
 [ext_resource path="res://Project/WorldObjects/Dialog/AbstractDialogInteractionObject/AbstractDialogInteractionObject.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Project/Levels/Harbor_house/CreatorHouse/CreatorHouse.gd" type="Script" id=17]
 [ext_resource path="res://Project/WorldObjects/Pick_ups/Items/ArtistBrush/ArtistBrushItem.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Project/WorldObjects/Sign/Sign.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.gd" type="Script" id=20]
+[ext_resource path="res://Assets/Audio/Background_music/Level_themes/Indoor_theme.wav" type="AudioStream" id=21]
 
 [sub_resource type="Environment" id=190]
 background_mode = 4
@@ -135,6 +138,11 @@ angle_random = 1.0
 scale = 1.5
 scale_curve = SubResource( 187 )
 color_ramp = SubResource( 186 )
+
+[sub_resource type="Resource" id=192]
+script = ExtResource( 20 )
+letter_sounds_resource = ExtResource( 15 )
+voice_mode = 3
 
 [sub_resource type="RectangleShape2D" id=108]
 extents = Vector2( 8.25, 1.5 )
@@ -345,11 +353,15 @@ extents = Vector2( 8, 41 )
 
 [node name="CreatorHouse" instance=ExtResource( 2 )]
 script = ExtResource( 17 )
+background_music = ExtResource( 21 )
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
+[node name="BrushItemDispatcher" parent="." index="0" instance=ExtResource( 14 )]
+itemScene = ExtResource( 18 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="1"]
 environment = SubResource( 190 )
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="2"]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="3"]
 scroll_limit_end = Vector2( 0, 320 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
@@ -365,11 +377,11 @@ position = Vector2( 380, 95 )
 scale = Vector2( 0.77, 0.77 )
 texture = ExtResource( 7 )
 
-[node name="AnimationPlayer" parent="." index="3"]
+[node name="AnimationPlayer" parent="." index="4"]
 autoplay = ""
 anims/RESET = SubResource( 189 )
 
-[node name="Camera2D" parent="." index="4"]
+[node name="Camera2D" parent="." index="5"]
 position = Vector2( -131, 320 )
 zoom = Vector2( 0.7, 0.7 )
 backgroundColor = Color( 0.768627, 0.898039, 1, 1 )
@@ -384,7 +396,7 @@ amount = 100
 lifetime = 10.0
 process_material = SubResource( 107 )
 
-[node name="Background_world_objects" type="Node2D" parent="." index="5"]
+[node name="Background_world_objects" type="Node2D" parent="." index="6"]
 
 [node name="Decorations" type="Node2D" parent="Background_world_objects" index="0"]
 
@@ -394,13 +406,13 @@ cell_size = Vector2( 1, 1 )
 format = 1
 tile_data = PoolIntArray( -15990672, 39, 0, -15925132, 29, 0, -15925120, 40, 0, 9633938, 23, 0, 20905834, 536870936, 0, 20905857, 536870941, 0, 20840459, 20, 0, 20840480, 31, 0 )
 
-[node name="WorldSprite" parent="." index="6"]
+[node name="WorldSprite" parent="." index="7"]
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Middle_world_decorations" type="Node2D" parent="." index="7"]
+[node name="Middle_world_decorations" type="Node2D" parent="." index="8"]
 
 [node name="Doors" type="Node2D" parent="Middle_world_decorations" index="0"]
 
@@ -608,100 +620,81 @@ position = Vector2( 125, -100 )
 [node name="Crate6" parent="Middle_world_decorations/Destructables/Crate" index="5" instance=ExtResource( 13 )]
 position = Vector2( 125, -116 )
 
-[node name="ItemSpawner" parent="Middle_world_decorations" index="4" instance=ExtResource( 14 )]
-position = Vector2( -142, 244 )
-itemScene = ExtResource( 18 )
-
-[node name="Inspection_points" type="Node2D" parent="Middle_world_decorations" index="5"]
+[node name="Inspection_points" type="Node2D" parent="Middle_world_decorations" index="4"]
 
 [node name="Couch_sign" parent="Middle_world_decorations/Inspection_points" index="0" instance=ExtResource( 19 )]
 position = Vector2( -209, 339 )
-texts_array = [ "Видно, что здесь сидела чья-то попка" ]
+dialogId = "harborHouse_creatorHouse_couchSign"
 
 [node name="Sprite" parent="Middle_world_decorations/Inspection_points/Couch_sign" index="0"]
 visible = false
 
 [node name="Bottom_table_sign" parent="Middle_world_decorations/Inspection_points" index="1" instance=ExtResource( 19 )]
 position = Vector2( -51, 339 )
-texts_array = [ "Какой низкий стол. Наверно здесь
-очень атмосферно кушать", "Хм, он рассчитан на двоих" ]
+dialogId = "harborHouse_creatorHouse_bottomTableSign"
 
 [node name="Sprite" parent="Middle_world_decorations/Inspection_points/Bottom_table_sign" index="0"]
 visible = false
 
 [node name="Calligraphy_books_sign" parent="Middle_world_decorations/Inspection_points" index="2" instance=ExtResource( 19 )]
 position = Vector2( -93, 249 )
-texts_array = [ "Этот шкаф полностью забит
-книгами по каллиграфии", "Некоторые из них ещё даже
-не распечатаны" ]
+dialogId = "harborHouse_creatorHouse_calligraphyBooksSign"
 
 [node name="Sprite" parent="Middle_world_decorations/Inspection_points/Calligraphy_books_sign" index="0"]
 visible = false
 
 [node name="Top_art_books_sign" parent="Middle_world_decorations/Inspection_points" index="3" instance=ExtResource( 19 )]
 position = Vector2( -171, 212 )
-texts_array = [ "На антрисоли много книг
-по типографии" ]
+dialogId = "harborHouse_creatorHouse_topArtBooksSign"
 
 [node name="Sprite" parent="Middle_world_decorations/Inspection_points/Top_art_books_sign" index="0"]
 visible = false
 
 [node name="Work_room_snacks_sign" parent="Middle_world_decorations/Inspection_points" index="4" instance=ExtResource( 19 )]
 position = Vector2( -10, 249 )
-texts_array = [ "Чипсики. Кажется эту тарелку
-недавно обновили" ]
+dialogId = "harborHouse_creatorHouse_workRoomSnacksSign"
 
 [node name="Sprite" parent="Middle_world_decorations/Inspection_points/Work_room_snacks_sign" index="0"]
 visible = false
 
 [node name="Under_stairs_seat_sign" parent="Middle_world_decorations/Inspection_points" index="5" instance=ExtResource( 19 )]
 position = Vector2( 169, 249 )
-texts_array = [ "Отдельное место для рассматривания
-альбомов со старыми фотографиями", "Удобно" ]
+dialogId = "harborHouse_creatorHouse_underStairsSeatSign"
 
 [node name="Sprite" parent="Middle_world_decorations/Inspection_points/Under_stairs_seat_sign" index="0"]
 visible = false
 
 [node name="Old_photos_album_sign" parent="Middle_world_decorations/Inspection_points" index="6" instance=ExtResource( 19 )]
 position = Vector2( 149, 219 )
-texts_array = [ "Ого, здесь собрание альбомов
-с фотографиями с поларойда", "Милые фотографии" ]
+dialogId = "harborHouse_creatorHouse_oldPhotosAlbumSign"
 
 [node name="Sprite" parent="Middle_world_decorations/Inspection_points/Old_photos_album_sign" index="0"]
 visible = false
 
 [node name="Girl_art_sign" parent="Middle_world_decorations/Inspection_points" index="7" instance=ExtResource( 19 )]
 position = Vector2( 15, 159 )
-texts_array = [ "Хммм... эта принцесса кого-то
-мне напоминает" ]
+dialogId = "harborHouse_creatorHouse_girlArtSign"
 
 [node name="Sprite" parent="Middle_world_decorations/Inspection_points/Girl_art_sign" index="0"]
 visible = false
 
 [node name="Kitchen_sign" parent="Middle_world_decorations/Inspection_points" index="8" instance=ExtResource( 19 )]
 position = Vector2( 42, 73 )
-texts_array = [ "На кухне нет холодильника
-и плиты", "Похоже, киси-работники просто
-приносят всю еду сразу готовой" ]
+dialogId = "harborHouse_creatorHouse_kitchenSign"
 
 [node name="Sprite" parent="Middle_world_decorations/Inspection_points/Kitchen_sign" index="0"]
 visible = false
 
 [node name="Blue_sky_seat_sign" parent="Middle_world_decorations/Inspection_points" index="9" instance=ExtResource( 19 )]
 position = Vector2( 108, -9 )
-texts_array = [ "Судя по следам от лапок,
-котятки-работники недавно
-прыгали на этом кресле", "Они думали, что смогут скрыть
-их, положив сверху книгу" ]
+dialogId = "harborHouse_creatorHouse_blueSkySeatSign"
 
 [node name="Sprite" parent="Middle_world_decorations/Inspection_points/Blue_sky_seat_sign" index="0"]
 visible = false
 
 [node name="Top_couch_sign" parent="Middle_world_decorations/Inspection_points" index="10" instance=ExtResource( 19 )]
 position = Vector2( 115, -212 )
-texts_array = [ "Коллекция манги, диван, плед,
-широкое окношко с цветочками
-и камин?", "Это особая комната" ]
+dialogId = "harborHouse_creatorHouse_topCouchSign"
 
 [node name="Sprite" parent="Middle_world_decorations/Inspection_points/Top_couch_sign" index="0"]
 visible = false
@@ -711,22 +704,22 @@ pause_mode = 2
 position = Vector2( -142, 249 )
 dialogId = "creator_house_desk_dialog"
 label_text = "Осмотреть"
+voice_generator_configuration_file = SubResource( 192 )
 
-[node name="Foreground_world_decorations" type="Node2D" parent="." index="8"]
+[node name="Foreground_world_decorations" type="Node2D" parent="." index="9"]
 
-[node name="Player" parent="." index="9"]
+[node name="Player" parent="." index="10"]
 position = Vector2( -132, 332 )
 z_index = 1
-collision_mask = 108
 
-[node name="Light2D2" parent="Player" index="5"]
+[node name="Light2D2" parent="Player" index="6"]
 position = Vector2( -1, 10 )
 enabled = false
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Collisions" parent="." index="10"]
+[node name="Collisions" parent="." index="11"]
 visible = false
 
 [node name="PassThroughBody60" parent="Collisions/PassTrough" index="0" groups=["passThroughObject"] instance=ExtResource( 4 )]
@@ -1657,27 +1650,38 @@ __meta__ = {
 [editable path="Middle_world_decorations/Doors/CreatorHouseFirstFloorDoorTwo"]
 [editable path="Middle_world_decorations/Doors/CreatorHouseFirstFloorDoorTwo/InteractionController"]
 [editable path="Middle_world_decorations/Inspection_points/Couch_sign"]
-[editable path="Middle_world_decorations/Inspection_points/Couch_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Couch_sign/AbstractDialogInteractionObject"]
+[editable path="Middle_world_decorations/Inspection_points/Couch_sign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="Middle_world_decorations/Inspection_points/Bottom_table_sign"]
-[editable path="Middle_world_decorations/Inspection_points/Bottom_table_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Bottom_table_sign/AbstractDialogInteractionObject"]
+[editable path="Middle_world_decorations/Inspection_points/Bottom_table_sign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="Middle_world_decorations/Inspection_points/Calligraphy_books_sign"]
-[editable path="Middle_world_decorations/Inspection_points/Calligraphy_books_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Calligraphy_books_sign/AbstractDialogInteractionObject"]
+[editable path="Middle_world_decorations/Inspection_points/Calligraphy_books_sign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="Middle_world_decorations/Inspection_points/Top_art_books_sign"]
-[editable path="Middle_world_decorations/Inspection_points/Top_art_books_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Top_art_books_sign/AbstractDialogInteractionObject"]
+[editable path="Middle_world_decorations/Inspection_points/Top_art_books_sign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="Middle_world_decorations/Inspection_points/Work_room_snacks_sign"]
-[editable path="Middle_world_decorations/Inspection_points/Work_room_snacks_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Work_room_snacks_sign/AbstractDialogInteractionObject"]
+[editable path="Middle_world_decorations/Inspection_points/Work_room_snacks_sign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="Middle_world_decorations/Inspection_points/Under_stairs_seat_sign"]
-[editable path="Middle_world_decorations/Inspection_points/Under_stairs_seat_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Under_stairs_seat_sign/AbstractDialogInteractionObject"]
+[editable path="Middle_world_decorations/Inspection_points/Under_stairs_seat_sign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="Middle_world_decorations/Inspection_points/Old_photos_album_sign"]
-[editable path="Middle_world_decorations/Inspection_points/Old_photos_album_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Old_photos_album_sign/AbstractDialogInteractionObject"]
+[editable path="Middle_world_decorations/Inspection_points/Old_photos_album_sign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="Middle_world_decorations/Inspection_points/Girl_art_sign"]
-[editable path="Middle_world_decorations/Inspection_points/Girl_art_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Girl_art_sign/AbstractDialogInteractionObject"]
+[editable path="Middle_world_decorations/Inspection_points/Girl_art_sign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="Middle_world_decorations/Inspection_points/Kitchen_sign"]
-[editable path="Middle_world_decorations/Inspection_points/Kitchen_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Kitchen_sign/AbstractDialogInteractionObject"]
+[editable path="Middle_world_decorations/Inspection_points/Kitchen_sign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="Middle_world_decorations/Inspection_points/Blue_sky_seat_sign"]
-[editable path="Middle_world_decorations/Inspection_points/Blue_sky_seat_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Blue_sky_seat_sign/AbstractDialogInteractionObject"]
+[editable path="Middle_world_decorations/Inspection_points/Blue_sky_seat_sign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="Middle_world_decorations/Inspection_points/Top_couch_sign"]
-[editable path="Middle_world_decorations/Inspection_points/Top_couch_sign/InteractionController"]
+[editable path="Middle_world_decorations/Inspection_points/Top_couch_sign/AbstractDialogInteractionObject"]
+[editable path="Middle_world_decorations/Inspection_points/Top_couch_sign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="Collisions/PassTrough/PassThroughBody60"]
 [editable path="Collisions/PassTrough/PassThroughBody90"]
 [editable path="Collisions/PassTrough/PassThroughBody91"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/powerUp10.ogg-1f14c83a8e3474b3fba73c8ffec3d126.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Kenny/Digital_sounds/powerUp/powerUp10.ogg"
+dest_files=[ "res://.import/powerUp10.ogg-1f14c83a8e3474b3fba73c8ffec3d126.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

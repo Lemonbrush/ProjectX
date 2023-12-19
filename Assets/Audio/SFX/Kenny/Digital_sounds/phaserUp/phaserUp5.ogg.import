@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/phaserUp5.ogg-9c959e6e869607334f051862e6afeab0.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Kenny/Digital_sounds/phaserUp/phaserUp5.ogg"
+dest_files=[ "res://.import/phaserUp5.ogg-9c959e6e869607334f051862e6afeab0.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

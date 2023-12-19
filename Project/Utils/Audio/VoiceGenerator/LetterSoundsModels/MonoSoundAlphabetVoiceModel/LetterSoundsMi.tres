@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/MonoSoundAlphabetVoiceModel/MonoSoundAlphabetVoiceModel.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Audio/SFX/General/Mi/RegularMi.wav" type="AudioStream" id=2]
+
+[resource]
+script = ExtResource( 1 )
+letter_audio_sample = [ ExtResource( 2 ) ]

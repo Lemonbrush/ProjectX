@@ -5,6 +5,7 @@ enum State { IDLE, WALKING, TALKING, ACTING, CUSTOME }
 enum Direction { LEFT = 1, RIGHT = -1 }
 
 export(String) var dialogId
+export (Resource) var voice_generator_configuration_file
 export(Array, Resource) var actions
 export(Resource) var currentState 
 export var currentActionIndex = 0
@@ -30,6 +31,7 @@ var gravity = 500
 
 func _ready():
 	dialogTextBoxController.set_dialog_id(dialogId)
+	dialogTextBoxController.set_letter_sounds_resource(voice_generator_configuration_file)
 	
 	if !actions:
 		var idleAction = IdleNpcAction.new()
@@ -157,6 +159,8 @@ func process_custome_animation(delta):
 	if is_state_new:
 		if animationPlayer.has_animation(custome_animation):
 			animationPlayer.play(custome_animation)
+		else:
+			animationPlayer.stop()
 		is_state_new = false
 	
 	process_still(delta)
@@ -175,6 +179,10 @@ func act_timer_timeout():
 
 func hide_popup():
 	interactionPopup.hide()
+
+func instant_hide_dialog():
+	hide_popup()
+	dialogTextBoxController.instant_hide()
 
 func process_still(delta):
 	velocity.y += gravity * delta

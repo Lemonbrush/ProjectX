@@ -1,7 +1,19 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Assets/SharedWorldObjects/Chest/Chest_sprite_sheet-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Project/WorldObjects/Interactables/OpenableContainers/OpenableContainerOpenSceneObject/OpenableContainerOpenSceneObject.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Audio/SFX/General/Chest/chest-opening-4.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Audio/SFX/General/Chest/chest-opening-2.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Audio/SFX/General/Chest/chest-opening-3.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Audio/SFX/General/Chest/chest-opening-5.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Audio/SFX/General/Chest/chest-opening-1.wav" type="AudioStream" id=7]
+[ext_resource path="res://Project/Utils/Audio/RandomAudioStreamPlayerNodes/PaffRandomAudioStreamPlayer.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Project/Utils/Audio/RandomAudioStreamPlayer/RandomAudioStreamPlayer.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Audio/SFX/General/Chest/chest-opening-8.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Audio/SFX/General/Chest/chest-opening-9.wav" type="AudioStream" id=11]
+[ext_resource path="res://Assets/Audio/SFX/General/Chest/chest-opening-10.wav" type="AudioStream" id=12]
+[ext_resource path="res://Assets/Audio/SFX/General/Chest/chest-opening-6.wav" type="AudioStream" id=13]
+[ext_resource path="res://Assets/Audio/SFX/General/Chest/chest-opening-7.wav" type="AudioStream" id=14]
 
 [sub_resource type="Animation" id=11]
 resource_name = "Open"
@@ -53,6 +65,48 @@ tracks/3/keys = {
 "values": [ {
 "args": [  ],
 "method": "drop_item"
+} ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("Audio/PaffRandomAudioStreamPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "play"
+} ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("Audio/SquishRandomAudioStreamPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "play"
+} ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath("Audio/OpenRandomAudioStreamPlayer")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "play"
 } ]
 }
 
@@ -125,6 +179,57 @@ tracks/1/keys = {
 
 [node name="OpeningChestAnimation" type="Node2D"]
 script = ExtResource( 2 )
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="PaffRandomAudioStreamPlayer" parent="Audio" instance=ExtResource( 8 )]
+
+[node name="SquishRandomAudioStreamPlayer" parent="Audio" instance=ExtResource( 9 )]
+numberToPlay = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/SquishRandomAudioStreamPlayer"]
+stream = ExtResource( 7 )
+bus = "SFX"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Audio/SquishRandomAudioStreamPlayer"]
+stream = ExtResource( 4 )
+bus = "SFX"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Audio/SquishRandomAudioStreamPlayer"]
+stream = ExtResource( 3 )
+bus = "SFX"
+
+[node name="OpenRandomAudioStreamPlayer" parent="Audio" instance=ExtResource( 9 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/OpenRandomAudioStreamPlayer"]
+stream = ExtResource( 6 )
+volume_db = 5.0
+bus = "SFX"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Audio/OpenRandomAudioStreamPlayer"]
+stream = ExtResource( 5 )
+volume_db = 5.0
+bus = "SFX"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Audio/OpenRandomAudioStreamPlayer"]
+stream = ExtResource( 13 )
+bus = "SFX"
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="Audio/OpenRandomAudioStreamPlayer"]
+stream = ExtResource( 14 )
+bus = "SFX"
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="Audio/OpenRandomAudioStreamPlayer"]
+stream = ExtResource( 10 )
+bus = "SFX"
+
+[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="Audio/OpenRandomAudioStreamPlayer"]
+stream = ExtResource( 11 )
+bus = "SFX"
+
+[node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="Audio/OpenRandomAudioStreamPlayer"]
+stream = ExtResource( 12 )
+bus = "SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Opened"

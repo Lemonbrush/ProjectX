@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/doorClose_2.ogg-f4f87757b44f9b2cf30476007ef58cfa.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Kenny/RPG_sounds/doorClose/doorClose_2.ogg"
+dest_files=[ "res://.import/doorClose_2.ogg-f4f87757b44f9b2cf30476007ef58cfa.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

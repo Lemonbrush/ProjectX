@@ -16,9 +16,6 @@ scale = Vector2( 5.95, 13.7 )
 position = Vector2( 0, -136 )
 texture = ExtResource( 2 )
 
-[node name="PassThroughBody" parent="." index="2"]
-visible = false
-
 [node name="CollisionShape2D" parent="PassThroughBody" index="0"]
 position = Vector2( 3.25, -162 )
 shape = SubResource( 1 )

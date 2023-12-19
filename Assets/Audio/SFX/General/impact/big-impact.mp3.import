@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/big-impact.mp3-b8643edd1f25257ff32d40baa134b128.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/impact/big-impact.mp3"
+dest_files=[ "res://.import/big-impact.mp3-b8643edd1f25257ff32d40baa134b128.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

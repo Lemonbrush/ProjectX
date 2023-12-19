@@ -10,6 +10,7 @@ script = ExtResource( 1 )
 
 [node name="DialogTextBoxController" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, -31 )
+z_index = 10
 interaction_controller_path = NodePath("../InteractionController")
 
 [node name="InteractionPopup" parent="." instance=ExtResource( 4 )]

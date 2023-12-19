@@ -14,7 +14,7 @@ particles_anim_loop = false
 offsets = PoolRealArray( 0, 0.35461, 0.562648, 1 )
 colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
 
-[sub_resource type="GradientTexture" id=9]
+[sub_resource type="GradientTexture" id=22]
 gradient = SubResource( 11 )
 
 [sub_resource type="ParticlesMaterial" id=12]
@@ -26,7 +26,7 @@ gravity = Vector3( 0, 0, 0 )
 initial_velocity_random = 1.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-color_ramp = SubResource( 9 )
+color_ramp = SubResource( 22 )
 anim_speed = 2.0
 anim_speed_random = 1.0
 anim_offset_random = 1.0

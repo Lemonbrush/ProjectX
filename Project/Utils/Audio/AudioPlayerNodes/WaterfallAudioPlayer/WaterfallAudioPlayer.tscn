@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Audio/SFX/General/Water/waterfall.wav" type="AudioStream" id=1]
+
+[node name="WaterfallAudioPlayer" type="AudioStreamPlayer2D"]
+stream = ExtResource( 1 )
+volume_db = 3.0
+autoplay = true
+max_distance = 150.0
+bus = "SFX"
+area_mask = 32

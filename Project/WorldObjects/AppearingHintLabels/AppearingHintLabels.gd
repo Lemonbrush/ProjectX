@@ -48,7 +48,8 @@ func get_processed_label_text(text):
 		"[Left]": InputMap.get_action_list("left")[0].as_text(),
 		"[Right]": InputMap.get_action_list("right")[0].as_text(),
 		"[Down]": InputMap.get_action_list("down")[0].as_text(),
-		"[Up]": InputMap.get_action_list("up")[0].as_text()
+		"[Up]": InputMap.get_action_list("up")[0].as_text(),
+		"[Esc]": InputMap.get_action_list("pause_menu")[0].as_text()
 	}
 	for button_tag in button_tag_list:
 		final_text = final_text.replace(button_tag, "[color=#87e965]" + button_tag_list[button_tag] + "[/color]")

@@ -1,0 +1,116 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Project/Resources/Fonts/Epilepsy Sans/Resource/EpilepsySansBold.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Project/UI/Screens/OptionsMenu/OptionsMenu.gd" type="Script" id=2]
+[ext_resource path="res://Project/Resources/Themes/MainTheme.tres" type="Theme" id=3]
+[ext_resource path="res://Project/UI/Components/Animated_dialog_button/AnimatedDialogButton.tscn" type="PackedScene" id=4]
+
+[node name="OptionsMenu" type="CanvasLayer"]
+pause_mode = 2
+layer = 2
+script = ExtResource( 2 )
+
+[node name="MainMarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="MainMarginContainer"]
+margin_right = 512.0
+margin_bottom = 290.0
+color = Color( 0.0941176, 0.0784314, 0.168627, 0.368627 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MainMarginContainer"]
+margin_right = 109.0
+margin_bottom = 166.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/margin_top = 60
+custom_constants/margin_left = 25
+
+[node name="ContentVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer"]
+margin_left = 25.0
+margin_top = 60.0
+margin_right = 109.0
+margin_bottom = 166.0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+custom_constants/separation = 30
+
+[node name="HeaderLabel" type="Label" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer"]
+margin_right = 84.0
+margin_bottom = 26.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 1 )
+text = "options"
+
+[node name="OptionButtonsVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer"]
+margin_top = 56.0
+margin_right = 42.0
+margin_bottom = 106.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="SoundButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 30.0
+margin_bottom = 14.0
+focus_neighbour_top = NodePath("../ExitButton")
+size_flags_vertical = 1
+text = "sound"
+align = 0
+
+[node name="VideoButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer" instance=ExtResource( 4 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 54.0
+margin_right = 60.0
+margin_bottom = 68.0
+size_flags_vertical = 1
+text = "Видео"
+align = 0
+
+[node name="LanguageButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer" instance=ExtResource( 4 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 54.0
+margin_right = 60.0
+margin_bottom = 68.0
+size_flags_vertical = 1
+text = "language"
+align = 0
+
+[node name="ControlsButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer" instance=ExtResource( 4 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 54.0
+margin_right = 60.0
+margin_bottom = 68.0
+size_flags_vertical = 1
+text = "controls"
+align = 0
+
+[node name="SpecialOptionButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 18.0
+margin_right = 42.0
+margin_bottom = 32.0
+size_flags_vertical = 1
+text = "special"
+align = 0
+
+[node name="ExitButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionButtonsVBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 36.0
+margin_right = 24.0
+margin_bottom = 50.0
+focus_neighbour_bottom = NodePath("../SoundButton")
+size_flags_vertical = 1
+text = "exit"
+align = 0

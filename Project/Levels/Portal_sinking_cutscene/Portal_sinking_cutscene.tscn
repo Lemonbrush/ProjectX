@@ -6,9 +6,9 @@
 [ext_resource path="res://Project/WorldObjects/Technical/Lighting/LightSource/LightSource.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Levels/Old_home_location/Portal_sinking_cutscene/Sofa_falling_animation-Sheet.png" type="Texture" id=5]
 [ext_resource path="res://Project/Levels/Portal_sinking_cutscene/Portal_sinking_cutscene.gd" type="Script" id=6]
-[ext_resource path="res://Assets/Audio/Old_home_location/Intro/Components/SFX components/SofaSinkingIntoPortal.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Audio/Level_specific_sounds/Old_home_location/Intro/Components/SFX components/SofaSinkingIntoPortal.wav" type="AudioStream" id=7]
 [ext_resource path="res://Assets/Effects/Particles/particles.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Audio/Misc/Impact_sounds/Sub - Mini Impact.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Audio/SFX/General/poof/poof_3.wav" type="AudioStream" id=9]
 
 [sub_resource type="Environment" id=9]
 background_mode = 4
@@ -273,7 +273,10 @@ stream = ExtResource( 7 )
 bus = "SFX"
 
 [node name="ImpactSFXAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource( 10 )
+stream = ExtResource( 9 )
+volume_db = -15.0
+pitch_scale = 0.8
+bus = "SFX"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 9 )
@@ -292,7 +295,6 @@ camera_path = NodePath("../../Camera2D")
 [node name="PortalSprite" type="Sprite" parent="."]
 material = SubResource( 1 )
 position = Vector2( 256, 161 )
-rotation = 3.14254
 scale = Vector2( 0.864286, 0.864286 )
 texture = ExtResource( 1 )
 
@@ -311,8 +313,8 @@ anims/Animate = SubResource( 3 )
 
 [node name="SofaSprite" type="Sprite" parent="."]
 position = Vector2( 263, 152 )
-rotation = -0.730131
-scale = Vector2( 1.01794, 1.01794 )
+rotation = 0.60585
+scale = Vector2( 22.9088, 22.9088 )
 texture = ExtResource( 5 )
 offset = Vector2( 0.999102, -1.14843 )
 hframes = 4

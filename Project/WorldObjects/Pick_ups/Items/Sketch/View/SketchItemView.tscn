@@ -220,6 +220,8 @@ pause_mode = 2
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.5, 0.5 )
+scale = Vector2( 1e-05, 1e-05 )
 texture = ExtResource( 1 )
 hframes = 2
 
@@ -244,7 +246,7 @@ process_material = SubResource( 19 )
 texture = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "idle"
+autoplay = "Show"
 anims/RESET = SubResource( 1 )
 anims/Show = SubResource( 20 )
 anims/idle = SubResource( 21 )

@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/licorne_en_fer__victory-bells-chords-success-sound-effect.wav-0264feecd8f82f3e4cfa4331e7486a32.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/Bell/Origins/licorne_en_fer__victory-bells-chords-success-sound-effect.wav"
+dest_files=[ "res://.import/licorne_en_fer__victory-bells-chords-success-sound-effect.wav-0264feecd8f82f3e4cfa4331e7486a32.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

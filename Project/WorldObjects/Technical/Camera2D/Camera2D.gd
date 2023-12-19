@@ -4,6 +4,8 @@ onready var tween = $Tween
 onready var screenShaker = $ScreenShaker
 
 var targetPosition = Vector2.ZERO
+var default_camera_speed = -5
+var current_camera_speed = default_camera_speed
 
 export(Color, RGB) var backgroundColor
 export(bool) var zoom_based_on_editor_value = false
@@ -12,26 +14,34 @@ export(bool) var follow_player = true
 export(float) var default_y_offset = 40.0
 export(float) var y_offset = 40.0
 
+var target_node_group_name
+
 func _ready():
 	var _focus_const_change_connection = EventBus.connect("game_const_changed", self, "on_game_const_changed")
 	var _connect = EventBus.connect("camera_focus_animation", self, "scale_with_animation")
 	var _default_zoom_connection = EventBus.connect("camera_focus_default_zoom", self, "scale_to_default_zoom_with_animation")
 	var _set_y_offset = EventBus.connect("camera_set_y_offset", self, "camera_set_y_offset")
 	var _set_default_y_offset = EventBus.connect("camera_set_default_y_offset", self, "camera_set_default_y_offset")
+	var _focus_connection = EventBus.connect("focus_camera_on_group_node_named", self, "focus_camera_on_group_node_named")
+	var _focus_reset_connection = EventBus.connect("reset_camera_focus", self, "reset_camera_focus")
 	
 	VisualServer.set_default_clear_color(backgroundColor)
+	reset_target_node_group_name()
 
-func _process(delta):
+func _process(_delta):
 	if follow_player:
 		acquire_target_position()
-		global_position = lerp(targetPosition, global_position, pow(2, -15 * delta))
+		global_position = targetPosition
 
 func instant_focuse_on_target():
-	acquire_target_position()
+	smoothing_enabled = false
 	global_position = targetPosition
+	yield(get_tree(), "idle_frame")
+	yield(get_tree(), "idle_frame")
+	smoothing_enabled = true
 
 func acquire_target_position():
-	var acquired = get_target_position_from_node_group("player")
+	var acquired = get_target_position_from_node_group(target_node_group_name)
 	if (!acquired):
 		get_target_position_from_node_group("player_death")
 
@@ -75,3 +85,15 @@ func camera_set_y_offset(new_offset):
 
 func camera_set_default_y_offset():
 	y_offset = default_y_offset
+
+func set_target_node_group_name(name):
+	target_node_group_name = name
+
+func reset_target_node_group_name():
+	target_node_group_name = "player"
+
+func focus_camera_on_group_node_named(new_target_name):
+	set_target_node_group_name(new_target_name)
+
+func reset_camera_focus():
+	reset_target_node_group_name()

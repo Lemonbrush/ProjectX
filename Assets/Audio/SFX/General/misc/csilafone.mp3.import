@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/csilafone.mp3-d942647949f371204101608cb1ffed3d.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/misc/csilafone.mp3"
+dest_files=[ "res://.import/csilafone.mp3-d942647949f371204101608cb1ffed3d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/clean-fast-swooshaiff.mp3-f86455dfd102392aaa72a1e50d11e5cb.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/General/swoosh/clean-fast-swooshaiff.mp3"
+dest_files=[ "res://.import/clean-fast-swooshaiff.mp3-f86455dfd102392aaa72a1e50d11e5cb.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

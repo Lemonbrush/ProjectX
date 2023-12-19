@@ -5,9 +5,10 @@
 [ext_resource path="res://Project/WorldObjects/Destructables/Vase/VaseCrush/VaseCrush.tscn" type="PackedScene" id=3]
 
 [node name="Vase" instance=ExtResource( 2 )]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 19
+collision_mask = 16
 crashAnimationScene = ExtResource( 3 )
+background_object = true
 
 [node name="Sprite" parent="." index="4"]
 texture = ExtResource( 1 )

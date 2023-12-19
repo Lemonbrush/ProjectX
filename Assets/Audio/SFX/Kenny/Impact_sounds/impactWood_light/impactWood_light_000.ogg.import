@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/impactWood_light_000.ogg-f3c63d2b15fccbfb02b27c29f405e80e.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Kenny/Impact_sounds/impactWood_light/impactWood_light_000.ogg"
+dest_files=[ "res://.import/impactWood_light_000.ogg-f3c63d2b15fccbfb02b27c29f405e80e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

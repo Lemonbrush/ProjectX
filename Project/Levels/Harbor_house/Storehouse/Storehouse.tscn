@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://Assets/Levels/Harbor_house/Rooms/Dwellers_second_house_sprite.png" type="Texture" id=1]
 [ext_resource path="res://Project/Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
@@ -17,6 +17,9 @@
 [ext_resource path="res://Project/Characters/NPC/Abstract_dweller/AbstractDweller.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Assets/Effects/Particles/particles.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Characters/NPC/HarborHouse/Workers/CookingNeedyDweller-Sheet.png" type="Texture" id=17]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsSasha.tres" type="Resource" id=18]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.gd" type="Script" id=19]
+[ext_resource path="res://Assets/Audio/Background_music/Level_themes/Indoor_theme.wav" type="AudioStream" id=20]
 
 [sub_resource type="Environment" id=142]
 background_mode = 4
@@ -149,6 +152,11 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
+[sub_resource type="Resource" id=143]
+script = ExtResource( 19 )
+letter_sounds_resource = ExtResource( 18 )
+voice_mode = 5
+
 [sub_resource type="Animation" id=140]
 resource_name = "Idle"
 length = 0.4
@@ -274,6 +282,7 @@ scale_curve = SubResource( 116 )
 color_ramp = SubResource( 115 )
 
 [node name="Storehouse" instance=ExtResource( 2 )]
+background_music = ExtResource( 20 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
 environment = SubResource( 142 )
@@ -306,9 +315,8 @@ texture = ExtResource( 11 )
 [node name="Player" parent="." index="6"]
 position = Vector2( 54, -11 )
 z_index = 1
-collision_mask = 108
 
-[node name="Light2D2" parent="Player" index="5"]
+[node name="Light2D2" parent="Player" index="6"]
 visible = false
 
 [node name="Middle_world_objects" type="Node2D" parent="." index="7"]
@@ -409,6 +417,7 @@ visible = false
 [node name="NeedyDweller" parent="Middle_world_objects/Dwellers" index="1" instance=ExtResource( 15 )]
 position = Vector2( -106, -7 )
 dialogId = "harbor_house_needy_dweller"
+voice_generator_configuration_file = SubResource( 143 )
 watch_player_on_talk = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Middle_world_objects/Dwellers/NeedyDweller" index="0"]

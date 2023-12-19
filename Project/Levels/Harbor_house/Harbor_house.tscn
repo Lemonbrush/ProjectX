@@ -1,4 +1,4 @@
-[gd_scene load_steps=182 format=2]
+[gd_scene load_steps=192 format=2]
 
 [ext_resource path="res://Project/Levels/Harbor_house/Harbor_house.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Effects/Lighting/shadow.png" type="Texture" id=2]
@@ -62,10 +62,16 @@
 [ext_resource path="res://Assets/Characters/NPC/HarborHouse/Workers/FlatHatDwellerSprite-Sheet.png" type="Texture" id=60]
 [ext_resource path="res://Project/WorldObjects/Sign/Sign.tscn" type="PackedScene" id=61]
 [ext_resource path="res://Project/WorldObjects/Pick_ups/Items/SpecialFlower/Special_flower_item.tscn" type="PackedScene" id=62]
-[ext_resource path="res://Project/UI/DebugScreen/GameSpecs.tscn" type="PackedScene" id=63]
+[ext_resource path="res://Project/UI/Screens/DebugScreen/GameSpecs.tscn" type="PackedScene" id=63]
 [ext_resource path="res://Project/WorldObjects/Pick_ups/Items/RedThred/RedThredItem.tscn" type="PackedScene" id=64]
 [ext_resource path="res://Project/Characters/NPC/Mystic_dweller/MysticDweller.tscn" type="PackedScene" id=65]
-[ext_resource path="res://Project/WorldObjects/Technical/ItemSpawner/ItemSpawner.tscn" type="PackedScene" id=66]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsSasha.tres" type="Resource" id=67]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.gd" type="Script" id=68]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsSashaBrutal.tres" type="Resource" id=69]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsSofa.tres" type="Resource" id=70]
+[ext_resource path="res://Assets/Audio/Background_music/Level_themes/Central_hub_theme.wav" type="AudioStream" id=71]
+[ext_resource path="res://Project/Utils/Audio/AudioPlayerNodes/WaterfallAudioPlayer/WaterfallAudioPlayer.tscn" type="PackedScene" id=72]
+[ext_resource path="res://Project/WorldObjects/Technical/ItemDispatcher/ItemDispatcher.tscn" type="PackedScene" id=73]
 
 [sub_resource type="Environment" id=273]
 background_mode = 4
@@ -177,6 +183,11 @@ angle_random = 1.0
 scale = 1.5
 scale_curve = SubResource( 103 )
 color_ramp = SubResource( 102 )
+
+[sub_resource type="Resource" id=281]
+script = ExtResource( 68 )
+letter_sounds_resource = ExtResource( 70 )
+voice_mode = 4
 
 [sub_resource type="Resource" id=223]
 resource_local_to_scene = true
@@ -357,6 +368,11 @@ extents = Vector2( 3.5, 25.5 )
 
 [sub_resource type="RectangleShape2D" id=215]
 extents = Vector2( 3, 16 )
+
+[sub_resource type="Resource" id=282]
+script = ExtResource( 68 )
+letter_sounds_resource = ExtResource( 67 )
+voice_mode = 4
 
 [sub_resource type="Animation" id=232]
 resource_name = "Idle"
@@ -548,6 +564,11 @@ tracks/0/keys = {
 "values": [ 13, 14, 15, 16, 17, 18 ]
 }
 
+[sub_resource type="Resource" id=283]
+script = ExtResource( 68 )
+letter_sounds_resource = ExtResource( 67 )
+voice_mode = 4
+
 [sub_resource type="Resource" id=253]
 resource_local_to_scene = true
 script = ExtResource( 52 )
@@ -632,6 +653,11 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 13, 14, 15, 16, 17, 18 ]
 }
+
+[sub_resource type="Resource" id=284]
+script = ExtResource( 68 )
+letter_sounds_resource = ExtResource( 69 )
+voice_mode = 3
 
 [sub_resource type="Resource" id=261]
 resource_local_to_scene = true
@@ -903,6 +929,7 @@ shader_param/color_over = Color( 0, 0, 0, 1 )
 
 [node name="Harbor_house" type="Node2D"]
 script = ExtResource( 1 )
+background_music = ExtResource( 71 )
 
 [node name="GameSpecs" parent="." instance=ExtResource( 63 )]
 
@@ -940,6 +967,14 @@ texture = ExtResource( 17 )
 
 [node name="Harbor_world_objects" type="Node2D" parent="."]
 position = Vector2( -9, 0 )
+
+[node name="RedThreadItemDispatcher" parent="Harbor_world_objects" instance=ExtResource( 73 )]
+itemScene = ExtResource( 64 )
+
+[node name="Audio" type="Node2D" parent="Harbor_world_objects"]
+
+[node name="WaterfallAudioPlayer" parent="Harbor_world_objects/Audio" instance=ExtResource( 72 )]
+position = Vector2( -501, -151 )
 
 [node name="VisibilityChecker" parent="Harbor_world_objects" instance=ExtResource( 32 )]
 visible = false
@@ -1122,6 +1157,7 @@ position = Vector2( 29, 192 )
 [node name="FisherWifeDweller" parent="Harbor_world_objects/Middle_world_objects/Dwellers" instance=ExtResource( 49 )]
 position = Vector2( 172, -113 )
 dialogId = "fisher_wife_dweller"
+voice_generator_configuration_file = SubResource( 281 )
 actions = [ SubResource( 223 ), SubResource( 224 ), SubResource( 225 ), SubResource( 226 ) ]
 defaultDirection = -1
 
@@ -1168,10 +1204,6 @@ pause_mode = 2
 autoplay = "Idle"
 anims/Idle = SubResource( 216 )
 anims/RESET = SubResource( 217 )
-
-[node name="RedThredItemSpawner" parent="Harbor_world_objects/Middle_world_objects" instance=ExtResource( 66 )]
-position = Vector2( -639, 71 )
-itemScene = ExtResource( 64 )
 
 [node name="Foreground_world_objects" type="Node2D" parent="Harbor_world_objects"]
 position = Vector2( -20, -192 )
@@ -1332,6 +1364,29 @@ position = Vector2( -497, -639 )
 [node name="CreatorHouseIsland" type="Node2D" parent="."]
 position = Vector2( -1023, -701 )
 
+[node name="Audio" type="Node2D" parent="CreatorHouseIsland"]
+
+[node name="WaterfallAudioPlayer" parent="CreatorHouseIsland/Audio" instance=ExtResource( 72 )]
+position = Vector2( -597, -224 )
+
+[node name="WaterfallAudioPlayer2" parent="CreatorHouseIsland/Audio" instance=ExtResource( 72 )]
+position = Vector2( -82, -243 )
+
+[node name="WaterfallAudioPlayer3" parent="CreatorHouseIsland/Audio" instance=ExtResource( 72 )]
+position = Vector2( 237, -261 )
+
+[node name="WaterfallAudioPlayer4" parent="CreatorHouseIsland/Audio" instance=ExtResource( 72 )]
+position = Vector2( 467, -258 )
+
+[node name="WaterfallAudioPlayer5" parent="CreatorHouseIsland/Audio" instance=ExtResource( 72 )]
+position = Vector2( 609, -264 )
+
+[node name="WaterfallAudioPlayer6" parent="CreatorHouseIsland/Audio" instance=ExtResource( 72 )]
+position = Vector2( 679, -242 )
+
+[node name="WaterfallAudioPlayer7" parent="CreatorHouseIsland/Audio" instance=ExtResource( 72 )]
+position = Vector2( 401, -239 )
+
 [node name="VisibilityChecker" parent="CreatorHouseIsland" instance=ExtResource( 32 )]
 visible = false
 position = Vector2( 196.5, -599 )
@@ -1488,32 +1543,28 @@ __meta__ = {
 
 [node name="Always_bloom_forest_sign" parent="CreatorHouseIsland/Middle_world_objects/Inspection_points" instance=ExtResource( 61 )]
 position = Vector2( 544, -383 )
-texts_array = [ "Маленький лесок с вечно цветущими
-яблонями и озеро. А это удобно" ]
+dialogId = "harborHouse_alwaysBloomForestSign"
 
 [node name="Sprite" parent="CreatorHouseIsland/Middle_world_objects/Inspection_points/Always_bloom_forest_sign" index="0"]
 visible = false
 
 [node name="Flowers_sign" parent="CreatorHouseIsland/Middle_world_objects/Inspection_points" instance=ExtResource( 61 )]
 position = Vector2( 1027, -383 )
-texts_array = [ "Котятки потрудились на славу" ]
+dialogId = "harborHouse_flowersSign"
 
 [node name="Sprite" parent="CreatorHouseIsland/Middle_world_objects/Inspection_points/Flowers_sign" index="0"]
 visible = false
 
 [node name="Flowers_bench_sign" parent="CreatorHouseIsland/Middle_world_objects/Inspection_points" instance=ExtResource( 61 )]
 position = Vector2( 1094, -383 )
-texts_array = [ "Похоже кто-то любит сидеть здесь
-и просто любоваться цветочками" ]
+dialogId = "harborHouse_flowersBenchSign"
 
 [node name="Sprite" parent="CreatorHouseIsland/Middle_world_objects/Inspection_points/Flowers_bench_sign" index="0"]
 visible = false
 
 [node name="Sushi_sign" parent="CreatorHouseIsland/Middle_world_objects/Inspection_points" instance=ExtResource( 61 )]
 position = Vector2( -363, -383 )
-texts_array = [ "Кто-то устроил пикник", "В этой корзинке находится
-бесконечный источник вечно
-свежих роллов", "*завидует*" ]
+dialogId = "harborHouse_sushiSign"
 
 [node name="Sprite" parent="CreatorHouseIsland/Middle_world_objects/Inspection_points/Sushi_sign" index="0"]
 visible = false
@@ -1961,12 +2012,13 @@ position = Vector2( -1014, -1273 )
 dialogId = "personal_garden_mystic_dweller_dialog"
 defaultDirection = -1
 
-[node name="Body" parent="CreatorHouseIsland/Middle_world_objects/Dwellers/MysticDweller" index="5"]
+[node name="Body" parent="CreatorHouseIsland/Middle_world_objects/Dwellers/MysticDweller" index="6"]
 scale = Vector2( -1, 1 )
 
 [node name="WelcomingDweller" parent="CreatorHouseIsland/Middle_world_objects/Dwellers" instance=ExtResource( 49 )]
 position = Vector2( 106, -924 )
 dialogId = "creator_house_welcomer_dweller"
+voice_generator_configuration_file = SubResource( 282 )
 
 [node name="Sprite" type="Sprite" parent="CreatorHouseIsland/Middle_world_objects/Dwellers/WelcomingDweller/Body" index="0"]
 position = Vector2( -1, -16 )
@@ -2024,6 +2076,7 @@ anims/Walk = SubResource( 249 )
 [node name="ConeDweller" parent="CreatorHouseIsland/Middle_world_objects/Dwellers" instance=ExtResource( 49 )]
 position = Vector2( -1413, -940 )
 dialogId = "harbor_house_cone_dweller"
+voice_generator_configuration_file = SubResource( 283 )
 actions = [ SubResource( 253 ), SubResource( 254 ), SubResource( 255 ), SubResource( 256 ), SubResource( 257 ), SubResource( 258 ) ]
 
 [node name="Sprite" type="Sprite" parent="CreatorHouseIsland/Middle_world_objects/Dwellers/ConeDweller/Body" index="0"]
@@ -2044,6 +2097,7 @@ anims/Walk = SubResource( 252 )
 [node name="FlatHatDweller" parent="CreatorHouseIsland/Middle_world_objects/Dwellers" instance=ExtResource( 49 )]
 position = Vector2( -662, -940 )
 dialogId = "harbor_house_extra_worker_dweller"
+voice_generator_configuration_file = SubResource( 284 )
 actions = [ SubResource( 261 ), SubResource( 262 ), SubResource( 263 ), SubResource( 264 ) ]
 
 [node name="Sprite" type="Sprite" parent="CreatorHouseIsland/Middle_world_objects/Dwellers/FlatHatDweller/Body" index="0"]
@@ -2092,7 +2146,7 @@ light_mask = 0
 tile_set = ExtResource( 13 )
 cell_size = Vector2( 1, 1 )
 format = 1
-tile_data = PoolIntArray( -23658071, 536870913, 0, -23658050, 536870913, 0, -23658029, 536870913, 0, -23658008, 536870913, 0, -23657967, 11, 0, -23657911, 536870913, 0, -23657890, 536870913, 0, -23657863, 536870917, 0, -23657833, 536870913, 0, -23264882, 8, 0, -23264738, 536870920, 0, -22609391, 11, 0, -21692018, 8, 0, -21691874, 536870920, 0, -21560919, 536870913, 0, -21560898, 536870913, 0, -21560877, 536870913, 0, -21560856, 536870913, 0, -21560815, 11, 0, -21560759, 536870913, 0, -21560738, 536870913, 0, -21560711, 536870917, 0, -21560681, 536870913, 0, -20512239, 11, 0, -20119154, 8, 0, -20119010, 536870920, 0, -19463767, 536870913, 0, -19463746, 536870913, 0, -19463725, 536870913, 0, -19463704, 536870913, 0, -19463663, 11, 0, -19463607, 536870913, 0, -19463586, 536870913, 0, -19463559, 536870917, 0, -19463529, 536870913, 0, -18546290, 8, 0, -18546146, 536870920, 0, -18415087, 11, 0, -17366615, 536870914, 0, -17366594, 536870914, 0, -17366573, 536870914, 0, -17366552, 536870914, 0, -17366511, 11, 0, -17366455, 536870914, 0, -17366434, 536870914, 0, -17366407, 536870918, 0, -17366377, 536870914, 0, -16973426, 7, 0, -16973282, 536870919, 0, -16317935, 10, 0 )
+tile_data = PoolIntArray( -23789170, 8, 0, -23789026, 536870920, 0, -23658071, 536870913, 0, -23658050, 536870913, 0, -23658029, 536870913, 0, -23658008, 536870913, 0, -23657967, 11, 0, -23657911, 536870913, 0, -23657890, 536870913, 0, -23657863, 536870917, 0, -23657833, 536870913, 0, -22609391, 11, 0, -22085234, 8, 0, -22085090, 536870920, 0, -21560919, 536870913, 0, -21560898, 536870913, 0, -21560877, 536870913, 0, -21560856, 536870913, 0, -21560815, 11, 0, -21560759, 536870913, 0, -21560738, 536870913, 0, -21560711, 536870917, 0, -21560681, 536870913, 0, -20512239, 11, 0, -20381298, 8, 0, -20381154, 536870920, 0, -19463767, 536870913, 0, -19463746, 536870913, 0, -19463725, 536870913, 0, -19463704, 536870913, 0, -19463663, 11, 0, -19463607, 536870913, 0, -19463586, 536870913, 0, -19463559, 536870917, 0, -19463529, 536870913, 0, -18677362, 8, 0, -18677218, 536870920, 0, -18415087, 11, 0, -17366615, 536870914, 0, -17366594, 536870914, 0, -17366573, 536870914, 0, -17366552, 536870914, 0, -17366511, 11, 0, -17366455, 536870914, 0, -17366434, 536870914, 0, -17366407, 536870918, 0, -17366377, 536870914, 0, -16973426, 7, 0, -16973282, 536870919, 0, -16317935, 10, 0 )
 
 [node name="Lake_water__tilemap" type="TileMap" parent="CreatorHouseIsland/Foreground_world_objects/Decorations/Lake_water"]
 light_mask = 0
@@ -2108,10 +2162,7 @@ tile_set = ExtResource( 13 )
 cell_size = Vector2( 1, 1 )
 occluder_light_mask = 32
 format = 1
-tile_data = PoolIntArray( -22937980, 536870921, 0, -21954338, 536870912, 0, -21299580, 536870920, 0, -19857186, 536870913, 0, -19661180, 536870920, 0, -18088316, 536870920, 0, -17760034, 536870913, 0, -16449916, 536870920, 0, -15662882, 536870913, 0, -14877052, 536870920, 0, -14549596, 8, 0, -14484178, 536870916, 0, -14482450, 4, 0, -13500978, 536870912, 0, -13500610, 536870912, 0, -13565842, 536870921, 0, -13565730, 536870913, 0, -13565187, 9, 0, -13304188, 536870920, 0, -12976732, 8, 0, -12516878, 1, 0, -12516803, 8, 0, -12387026, 536870917, 0, -12385298, 5, 0, -11796860, 536870920, 0, -11861906, 536870920, 0, -11861251, 8, 0, -11403868, 8, 0, -11403826, 536870913, 0, -11403458, 536870913, 0, -11468578, 536870913, 0, -10943939, 8, 0, -10419726, 1, 0, -10289874, 536870917, 0, -10223996, 536870920, 0, -10288146, 5, 0, -10157970, 536870920, 0, -10157315, 8, 0, -9831004, 8, 0, -9306674, 536870913, 0, -9306306, 536870913, 0, -9371426, 536870913, 0, -9305539, 8, 0, -8651132, 536870920, 0, -8454034, 536870920, 0, -8453379, 8, 0, -8323676, 8, 0, -8322574, 1, 0, -8192722, 536870917, 0, -8190994, 5, 0, -7667139, 8, 0, -7209522, 536870913, 0, -7209154, 536870913, 0, -7274274, 536870913, 0, -7078268, 536870920, 0, -6750812, 8, 0, -6750098, 536870920, 0, -6749443, 8, 0, -6161106, 536870917, 0, -6225422, 1, 0, -6159378, 5, 0, -6028739, 8, 0, -5439868, 536870920, 0, -5177948, 8, 0, -5112370, 536870913, 0, -5112002, 536870913, 0, -5177122, 536870913, 0, -5046162, 536870920, 0, -5045507, 8, 0, -4390339, 8, 0, -4063954, 536870917, 0, -4128270, 1, 0, -4062226, 5, 0, -3801468, 536870920, 0, -3605084, 8, 0, -3342226, 536870920, 0, -3341571, 8, 0, -3015218, 536870913, 0, -3014850, 536870913, 0, -3079970, 536870913, 0, -2751939, 8, 0, -2163068, 536870920, 0, -2032220, 8, 0, -1966802, 536870917, 0, -2031118, 1, 0, -1965074, 5, 0, -1638290, 536870920, 0, -1637635, 8, 0, -1244611, 8, 0, -1179075, 8, 0, -918066, 536870913, 0, -917698, 536870913, 0, -982818, 536870913, 0, -524668, 536870920, 0, -459356, 8, 0, 64814, 536870917, 0, 765, 8, 0, 65646, 536870920, 0, 66034, 1, 0, 132078, 5, 0, 459325, 8, 0, 1113508, 8, 0, 1113732, 536870920, 0, 1179086, 536870913, 0, 1179454, 536870913, 0, 1114334, 536870913, 0, 1704701, 8, 0, 1769582, 536870920, 0, 2161966, 536870917, 0, 2163186, 1, 0, 2163261, 8, 0, 2229230, 5, 0, 2686372, 8, 0, 2752132, 536870920, 0, 3276238, 536870913, 0, 3276606, 536870913, 0, 3211486, 536870913, 0, 3408637, 8, 0, 3473518, 536870920, 0, 3867197, 8, 0, 4193582, 536870917, 0, 4259236, 8, 0, 4260338, 1, 0, 4390532, 536870920, 0, 4326382, 5, 0, 5112573, 8, 0, 5177454, 536870920, 0, 5373390, 536870913, 0, 5373758, 536870913, 0, 5308638, 536870913, 0, 5571133, 8, 0, 5832100, 8, 0, 6094468, 536870920, 0, 6225198, 536870917, 0, 6357490, 1, 0, 6423534, 5, 0, 6553516, 536870920, 0, 6881390, 536870920, 0, 7339920, 536870917, 0, 7275069, 8, 0, 7470910, 536870913, 0, 7405790, 536870913, 0, 7798404, 536870920, 0, 8257452, 536870920, 0, 8192498, 1, 0, 8585326, 536870920, 0 )
-__meta__ = {
-"_edit_lock_": true
-}
+tile_data = PoolIntArray( -22937980, 536870921, 0, -21954338, 536870912, 0, -21234044, 536870920, 0, -19857186, 536870913, 0, -19530108, 536870920, 0, -17826172, 536870920, 0, -17760034, 536870913, 0, -16122236, 536870920, 0, -15662882, 536870913, 0, -14549596, 8, 0, -14484178, 536870916, 0, -14418300, 536870920, 0, -14482450, 4, 0, -13500978, 536870912, 0, -13500610, 536870912, 0, -13565842, 536870921, 0, -13565730, 536870913, 0, -13565187, 9, 0, -12845660, 8, 0, -12714364, 536870920, 0, -12516878, 1, 0, -12516803, 8, 0, -12387026, 536870917, 0, -12385298, 5, 0, -11861906, 536870920, 0, -11861251, 8, 0, -11403826, 536870913, 0, -11403458, 536870913, 0, -11468578, 536870913, 0, -11141724, 8, 0, -11010428, 536870920, 0, -10812867, 8, 0, -10419726, 1, 0, -10289874, 536870917, 0, -10288146, 5, 0, -10157970, 536870920, 0, -10157315, 8, 0, -9437788, 8, 0, -9306674, 536870913, 0, -9306492, 536870920, 0, -9306306, 536870913, 0, -9371426, 536870913, 0, -9108931, 8, 0, -8454034, 536870920, 0, -8453379, 8, 0, -8322574, 1, 0, -8192722, 536870917, 0, -8190994, 5, 0, -7733852, 8, 0, -7602556, 536870920, 0, -7404995, 8, 0, -7209522, 536870913, 0, -7209154, 536870913, 0, -7274274, 536870913, 0, -6750098, 536870920, 0, -6749443, 8, 0, -6161106, 536870917, 0, -6225422, 1, 0, -6159378, 5, 0, -6029916, 8, 0, -5898620, 536870920, 0, -5701059, 8, 0, -5112370, 536870913, 0, -5112002, 536870913, 0, -5177122, 536870913, 0, -5046162, 536870920, 0, -5045507, 8, 0, -4325980, 8, 0, -4194684, 536870920, 0, -4063954, 536870917, 0, -4128270, 1, 0, -4062226, 5, 0, -3997123, 8, 0, -3342226, 536870920, 0, -3341571, 8, 0, -3015218, 536870913, 0, -3014850, 536870913, 0, -3079970, 536870913, 0, -2622044, 8, 0, -2490748, 536870920, 0, -2293187, 8, 0, -1966802, 536870917, 0, -2031118, 1, 0, -1965074, 5, 0, -1638290, 536870920, 0, -1637635, 8, 0, -918108, 8, 0, -918066, 536870913, 0, -917698, 536870913, 0, -982818, 536870913, 0, -786812, 536870920, 0, -589251, 8, 0, 64814, 536870917, 0, 765, 8, 0, 65646, 536870920, 0, 66034, 1, 0, 132078, 5, 0, 785828, 8, 0, 917124, 536870920, 0, 1179086, 536870913, 0, 1179454, 536870913, 0, 1114334, 536870913, 0, 1114685, 8, 0, 1704701, 8, 0, 1769582, 536870920, 0, 2161966, 536870917, 0, 2163186, 1, 0, 2229230, 5, 0, 2489764, 8, 0, 2621060, 536870920, 0, 2818621, 8, 0, 3276238, 536870913, 0, 3276606, 536870913, 0, 3211486, 536870913, 0, 3408637, 8, 0, 3473518, 536870920, 0, 4193582, 536870917, 0, 4193700, 8, 0, 4324996, 536870920, 0, 4260338, 1, 0, 4326382, 5, 0, 4522557, 8, 0, 5112573, 8, 0, 5177454, 536870920, 0, 5373390, 536870913, 0, 5373758, 536870913, 0, 5308638, 536870913, 0, 5832100, 8, 0, 6028932, 536870920, 0, 6225198, 536870917, 0, 6226493, 8, 0, 6357490, 1, 0, 6423534, 5, 0, 6553517, 536870920, 0, 6881390, 536870920, 0, 7339921, 536870917, 0, 7470910, 536870913, 0, 7405790, 536870913, 0, 7798404, 536870920, 0, 7930429, 8, 0, 8192498, 1, 0, 8585326, 536870920, 0 )
 
 [node name="Well_water" type="Node2D" parent="CreatorHouseIsland/Foreground_world_objects/Decorations"]
 
@@ -2485,6 +2536,29 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Audio" type="Node2D" parent="GuardianIsland"]
+
+[node name="WaterfallAudioPlayer" parent="GuardianIsland/Audio" instance=ExtResource( 72 )]
+position = Vector2( 238, -117 )
+
+[node name="WaterfallAudioPlayer2" parent="GuardianIsland/Audio" instance=ExtResource( 72 )]
+position = Vector2( 460, -72 )
+
+[node name="WaterfallAudioPlayer3" parent="GuardianIsland/Audio" instance=ExtResource( 72 )]
+position = Vector2( 541, -120 )
+
+[node name="WaterfallAudioPlayer4" parent="GuardianIsland/Audio" instance=ExtResource( 72 )]
+position = Vector2( 633, -139 )
+
+[node name="WaterfallAudioPlayer5" parent="GuardianIsland/Audio" instance=ExtResource( 72 )]
+position = Vector2( 299, -155 )
+
+[node name="WaterfallAudioPlayer6" parent="GuardianIsland/Audio" instance=ExtResource( 72 )]
+position = Vector2( 678, -165 )
+
+[node name="WaterfallAudioPlayer7" parent="GuardianIsland/Audio" instance=ExtResource( 72 )]
+position = Vector2( 99, -169 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GuardianIsland"]
 position = Vector2( 390, -199 )
 shape = SubResource( 79 )
@@ -2668,7 +2742,7 @@ z_index = 1
 tile_set = ExtResource( 13 )
 cell_size = Vector2( 1, 1 )
 format = 1
-tile_data = PoolIntArray( -10551218, 536870917, 0, -10419554, 5, 0, -9633506, 8, 0, -8454066, 536870917, 0, -8453524, 8, 0, -8322402, 5, 0, -7995106, 8, 0, -7274274, 1, 0, -7273972, 1, 0, -6749588, 8, 0, -6356914, 536870917, 0, -6356706, 8, 0, -6225250, 5, 0, -5177122, 1, 0, -5176820, 1, 0, -5045652, 8, 0, -4718306, 8, 0, -4324930, 8, 0, -4259762, 536870917, 0, -4128098, 5, 0, -3341716, 8, 0, -3079970, 1, 0, -3079906, 8, 0, -3079668, 1, 0, -2620994, 8, 0, -2162610, 536870917, 0, -2030946, 5, 0, -1637780, 8, 0, -1441506, 8, 0, -982818, 1, 0, -982516, 1, 0, -917058, 8, 0, -65458, 536870917, 0, 66156, 8, 0, 66206, 5, 0, 196894, 8, 0, 721342, 8, 0, 1114334, 1, 0, 1114636, 1, 0, 1770092, 8, 0, 1835294, 8, 0, 2031694, 536870917, 0, 2163358, 5, 0, 2359742, 8, 0, 3211486, 1, 0, 3211788, 1, 0, 3473694, 8, 0, 3474028, 8, 0, 3998142, 8, 0, 4128846, 536870917, 0, 4260510, 5, 0, 5112094, 8, 0, 5177964, 8, 0, 5308638, 1, 0, 5308940, 1, 0, 5636542, 8, 0, 6225998, 536870917, 0, 6357662, 5, 0, 6750494, 8, 0, 6881900, 8, 0, 7274942, 8, 0, 7405790, 1, 0, 7406092, 1, 0, 8323150, 536870917, 0, 8388894, 8, 0, 8454814, 5, 0, 8585836, 8, 0, 8913342, 8, 0, 9502942, 1, 0, 9503244, 1, 0, 10027294, 8, 0, 10289772, 8, 0, 10420302, 536870917, 0, 10551742, 8, 0, 10551966, 5, 0, 11600094, 1, 0, 11600396, 1, 0, 11665694, 8, 0, 11993708, 8, 0, 12190142, 8, 0, 12517454, 536870917, 0, 12649118, 5, 0, 13304094, 8, 0, 13697246, 1, 0, 13697548, 1, 0, 13697644, 8, 0, 13894078, 8, 0, 14614606, 536870917, 0, 14746270, 5, 0, 14942494, 8, 0, 15401580, 8, 0, 15598014, 8, 0, 15794398, 1, 0, 15794700, 1, 0, 16646430, 8, 0, 16711758, 536870917, 0, 16843422, 5, 0, 17039980, 8, 0, 17301950, 8, 0, 17891550, 1, 0, 17891852, 1, 0, 18350366, 8, 0, 18743916, 8, 0, 18808910, 536870917, 0, 18940574, 5, 0, 19005886, 8, 0, 19988702, 1, 0, 19989004, 1, 0, 20054302, 8, 0, 20447852, 8, 0, 20709822, 8, 0, 20906062, 536870917, 0, 21037726, 5, 0, 21758238, 8, 0, 22085854, 1, 0, 22086156, 1, 0, 22151788, 8, 0, 22413758, 8, 0, 23003214, 536870917, 0, 23134878, 5, 0, 23462174, 8, 0, 23855724, 8, 0, 24117694, 8, 0, 24183006, 1, 0, 24183308, 1, 0, 25034830, 536870917, 0, 25166110, 8, 0, 25232030, 5, 0, 25559660, 8, 0, 25821630, 8, 0, 26280158, 1, 0, 26280460, 1, 0, 26870046, 8, 0, 27131982, 536870917, 0, 27263596, 8, 0, 27329182, 5, 0, 27525566, 8, 0, 28377310, 1, 0, 28377612, 1, 0, 28573982, 8, 0, 28967532, 8, 0, 29229134, 536870917, 0, 29229502, 8, 0, 29426334, 5, 0, 30277918, 8, 0, 30474462, 1, 0, 30474764, 1, 0, 30671468, 8, 0, 30933438, 8, 0, 31326286, 536870917, 0, 31523486, 5, 0, 31981854, 8, 0, 32375404, 8, 0, 32571614, 1, 0, 32571916, 1, 0, 32637374, 8, 0, 33423438, 536870917, 0, 33620638, 5, 0, 33685790, 8, 0, 34079340, 8, 0, 34341310, 8, 0, 34668766, 1, 0, 34669068, 1, 0, 35389726, 8, 0, 35520590, 536870917, 0, 35717790, 5, 0, 35783276, 8, 0, 35979710, 8, 0, 36765918, 1, 0, 36766220, 1, 0, 37093662, 8, 0, 37487212, 8, 0, 37617742, 536870917, 0, 37683646, 8, 0, 37814942, 5, 0, 38797598, 8, 0, 38863070, 1, 0, 38863372, 1, 0, 39191148, 8, 0, 39387582, 8, 0, 39714894, 536870917, 0, 39912094, 5, 0, 40501534, 8, 0, 40895084, 8, 0, 40960222, 1, 0, 40960524, 1, 0, 41091518, 8, 0, 41812046, 536870917, 0, 42009246, 5, 0, 42205470, 8, 0, 42599020, 8, 0, 42729918, 8, 0, 43057374, 1, 0, 43057676, 1, 0, 43909198, 536870917, 0, 43909406, 8, 0, 44106398, 5, 0, 44302956, 8, 0, 44368318, 8, 0, 45154526, 1, 0, 45154828, 1, 0, 45613342, 8, 0, 46006350, 536870917, 0, 46006892, 8, 0, 46072254, 8, 0, 46203550, 5, 0, 47251678, 1, 0, 47251980, 1, 0, 47317278, 8, 0, 47710828, 8, 0, 47776190, 8, 0, 48103502, 536870917, 0, 48300702, 5, 0, 49021214, 8, 0, 49348830, 1, 0, 49349132, 1, 0, 49414764, 8, 0, 49480126, 8, 0, 50200654, 536870917, 0, 50397854, 5, 0, 50725150, 8, 0, 51118526, 8, 0, 51118700, 8, 0, 51445982, 1, 0, 51446284, 1, 0, 52495006, 5, 0, 52822462, 8, 0, 52822636, 8, 0, 53543134, 1, 0, 53543436, 1, 0, 54526572, 8, 0, 54592158, 5, 0, 55640588, 1, 0, 56230508, 8, 0, 56689310, 5, 0 )
+tile_data = PoolIntArray( -10551218, 536870917, 0, -10419554, 5, 0, -9567970, 8, 0, -8454066, 536870917, 0, -8453524, 8, 0, -8322402, 5, 0, -7864034, 8, 0, -7274274, 1, 0, -7273972, 1, 0, -6749588, 8, 0, -6356914, 536870917, 0, -6225250, 5, 0, -6160098, 8, 0, -5177122, 1, 0, -5176820, 1, 0, -5045652, 8, 0, -4456162, 8, 0, -4324930, 8, 0, -4259762, 536870917, 0, -4128098, 5, 0, -3341716, 8, 0, -3079970, 1, 0, -3079668, 1, 0, -2752226, 8, 0, -2620994, 8, 0, -2162610, 536870917, 0, -2030946, 5, 0, -1637780, 8, 0, -1048290, 8, 0, -982818, 1, 0, -982516, 1, 0, -917058, 8, 0, -65458, 536870917, 0, 66156, 8, 0, 66206, 5, 0, 655646, 8, 0, 786878, 8, 0, 1114334, 1, 0, 1114636, 1, 0, 1770092, 8, 0, 2031694, 536870917, 0, 2163358, 5, 0, 2359582, 8, 0, 2490814, 8, 0, 3211486, 1, 0, 3211788, 1, 0, 3474028, 8, 0, 4063518, 8, 0, 4128846, 536870917, 0, 4194750, 8, 0, 4260510, 5, 0, 5177964, 8, 0, 5308638, 1, 0, 5308940, 1, 0, 5767454, 8, 0, 5898686, 8, 0, 6225998, 536870917, 0, 6357662, 5, 0, 6881900, 8, 0, 7274942, 8, 0, 7405790, 1, 0, 7406092, 1, 0, 8323150, 536870917, 0, 8388894, 8, 0, 8454814, 5, 0, 8585836, 8, 0, 8913342, 8, 0, 9502942, 1, 0, 9503244, 1, 0, 10027294, 8, 0, 10289772, 8, 0, 10420302, 536870917, 0, 10551742, 8, 0, 10551966, 5, 0, 11600094, 1, 0, 11600396, 1, 0, 11665694, 8, 0, 11993708, 8, 0, 12190142, 8, 0, 12517454, 536870917, 0, 12649118, 5, 0, 13304094, 8, 0, 13697246, 1, 0, 13697548, 1, 0, 13697644, 8, 0, 13894078, 8, 0, 14614606, 536870917, 0, 14746270, 5, 0, 14942494, 8, 0, 15401580, 8, 0, 15598014, 8, 0, 15794398, 1, 0, 15794700, 1, 0, 16646430, 8, 0, 16711758, 536870917, 0, 16843422, 5, 0, 17039980, 8, 0, 17301950, 8, 0, 17891550, 1, 0, 17891852, 1, 0, 18350366, 8, 0, 18743916, 8, 0, 18808910, 536870917, 0, 18940574, 5, 0, 19005886, 8, 0, 19988702, 1, 0, 19989004, 1, 0, 20054302, 8, 0, 20447852, 8, 0, 20709822, 8, 0, 20906062, 536870917, 0, 21037726, 5, 0, 21758238, 8, 0, 22085854, 1, 0, 22086156, 1, 0, 22151788, 8, 0, 22413758, 8, 0, 23003214, 536870917, 0, 23134878, 5, 0, 23462174, 8, 0, 23855724, 8, 0, 24117694, 8, 0, 24183006, 1, 0, 24183308, 1, 0, 25034830, 536870917, 0, 25166110, 8, 0, 25232030, 5, 0, 25559660, 8, 0, 25821630, 8, 0, 26280158, 1, 0, 26280460, 1, 0, 26870046, 8, 0, 27131982, 536870917, 0, 27263596, 8, 0, 27329182, 5, 0, 27525566, 8, 0, 28377310, 1, 0, 28377612, 1, 0, 28573982, 8, 0, 28967532, 8, 0, 29229134, 536870917, 0, 29229502, 8, 0, 29426334, 5, 0, 30277918, 8, 0, 30474462, 1, 0, 30474764, 1, 0, 30671468, 8, 0, 30933438, 8, 0, 31326286, 536870917, 0, 31523486, 5, 0, 31981854, 8, 0, 32375404, 8, 0, 32571614, 1, 0, 32571916, 1, 0, 32637374, 8, 0, 33423438, 536870917, 0, 33620638, 5, 0, 33685790, 8, 0, 34079340, 8, 0, 34341310, 8, 0, 34668766, 1, 0, 34669068, 1, 0, 35389726, 8, 0, 35520590, 536870917, 0, 35717790, 5, 0, 35783276, 8, 0, 35979710, 8, 0, 36765918, 1, 0, 36766220, 1, 0, 37093662, 8, 0, 37487212, 8, 0, 37617742, 536870917, 0, 37683646, 8, 0, 37814942, 5, 0, 38797598, 8, 0, 38863070, 1, 0, 38863372, 1, 0, 39191148, 8, 0, 39387582, 8, 0, 39714894, 536870917, 0, 39912094, 5, 0, 40501534, 8, 0, 40895084, 8, 0, 40960222, 1, 0, 40960524, 1, 0, 41091518, 8, 0, 41812046, 536870917, 0, 42009246, 5, 0, 42205470, 8, 0, 42599020, 8, 0, 42729918, 8, 0, 43057374, 1, 0, 43057676, 1, 0, 43909198, 536870917, 0, 43909406, 8, 0, 44106398, 5, 0, 44302956, 8, 0, 44368318, 8, 0, 45154526, 1, 0, 45154828, 1, 0, 45613342, 8, 0, 46006350, 536870917, 0, 46006892, 8, 0, 46072254, 8, 0, 46203550, 5, 0, 47251678, 1, 0, 47251980, 1, 0, 47317278, 8, 0, 47710828, 8, 0, 47776190, 8, 0, 48103502, 536870917, 0, 48300702, 5, 0, 49021214, 8, 0, 49348830, 1, 0, 49349132, 1, 0, 49414764, 8, 0, 49480126, 8, 0, 50200654, 536870917, 0, 50397854, 5, 0, 50725150, 8, 0, 51118526, 8, 0, 51118700, 8, 0, 51445982, 1, 0, 51446284, 1, 0, 52495006, 5, 0, 52822462, 8, 0, 52822636, 8, 0, 53543134, 1, 0, 53543436, 1, 0, 54526572, 8, 0, 54592158, 5, 0, 55640588, 1, 0, 56230508, 8, 0, 56689310, 5, 0 )
 
 [node name="Trees" type="Node2D" parent="GuardianIsland/Foreground_objects/Decorations"]
 
@@ -2761,7 +2835,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 4 )]
-position = Vector2( -474, -217 )
+position = Vector2( -589, -115 )
 
 [node name="WaterSurface" type="Node2D" parent="."]
 pause_mode = 2
@@ -2831,13 +2905,17 @@ margin_bottom = 344.0
 [editable path="Harbor_world_objects/Collisions/Solid/PassThroughBody_ex2"]
 [editable path="Harbor_world_objects/Collisions/Solid/PassThroughBody_ex3"]
 [editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Always_bloom_forest_sign"]
-[editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Always_bloom_forest_sign/InteractionController"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Always_bloom_forest_sign/AbstractDialogInteractionObject"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Always_bloom_forest_sign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Flowers_sign"]
-[editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Flowers_sign/InteractionController"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Flowers_sign/AbstractDialogInteractionObject"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Flowers_sign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Flowers_bench_sign"]
-[editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Flowers_bench_sign/InteractionController"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Flowers_bench_sign/AbstractDialogInteractionObject"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Flowers_bench_sign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Sushi_sign"]
-[editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Sushi_sign/InteractionController"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Sushi_sign/AbstractDialogInteractionObject"]
+[editable path="CreatorHouseIsland/Middle_world_objects/Inspection_points/Sushi_sign/AbstractDialogInteractionObject/InteractionController"]
 [editable path="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseTopWindowDoor"]
 [editable path="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseTopWindowDoor/InteractionController"]
 [editable path="CreatorHouseIsland/Middle_world_objects/Doors/CreatorHouseTopFloorDoor"]

@@ -1,0 +1,134 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Project/Resources/Fonts/Epilepsy Sans/Resource/EpilepsySansBold.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Project/UI/Screens/SpecialOptionsMenu/SpecialOptionsMenu.gd" type="Script" id=2]
+[ext_resource path="res://Project/Resources/Themes/MainTheme.tres" type="Theme" id=3]
+[ext_resource path="res://Project/UI/Components/Animated_dialog_button/AnimatedDialogButton.tscn" type="PackedScene" id=4]
+
+[node name="SpecialOptionsMenu" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 2 )
+
+[node name="MainMarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="MainMarginContainer"]
+margin_right = 512.0
+margin_bottom = 290.0
+color = Color( 0.0941176, 0.0784314, 0.168627, 0.368627 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MainMarginContainer"]
+margin_right = 512.0
+margin_bottom = 238.0
+size_flags_vertical = 0
+custom_constants/margin_top = 60
+custom_constants/margin_left = 25
+
+[node name="ContentVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer"]
+margin_left = 25.0
+margin_top = 60.0
+margin_right = 193.0
+margin_bottom = 238.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/separation = 30
+
+[node name="Header" type="Label" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer"]
+margin_right = 80.0
+margin_bottom = 26.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 1 )
+text = "special"
+
+[node name="OptionsVBoxContainer" type="VBoxContainer" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer"]
+margin_top = 56.0
+margin_right = 168.0
+margin_bottom = 178.0
+
+[node name="GameConstsEditorButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 114.0
+margin_bottom = 14.0
+focus_neighbour_top = NodePath("../ExitButton")
+size_flags_vertical = 1
+text = "Редактор сохранений"
+align = 0
+
+[node name="DeleteAllSavesButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 18.0
+margin_right = 96.0
+margin_bottom = 32.0
+size_flags_vertical = 1
+text = "delete_all_saves"
+align = 0
+
+[node name="ResetGameConstantsButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer" instance=ExtResource( 4 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 36.0
+margin_right = 156.0
+margin_bottom = 50.0
+size_flags_vertical = 1
+text = "Сбросить игровые константы"
+align = 0
+
+[node name="DeleteSystemDataButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 36.0
+margin_right = 78.0
+margin_bottom = 50.0
+size_flags_vertical = 1
+text = "reset_options"
+align = 0
+
+[node name="DeleteAllSavesAlwaysButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 54.0
+margin_right = 138.0
+margin_bottom = 68.0
+size_flags_vertical = 1
+toggle_mode = true
+text = "Автоудаление сохранений"
+align = 0
+
+[node name="ActivateDebugScreenButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 72.0
+margin_right = 78.0
+margin_bottom = 86.0
+size_flags_vertical = 1
+toggle_mode = true
+text = "Экран отладки"
+align = 0
+
+[node name="AbleToSkipIntroButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 90.0
+margin_right = 168.0
+margin_bottom = 104.0
+size_flags_vertical = 1
+toggle_mode = true
+text = "Возможность пропустить интро"
+align = 0
+
+[node name="ExitButton" parent="MainMarginContainer/MarginContainer/ContentVBoxContainer/OptionsVBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 108.0
+margin_right = 24.0
+margin_bottom = 122.0
+focus_neighbour_bottom = NodePath("../GameConstsEditorButton")
+size_flags_vertical = 1
+text = "exit"
+align = 0

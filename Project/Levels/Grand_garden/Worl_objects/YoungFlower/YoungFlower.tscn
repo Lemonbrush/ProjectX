@@ -1,8 +1,12 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Assets/Effects/Particles/ShineSprincles.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Levels/Grand_garden/World_objects/Great_flower/Young_flower.png" type="Texture" id=2]
 [ext_resource path="res://Project/Levels/Grand_garden/Worl_objects/YoungFlower/YoungFlower.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Audio/SFX/General/Water/waterfall.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Audio/SFX/Kenny/Impact_sounds/impactSoft_medium/impactSoft_medium_001.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Audio/SFX/General/Whistle/blukotek__whistle_5.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Audio/SFX/General/pop/pop_pixabay/pop_1.mp3" type="AudioStream" id=7]
 
 [sub_resource type="Animation" id=403]
 resource_name = "Hiding"
@@ -55,6 +59,68 @@ tracks/3/keys = {
 "update": 1,
 "values": [ true, false ]
 }
+tracks/4/type = "method"
+tracks/4/path = NodePath("Audio/ImpactAudioStreamPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.4, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("Audio/DrillAudioStreamPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.6, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath("Audio/WhistleAudioStreamPlayer")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/7/type = "method"
+tracks/7/path = NodePath("Audio/PopAudioStreamPlayer")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 1.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
 
 [sub_resource type="Animation" id=404]
 resource_name = "Idle"
@@ -83,6 +149,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=405]
 length = 0.001
@@ -97,6 +175,42 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shine_particles:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Flower_dirt_particles:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
 }
 
 [sub_resource type="CanvasItemMaterial" id=325]
@@ -151,6 +265,30 @@ color = Color( 0.243137, 0.0392157, 0.164706, 1 )
 pause_mode = 2
 script = ExtResource( 3 )
 
+[node name="Audio" type="Node" parent="."]
+
+[node name="WhistleAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 6 )
+volume_db = -5.0
+pitch_scale = 1.5
+bus = "SFX"
+
+[node name="ImpactAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 5 )
+volume_db = 2.0
+bus = "SFX"
+
+[node name="DrillAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 4 )
+pitch_scale = 3.0
+bus = "SFX"
+
+[node name="PopAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 7 )
+volume_db = 10.0
+pitch_scale = 0.7
+bus = "SFX"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"
 anims/Hiding = SubResource( 403 )
@@ -165,7 +303,6 @@ vframes = 2
 
 [node name="Shine_particles" type="Particles2D" parent="."]
 material = SubResource( 325 )
-emitting = false
 amount = 2
 lifetime = 0.5
 preprocess = 1.0
