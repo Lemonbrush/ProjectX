@@ -16,15 +16,17 @@ func _ready():
 	var _hide_tween_connection = hideTween.connect("tween_completed", self, "hide_tween_finished")
 
 func instant_show():
+	stop_all_tweens()
 	target_node.modulate.a = 1.0
 
 func instant_hide():
+	stop_all_tweens()
 	target_node.modulate.a = 0.0
 
 func show():
 	if target_node == null || target_node.modulate.a == 1.0:
 		return
-	showTween.stop(target_node)
+	stop_all_tweens()
 	showTween.interpolate_property(target_node, 'modulate:a', target_node.get_modulate().a, 1.0, 0.25, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0)
 	showTween.start()
 
@@ -32,7 +34,7 @@ func hide():
 	if target_node == null || target_node.modulate.a == 0.0:
 		return
 	
-	hideTween.stop(target_node)
+	stop_all_tweens()
 	hideTween.interpolate_property(target_node, 'modulate:a', target_node.get_modulate().a, 0.0, 0.25, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0)
 	hideTween.start()
 
@@ -41,3 +43,7 @@ func hide_tween_finished(_param, _param_2):
 
 func show_tween_finished(_param, _param_2):
 	emit_signal("did_finish_show_animation")
+
+func stop_all_tweens():
+	showTween.stop(target_node)
+	hideTween.stop(target_node)
