@@ -1,5 +1,35 @@
 # Changelog
 
+## [1.10.0 Beta] - 2023-12-20 - Final polishing
+### Added
+- Added sound effects
+- Added music and sound to cutscenes
+- Impruved all cutscenes
+- Improved initial cutscenes
+- Added sound settings
+- Added Door to the pedestals location
+- Added custom cursor
+- Added "Return to the pedestal hall location" button in the pause menu
+
+### Changed
+- Changed destructibles mask. All destructibles now moved to background
+- Initial cutscene skip option moved to the special options menu
+
+### Fixed
+- Fixed windoes export
+- Fixed dialog states
+- Fixed dialog hint appear and hide state
+- Fixed dialog window flickering
+- Fixed waterfall sprite
+- Fixed ladder position glitch in the mill location
+- Fixed the lake location lighting
+- Fixed lighthouse key appear sound crack
+- Fixed camera position on entering locations
+- Fixed buttons width size
+- Fixed lag on entering any location
+- Fixed lag on pause
+- Fixed water towers state persistence
+
 ## [1.9.0 Beta] - 2023-8-12 - Cut scenes
 ### Added
 - Added mystic dwellers across the game
@@ -177,6 +207,8 @@
 - Added basic character logic
 - Added 2 basic worlds and ability to move between them
 - Added air blowing mechanic
+
+## [0.0.0] - 2021-12-9 - Project start
 
 ---
 
