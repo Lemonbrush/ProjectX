@@ -17,6 +17,9 @@ onready var inactive_right_fountains = $Fountains/Inactive_fountains/Right_tower
 onready var right_tower_mystic_dweller = $Upper_background_objects/Dwellers/MysticDwellerRightTower
 onready var left_tower_mystic_dweller = $Upper_background_objects/Dwellers/MysticDwellerLeftTower
 
+onready var right_tower = $World_objects/Water_tower_2
+onready var left_tower = $World_objects/Water_tower_1
+
 var water_surface_final_phase = 566
 var water_surface_second_phase = 678
 var water_surface_start_phase = 873
@@ -44,7 +47,10 @@ func _ready():
 	if active_tower_fountains == 1.0:
 		right_fountains.visible = true
 		inactive_right_fountains.visible = false
+		right_tower.setup_active()
 	elif active_tower_fountains == 2.0:
+		left_tower.setup_active()
+		right_tower.setup_active()
 		set_all_fountains_active(true)
 
 func set_all_fountains_active(active):
