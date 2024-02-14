@@ -79,8 +79,8 @@ func did_receive_text_dialog(text):
 	voiceGenerator.play(text)
 	dialogTextBox.set_label_text(text)
 
-func did_receive_response_dialog(text, responses):
-	if responses == null:
+func did_receive_response_dialog(text, responseModels):
+	if responseModels == null:
 		finish_dialog()
 		return
 	current_dialog_type = DIALOG_TYPE.CHOICE
@@ -89,7 +89,7 @@ func did_receive_response_dialog(text, responses):
 	if text:
 		voiceGenerator.play(text)
 		dialogTextBox.set_label_text(text)
-	dialogTextBox.show_button_options(responses)
+	dialogTextBox.show_button_options(responseModels)
 
 func did_receive_error(text):
 	print(text)
