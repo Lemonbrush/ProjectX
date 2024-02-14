@@ -25,6 +25,7 @@ func _ready():
 	ableToSkipIntroButton.connect("pressed_and_resolved", self, "on_intro_skip_option_pressed")
 	
 	setup_ui()
+	deleteAllSavesButton.disabled = false
 	quitButton.grab_focus_without_animation()
 
 func _unhandled_input(event):
