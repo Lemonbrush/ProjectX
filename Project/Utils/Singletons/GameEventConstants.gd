@@ -72,7 +72,12 @@ func set_default_constants():
 		picked_up_empty_jur = false,
 		did_show_empty_jur = false,
 		did_harvest_heart_jur_cutscene_played = false,
-		did_open_pedestal_hall_right_door = false
+		did_open_pedestal_hall_right_door = false,
+		got_white_flower_quest_additional_information = false,
+		banana_located = false,
+		wife_asked_about_flower = false,
+		fisher_told_secret = false,
+		artist_told_about_brush = false
 	}
 
 func set_constant(constant_name, value):
