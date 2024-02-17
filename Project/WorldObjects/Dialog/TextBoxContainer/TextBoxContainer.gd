@@ -68,8 +68,8 @@ func setup_buttons(button_options):
 		button.set_text(button_option_model.text)
 		if button_option_model.color:
 			var button_color = Color(button_option_model.color)
-			button.add_color_override("font_color", button_color)
-			button.add_color_override("font_color_focus", button_color.darkened(0.2))
+			button.add_color_override("font_color_focus", button_color)
+			button.add_color_override("font_color", button_color.darkened(0.2))
 		button.configure_dialog_button()
 		buttonsContainer.add_child(button)
 		button.connect("pressed_and_resolved", self, "button_option_pressed", [button.text])
