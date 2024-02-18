@@ -1721,7 +1721,6 @@ extents = Vector2( 8, 89 )
 extents = Vector2( 7014.5, 150 )
 
 [node name="Central_hab" type="Node2D"]
-position = Vector2( -4, -62 )
 script = ExtResource( 10 )
 background_music = ExtResource( 80 )
 
