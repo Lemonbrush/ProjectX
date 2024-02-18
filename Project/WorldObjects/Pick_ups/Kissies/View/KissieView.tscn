@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Effects/Particles/Heart.png" type="Texture" id=1]
+
+[node name="KissieView" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -5.96046e-08, -5.96046e-08 )
+scale = Vector2( 0.673469, 0.673469 )
+texture = ExtResource( 1 )
