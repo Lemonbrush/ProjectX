@@ -1,17 +1,18 @@
 extends Node2D
 
-onready var pickup_area = $Area2D
-
 const SPEED = 250
 
+onready var pickup_area = $Area2D
+onready var kissie_view = $KissieView
+
 func _ready():
-	pass
+	kissie_view.connect("did_finish_animation", self, "queue_free")
 
 func _process(delta):
-	position = position.move_toward(get_target_position(), delta * SPEED)
-	
 	if pickup_area.get_overlapping_bodies().size() > 0:
 		reached_player()
+	else:
+		position = position.move_toward(get_target_position(), delta * SPEED)
 
 func get_target_position():
 	var nodes = get_tree().get_nodes_in_group("Player")
@@ -22,4 +23,4 @@ func get_target_position():
 	return target_position
 
 func reached_player():
-	queue_free()
+	kissie_view.pickup()
