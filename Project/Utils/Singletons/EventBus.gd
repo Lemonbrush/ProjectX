@@ -61,6 +61,8 @@ signal focus_camera_on_group_node_named(name_string)
 signal reset_camera_focus()
 signal dispatch_item_to_player(toggleGameConstant, itemName, itemScene, use_scale_animation)
 
+signal activate_kissies_spawner_with_spawner_id(spawner_id)
+
 func start_shake_screen(duration = 0.2, frequency = 16, amplitude = 2, infinity = true):
 	emit_signal("start_shake_screen", duration, frequency, amplitude, infinity)
 
@@ -190,3 +192,6 @@ func reset_camera_focus():
 func dispatch_item_to_player(toggleGameConstant, itemName, itemScene, use_scale_animation):
 	emit_signal("dispatch_item_to_player", toggleGameConstant, itemName, itemScene, use_scale_animation)
 	emit_signal("player_picked_up_item", itemName)
+
+func activate_kissies_spawner_with_spawner_id(spawner_id):
+	emit_signal("activate_kissies_spawner_with_spawner_id", spawner_id)
