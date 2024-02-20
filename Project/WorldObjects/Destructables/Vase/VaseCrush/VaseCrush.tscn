@@ -131,7 +131,7 @@ tracks/8/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "infinite_spawn"
+"method": "spawn"
 } ]
 }
 
@@ -251,7 +251,6 @@ frame = 2
 
 [node name="DustParticles" type="Particles2D" parent="."]
 material = SubResource( 20 )
-emitting = false
 amount = 10
 lifetime = 1.5
 one_shot = true
@@ -261,7 +260,6 @@ texture = ExtResource( 2 )
 
 [node name="BarrelParticles" type="Particles2D" parent="."]
 material = SubResource( 24 )
-emitting = false
 amount = 10
 lifetime = 1.5
 one_shot = true
@@ -270,7 +268,6 @@ process_material = ExtResource( 6 )
 texture = ExtResource( 3 )
 
 [node name="ShineParticles" type="Particles2D" parent="."]
-emitting = false
 amount = 10
 one_shot = true
 explosiveness = 1.0

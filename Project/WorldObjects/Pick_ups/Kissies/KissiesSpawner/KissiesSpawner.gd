@@ -1,11 +1,18 @@
 extends Node2D
 
+enum SpawnerType {
+	RANDOM,
+	PRECISE
+}
+
 export (int) var amount = 1
+export (String) var spawner_id = "default_id"
+export (SpawnerType) var spawner_type = SpawnerType.RANDOM
 
 var kissie_object = preload("res://Project/WorldObjects/Pick_ups/Kissies/Kissie.tscn")
 
 func _ready():
-	pass
+	var _connection = EventBus.connect("activate_kissies_spawner_with_spawner_id", self, "spawn_by_spawner_id")
 
 func spawn_kissie():
 	var kissie_instance = kissie_object.instance()
@@ -22,6 +29,21 @@ func spawn_kissie():
 		Vector2(impulse_offset_x, impulse_offset_y)
 		)
 
-func infinite_spawn():
+func spawn_by_spawner_id(id):
+	if spawner_id == id:
+		spawn()
+
+func spawn():
+	match spawner_type:
+		SpawnerType.RANDOM:
+			_spawn_kissies_rand()
+		SpawnerType.PRECISE:
+			_spawn__precise_amount_of_kissies()
+
+func _spawn_kissies_rand():
 	for n in rand_range(3, 10):
+		spawn_kissie()
+
+func _spawn__precise_amount_of_kissies():
+	for n in amount:
 		spawn_kissie()

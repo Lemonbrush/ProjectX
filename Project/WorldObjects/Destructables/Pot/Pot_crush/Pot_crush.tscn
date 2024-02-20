@@ -103,7 +103,7 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "infinite_spawn"
+"method": "spawn"
 } ]
 }
 
