@@ -9,9 +9,6 @@ var flying_kissie_object = preload("res://Project/WorldObjects/Pick_ups/Kissies/
 func _ready():
 	pickup_timer.connect("timeout", self, "spawn_flying_kissies")
 
-func start_pickup_timer():
-	pickup_timer.start()
-
 func spawn_flying_kissies():
 	var flying_kissie_instance = flying_kissie_object.instance()
 	get_tree().get_current_scene().call_deferred("add_child", flying_kissie_instance)

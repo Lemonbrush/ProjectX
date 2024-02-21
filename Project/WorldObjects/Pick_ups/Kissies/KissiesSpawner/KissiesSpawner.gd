@@ -19,9 +19,6 @@ func spawn_kissie():
 	get_tree().get_current_scene().call_deferred("add_child", kissie_instance)
 	kissie_instance.set_position(global_position)
 	
-	if kissie_instance.has_method("start_pickup_timer"):
-		kissie_instance.call_deferred("start_pickup_timer")
-	
 	var impulse_offset_x = rand_range(100, -100)
 	var impulse_offset_y = rand_range(-100, -250)
 	kissie_instance.apply_impulse(
