@@ -8,7 +8,9 @@
 [node name="GameHUD" type="CanvasLayer"]
 script = ExtResource( 4 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="KissieCounter" type="Control" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="KissieCounter"]
 margin_left = 28.0
 margin_top = 15.0
 margin_right = 56.0
@@ -17,7 +19,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource( 2 )
 
-[node name="Label" type="Label" parent="HBoxContainer"]
+[node name="Label" type="Label" parent="KissieCounter/HBoxContainer"]
 margin_top = 1.0
 margin_right = 21.0
 margin_bottom = 14.0
@@ -25,7 +27,7 @@ custom_colors/font_color_shadow = Color( 0.65098, 0.0823529, 0.337255, 1 )
 custom_fonts/font = ExtResource( 1 )
 text = "100"
 
-[node name="Sprite" type="Sprite" parent="HBoxContainer"]
+[node name="Sprite" type="Sprite" parent="KissieCounter/HBoxContainer"]
 position = Vector2( -9, 8 )
 rotation = -0.156619
 scale = Vector2( 2.04107, 2.04107 )

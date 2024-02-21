@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-onready var label = $HBoxContainer/Label
+onready var label = $KissieCounter/HBoxContainer/Label
 
 func _ready():
 	EventBus.connect("game_const_changed", self, "update_kissie_counter_ui")
