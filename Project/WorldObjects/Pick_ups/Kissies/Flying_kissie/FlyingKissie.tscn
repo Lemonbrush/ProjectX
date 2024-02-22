@@ -22,7 +22,7 @@ width = 1.0
 width_curve = SubResource( 3 )
 gradient = SubResource( 2 )
 targetPath = NodePath("..")
-trailLength = 5
+trailLength = 20
 
 [node name="KissieView" parent="." instance=ExtResource( 2 )]
 
