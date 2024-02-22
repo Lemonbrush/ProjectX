@@ -1,4 +1,4 @@
-[gd_scene load_steps=240 format=2]
+[gd_scene load_steps=241 format=2]
 
 [ext_resource path="res://Assets/Levels/Central_hub/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Effects/Lighting/playerLight.png" type="Texture" id=2]
@@ -84,6 +84,7 @@
 [ext_resource path="res://Assets/Audio/SFX/General/Bell/success_bell.wav" type="AudioStream" id=82]
 [ext_resource path="res://Assets/Audio/SFX/Kenny/Impact_sounds/impactWood_medium/impactWood_medium_004.ogg" type="AudioStream" id=83]
 [ext_resource path="res://Assets/Audio/SFX/General/misc/plane-flying-by.wav" type="AudioStream" id=84]
+[ext_resource path="res://Project/UI/Components/GameHUD/GameHUD.tscn" type="PackedScene" id=85]
 
 [sub_resource type="Environment" id=30]
 background_mode = 4
@@ -1746,6 +1747,8 @@ pitch_scale = 0.5
 bus = "SFX"
 
 [node name="GameSpecs" parent="." instance=ExtResource( 36 )]
+
+[node name="GameHUD" parent="." instance=ExtResource( 85 )]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 30 )
