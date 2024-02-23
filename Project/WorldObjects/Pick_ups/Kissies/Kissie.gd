@@ -3,6 +3,7 @@ extends RigidBody2D
 onready var pickup_timer = $PickupTimer
 
 export (String) var target_object_group_name = "Player"
+var is_cutscene_kissie = false
 
 const y_offset = 100
 
@@ -16,8 +17,12 @@ func spawn_flying_kissies():
 	get_tree().get_current_scene().call_deferred("add_child", flying_kissie_instance)
 	flying_kissie_instance.set_position(global_position)
 	flying_kissie_instance.set_target_object_group_name(target_object_group_name)
+	flying_kissie_instance.set_cutscene_mode(is_cutscene_kissie)
 	
 	queue_free()
 
 func set_target_object_group_name(new_target_name):
 	target_object_group_name = new_target_name
+
+func set_cutscene_mode(is_cutscene):
+	is_cutscene_kissie = is_cutscene

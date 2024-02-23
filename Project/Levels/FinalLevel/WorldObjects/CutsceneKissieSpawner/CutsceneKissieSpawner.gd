@@ -35,6 +35,7 @@ func spawn_kissie():
 	get_tree().get_current_scene().call_deferred("add_child", kissie_instance)
 	kissie_instance.set_position(global_position)
 	kissie_instance.set_target_object_group_name("Me")
+	kissie_instance.set_cutscene_mode(true)
 	
 	var impulse_offset_x = rand_range(100, -100)
 	var impulse_offset_y = rand_range(-50, -250)

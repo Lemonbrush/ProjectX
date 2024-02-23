@@ -7,6 +7,7 @@ export (String) var target_object_group_name = "Player"
 onready var pickup_area = $Area2D
 onready var kissie_view = $KissieView
 var is_picking_up = false
+var is_cutscene_kissie = false
 
 func _ready():
 	kissie_view.connect("did_finish_animation", self, "queue_free")
@@ -30,8 +31,12 @@ func get_target_position():
 	return target_position
 
 func reached_player():
-	GameEventConstants.increment_kissie_counter()
+	if !is_cutscene_kissie:
+		GameEventConstants.increment_kissie_counter()
 	kissie_view.pickup()
 
 func set_target_object_group_name(new_target_name):
 	target_object_group_name = new_target_name
+
+func set_cutscene_mode(is_cutscene):
+	is_cutscene_kissie = is_cutscene
