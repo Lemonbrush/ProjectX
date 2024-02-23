@@ -22,7 +22,7 @@ func player_did_enter_elevator():
 	animationPlayer.play("Elevation_cutscene")
 
 func did_start_final_cutscene(_args):
-	animationPlayer.play("Awakening_cutscene")
+	animationPlayer.play("Awakening_cutscene_pt1")
 
 func start_proposal_stage():
 	me_interaction_object.finish_dialog()
