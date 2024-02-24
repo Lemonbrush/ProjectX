@@ -1,39 +1,46 @@
 extends BaseLevel
 
+enum CutsceneStage {
+	INITIAL_CUTSCENE,
+	KISSING,
+	PLAYING
+}
+
 onready var platform_approachDetector = $PlatformApproachDetector
-onready var final_cutscene_start_interaction_emitter = $SkyIsland/Middle_world_objects/Me/InteractionEmitterObject
-onready var yes_button = $SkyIsland/ProposalControl/VBoxContainer/HBoxContainer/YesButton
-onready var no_button = $SkyIsland/ProposalControl/VBoxContainer/HBoxContainer/NoButton
-onready var answer_button_audio_player = $Audio/ProposalStage/AnswerButtonAudioStreamPlayer
-onready var yes_button_shine = $SkyIsland/ProposalControl/VBoxContainer/HBoxContainer/YesButton/ShineParticles2D
+
+onready var cutscene_interaction_emitter = $SkyIsland/Middle_world_objects/Cutscene_objects/CutsceneInteractionEmitterObject
+onready var cutscene_dialog_manager = $SkyIsland/Middle_world_objects/Cutscene_objects/ProposalIndependantDialogController
 onready var heartbeat_audioPlayer = $Audio/ProposalStage/HeartBeatAudioStreamPlayer
-onready var me_interaction_object = $SkyIsland/Middle_world_objects/IndependantDialogController
+onready var proposal_control = $SkyIsland/ProposalControl
+onready var cutscene_kissie_spawner = $SkyIsland/Middle_world_objects/Cutscene_objects/KissieCounter/CutsceneKissieSpawner
 
 var game_menu_path = "res://Project/UI/Screens/GameMenu/GameMenu.tscn"
 
+export (CutsceneStage) var cutscene_stage = CutsceneStage.INITIAL_CUTSCENE
+
 func _ready():
 	var _elevator_connection = platform_approachDetector.connect("player_did_enter_elevator", self, "player_did_enter_elevator")
-	var _final_cutscene_start_connection = final_cutscene_start_interaction_emitter.connect("interacted_with_arg", self, "did_start_final_cutscene")
+	var _cutscene_interaction_emitter_connection = cutscene_interaction_emitter.connect("interacted_with_arg", self, "did_interact_with_cutscene_controller")
 	var _proposal_stage = EventBus.connect("start_proposal_stage", self, "start_proposal_stage")
-	var _yes_connect = yes_button.connect("pressed", self, "she_said_yes")
-	var _no_connect = no_button.connect("pressed", self, "she_said_no")
+	var _yes_connect = proposal_control.connect("she_said_yes", self, "she_said_yes")
+	var _no_connect = proposal_control.connect("she_said_no", self, "she_said_no")
 
 func player_did_enter_elevator():
 	animationPlayer.play("Elevation_cutscene")
 
-func did_start_final_cutscene(_args):
+func did_interact_with_cutscene_controller(_args):
+	cutscene_stage = CutsceneStage.PLAYING
 	animationPlayer.play("Awakening_cutscene_pt1")
 
-func start_proposal_stage():
-	me_interaction_object.finish_dialog()
-	animationPlayer.play("Start_proposal_stage")
+func did_finish_awakening_cutscene_part():
+	cutscene_stage = CutsceneStage.KISSING
 
-func she_said_yes():
-	yes_button.disabled = true
-	heartbeat_audioPlayer.stop()
-	answer_button_audio_player.play()
-	yes_button_shine.emitting = true
-	animationPlayer.play("She_said_yes_cutscene")
+func did_finish_kissing_cutscene_part():
+	cutscene_stage = CutsceneStage.PLAYING
+
+func start_proposal_stage():
+	cutscene_dialog_manager.finish_dialog()
+	animationPlayer.play("Start_proposal_stage")
 
 func transition_to_main_menu():
 	LevelManager.transition_to_scene(load(game_menu_path))
@@ -41,3 +48,7 @@ func transition_to_main_menu():
 func she_said_no():
 	heartbeat_audioPlayer.stop()
 	LevelManager.transition_to_scene(load(game_menu_path))
+
+func she_said_yes():
+	heartbeat_audioPlayer.stop()
+	animationPlayer.play("She_said_yes_cutscene")
