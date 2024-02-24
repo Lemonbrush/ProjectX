@@ -629,6 +629,17 @@ tracks/18/keys = {
 "method": "queue_free"
 } ]
 }
+tracks/19/type = "method"
+tracks/19/path = NodePath("SkyIsland/Middle_world_objects/Cutscene_objects/KissieCounter/CutsceneKissieSpawner")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
 
 [sub_resource type="Animation" id=75]
 resource_name = "Elevation_cutscene"

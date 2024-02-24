@@ -78,6 +78,7 @@ tracks/2/keys = {
 script = ExtResource( 4 )
 
 [node name="KissieCounter" type="Control" parent="."]
+pause_mode = 2
 
 [node name="BackgroundBlur" type="Sprite" parent="KissieCounter"]
 self_modulate = Color( 0.0509804, 0.0313726, 0.223529, 0.698039 )

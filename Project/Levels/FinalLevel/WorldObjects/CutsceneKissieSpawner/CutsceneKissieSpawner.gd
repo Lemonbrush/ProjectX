@@ -27,7 +27,8 @@ func start_spawn():
 	var kissie_count_const = GameEventConstants.get_constant("kissies_count")
 	if kissie_count_const != null:
 		kissie_count = kissie_count_const
-		is_able_to_kiss_manually = true
+		emit_signal("did_change_kissie_count", kissie_count)
+	is_able_to_kiss_manually = true
 
 func spawn_kissie():
 	var kissie_instance = kissie_object.instance()
