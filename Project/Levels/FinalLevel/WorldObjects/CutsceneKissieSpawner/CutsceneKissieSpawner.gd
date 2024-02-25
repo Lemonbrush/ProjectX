@@ -2,8 +2,8 @@ extends Node2D
 
 signal spawn_count_finished()
 signal reached_power_level(number)
-signal reached_second_power_level()
 signal did_change_kissie_count(count)
+signal set_kissie_count(count)
 
 var kissie_object = preload("res://Project/WorldObjects/Pick_ups/Kissies/Kissie.tscn")
 var is_able_to_kiss_manually = false
@@ -37,7 +37,7 @@ func start_spawn():
 		return
 	
 	kissie_count = kissie_count_const
-	emit_signal("did_change_kissie_count", kissie_count)
+	emit_signal("set_kissie_count", kissie_count)
 	
 	var threshhold_chunk = round(kissie_count/4)
 	first_power_level_threshhold = kissie_count - threshhold_chunk
