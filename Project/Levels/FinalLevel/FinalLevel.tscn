@@ -3659,6 +3659,7 @@ bus = "SFX"
 [node name="KissSwooshAudioStreamPlayer" type="AudioStreamPlayer" parent="SkyIsland/Middle_world_objects/Cutscene_objects/UsCutsceneSprite/Audio" index="1"]
 stream = ExtResource( 70 )
 pitch_scale = 1.5
+bus = "SFX"
 
 [node name="AwakeningStage" type="Node" parent="SkyIsland/Middle_world_objects/Cutscene_objects/UsCutsceneSprite/Audio" index="2"]
 
