@@ -1785,25 +1785,13 @@ position = Vector2( 381.613, 240.75 )
 scale = Vector2( 0.771226, 0.771226 )
 texture = ExtResource( 12 )
 
-[node name="AnimationPlayer" parent="." index="5"]
+[node name="AnimationPlayer" parent="." index="6"]
 autoplay = ""
 anims/Kissing_statues_cutscene = SubResource( 285 )
 anims/RESET = SubResource( 286 )
 anims/Right_door_open_animation = SubResource( 318 )
 anims/Show_mystic_dweller = SubResource( 312 )
 anims/pedestals_activation_scene = SubResource( 304 )
-
-[node name="Camera2D" parent="." index="6"]
-position = Vector2( 441, -67 )
-zoom = Vector2( 0.5, 0.5 )
-
-[node name="Clouds" parent="Camera2D" index="2" instance=ExtResource( 5 )]
-position = Vector2( -1, -67 )
-
-[node name="Clouds2" parent="Camera2D" index="3" instance=ExtResource( 13 )]
-pause_mode = 2
-position = Vector2( 42, 197 )
-z_index = -6
 
 [node name="Background_world_objects" type="Node2D" parent="." index="7"]
 z_index = -5
@@ -2133,10 +2121,17 @@ texture = ExtResource( 58 )
 position = Vector2( 16, 0 )
 texture = ExtResource( 59 )
 
-[node name="WorldSprite" parent="." index="8"]
-position = Vector2( -23, -567 )
-z_index = -5
-texture = ExtResource( 4 )
+[node name="Camera2D" parent="." index="8"]
+position = Vector2( 441, -67 )
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="Clouds" parent="Camera2D" index="2" instance=ExtResource( 5 )]
+position = Vector2( -1, -67 )
+
+[node name="Clouds2" parent="Camera2D" index="3" instance=ExtResource( 13 )]
+pause_mode = 2
+position = Vector2( 42, 197 )
+z_index = -6
 
 [node name="Middle_world_objects" type="Node2D" parent="." index="9"]
 
@@ -2239,7 +2234,14 @@ margin_bottom = 62.0
 text = "Ты всегда можешь вернуться сюда
 через меню паузы [Esc]"
 
-[node name="Player" parent="." index="10"]
+[node name="WorldSprite" parent="." index="10"]
+position = Vector2( -23, -567 )
+z_index = -5
+texture = ExtResource( 4 )
+
+[node name="Foreground_world_objects" type="Node2D" parent="." index="11"]
+
+[node name="Player" parent="." index="12"]
 position = Vector2( -50, -95 )
 
 [node name="LightSource" parent="Player" index="6" instance=ExtResource( 6 )]
@@ -2254,9 +2256,7 @@ strength = 0.5
 [node name="Light2D2" parent="Player" index="7"]
 visible = false
 
-[node name="Foreground_world_objects" type="Node2D" parent="." index="11"]
-
-[node name="Collisions" parent="." index="12"]
+[node name="Collisions" parent="." index="13"]
 visible = false
 
 [node name="PassThroughBody5" parent="Collisions/PassTrough" index="0" groups=["passThroughObject"] instance=ExtResource( 3 )]
