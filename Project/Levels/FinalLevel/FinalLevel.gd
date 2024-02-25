@@ -24,6 +24,8 @@ func _ready():
 	var _proposal_stage = EventBus.connect("start_proposal_stage", self, "start_proposal_stage")
 	var _yes_connect = proposal_control.connect("she_said_yes", self, "she_said_yes")
 	var _no_connect = proposal_control.connect("she_said_no", self, "she_said_no")
+	var _power_up = cutscene_kissie_spawner.connect("reached_power_level", self, "reached_power_level")
+	var _finished_kissing = cutscene_kissie_spawner.connect("spawn_count_finished", self, "spawn_count_finished")
 
 func player_did_enter_elevator():
 	animationPlayer.play("Elevation_cutscene")
@@ -52,3 +54,12 @@ func she_said_no():
 func she_said_yes():
 	heartbeat_audioPlayer.stop()
 	animationPlayer.play("She_said_yes_cutscene")
+
+func spawn_count_finished():
+	animationPlayer.play("Powered_kiss")
+
+func reached_power_level(level):
+	match level:
+		1: animationPlayer.play("Kissing_power_0")
+		2: animationPlayer.play("Kissing_power_1")
+		3: animationPlayer.play("Kissing_power_2")
