@@ -1023,6 +1023,23 @@ tracks/3/keys = {
 "method": "play"
 } ]
 }
+tracks/4/type = "method"
+tracks/4/path = NodePath("Camera2D")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 3, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ null, null, null, null ],
+"method": "_screen_shake"
+}, {
+"args": [  ],
+"method": "_stop_screen_shake"
+} ]
+}
 
 [sub_resource type="Animation" id=250]
 resource_name = "Kissing_power_1"
@@ -1087,6 +1104,23 @@ tracks/3/keys = {
 "method": "play"
 } ]
 }
+tracks/4/type = "method"
+tracks/4/path = NodePath("Camera2D")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 3, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ null, null, null, null ],
+"method": "_screen_shake"
+}, {
+"args": [  ],
+"method": "_stop_screen_shake"
+} ]
+}
 
 [sub_resource type="Animation" id=251]
 resource_name = "Kissing_power_2"
@@ -1149,6 +1183,23 @@ tracks/3/keys = {
 }, {
 "args": [ "Unfade", -1, 1.0, false ],
 "method": "play"
+} ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("Camera2D")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 3, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ null, null, null, null ],
+"method": "_screen_shake"
+}, {
+"args": [  ],
+"method": "_stop_screen_shake"
 } ]
 }
 
@@ -4178,7 +4229,7 @@ tile_data = PoolIntArray( -1572768, 536870943, 0 )
 curve = SubResource( 52 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform3/Path2D" index="0"]
-position = Vector2( 104, 9.50167 )
+position = Vector2( 104, 9.50166 )
 rotation = 3.14159
 offset = 9.49962
 rotate = false
@@ -4225,7 +4276,7 @@ tile_data = PoolIntArray( -2359200, 536870934, 0 )
 curve = SubResource( 68 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform4/Path2D" index="0"]
-position = Vector2( 104, 14.0009 )
+position = Vector2( 104, 14.0008 )
 rotation = 3.14159
 offset = 14.0007
 rotate = false
@@ -4317,7 +4368,7 @@ tile_data = PoolIntArray( -2359200, 536870926, 0 )
 curve = SubResource( 69 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Tower/Middle_world_objects/Moving_platforms/MovingPlatform6/Path2D" index="0"]
-position = Vector2( 104, 8.20346 )
+position = Vector2( 104, 8.20345 )
 rotation = 3.14159
 offset = 25.2003
 rotate = false
