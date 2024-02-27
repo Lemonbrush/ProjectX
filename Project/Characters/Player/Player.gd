@@ -167,7 +167,6 @@ func ground_update_logic():
 			snap.y = NO_SNAP
 	else:
 		if is_on_floor() && is_ray_ground_detected:
-			respawn_position = global_position
 			is_grounded = true
 			snap.y = SNAP
 	
