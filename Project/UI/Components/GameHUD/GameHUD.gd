@@ -18,6 +18,9 @@ func update_ui_data():
 		label.text = str(kissies_count)
 
 func update_kissie_counter_ui(constant_name, value):
+	if constant_name != "kissies_count":
+		return
+	
 	appear_animator.show()
 	timer.start()
 	
