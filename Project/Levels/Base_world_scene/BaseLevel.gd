@@ -22,6 +22,7 @@ func _ready():
 	configure_camera()
 	configure_background_music()
 	setup_mouse_visibility_timer()
+	player.save_respawn_checkpoint()
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
