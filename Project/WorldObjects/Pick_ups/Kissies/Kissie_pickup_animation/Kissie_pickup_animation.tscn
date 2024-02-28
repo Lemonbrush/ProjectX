@@ -69,6 +69,7 @@ tracks/0/keys = {
 }
 
 [node name="Kissie_pickup_animation" type="Node2D"]
+z_index = 5
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 6 )
