@@ -15,6 +15,8 @@ func _ready():
 	if GameEventConstants.get_constant("is_start_gate_first_entrance"):
 		GameEventConstants.set_constant("is_start_gate_first_entrance", false)
 		animationPlayer.play("First_entrance_animation")
+	else:
+		play_background_music()
 
 func _on_key_item_collected(item_name):
 	if item_name == "HeartKeyItem":
