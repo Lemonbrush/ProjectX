@@ -12,7 +12,7 @@ enum VoiceMode {
 
 export (Resource) var letter_sounds_resource
 export (VoiceMode) var voice_mode = VoiceMode.NORMAL
-export (float) var volumeDB = 0
+export (float) var volumeDB = 0.0
 
 var PITCH_MULTIPLIER_RANGE := 0.5
 var base_pitch := 1.5
