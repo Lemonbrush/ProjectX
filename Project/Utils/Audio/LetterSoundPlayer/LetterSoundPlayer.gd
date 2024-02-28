@@ -52,6 +52,8 @@ func set_letter_sounds_resource(configurationModel: VoiceGeneratorConfigurationM
 	
 	PITCH_MULTIPLIER_RANGE = configurationModel.get_pitch_multiplier()
 	base_pitch = configurationModel.get_base_pitch()
+	
+	audioPlayer.volume_db = configurationModel.get_volume_DB()
 
 func reset():
 	audioPlayer.stop()
