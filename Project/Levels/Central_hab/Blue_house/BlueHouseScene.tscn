@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=2]
+[gd_scene load_steps=72 format=2]
 
 [ext_resource path="res://Assets/Levels/Rooms/BlueHouse/Blue_house_interior.png" type="Texture" id=1]
 [ext_resource path="res://Project/Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
@@ -27,6 +27,7 @@
 [ext_resource path="res://Assets/Audio/SFX/General/Bell/Lincore bells/Lincore bell 1.wav" type="AudioStream" id=25]
 [ext_resource path="res://Assets/Audio/SFX/General/Bell/Lincore bells/Lincore bell 3.wav" type="AudioStream" id=26]
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.tres" type="Resource" id=27]
+[ext_resource path="res://Project/WorldObjects/Destructables/Vase/Background_vase/Background_vase.tscn" type="PackedScene" id=28]
 
 [sub_resource type="Environment" id=137]
 background_mode = 4
@@ -1011,6 +1012,11 @@ amount = 20
 randomness = 1.0
 process_material = SubResource( 101 )
 texture = ExtResource( 4 )
+
+[node name="Destructibles" type="Node2D" parent="." index="19"]
+
+[node name="Background_vase" parent="Destructibles" index="0" instance=ExtResource( 28 )]
+position = Vector2( 26, -27 )
 
 [editable path="Camera2D/Clouds2"]
 [editable path="Collisions/PassThrough/PassThroughBody6"]

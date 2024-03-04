@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=2]
+[gd_scene load_steps=78 format=2]
 
 [ext_resource path="res://Assets/Levels/Rooms/Mill/Mill_front.png" type="Texture" id=1]
 [ext_resource path="res://Project/WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=2]
@@ -26,6 +26,7 @@
 [ext_resource path="res://Project/Utils/Audio/RandomAudioStreamPlayerNodes/PaffRandomAudioStreamPlayer.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Assets/Audio/SFX/General/Bell/success_bell.wav" type="AudioStream" id=25]
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.tres" type="Resource" id=26]
+[ext_resource path="res://Project/WorldObjects/Destructables/Pot/Pot.tscn" type="PackedScene" id=27]
 
 [sub_resource type="Environment" id=124]
 background_mode = 4
@@ -532,6 +533,9 @@ position = Vector2( 30, -218 )
 [node name="ItemSpawner" parent="WorldObjects" index="1" instance=ExtResource( 22 )]
 position = Vector2( 9, 199 )
 itemScene = ExtResource( 21 )
+
+[node name="Pot" parent="WorldObjects" index="2" instance=ExtResource( 27 )]
+position = Vector2( 25, 127 )
 
 [node name="MillGear" parent="." index="8" instance=ExtResource( 13 )]
 position = Vector2( 8, -225 )

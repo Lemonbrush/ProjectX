@@ -1,4 +1,4 @@
-[gd_scene load_steps=194 format=2]
+[gd_scene load_steps=195 format=2]
 
 [ext_resource path="res://Project/Levels/Harbor_house/Harbor_house.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Effects/Lighting/shadow.png" type="Texture" id=2]
@@ -74,6 +74,7 @@
 [ext_resource path="res://Project/Utils/Audio/AudioPlayerNodes/WaterfallAudioPlayer/WaterfallAudioPlayer.tscn" type="PackedScene" id=72]
 [ext_resource path="res://Project/WorldObjects/Technical/ItemDispatcher/ItemDispatcher.tscn" type="PackedScene" id=73]
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.tres" type="Resource" id=74]
+[ext_resource path="res://Project/WorldObjects/Destructables/Barrel/Background_barrel/Background_barrel.tscn" type="PackedScene" id=75]
 
 [sub_resource type="Environment" id=273]
 background_mode = 4
@@ -1159,6 +1160,31 @@ scale = Vector2( -1, 1 )
 [node name="Background_vase" parent="Harbor_world_objects/Middle_world_objects/Destructables/Vases" instance=ExtResource( 37 )]
 position = Vector2( -581, 40 )
 
+[node name="Crates" type="Node2D" parent="Harbor_world_objects/Middle_world_objects/Destructables"]
+
+[node name="Crate" parent="Harbor_world_objects/Middle_world_objects/Destructables/Crates" instance=ExtResource( 35 )]
+position = Vector2( -121, 71 )
+
+[node name="Crate2" parent="Harbor_world_objects/Middle_world_objects/Destructables/Crates" instance=ExtResource( 35 )]
+position = Vector2( -103, 71 )
+
+[node name="Crate3" parent="Harbor_world_objects/Middle_world_objects/Destructables/Crates" instance=ExtResource( 35 )]
+position = Vector2( -112, 54 )
+
+[node name="Crate4" parent="Harbor_world_objects/Middle_world_objects/Destructables/Crates" instance=ExtResource( 35 )]
+position = Vector2( -26, 72 )
+
+[node name="Barrel" type="Node2D" parent="Harbor_world_objects/Middle_world_objects/Destructables"]
+
+[node name="Background_barrel" parent="Harbor_world_objects/Middle_world_objects/Destructables/Barrel" instance=ExtResource( 75 )]
+position = Vector2( -10, 71 )
+
+[node name="Background_barrel2" parent="Harbor_world_objects/Middle_world_objects/Destructables/Barrel" instance=ExtResource( 75 )]
+position = Vector2( 7, 71 )
+
+[node name="Background_barrel3" parent="Harbor_world_objects/Middle_world_objects/Destructables/Barrel" instance=ExtResource( 75 )]
+position = Vector2( 95, 72 )
+
 [node name="Dwellers" type="Node2D" parent="Harbor_world_objects/Middle_world_objects"]
 position = Vector2( 29, 192 )
 
@@ -1856,6 +1882,12 @@ position = Vector2( 1184, -249 )
 [node name="Background_vase10" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
 position = Vector2( 1225, -390 )
 
+[node name="Background_vase14" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
+position = Vector2( 521, -870 )
+
+[node name="Background_vase15" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
+position = Vector2( 391, -870 )
+
 [node name="Background_vase6" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
 position = Vector2( 1290, -268 )
 
@@ -1868,8 +1900,52 @@ position = Vector2( 1217, -283 )
 position = Vector2( -456, -247 )
 moving_platform_apply_velocity_on_leave = 0
 
+[node name="Vase4" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
+position = Vector2( 1240, -390 )
+moving_platform_apply_velocity_on_leave = 0
+
+[node name="Vase6" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
+position = Vector2( 1035, -391 )
+moving_platform_apply_velocity_on_leave = 0
+
 [node name="Vase5" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
 position = Vector2( 537, -870 )
+moving_platform_apply_velocity_on_leave = 0
+
+[node name="Vase7" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
+position = Vector2( 359, -950 )
+moving_platform_apply_velocity_on_leave = 0
+
+[node name="Vase8" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
+position = Vector2( 547, -750 )
+moving_platform_apply_velocity_on_leave = 0
+
+[node name="Vase9" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
+position = Vector2( 513, -664 )
+moving_platform_apply_velocity_on_leave = 0
+
+[node name="Vase10" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
+position = Vector2( 528, -665 )
+moving_platform_apply_velocity_on_leave = 0
+
+[node name="Vase11" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
+position = Vector2( 361, -664 )
+moving_platform_apply_velocity_on_leave = 0
+
+[node name="Vase12" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
+position = Vector2( 145, -490 )
+moving_platform_apply_velocity_on_leave = 0
+
+[node name="Vase13" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
+position = Vector2( 253, -488 )
+moving_platform_apply_velocity_on_leave = 0
+
+[node name="Vase14" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
+position = Vector2( 358, -488 )
+moving_platform_apply_velocity_on_leave = 0
+
+[node name="Vase15" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
+position = Vector2( 483, -488 )
 moving_platform_apply_velocity_on_leave = 0
 
 [node name="Vase2" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
