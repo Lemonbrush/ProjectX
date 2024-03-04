@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Project/WorldObjects/Dialog/AbstractDialogInteractionObject/AbstractDialogInteractionObject.gd" type="Script" id=1]
 [ext_resource path="res://Project/WorldObjects/Dialog/DialogUIComponents/TextBoxController/DialogTextBoxController.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Project/WorldObjects/Technical/InteractionController/InteractionController.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Project/WorldObjects/Dialog/DialogUIComponents/InteractionPopup/InteractionPopup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.tres" type="Resource" id=5]
 
 [node name="AbstractDialogInteractionObject" type="Node2D"]
 script = ExtResource( 1 )
@@ -12,6 +13,7 @@ script = ExtResource( 1 )
 position = Vector2( 0, -31 )
 z_index = 10
 interaction_controller_path = NodePath("../InteractionController")
+voice_generator_configuration_file = ExtResource( 5 )
 
 [node name="InteractionPopup" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, -14 )

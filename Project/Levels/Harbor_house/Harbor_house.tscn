@@ -1,4 +1,4 @@
-[gd_scene load_steps=193 format=2]
+[gd_scene load_steps=194 format=2]
 
 [ext_resource path="res://Project/Levels/Harbor_house/Harbor_house.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Effects/Lighting/shadow.png" type="Texture" id=2]
@@ -73,6 +73,7 @@
 [ext_resource path="res://Assets/Audio/Background_music/Level_themes/Central_hub_theme.wav" type="AudioStream" id=71]
 [ext_resource path="res://Project/Utils/Audio/AudioPlayerNodes/WaterfallAudioPlayer/WaterfallAudioPlayer.tscn" type="PackedScene" id=72]
 [ext_resource path="res://Project/WorldObjects/Technical/ItemDispatcher/ItemDispatcher.tscn" type="PackedScene" id=73]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.tres" type="Resource" id=74]
 
 [sub_resource type="Environment" id=273]
 background_mode = 4
@@ -189,6 +190,7 @@ color_ramp = SubResource( 102 )
 script = ExtResource( 68 )
 letter_sounds_resource = ExtResource( 70 )
 voice_mode = 4
+volumeDB = 0.0
 
 [sub_resource type="Resource" id=223]
 resource_local_to_scene = true
@@ -374,6 +376,7 @@ extents = Vector2( 3, 16 )
 script = ExtResource( 68 )
 letter_sounds_resource = ExtResource( 67 )
 voice_mode = 4
+volumeDB = -5.0
 
 [sub_resource type="Animation" id=232]
 resource_name = "Idle"
@@ -569,6 +572,7 @@ tracks/0/keys = {
 script = ExtResource( 68 )
 letter_sounds_resource = ExtResource( 67 )
 voice_mode = 4
+volumeDB = -5.0
 
 [sub_resource type="Resource" id=253]
 resource_local_to_scene = true
@@ -659,6 +663,7 @@ tracks/0/keys = {
 script = ExtResource( 68 )
 letter_sounds_resource = ExtResource( 69 )
 voice_mode = 3
+volumeDB = -5.0
 
 [sub_resource type="Resource" id=261]
 resource_local_to_scene = true
@@ -1181,6 +1186,7 @@ anims/Walk = SubResource( 222 )
 [node name="FisherDweller" parent="Harbor_world_objects/Middle_world_objects/Dwellers" instance=ExtResource( 49 )]
 position = Vector2( -693, -111 )
 dialogId = "harbor_house_fisher_dweller"
+voice_generator_configuration_file = ExtResource( 74 )
 watch_player_on_talk = false
 defaultDirection = -1
 
@@ -2040,6 +2046,7 @@ anims/RESET = SubResource( 233 )
 [node name="BandanaAndGlassesDweller" parent="CreatorHouseIsland/Middle_world_objects/Dwellers" instance=ExtResource( 49 )]
 position = Vector2( -1590, -940 )
 dialogId = "harbor_house_mask_and_glasses_dweller"
+voice_generator_configuration_file = ExtResource( 74 )
 actions = [ SubResource( 237 ), SubResource( 238 ), SubResource( 239 ), SubResource( 240 ) ]
 
 [node name="Sprite" type="Sprite" parent="CreatorHouseIsland/Middle_world_objects/Dwellers/BandanaAndGlassesDweller/Body" index="0"]
@@ -2059,6 +2066,7 @@ anims/Walk = SubResource( 236 )
 [node name="MaskDweller" parent="CreatorHouseIsland/Middle_world_objects/Dwellers" instance=ExtResource( 49 )]
 position = Vector2( -975, -940 )
 dialogId = "harbor_house_lazy_worker_dweller"
+voice_generator_configuration_file = ExtResource( 74 )
 actions = [ SubResource( 241 ), SubResource( 242 ), SubResource( 243 ), SubResource( 244 ), SubResource( 245 ), SubResource( 246 ) ]
 
 [node name="Sprite" type="Sprite" parent="CreatorHouseIsland/Middle_world_objects/Dwellers/MaskDweller/Body" index="0"]
