@@ -150,6 +150,7 @@ shader_param/bg_color = null
 script = ExtResource( 9 )
 letter_sounds_resource = ExtResource( 8 )
 voice_mode = 3
+volumeDB = -5.0
 
 [node name="Gates" type="Node2D"]
 script = ExtResource( 3 )

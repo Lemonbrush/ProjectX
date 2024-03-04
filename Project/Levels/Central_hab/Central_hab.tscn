@@ -1,4 +1,4 @@
-[gd_scene load_steps=241 format=2]
+[gd_scene load_steps=242 format=2]
 
 [ext_resource path="res://Assets/Levels/Central_hub/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Effects/Lighting/playerLight.png" type="Texture" id=2]
@@ -85,6 +85,7 @@
 [ext_resource path="res://Assets/Audio/SFX/Kenny/Impact_sounds/impactWood_medium/impactWood_medium_004.ogg" type="AudioStream" id=83]
 [ext_resource path="res://Assets/Audio/SFX/General/misc/plane-flying-by.wav" type="AudioStream" id=84]
 [ext_resource path="res://Project/UI/Components/GameHUD/GameHUD.tscn" type="PackedScene" id=85]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.tres" type="Resource" id=86]
 
 [sub_resource type="Environment" id=30]
 background_mode = 4
@@ -854,7 +855,7 @@ extents = Vector2( 5.5, 27 )
 script = ExtResource( 73 )
 letter_sounds_resource = ExtResource( 72 )
 voice_mode = 3
-volumeDB = 0.0
+volumeDB = -5.0
 
 [sub_resource type="Animation" id=200]
 resource_name = "Idle"
@@ -877,7 +878,7 @@ tracks/0/keys = {
 script = ExtResource( 73 )
 letter_sounds_resource = ExtResource( 72 )
 voice_mode = 4
-volumeDB = 0.0
+volumeDB = -5.0
 
 [sub_resource type="Animation" id=156]
 resource_name = "Idle"
@@ -932,7 +933,7 @@ tracks/0/keys = {
 script = ExtResource( 73 )
 letter_sounds_resource = ExtResource( 72 )
 voice_mode = 5
-volumeDB = 0.0
+volumeDB = -5.0
 
 [sub_resource type="Resource" id=175]
 resource_local_to_scene = true
@@ -968,7 +969,7 @@ target_x_position = 225
 script = ExtResource( 73 )
 letter_sounds_resource = ExtResource( 72 )
 voice_mode = 2
-volumeDB = 0.0
+volumeDB = -5.0
 
 [sub_resource type="Resource" id=172]
 resource_local_to_scene = true
@@ -1055,7 +1056,7 @@ target_x_position = -750
 script = ExtResource( 73 )
 letter_sounds_resource = ExtResource( 77 )
 voice_mode = 4
-volumeDB = 0.0
+volumeDB = -5.0
 
 [sub_resource type="Resource" id=196]
 resource_local_to_scene = true
@@ -1139,7 +1140,7 @@ is_infinite = false
 script = ExtResource( 73 )
 letter_sounds_resource = ExtResource( 77 )
 voice_mode = 0
-volumeDB = 0.0
+volumeDB = -5.0
 
 [sub_resource type="Resource" id=238]
 resource_local_to_scene = true
@@ -1151,7 +1152,7 @@ is_infinite = true
 script = ExtResource( 73 )
 letter_sounds_resource = ExtResource( 77 )
 voice_mode = 3
-volumeDB = 0.0
+volumeDB = -5.0
 
 [sub_resource type="Resource" id=241]
 resource_local_to_scene = true
@@ -1175,7 +1176,7 @@ target_x_position = -850
 script = ExtResource( 73 )
 letter_sounds_resource = ExtResource( 77 )
 voice_mode = 4
-volumeDB = 0.0
+volumeDB = -5.0
 
 [sub_resource type="Resource" id=188]
 resource_local_to_scene = true
@@ -2213,6 +2214,7 @@ hframes = 16
 [node name="TopMillDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -990, -4 )
 dialogId = "mill_employee_dweller"
+voice_generator_configuration_file = ExtResource( 86 )
 actions = [ SubResource( 236 ) ]
 currentState = SubResource( 237 )
 
@@ -2226,6 +2228,7 @@ texture = ExtResource( 61 )
 [node name="MiddleMillDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -752, 203 )
 dialogId = "engeneer_dweller"
+voice_generator_configuration_file = ExtResource( 86 )
 actions = [ SubResource( 193 ), SubResource( 194 ), SubResource( 195 ) ]
 
 [node name="Sprite" parent="Middle_world_objects/Dwellers/MiddleMillDweller/Body" index="2"]
@@ -2243,6 +2246,7 @@ texture = ExtResource( 51 )
 [node name="BottomMillDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -1013, 380 )
 dialogId = "chinise_old_dweller"
+voice_generator_configuration_file = ExtResource( 86 )
 actions = [ SubResource( 240 ) ]
 currentState = null
 
@@ -2265,6 +2269,7 @@ texture = ExtResource( 52 )
 [node name="YellowHouseDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -771, 328 )
 dialogId = "doggy_like_dweller"
+voice_generator_configuration_file = ExtResource( 86 )
 actions = [ SubResource( 190 ), SubResource( 191 ), SubResource( 192 ) ]
 
 [node name="Sprite" parent="Middle_world_objects/Dwellers/YellowHouseDweller/Body" index="2"]
@@ -2305,6 +2310,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 dialogId = "wealthy_dweller"
+voice_generator_configuration_file = ExtResource( 86 )
 actions = [ SubResource( 186 ), SubResource( 187 ) ]
 currentState = null
 
@@ -2746,7 +2752,7 @@ position = Vector2( -290, -92 )
 itemScene = ExtResource( 74 )
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 5 )]
-position = Vector2( -1116, 150 )
+position = Vector2( 54, -69 )
 z_index = 2
 
 [node name="Light2D2" type="Light2D" parent="Player"]

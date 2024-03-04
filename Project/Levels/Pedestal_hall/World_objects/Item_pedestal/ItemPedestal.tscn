@@ -243,6 +243,7 @@ length = 0.001
 script = ExtResource( 7 )
 letter_sounds_resource = ExtResource( 8 )
 voice_mode = 3
+volumeDB = -5.0
 
 [sub_resource type="CanvasItemMaterial" id=19]
 particles_animation = true
@@ -304,7 +305,6 @@ bus = "SFX"
 [node name="ItemPlacing" type="Node" parent="Audio"]
 
 [node name="PaffRandomAudioStreamPlayer" parent="Audio/ItemPlacing" instance=ExtResource( 12 )]
-numberToPlay = 1
 minPitchScale = 1.0
 maxPitchScale = 1.0
 
