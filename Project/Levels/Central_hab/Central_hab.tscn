@@ -1,4 +1,4 @@
-[gd_scene load_steps=242 format=2]
+[gd_scene load_steps=245 format=2]
 
 [ext_resource path="res://Assets/Levels/Central_hub/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Effects/Lighting/playerLight.png" type="Texture" id=2]
@@ -86,6 +86,9 @@
 [ext_resource path="res://Assets/Audio/SFX/General/misc/plane-flying-by.wav" type="AudioStream" id=84]
 [ext_resource path="res://Project/UI/Components/GameHUD/GameHUD.tscn" type="PackedScene" id=85]
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.tres" type="Resource" id=86]
+[ext_resource path="res://Project/WorldObjects/Destructables/Crate/Background_crate/Background_crate.tscn" type="PackedScene" id=87]
+[ext_resource path="res://Project/WorldObjects/Destructables/Vase/Background_vase/Background_vase.tscn" type="PackedScene" id=88]
+[ext_resource path="res://Project/WorldObjects/Destructables/Crate/Crate.tscn" type="PackedScene" id=89]
 
 [sub_resource type="Environment" id=30]
 background_mode = 4
@@ -2627,6 +2630,18 @@ anims/RESET = SubResource( 143 )
 [node name="Barrel" parent="Middle_world_objects/Destractibles/Barrel" instance=ExtResource( 26 )]
 position = Vector2( -874, 144 )
 
+[node name="Barrel10" parent="Middle_world_objects/Destractibles/Barrel" instance=ExtResource( 26 )]
+position = Vector2( 897, 61 )
+
+[node name="Barrel11" parent="Middle_world_objects/Destractibles/Barrel" instance=ExtResource( 26 )]
+position = Vector2( 549, -13 )
+
+[node name="Barrel12" parent="Middle_world_objects/Destractibles/Barrel" instance=ExtResource( 26 )]
+position = Vector2( 397, -13 )
+
+[node name="Barrel13" parent="Middle_world_objects/Destractibles/Barrel" instance=ExtResource( 26 )]
+position = Vector2( 397, -13 )
+
 [node name="Barrel2" parent="Middle_world_objects/Destractibles/Barrel" instance=ExtResource( 26 )]
 position = Vector2( -982, 171 )
 
@@ -2672,13 +2687,48 @@ position = Vector2( -687, 304 )
 position = Vector2( -468, 322 )
 
 [node name="Vase4" parent="Middle_world_objects/Destractibles/Vases" instance=ExtResource( 25 )]
-position = Vector2( -1042, -13 )
+position = Vector2( -1035, -13 )
 
 [node name="Vase5" parent="Middle_world_objects/Destractibles/Vases" instance=ExtResource( 25 )]
 position = Vector2( -1471, -77 )
 
 [node name="Vase6" parent="Middle_world_objects/Destractibles/Vases" instance=ExtResource( 25 )]
 position = Vector2( -1488, -78 )
+
+[node name="Background_vase" parent="Middle_world_objects/Destractibles/Vases" instance=ExtResource( 88 )]
+position = Vector2( -100, -254 )
+
+[node name="Background_vase2" parent="Middle_world_objects/Destractibles/Vases" instance=ExtResource( 88 )]
+position = Vector2( -1051, -13 )
+
+[node name="Crates" type="Node2D" parent="Middle_world_objects/Destractibles"]
+
+[node name="Crate" parent="Middle_world_objects/Destractibles/Crates" instance=ExtResource( 89 )]
+position = Vector2( 324, -13 )
+
+[node name="Crate9" parent="Middle_world_objects/Destractibles/Crates" instance=ExtResource( 89 )]
+position = Vector2( -1034, 212 )
+
+[node name="Crate2" parent="Middle_world_objects/Destractibles/Crates" instance=ExtResource( 89 )]
+position = Vector2( 321, -30 )
+
+[node name="Crate3" parent="Middle_world_objects/Destractibles/Crates" instance=ExtResource( 87 )]
+position = Vector2( 307, -13 )
+
+[node name="Crate4" parent="Middle_world_objects/Destractibles/Crates" instance=ExtResource( 87 )]
+position = Vector2( 857, 115 )
+
+[node name="Crate5" parent="Middle_world_objects/Destractibles/Crates" instance=ExtResource( 87 )]
+position = Vector2( 857, 98 )
+
+[node name="Crate6" parent="Middle_world_objects/Destractibles/Crates" instance=ExtResource( 87 )]
+position = Vector2( 840, 115 )
+
+[node name="Crate7" parent="Middle_world_objects/Destractibles/Crates" instance=ExtResource( 87 )]
+position = Vector2( 184, -255 )
+
+[node name="Crate8" parent="Middle_world_objects/Destractibles/Crates" instance=ExtResource( 87 )]
+position = Vector2( 201, -255 )
 
 [node name="Chimney_steams" type="Node2D" parent="Middle_world_objects"]
 
