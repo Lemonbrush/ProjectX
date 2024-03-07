@@ -1142,7 +1142,7 @@ is_infinite = false
 [sub_resource type="Resource" id=251]
 script = ExtResource( 73 )
 letter_sounds_resource = ExtResource( 77 )
-voice_mode = 0
+voice_mode = 1
 volumeDB = -5.0
 
 [sub_resource type="Resource" id=238]
