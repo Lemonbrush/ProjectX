@@ -696,37 +696,6 @@ tracks/18/keys = {
 "values": [ Vector2( 8, -353 ) ]
 }
 
-[sub_resource type="CurveTexture" id=7]
-
-[sub_resource type="Gradient" id=3]
-offsets = PoolRealArray( 0, 0.00285307, 0.248217, 0.774608, 0.997147, 1 )
-colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.239024, 1, 1, 1, 0 )
-
-[sub_resource type="GradientTexture" id=8]
-gradient = SubResource( 3 )
-
-[sub_resource type="Curve" id=6]
-_data = [ Vector2( 0, 0.840033 ), 0.0, 0.0, 0, 0, Vector2( 0.103806, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.571868 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=9]
-curve = SubResource( 6 )
-
-[sub_resource type="ParticlesMaterial" id=125]
-emission_shape = 2
-emission_box_extents = Vector3( 600, 500, 1 )
-flag_disable_z = true
-spread = 0.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 10.0
-initial_velocity_random = 0.5
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale_curve = SubResource( 9 )
-color_ramp = SubResource( 8 )
-anim_offset = 1.0
-anim_offset_random = 1.0
-anim_offset_curve = SubResource( 7 )
-
 [sub_resource type="Gradient" id=111]
 offsets = PoolRealArray( 0, 0.860169, 1 )
 colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
@@ -882,6 +851,37 @@ scale_random = 1.0
 scale_curve = SubResource( 101 )
 color_ramp = SubResource( 97 )
 
+[sub_resource type="CurveTexture" id=7]
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.00285307, 0.248217, 0.774608, 0.997147, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.239024, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 3 )
+
+[sub_resource type="Curve" id=6]
+_data = [ Vector2( 0, 0.840033 ), 0.0, 0.0, 0, 0, Vector2( 0.103806, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.571868 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 6 )
+
+[sub_resource type="ParticlesMaterial" id=125]
+emission_shape = 2
+emission_box_extents = Vector3( 600, 500, 1 )
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 9 )
+color_ramp = SubResource( 8 )
+anim_offset = 1.0
+anim_offset_random = 1.0
+anim_offset_curve = SubResource( 7 )
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 48, 3.5 )
 
@@ -1018,11 +1018,6 @@ position = Vector2( 380, 3 )
 scale = Vector2( 0.77, 0.77 )
 texture = ExtResource( 19 )
 
-[node name="AnimationPlayer" parent="." index="4"]
-autoplay = ""
-anims/Lamp_ignition_cutscene = SubResource( 120 )
-anims/RESET = SubResource( 119 )
-
 [node name="BackgroundWorldObjects" type="Node2D" parent="." index="5"]
 
 [node name="BackgroundBlackFill" type="Node2D" parent="BackgroundWorldObjects" index="0"]
@@ -1042,18 +1037,10 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Camera2D" parent="." index="6"]
-position = Vector2( 8, -353 )
-zoom = Vector2( 0.7, 0.7 )
-zoom_based_on_editor_value = true
-
-[node name="Clouds" parent="Camera2D" index="2" instance=ExtResource( 21 )]
-position = Vector2( -2, 2 )
-z_index = -2
-
-[node name="Particles2D" parent="Camera2D/Clouds" index="0"]
-amount = 100
-process_material = SubResource( 125 )
+[node name="AnimationPlayer" parent="." index="6"]
+autoplay = ""
+anims/Lamp_ignition_cutscene = SubResource( 120 )
+anims/RESET = SubResource( 119 )
 
 [node name="MiddleWorldObjects" type="Node2D" parent="." index="7"]
 z_index = 1
@@ -1256,10 +1243,23 @@ max_distance = 100.0
 bus = "SFX"
 area_mask = 32
 
-[node name="WorldSprite" parent="." index="9"]
+[node name="Camera2D" parent="." index="9"]
+position = Vector2( 8, -353 )
+zoom = Vector2( 0.7, 0.7 )
+zoom_based_on_editor_value = true
+
+[node name="Clouds" parent="Camera2D" index="2" instance=ExtResource( 21 )]
+position = Vector2( -2, 2 )
+z_index = -2
+
+[node name="Particles2D" parent="Camera2D/Clouds" index="0"]
+amount = 100
+process_material = SubResource( 125 )
+
+[node name="WorldSprite" parent="." index="10"]
 texture = ExtResource( 2 )
 
-[node name="Player" parent="." index="10"]
+[node name="Player" parent="." index="11"]
 position = Vector2( 8, 384 )
 z_index = 2
 
@@ -1554,8 +1554,8 @@ position = Vector2( 15, -3 )
 position = Vector2( 0.5, -35.5 )
 shape = SubResource( 25 )
 
-[editable path="Camera2D/Clouds"]
 [editable path="MiddleWorldObjects/LightButhLadder/Ladder5"]
+[editable path="Camera2D/Clouds"]
 [editable path="Collisions/PassTrough/PassThroughBody6"]
 [editable path="Collisions/PassTrough/PassThroughBody15"]
 [editable path="Collisions/PassTrough/PassThroughBody16"]

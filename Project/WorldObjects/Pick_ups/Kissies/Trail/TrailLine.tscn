@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Project/WorldObjects/Pick_ups/Kissies/Trail/TrailLine.gd" type="Script" id=1]
+
+[node name="TrailLine" type="Line2D"]
+script = ExtResource( 1 )

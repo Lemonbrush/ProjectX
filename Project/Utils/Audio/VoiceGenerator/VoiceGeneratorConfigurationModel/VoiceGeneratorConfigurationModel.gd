@@ -12,6 +12,7 @@ enum VoiceMode {
 
 export (Resource) var letter_sounds_resource
 export (VoiceMode) var voice_mode = VoiceMode.NORMAL
+export (float) var volumeDB = 0.0
 
 var PITCH_MULTIPLIER_RANGE := 0.5
 var base_pitch := 1.5
@@ -26,6 +27,9 @@ func get_pitch_multiplier():
 func get_base_pitch():
 	update_values()
 	return base_pitch
+
+func get_volume_DB():
+	return volumeDB
 
 func update_values():
 	match voice_mode:

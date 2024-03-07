@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=2]
+[gd_scene load_steps=72 format=2]
 
 [ext_resource path="res://Assets/Levels/Rooms/BlueHouse/Blue_house_interior.png" type="Texture" id=1]
 [ext_resource path="res://Project/Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
@@ -26,6 +26,8 @@
 [ext_resource path="res://Assets/Audio/SFX/General/Bell/Lincore bells/Lincore bell 2.wav" type="AudioStream" id=24]
 [ext_resource path="res://Assets/Audio/SFX/General/Bell/Lincore bells/Lincore bell 1.wav" type="AudioStream" id=25]
 [ext_resource path="res://Assets/Audio/SFX/General/Bell/Lincore bells/Lincore bell 3.wav" type="AudioStream" id=26]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.tres" type="Resource" id=27]
+[ext_resource path="res://Project/WorldObjects/Destructables/Vase/Background_vase/Background_vase.tscn" type="PackedScene" id=28]
 
 [sub_resource type="Environment" id=137]
 background_mode = 4
@@ -748,13 +750,18 @@ bus = "SFX"
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="2"]
 environment = SubResource( 137 )
 
-[node name="AnimationPlayer" parent="." index="4"]
+[node name="AnimationPlayer" parent="." index="5"]
 autoplay = ""
 anims/RESET = SubResource( 123 )
 anims/artist_brush_gift_scene = SubResource( 133 )
 anims/place_artwork_cut_scene = SubResource( 122 )
 
-[node name="Camera2D" parent="." index="5"]
+[node name="BlueHouseDoor" parent="." index="6" instance=ExtResource( 5 )]
+position = Vector2( 6, -18 )
+nextScenePath = "res://Project/Levels/Central_hab/Central_hab.tscn"
+nextDoorName = "BlueHouseDoor"
+
+[node name="Camera2D" parent="." index="7"]
 position = Vector2( 0, -13 )
 zoom = Vector2( 0.6, 0.6 )
 zoom_based_on_editor_value = true
@@ -769,15 +776,10 @@ amount = 100
 lifetime = 10.0
 process_material = SubResource( 117 )
 
-[node name="BlueHouseDoor" parent="." index="6" instance=ExtResource( 5 )]
-position = Vector2( 6, -18 )
-nextScenePath = "res://Project/Levels/Central_hab/Central_hab.tscn"
-nextDoorName = "BlueHouseDoor"
-
-[node name="WorldSprite" parent="." index="7"]
+[node name="WorldSprite" parent="." index="8"]
 texture = ExtResource( 1 )
 
-[node name="Player" parent="." index="8"]
+[node name="Player" parent="." index="9"]
 position = Vector2( -18, 61 )
 z_index = 1
 
@@ -972,6 +974,7 @@ anims/RESET = SubResource( 140 )
 [node name="ArtistDweller" parent="." index="14" instance=ExtResource( 7 )]
 position = Vector2( 18, 61 )
 dialogId = "artist_dweller"
+voice_generator_configuration_file = ExtResource( 27 )
 watch_player_on_talk = false
 
 [node name="Sprite" type="Sprite" parent="ArtistDweller/Body" index="2"]
@@ -1009,6 +1012,11 @@ amount = 20
 randomness = 1.0
 process_material = SubResource( 101 )
 texture = ExtResource( 4 )
+
+[node name="Destructibles" type="Node2D" parent="." index="19"]
+
+[node name="Background_vase" parent="Destructibles" index="0" instance=ExtResource( 28 )]
+position = Vector2( 26, -27 )
 
 [editable path="Camera2D/Clouds2"]
 [editable path="Collisions/PassThrough/PassThroughBody6"]

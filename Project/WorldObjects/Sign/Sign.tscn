@@ -10,6 +10,7 @@
 script = ExtResource( 4 )
 letter_sounds_resource = ExtResource( 1 )
 voice_mode = 3
+volumeDB = -10.0
 
 [sub_resource type="RectangleShape2D" id=193]
 extents = Vector2( 9.5, 4.5 )

@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.0.0] - 2024-3-7 - Release ❤️
+### Added
+- Added Kissies!
+- Added dialog options highlight
+- Added more destructibles
+- Added clouns optimization
+
+### Changed
+- Changed player respawn logic
+- Changed the paff sound
+- Changed audio volume for dialogs
+- Changed tutorials
+- Changed the attack key bind
+
+### Fixed
+- Fixed some quests logic
+- Fixed Grand garden collision boxes
+- Fixed dialog typos
+- Fixed Buttons clickability
+- Fixed Pause screens background tones
+- Fixed Buttons selection shade
+- Fixed background music glitches
+- Fixed hidden characters'dialog availability
+
 ## [1.10.0 Beta] - 2023-12-20 - Final polishing
 ### Added
 - Added sound effects

@@ -345,6 +345,7 @@ anim_offset_random = 1.0
 script = ExtResource( 16 )
 letter_sounds_resource = ExtResource( 17 )
 voice_mode = 4
+volumeDB = -10.0
 
 [sub_resource type="Animation" id=124]
 resource_name = "Acting"

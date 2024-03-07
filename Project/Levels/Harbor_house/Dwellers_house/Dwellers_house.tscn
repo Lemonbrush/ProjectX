@@ -124,6 +124,7 @@ color_ramp = SubResource( 132 )
 script = ExtResource( 22 )
 letter_sounds_resource = ExtResource( 23 )
 voice_mode = 3
+volumeDB = 0.0
 
 [sub_resource type="Animation" id=136]
 resource_name = "Idle"
@@ -233,7 +234,9 @@ position = Vector2( 324, -20 )
 scale = Vector2( 0.725426, 0.725426 )
 texture = ExtResource( 10 )
 
-[node name="Camera2D" parent="." index="4"]
+[node name="Background_world_objects" type="Node2D" parent="." index="5"]
+
+[node name="Camera2D" parent="." index="6"]
 position = Vector2( 146, 15 )
 zoom = Vector2( 0.6, 0.6 )
 zoom_based_on_editor_value = true
@@ -247,16 +250,14 @@ position = Vector2( -91, 143 )
 amount = 50
 process_material = SubResource( 120 )
 
-[node name="Background_world_objects" type="Node2D" parent="." index="5"]
-
-[node name="WorldSprite" parent="." index="6"]
+[node name="WorldSprite" parent="." index="7"]
 position = Vector2( 12, -25 )
 texture = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Middle_world_objects" type="Node2D" parent="." index="7"]
+[node name="Middle_world_objects" type="Node2D" parent="." index="8"]
 
 [node name="Doors" type="Node2D" parent="Middle_world_objects" index="0"]
 
@@ -368,15 +369,15 @@ dialogId = "harborHouse_dwellersHouse_sleepingDwellerSign"
 [node name="Sprite" parent="Middle_world_objects/Sleeping_dweller_sign" index="0"]
 visible = false
 
-[node name="Player" parent="." index="8"]
+[node name="Foreground_world_objects" type="Node2D" parent="." index="9"]
+
+[node name="Player" parent="." index="10"]
 position = Vector2( 146, 29 )
 
 [node name="Light2D2" parent="Player" index="6"]
 visible = false
 
-[node name="Foreground_world_objects" type="Node2D" parent="." index="9"]
-
-[node name="Collisions" parent="." index="10"]
+[node name="Collisions" parent="." index="11"]
 visible = false
 
 [node name="PassThroughBody14" parent="Collisions/PassTrough" index="0" groups=["passThroughObject"] instance=ExtResource( 4 )]

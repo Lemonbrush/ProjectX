@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=2]
+[gd_scene load_steps=111 format=2]
 
 [ext_resource path="res://Project/WorldObjects/Technical/PassThroughPlank/PassThroughBody.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Project/Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=2]
@@ -38,6 +38,7 @@
 [ext_resource path="res://Assets/Audio/Background_music/Level_themes/Dangeon_theme.wav" type="AudioStream" id=36]
 [ext_resource path="res://Assets/Audio/SFX/General/misc/matrixxx__spaceship.wav" type="AudioStream" id=37]
 [ext_resource path="res://Assets/Audio/SFX/General/Rumble/EarthRumble.mp3" type="AudioStream" id=38]
+[ext_resource path="res://Assets/Audio/SFX/General/Bell/success_bell.wav" type="AudioStream" id=39]
 
 [sub_resource type="Environment" id=3]
 background_mode = 4
@@ -304,6 +305,20 @@ tracks/11/keys = {
 "method": "stop"
 } ]
 }
+tracks/12/type = "method"
+tracks/12/path = NodePath("Audio/SuccessAudioStreamPlayer")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 10.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
 
 [sub_resource type="Animation" id=100]
 length = 0.001
@@ -379,37 +394,6 @@ tracks/5/keys = {
 "update": 0,
 "values": [ Vector2( -431, 980 ) ]
 }
-
-[sub_resource type="CurveTexture" id=7]
-
-[sub_resource type="Gradient" id=10]
-offsets = PoolRealArray( 0, 0.00285307, 0.248217, 0.774608, 0.997147, 1 )
-colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.239024, 1, 1, 1, 0 )
-
-[sub_resource type="GradientTexture" id=8]
-gradient = SubResource( 10 )
-
-[sub_resource type="Curve" id=6]
-_data = [ Vector2( 0, 0.840033 ), 0.0, 0.0, 0, 0, Vector2( 0.103806, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.571868 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=9]
-curve = SubResource( 6 )
-
-[sub_resource type="ParticlesMaterial" id=11]
-emission_shape = 2
-emission_box_extents = Vector3( 500, 500, 1 )
-flag_disable_z = true
-spread = 0.0
-gravity = Vector3( 0, 0, 0 )
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale = 2.0
-scale_random = 1.0
-scale_curve = SubResource( 9 )
-color_ramp = SubResource( 8 )
-anim_offset = 1.0
-anim_offset_random = 1.0
-anim_offset_curve = SubResource( 7 )
 
 [sub_resource type="RectangleShape2D" id=88]
 extents = Vector2( 8, 8 )
@@ -767,6 +751,37 @@ extents = Vector2( 3.5, 32 )
 [sub_resource type="RectangleShape2D" id=116]
 extents = Vector2( 3.5, 32 )
 
+[sub_resource type="CurveTexture" id=7]
+
+[sub_resource type="Gradient" id=10]
+offsets = PoolRealArray( 0, 0.00285307, 0.248217, 0.774608, 0.997147, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.239024, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 10 )
+
+[sub_resource type="Curve" id=6]
+_data = [ Vector2( 0, 0.840033 ), 0.0, 0.0, 0, 0, Vector2( 0.103806, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.571868 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 6 )
+
+[sub_resource type="ParticlesMaterial" id=11]
+emission_shape = 2
+emission_box_extents = Vector3( 500, 500, 1 )
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 2.0
+scale_random = 1.0
+scale_curve = SubResource( 9 )
+color_ramp = SubResource( 8 )
+anim_offset = 1.0
+anim_offset_random = 1.0
+anim_offset_curve = SubResource( 7 )
+
 [sub_resource type="RectangleShape2D" id=118]
 extents = Vector2( 2460.5, 51.5 )
 
@@ -837,6 +852,10 @@ stream = ExtResource( 38 )
 pitch_scale = 2.0
 bus = "SFX"
 
+[node name="SuccessAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" index="2"]
+stream = ExtResource( 39 )
+bus = "SFX"
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="1"]
 environment = SubResource( 3 )
 
@@ -859,23 +878,11 @@ scale = Vector2( 0.289576, 0.28133 )
 texture = ExtResource( 7 )
 centered = false
 
-[node name="AnimationPlayer" parent="." index="5"]
+[node name="AnimationPlayer" parent="." index="6"]
 autoplay = ""
 anims/First_torch_ignite_cutscene = SubResource( 99 )
 anims/Platforms_lift_cutscene = SubResource( 101 )
 anims/RESET = SubResource( 100 )
-
-[node name="Camera2D" parent="." index="6"]
-position = Vector2( 54, -36 )
-backgroundColor = Color( 0.176471, 0.152941, 0.25098, 1 )
-zoom_based_on_editor_value = true
-default_zoom = 1.0
-
-[node name="Stars" parent="Camera2D" index="2" instance=ExtResource( 8 )]
-position = Vector2( 0, 1 )
-
-[node name="Particles2D" parent="Camera2D/Stars" index="0"]
-process_material = SubResource( 11 )
 
 [node name="Hidden_tower" type="Node2D" parent="." index="7"]
 position = Vector2( -431, 980 )
@@ -1956,7 +1963,19 @@ position = Vector2( 1433, 188 )
 position = Vector2( 0, -31 )
 shape = SubResource( 116 )
 
-[node name="Player" parent="." index="10"]
+[node name="Camera2D" parent="." index="9"]
+position = Vector2( 54, -36 )
+backgroundColor = Color( 0.176471, 0.152941, 0.25098, 1 )
+zoom_based_on_editor_value = true
+default_zoom = 1.0
+
+[node name="Stars" parent="Camera2D" index="2" instance=ExtResource( 8 )]
+position = Vector2( 0, 1 )
+
+[node name="Particles2D" parent="Camera2D/Stars" index="0"]
+process_material = SubResource( 11 )
+
+[node name="Player" parent="." index="11"]
 light_mask = 0
 position = Vector2( 57, -12 )
 z_index = 1
@@ -2025,7 +2044,6 @@ margin_top = -25.0
 margin_right = 5296.0
 margin_bottom = 344.0
 
-[editable path="Camera2D/Stars"]
 [editable path="Hidden_tower/Collisions/Solid/PassThroughBody22"]
 [editable path="Hidden_tower/Collisions/PassThrough/PassThroughBody20"]
 [editable path="Hidden_tower/Collisions/PassThrough/PassThroughBody47"]
@@ -2105,3 +2123,4 @@ margin_bottom = 344.0
 [editable path="Cave_objects/Collisions/Ladders/Vine4"]
 [editable path="Cave_objects/Collisions/Ladders/Vine5"]
 [editable path="Cave_objects/Collisions/Ladders/Vine6"]
+[editable path="Camera2D/Stars"]

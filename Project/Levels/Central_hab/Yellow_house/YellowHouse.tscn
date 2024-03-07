@@ -103,6 +103,7 @@ extents = Vector2( 4, 4 )
 script = ExtResource( 9 )
 letter_sounds_resource = ExtResource( 10 )
 voice_mode = 3
+volumeDB = 0.0
 
 [sub_resource type="Resource" id=26]
 resource_local_to_scene = true
@@ -151,7 +152,7 @@ background_music = ExtResource( 11 )
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
 environment = SubResource( 25 )
 
-[node name="Camera2D" parent="." index="3"]
+[node name="Camera2D" parent="." index="4"]
 position = Vector2( 3, 19 )
 zoom = Vector2( 0.6, 0.6 )
 zoom_based_on_editor_value = true
@@ -165,17 +166,17 @@ amount = 100
 lifetime = 10.0
 process_material = SubResource( 19 )
 
-[node name="WorldSprite" parent="." index="4"]
+[node name="WorldSprite" parent="." index="5"]
 texture = ExtResource( 2 )
 
-[node name="Player" parent="." index="5"]
+[node name="Player" parent="." index="6"]
 position = Vector2( 25, 83 )
 z_index = 2
 
 [node name="Light2D2" parent="Player" index="6"]
 visible = false
 
-[node name="Collisions" parent="." index="6"]
+[node name="Collisions" parent="." index="7"]
 visible = false
 
 [node name="PassThroughBody6" parent="Collisions/PassTrough" index="0" groups=["passThroughObject"] instance=ExtResource( 3 )]

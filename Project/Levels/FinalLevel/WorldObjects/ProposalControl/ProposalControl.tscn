@@ -1,0 +1,109 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Project/Resources/Fonts/Epilepsy Sans/Resource/EpilepsySansBold.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Project/Resources/Themes/MainTheme.tres" type="Theme" id=2]
+[ext_resource path="res://Project/Resources/Fonts/Epilepsy Sans/Resource/EpilepsySans.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/Effects/Particles/ShineSprincles.png" type="Texture" id=4]
+[ext_resource path="res://Project/Levels/FinalLevel/WorldObjects/ProposalControl/ProposalControl.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Audio/SFX/General/misc/game-start.mp3" type="AudioStream" id=6]
+
+[sub_resource type="CanvasItemMaterial" id=225]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id=27]
+offsets = PoolRealArray( 0, 0.133612, 0.413361, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=28]
+gradient = SubResource( 27 )
+
+[sub_resource type="ParticlesMaterial" id=226]
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 5.0
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+spread = 150.0
+flatness = 1.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = 10.0
+angle = 180.0
+angle_random = 1.0
+scale_random = 1.0
+color_ramp = SubResource( 28 )
+hue_variation = 1.0
+hue_variation_random = 1.0
+anim_speed = 1.0
+
+[node name="ProposalControl" type="Control"]
+margin_top = -2249.0
+margin_right = 40.0
+margin_bottom = -2209.0
+theme = ExtResource( 2 )
+script = ExtResource( 5 )
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="AnswerButtonAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 6 )
+bus = "SFX"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = -82.0
+margin_top = 17.0
+margin_right = 99.0
+margin_bottom = 101.0
+custom_constants/separation = 15
+
+[node name="ProposalLabel" type="Label" parent="VBoxContainer"]
+margin_right = 181.0
+margin_bottom = 55.0
+custom_fonts/font = ExtResource( 1 )
+text = "Ты будешь
+моей женой?"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_left = 38.0
+margin_top = 70.0
+margin_right = 142.0
+margin_bottom = 83.0
+size_flags_horizontal = 4
+
+[node name="YesButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_right = 50.0
+margin_bottom = 13.0
+rect_min_size = Vector2( 50, 0 )
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 1, 1, 1, 0.2 )
+custom_fonts/font = ExtResource( 3 )
+text = "Да"
+
+[node name="ShineParticles2D" type="Particles2D" parent="VBoxContainer/HBoxContainer/YesButton"]
+pause_mode = 2
+material = SubResource( 225 )
+position = Vector2( 24, 8 )
+emitting = false
+amount = 100
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource( 226 )
+texture = ExtResource( 4 )
+
+[node name="NoButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 54.0
+margin_right = 104.0
+margin_bottom = 13.0
+rect_min_size = Vector2( 50, 0 )
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 1, 1, 1, 0.2 )
+custom_fonts/font = ExtResource( 3 )
+text = "Нет"

@@ -143,6 +143,7 @@ color_ramp = SubResource( 186 )
 script = ExtResource( 20 )
 letter_sounds_resource = ExtResource( 15 )
 voice_mode = 3
+volumeDB = -10.0
 
 [sub_resource type="RectangleShape2D" id=108]
 extents = Vector2( 8.25, 1.5 )
@@ -377,11 +378,21 @@ position = Vector2( 380, 95 )
 scale = Vector2( 0.77, 0.77 )
 texture = ExtResource( 7 )
 
-[node name="AnimationPlayer" parent="." index="4"]
+[node name="AnimationPlayer" parent="." index="5"]
 autoplay = ""
 anims/RESET = SubResource( 189 )
 
-[node name="Camera2D" parent="." index="5"]
+[node name="Background_world_objects" type="Node2D" parent="." index="6"]
+
+[node name="Decorations" type="Node2D" parent="Background_world_objects" index="0"]
+
+[node name="DecorationsTileMap" type="TileMap" parent="Background_world_objects/Decorations" index="0"]
+tile_set = ExtResource( 9 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( -15990672, 39, 0, -15925132, 29, 0, -15925120, 40, 0, 9633938, 23, 0, 20905834, 536870936, 0, 20905857, 536870941, 0, 20840459, 20, 0, 20840480, 31, 0 )
+
+[node name="Camera2D" parent="." index="7"]
 position = Vector2( -131, 320 )
 zoom = Vector2( 0.7, 0.7 )
 backgroundColor = Color( 0.768627, 0.898039, 1, 1 )
@@ -396,23 +407,13 @@ amount = 100
 lifetime = 10.0
 process_material = SubResource( 107 )
 
-[node name="Background_world_objects" type="Node2D" parent="." index="6"]
-
-[node name="Decorations" type="Node2D" parent="Background_world_objects" index="0"]
-
-[node name="DecorationsTileMap" type="TileMap" parent="Background_world_objects/Decorations" index="0"]
-tile_set = ExtResource( 9 )
-cell_size = Vector2( 1, 1 )
-format = 1
-tile_data = PoolIntArray( -15990672, 39, 0, -15925132, 29, 0, -15925120, 40, 0, 9633938, 23, 0, 20905834, 536870936, 0, 20905857, 536870941, 0, 20840459, 20, 0, 20840480, 31, 0 )
-
-[node name="WorldSprite" parent="." index="7"]
+[node name="WorldSprite" parent="." index="8"]
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Middle_world_decorations" type="Node2D" parent="." index="8"]
+[node name="Middle_world_decorations" type="Node2D" parent="." index="9"]
 
 [node name="Doors" type="Node2D" parent="Middle_world_decorations" index="0"]
 
@@ -706,9 +707,9 @@ dialogId = "creator_house_desk_dialog"
 label_text = "Осмотреть"
 voice_generator_configuration_file = SubResource( 192 )
 
-[node name="Foreground_world_decorations" type="Node2D" parent="." index="9"]
+[node name="Foreground_world_decorations" type="Node2D" parent="." index="10"]
 
-[node name="Player" parent="." index="10"]
+[node name="Player" parent="." index="11"]
 position = Vector2( -132, 332 )
 z_index = 1
 
@@ -719,7 +720,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Collisions" parent="." index="11"]
+[node name="Collisions" parent="." index="12"]
 visible = false
 
 [node name="PassThroughBody60" parent="Collisions/PassTrough" index="0" groups=["passThroughObject"] instance=ExtResource( 4 )]

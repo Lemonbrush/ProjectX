@@ -9,6 +9,7 @@ onready var setButton = $MainMarginContainer/MarginContainer/VBoxContainer/Margi
 onready var setFloatButton = $MainMarginContainer/MarginContainer/VBoxContainer/MarginContainer/GameConstsList/HBoxContainer/HBoxContainer2/SetFloatButton
 onready var emmitButton = $MainMarginContainer/MarginContainer/VBoxContainer/MarginContainer/GameConstsList/HBoxContainer/HBoxContainer2/EmmitButton
 onready var topHBoxPanel = $MainMarginContainer/MarginContainer/VBoxContainer/MarginContainer/GameConstsList/HBoxContainer
+onready var addGrandKissies = $MainMarginContainer/MarginContainer/VBoxContainer/MarginContainer/GameConstsList/HBoxContainer/HBoxContainer2/addGrandKissies
 
 func _ready():
 	var _exit_button_connection = exit_button.connect("pressed", self, "on_quit_pressed")
@@ -17,6 +18,7 @@ func _ready():
 	var _set_button = setButton.connect("pressed", self, "on_set_button_pressed")
 	var _set_float_button = setFloatButton.connect("pressed", self, "on_set_float_button_pressed")
 	var _emmit_button = emmitButton.connect("pressed", self, "on_emmit_button_pressed")
+	var _addGrandKissies = addGrandKissies.connect("pressed", self, "on_addGrandKissies_button_pressed")
 	
 	update_game_const_list()
 	exit_button.grab_focus()
@@ -102,3 +104,6 @@ func on_set_float_button_pressed():
 
 func on_emmit_button_pressed():
 	update_command_with_base("emmit")
+
+func on_addGrandKissies_button_pressed():
+	GameEventConstants.set_constant("kissies_count", 1000.0)

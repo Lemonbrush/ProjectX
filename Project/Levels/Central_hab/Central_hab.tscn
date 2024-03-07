@@ -1,4 +1,4 @@
-[gd_scene load_steps=240 format=2]
+[gd_scene load_steps=245 format=2]
 
 [ext_resource path="res://Assets/Levels/Central_hub/Central_hub.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Effects/Lighting/playerLight.png" type="Texture" id=2]
@@ -84,6 +84,11 @@
 [ext_resource path="res://Assets/Audio/SFX/General/Bell/success_bell.wav" type="AudioStream" id=82]
 [ext_resource path="res://Assets/Audio/SFX/Kenny/Impact_sounds/impactWood_medium/impactWood_medium_004.ogg" type="AudioStream" id=83]
 [ext_resource path="res://Assets/Audio/SFX/General/misc/plane-flying-by.wav" type="AudioStream" id=84]
+[ext_resource path="res://Project/UI/Components/GameHUD/GameHUD.tscn" type="PackedScene" id=85]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.tres" type="Resource" id=86]
+[ext_resource path="res://Project/WorldObjects/Destructables/Crate/Background_crate/Background_crate.tscn" type="PackedScene" id=87]
+[ext_resource path="res://Project/WorldObjects/Destructables/Vase/Background_vase/Background_vase.tscn" type="PackedScene" id=88]
+[ext_resource path="res://Project/WorldObjects/Destructables/Crate/Crate.tscn" type="PackedScene" id=89]
 
 [sub_resource type="Environment" id=30]
 background_mode = 4
@@ -853,6 +858,7 @@ extents = Vector2( 5.5, 27 )
 script = ExtResource( 73 )
 letter_sounds_resource = ExtResource( 72 )
 voice_mode = 3
+volumeDB = -10.0
 
 [sub_resource type="Animation" id=200]
 resource_name = "Idle"
@@ -875,6 +881,7 @@ tracks/0/keys = {
 script = ExtResource( 73 )
 letter_sounds_resource = ExtResource( 72 )
 voice_mode = 4
+volumeDB = -10.0
 
 [sub_resource type="Animation" id=156]
 resource_name = "Idle"
@@ -929,6 +936,7 @@ tracks/0/keys = {
 script = ExtResource( 73 )
 letter_sounds_resource = ExtResource( 72 )
 voice_mode = 5
+volumeDB = -10.0
 
 [sub_resource type="Resource" id=175]
 resource_local_to_scene = true
@@ -946,6 +954,7 @@ target_x_position = 225
 script = ExtResource( 73 )
 letter_sounds_resource = ExtResource( 78 )
 voice_mode = 5
+volumeDB = 0.0
 
 [sub_resource type="Resource" id=177]
 resource_local_to_scene = true
@@ -963,6 +972,7 @@ target_x_position = 225
 script = ExtResource( 73 )
 letter_sounds_resource = ExtResource( 72 )
 voice_mode = 2
+volumeDB = -10.0
 
 [sub_resource type="Resource" id=172]
 resource_local_to_scene = true
@@ -1045,10 +1055,11 @@ script = ExtResource( 23 )
 move_speed = 25
 target_x_position = -750
 
-[sub_resource type="Resource" id=256]
+[sub_resource type="Resource" id=139]
 script = ExtResource( 73 )
-letter_sounds_resource = ExtResource( 77 )
-voice_mode = 4
+letter_sounds_resource = ExtResource( 78 )
+voice_mode = 3
+volumeDB = 0.0
 
 [sub_resource type="Resource" id=196]
 resource_local_to_scene = true
@@ -1084,6 +1095,7 @@ is_infinite = false
 script = ExtResource( 73 )
 letter_sounds_resource = ExtResource( 78 )
 voice_mode = 3
+volumeDB = 0.0
 
 [sub_resource type="Resource" id=182]
 resource_local_to_scene = true
@@ -1130,7 +1142,8 @@ is_infinite = false
 [sub_resource type="Resource" id=251]
 script = ExtResource( 73 )
 letter_sounds_resource = ExtResource( 77 )
-voice_mode = 0
+voice_mode = 1
+volumeDB = -5.0
 
 [sub_resource type="Resource" id=238]
 resource_local_to_scene = true
@@ -1142,6 +1155,7 @@ is_infinite = true
 script = ExtResource( 73 )
 letter_sounds_resource = ExtResource( 77 )
 voice_mode = 3
+volumeDB = -10.0
 
 [sub_resource type="Resource" id=241]
 resource_local_to_scene = true
@@ -1165,6 +1179,7 @@ target_x_position = -850
 script = ExtResource( 73 )
 letter_sounds_resource = ExtResource( 77 )
 voice_mode = 4
+volumeDB = -10.0
 
 [sub_resource type="Resource" id=188]
 resource_local_to_scene = true
@@ -1387,7 +1402,7 @@ tracks/0/keys = {
 "values": [ 0.0, 1.0 ]
 }
 
-[sub_resource type="Animation" id=139]
+[sub_resource type="Animation" id=260]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
@@ -1494,24 +1509,24 @@ orbit_velocity_random = 0.0
 scale = 2.0
 color_ramp = SubResource( 220 )
 
-[sub_resource type="CurveTexture" id=244]
+[sub_resource type="CurveTexture" id=257]
 
 [sub_resource type="Gradient" id=3]
 offsets = PoolRealArray( 0, 0.00285307, 0.248217, 0.774608, 0.997147, 1 )
 colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.239024, 1, 1, 1, 0 )
 
-[sub_resource type="GradientTexture" id=8]
+[sub_resource type="GradientTexture" id=258]
 gradient = SubResource( 3 )
 
 [sub_resource type="Curve" id=245]
 _data = [ Vector2( 0, 0.840033 ), 0.0, 0.0, 0, 0, Vector2( 0.103806, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.571868 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=9]
+[sub_resource type="CurveTexture" id=259]
 curve = SubResource( 245 )
 
 [sub_resource type="ParticlesMaterial" id=246]
 emission_shape = 2
-emission_box_extents = Vector3( 3000, 1500, 1 )
+emission_box_extents = Vector3( 400, 400, 1 )
 flag_disable_z = true
 spread = 0.0
 gravity = Vector3( 0, 0, 0 )
@@ -1519,11 +1534,11 @@ initial_velocity = 10.0
 initial_velocity_random = 0.5
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale_curve = SubResource( 9 )
-color_ramp = SubResource( 8 )
+scale_curve = SubResource( 259 )
+color_ramp = SubResource( 258 )
 anim_offset = 1.0
 anim_offset_random = 1.0
-anim_offset_curve = SubResource( 244 )
+anim_offset_curve = SubResource( 257 )
 
 [sub_resource type="RectangleShape2D" id=99]
 extents = Vector2( 7.5, 72.25 )
@@ -1721,7 +1736,6 @@ extents = Vector2( 8, 89 )
 extents = Vector2( 7014.5, 150 )
 
 [node name="Central_hab" type="Node2D"]
-position = Vector2( -4, -62 )
 script = ExtResource( 10 )
 background_music = ExtResource( 80 )
 
@@ -1747,6 +1761,8 @@ pitch_scale = 0.5
 bus = "SFX"
 
 [node name="GameSpecs" parent="." instance=ExtResource( 36 )]
+
+[node name="GameHUD" parent="." instance=ExtResource( 85 )]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 30 )
@@ -2201,6 +2217,7 @@ hframes = 16
 [node name="TopMillDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -990, -4 )
 dialogId = "mill_employee_dweller"
+voice_generator_configuration_file = ExtResource( 86 )
 actions = [ SubResource( 236 ) ]
 currentState = SubResource( 237 )
 
@@ -2214,6 +2231,7 @@ texture = ExtResource( 61 )
 [node name="MiddleMillDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -752, 203 )
 dialogId = "engeneer_dweller"
+voice_generator_configuration_file = ExtResource( 86 )
 actions = [ SubResource( 193 ), SubResource( 194 ), SubResource( 195 ) ]
 
 [node name="Sprite" parent="Middle_world_objects/Dwellers/MiddleMillDweller/Body" index="2"]
@@ -2222,7 +2240,7 @@ texture = ExtResource( 48 )
 [node name="MiddleMillBalconyDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -952, 152 )
 dialogId = "mill_wife_dweller"
-voice_generator_configuration_file = SubResource( 256 )
+voice_generator_configuration_file = SubResource( 139 )
 actions = [ SubResource( 196 ), SubResource( 197 ), SubResource( 199 ), SubResource( 198 ) ]
 
 [node name="Sprite" parent="Middle_world_objects/Dwellers/MiddleMillBalconyDweller/Body" index="2"]
@@ -2231,6 +2249,7 @@ texture = ExtResource( 51 )
 [node name="BottomMillDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -1013, 380 )
 dialogId = "chinise_old_dweller"
+voice_generator_configuration_file = ExtResource( 86 )
 actions = [ SubResource( 240 ) ]
 currentState = null
 
@@ -2253,6 +2272,7 @@ texture = ExtResource( 52 )
 [node name="YellowHouseDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -771, 328 )
 dialogId = "doggy_like_dweller"
+voice_generator_configuration_file = ExtResource( 86 )
 actions = [ SubResource( 190 ), SubResource( 191 ), SubResource( 192 ) ]
 
 [node name="Sprite" parent="Middle_world_objects/Dwellers/YellowHouseDweller/Body" index="2"]
@@ -2293,6 +2313,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 dialogId = "wealthy_dweller"
+voice_generator_configuration_file = ExtResource( 86 )
 actions = [ SubResource( 186 ), SubResource( 187 ) ]
 currentState = null
 
@@ -2530,7 +2551,7 @@ autoplay = "Loop"
 playback_process_mode = 0
 playback_speed = 0.5
 anims/Loop = SubResource( 138 )
-anims/RESET = SubResource( 139 )
+anims/RESET = SubResource( 260 )
 
 [node name="MovingPlatform4" type="Node2D" parent="Middle_world_objects/MovingPlatforms"]
 position = Vector2( -1114, -188 )
@@ -2609,6 +2630,15 @@ anims/RESET = SubResource( 143 )
 [node name="Barrel" parent="Middle_world_objects/Destractibles/Barrel" instance=ExtResource( 26 )]
 position = Vector2( -874, 144 )
 
+[node name="Barrel10" parent="Middle_world_objects/Destractibles/Barrel" instance=ExtResource( 26 )]
+position = Vector2( 897, 61 )
+
+[node name="Barrel11" parent="Middle_world_objects/Destractibles/Barrel" instance=ExtResource( 26 )]
+position = Vector2( 549, -13 )
+
+[node name="Barrel12" parent="Middle_world_objects/Destractibles/Barrel" instance=ExtResource( 26 )]
+position = Vector2( 397, -12 )
+
 [node name="Barrel2" parent="Middle_world_objects/Destractibles/Barrel" instance=ExtResource( 26 )]
 position = Vector2( -982, 171 )
 
@@ -2654,13 +2684,50 @@ position = Vector2( -687, 304 )
 position = Vector2( -468, 322 )
 
 [node name="Vase4" parent="Middle_world_objects/Destractibles/Vases" instance=ExtResource( 25 )]
-position = Vector2( -1042, -13 )
+position = Vector2( -1035, -13 )
 
 [node name="Vase5" parent="Middle_world_objects/Destractibles/Vases" instance=ExtResource( 25 )]
 position = Vector2( -1471, -77 )
 
 [node name="Vase6" parent="Middle_world_objects/Destractibles/Vases" instance=ExtResource( 25 )]
 position = Vector2( -1488, -78 )
+
+[node name="Background_vase" parent="Middle_world_objects/Destractibles/Vases" instance=ExtResource( 88 )]
+position = Vector2( -100, -254 )
+
+[node name="Background_vase2" parent="Middle_world_objects/Destractibles/Vases" instance=ExtResource( 88 )]
+position = Vector2( -1051, -13 )
+
+[node name="Crates" type="Node2D" parent="Middle_world_objects/Destractibles"]
+
+[node name="Crate" parent="Middle_world_objects/Destractibles/Crates" instance=ExtResource( 89 )]
+position = Vector2( 324, -13 )
+
+[node name="Crate9" parent="Middle_world_objects/Destractibles/Crates" instance=ExtResource( 89 )]
+position = Vector2( -1034, 212 )
+
+[node name="Crate2" parent="Middle_world_objects/Destractibles/Crates" instance=ExtResource( 89 )]
+position = Vector2( 321, -30 )
+
+[node name="Crate3" parent="Middle_world_objects/Destractibles/Crates" instance=ExtResource( 87 )]
+position = Vector2( 307, -13 )
+
+[node name="Crate4" parent="Middle_world_objects/Destractibles/Crates" instance=ExtResource( 87 )]
+position = Vector2( 857, 115 )
+
+[node name="Crate5" parent="Middle_world_objects/Destractibles/Crates" instance=ExtResource( 87 )]
+position = Vector2( 857, 98 )
+
+[node name="Crate6" parent="Middle_world_objects/Destractibles/Crates" instance=ExtResource( 87 )]
+position = Vector2( 840, 115 )
+
+[node name="Crate7" parent="Middle_world_objects/Destractibles/Crates" instance=ExtResource( 87 )]
+position = Vector2( 184, -255 )
+z_index = -1
+
+[node name="Crate8" parent="Middle_world_objects/Destractibles/Crates" instance=ExtResource( 87 )]
+position = Vector2( 201, -255 )
+z_index = -1
 
 [node name="Chimney_steams" type="Node2D" parent="Middle_world_objects"]
 
@@ -2734,7 +2801,7 @@ position = Vector2( -290, -92 )
 itemScene = ExtResource( 74 )
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 5 )]
-position = Vector2( -1116, 150 )
+position = Vector2( 54, -69 )
 z_index = 2
 
 [node name="Light2D2" type="Light2D" parent="Player"]
@@ -2770,14 +2837,15 @@ position = Vector2( 54, -768 )
 texture = ExtResource( 66 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 7 )]
-position = Vector2( 52, -809 )
+position = Vector2( 46, -286 )
 
 [node name="Clouds" parent="Camera2D" instance=ExtResource( 15 )]
 position = Vector2( -2, 2 )
 z_index = -2
 
 [node name="Particles2D" parent="Camera2D/Clouds" index="0"]
-amount = 700
+amount = 30
+lifetime = 10.0
 process_material = SubResource( 246 )
 
 [node name="Collisions" type="Node2D" parent="."]

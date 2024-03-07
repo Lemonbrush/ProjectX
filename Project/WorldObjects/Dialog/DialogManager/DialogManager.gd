@@ -1,7 +1,7 @@
 extends Node2D
 
 signal did_receive_text_dialog(text)
-signal did_receive_response_dialog(text, responses)
+signal did_receive_response_dialog(text, responseModels)
 signal did_receive_error(text)
 
 export(String) var dialog_id
@@ -42,17 +42,23 @@ func process_dialog_model(phrase):
 			throw_error("Failed to detect phrase type")
 
 func process_response_partition(phrase):
-	var responses = get_valid_response_options(phrase)
+	var responseModels = get_valid_response_options(phrase)
 	var text = phrase.text
-	emit_signal("did_receive_response_dialog", text, responses)
+	emit_signal("did_receive_response_dialog", text, responseModels)
 
 func get_valid_response_options(phrase):
-	var responses = []
+	var responseModels = []
 	for response in phrase["responses"]:
-		if response["conditions"] != null && dialogManager.is_conditions_satisfied(response["conditions"]) == false:
+		if (response["conditions"] != null) and (dialogManager.is_conditions_satisfied(response["conditions"]) == false):
 			continue
-		responses.append(response)
-	return responses
+		
+		var responseModel = DialogResponseOptionModel.new()
+		responseModel.text = response["text"]
+		if response.has("color") and response["color"] != null:
+			responseModel.color = response["color"]
+		
+		responseModels.append(responseModel)
+	return responseModels
 
 func process_dialog_partition(phrase):
 	var text = phrase.text

@@ -1,4 +1,4 @@
-[gd_scene load_steps=192 format=2]
+[gd_scene load_steps=201 format=2]
 
 [ext_resource path="res://Project/Levels/Harbor_house/Harbor_house.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Effects/Lighting/shadow.png" type="Texture" id=2]
@@ -65,6 +65,7 @@
 [ext_resource path="res://Project/UI/Screens/DebugScreen/GameSpecs.tscn" type="PackedScene" id=63]
 [ext_resource path="res://Project/WorldObjects/Pick_ups/Items/RedThred/RedThredItem.tscn" type="PackedScene" id=64]
 [ext_resource path="res://Project/Characters/NPC/Mystic_dweller/MysticDweller.tscn" type="PackedScene" id=65]
+[ext_resource path="res://Project/UI/Components/GameHUD/GameHUD.tscn" type="PackedScene" id=66]
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsSasha.tres" type="Resource" id=67]
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.gd" type="Script" id=68]
 [ext_resource path="res://Project/Utils/Audio/VoiceGenerator/LetterSoundsModels/FullAlphabetVoiceModels/LettersSoundsSashaBrutal.tres" type="Resource" id=69]
@@ -72,6 +73,8 @@
 [ext_resource path="res://Assets/Audio/Background_music/Level_themes/Central_hub_theme.wav" type="AudioStream" id=71]
 [ext_resource path="res://Project/Utils/Audio/AudioPlayerNodes/WaterfallAudioPlayer/WaterfallAudioPlayer.tscn" type="PackedScene" id=72]
 [ext_resource path="res://Project/WorldObjects/Technical/ItemDispatcher/ItemDispatcher.tscn" type="PackedScene" id=73]
+[ext_resource path="res://Project/Utils/Audio/VoiceGenerator/VoiceGeneratorConfigurationModel/VoiceGeneratorConfigurationModel.tres" type="Resource" id=74]
+[ext_resource path="res://Project/WorldObjects/Destructables/Barrel/Background_barrel/Background_barrel.tscn" type="PackedScene" id=75]
 
 [sub_resource type="Environment" id=273]
 background_mode = 4
@@ -90,6 +93,37 @@ length = 0.001
 
 [sub_resource type="Animation" id=39]
 resource_name = "open_transition"
+
+[sub_resource type="CurveTexture" id=244]
+
+[sub_resource type="Gradient" id=285]
+offsets = PoolRealArray( 0, 0.00285307, 0.248217, 0.774608, 0.997147, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.239024, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 285 )
+
+[sub_resource type="Curve" id=286]
+_data = [ Vector2( 0, 0.840033 ), 0.0, 0.0, 0, 0, Vector2( 0.103806, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.571868 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 286 )
+
+[sub_resource type="ParticlesMaterial" id=287]
+emission_shape = 2
+emission_box_extents = Vector3( 400, 400, 1 )
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 9 )
+color_ramp = SubResource( 8 )
+anim_offset = 1.0
+anim_offset_random = 1.0
+anim_offset_curve = SubResource( 244 )
 
 [sub_resource type="CanvasItemMaterial" id=170]
 particles_animation = true
@@ -188,6 +222,7 @@ color_ramp = SubResource( 102 )
 script = ExtResource( 68 )
 letter_sounds_resource = ExtResource( 70 )
 voice_mode = 4
+volumeDB = 0.0
 
 [sub_resource type="Resource" id=223]
 resource_local_to_scene = true
@@ -373,6 +408,7 @@ extents = Vector2( 3, 16 )
 script = ExtResource( 68 )
 letter_sounds_resource = ExtResource( 67 )
 voice_mode = 4
+volumeDB = -10.0
 
 [sub_resource type="Animation" id=232]
 resource_name = "Idle"
@@ -497,7 +533,7 @@ script = ExtResource( 52 )
 wait_time = 5.0
 is_infinite = false
 
-[sub_resource type="Resource" id=244]
+[sub_resource type="Resource" id=288]
 resource_local_to_scene = true
 script = ExtResource( 53 )
 move_speed = 20
@@ -568,6 +604,7 @@ tracks/0/keys = {
 script = ExtResource( 68 )
 letter_sounds_resource = ExtResource( 67 )
 voice_mode = 4
+volumeDB = -10.0
 
 [sub_resource type="Resource" id=253]
 resource_local_to_scene = true
@@ -658,6 +695,7 @@ tracks/0/keys = {
 script = ExtResource( 68 )
 letter_sounds_resource = ExtResource( 69 )
 voice_mode = 3
+volumeDB = -10.0
 
 [sub_resource type="Resource" id=261]
 resource_local_to_scene = true
@@ -933,6 +971,8 @@ background_music = ExtResource( 71 )
 
 [node name="GameSpecs" parent="." instance=ExtResource( 63 )]
 
+[node name="GameHUD" parent="." instance=ExtResource( 66 )]
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 273 )
 
@@ -946,8 +986,13 @@ anims/open_transition = SubResource( 39 )
 position = Vector2( -474, -222 )
 
 [node name="Clouds" parent="Camera2D" instance=ExtResource( 15 )]
-position = Vector2( -2, -19 )
+position = Vector2( -2, 2 )
 z_index = -2
+
+[node name="Particles2D" parent="Camera2D/Clouds" index="0"]
+amount = 30
+lifetime = 10.0
+process_material = SubResource( 287 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_limit_end = Vector2( 0, 320 )
@@ -1151,6 +1196,31 @@ scale = Vector2( -1, 1 )
 [node name="Background_vase" parent="Harbor_world_objects/Middle_world_objects/Destructables/Vases" instance=ExtResource( 37 )]
 position = Vector2( -581, 40 )
 
+[node name="Crates" type="Node2D" parent="Harbor_world_objects/Middle_world_objects/Destructables"]
+
+[node name="Crate" parent="Harbor_world_objects/Middle_world_objects/Destructables/Crates" instance=ExtResource( 35 )]
+position = Vector2( -121, 71 )
+
+[node name="Crate2" parent="Harbor_world_objects/Middle_world_objects/Destructables/Crates" instance=ExtResource( 35 )]
+position = Vector2( -103, 71 )
+
+[node name="Crate3" parent="Harbor_world_objects/Middle_world_objects/Destructables/Crates" instance=ExtResource( 35 )]
+position = Vector2( -112, 54 )
+
+[node name="Crate4" parent="Harbor_world_objects/Middle_world_objects/Destructables/Crates" instance=ExtResource( 35 )]
+position = Vector2( -26, 72 )
+
+[node name="Barrel" type="Node2D" parent="Harbor_world_objects/Middle_world_objects/Destructables"]
+
+[node name="Background_barrel" parent="Harbor_world_objects/Middle_world_objects/Destructables/Barrel" instance=ExtResource( 75 )]
+position = Vector2( -10, 71 )
+
+[node name="Background_barrel2" parent="Harbor_world_objects/Middle_world_objects/Destructables/Barrel" instance=ExtResource( 75 )]
+position = Vector2( -42, 71 )
+
+[node name="Background_barrel3" parent="Harbor_world_objects/Middle_world_objects/Destructables/Barrel" instance=ExtResource( 75 )]
+position = Vector2( 95, 72 )
+
 [node name="Dwellers" type="Node2D" parent="Harbor_world_objects/Middle_world_objects"]
 position = Vector2( 29, 192 )
 
@@ -1178,6 +1248,7 @@ anims/Walk = SubResource( 222 )
 [node name="FisherDweller" parent="Harbor_world_objects/Middle_world_objects/Dwellers" instance=ExtResource( 49 )]
 position = Vector2( -693, -111 )
 dialogId = "harbor_house_fisher_dweller"
+voice_generator_configuration_file = ExtResource( 74 )
 watch_player_on_talk = false
 defaultDirection = -1
 
@@ -1847,6 +1918,12 @@ position = Vector2( 1184, -249 )
 [node name="Background_vase10" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
 position = Vector2( 1225, -390 )
 
+[node name="Background_vase14" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
+position = Vector2( 521, -870 )
+
+[node name="Background_vase15" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
+position = Vector2( 391, -870 )
+
 [node name="Background_vase6" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Background_vases" instance=ExtResource( 37 )]
 position = Vector2( 1290, -268 )
 
@@ -1859,8 +1936,52 @@ position = Vector2( 1217, -283 )
 position = Vector2( -456, -247 )
 moving_platform_apply_velocity_on_leave = 0
 
+[node name="Vase4" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
+position = Vector2( 1240, -390 )
+moving_platform_apply_velocity_on_leave = 0
+
+[node name="Vase6" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
+position = Vector2( 1035, -391 )
+moving_platform_apply_velocity_on_leave = 0
+
 [node name="Vase5" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
 position = Vector2( 537, -870 )
+moving_platform_apply_velocity_on_leave = 0
+
+[node name="Vase7" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
+position = Vector2( 359, -950 )
+moving_platform_apply_velocity_on_leave = 0
+
+[node name="Vase8" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
+position = Vector2( 547, -750 )
+moving_platform_apply_velocity_on_leave = 0
+
+[node name="Vase9" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
+position = Vector2( 513, -664 )
+moving_platform_apply_velocity_on_leave = 0
+
+[node name="Vase10" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
+position = Vector2( 528, -665 )
+moving_platform_apply_velocity_on_leave = 0
+
+[node name="Vase11" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
+position = Vector2( 361, -664 )
+moving_platform_apply_velocity_on_leave = 0
+
+[node name="Vase12" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
+position = Vector2( 145, -490 )
+moving_platform_apply_velocity_on_leave = 0
+
+[node name="Vase13" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
+position = Vector2( 253, -488 )
+moving_platform_apply_velocity_on_leave = 0
+
+[node name="Vase14" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
+position = Vector2( 358, -488 )
+moving_platform_apply_velocity_on_leave = 0
+
+[node name="Vase15" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
+position = Vector2( 483, -488 )
 moving_platform_apply_velocity_on_leave = 0
 
 [node name="Vase2" parent="CreatorHouseIsland/Middle_world_objects/Destructables/Vases/Foreground_vases" instance=ExtResource( 33 )]
@@ -2037,6 +2158,7 @@ anims/RESET = SubResource( 233 )
 [node name="BandanaAndGlassesDweller" parent="CreatorHouseIsland/Middle_world_objects/Dwellers" instance=ExtResource( 49 )]
 position = Vector2( -1590, -940 )
 dialogId = "harbor_house_mask_and_glasses_dweller"
+voice_generator_configuration_file = ExtResource( 74 )
 actions = [ SubResource( 237 ), SubResource( 238 ), SubResource( 239 ), SubResource( 240 ) ]
 
 [node name="Sprite" type="Sprite" parent="CreatorHouseIsland/Middle_world_objects/Dwellers/BandanaAndGlassesDweller/Body" index="0"]
@@ -2056,7 +2178,8 @@ anims/Walk = SubResource( 236 )
 [node name="MaskDweller" parent="CreatorHouseIsland/Middle_world_objects/Dwellers" instance=ExtResource( 49 )]
 position = Vector2( -975, -940 )
 dialogId = "harbor_house_lazy_worker_dweller"
-actions = [ SubResource( 241 ), SubResource( 242 ), SubResource( 243 ), SubResource( 244 ), SubResource( 245 ), SubResource( 246 ) ]
+voice_generator_configuration_file = ExtResource( 74 )
+actions = [ SubResource( 241 ), SubResource( 242 ), SubResource( 243 ), SubResource( 288 ), SubResource( 245 ), SubResource( 246 ) ]
 
 [node name="Sprite" type="Sprite" parent="CreatorHouseIsland/Middle_world_objects/Dwellers/MaskDweller/Body" index="0"]
 position = Vector2( -1, -16 )
@@ -2835,7 +2958,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." groups=["Persist", "player"] instance=ExtResource( 4 )]
-position = Vector2( -589, -115 )
+position = Vector2( -168, -969 )
 
 [node name="WaterSurface" type="Node2D" parent="."]
 pause_mode = 2

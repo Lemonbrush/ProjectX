@@ -47,6 +47,7 @@ func set_default_constants():
 		left_water_tower_activated = false,
 		right_water_tower_activated = false,
 		grand_garden_water_level = 0.0,
+		kissies_count = 0.0,
 		white_flower_quest_taken = false,
 		is_cactus_hugged = false,
 		grand_flower_did_grow = false,
@@ -72,8 +73,14 @@ func set_default_constants():
 		picked_up_empty_jur = false,
 		did_show_empty_jur = false,
 		did_harvest_heart_jur_cutscene_played = false,
-		did_open_pedestal_hall_right_door = false
+		did_open_pedestal_hall_right_door = false,
+		got_white_flower_quest_additional_information = false,
+		banana_located = false,
+		wife_asked_about_flower = false,
+		fisher_told_secret = false,
+		artist_told_about_brush = false
 	}
+	EventBus.game_const_changed("all", null)
 
 func set_constant(constant_name, value):
 	if constants.has(constant_name):
@@ -93,3 +100,9 @@ func is_cauldron_quest_completed():
 	var is_assembled_heart_picked_up = constants.has("assembled_heart_picked_uo") && get_constant("assembled_heart_picked_uo")
 	var is_love_potion_created = constants.has("is_love_potion_created") && get_constant("is_love_potion_created")
 	return is_assembled_heart_picked_up && is_love_potion_created
+
+func increment_kissie_counter():
+	var kissie_count = GameEventConstants.get_constant("kissies_count")
+	if kissie_count != null:
+		kissie_count += 1
+	set_constant("kissies_count", kissie_count)
