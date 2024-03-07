@@ -2232,7 +2232,7 @@ margin_top = -46.0
 margin_right = 139.0
 margin_bottom = 62.0
 text = "Ты всегда можешь вернуться сюда
-через меню паузы [Esc]"
+через меню паузы [color=#87e965]Esc[/color]"
 
 [node name="WorldSprite" parent="." index="10"]
 position = Vector2( -23, -567 )
