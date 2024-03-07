@@ -2637,10 +2637,7 @@ position = Vector2( 897, 61 )
 position = Vector2( 549, -13 )
 
 [node name="Barrel12" parent="Middle_world_objects/Destractibles/Barrel" instance=ExtResource( 26 )]
-position = Vector2( 397, -13 )
-
-[node name="Barrel13" parent="Middle_world_objects/Destractibles/Barrel" instance=ExtResource( 26 )]
-position = Vector2( 397, -13 )
+position = Vector2( 397, -12 )
 
 [node name="Barrel2" parent="Middle_world_objects/Destractibles/Barrel" instance=ExtResource( 26 )]
 position = Vector2( -982, 171 )
