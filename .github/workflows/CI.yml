@@ -56,10 +56,10 @@ jobs:
           mkdir -p dist/mac/
           godot -v --export "Mac OSX" "dist/mac/$EXPORT_NAME.zip"
           
-      - name: Export (Linux)
-        run: |
-          mkdir -p dist/linux/
-          godot -v --export "Linux/X11" "dist/linux/$EXPORT_NAME.x86_64"
+      #- name: Export (Linux)
+      #  run: |
+      #    mkdir -p dist/linux/
+      #    godot -v --export "Linux/X11" "dist/linux/$EXPORT_NAME.x86_64"
           
       - name: Add Version Number to Exports # This action requires the VERSION text file to be in the directory
         run: |
@@ -160,8 +160,8 @@ jobs:
       - name: Push Mac Export To Itch
         run: ./butler push ./dist/mac/$EXPORT_NAME.zip $ITCH_USERNAME/$ITCH_PROJECT_NAME:mac --userversion-file ./dist/VERSION
         
-      - name: Push Linux Export To Itch
-        run: ./butler push ./dist/linux/$EXPORT_NAME.x86_64 $ITCH_USERNAME/$ITCH_PROJECT_NAME:linux --userversion-file ./dist/VERSION
+      #- name: Push Linux Export To Itch
+      #  run: ./butler push ./dist/linux/$EXPORT_NAME.x86_64 $ITCH_USERNAME/$ITCH_PROJECT_NAME:linux --userversion-file ./dist/VERSION
         
         
   AlertPipelineResult:
