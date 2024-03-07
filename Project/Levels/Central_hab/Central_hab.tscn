@@ -858,7 +858,7 @@ extents = Vector2( 5.5, 27 )
 script = ExtResource( 73 )
 letter_sounds_resource = ExtResource( 72 )
 voice_mode = 3
-volumeDB = -5.0
+volumeDB = -10.0
 
 [sub_resource type="Animation" id=200]
 resource_name = "Idle"
@@ -881,7 +881,7 @@ tracks/0/keys = {
 script = ExtResource( 73 )
 letter_sounds_resource = ExtResource( 72 )
 voice_mode = 4
-volumeDB = -5.0
+volumeDB = -10.0
 
 [sub_resource type="Animation" id=156]
 resource_name = "Idle"
@@ -936,7 +936,7 @@ tracks/0/keys = {
 script = ExtResource( 73 )
 letter_sounds_resource = ExtResource( 72 )
 voice_mode = 5
-volumeDB = -5.0
+volumeDB = -10.0
 
 [sub_resource type="Resource" id=175]
 resource_local_to_scene = true
@@ -972,7 +972,7 @@ target_x_position = 225
 script = ExtResource( 73 )
 letter_sounds_resource = ExtResource( 72 )
 voice_mode = 2
-volumeDB = -5.0
+volumeDB = -10.0
 
 [sub_resource type="Resource" id=172]
 resource_local_to_scene = true
@@ -1059,7 +1059,7 @@ target_x_position = -750
 script = ExtResource( 73 )
 letter_sounds_resource = ExtResource( 77 )
 voice_mode = 4
-volumeDB = -5.0
+volumeDB = -10.0
 
 [sub_resource type="Resource" id=196]
 resource_local_to_scene = true
@@ -1155,7 +1155,7 @@ is_infinite = true
 script = ExtResource( 73 )
 letter_sounds_resource = ExtResource( 77 )
 voice_mode = 3
-volumeDB = -5.0
+volumeDB = -10.0
 
 [sub_resource type="Resource" id=241]
 resource_local_to_scene = true
@@ -1179,7 +1179,7 @@ target_x_position = -850
 script = ExtResource( 73 )
 letter_sounds_resource = ExtResource( 77 )
 voice_mode = 4
-volumeDB = -5.0
+volumeDB = -10.0
 
 [sub_resource type="Resource" id=188]
 resource_local_to_scene = true
@@ -2723,9 +2723,11 @@ position = Vector2( 840, 115 )
 
 [node name="Crate7" parent="Middle_world_objects/Destractibles/Crates" instance=ExtResource( 87 )]
 position = Vector2( 184, -255 )
+z_index = -1
 
 [node name="Crate8" parent="Middle_world_objects/Destractibles/Crates" instance=ExtResource( 87 )]
 position = Vector2( 201, -255 )
+z_index = -1
 
 [node name="Chimney_steams" type="Node2D" parent="Middle_world_objects"]
 

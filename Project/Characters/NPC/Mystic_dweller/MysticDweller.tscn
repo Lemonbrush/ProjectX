@@ -11,7 +11,7 @@
 script = ExtResource( 2 )
 letter_sounds_resource = ExtResource( 1 )
 voice_mode = 3
-volumeDB = -5.0
+volumeDB = -15.0
 
 [sub_resource type="Animation" id=1]
 resource_name = "Hiding"

@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource( 1 )
 voice_mode = 3
-volumeDB = -5.0
+volumeDB = -15.0

@@ -129,7 +129,7 @@ color_ramp = SubResource( 109 )
 script = ExtResource( 12 )
 letter_sounds_resource = ExtResource( 13 )
 voice_mode = 4
-volumeDB = -5.0
+volumeDB = -10.0
 
 [sub_resource type="Animation" id=107]
 resource_name = "Idle"
