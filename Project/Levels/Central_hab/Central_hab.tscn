@@ -1055,11 +1055,11 @@ script = ExtResource( 23 )
 move_speed = 25
 target_x_position = -750
 
-[sub_resource type="Resource" id=256]
+[sub_resource type="Resource" id=139]
 script = ExtResource( 73 )
-letter_sounds_resource = ExtResource( 77 )
-voice_mode = 4
-volumeDB = -10.0
+letter_sounds_resource = ExtResource( 78 )
+voice_mode = 3
+volumeDB = 0.0
 
 [sub_resource type="Resource" id=196]
 resource_local_to_scene = true
@@ -1402,7 +1402,7 @@ tracks/0/keys = {
 "values": [ 0.0, 1.0 ]
 }
 
-[sub_resource type="Animation" id=139]
+[sub_resource type="Animation" id=260]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
@@ -2240,7 +2240,7 @@ texture = ExtResource( 48 )
 [node name="MiddleMillBalconyDweller" parent="Middle_world_objects/Dwellers" instance=ExtResource( 18 )]
 position = Vector2( -952, 152 )
 dialogId = "mill_wife_dweller"
-voice_generator_configuration_file = SubResource( 256 )
+voice_generator_configuration_file = SubResource( 139 )
 actions = [ SubResource( 196 ), SubResource( 197 ), SubResource( 199 ), SubResource( 198 ) ]
 
 [node name="Sprite" parent="Middle_world_objects/Dwellers/MiddleMillBalconyDweller/Body" index="2"]
@@ -2551,7 +2551,7 @@ autoplay = "Loop"
 playback_process_mode = 0
 playback_speed = 0.5
 anims/Loop = SubResource( 138 )
-anims/RESET = SubResource( 139 )
+anims/RESET = SubResource( 260 )
 
 [node name="MovingPlatform4" type="Node2D" parent="Middle_world_objects/MovingPlatforms"]
 position = Vector2( -1114, -188 )
