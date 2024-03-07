@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=2]
+[gd_scene load_steps=117 format=2]
 
 [ext_resource path="res://Project/Levels/Base_world_scene/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Project/WorldObjects/Interactables/Door/Simple_door.tscn" type="PackedScene" id=2]
@@ -1569,6 +1569,37 @@ extents = Vector2( 24, 8 )
 [sub_resource type="RectangleShape2D" id=294]
 extents = Vector2( 8, 8 )
 
+[sub_resource type="CurveTexture" id=257]
+
+[sub_resource type="Gradient" id=319]
+offsets = PoolRealArray( 0, 0.00285307, 0.248217, 0.774608, 0.997147, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.239024, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=258]
+gradient = SubResource( 319 )
+
+[sub_resource type="Curve" id=320]
+_data = [ Vector2( 0, 0.840033 ), 0.0, 0.0, 0, 0, Vector2( 0.103806, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.571868 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=259]
+curve = SubResource( 320 )
+
+[sub_resource type="ParticlesMaterial" id=321]
+emission_shape = 2
+emission_box_extents = Vector3( 400, 400, 1 )
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 259 )
+color_ramp = SubResource( 258 )
+anim_offset = 1.0
+anim_offset_random = 1.0
+anim_offset_curve = SubResource( 257 )
+
 [sub_resource type="Resource" id=313]
 resource_local_to_scene = true
 script = ExtResource( 49 )
@@ -2129,9 +2160,13 @@ zoom = Vector2( 0.5, 0.5 )
 position = Vector2( -1, -67 )
 
 [node name="Clouds2" parent="Camera2D" index="3" instance=ExtResource( 13 )]
-pause_mode = 2
-position = Vector2( 42, 197 )
+position = Vector2( -2, 2 )
 z_index = -6
+
+[node name="Particles2D" parent="Camera2D/Clouds2" index="0"]
+amount = 30
+lifetime = 10.0
+process_material = SubResource( 321 )
 
 [node name="Middle_world_objects" type="Node2D" parent="." index="9"]
 
@@ -2534,6 +2569,7 @@ margin_bottom = 344.0
 [editable path="Background_world_objects/Hidden_door_bricks/31/collision"]
 [editable path="Background_world_objects/Hidden_door_bricks/4/collision"]
 [editable path="Background_world_objects/Hidden_door_bricks/5/collision"]
+[editable path="Camera2D/Clouds2"]
 [editable path="Middle_world_objects/MysticDweller"]
 [editable path="Middle_world_objects/MysticDweller/Body/InteractionController"]
 [editable path="Middle_world_objects/TriggeringControlReturnHintLabel"]
