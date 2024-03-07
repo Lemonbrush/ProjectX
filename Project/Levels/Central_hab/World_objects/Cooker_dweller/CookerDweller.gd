@@ -30,7 +30,7 @@ func configure_scene():
 		
 	if GameEventConstants.is_cauldron_quest_completed():
 		dweller.visible = false
-		dweller.is_player_interaction_active = false
+		dweller.set_interaction_mode(false)
 
 func set_cauldron_animation(is_working):
 	airBeamCollisionShape.disabled = !is_working

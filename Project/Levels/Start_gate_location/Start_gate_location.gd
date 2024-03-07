@@ -11,6 +11,7 @@ func _ready():
 	
 	if GameEventConstants.is_cauldron_quest_completed():
 		lonelyDweller.visible = false
+		lonelyDweller.set_interaction_mode(false)
 	
 	if GameEventConstants.get_constant("is_start_gate_first_entrance"):
 		GameEventConstants.set_constant("is_start_gate_first_entrance", false)
