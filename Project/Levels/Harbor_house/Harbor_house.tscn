@@ -1180,7 +1180,7 @@ position = Vector2( -26, 72 )
 position = Vector2( -10, 71 )
 
 [node name="Background_barrel2" parent="Harbor_world_objects/Middle_world_objects/Destructables/Barrel" instance=ExtResource( 75 )]
-position = Vector2( 7, 71 )
+position = Vector2( -42, 71 )
 
 [node name="Background_barrel3" parent="Harbor_world_objects/Middle_world_objects/Destructables/Barrel" instance=ExtResource( 75 )]
 position = Vector2( 95, 72 )

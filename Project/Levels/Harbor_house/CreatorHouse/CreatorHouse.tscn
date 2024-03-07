@@ -407,7 +407,13 @@ amount = 100
 lifetime = 10.0
 process_material = SubResource( 107 )
 
-[node name="Middle_world_decorations" type="Node2D" parent="." index="8"]
+[node name="WorldSprite" parent="." index="8"]
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Middle_world_decorations" type="Node2D" parent="." index="9"]
 
 [node name="Doors" type="Node2D" parent="Middle_world_decorations" index="0"]
 
@@ -701,13 +707,7 @@ dialogId = "creator_house_desk_dialog"
 label_text = "Осмотреть"
 voice_generator_configuration_file = SubResource( 192 )
 
-[node name="Foreground_world_decorations" type="Node2D" parent="." index="9"]
-
-[node name="WorldSprite" parent="." index="10"]
-texture = ExtResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Foreground_world_decorations" type="Node2D" parent="." index="10"]
 
 [node name="Player" parent="." index="11"]
 position = Vector2( -132, 332 )
