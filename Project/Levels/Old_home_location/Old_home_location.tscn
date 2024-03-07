@@ -3393,9 +3393,9 @@ labelText = "Запрыгнуть"
 position = Vector2( -41, -6 )
 
 [node name="Label" parent="World_objects/AppearingHintLabel" index="0"]
-margin_left = -60.0
+margin_left = -76.0
 margin_top = -44.0
-margin_right = 157.0
+margin_right = 141.0
 margin_bottom = 64.0
 text = "Жмякай [color=#87e965]Стрелочки[/color], чтобы ходить"
 

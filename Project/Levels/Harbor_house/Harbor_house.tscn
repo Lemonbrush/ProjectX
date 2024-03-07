@@ -408,7 +408,7 @@ extents = Vector2( 3, 16 )
 script = ExtResource( 68 )
 letter_sounds_resource = ExtResource( 67 )
 voice_mode = 4
-volumeDB = -5.0
+volumeDB = -10.0
 
 [sub_resource type="Animation" id=232]
 resource_name = "Idle"
@@ -604,7 +604,7 @@ tracks/0/keys = {
 script = ExtResource( 68 )
 letter_sounds_resource = ExtResource( 67 )
 voice_mode = 4
-volumeDB = -5.0
+volumeDB = -10.0
 
 [sub_resource type="Resource" id=253]
 resource_local_to_scene = true
@@ -695,7 +695,7 @@ tracks/0/keys = {
 script = ExtResource( 68 )
 letter_sounds_resource = ExtResource( 69 )
 voice_mode = 3
-volumeDB = -5.0
+volumeDB = -10.0
 
 [sub_resource type="Resource" id=261]
 resource_local_to_scene = true

@@ -143,7 +143,7 @@ color_ramp = SubResource( 186 )
 script = ExtResource( 20 )
 letter_sounds_resource = ExtResource( 15 )
 voice_mode = 3
-volumeDB = 0.0
+volumeDB = -10.0
 
 [sub_resource type="RectangleShape2D" id=108]
 extents = Vector2( 8.25, 1.5 )

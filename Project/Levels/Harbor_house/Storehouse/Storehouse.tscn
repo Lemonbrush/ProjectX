@@ -157,7 +157,7 @@ tracks/0/keys = {
 script = ExtResource( 19 )
 letter_sounds_resource = ExtResource( 18 )
 voice_mode = 5
-volumeDB = -5.0
+volumeDB = -10.0
 
 [sub_resource type="Animation" id=140]
 resource_name = "Idle"
